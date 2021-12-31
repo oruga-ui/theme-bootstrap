@@ -28,7 +28,8 @@
 
     <o-modal v-model:active="isCardModalActive" :width="640" scroll="clip">
       <form action="">
-                <div class="modal-card" style="width: auto">
+            <div class="modal-content">
+                <div class="modal-header" style="width: auto">
                     <header class="modal-card-head">
                         <p class="modal-card-title">Login</p>
                         <o-icon
@@ -37,7 +38,7 @@
                             icon="times"
                             @click="isCardModalActive = false"/>
                     </header>
-                    <section class="modal-card-body">
+                    <section class="modal-body">
                         <o-field label="Email">
                             <o-input
                                 type="email"
@@ -61,11 +62,12 @@
                             <o-checkbox>Remember me</o-checkbox>
                         </o-field>
                     </section>
-                    <footer class="modal-card-foot">
+                    <footer class="modal-footer">
                         <o-button type="button" @click="isCardModalActive = false">Close</o-button>
                         <o-button variant="primary">Login</o-button>
                     </footer>
                 </div>
+              </div>
             </form>
     </o-modal>
   </section>

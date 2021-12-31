@@ -19,10 +19,10 @@
   </div>
 
   <div class="buttons">
-    <o-button size="small" icon-left="plus">Add</o-button>
-    <o-button icon-left="plus">Add</o-button>
-    <o-button size="medium" icon-left="plus">Add</o-button>
-    <o-button size="large" icon-left="plus">Add</o-button>
+    <o-button variant="primary" size="small" icon-left="plus">Add</o-button>
+    <o-button variant="primary" icon-left="plus">Add</o-button>
+    <o-button variant="primary" size="medium" icon-left="plus">Add</o-button>
+    <o-button variant="primary" size="large" icon-left="plus">Add</o-button>
   </div>
 
   <div class="buttons">

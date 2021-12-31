@@ -5,6 +5,7 @@
       size="large"
       :has-counter="true"
       maxlength="10"
+      placeholder="Enter Text"
     ></o-input>
   </o-field>
 

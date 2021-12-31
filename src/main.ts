@@ -4,9 +4,9 @@ import App from './App.vue'
 import router from './router'
 
 import Oruga from '@oruga-ui/oruga-next'
-import { bulmaConfig } from './plugins/bulma'
+import { bootstrapConfig } from './plugins/bootstrap'
 
-import './assets/scss/bulma-build.scss'
+import './assets/scss/bootstrap-build.scss'
 
 import '@fortawesome/fontawesome-free/scss/fontawesome.scss'
 import '@fortawesome/fontawesome-free/scss/regular.scss'
@@ -26,6 +26,6 @@ createApp(App)
             }
         },
         iconPack: 'fas',
-        ...bulmaConfig
+        ...bootstrapConfig
     })
     .mount('#app')

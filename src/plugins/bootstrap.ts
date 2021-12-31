@@ -1,53 +1,59 @@
-import "../assets/scss/bulma-build.scss"
+import "../assets/scss/bootstrap-build.scss"
 
-export const bulmaConfig: any = {
+export const bootstrapConfig: any = {
     field: {
         override: true,
-        rootClass: 'field',
-        labelClass: 'label',
+        rootClass: 'input-group',
+        labelClass: 'form-label',
         messageClass: 'help',
-        variantClass: 'is-',
-        addonsClass: 'has-addons',
-        groupedClass: 'is-grouped',
-        groupMultilineClass: 'is-grouped-multiline',
-        horizontalClass: 'is-horizontal',
-        labelHorizontalClass: 'field-label',
-        bodyHorizontalClass: 'field-body',
-        bodyClass: 'control'
+        variantClass: 'form-control-',
+        addonsClass: 'input-group-text',
+        groupedClass: 'mb-3',
+        // groupMultilineClass: 'is-grouped-multiline',
+        // horizontalClass: 'is-horizontal',
+        // labelHorizontalClass: 'field-label',
+        // bodyHorizontalClass: 'field-body',
+        bodyClass: 'form-control'
     },
     input: {
         override: true,
-        rootClass: (_: string, { props, computed }: any) => {
-            const classes = ['control']
-            if (props.icon) classes.push('has-icons-left')
-            if (computed.hasIconRight) classes.push('has-icons-right')
-            return classes.join(' ').trim()
+        rootClass: 'input-group mb-3',
+        inputClass: 'form-control',
+        textareaClass: 'form-control',
+        // roundedClass: 'is-rounded',
+        sizeClass: (_: string, { props }: any) => {
+            if (props.size == 'small'){
+                return 'form-control-sm';
+            }else if(props.size == 'medium') {
+                return 'form-control-md'
+            }else if (props.size == 'large') {
+                return 'form-control-lg'
+            }
         },
-        inputClass: 'input',
-        textareaClass: 'textarea',
-        roundedClass: 'is-rounded',
-        variantClass: 'is-',
-        sizeClass: 'is-',
+        variantClass: (_: string, { props }: any) => {
+            if (props.outlined) return '';
+            return `form-control-${props.variant}`
+        },
         expandedClass: 'is-expanded',
-        // iconLeftSpaceClass: 'has-icons has-icons-left',
-        iconLeftClass: 'is-left',
-        iconRightClass: 'is-right',
-        // iconRightSpaceClass: 'has-icons has-icons-right',
-        counterClass: 'help counter'
+        // iconLeftSpaceClass: 'input-group-text',
+        // iconLeftClass: 'is-left',
+        // iconRightClass: 'is-right',
+        // iconRightSpaceClass: 'input-group-text',
+        // counterClass: 'help counter'
     },
     select: {
         override: true,
         rootClass: (_: string, { props, computed }: any) => {
-            const classes = ['control', 'select']
-            if (props.size) classes.push(`is-${props.size}`)
-            if (props.rounded) classes.push('is-rounded')
-            if (computed.statusVariant) classes.push(`is-${computed.statusVariant}`)
-            if (props.multiple) classes.push('is-multiple')
-            if (props.icon) classes.push('has-icons-left')
-            if (props.iconRight) classes.push('has-icons-right')
-            return classes.join(' ').trim()
+            // const classes = ['form-select']
+            // if (props.size) classes.push(`is-${props.size}`)
+            // if (props.rounded) classes.push('is-rounded')
+            // if (computed.statusVariant) classes.push(`is-${computed.statusVariant}`)
+            // if (props.multiple) classes.push('is-multiple')
+            // if (props.icon) classes.push('has-icons-left')
+            // if (props.iconRight) classes.push('has-icons-right')
+            // return classes.join(' ').trim()
         },
-        // selectClass: '',
+        selectClass: 'form-select',
         // roundedClass: 'is-rounded',
         // variantClass: 'is-',
         // sizeClass: 'is-',
@@ -79,10 +85,10 @@ export const bulmaConfig: any = {
     },
     radio: {
         override: true,
-        rootClass: 'b-radio radio',
+        rootClass: 'form-check',
         disabledClass: 'is-disabled',
-        checkClass: 'check',
-        labelClass: 'control-label',
+        checkClass: 'form-check-input',
+        labelClass: 'form-check-label',
         variantClass: 'is-',
         sizeClass: 'is-'
     },
@@ -108,13 +114,10 @@ export const bulmaConfig: any = {
         // variantClass: 'is-',
         // passiveVariantClass: (passiveVariant: string) => (`is-${passiveVariant}-passive`)
     },
-    //////////////////////////////////////////////////////////////////////////////////////////
-    //////////////////////////////////////////////////////////////////////////////////////////
-    //////////////////////////////////////////////////////////////////////////////////////////
     autocomplete: {
         override: true,
-        rootClass: 'autocomplete control',
-        menuClass: 'dropdown-menu dropdown-content',
+        rootClass: 'form-control',
+        menuClass: 'dropdown-menu',
         menuPositionClass: 'is-opened-',
         itemClass: 'dropdown-item',
         itemHoverClass: 'is-hovered',
@@ -130,65 +133,65 @@ export const bulmaConfig: any = {
     },
     pagination: {
         override: true,
-        rootClass: (_: string, { props }: any) => {
-            const classes = ['pagination'];
-            if (props.rounded) classes.push('is-rounded')
-            return classes.join(' ')
+        rootClass: 'pagination',
+        sizeClass: (_: string, { props }: any) => {
+            if (props.size == 'small'){
+                return 'pagination-sm';
+            }else if(props.size == 'medium') {
+                return 'pagination-md'
+            }else if (props.size == 'large') {
+                return 'pagination-lg'
+            }
         },
-        sizeClass: 'is-',
         simpleClass: 'is-simple',
         orderClass: 'is-',
-        listClass: 'pagination-list',
-        linkClass: 'pagination-link',
-        linkCurrentClass: 'is-current',
-        linkDisabledClass: 'is-disabled',
-        nextBtnClass: 'pagination-next',
-        prevBtnClass: 'pagination-previous',
-        infoClass: 'info'
+        listClass: 'page-item',
+        linkClass: 'page-link',
+        linkCurrentClass: 'active',
+        linkDisabledClass: 'disabled',
+        // nextBtnClass: 'pagination-next',
+        // prevBtnClass: 'pagination-previous',
+        // infoClass: 'info'
     },
-    slider: {
-        override: true,
-        rootClass: (_: string, { props }: any) => {
-            const classes = ['b-slider'];
-            if (props.variant) classes.push(`is-${props.variant}`)
-            if (props.rounded) classes.push('is-rounded')
-            return classes.join(' ')
-        },
-        disabledClass: 'is-disabled',
-        // variantClass: 'is-',
-        trackClass: 'b-slider-track',
-        fillClass: 'b-slider-fill',
-        thumbWrapperClass: (_: string, { data }: any) => {
-            const classes = ['b-slider-thumb-wrapper'];
-            if (data.dragging) classes.push(`is-dragging`)
-            return classes.join(' ')
-        },
-        sizeClass: 'is-',
-        thumbClass: 'b-slider-thumb',
-        tickLabelClass: 'b-slider-tick-label',
-        tickHiddenClass: 'is-tick-hidden',
-        tickClass: 'b-slider-tick',
-        // thumbRoundedClass: 'is-rounded'
-        // thumbDraggingClass: 'is-dragging'
-    },
+    // slider: {
+    //     override: true,
+    //     rootClass: (_: string, { props }: any) => {
+    //         const classes = ['b-slider'];
+    //         if (props.variant) classes.push(`is-${props.variant}`)
+    //         if (props.rounded) classes.push('is-rounded')
+    //         return classes.join(' ')
+    //     },
+    //     disabledClass: 'is-disabled',
+    //     // variantClass: 'is-',
+    //     trackClass: 'b-slider-track',
+    //     fillClass: 'b-slider-fill',
+    //     thumbWrapperClass: (_: string, { data }: any) => {
+    //         const classes = ['b-slider-thumb-wrapper'];
+    //         if (data.dragging) classes.push(`is-dragging`)
+    //         return classes.join(' ')
+    //     },
+    //     sizeClass: 'is-',
+    //     thumbClass: 'b-slider-thumb',
+    //     tickLabelClass: 'b-slider-tick-label',
+    //     tickHiddenClass: 'is-tick-hidden',
+    //     tickClass: 'b-slider-tick',
+    //     // thumbRoundedClass: 'is-rounded'
+    //     // thumbDraggingClass: 'is-dragging'
+    // },
     tabs: {
         override: true,
         itemTag: 'a',
-        rootClass: 'b-tabs',
-        contentClass: 'tab-content',
+        rootClass: 'nav ',
+        contentClass: 'nav-link',
         multilineClass: 'is-multiline',
-        navTabsClass: (_: string, { props }: any) => {
-            const classes = ['tabs'];
-            if (props.type) classes.push(`is-${props.type}`)
-            return classes.join(' ')
-        },
+        navTabsClass: 'nav-tabs',
         expandedClass: 'is-fullwidth',
         verticalClass: 'is-vertical',
         positionClass: 'is-',
         navSizeClass: 'is-',
         navPositionClass: 'is-',
         transitioningClass: 'is-transitioning',
-        itemClass: 'tab-item',
+        itemClass: 'nav-item',
         itemHeaderActiveClass: () => 'is-active',
         itemHeaderDisabledClass: () => 'is-disabled'
     },
@@ -278,14 +281,27 @@ export const bulmaConfig: any = {
     },
     button: {
         override: true,
-        rootClass: 'button',
-        sizeClass: 'is-',
-        variantClass: 'is-',
-        roundedClass: 'is-rounded',
-        expandedClass: 'is-fullwidth',
-        outlinedClass: () => 'is-outlined',
-        invertedClass: () => 'is-inverted',
-        elementsWrapperClass: 'button-wrapper'
+        rootClass: 'btn',
+        sizeClass: (_: string, { props }: any) => {
+            if (props.size == 'small'){
+                return 'btn-sm';
+            }else if(props.size == 'medium') {
+                return 'btn-md'
+            }else if (props.size == 'large') {
+                return 'btn-lg'
+            }
+        },
+        variantClass: (_: string, { props }: any) => {
+            if (props.outlined) return '';
+            return `btn-${props.variant}`
+        },
+        // roundedClass: 'is-rounded',
+        expandedClass: 'is-fullwidth', // @TODO: add class
+        outlinedClass: (_: string, { props }: any) => {
+            return `btn-outline-${props.variant}`
+        },
+        // invertedClass: () => 'is-inverted',
+        // elementsWrapperClass: 'button-wrapper'
     },
     skeleton: {
         override: true,
@@ -300,14 +316,14 @@ export const bulmaConfig: any = {
     notification: {
         override: true,
         rootClass: (_: string, { props }: any) => {
-            const classes = ['notification'];
-            if (props.variant) classes.push(`is-${props.variant}`)
+            const classes = ['alert', 'd-flex', 'align-items-center'];
+            if (props.variant) classes.push(`alert-${props.variant}`)
             return classes.join(' ')
         },
         wrapperClass: 'media',
         contentClass: 'media-content',
         iconClass: 'media-left',
-        closeClass: 'delete',
+        closeClass: 'btn-close',
         positionClass: 'is-',
         noticeClass: 'b-notices',
         noticePositionClass: 'is-'
@@ -323,7 +339,7 @@ export const bulmaConfig: any = {
             return classes.join(' ')
         },
         triggerClass: 'dropdown-trigger',
-        menuClass: 'dropdown-content dropdown-menu',
+        menuClass: 'dropdown-menu',
         disabledClass: 'is-disabled',
         expandedClass: 'is-expanded',
         inlineClass: 'is-inline',
@@ -380,14 +396,14 @@ export const bulmaConfig: any = {
     modal: {
         override: true,
         rootClass: (_: string, { props }: any) => {
-            const classes = ['modal'];
-            if (props.active) classes.push('is-active')
+            const classes = ['modal','fade'];
+            if (props.active) classes.push('show')
             return classes.join(' ')
         },
-        overlayClass: 'modal-background',
-        contentClass: 'animation-content',
-        closeClass: 'modal-close is-large',
-        fullScreenClass: 'is-full-screen'
+        // overlayClass: 'modal-background',
+        contentClass: 'modal ',
+        closeClass: 'btn-close',
+        // fullScreenClass: 'is-full-screen'
     },
     sidebar: {
         override: true,
