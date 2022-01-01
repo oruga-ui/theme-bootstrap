@@ -43,121 +43,121 @@ $slider-colors: $colors !default;
     }
 }
 
-.b-slider {
-    margin: 1em 0;
-    background: transparent;
-    width: 100%;
+// .b-slider {
+//     margin: 1em 0;
+//     background: transparent;
+//     width: 100%;
 
-    .b-slider-track {
-        display: flex;
-        align-items: center;
-        position: relative;
-        cursor: pointer;
-        background: $slider-track-background;
-        border-radius: $slider-radius;
-    }
-    .b-slider-fill {
-        position: absolute;
-        height: 100%;
-        box-shadow: $slider-track-shadow;
-        background: $slider-fill-background;
-        border-radius: $slider-track-radius;
-        border: $slider-track-border;
-        // Fix alignment in IE 11. Cancel out for others
-        top: 50%;
-        transform: translateY(-50%);
-    }
-    .b-slider-thumb-wrapper {
-        display: inline-flex;
-        align-items: center;
-        position: absolute;
-        cursor: grab;
-        transform: translate(-50%, -50%);
-        top: 50%;
-        flex-direction: column; // Fix shrinked thumb at the end in IE 11
+//     .b-slider-track {
+//         display: flex;
+//         align-items: center;
+//         position: relative;
+//         cursor: pointer;
+//         background: $slider-track-background;
+//         border-radius: $slider-radius;
+//     }
+//     .b-slider-fill {
+//         position: absolute;
+//         height: 100%;
+//         box-shadow: $slider-track-shadow;
+//         background: $slider-fill-background;
+//         border-radius: $slider-track-radius;
+//         border: $slider-track-border;
+//         // Fix alignment in IE 11. Cancel out for others
+//         top: 50%;
+//         transform: translateY(-50%);
+//     }
+//     .b-slider-thumb-wrapper {
+//         display: inline-flex;
+//         align-items: center;
+//         position: absolute;
+//         cursor: grab;
+//         transform: translate(-50%, -50%);
+//         top: 50%;
+//         flex-direction: column; // Fix shrinked thumb at the end in IE 11
 
-        .b-slider-thumb {
-            box-shadow: $slider-thumb-shadow;
-            border: $slider-thumb-border;
-            border-radius: $slider-thumb-radius;
-            background: $slider-thumb-background;
-            &:focus {
-                transform: scale(1.25);
-            }
-        }
+//         .b-slider-thumb {
+//             box-shadow: $slider-thumb-shadow;
+//             border: $slider-thumb-border;
+//             border-radius: $slider-thumb-radius;
+//             background: $slider-thumb-background;
+//             &:focus {
+//                 transform: scale(1.25);
+//             }
+//         }
 
-        &.is-dragging {
-            cursor: grabbing;
-            .b-slider-thumb {
-                transform: scale(1.25);
-            }
-        }
+//         &.is-dragging {
+//             cursor: grabbing;
+//             .b-slider-thumb {
+//                 transform: scale(1.25);
+//             }
+//         }
 
-        &.has-indicator {
-            .b-slider-thumb {
-                padding: 16px 10px;
-                display: flex;
-                align-items: center;
-                width: auto;
-            }
-        }
-    }
+//         &.has-indicator {
+//             .b-slider-thumb {
+//                 padding: 16px 10px;
+//                 display: flex;
+//                 align-items: center;
+//                 width: auto;
+//             }
+//         }
+//     }
 
-    &.slider-focus{
-        padding-top: 20px;
-        padding-bottom: 20px;
-        margin-top: -20px;
-        margin-bottom: -20px;
-        cursor: pointer;
-    }
+//     &.slider-focus{
+//         padding-top: 20px;
+//         padding-bottom: 20px;
+//         margin-top: -20px;
+//         margin-bottom: -20px;
+//         cursor: pointer;
+//     }
 
-    &.is-rounded {
-        .b-slider-thumb {
-            border-radius: $radius-rounded;
-        }
-    }
-    &.is-disabled {
-        .b-slider-track {
-            cursor: not-allowed;
-            opacity: 0.5;
-        }
-        .b-slider-thumb-wrapper {
-            cursor: not-allowed;
-            .b-slider-thumb {
-                transform: scale(1);
-            }
-        }
-    }
+//     &.is-rounded {
+//         .b-slider-thumb {
+//             border-radius: $radius-rounded;
+//         }
+//     }
+//     &.is-disabled {
+//         .b-slider-track {
+//             cursor: not-allowed;
+//             opacity: 0.5;
+//         }
+//         .b-slider-thumb-wrapper {
+//             cursor: not-allowed;
+//             .b-slider-thumb {
+//                 transform: scale(1);
+//             }
+//         }
+//     }
 
-    @include slider-size($size-normal);
-    &.is-small {
-        @include slider-size($size-small);
-    }
-    &.is-medium {
-        @include slider-size($size-medium);
-    }
-    &.is-large {
-        @include slider-size($size-large);
-    }
+//     @include slider-size($size-normal);
+//     &.is-small {
+//         @include slider-size($size-small);
+//     }
+//     &.is-medium {
+//         @include slider-size($size-medium);
+//     }
+//     &.is-large {
+//         @include slider-size($size-large);
+//     }
 
-    @each $name, $pair in $slider-colors {
-        $color: nth($pair, 1);
-        &.is-#{$name} {
-            .b-slider-fill {
-                background: $color !important;
-            }
-        }
-    }
+//     @each $name, $pair in $slider-colors {
+//         $color: nth($pair, 1);
+//         &.is-#{$name} {
+//             .b-slider-fill {
+//                 background: $color !important;
+//             }
+//         }
+//     }
 
-    .b-slider-tick {
-        position: absolute;
-		width: $slider-tick-width;
-        transform: translate(-50%, -50%);
-        top: 50%;
-        background: $slider-tick-background;
-        border-radius: $slider-tick-radius;
-        &.is-tick-hidden {
-            background: transparent;
-        }
-    }
-}
+//     .b-slider-tick {
+//         position: absolute;
+// 		width: $slider-tick-width;
+//         transform: translate(-50%, -50%);
+//         top: 50%;
+//         background: $slider-tick-background;
+//         border-radius: $slider-tick-radius;
+//         &.is-tick-hidden {
+//             background: transparent;
+//         }
+//     }
+// }

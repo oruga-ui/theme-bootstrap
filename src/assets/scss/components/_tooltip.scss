@@ -104,75 +104,75 @@ $tooltip-colors: $colors !default;
 }
 
 // Base
-.b-tooltip {
-    @include tooltip("is-top");
-    @include tooltip("is-right");
-    @include tooltip("is-bottom");
-    @include tooltip("is-left");
-    position: relative;
-    display: inline-flex;
-    .tooltip-content {
-        width: auto;
-        padding: 0.35rem 0.75rem;
-        border-radius: $radius-large;
-        font-size: 0.85rem;
-        font-weight: $weight-normal;
-        box-shadow: 0px 1px 2px 1px rgba(0, 1, 0, 0.2);
-        z-index: 38;
-        white-space: nowrap;
-        position: absolute;
-    }
-    .tooltip-content::before {
-        position: absolute;
-        content: "";
-        pointer-events: none;
-        z-index: 38;
-    }
-    .tooltip-trigger {
-        width: 100%;
-    }
-    // Modifiers
-    @each $name, $pair in $tooltip-colors {
-        $color: nth($pair, 1);
-        $color-invert: nth($pair, 2);
-        &.is-#{$name} {
-            .tooltip-content {
-                background: $color;
-                color: $color-invert;
-            }
-            // If light and dark colors are provided
-            @if length($pair) >= 4 {
-                $color-light: nth($pair, 3);
-                $color-dark: nth($pair, 4);
-                &.is-light {
-                    .tooltip-content {
-                        background: $color-light;
-                        color: $color-dark;
-                    }
-                }
-            }
-        }
-    }
-    & .tooltip-content {
-        &.is-always{
-            opacity: 1;
-            visibility: visible;
-        }
-        &.is-multiline {
-            text-align: center;
-            white-space: normal;
-            width: $tooltip-content-multiline-width;
-        }
-    }
-    &.is-dashed {
-        .tooltip-trigger {
-            border-bottom: 1px dashed $grey-light;
-            cursor: default;
-        }
-    }
-    &.is-square {
-        .tooltip-content {
-            border-radius: 0;
-        }
-    }
-}
+// .b-tooltip {
+//     @include tooltip("is-top");
+//     @include tooltip("is-right");
+//     @include tooltip("is-bottom");
+//     @include tooltip("is-left");
+//     position: relative;
+//     display: inline-flex;
+//     .tooltip-content {
+//         width: auto;
+//         padding: 0.35rem 0.75rem;
+//         border-radius: $radius-large;
+//         font-size: 0.85rem;
+//         font-weight: $weight-normal;
+//         box-shadow: 0px 1px 2px 1px rgba(0, 1, 0, 0.2);
+//         z-index: 38;
+//         white-space: nowrap;
+//         position: absolute;
+//     }
+//     .tooltip-content::before {
+//         position: absolute;
+//         content: "";
+//         pointer-events: none;
+//         z-index: 38;
+//     }
+//     .tooltip-trigger {
+//         width: 100%;
+//     }
+//     // Modifiers
+//     @each $name, $pair in $tooltip-colors {
+//         $color: nth($pair, 1);
+//         $color-invert: nth($pair, 2);
+//         &.is-#{$name} {
+//             .tooltip-content {
+//                 background: $color;
+//                 color: $color-invert;
+//             }
+//             // If light and dark colors are provided
+//             @if length($pair) >= 4 {
+//                 $color-light: nth($pair, 3);
+//                 $color-dark: nth($pair, 4);
+//                 &.is-light {
+//                     .tooltip-content {
+//                         background: $color-light;
+//                         color: $color-dark;
+//                     }
+//                 }
+//             }
+//         }
+//     }
+//     & .tooltip-content {
+//         &.is-always{
+//             opacity: 1;
+//             visibility: visible;
+//         }
+//         &.is-multiline {
+//             text-align: center;
+//             white-space: normal;
+//             width: $tooltip-content-multiline-width;
+//         }
+//     }
+//     &.is-dashed {
+//         .tooltip-trigger {
+//             border-bottom: 1px dashed $grey-light;
+//             cursor: default;
+//         }
+//     }
+//     &.is-square {
+//         .tooltip-content {
+//             border-radius: 0;
+//         }
+//     }
+// }

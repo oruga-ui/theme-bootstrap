@@ -6,14 +6,14 @@ export const bootstrapConfig: any = {
         rootClass: 'input-group',
         labelClass: 'form-label',
         messageClass: 'help',
-        variantClass: 'form-control-',
+        // variantClass: 'form-control-',
         addonsClass: 'input-group-text',
         groupedClass: 'mb-3',
         // groupMultilineClass: 'is-grouped-multiline',
         // horizontalClass: 'is-horizontal',
         // labelHorizontalClass: 'field-label',
         // bodyHorizontalClass: 'field-body',
-        bodyClass: 'form-control'
+        bodyClass: 'input-group'
     },
     input: {
         override: true,
@@ -76,10 +76,10 @@ export const bootstrapConfig: any = {
     },
     checkbox: {
         override: true,
-        rootClass: 'b-checkbox checkbox',
+        rootClass: 'form-check',
         disabledClass: 'is-disabled',
-        checkClass: 'check',
-        labelClass: 'control-label',
+        checkClass: 'form-check-input',
+        labelClass: 'form-check-label',
         variantClass: 'is-',
         sizeClass: 'is-'
     },
@@ -117,8 +117,8 @@ export const bootstrapConfig: any = {
     autocomplete: {
         override: true,
         rootClass: 'form-control',
-        menuClass: 'dropdown-menu',
-        menuPositionClass: 'is-opened-',
+        menuClass: 'dropdown-menu show expanded', // @TODO add class for expanded
+        // menuPositionClass: 'is-opened-',
         itemClass: 'dropdown-item',
         itemHoverClass: 'is-hovered',
         itemEmptyClasses: 'is-disabled',
@@ -133,7 +133,7 @@ export const bootstrapConfig: any = {
     },
     pagination: {
         override: true,
-        rootClass: 'pagination',
+        rootClass: '',
         sizeClass: (_: string, { props }: any) => {
             if (props.size == 'small'){
                 return 'pagination-sm';
@@ -145,12 +145,12 @@ export const bootstrapConfig: any = {
         },
         simpleClass: 'is-simple',
         orderClass: 'is-',
-        listClass: 'page-item',
+        listClass: 'pagination',
         linkClass: 'page-link',
         linkCurrentClass: 'active',
         linkDisabledClass: 'disabled',
-        // nextBtnClass: 'pagination-next',
-        // prevBtnClass: 'pagination-previous',
+        nextBtnClass: 'page-link',
+        prevBtnClass: 'page-link',
         // infoClass: 'info'
     },
     // slider: {
@@ -179,21 +179,21 @@ export const bootstrapConfig: any = {
     //     // thumbDraggingClass: 'is-dragging'
     // },
     tabs: {
-        override: true,
+        override: true, 
         itemTag: 'a',
-        rootClass: 'nav ',
-        contentClass: 'nav-link',
-        multilineClass: 'is-multiline',
-        navTabsClass: 'nav-tabs',
+        rootClass: 'nav-tab-wrapper',
+        contentClass: 'nav-content',
+        // multilineClass: 'is-multiline',
+        navTabsClass: 'nav nav-tabs',
         expandedClass: 'is-fullwidth',
         verticalClass: 'is-vertical',
         positionClass: 'is-',
         navSizeClass: 'is-',
         navPositionClass: 'is-',
         transitioningClass: 'is-transitioning',
-        itemClass: 'nav-item',
-        itemHeaderActiveClass: () => 'is-active',
-        itemHeaderDisabledClass: () => 'is-disabled'
+        itemClass: 'content-text',
+        itemHeaderActiveClass: () => 'active',
+        itemHeaderDisabledClass: () => 'disabled'
     },
     table: {
         override: true,
@@ -303,16 +303,16 @@ export const bootstrapConfig: any = {
         // invertedClass: () => 'is-inverted',
         // elementsWrapperClass: 'button-wrapper'
     },
-    skeleton: {
-        override: true,
-        rootClass: (_: string, { props }: any) => {
-            const classes = ['b-skeleton'];
-            if (props.animated) classes.push('is-animated')
-            return classes.join(' ')
-        },
-        itemClass: 'b-skeleton-item',
-        itemRoundedClass: 'is-rounded'
-    },
+    // skeleton: {
+    //     override: false,
+    //     rootClass: (_: string, { props }: any) => {
+    //         const classes = ['b-skeleton'];
+    //         if (props.animated) classes.push('is-animated')
+    //         return classes.join(' ')
+    //     },
+    //     itemClass: 'b-skeleton-item',
+    //     itemRoundedClass: 'is-rounded'
+    // },
     notification: {
         override: true,
         rootClass: (_: string, { props }: any) => {
@@ -325,7 +325,7 @@ export const bootstrapConfig: any = {
         iconClass: 'media-left',
         closeClass: 'btn-close',
         positionClass: 'is-',
-        noticeClass: 'b-notices',
+        noticeClass: 'alert',
         noticePositionClass: 'is-'
     },
     dropdown: {

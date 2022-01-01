@@ -2,7 +2,14 @@
 
 @import 'bootstrap/scss/bootstrap';
 
+// @import "bulma/sass/utilities/functions";
+// @import "bulma/sass/utilities/initial-variables";
 
+// @import "components/utils/_all";
+
+// @import "bulma/bulma";
+
+// @import 'bulma';
 
 // @import 'bootstrap/scss/_variables';
 // @import 'bootstrap/scss/_utilities';
@@ -12,4 +19,39 @@
 // @import 'bootstrap/scss/mixins';
 // @import 'bootstrap/scss/utilities';
 // @import 'bootstrap/scss/vendor';
+
+.nav-tab-wrapper {
+	margin: 20px;
+	.nav {
+		margin-bottom: 10px;
+		// each nav element
+		div {
+			cursor: pointer;
+			padding: 10px;
+			a {
+				color: black;
+				text-decoration: none;
+			}
+			.active {
+				color: /*$tabs-boxed-link-active-border-color*/ blue;
+				width: 80px;
+				border-bottom: 2px solid /*$tabs-boxed-link-active-border-color*/ blue;
+				// border-radius: 3px;
+				padding-bottom: 11px;
+			}
+			.disabled {
+				color: grey;
+				cursor: default;
+			}
+		}
+		// div:hover {
+		// 	border-bottom: .5px solid black;
+		// 	// border-radius: 3px;
+		// 	padding-bottom: 11px;
+		// }
+	}
+	.nav-content {
+		margin: 10px;
+	}
+} 
 

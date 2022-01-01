@@ -27,7 +27,8 @@
     "serve": "vite preview"
   },
   "dependencies": {
-    "bootstrap": "^5.1.3"
+    "bootstrap": "^5.1.3",
+    "bulma": "^0.9.3"
   },
   "devDependencies": {
     "@fortawesome/fontawesome-free": "5.15.3",
