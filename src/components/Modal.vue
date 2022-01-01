@@ -27,48 +27,19 @@
     </o-modal>
 
     <o-modal v-model:active="isCardModalActive" :width="640" scroll="clip">
-      <form action="">
-            <div class="modal-content">
-                <div class="modal-header" style="width: auto">
-                    <header class="modal-card-head">
-                        <p class="modal-card-title">Login</p>
-                        <o-icon
-                            clickable
-                            native-type="button"
-                            icon="times"
-                            @click="isCardModalActive = false"/>
-                    </header>
-                    <section class="modal-body">
-                        <o-field label="Email">
-                            <o-input
-                                type="email"
-                                :value="email"
-                                placeholder="Your email"
-                                required>
-                            </o-input>
-                        </o-field>
-
-                        <o-field label="Password">
-                            <o-input
-                                type="password"
-                                :value="password"
-                                password-reveal
-                                placeholder="Your password"
-                                required>
-                            </o-input>
-                        </o-field>
-
-                        <o-field>
-                            <o-checkbox>Remember me</o-checkbox>
-                        </o-field>
-                    </section>
-                    <footer class="modal-footer">
-                        <o-button type="button" @click="isCardModalActive = false">Close</o-button>
-                        <o-button variant="primary">Login</o-button>
-                    </footer>
-                </div>
-              </div>
-            </form>
+      <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Modal title</h5>
+        <button type="button" class="btn-close" @click="isCardModalActive = true"></button>
+      </div>
+      <div class="modal-body">
+        <p>Modal body text goes here.</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" @click="isCardModalActive = false" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
     </o-modal>
   </section>
 </template>
