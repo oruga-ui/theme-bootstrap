@@ -20,11 +20,14 @@
 // @import 'bootstrap/scss/utilities';
 // @import 'bootstrap/scss/vendor';
 
+
+// NAVBAR
 .nav-tab-wrapper {
 	margin: 20px;
+	// nav (Pictures - Musics - Books - Videos)
 	.nav {
 		margin-bottom: 10px;
-		// each nav element
+		// each nav element is div (or li => div)
 		div {
 			cursor: pointer;
 			padding: 10px;
@@ -45,66 +48,33 @@
 			}
 		}
 	}
+	// Content of each nav
 	.nav-content {
 		margin: 10px;
 	}
 } 
 
+// MODAL
 .modal {
 	display: block;
 	background-color: rgba(0,0,0,.7);
 }
-.modal-dialog {
-		.full-screen {
-		
+
+// ALERT
+.alert {
+	button {
+		background-color: transparent;
+		border: 0;
+		position: absolute;
+		top: 6px;
+		right: 6px;
 	}
 }
 
-// 
-// .tooltip-content {
-// 	color: white;
-// 	background-color: black;
-// 	border-radius: 4px;
-// 	width: auto;
-// 	position: absolute;
-// 	padding: 2px;
-// }
-
-//   .tooltip {
-//   position: absolute;
-//   z-index: 1080;
-//   display: block;
-//   margin: 0;
-//   font-family: var(--bs-font-sans-serif);
-//   font-style: normal;
-//   font-weight: 400;
-//   line-height: 1.5;
-//   text-align: left;
-//   text-align: start;
-//   text-decoration: none;
-//   text-shadow: none;
-//   text-transform: none;
-//   letter-spacing: normal;
-//   word-break: normal;
-//   word-spacing: normal;
-//   white-space: normal;
-//   line-break: auto;
-//   font-size: 0.875rem;
-//   word-wrap: break-word;
-//   opacity: 0;
-// }
-// .tooltip.show {
-//   opacity: 0.9;
-// }
-// .tooltip-content .tooltip-arrow {
-//   position: absolute;
-//   display: block;
-//   width: 0.8rem;
-//   height: 0.4rem;
-// }
-// .tooltip-content .tooltip-arrow::before {
-//   position: absolute;
-//   content: "";
-//   border-color: transparent;
-//   border-style: solid;
-// }
+// BTN
+.btn {
+	margin: 5px;
+}
+.btn-expanded {
+	width: 100%;
+}

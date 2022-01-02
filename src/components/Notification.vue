@@ -1,6 +1,9 @@
 <template>
   <section>
-    <o-notification closable aria-close-label="Close notification">
+    <o-notification 
+      closable 
+      variant="primary"
+      aria-close-label="Close notification">
       Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce id
       fermentum quam. Proin sagittis, nibh id hendrerit imperdiet, elit sapien
       laoreet elit
@@ -101,6 +104,9 @@ export default {
 }
 </script>
 <style>
+section {
+  margin: 25px;
+}
 .toast-notification {
   margin: 0.5em 0;
   text-align: center;

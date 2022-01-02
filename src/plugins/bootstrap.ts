@@ -297,7 +297,7 @@ export const bootstrapConfig: any = {
             return `btn-${props.variant}`
         },
         // roundedClass: 'is-rounded',
-        expandedClass: 'is-fullwidth', // @TODO: add class
+        expandedClass: 'btn-expanded', // @TODO: add class
         outlinedClass: (_: string, { props }: any) => {
             return `btn-outline-${props.variant}`
         },
@@ -317,14 +317,14 @@ export const bootstrapConfig: any = {
     notification: {
         override: true,
         rootClass: (_: string, { props }: any) => {
-            const classes = ['alert', 'd-flex', 'align-items-center'];
+            const classes = ['alert'];
             if (props.variant) classes.push(`alert-${props.variant}`)
             return classes.join(' ')
         },
-        wrapperClass: 'media',
-        contentClass: 'media-content',
+        // wrapperClass: '',
+        // contentClass: '',
         iconClass: 'media-left',
-        closeClass: 'btn-close',
+        closeClass: '',
         positionClass: 'is-',
         noticeClass: 'alert',
         noticePositionClass: 'is-'
