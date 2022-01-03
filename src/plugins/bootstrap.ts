@@ -186,12 +186,12 @@ export const bootstrapConfig: any = {
         contentClass: 'nav-content',
         // multilineClass: 'is-multiline',
         navTabsClass: 'nav nav-tabs',
-        expandedClass: 'is-fullwidth',
-        verticalClass: 'is-vertical',
-        positionClass: 'is-',
-        navSizeClass: 'is-',
-        navPositionClass: 'is-',
-        transitioningClass: 'is-transitioning',
+        expandedClass: 'is-fullwidth', // @TODO add class
+        verticalClass: 'is-vertical', // @TODO add class
+        positionClass: 'is-', // @TODO add class
+        navSizeClass: 'is-', // @TODO add class
+        navPositionClass: 'is-', // @TODO add class
+        transitioningClass: 'is-transitioning', // @TODO add class
         itemClass: 'content-text',
         itemHeaderActiveClass: () => 'active',
         itemHeaderDisabledClass: () => 'disabled'
@@ -304,16 +304,16 @@ export const bootstrapConfig: any = {
         // invertedClass: () => 'is-inverted',
         // elementsWrapperClass: 'button-wrapper'
     },
-    // skeleton: {
-    //     override: false,
-    //     rootClass: (_: string, { props }: any) => {
-    //         const classes = ['b-skeleton'];
-    //         if (props.animated) classes.push('is-animated')
-    //         return classes.join(' ')
-    //     },
-    //     itemClass: 'b-skeleton-item',
-    //     itemRoundedClass: 'is-rounded'
-    // },
+    skeleton: {
+        override: false,
+        rootClass: (_: string, { props }: any) => {
+            const classes = ['skeleton'];
+            if (props.animated) classes.push('is-animated')
+            return classes.join(' ')
+        },
+        itemClass: 'skeleton-item',
+        itemRoundedClass: 'is-rounded'
+    },
     notification: {
         override: true,
         rootClass: (_: string, { props }: any) => {
