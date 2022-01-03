@@ -317,16 +317,16 @@ export const bootstrapConfig: any = {
     notification: {
         override: true,
         rootClass: (_: string, { props }: any) => {
-            const classes = ['alert'];
+            const classes = ['alert','notification'];
             if (props.variant) classes.push(`alert-${props.variant}`)
             return classes.join(' ')
         },
-        // wrapperClass: '',
+        wrapperClass: 'alert-wrapper',
         // contentClass: '',
         iconClass: 'media-left',
-        closeClass: '',
+        // closeClass: '',
         positionClass: 'is-',
-        noticeClass: 'alert',
+        noticeClass: 'notices',
         noticePositionClass: 'is-'
     },
     dropdown: {
@@ -404,7 +404,7 @@ export const bootstrapConfig: any = {
         // overlayClass: 'modal-background',
         contentClass: 'modal-dialog',
         // closeClass: 'btn-close',
-        fullScreenClass: 'is-full-screen'
+        // fullScreenClass: 'is-full-screen'
     },
     sidebar: {
         override: true,

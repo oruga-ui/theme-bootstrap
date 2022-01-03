@@ -1,11 +1,12 @@
 <template>
     <section>
         <o-tabs v-model="activeTab" multiline>
-            <o-tab-item :value="0" label="Pictures">
-                Lorem ipsum dolor sit amet.
+            <o-tab-item :value="0" label="Pictures" icon="image">
+                What light is light, if Silvia be not seen? <br />
+                What joy is joy.
             </o-tab-item>
 
-            <o-tab-item :value="1" label="Music">
+            <o-tab-item :value="1" label="Music" icon="music">
                 Lorem <br />
                 ipsum <br />
                 dolor <br />
@@ -13,7 +14,7 @@
                 amet.
             </o-tab-item>
 
-            <o-tab-item :value="2" label="Books">
+            <o-tab-item :value="2" label="Articles" icon="pen">
                 What light is light, if Silvia be not seen? <br />
                 What joy is joy, if Silvia be not by— <br />
                 Unless it be to think that she is by <br />
@@ -22,7 +23,34 @@
                 There is no music in the nightingale.
             </o-tab-item>
 
-            <o-tab-item :value="3" label="Videos" icon="video" disabled>
+            <o-tab-item :value="3" label="Researches" icon="search">
+                What light is light, if Silvia be not seen? <br />
+                What joy is joy, if Silvia be not by— <br />
+                Unless it be to think that she is by <br />
+                And feed upon the shadow of perfection? <br />
+                Except I be by Silvia in the night, <br />
+                There is no music in the nightingale.
+            </o-tab-item>
+
+            <o-tab-item :value="4" label="Bootcamps" icon="home">
+                What light is light, if Silvia be not seen? <br />
+                What joy is joy, if Silvia be not by— <br />
+                Unless it be to think that she is by <br />
+                And feed upon the shadow of perfection? <br />
+                Except I be by Silvia in the night, <br />
+                There is no music in the nightingale.
+            </o-tab-item>
+
+              <o-tab-item :value="5" label="Books" icon="book">
+                What light is light, if Silvia be not seen? <br />
+                What joy is joy, if Silvia be not by— <br />
+                Unless it be to think that she is by <br />
+                And feed upon the shadow of perfection? <br />
+                Except I be by Silvia in the night, <br />
+                There is no music in the nightingale.
+            </o-tab-item>
+
+            <o-tab-item :value="6" label="Videos" icon="video" disabled>
                 Nunc nec velit nec libero vestibulum eleifend. Curabitur pulvinar
                 congue luctus. Nullam hendrerit iaculis augue vitae ornare. Maecenas
                 vehicula pulvinar tellus, id sodales felis lobortis eget.
