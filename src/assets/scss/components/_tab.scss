@@ -1,0 +1,32 @@
+// NAVTAB
+.nav-tab-wrapper {
+	margin: 20px;
+	// nav (Pictures - Musics - Books - Videos)
+	.nav {
+		margin-bottom: 10px;
+		// each nav element is div (or li => div)
+		div {
+			cursor: pointer;
+			padding: 10px;
+			a {
+				color: black;
+				text-decoration: none;
+			}
+			.active {
+				color: /*$tabs-boxed-link-active-border-color*/ blue;
+				width: 80px;
+				border-bottom: 2px solid /*$tabs-boxed-link-active-border-color*/ blue;
+				// border-radius: 3px;
+				padding-bottom: 11px;
+			}
+			.disabled {
+				color: grey;
+				cursor: default;
+			}
+		}
+	}
+	// Content of each nav
+	.nav-content {
+		margin: 10px;
+	}
+} 

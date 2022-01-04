@@ -70,7 +70,7 @@ export const bootstrapConfig: any = {
     icon: {
         override: true,
         rootClass: 'icon',
-        variantClass: 'has-text-',
+        variantClass: 'text-',
         sizeClass: 'is-',
         clickableClass: 'is-clickable',
         spinClass: 'is-spin',

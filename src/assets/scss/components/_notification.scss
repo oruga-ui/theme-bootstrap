@@ -4,79 +4,59 @@ $notification-notices-padding: 2em !default;
 $notification-notices-zindex: 1000 !default;
 /* @docs */
 
-// .alert {
-//      &.is-top, &.is-bottom {
-//         align-self: center;
-//     }
-//     &.is-top-right, &.is-bottom-right {
-//         align-self: flex-end;
-//     }
-//     &.is-top-left, &.is-bottom-left {
-//         align-self: flex-start;
-//     }
-//     .btn-close {
-//         position: absolute;
-//         top: 0;
-//         right: 0;
-//     }
-//     &.is-top {
-//         flex-direction: column;
-//     }
-//     &.is-bottom {
-//         flex-direction: column-reverse;
+// ALERT
+.alert {
+	// Close btn
+	button {
+		background-color: transparent;
+		border: 0;
+		position: absolute;
+		top: 6px;
+		right: 6px;
+	}
+}
+.notices {
+    position: fixed;
+    display: flex;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    overflow: hidden;
+    pointer-events: none;
+    padding: $notification-notices-padding;
+    z-index: $notification-notices-zindex;
+	// pointer-events: auto;
+	// position: relative;
+	.notification {
+        pointer-events: auto;
+        max-width: 600px;
+        &.is-top, &.is-bottom {
+            align-self: center;
+        }
+        &.is-top-right, &.is-bottom-right {
+            align-self: flex-end;
+        }
+        &.is-top-left, &.is-bottom-left {
+            align-self: flex-start;
+        }
+    }
 
-//         // Since the columns are reversed, we need to reverse the margin logic from
-//         // :not(:last-child) to :not(:first-child)
-//         .notification {
-//             margin-bottom: 0;
-//             &:not(:first-child) {
-//                 margin-bottom: $notification-margin-bottom;
-//             }
-//         }
-//     }
-// }
+    &.is-top {
+        flex-direction: column;
+    }
+    &.is-bottom {
+        flex-direction: column-reverse;
 
-// // .alert {
-// //     position: fixed;
-// //     display: flex;
-// //     top: 0;
-// //     bottom: 0;
-// //     left: 0;
-// //     right: 0;
-// //     overflow: hidden;
-// //     pointer-events: none;
-// //     padding: $notification-notices-padding;
-// //     z-index: $notification-notices-zindex;
-// //     .alert {
-// //         pointer-events: auto;
-// //         max-width: 600px;
-// //         &.is-top, &.is-bottom {
-// //             align-self: center;
-// //         }
-// //         &.is-top-right, &.is-bottom-right {
-// //             align-self: flex-end;
-// //         }
-// //         &.is-top-left, &.is-bottom-left {
-// //             align-self: flex-start;
-// //         }
-// //     }
+        // Since the columns are reversed, we need to reverse the margin logic from
+        // :not(:last-child) to :not(:first-child)
+        .notification {
+            margin-bottom: 0;
+            &:not(:first-child) {
+                // margin-bottom: $notification-margin-bottom;
+                margin-bottom: 30px;
+            }
+        }
+    }
 
-// //     &.is-top {
-// //         flex-direction: column;
-// //     }
-// //     &.is-bottom {
-// //         flex-direction: column-reverse;
-
-// //         // Since the columns are reversed, we need to reverse the margin logic from
-// //         // :not(:last-child) to :not(:first-child)
-// //         .notification {
-// //             margin-bottom: 0;
-// //             &:not(:first-child) {
-// //                 margin-bottom: $notification-margin-bottom;
-// //             }
-// //         }
-// //     }
-// //     &.has-custom-container {
-// //         position: absolute;
-// //     }
-// // }
+}

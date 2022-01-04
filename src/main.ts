@@ -6,7 +6,7 @@ import router from './router'
 import Oruga from '@oruga-ui/oruga-next'
 import { bootstrapConfig } from './plugins/bootstrap'
 
-import './assets/scss/bootstrap-build.scss'
+// import './assets/scss/bootstrap.scss'
 
 import '@fortawesome/fontawesome-free/scss/fontawesome.scss'
 import '@fortawesome/fontawesome-free/scss/regular.scss'

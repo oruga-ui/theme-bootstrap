@@ -1,32 +1,48 @@
-$loading-background-legacy: #7f7f7f !default;
-$loading-background: rgba(255,255,255,0.5) !default;
-$loading-icon-size: 3em !default;
-$loading-full-page-icon-size: 5em !default;
 
-// .loading {
-//     @include overlay;
-//     align-items: center;
-//     justify-content: center;
-//     display: flex;
-//     overflow: hidden;
-//     z-index: 29;
-//     &.is-full-page {
-//         position: fixed;
-//         z-index: 999;
-//         .icon {
-//             width: $loading-full-page-icon-size;
-//             height: $loading-full-page-icon-size;
-//         }
-//     }
-//     .loading-overlay {
-//         @include overlay;
-//         background:$loading-background-legacy;
-//         background:$loading-background;
-//     }
-//     .icon {
-//         animation: spinAround 1s infinite linear;
-//         position: absolute;
-//         width: $loading-icon-size;
-//         height: $loading-icon-size;
-//     }
-// }
+/* @docs */
+$loading-overlay-legacy: #7f7f7f !default;
+$loading-overlay: rgba(255,255,255,0.5) !default;
+$loading-zindex: 29 !default;
+$loading-fullpage-zindex: 999 !default;
+/* @docs */
+
+/// Assigns a specific variable to an attribute
+///
+/// @param {string} $attribute
+///   The attribute we want to include
+/// @param {string} $name
+///   Variable name
+/// @param {string} $value
+///   Variable value
+@mixin avariable($attribute, $name, $value) {
+    $variable: variable($name, $value);
+    @if $variable != null {
+        #{$attribute}: $variable;
+    }
+}
+
+.o-load {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    top: 0;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    overflow: hidden;
+    @include avariable('z-index', 'loading-zindex', $loading-zindex);
+    &--fullpage {
+        position: fixed;
+        @include avariable('z-index', 'loading-fullpage-zindex', $loading-fullpage-zindex);
+    }
+    &__overlay {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        top: 0;
+        @include avariable('background', 'loading-overlay-legacy', $loading-overlay-legacy);
+        @include avariable('background', 'loading-overlay', $loading-overlay);
+    }
+}
