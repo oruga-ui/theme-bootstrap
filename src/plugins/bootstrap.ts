@@ -428,8 +428,9 @@ export const bootstrapConfig: any = {
         rightClass: 'is-right'
     },
     loading: {
-        fullPageClass: 'is-full-page',
-        overlayClass: 'loading-overlay',
+        override: true, 
+        fullPageClass: 'loading--fullpage',
+        overlayClass: 'loading__overlay',
         iconClass: 'icon',
         rootClass: 'loading'
     },

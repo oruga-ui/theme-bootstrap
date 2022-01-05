@@ -1,3 +1,6 @@
+$tabs-boxed-link-active-border-color: $primary;
+$tabs-color: $dark;
+
 // NAVTAB
 .nav-tab-wrapper {
 	margin: 20px;
@@ -9,13 +12,13 @@
 			cursor: pointer;
 			padding: 10px;
 			a {
-				color: black;
+				color: $tabs-color;
 				text-decoration: none;
 			}
 			.active {
-				color: /*$tabs-boxed-link-active-border-color*/ blue;
+				color: $tabs-boxed-link-active-border-color;
 				width: 80px;
-				border-bottom: 2px solid /*$tabs-boxed-link-active-border-color*/ blue;
+				border-bottom: 2px solid $tabs-boxed-link-active-border-color;
 				// border-radius: 3px;
 				padding-bottom: 11px;
 			}

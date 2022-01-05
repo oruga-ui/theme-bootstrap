@@ -4,13 +4,13 @@ $icon-spin-animation-timing-function: linear;
 
 // ICON
 .is-spin {
-  animation-name: spin;
+  animation-name: spining;
   animation-duration: $icon-spin-animation-duration;
   animation-iteration-count: $icon-spin-animation-iteration-count;
   animation-timing-function: $icon-spin-animation-timing-function; 
 }
 
-@keyframes spin {
+@keyframes spining {
     from {
         transform:rotate(0deg);
     }
