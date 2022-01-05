@@ -134,7 +134,7 @@ export const bootstrapConfig: any = {
     },
     pagination: {
         override: true,
-        rootClass: '',
+        rootClass: 'pagination-wrapper',
         sizeClass: (_: string, { props }: any) => {
             if (props.size == 'small'){
                 return 'pagination-sm';
@@ -305,14 +305,14 @@ export const bootstrapConfig: any = {
         // elementsWrapperClass: 'button-wrapper'
     },
     skeleton: {
-        override: false,
+        override: true,
         rootClass: (_: string, { props }: any) => {
             const classes = ['skeleton'];
             if (props.animated) classes.push('is-animated')
             return classes.join(' ')
         },
-        itemClass: 'skeleton-item',
-        itemRoundedClass: 'is-rounded'
+        itemClass: 'skeleton__item',
+        itemRoundedClass: 'skeleton__item--rounded'
     },
     notification: {
         override: true,
