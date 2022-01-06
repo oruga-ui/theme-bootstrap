@@ -1,8 +1,7 @@
 
 /* @docs */
-// $skeleton-background: linear-gradient(90deg, $grey-lighter 25%, rgba($grey-lighter, 0.5) 50%, $grey-lighter 75%) !default;
-$skeleton-background: rgba(128,128,128,0.2) !default;
-// rgba(128,128,128,0.2)
+$skeleton-background: linear-gradient(90deg, $grey-lighter 25%, rgba($grey-lighter, 0.5) 50%, $grey-lighter 75%) !default;
+// $skeleton-background: rgba(128,128,128,0.2) !default;
 $skeleton-border-radius: $base-border-radius !default;
 $skeleton-duration: 1.5s !default;
 $skeleton-margin: .5rem 0 0 0 !default;
@@ -19,9 +18,11 @@ $skeleton-margin: .5rem 0 0 0 !default;
 
 @mixin steps-size($size, $name: null) {
     @if ($name != null) {
-        @include avariable('line-height', ('skeleton-font-size-' + #{$name}), $size);
+        // @include avariable('line-height', ('skeleton-font-size-' + #{$name}), $size);
+        line-height: $size;
     } @else {
-        @include avariable('line-height', 'skeleton-font-size', $size);
+        // @include avariable('line-height', 'skeleton-font-size', $size);
+        line-height: $size;
     }
 }
 
@@ -32,23 +33,19 @@ $skeleton-margin: .5rem 0 0 0 !default;
     width: 100%;
     &__item {
         width: 100%;
-        // @include avariable('background', 'skeleton-background', $skeleton-background);
-        background-color: $skeleton-background;
+        background-image: $skeleton-background;
         &--rounded {
-            // @include avariable('border-radius', 'skeleton-border-radius', $skeleton-border-radius);
             border-radius: $skeleton-border-radius;
         }
         &--animated {
             background-size: 400% 100%;
             animation-name: skeleton-loading;
             animation-iteration-count: infinite;
-            // @include avariable('animation-duration', 'skeleton-duration', $skeleton-duration);
             animation-duration: $skeleton-duration;
         }
         &::after {
             content: "\00a0";
         }
-        // @include avariable('margin', 'skeleton-margin', $skeleton-margin);
         margin: $skeleton-margin;
 
         @include steps-size($base-font-size);
@@ -63,7 +60,6 @@ $skeleton-margin: .5rem 0 0 0 !default;
     }
     &--right {
         align-items: flex-end;
-        // @include avariable('margin', 'skeleton-margin', $skeleton-margin);
         margin: $skeleton-margin;
     }
 }

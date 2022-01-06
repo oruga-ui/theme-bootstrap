@@ -134,7 +134,7 @@ export const bootstrapConfig: any = {
     },
     pagination: {
         override: true,
-        rootClass: 'pagination-wrapper',
+        rootClass: 'pagination pagination-wrapper',
         sizeClass: (_: string, { props }: any) => {
             if (props.size == 'small'){
                 return 'pagination-sm';
@@ -145,13 +145,21 @@ export const bootstrapConfig: any = {
             }
         },
         simpleClass: 'is-simple',
-        orderClass: 'is-',
-        listClass: 'pagination',
+        orderClass: (_: string, { props }: any) => {
+            if (props.order == ""){
+                return 'justify-content-start';
+            } else if (props.order == "centered") {
+                return 'justify-content-center'
+            }else if (props.order == "right"){
+                return 'justify-content-end'
+            }
+        },
+        listClass: 'pagination pagination-content',
         linkClass: 'page-link',
         linkCurrentClass: 'active',
         linkDisabledClass: 'disabled',
-        nextBtnClass: 'page-link',
-        prevBtnClass: 'page-link',
+        nextBtnClass: 'pagination-next',
+        prevBtnClass: 'pagination-prev',
         // infoClass: 'info'
     },
     slider: {

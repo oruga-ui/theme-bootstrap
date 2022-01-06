@@ -1,3 +1,28 @@
 .pagination-wrapper {
-	display: inline;
+	position: relative;
+	display: flex;
+	flex-direction: row;
+	// .pagination-prev {
+	// 	position: absolute;
+	// 	left: 0;
+	// }
+	// .pagination-next {
+	// 	position: absolute;
+	// 	right: 0;
+	// }
+	.pagination-prev , .pagination-next {
+		height: auto;
+	}
+	.pagination {
+		.page-link {
+			margin: .3rem;
+			&.active {
+				background-color: $primary;
+				color: white;
+			}
+		}
+	}
+	.pagination-content {
+		margin: 0	
+	}
 }
