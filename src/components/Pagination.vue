@@ -50,7 +50,7 @@
       <o-switch v-model="isSimple">Simple</o-switch>
       <o-switch v-model="isRounded">Rounded</o-switch>
     </div>
-
+    <br>
     <o-pagination
       :total="total"
       v-model:current="current"

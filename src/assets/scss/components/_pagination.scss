@@ -1,28 +1,32 @@
+$pagination-items-margin: .3rem;
+$border-top-bottom-left-right-radius: .3rem;
+
 .pagination-wrapper {
 	position: relative;
 	display: flex;
 	flex-direction: row;
-	// .pagination-prev {
-	// 	position: absolute;
-	// 	left: 0;
-	// }
-	// .pagination-next {
-	// 	position: absolute;
-	// 	right: 0;
-	// }
-	.pagination-prev , .pagination-next {
-		height: auto;
+	
+	.pagination-prev {
+		order:1;
+		margin: 0;
+		border-top-left-radius: $border-top-bottom-left-right-radius;
+		border-bottom-left-radius: $border-top-bottom-left-right-radius;
+	}
+	.pagination-next {
+		order:3;
+		margin: 0;
+		border-top-right-radius: $border-top-bottom-left-right-radius; 
+		border-bottom-right-radius: $border-top-bottom-left-right-radius;
 	}
 	.pagination {
+		margin: 0;
+		order:2;
 		.page-link {
-			margin: .3rem;
+			margin: 0;
 			&.active {
 				background-color: $primary;
 				color: white;
 			}
 		}
-	}
-	.pagination-content {
-		margin: 0	
 	}
 }
