@@ -19,8 +19,8 @@ $border-top-bottom-left-right-radius: .3rem;
 		border-bottom-right-radius: $border-top-bottom-left-right-radius;
 	}
 	.pagination {
-		margin: 0;
 		order:2;
+		margin: 0;
 		.page-link {
 			margin: 0;
 			&.active {

@@ -1,24 +1,27 @@
 import "../assets/scss/bootstrap-build.scss"
 // import "../assets/scss/bootstrap.scss"
-
+// (_: string, { props }: any) => {
+//     if (props.horizontal) return 'form-label col-sm-10';
+//     return `form-label`
+// },
 export const bootstrapConfig: any = {
     field: {
         override: true,
-        rootClass: 'input-group',
+        rootClass: 'input-field',
         labelClass: 'form-label',
-        messageClass: 'help',
+        // messageClass: 'help',
         // variantClass: 'form-control-',
-        addonsClass: 'input-group-text',
-        groupedClass: 'mb-3',
+        addonsClass: 'input-group',
+        // groupedClass: 'mb-3',
         // groupMultilineClass: 'is-grouped-multiline',
-        // horizontalClass: 'is-horizontal',
+        horizontalClass: 'row',
         // labelHorizontalClass: 'field-label',
         // bodyHorizontalClass: 'field-body',
-        bodyClass: 'input-group'
+        // bodyClass: 'input-group'
     },
     input: {
         override: true,
-        rootClass: 'input-group mb-3',
+        rootClass: 'input',
         inputClass: 'form-control',
         textareaClass: 'form-control',
         // roundedClass: 'is-rounded',
@@ -37,10 +40,10 @@ export const bootstrapConfig: any = {
         },
         expandedClass: 'is-expanded',
         // iconLeftSpaceClass: 'input-group-text',
-        // iconLeftClass: 'is-left',
-        // iconRightClass: 'is-right',
+        iconLeftClass: 'is-left',
+        iconRightClass: 'is-right',
         // iconRightSpaceClass: 'input-group-text',
-        // counterClass: 'help counter'
+        counterClass: 'help counter'
     },
     select: {
         override: true,

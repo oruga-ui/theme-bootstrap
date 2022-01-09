@@ -188,3 +188,8 @@
     </o-field>
   </section>
 </template>
+<style>
+  section {
+    margin: 25px;
+  }
+</style>

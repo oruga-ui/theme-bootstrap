@@ -7,6 +7,13 @@
       maxlength="10"
       placeholder="Enter Text"
     ></o-input>
+    <o-input
+      icon="user"
+      size="large"
+      :has-counter="true"
+      maxlength="10"
+      placeholder="Enter Text"
+    ></o-input>
   </o-field>
 
   <o-field label="Name" variant="danger" message="Invalid field">
@@ -192,4 +199,8 @@
 export default {};
 </script>
 
-<style></style>
+<style>
+  section {
+    margin: 25px;
+  }
+</style>
