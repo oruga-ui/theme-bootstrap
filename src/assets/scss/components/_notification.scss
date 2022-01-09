@@ -2,6 +2,7 @@
 $notification-margin-bottom: 1.5rem !default;
 $notification-notices-padding: 2em !default;
 $notification-notices-zindex: 1000 !default;
+$notification-close-btn-top-right: 6px !default; 
 /* @docs */
 
 // ALERT
@@ -11,8 +12,8 @@ $notification-notices-zindex: 1000 !default;
 		background-color: transparent;
 		border: 0;
 		position: absolute;
-		top: 6px;
-		right: 6px;
+		top: $notification-close-btn-top-right;
+		right: $notification-close-btn-top-right;
 	}
 }
 .notices {

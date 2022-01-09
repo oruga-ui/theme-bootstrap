@@ -1,3 +1,38 @@
-.form-control {
-	padding: 7px 11px 7px 40px;
+$icon-color: grey;
+$input-padding-for-icon: 7px 11px 7px 32px;
+$icon-left-right: 12px;
+
+
+// .input-field {
+.input-field {
+	margin-bottom: 0.75rem;
+}
+.input, .select {
+	position: relative;
+	// Space for the icon
+	.form-control, .form-select {
+		// if the icon is in left then set that padding
+		padding: $input-padding-for-icon;
+		&.has-icon {
+			padding: $input-padding-for-icon;
+		}
+	}
+	.icon {
+		color: $icon-color;
+		position: absolute;
+		&.is-left {
+			top: 8px;
+			left: $icon-left-right;
+		}
+		&.is-left {
+			top: 8px;
+			right: $icon-left-right;
+		}
+	}
+}
+// }
+.input-group {
+	button {
+		border: .1px solid #ced4da;
+	}
 }

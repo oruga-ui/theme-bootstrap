@@ -12,9 +12,9 @@ export const bootstrapConfig: any = {
         // messageClass: 'help',
         // variantClass: 'form-control-',
         addonsClass: 'input-group',
-        // groupedClass: 'mb-3',
+        groupedClass: 'input-group',
         // groupMultilineClass: 'is-grouped-multiline',
-        horizontalClass: 'row',
+        // horizontalClass: 'row',
         // labelHorizontalClass: 'field-label',
         // bodyHorizontalClass: 'field-body',
         // bodyClass: 'input-group'
@@ -56,6 +56,7 @@ export const bootstrapConfig: any = {
             // if (props.icon) classes.push('has-icons-left')
             // if (props.iconRight) classes.push('has-icons-right')
             // return classes.join(' ').trim()
+            return 'select'
         },
         selectClass: 'form-select',
         // roundedClass: 'is-rounded',
