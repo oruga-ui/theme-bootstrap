@@ -3,14 +3,32 @@ $input-padding-for-icon: 7px 11px 7px 32px;
 $icon-left-right: 12px;
 
 
-// .input-field {
 .input-field {
 	margin-bottom: 0.75rem;
 }
-.input, .select {
+
+.input-group {
+  .input, .select {
+  	.form-control, form-select {
+		&:not(:last-child) {
+			// background-color: red;
+            border-bottom-right-radius: 0!important;
+            border-top-right-radius: 0!important;
+        }
+        &:not(:first-child) {
+        	// background-color: red;
+            border-bottom-left-radius: 0!important;
+            border-top-left-radius: 0!important;
+        }
+  	}
+  }
+}
+
+.input {
 	position: relative;
 	// Space for the icon
-	.form-control, .form-select {
+	.form-control {
+		// not rounded if it grouped with buttons
 		// if the icon is in left then set that padding
 		padding: $input-padding-for-icon;
 		&.has-icon {
@@ -30,7 +48,7 @@ $icon-left-right: 12px;
 		}
 	}
 }
-// }
+
 .input-group {
 	button {
 		border: .1px solid #ced4da;
