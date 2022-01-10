@@ -17,9 +17,40 @@ $icon-left-right-position: 12px;
 		        border-top-left-radius: 0;
 	    	}
 	    }
+	    // &:not(:first-child) {
+	    // 	.form-control {
+		   //      border-radius: 0;
+		   //      border-radius: 0;
+	    // 	}
+	    // }
+	    // &:not(:last-child) {
+	    // 	.form-control {
+		   //      border-radius: 0;
+		   //      border-radius: 0;
+	    // 	}
+	    // }
     }
     // Button
+
     // Dropdown
+    .dropdown {
+	    &:first-child {
+	    	.dropdown-trigger {
+	    		.btn {
+			        border-bottom-right-radius: 0;
+			        border-top-right-radius: 0;
+	    		}
+	    	}
+	    }
+	    &:last-child {
+	    	.dropdown-trigger {
+		    	.btn {
+			        border-bottom-left-radius: 0;
+			        border-top-left-radius: 0;
+		    	}
+		    }
+	    }
+    }    
     // Select    
     .select {
 	    &:first-child {
@@ -70,9 +101,18 @@ $icon-left-right-position: 12px;
             flex-shrink: 1;
 		}
 	}
-	button {
+	.btn {
 		border: .1px solid #ced4da;
 	}
+	// Set height in dropdown btn <it's height is not as same as the input height>
+	// .dropdown {
+	// 	.dropdown-trigger {
+	// 		.btn {
+	// 			// background-color: red;
+	// 	        height: 100%!important;
+	// 		}
+	// 	}
+	// }    
 }
 
 .input-field {
