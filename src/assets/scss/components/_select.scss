@@ -1,28 +1,28 @@
 $icon-color: grey;
-$input-padding-for-icon: 7px 11px 7px 32px;
-$icon-left-right: 12px;
+$input-padding-for-left-icon: 7px 11px 7px 32px;
+$icon-left-right-position: 12px;
 
+// Icon style
 .select {
 	position: relative;
 	// Space for the icon
 	.form-select {
-		// not rounded if it grouped with buttons
 		// if the icon is in left then set that padding
-		padding: $input-padding-for-icon;
-		&.has-icon {
-			padding: $input-padding-for-icon;
+		&.has-icon-in-left {
+			padding: $input-padding-for-left-icon;
 		}
 	}
+	// the Position of the icon
 	.icon {
 		color: $icon-color;
 		position: absolute;
 		&.is-left {
 			top: 8px;
-			left: $icon-left-right;
+			left: $icon-left-right-position;
 		}
-		&.is-left {
+		&.is-right {
 			top: 8px;
-			right: $icon-left-right;
+			right: $icon-left-right-position;
 		}
 	}
 }

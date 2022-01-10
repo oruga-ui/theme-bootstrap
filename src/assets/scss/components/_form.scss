@@ -1,56 +1,80 @@
 $icon-color: grey;
-$input-padding-for-icon: 7px 11px 7px 32px;
-$icon-left-right: 12px;
+$input-padding-for-left-icon: 7px 11px 7px 32px;
+$icon-left-right-position: 12px;
 
-
-.input-field {
-	margin-bottom: 0.75rem;
-}
-
+// border radius for input group
 .input-group {
-  .input, .select {
-  	.form-control, form-select {
-		&:not(:last-child) {
-			// background-color: red;
-            border-bottom-right-radius: 0!important;
-            border-top-right-radius: 0!important;
-        }
-        &:not(:first-child) {
-        	// background-color: red;
-            border-bottom-left-radius: 0!important;
-            border-top-left-radius: 0!important;
-        }
-  	}
-  }
+    .input {
+	    &:first-child {
+	    	.form-control {
+		        border-bottom-right-radius: 0;
+		        border-top-right-radius: 0;
+	    	}
+	    }
+	    &:last-child {
+	    	.form-control {
+		        border-bottom-left-radius: 0;
+		        border-top-left-radius: 0;
+	    	}
+	    }
+    }
+    // Button
+    // Dropdown
+    // Select    
+    .select {
+	    &:first-child {
+	    	.form-select {
+		        border-bottom-right-radius: 0;
+		        border-top-right-radius: 0;
+	    	}
+	    }
+	    &:last-child {
+	    	.form-select {
+		        border-bottom-left-radius: 0;
+		        border-top-left-radius: 0;
+	    	}
+	    }
+    }
 }
 
+// Icon style
 .input {
 	position: relative;
 	// Space for the icon
 	.form-control {
-		// not rounded if it grouped with buttons
 		// if the icon is in left then set that padding
-		padding: $input-padding-for-icon;
-		&.has-icon {
-			padding: $input-padding-for-icon;
+		&.has-icon-in-left {
+			padding: $input-padding-for-left-icon;
 		}
 	}
+	// the Position of the icon
 	.icon {
 		color: $icon-color;
 		position: absolute;
 		&.is-left {
 			top: 8px;
-			left: $icon-left-right;
+			left: $icon-left-right-position;
 		}
-		&.is-left {
+		&.is-right {
 			top: 8px;
-			right: $icon-left-right;
+			right: $icon-left-right-position;
 		}
 	}
 }
 
 .input-group {
+	flex-shrink: 0;
+	.input {
+		&.is-expanded {
+			flex-grow: 1;
+            flex-shrink: 1;
+		}
+	}
 	button {
 		border: .1px solid #ced4da;
 	}
+}
+
+.input-field {
+	margin-bottom: 0.75rem;
 }

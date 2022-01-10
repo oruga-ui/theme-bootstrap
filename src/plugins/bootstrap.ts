@@ -22,8 +22,14 @@ export const bootstrapConfig: any = {
     input: {
         override: true,
         rootClass: 'input',
-        inputClass: 'form-control',
-        textareaClass: 'form-control',
+        inputClass: (_: string, { props }: any) => {
+            if (props.icon) return 'form-control has-icon-in-left';
+            return `form-control`
+        },
+        textareaClass: (_: string, { props }: any) => {
+            if (props.icon) return 'form-control has-icon-in-left';
+            return `form-control`
+        },
         // roundedClass: 'is-rounded',
         sizeClass: (_: string, { props }: any) => {
             if (props.size == 'small'){
@@ -58,7 +64,10 @@ export const bootstrapConfig: any = {
             // return classes.join(' ').trim()
             return 'select'
         },
-        selectClass: 'form-select',
+        selectClass: (_: string, { props }: any) => {
+            if (props.icon) return 'form-select has-icon-in-left';
+            return `form-select`
+        },
         // roundedClass: 'is-rounded',
         // variantClass: 'is-',
         // sizeClass: 'is-',

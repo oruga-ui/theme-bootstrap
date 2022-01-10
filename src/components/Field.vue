@@ -99,6 +99,7 @@
     </o-field>
 
     <o-field>
+      <o-input icon="search" type="search" placeholder="Search..."></o-input>
       <o-dropdown>
         <template v-slot:trigger>
           <o-button>
@@ -111,7 +112,6 @@
         <o-dropdown-item value="pull_requests">Your Pull Requests</o-dropdown-item>
         <o-dropdown-item value="everything">Everything</o-dropdown-item>
       </o-dropdown>
-      <o-input icon="search" type="search" placeholder="Search..."></o-input>
     </o-field>
   </section>
   <hr />
