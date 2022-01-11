@@ -1,120 +1,126 @@
-$icon-color: grey;
+$icon-color: #ced4da;
 $input-padding-for-left-icon: 7px 11px 7px 32px;
 $icon-left-right-position: 12px;
 
 // border radius for input group
 .input-group {
     .input {
-	    &:first-child {
-	    	.form-control {
-		        border-bottom-right-radius: 0;
-		        border-top-right-radius: 0;
-	    	}
-	    }
-	    &:last-child {
-	    	.form-control {
-		        border-bottom-left-radius: 0;
-		        border-top-left-radius: 0;
-	    	}
-	    }
-	    // &:not(:first-child) {
-	    // 	.form-control {
-		   //      border-radius: 0;
-		   //      border-radius: 0;
-	    // 	}
-	    // }
-	    // &:not(:last-child) {
-	    // 	.form-control {
-		   //      border-radius: 0;
-		   //      border-radius: 0;
-	    // 	}
-	    // }
+    	// the first and the last inputs should be rounded
+        &:first-child {
+            .form-control {
+                border-bottom-right-radius: 0;
+                border-top-right-radius: 0;
+            }
+        }
+        &:last-child {
+            .form-control {
+                border-bottom-left-radius: 0;
+                border-top-left-radius: 0;
+            }
+        }
+        // The input in middle shouldn't be rounded
+        // &:not(:first-child) {
+        //     .form-control {
+        //         // background-color: red;
+        //         border-radius: 0;
+        //         border-radius: 0;
+        //     }
+        // }
+        // &:not(:last-child) {
+        //     .form-control {
+        //         // background-color: blue;
+        //         border-radius: 0;
+        //         border-radius: 0;
+        //     }
+        // }
     }
     // Button
 
     // Dropdown
     .dropdown {
-	    &:first-child {
-	    	.dropdown-trigger {
-	    		.btn {
-			        border-bottom-right-radius: 0;
-			        border-top-right-radius: 0;
-	    		}
-	    	}
-	    }
-	    &:last-child {
-	    	.dropdown-trigger {
-		    	.btn {
-			        border-bottom-left-radius: 0;
-			        border-top-left-radius: 0;
-		    	}
-		    }
-	    }
+        &:first-child {
+            .dropdown-trigger {
+                .btn {
+                    border-bottom-right-radius: 0;
+                    border-top-right-radius: 0;
+                }
+            }
+        }
+        &:last-child {
+            .dropdown-trigger {
+                .btn {
+                    border-bottom-left-radius: 0;
+                    border-top-left-radius: 0;
+                }
+            }
+        }
     }    
     // Select    
     .select {
-	    &:first-child {
-	    	.form-select {
-		        border-bottom-right-radius: 0;
-		        border-top-right-radius: 0;
-	    	}
-	    }
-	    &:last-child {
-	    	.form-select {
-		        border-bottom-left-radius: 0;
-		        border-top-left-radius: 0;
-	    	}
-	    }
+        &:first-child {
+            .form-select {
+                border-bottom-right-radius: 0;
+                border-top-right-radius: 0;
+            }
+        }
+        &:last-child {
+            .form-select {
+                border-bottom-left-radius: 0;
+                border-top-left-radius: 0;
+            }
+        }
     }
 }
 
 // Icon style
 .input {
-	position: relative;
-	// Space for the icon
-	.form-control {
-		// if the icon is in left then set that padding
-		&.has-icon-in-left {
-			padding: $input-padding-for-left-icon;
-		}
-	}
-	// the Position of the icon
-	.icon {
-		color: $icon-color;
-		position: absolute;
-		&.is-left {
-			top: 8px;
-			left: $icon-left-right-position;
-		}
-		&.is-right {
-			top: 8px;
-			right: $icon-left-right-position;
-		}
-	}
+    position: relative;
+    // Space for the icon
+    .form-control {
+        // if the icon is in left then set that padding
+        &.has-icon-in-left {
+            padding: $input-padding-for-left-icon;
+        }
+    }
+    // the Position of the icon
+    .icon {
+        color: $icon-color;
+        position: absolute;
+        &.is-left {
+            top: 8px;
+            left: $icon-left-right-position;
+        }
+        &.is-right {
+            top: 8px;
+            right: $icon-left-right-position;
+        }
+    }
 }
 
 .input-group {
-	flex-shrink: 0;
-	.input {
-		&.is-expanded {
-			flex-grow: 1;
+    flex-shrink: 0;
+    .input {
+        &.is-expanded {
+            flex-grow: 1;
             flex-shrink: 1;
-		}
-	}
-	.btn {
-		border: .1px solid #ced4da;
-	}
-	// Set height in dropdown btn <it's height is not as same as the input height>
-	// .dropdown {
-	// 	.dropdown-trigger {
-	// 		.btn {
-	// 			// background-color: red;
-	// 	        height: 100%!important;
-	// 		}
-	// 	}
-	// }    
+        }
+    }
+    // Btn with border if it transparent <outlined>
+    button:not(.btn-primary):not(.btn-info):not(.btn-danger):not(.btn-success):not(.btn-warning):not(.btn-dark):not(.btn-light) {
+        border: .1px solid #ced4da;
+        background-color: #ced4da;
+    }
+    // Set height in dropdown btn <it's height is not as same as the input height>
+    // .dropdown {
+    //     .dropdown-trigger {
+    //         .btn {
+    //             // background-color: red;
+    //             height: 100%!important;
+    //         }
+    //     }
+    // }
 }
 
 .input-field {
-	margin-bottom: 0.75rem;
+    margin-bottom: 0.75rem;
 }
