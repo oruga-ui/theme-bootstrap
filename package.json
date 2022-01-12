@@ -1,7 +1,7 @@
 {
-  "name": "@oruga-ui/theme-bulma",
+  "name": "@oruga-ui/theme-bootstrap",
   "version": "0.1.5",
-  "description": "Bulma theme for Oruga",
+  "description": "bootstrap theme for Oruga",
   "license": "MIT",
   "main": "dist/bulma.js",
   "module": "dist/bulma.js",
@@ -15,10 +15,10 @@
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/oruga-ui/theme-bulma.git"
+    "url": "https://github.com/oruga-ui/theme-bootstrap.git"
   },
   "bugs": {
-    "url": "https://github.com/oruga-ui/theme-bulma/issues"
+    "url": "https://github.com/oruga-ui/theme-bootstrap/issues"
   },
   "scripts": {
     "dev": "vite --force",

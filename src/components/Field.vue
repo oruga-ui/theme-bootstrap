@@ -16,7 +16,7 @@
       <o-input value="123" type="password" maxlength="30"></o-input>
     </o-field>
 
-    <o-field label="Subject">
+    <o-field label="Subject" grouped>
       <o-select placeholder="Select a subject">
         <option value="1">Option 1</option>
         <option value="2">Option 2</option>
@@ -139,18 +139,18 @@
     </o-field>
   </section>
   <hr />
-  <section>
+  <section class="container">
     <o-field horizontal label="Subject" variant="danger" message="Please enter a subject">
-      <o-input name="subject" expanded></o-input>
+      <o-input name="subject" icon="pen" expanded></o-input>
     </o-field>
 
     <o-field horizontal label="From">
-      <o-input name="name" placeholder="Name" expanded></o-input>
-      <o-input name="email" type="email" placeholder="nobody@nowhere.com" expanded></o-input>
+      <o-input name="name" placeholder="Name" icon="user" expanded></o-input>
+      <o-input name="email" type="email" placeholder="nobody@nowhere.com" icon="at" expanded></o-input>
     </o-field>
 
     <o-field horizontal label="Topic">
-      <o-select placeholder="Select a topic">
+      <o-select placeholder="Select a topic" icon="book">
         <option value="1">Oruga</option>
         <option value="2">Vue.js</option>
         <option value="3">UI</option>
@@ -163,7 +163,7 @@
 
     <o-field horizontal
     ><!-- Label left empty for spacing -->
-      <o-button variant="primary">
+      <o-button variant="primary" icon-left="envelope">
         Send message
       </o-button>
 

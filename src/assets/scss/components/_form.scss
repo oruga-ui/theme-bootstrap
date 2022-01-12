@@ -1,4 +1,4 @@
-$icon-color: #ced4da;
+$icon-color: grey;
 $input-padding-for-left-icon: 7px 11px 7px 32px;
 $icon-left-right-position: 12px;
 
@@ -19,20 +19,12 @@ $icon-left-right-position: 12px;
             }
         }
         // The input in middle shouldn't be rounded
-        // &:not(:first-child) {
-        //     .form-control {
-        //         // background-color: red;
-        //         border-radius: 0;
-        //         border-radius: 0;
-        //     }
-        // }
-        // &:not(:last-child) {
-        //     .form-control {
-        //         // background-color: blue;
-        //         border-radius: 0;
-        //         border-radius: 0;
-        //     }
-        // }
+        &:not(:first-child):not(:last-child) {
+            .form-control {
+                border-radius: 0;
+                border-radius: 0;
+            }
+        }
     }
     // Button
 
@@ -54,9 +46,19 @@ $icon-left-right-position: 12px;
                 }
             }
         }
+        // The dropdown in middle shouldn't be rounded
+        &:not(:first-child):not(:last-child) {
+            .dropdown-trigger {
+                .btn {
+                    border-radius: 0;
+                    border-radius: 0;
+                }
+            }
+        }
     }    
     // Select    
     .select {
+       // the first and the last inputs should be rounded
         &:first-child {
             .form-select {
                 border-bottom-right-radius: 0;
@@ -67,6 +69,13 @@ $icon-left-right-position: 12px;
             .form-select {
                 border-bottom-left-radius: 0;
                 border-top-left-radius: 0;
+            }
+        }
+        // The select in middle shouldn't be rounded
+        &:not(:first-child):not(:last-child) {
+            .form-select {
+                border-radius: 0;
+                border-radius: 0;
             }
         }
     }
@@ -123,4 +132,8 @@ $icon-left-right-position: 12px;
 
 .input-field {
     margin-bottom: 0.75rem;
+    // Message
+    .help {
+    	font-size: 12px;
+    }
 }

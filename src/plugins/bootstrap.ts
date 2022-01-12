@@ -9,15 +9,15 @@ export const bootstrapConfig: any = {
         override: true,
         rootClass: 'input-field',
         labelClass: 'form-label',
-        // messageClass: 'help',
-        // variantClass: 'form-control-',
+        messageClass: 'help',
+        variantClass: 'text-',
         addonsClass: 'input-group',
         groupedClass: 'input-group',
         // groupMultilineClass: 'is-grouped-multiline',
-        // horizontalClass: 'row',
-        // labelHorizontalClass: 'field-label',
-        // bodyHorizontalClass: 'field-body',
-        // bodyClass: 'input-group'
+        horizontalClass: 'row',
+        labelHorizontalClass: 'col-sm-2 col-form-label',
+        bodyHorizontalClass: 'col-sm-10',
+        // bodyClass: ''
     },
     input: {
         override: true,
