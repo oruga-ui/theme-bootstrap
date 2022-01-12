@@ -132,8 +132,9 @@ $icon-left-right-position: 12px;
 
 .input-field {
     margin-bottom: 0.75rem;
-    // Message
-    .help {
-    	font-size: 12px;
+    // counter
+    .counter {
+    	position: absolute;
+    	right: 0;
     }
 }

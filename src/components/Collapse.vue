@@ -24,7 +24,7 @@
           </div>
         </div>
       </o-collapse>
-      <o-collapse :open="false" aria-id="contentIdForA11y1">
+     <!--  <o-collapse :open="false" aria-id="contentIdForA11y1">
         <o-button variant="primary" slot="trigger" aria-controls="contentIdForA11y1">Click me!</o-button>
         <div class="notification">
           <h3>
@@ -36,7 +36,7 @@
             Ut vulputate semper dui. Fusce erat odio, sollicitudin vel erat vel, interdum mattis neque.
           </p>
         </div>
-      </o-collapse>
+      </o-collapse> -->
     </section>
 </template>
 
@@ -48,15 +48,15 @@ export default {
             collapses: [
                 {
                     title: "Title 1",
-                    text: "Text 1",
+                    text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. <br />",
                 },
                 {
                     title: "Title 2",
-                    text: "Text 2",
+                    text: "            Nulla accumsan, metus ultrices eleifend gravida, nulla nunc varius lectus, nec rutrum justo nibh eu lectus. <br />",
                 },
                 {
                     title: "Title 3",
-                    text: "Text 3",
+                    text: "            Ut vulputate semper dui. Fusce erat odio, sollicitudin vel erat vel, interdum mattis neque.",
                 },
             ],
         }
