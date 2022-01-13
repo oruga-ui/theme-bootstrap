@@ -47,15 +47,15 @@ export default {
             isOpen: 0,
             collapses: [
                 {
-                    title: "Title 1",
+                    title: "Open to read something intersting written for you!",
                     text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. <br />",
                 },
                 {
-                    title: "Title 2",
+                    title: "What the different between Oruga and Buefy?",
                     text: "            Nulla accumsan, metus ultrices eleifend gravida, nulla nunc varius lectus, nec rutrum justo nibh eu lectus. <br />",
                 },
                 {
-                    title: "Title 3",
+                    title: "Nothing special, ignore it!",
                     text: "            Ut vulputate semper dui. Fusce erat odio, sollicitudin vel erat vel, interdum mattis neque.",
                 },
             ],

@@ -322,6 +322,7 @@ export const bootstrapConfig: any = {
         outlinedClass: (_: string, { props }: any) => {
             return `btn-outline-${props.variant}`
         },
+        disabledClass: 'btn-disabled',
         // invertedClass: () => 'is-inverted',
         // elementsWrapperClass: 'button-wrapper'
     },

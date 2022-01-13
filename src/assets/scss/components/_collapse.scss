@@ -1,0 +1,15 @@
+$padding-collapse : 0.5rem 1rem;
+
+.card {
+	.card-header {
+		.card-header-icon {
+			position: absolute;
+			top: 0.5rem;
+			right: 1rem;
+		}
+	}
+}
+
+.card-content {
+	padding: $padding-collapse;
+}
