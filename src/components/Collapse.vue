@@ -24,19 +24,27 @@
           </div>
         </div>
       </o-collapse>
-     <!--  <o-collapse :open="false" aria-id="contentIdForA11y1">
-        <o-button variant="primary" slot="trigger" aria-controls="contentIdForA11y1">Click me!</o-button>
-        <div class="notification">
-          <h3>
-            Subtitle
-          </h3>
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. <br />
-            Nulla accumsan, metus ultrices eleifend gravida, nulla nunc varius lectus, nec rutrum justo nibh eu lectus. <br />
-            Ut vulputate semper dui. Fusce erat odio, sollicitudin vel erat vel, interdum mattis neque.
-          </p>
-        </div>
-      </o-collapse> -->
+
+      <article  
+        v-for="(collapse, index) of collapses"
+        :key="index">
+        <o-collapse
+          animation="slide"
+          :open="isOpen1 == index"
+          @update:open="isOpen1 = index"
+        >
+          <template v-slot:trigger="props">
+            <div class="" role="button">
+              <o-button variant="success">{{ collapse.title }}</o-button>
+            </div>
+          </template>
+          <div class="card card-body">
+            <div class="content">
+              {{ collapse.text }}
+            </div>
+          </div>
+        </o-collapse>
+      </article>
     </section>
 </template>
 
@@ -44,19 +52,25 @@
 export default {
     data() {
         return {
-            isOpen: 0,
+            isOpen: 1,
+            isOpen1: 1,
             collapses: [
                 {
                     title: "Open to read something intersting written for you!",
-                    text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. <br />",
+                    text: `
+                      Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                      Nulla accumsan, metus ultrices eleifend gravida, 
+                      nulla nunc varius lectus, nec rutrum justo nibh eu lectus.
+                      Ut vulputate semper dui. Fusce erat odio, sollicitudin vel erat vel, interdum mattis neque.
+                    `,
                 },
                 {
                     title: "What the different between Oruga and Buefy?",
-                    text: "            Nulla accumsan, metus ultrices eleifend gravida, nulla nunc varius lectus, nec rutrum justo nibh eu lectus. <br />",
+                    text: "Nulla accumsan, metus ultrices eleifend gravida, nulla nunc varius lectus, nec rutrum justo nibh eu lectus. <br />",
                 },
                 {
                     title: "Nothing special, ignore it!",
-                    text: "            Ut vulputate semper dui. Fusce erat odio, sollicitudin vel erat vel, interdum mattis neque.",
+                    text: "Ut vulputate semper dui. Fusce erat odio, sollicitudin vel erat vel, interdum mattis neque.",
                 },
             ],
         }
@@ -67,5 +81,8 @@ export default {
 <style>
   section {
     margin: 25px;
+  }
+  article {
+    margin: 1rem 0;
   }
 </style>

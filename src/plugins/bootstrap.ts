@@ -467,8 +467,4 @@ export const bootstrapConfig: any = {
         footerClass: 'timepicker-footer',
         sizeClass: 'is-',
     },
-    collapse: {
-        override: true,
-        // rootClass: 'collapse'
-    }
 }
