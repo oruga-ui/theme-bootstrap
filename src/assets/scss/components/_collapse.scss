@@ -1,8 +1,8 @@
-$padding-collapse : 0.5rem 1rem;
+$padding-collapse: 0.5rem 1rem;
 $margin-card: 0.5rem 0;
 
 .card {
-	margin: 1rem 0;
+	margin: $margin-card;
 	.card-header {
 		.card-header-icon {
 			position: absolute;
