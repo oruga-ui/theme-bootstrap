@@ -1,4 +1,15 @@
+$btn-margin-right-bottom: 0.5rem;
+
 // BTN
 .btn-expanded {
 	width: 100%;
+}
+.btn {
+	margin-bottom: $btn-margin-right-bottom;
+	.icon {
+		margin: 0 4px;
+	}
+}
+.btn:not(:last-child):not(.btn-expanded) {
+	margin-right: $btn-margin-right-bottom;
 }

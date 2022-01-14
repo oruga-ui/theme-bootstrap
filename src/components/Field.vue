@@ -163,7 +163,7 @@
 
     <o-field horizontal
     ><!-- Label left empty for spacing -->
-      <o-button variant="primary" icon-left="envelope">
+      <o-button variant="primary" icon-left="envelope" outlined>
         Send message
       </o-button>
 

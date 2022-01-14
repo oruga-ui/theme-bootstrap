@@ -1,9 +1,5 @@
 import "../assets/scss/bootstrap-build.scss"
-// import "../assets/scss/bootstrap.scss"
-// (_: string, { props }: any) => {
-//     if (props.horizontal) return 'form-label col-sm-10';
-//     return `form-label`
-// },
+
 export const bootstrapConfig: any = {
     field: {
         override: true,
@@ -328,12 +324,12 @@ export const bootstrapConfig: any = {
     },
     skeleton: {
         override: true,
-        rootClass: (_: string, { props }: any) => {
-            const classes = ['skeleton'];
-            if (props.animated) classes.push('is-animated')
+        rootClass: 'skeleton',
+        itemClass: (_: string, { props }: any) => {
+            const classes = ['skeleton__item'];
+            if (props.animated) classes.push('skeleton__item--animated')
             return classes.join(' ')
         },
-        itemClass: 'skeleton__item',
         itemRoundedClass: 'skeleton__item--rounded'
     },
     notification: {
