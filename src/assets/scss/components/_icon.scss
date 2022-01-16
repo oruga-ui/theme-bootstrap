@@ -1,6 +1,7 @@
 $icon-spin-animation-duration: 2000ms;
 $icon-spin-animation-iteration-count: infinite;
 $icon-spin-animation-timing-function: linear;
+$icon-margin-right-bottom: .4rem;
 
 // ICON
 .is-spin {
@@ -17,4 +18,11 @@ $icon-spin-animation-timing-function: linear;
     to {
         transform:rotate(360deg);
     }
+}
+
+.icon:not(:last-child) {
+  margin-right: $icon-margin-right-bottom;
+}
+.icon {
+  margin-bottom: $icon-margin-right-bottom;
 }

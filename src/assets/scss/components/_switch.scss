@@ -1,0 +1,51 @@
+.form-switch {
+	position: relative;
+	input {
+		// display: none;
+		opacity: 0;
+	}
+	.switch {
+		position: absolute;
+		cursor: pointer;
+		top: 30%;
+		left: 10%;
+		right: 0;
+		bottom: 0;
+		background-color: #ccc;
+		-webkit-transition: .4s;
+		transition: .4s;
+		//
+		width: 24px;
+		height: 14px;
+	}
+	.switch:before {
+		position: absolute;
+		content: "";
+		left: 2px;
+		bottom: 2px;
+		background-color: white;
+		-webkit-transition: .4s;
+		transition: .4s;
+		//
+		height: 10px;
+		width: 10px;
+	}
+	input[type=checkbox]:checked + .switch {
+		// color
+		background-color: blue;
+	}
+	input[type=checkbox]:checked + .switch:before {
+		// Move
+		-webkit-transform: translateX(26px);
+		-ms-transform: translateX(26px);
+		transform: translateX(26px);
+	} 
+
+	// rounded 
+	.switch {
+		border-radius: 34px;
+	}
+	.switch:before {
+		border-radius: 50%;
+	}
+}

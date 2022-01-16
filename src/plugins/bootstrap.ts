@@ -105,22 +105,22 @@ export const bootstrapConfig: any = {
     switch: {
         override: true,
         rootClass: (_: string, { props }: any) => {
-            const classes = ['switch'];
-            if (props.rounded) classes.push('is-rounded')
-            if (props.leftLabel) classes.push('has-left-label')
+            const classes = ['form-check','form-switch'];
+            if (props.rounded) classes.push('is-rounded');
+            if (props.leftLabel) classes.push('has-left-label');
             return classes.join(' ')
         },
         // roundedClass: 'is-rounded',
         checkClass: (_: string, { props }: any) => {
-            const classes = ['check'];
-            if (props.variant) classes.push(`is-${props.variant}`)
-            if (props.passiveVariant) classes.push(`is-${props.passiveVariant}-passive`)
-            return classes.join(' ')
+            const classes = ['switch'];
+            // if (props.variant) classes.push(`is-${props.variant}`)
+            // if (props.passiveVariant) classes.push(`is-${props.passiveVariant}-passive`)
+            return classes.join(' ');
         },
-        elementsWrapperClass: 'check-wrapper',
-        labelClass: 'control-label',
+        elementsWrapperClass: 'switch-wrapper',
+        labelClass: 'form-check-label',
         // leftLabelClass: 'has-left-label',
-        sizeClass: 'is-',
+        // sizeClass: 'is-',
         // variantClass: 'is-',
         // passiveVariantClass: (passiveVariant: string) => (`is-${passiveVariant}-passive`)
     },
