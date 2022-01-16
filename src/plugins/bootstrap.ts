@@ -120,7 +120,7 @@ export const bootstrapConfig: any = {
         elementsWrapperClass: 'switch-wrapper',
         labelClass: 'form-check-label',
         // leftLabelClass: 'has-left-label',
-        // sizeClass: 'is-',
+        sizeClass: 'is-',
         // variantClass: 'is-',
         // passiveVariantClass: (passiveVariant: string) => (`is-${passiveVariant}-passive`)
     },

@@ -1,13 +1,13 @@
 <template>
      <o-field grouped group-multiline>
-        <o-switch v-model="isBordered">Bordered</o-switch>
-        <o-switch v-model="isStriped">Striped</o-switch>
-        <o-switch v-model="isNarrowed">Narrowed</o-switch>
-        <o-switch v-model="isHoverable">Hoverable</o-switch>
-        <o-switch v-model="isFocusable">Focusable</o-switch>
-        <o-switch v-model="isLoading">Loading state</o-switch>
-        <o-switch v-model="isEmpty">Empty</o-switch>
-        <o-switch v-model="hasMobileCards">Mobile cards <small>(collapsed rows)</small></o-switch>
+        <o-switch :rounded="false" size="large" v-model="isBordered">Bordered</o-switch>
+        <o-switch :rounded="false" v-model="isStriped">Striped</o-switch>
+        <o-switch :rounded="false" v-model="isNarrowed">Narrowed</o-switch>
+        <o-switch :rounded="false" v-model="isHoverable">Hoverable</o-switch>
+        <o-switch :rounded="false" v-model="isFocusable">Focusable</o-switch>
+        <o-switch :rounded="false" v-model="isLoading">Loading state</o-switch>
+        <o-switch :rounded="false" v-model="isEmpty">Empty</o-switch>
+        <o-switch :rounded="false" v-model="hasMobileCards">Mobile cards <small>(collapsed rows)</small></o-switch>
     </o-field>
 
     <o-table

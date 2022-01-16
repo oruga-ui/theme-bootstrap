@@ -1,3 +1,7 @@
+$switch-background: #ced4da; 
+$switch-variant: $primary;
+$switch-transition: all .2s ease-out;
+
 .form-switch {
 	position: relative;
 	input {
@@ -11,9 +15,9 @@
 		left: 10%;
 		right: 0;
 		bottom: 0;
-		background-color: #ccc;
-		-webkit-transition: .4s;
-		transition: .4s;
+		background-color: $switch-background;
+		-webkit-transition: $switch-transition;
+		transition: $switch-transition;
 		//
 		width: 24px;
 		height: 14px;
@@ -24,28 +28,54 @@
 		left: 2px;
 		bottom: 2px;
 		background-color: white;
-		-webkit-transition: .4s;
-		transition: .4s;
+		-webkit-transition: $switch-transition;
+		transition: $switch-transition;
 		//
 		height: 10px;
 		width: 10px;
 	}
-	input[type=checkbox]:checked + .switch {
+	input[type=checkbox]:checked + .switch-wrapper .switch {
 		// color
-		background-color: blue;
+		background-color: $switch-variant;
 	}
-	input[type=checkbox]:checked + .switch:before {
+	input[type=checkbox]:checked + .switch-wrapper .switch:before {
 		// Move
-		-webkit-transform: translateX(26px);
-		-ms-transform: translateX(26px);
-		transform: translateX(26px);
+		-webkit-transform: translateX(10px);
+		-ms-transform: translateX(10px);
+		transform: translateX(10px);
 	} 
 
 	// rounded 
-	.switch {
-		border-radius: 34px;
+	&.is-rounded {
+		.switch {
+			border-radius: 34px;
+		}
+		.switch:before {
+			border-radius: 50%;
+		}
 	}
-	.switch:before {
-		border-radius: 50%;
+	// Size
+	&.is-small {
+
 	}
+	&.is-medium {
+		
+	}
+	&.is-large {
+		
+	}
+	// Variant
+	&.is-primary {
+
+	}
+	&.is-success {
+
+	}
+	&.is-danger {
+
+	}
+	&.is-warning {
+		
+	}
+	// Passive Variant
 }
