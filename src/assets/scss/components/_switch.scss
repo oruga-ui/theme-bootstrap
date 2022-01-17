@@ -1,48 +1,128 @@
 $switch-background: #ced4da; 
-$switch-variant: $primary;
 $switch-transition: all .2s ease-out;
+// is-small
+$switch-width-small: 24px;
+$switch-height-small: 14px;
+$switch-before-width-small: 10px;
+$switch-before-height-small: 10px;
+$switch-top-small: 30%;
+$switch-left-small: 10%;
+// is-medium
+$switch-width-medium: 28px;
+$switch-height-medium: 18px;
+$switch-before-width-medium: 14px;
+$switch-before-height-medium: 14px;
+$switch-top-medium: 15%;
+$switch-left-medium: 10%;
+// is large
+$switch-width-large: 38px;
+$switch-height-large: 22px;
+$switch-before-width-large: 18px;
+$switch-before-height-large:18px;
+$switch-top-large: 2%;
+$switch-left-large: 6%;
+// The move of the switch (before)
+$switch-small-translateX: 9px;
+$switch-medium-translateX: 10px;
+$switch-large-translateX: 15px;
+
+@mixin is-small {
+	.switch {
+		width: $switch-width-small;
+	    height: $switch-height-small;
+	    top: $switch-top-small;
+		left: $switch-left-small;
+	}
+	.switch:before {
+	    width: $switch-before-width-small;
+		height: $switch-before-height-small;
+	}
+	input[type=checkbox]:checked + .switch-wrapper .switch:before {
+		// Move
+		-webkit-transform: translateX($switch-small-translateX);
+		-ms-transform: translateX($switch-small-translateX);
+		transform: translateX($switch-small-translateX);
+	} 
+}
+@mixin is-medium {
+	.switch {
+		width: $switch-width-medium;
+	    height: $switch-height-medium;
+	    top: $switch-top-medium;
+		left: $switch-left-medium;
+	}
+	.switch:before {
+	    width: $switch-before-width-medium;
+		height: $switch-before-height-medium;
+	}
+	input[type=checkbox]:checked + .switch-wrapper .switch:before {
+		// Move
+		-webkit-transform: translateX($switch-medium-translateX);
+		-ms-transform: translateX($switch-medium-translateX);
+		transform: translateX($switch-medium-translateX);
+	} 
+}
+@mixin is-large {
+	.switch {
+		width: $switch-width-large;
+	    height: $switch-height-large;
+	    top: $switch-top-large;
+		left: $switch-left-large;
+	}
+	.switch:before {
+	    width: $switch-before-width-large;
+		height: $switch-before-height-large;
+	}
+	input[type=checkbox]:checked + .switch-wrapper .switch:before {
+		// Move
+		-webkit-transform: translateX($switch-large-translateX);
+		-ms-transform: translateX($switch-large-translateX);
+		transform: translateX($switch-large-translateX);
+	} 
+}
 
 .form-switch {
 	position: relative;
 	input {
-		// display: none;
 		opacity: 0;
 	}
 	.switch {
 		position: absolute;
 		cursor: pointer;
-		top: 30%;
-		left: 10%;
 		right: 0;
 		bottom: 0;
 		background-color: $switch-background;
 		-webkit-transition: $switch-transition;
 		transition: $switch-transition;
-		//
-		width: 24px;
-		height: 14px;
+		// Default size is-small
+		width: $switch-width-small;
+	    height: $switch-height-small;
+	    top: $switch-top-small;
+		left: $switch-left-small;
 	}
 	.switch:before {
 		position: absolute;
+	    left: 2px;
+	    bottom: 2px;
 		content: "";
-		left: 2px;
-		bottom: 2px;
 		background-color: white;
 		-webkit-transition: $switch-transition;
 		transition: $switch-transition;
-		//
-		height: 10px;
-		width: 10px;
+		// Default size is-small
+		width: $switch-before-width-small;
+		height: $switch-before-height-small;
 	}
+
 	input[type=checkbox]:checked + .switch-wrapper .switch {
-		// color
-		background-color: $switch-variant;
+		// Default variant is-primary
+		background-color: $primary;
 	}
+
 	input[type=checkbox]:checked + .switch-wrapper .switch:before {
-		// Move
-		-webkit-transform: translateX(10px);
-		-ms-transform: translateX(10px);
-		transform: translateX(10px);
+		// Default Move is-small
+		-webkit-transform: translateX($switch-small-translateX);
+		-ms-transform: translateX($switch-small-translateX);
+		transform: translateX($switch-small-translateX);
 	} 
 
 	// rounded 
@@ -54,28 +134,49 @@ $switch-transition: all .2s ease-out;
 			border-radius: 50%;
 		}
 	}
+
 	// Size
 	&.is-small {
-
+		@include is-small;
 	}
 	&.is-medium {
-		
+		@include is-medium;
 	}
 	&.is-large {
-		
+		@include is-large;
 	}
+
 	// Variant
-	&.is-primary {
+	input[type=checkbox]:checked + .switch-wrapper .switch {
+		&.is-primary {
+			// color
+			background-color: $primary;
+		}
+	}
+	input[type=checkbox]:checked + .switch-wrapper .switch {
+		&.is-success {
+			// color
+			background-color: $success;
+		}
+	}
+	input[type=checkbox]:checked + .switch-wrapper .switch {
+		&.is-danger {
+			// color
+			background-color: $danger;
+		}
+	}
+	input[type=checkbox]:checked + .switch-wrapper .switch {
+		&.is-primary {
+			// color
+			background-color: $warning;
+		}
+	}
 
-	}
-	&.is-success {
-
-	}
-	&.is-danger {
-
-	}
-	&.is-warning {
-		
-	}
 	// Passive Variant
+	//
+	.switch-wrapper {
+		.form-check-label {
+			
+		}
+	}
 }

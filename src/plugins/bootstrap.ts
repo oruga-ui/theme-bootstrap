@@ -113,7 +113,7 @@ export const bootstrapConfig: any = {
         // roundedClass: 'is-rounded',
         checkClass: (_: string, { props }: any) => {
             const classes = ['switch'];
-            // if (props.variant) classes.push(`is-${props.variant}`)
+            if (props.variant) classes.push(`is-${props.variant}`)
             // if (props.passiveVariant) classes.push(`is-${props.passiveVariant}-passive`)
             return classes.join(' ');
         },
