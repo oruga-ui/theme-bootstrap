@@ -114,7 +114,7 @@ export const bootstrapConfig: any = {
         checkClass: (_: string, { props }: any) => {
             const classes = ['switch'];
             if (props.variant) classes.push(`is-${props.variant}`)
-            // if (props.passiveVariant) classes.push(`is-${props.passiveVariant}-passive`)
+            if (props.passiveVariant) classes.push(`is-${props.passiveVariant}-passive`)
             return classes.join(' ');
         },
         elementsWrapperClass: 'switch-wrapper',
@@ -215,26 +215,26 @@ export const bootstrapConfig: any = {
     },
     table: {
         override: true,
-        wrapperClass: 'b-table table-wrapper',
+        wrapperClass: 'table-wrapper',
         tableClass: 'table',
-        borderedClass: 'is-bordered',
-        stripedClass: 'is-striped',
-        narrowedClass: 'is-narrow',
-        hoverableClass: 'is-hoverable',
-        emptyClass: 'is-empty',
-        detailedClass: 'detail',
-        footerClass: 'table-footer',
-        paginationWrapperClass: '',
-        scrollableClass: 'is-scrollable',
-        trSelectedClass: 'is-selected',
-        thSortableClass: 'is-sortable',
-        thCurrentSortClass: 'is-current-sort',
-        thSortIconClass: 'th-wrap sort-icon',
-        thUnselectableClass: 'is-unselectable',
-        thStickyClass: 'is-sticky',
-        thCheckboxClass: 'th-checkbox',
-        thDetailedClass: 'th-chevron-cell',
-        tdDetailedChevronClass: 'chevron-cell',
+        borderedClass: 'table-bordered',
+        stripedClass: 'table-striped',
+        // narrowedClass: 'is-narrow',
+        hoverableClass: 'table-hover',
+        // emptyClass: 'is-empty',
+        // detailedClass: 'detail',
+        // footerClass: 'table-footer',
+        // paginationWrapperClass: '',
+        // scrollableClass: 'is-scrollable',
+        trSelectedClass: 'table-active',
+        // thSortableClass: 'is-sortable',
+        // thCurrentSortClass: 'is-current-sort',
+        // thSortIconClass: 'th-wrap sort-icon',
+        // thUnselectableClass: 'is-unselectable',
+        // thStickyClass: 'is-sticky',
+        // thCheckboxClass: 'th-checkbox',
+        // thDetailedClass: 'th-chevron-cell',
+        // tdDetailedChevronClass: 'chevron-cell',
         thPositionClass: (position: string) => {
             if (position === 'centered') return 'is-centered'
             else if (position === 'right') return 'is-right'

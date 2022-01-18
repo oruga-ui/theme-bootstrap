@@ -149,30 +149,41 @@ $switch-large-translateX: 15px;
 	// Variant
 	input[type=checkbox]:checked + .switch-wrapper .switch {
 		&.is-primary {
-			// color
 			background-color: $primary;
 		}
 	}
 	input[type=checkbox]:checked + .switch-wrapper .switch {
 		&.is-success {
-			// color
 			background-color: $success;
 		}
 	}
 	input[type=checkbox]:checked + .switch-wrapper .switch {
 		&.is-danger {
-			// color
 			background-color: $danger;
 		}
 	}
 	input[type=checkbox]:checked + .switch-wrapper .switch {
 		&.is-primary {
-			// color
 			background-color: $warning;
 		}
 	}
 
 	// Passive Variant
+	.switch-wrapper .switch {
+		&.is-primary-passive {
+			background-color: $primary;
+		}
+		&.is-success-passive {
+			background-color: $success;
+		}
+		&.is-danger-passive {
+			background-color: $danger;
+		}
+		&.is-primary-passive {
+			background-color: $warning;
+		}
+	}
+	
 	//
 	.switch-wrapper {
 		.form-check-label {

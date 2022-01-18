@@ -1,6 +1,6 @@
 <template>
      <o-field grouped group-multiline>
-        <o-switch :rounded="true" v-model="isBordered">Bordered</o-switch>
+        <o-switch variant="success" :rounded="true" v-model="isBordered">Bordered</o-switch>
         <o-switch :rounded="true" v-model="isStriped">Striped</o-switch>
         <o-switch :rounded="true" v-model="isNarrowed">Narrowed</o-switch>
         <o-switch :rounded="true" v-model="isHoverable">Hoverable</o-switch>
