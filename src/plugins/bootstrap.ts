@@ -215,26 +215,32 @@ export const bootstrapConfig: any = {
     },
     table: {
         override: true,
+        //
         wrapperClass: 'table-wrapper',
         tableClass: 'table',
         borderedClass: 'table-bordered',
         stripedClass: 'table-striped',
         // narrowedClass: 'is-narrow',
         hoverableClass: 'table-hover',
-        // emptyClass: 'is-empty',
-        // detailedClass: 'detail',
-        // footerClass: 'table-footer',
-        // paginationWrapperClass: '',
+        ////
+        emptyClass: 'is-empty',
+        detailedClass: 'detail',
+        footerClass: 'table-footer',
+        paginationWrapperClass: '',
         // scrollableClass: 'is-scrollable',
+        //
         trSelectedClass: 'table-active',
+        ////
         // thSortableClass: 'is-sortable',
-        // thCurrentSortClass: 'is-current-sort',
-        // thSortIconClass: 'th-wrap sort-icon',
-        // thUnselectableClass: 'is-unselectable',
-        // thStickyClass: 'is-sticky',
-        // thCheckboxClass: 'th-checkbox',
-        // thDetailedClass: 'th-chevron-cell',
-        // tdDetailedChevronClass: 'chevron-cell',
+        //
+        thCurrentSortClass: 'is-current-sort',
+        ////
+        thSortIconClass: 'th-wrap sort-icon',
+        thUnselectableClass: 'is-unselectable',
+        thStickyClass: 'is-sticky',
+        thCheckboxClass: 'th-checkbox',
+        thDetailedClass: 'th-chevron-cell',
+        tdDetailedChevronClass: 'chevron-cell',
         thPositionClass: (position: string) => {
             if (position === 'centered') return 'is-centered'
             else if (position === 'right') return 'is-right'

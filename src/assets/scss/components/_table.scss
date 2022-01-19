@@ -1,0 +1,11 @@
+.table-wrapper {
+    .table {
+        &.table-hover:focus {
+            border-color: $info;
+            box-shadow: 0 0 0 0.125em rgba($info, 0.25);
+        }
+        .is-current-sort {
+        	background-color: $light;
+        }
+    }
+}
