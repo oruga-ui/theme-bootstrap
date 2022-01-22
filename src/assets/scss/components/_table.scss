@@ -1,11 +1,53 @@
+$detail-padding: 8px 12px;
+
 .table-wrapper {
     .table {
         &.table-hover:focus {
+        	border: solid 1px;
             border-color: $info;
             box-shadow: 0 0 0 0.125em rgba($info, 0.25);
         }
         .is-current-sort {
-        	background-color: $light;
+            background-color: $light;
+        }
+
+        // .icon {
+        //     transition: transform $speed-slow $easing, opacity 86ms $easing;
+        //     &.is-desc {
+        //         transform: rotate(180deg);
+        //     }
+        //     &.is-expanded {
+        //         transform: rotate(90deg);
+        //     }
+        // }
+        // .icon.fas-arrow-up.is-desc {
+        // 	transition: transform $speed-slow $easing, opacity 86ms $easing;
+        // 	transform: rotate(180deg);
+        // }
+        // .sort-icon.icon.is-desc {
+        //     // background-color: red;
+        //     transform: rotate(180deg)/* translateY(-50%)*/ !important;
+        // }
+        // new strucutre
+        thead {
+
+        }
+        tfoot {
+
+        }
+        th {
+
+        }
+        tr {
+            &.detail {
+                background-color: $light;
+                td {
+                    padding: $detail-padding;
+                }
+            }
+        }
+        td {
+
         }
     }
 }

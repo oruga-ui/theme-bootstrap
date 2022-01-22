@@ -180,7 +180,7 @@ export const bootstrapConfig: any = {
             return classes.join(' ')
         },
         disabledClass: 'is-disabled',
-        // variantClass: 'is-',
+        variantClass: 'is-',
         trackClass: 'b-slider-track',
         fillClass: 'b-slider-fill',
         thumbWrapperClass: (_: string, { data }: any) => {
@@ -235,7 +235,7 @@ export const bootstrapConfig: any = {
         //
         thCurrentSortClass: 'is-current-sort',
         ////
-        thSortIconClass: 'th-wrap sort-icon',
+        thSortIconClass: 'sort-icon',
         thUnselectableClass: 'is-unselectable',
         thStickyClass: 'is-sticky',
         thCheckboxClass: 'th-checkbox',

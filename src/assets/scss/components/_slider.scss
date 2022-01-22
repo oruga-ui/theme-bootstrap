@@ -1,0 +1,62 @@
+
+$slider-track-background: $primary;
+$slider-hight: 6px;
+$slider-radius: 10px;
+
+.b-slider {
+    margin: 1em 0;
+    position: relative;
+    width: 100%;
+    height: $slider-hight;
+    background-color: $grey-lighter;
+    // border-radius: 10px;
+    // cursor: pointer;
+
+    .b-slider-track {
+        display: flex;
+        align-items: center;
+        // position: relative;
+        cursor: pointer;
+        border-radius: $slider-radius;
+
+        .b-slider-fill {
+            position: absolute;
+            left: 0%;
+            background-color: $primary;
+            height: 100%;
+            border-radius: 10px;
+            // Fix alignment in IE 11. Cancel out for others
+            top: 50%;
+            transform: translateY(-50%);
+        }
+        .b-slider-thumb-wrapper {
+            display: inline-flex;
+            align-items: center;
+            position: absolute;
+            cursor: grab;
+            transform: translate(-50%, -50%);
+            top: 50%;
+            flex-direction: column; // Fix shrinked thumb at the end in IE 11
+
+            .b-slider-thumb {
+                background-color: $primary;
+                height: calc(#{$slider-hight} * 2);
+                width: calc(#{$slider-hight} * 2);
+                border-radius: 50%;
+                &:focus {
+                    transform: scale(1.25);
+                }
+            }
+
+            &.is-dragging {
+                cursor: grabbing;
+                .b-slider-thumb {
+                    transform: scale(1.25);
+                }
+            }
+            // Tooltip
+        }
+    }
+    // Variant
+    // Size
+}
