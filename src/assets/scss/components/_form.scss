@@ -1,6 +1,7 @@
 $icon-color: grey;
 $input-padding-for-left-icon: 7px 11px 7px 32px;
 $icon-left-right-position: 12px;
+$btn-border-color: #ced4da;
 
 // border radius for input group
 .input-group {
@@ -116,8 +117,8 @@ $icon-left-right-position: 12px;
     }
     // Btn with border if it transparent <outlined>
     button:not(.btn-primary):not(.btn-info):not(.btn-danger):not(.btn-success):not(.btn-warning):not(.btn-dark):not(.btn-light) {
-        border: .1px solid #ced4da;
-        background-color: #ced4da;
+        border: .1px solid $btn-border-color;
+        background-color: $btn-border-color;
     }
     // Set height in dropdown btn <it's height is not as same as the input height>
     // .dropdown {

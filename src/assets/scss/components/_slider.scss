@@ -1,7 +1,24 @@
 
-$slider-track-background: $primary;
+$slider-track-background: transparent;
+$slider-fill-background: $success;
+$slider-thumb-background: $success;
 $slider-hight: 6px;
 $slider-radius: 10px;
+
+@mixin variant {
+    &.is-primary {
+        background-color: $primary;
+    }
+    &.is-success {
+        background-color: $success;
+    }
+    &.is-danger {
+        background-color: $danger;
+    }
+    &.is-warning {
+        background-color: $warning;
+    }
+}
 
 .b-slider {
     margin: 1em 0;
@@ -10,14 +27,16 @@ $slider-radius: 10px;
     height: $slider-hight;
     background-color: $grey-lighter;
     // border-radius: 10px;
-    // cursor: pointer;
+    cursor: pointer;
 
     .b-slider-track {
         display: flex;
         align-items: center;
         // position: relative;
         cursor: pointer;
+        background-color: $slider-track-background;
         border-radius: $slider-radius;
+
 
         .b-slider-fill {
             position: absolute;
@@ -28,6 +47,8 @@ $slider-radius: 10px;
             // Fix alignment in IE 11. Cancel out for others
             top: 50%;
             transform: translateY(-50%);
+            
+            @include variant;
         }
         .b-slider-thumb-wrapper {
             display: inline-flex;
@@ -40,22 +61,29 @@ $slider-radius: 10px;
 
             .b-slider-thumb {
                 background-color: $primary;
-                height: calc(#{$slider-hight} * 2);
-                width: calc(#{$slider-hight} * 2);
+                height: calc(#{$slider-hight} * 3);
+                width: calc(#{$slider-hight} * 3);
                 border-radius: 50%;
+                @include variant;
                 &:focus {
-                    transform: scale(1.25);
+                    transform: scale(1.50);
                 }
             }
 
             &.is-dragging {
                 cursor: grabbing;
                 .b-slider-thumb {
-                    transform: scale(1.25);
+                    transform: scale(1.50);
                 }
             }
             // Tooltip
+            .b-tooltip {
+            }
         }
+    }
+    &.is-disabled {
+        cursor: not-allowed;
+        opacity: .5;
     }
     // Variant
     // Size
