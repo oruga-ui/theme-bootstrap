@@ -126,12 +126,12 @@ export const bootstrapConfig: any = {
     },
     autocomplete: {
         override: true,
-        rootClass: 'form-control',
-        menuClass: 'dropdown-menu show expanded', // @TODO add class for expanded
+        rootClass: 'autocomplete-wrapper',
+        menuClass: 'dropdown-menu show is-expanded', // @TODO add class for expanded
         // menuPositionClass: 'is-opened-',
         itemClass: 'dropdown-item',
-        itemHoverClass: 'is-hovered',
-        itemEmptyClasses: 'is-disabled',
+        itemHoverClass: 'active',
+        itemEmptyClasses: 'disabled',
         itemGroupTitleClass: 'has-text-weight-bold'
     },
     inputitems: {
@@ -319,14 +319,14 @@ export const bootstrapConfig: any = {
             if (props.outlined) return '';
             return `btn-${props.variant}`
         },
-        // roundedClass: 'is-rounded',
-        expandedClass: 'btn-expanded', // @TODO: add class
+        roundedClass: 'is-rounded',
+        expandedClass: 'is-expanded',
         outlinedClass: (_: string, { props }: any) => {
             return `btn-outline-${props.variant}`
         },
         disabledClass: 'btn-disabled',
         // invertedClass: () => 'is-inverted',
-        // elementsWrapperClass: 'button-wrapper'
+        elementsWrapperClass: 'button-wrapper'
     },
     skeleton: {
         override: true,

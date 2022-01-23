@@ -1,0 +1,8 @@
+.autocomplete-wrapper {
+	.dropdown-menu {
+		// overflow: auto;
+		&.is-expanded {
+			width: 50%;
+		}
+	}
+}

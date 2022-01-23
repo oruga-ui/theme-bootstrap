@@ -1,18 +1,20 @@
 <template>
-   <p class="content"><b>Selected:</b> {{ selected }}</p>
-    <o-field label="Find a JS framework">
-      <o-autocomplete
-        rounded
-        v-model="name"
-        :data="filteredDataArray"
-        placeholder="e.g. jQuery"
-        icon="search"
-        clearable
-        @select="select"
-      >
-        <template #empty>No results found</template>
-      </o-autocomplete>
-    </o-field>
+    <section>
+       <p class="content"><b>Selected:</b> {{ selected }}</p>
+        <o-field label="Find a JS framework">
+          <o-autocomplete
+            rounded
+            v-model="name"
+            :data="filteredDataArray"
+            placeholder="e.g. jQuery"
+            icon="search"
+            clearable
+            @select="select"
+          >
+            <template #empty>No results found</template>
+          </o-autocomplete>
+        </o-field>
+    </section>
 </template>
 
 <script lang="ts">
@@ -55,5 +57,7 @@ export default defineComponent({
 </script>
 
 <style>
-
+    section {
+        margin: 25px;
+    }
 </style>

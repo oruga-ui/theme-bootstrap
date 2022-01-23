@@ -1,22 +1,25 @@
 $btn-margin-right-bottom: 0.5rem;
 $btn-border-color: #ced4da;
+$btn-rounded: 30px;
 
 // BTN
-.btn-expanded {
-	width: 100%;
-}
 .btn {
 	margin-bottom: $btn-margin-right-bottom;
 	.icon {
 		margin: 0 4px;
 	}
+	&.is-expanded {
+		width: 100%;
+	}
+	&.is-rounded {
+		border-radius: $btn-rounded;
+	}
 }
 .btn:not(:last-child):not(.btn-expanded) {
 	margin-right: $btn-margin-right-bottom;
 }
-.btn:not(.btn-primary):not(.btn-success):not(.btn-danger):not(.btn-warning):not(.btn-info):not(.btn-outline-primary):not(.btn-outline-success):not(.btn-outline-danger):not(.btn-outline-warning):not(.btn-outline-info) {
+.btn:not(.btn-primary):not(.btn-success):not(.btn-danger):not(.btn-warning):not(.btn-info):not(.btn-dark):not(.btn-outline-primary):not(.btn-outline-success):not(.btn-outline-danger):not(.btn-outline-warning):not(.btn-outline-info):not(.btn-outline-info) {
 	border: .1px solid #ced4da;
 }
 
 // INVERTED
-// ROUNDED

@@ -5,6 +5,12 @@ $slider-thumb-background: $success;
 $slider-hight: 6px; // default
 $slider-radius: 10px;
 
+$slider-tick-to-track-ratio: 0.5 !default;
+$slider-tick-width: 3px !default;
+$slider-tick-height: 5px !default;
+$slider-tick-radius: 3px !default;
+$slider-tick-background: $grey-light !default;
+
 @mixin variant {
    
 }
@@ -34,8 +40,9 @@ $slider-radius: 10px;
             // Fix alignment in IE 11. Cancel out for others
             top: 50%;
             transform: translateY(-50%);
+            z-index: 999;
             
-             &.is-primary {
+            &.is-primary {
                 background-color: $primary;
             }
             &.is-success {
@@ -69,6 +76,7 @@ $slider-radius: 10px;
                 &:focus {
                     transform: scale(1.50);
                 }
+                // squared thumb
             }
 
             &.is-dragging {
@@ -77,11 +85,12 @@ $slider-radius: 10px;
                     transform: scale(1.50);
                 }
             }
-            // &.has-indicator {
-    //         padding: 16px 10px;
-    //         display: flex;
-    //         align-items: center;
-    //         width: auto;
+            &.has-indicator {
+                padding: 16px 10px;
+                display: flex;
+                align-items: center;
+                width: auto;
+            }
             // Tooltip
             .b-tooltip {
                 &.is-primary {
@@ -111,6 +120,22 @@ $slider-radius: 10px;
                 }
             }
         }
+        // tick
+        .b-slider-tick {
+            position: absolute;
+            width: $slider-tick-width;
+            height: $slider-tick-height;
+            transform: translate(-50%, -50%);
+            top: 50%;
+            background: $slider-tick-background;
+            border-radius: $slider-tick-radius;
+            &.is-tick-hidden {
+                background: transparent;
+            }
+            .b-slider-tick-label {
+               margin: 5px;
+            }
+        }
     }
     &.is-disabled {
         cursor: not-allowed;
@@ -125,10 +150,6 @@ $slider-radius: 10px;
                 width: calc(3px * 3);
             }
         }
-        // .b-slider-thumb {
-        //     height: calc(2px * 3);
-        //     width: calc(2px * 3);
-        // }
     }
     &.is-medium {
         height: 5px;
@@ -138,10 +159,6 @@ $slider-radius: 10px;
                 width: calc(5px * 3);
             }
         }
-        // .b-slider-thumb {
-        //     height: calc(5px * 3);
-        //     width: calc(5px * 3);
-        // }
     }
     &.is-large {
         height: 7px;
@@ -151,9 +168,5 @@ $slider-radius: 10px;
                 width: calc(7px * 3);
             }
         }
-        // .b-slider-thumb {
-        //     height: calc(7px * 3);
-        //     width: calc(7px * 3);
-        // }
     }
 }

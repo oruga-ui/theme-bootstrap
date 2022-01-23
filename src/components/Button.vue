@@ -11,7 +11,7 @@
     <div class="buttons">
       <o-button>Normal</o-button>
       <o-button disabled>Disabled</o-button>
-      <o-button rounded>Rounded</o-button>
+      <o-button rounded variant="light">Rounded</o-button>
     </div>
 
     <div class="buttons">
