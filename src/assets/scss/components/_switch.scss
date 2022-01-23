@@ -163,8 +163,13 @@ $switch-large-translateX: 15px;
 		}
 	}
 	input[type=checkbox]:checked + .switch-wrapper .switch {
-		&.is-primary {
+		&.is-warning {
 			background-color: $warning;
+		}
+	}
+	input[type=checkbox]:checked + .switch-wrapper .switch {
+		&.is-info {
+			background-color: $info;
 		}
 	}
 
@@ -179,8 +184,11 @@ $switch-large-translateX: 15px;
 		&.is-danger-passive {
 			background-color: $danger;
 		}
-		&.is-primary-passive {
+		&.is-warning-passive {
 			background-color: $warning;
+		}
+	    &.is-info-passive {
+			background-color: $info;
 		}
 	}
 	

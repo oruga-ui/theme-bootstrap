@@ -1,15 +1,15 @@
 <template>
    <section class="block">
-    <o-field label="Simple">
-      <o-slider v-model="value"></o-slider>
+    <o-field label="Simple & Small">
+      <o-slider v-model="value" size="small"></o-slider>
     </o-field>
 
-    <o-field label="Warning">
-      <o-slider v-model="value" variant="warning"></o-slider>
+    <o-field label="Warning & Medium">
+      <o-slider v-model="value" size="medium" variant="warning" tooltip-variant="warning"></o-slider>
     </o-field>
 
-    <o-field label="Large">
-      <o-slider v-model="value" size="large"></o-slider>
+    <o-field label="Info & Large">
+      <o-slider v-model="value" size="large" variant="info" tooltip-variant="info"></o-slider>
     </o-field>
 
     <o-field label="Disabled">
@@ -18,11 +18,20 @@
   </section>
   <section class="block">
     <o-field label="Tooltip type">
-      <o-slider v-model="sliderValue" :tooltip-variant="sliderType"></o-slider>
+      <o-slider v-model="sliderValue"></o-slider>
     </o-field>
 
-    <o-field label="Hide tooltip">
-      <o-slider :tooltip="false"></o-slider>
+    <o-field label="success">
+      <o-slider :tooltip="false" variant="success" tooltip-variant="success"></o-slider>
+    </o-field>
+    <o-field label="danger">
+      <o-slider :tooltip="false" variant="danger" tooltip-variant="danger"></o-slider>
+    </o-field>
+    <o-field label="warning">
+      <o-slider :tooltip="false" variant="warning" tooltip-variant="warning"></o-slider>
+    </o-field>
+    <o-field label="info">
+      <o-slider :tooltip="false" variant="info" tooltip-variant="info"></o-slider>
     </o-field>
 
     <o-field label="Custom tooltip label">

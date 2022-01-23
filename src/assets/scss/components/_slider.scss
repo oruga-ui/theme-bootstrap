@@ -1,32 +1,21 @@
-
+$slider-margin: 1em 0;
 $slider-track-background: transparent;
 $slider-fill-background: $success;
 $slider-thumb-background: $success;
-$slider-hight: 6px;
+$slider-hight: 6px; // default
 $slider-radius: 10px;
 
 @mixin variant {
-    &.is-primary {
-        background-color: $primary;
-    }
-    &.is-success {
-        background-color: $success;
-    }
-    &.is-danger {
-        background-color: $danger;
-    }
-    &.is-warning {
-        background-color: $warning;
-    }
+   
 }
 
 .b-slider {
-    margin: 1em 0;
+    margin: $slider-margin;
     position: relative;
     width: 100%;
-    height: $slider-hight;
+    height: $slider-hight; // default size
     background-color: $grey-lighter;
-    // border-radius: 10px;
+    border-radius: $slider-radius;
     cursor: pointer;
 
     .b-slider-track {
@@ -35,20 +24,32 @@ $slider-radius: 10px;
         // position: relative;
         cursor: pointer;
         background-color: $slider-track-background;
-        border-radius: $slider-radius;
-
 
         .b-slider-fill {
             position: absolute;
             left: 0%;
-            background-color: $primary;
+            background-color: $primary; // default variant
             height: 100%;
             border-radius: 10px;
             // Fix alignment in IE 11. Cancel out for others
             top: 50%;
             transform: translateY(-50%);
             
-            @include variant;
+             &.is-primary {
+                background-color: $primary;
+            }
+            &.is-success {
+                background-color: $success;
+            }
+            &.is-danger {
+                background-color: $danger;
+            }
+            &.is-warning {
+                background-color: $warning;
+            }
+            &.is-info {
+                background-color: $info;
+            }
         }
         .b-slider-thumb-wrapper {
             display: inline-flex;
@@ -60,11 +61,11 @@ $slider-radius: 10px;
             flex-direction: column; // Fix shrinked thumb at the end in IE 11
 
             .b-slider-thumb {
-                background-color: $primary;
-                height: calc(#{$slider-hight} * 3);
-                width: calc(#{$slider-hight} * 3);
+                background-color: $primary; // default variant
+                height: calc(#{$slider-hight} * 3); // default size
+                width: calc(#{$slider-hight} * 3); // default size
                 border-radius: 50%;
-                @include variant;
+
                 &:focus {
                     transform: scale(1.50);
                 }
@@ -76,8 +77,38 @@ $slider-radius: 10px;
                     transform: scale(1.50);
                 }
             }
+            // &.has-indicator {
+    //         padding: 16px 10px;
+    //         display: flex;
+    //         align-items: center;
+    //         width: auto;
             // Tooltip
             .b-tooltip {
+                &.is-primary {
+                    .b-slider-thumb {
+                        background-color: $primary;
+                    }
+                }
+                &.is-success {
+                    .b-slider-thumb {
+                        background-color: $success;
+                    }
+                }
+                &.is-danger {
+                    .b-slider-thumb {
+                        background-color: $danger;
+                    }
+                }
+                &.is-warning {
+                    .b-slider-thumb {
+                        background-color: $warning;
+                    }
+                }
+                &.is-info {
+                    .b-slider-thumb {
+                        background-color: $info;
+                    }
+                }
             }
         }
     }
@@ -85,6 +116,44 @@ $slider-radius: 10px;
         cursor: not-allowed;
         opacity: .5;
     }
-    // Variant
     // Size
+    &.is-small {
+        height: 2px;
+        .b-slider-track {
+            .b-slider-thumb {
+                height: calc(3px * 3);
+                width: calc(3px * 3);
+            }
+        }
+        // .b-slider-thumb {
+        //     height: calc(2px * 3);
+        //     width: calc(2px * 3);
+        // }
+    }
+    &.is-medium {
+        height: 5px;
+        .b-slider-track {
+            .b-slider-thumb {
+                height: calc(5px * 3);
+                width: calc(5px * 3);
+            }
+        }
+        // .b-slider-thumb {
+        //     height: calc(5px * 3);
+        //     width: calc(5px * 3);
+        // }
+    }
+    &.is-large {
+        height: 7px;
+        .b-slider-track {
+            .b-slider-thumb {
+                height: calc(7px * 3);
+                width: calc(7px * 3);
+            }
+        }
+        // .b-slider-thumb {
+        //     height: calc(7px * 3);
+        //     width: calc(7px * 3);
+        // }
+    }
 }
