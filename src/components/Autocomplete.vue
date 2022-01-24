@@ -3,6 +3,7 @@
        <p class="content"><b>Selected:</b> {{ selected }}</p>
         <o-field label="Find a JS framework">
           <o-autocomplete
+            keep-first
             rounded
             v-model="name"
             :data="filteredDataArray"
@@ -24,8 +25,12 @@ export default defineComponent({
     data() {
         return {
             data: [
-                "Angular",
+                "Angular 1",
                 "Angular 2",
+                "Angular 4",
+                "Angular 5",
+                "Angular 6",
+                "Angular 7",
                 "Aurelia",
                 "Backbone",
                 "Ember",

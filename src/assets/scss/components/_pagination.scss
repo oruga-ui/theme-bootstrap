@@ -23,6 +23,7 @@ $border-top-bottom-left-right-radius: .3rem !default;
 		margin: 0;
 		.page-link {
 			margin: 0;
+			border-right: 0;
 			&.active {
 				background-color: $primary;
 				color: white;

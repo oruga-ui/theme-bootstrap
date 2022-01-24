@@ -16,6 +16,23 @@
     ></o-input>
   </o-field>
 
+  <o-field label="Email" variant="success" message="valid field">
+   <o-input
+      icon="at"
+      :has-counter="true"
+      maxlength="10"
+      placeholder="Enter Text"
+    ></o-input>
+  </o-field>
+  <o-field label="Password" variant="success" message="valid field">
+    <o-input
+      icon="lock"
+      :has-counter="true"
+      maxlength="10"
+      placeholder="Enter Text"
+    ></o-input>
+  </o-field>
+
   <o-field label="Name" variant="danger" message="Invalid field">
     <o-select rounded expanded>
       <option>Select dropdown</option>
@@ -37,8 +54,8 @@
 
   <o-field label="Name">
     <o-input icon="user"></o-input>
-    <div class="control">
-      <a class="button is-info"> Search </a>
+    <div>
+      <a class="btn btn-dark"> Search </a>
     </div>
   </o-field>
 
@@ -147,25 +164,29 @@
   </section>
 
   <o-field label="Name" grouped>
-    <o-input icon="user"></o-input>
-    <div class="control">
-      <a class="button is-info"> Search </a>
+    <div>
+      <o-input icon="user"></o-input>
+    </div>
+    <div>
+      <a class="btn btn-dark"> Search </a>
     </div>
   </o-field>
 
   <o-field label="Name">
-    <div class="control">
-      <a class="button is-info"> Search </a>
+    <div>
+      <a class="btn btn-dark"> Search </a>
     </div>
     <o-input icon="user" expanded></o-input>
-    <div class="control">
-      <a class="button is-info"> Search </a>
+    <div>
+      <a class="btn btn-dark"> Search </a>
     </div>
   </o-field>
 
   <o-field horizontal label="Name">
     <o-input icon="user" expanded></o-input>
-    <o-input icon="user" rounded expanded></o-input>
+  </o-field>
+  <o-field horizontal label="Emal">
+    <o-input icon="at" rounded expanded></o-input>
   </o-field>
 
   <o-field label="Grouped">

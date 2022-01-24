@@ -1,5 +1,7 @@
 $icon-color: grey;
 $input-padding-for-left-icon: 7px 11px 7px 32px;
+$input-padding-for-left-icon: .4rem .8rem .4rem 2rem;
+$input-padding-for-left-icon-lg: 7px 11px 7px 42px;
 $icon-left-right-position: 12px;
 $btn-border-color: #ced4da;
 
@@ -28,7 +30,6 @@ $btn-border-color: #ced4da;
         }
     }
     // Button
-
     // Dropdown
     .dropdown {
         &:first-child {
@@ -80,6 +81,37 @@ $btn-border-color: #ced4da;
             }
         }
     }
+    // If the input and button are wrapped inside divs
+    div:first-child {
+        .btn {
+            border-bottom-right-radius: 0;
+            border-top-right-radius: 0;
+        }
+        .input {
+            border-bottom-right-radius: 0;
+            border-top-right-radius: 0;
+        }
+    }
+    div:last-child {
+        .btn {
+            border-bottom-left-radius: 0;
+            border-top-left-radius: 0;
+        }
+        .input {
+            border-bottom-left-radius: 0;
+            border-top-left-radius: 0;
+        }
+    }
+    div:not(:first-child):not(:last-child) {
+        .btn {
+            border-radius: 0;
+            border-radius: 0;
+        }
+        .input {
+            border-radius: 0;
+            border-radius: 0;
+        }
+    }
 }
 
 // Icon style
@@ -88,8 +120,11 @@ $btn-border-color: #ced4da;
     // Space for the icon
     .form-control {
         // if the icon is in left then set that padding
-        &.has-icon-in-left {
+        &.has-icon-in-left:not(.form-control-lg) {
             padding: $input-padding-for-left-icon;
+        } // if icon and the input are big, we give more space to icon
+        &.has-icon-in-left.form-control-lg {
+            padding: $input-padding-for-left-icon-lg;
         }
     }
     // the Position of the icon
@@ -102,6 +137,15 @@ $btn-border-color: #ced4da;
         }
         &.is-right {
             top: 8px;
+            right: $icon-left-right-position;
+        }
+        // small icon positioniing
+        &.is-left.is-small {
+            top: 6px;
+            left: $icon-left-right-position;
+        }
+        &.is-right.is-small {
+            top: 6px;
             right: $icon-left-right-position;
         }
     }
