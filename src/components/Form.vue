@@ -7,13 +7,13 @@
       maxlength="10"
       placeholder="Enter Text"
     ></o-input>
-    <o-input
+    <!-- <o-input
       icon="user"
       size="large"
       :has-counter="true"
       maxlength="10"
       placeholder="Enter Text"
-    ></o-input>
+    ></o-input> -->
   </o-field>
 
   <o-field label="Email" variant="success" message="valid field">

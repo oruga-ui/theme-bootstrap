@@ -66,7 +66,15 @@ export const bootstrapConfig: any = {
         },
         // roundedClass: 'is-rounded',
         // variantClass: 'is-',
-        // sizeClass: 'is-',
+        sizeClass: (_: string, { props }: any) => {
+            if (props.size == 'small'){
+                return 'form-select-sm';
+            }else if(props.size == 'medium') {
+                return 'form-select-md'
+            }else if (props.size == 'large') {
+                return 'form-select-lg'
+            }
+        },
         expandedClass: 'is-fullwidth',
         // iconLeftSpaceClass: 'has-icons has-icons-left',
         iconLeftClass: 'is-left',
@@ -90,7 +98,7 @@ export const bootstrapConfig: any = {
         disabledClass: 'is-disabled',
         checkClass: 'form-check-input',
         labelClass: 'form-check-label',
-        variantClass: 'is-',
+        variantClass: 'form-check-',
         sizeClass: 'is-'
     },
     radio: {
@@ -99,7 +107,7 @@ export const bootstrapConfig: any = {
         disabledClass: 'is-disabled',
         checkClass: 'form-check-input',
         labelClass: 'form-check-label',
-        variantClass: 'is-',
+        variantClass: 'form-check-',
         sizeClass: 'is-'
     },
     switch: {

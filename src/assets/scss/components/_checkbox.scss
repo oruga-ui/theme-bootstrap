@@ -1,0 +1,38 @@
+.form-check {
+	&.form-check-primary {
+		input[type="checkbox"]:checked {
+			background-color: $primary;
+			border-color: $primary 
+		}
+	}
+	&.form-check-success {
+		input[type="checkbox"]:checked {
+			background-color: $success;
+			border-color: $success 
+		}
+	}
+	&.form-check-danger {
+		input[type="checkbox"]:checked {
+			background-color: $danger;
+			border-color: $danger 
+		}
+	}
+	&.form-check-warning {
+		input[type="checkbox"]:checked {
+			background-color: $warning;
+			border-color: $warning 
+		}
+	}
+	&.form-check-info {
+		input[type="checkbox"]:checked {
+			background-color: $info;
+			border-color: $info 
+		}
+	}
+	&.form-check-dark {
+		input[type="checkbox"]:checked {
+			background-color: $dark;
+			border-color: $dark 
+		}
+	}
+}
