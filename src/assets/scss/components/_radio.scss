@@ -1,3 +1,8 @@
+$radio-small: 1em !default;
+$radio-medium: 1.25em !default;
+$radio-large: 1.50em !default;
+
+
 .form-check {
 	&.form-check-primary {
 		input[type="radio"]:checked {
@@ -33,6 +38,28 @@
 		input[type="radio"]:checked {
 			background-color: $dark;
 			border-color: $dark;
+		}
+	}
+
+	&.is-small {
+		input[type="radio"] {
+			width: $radio-small;
+			height: $radio-small;
+			margin-right: calc(#{$radio-small} / 2)
+		}
+	}
+	&.is-medium {
+		input[type="radio"] {
+			width: $radio-medium;
+			height: $radio-medium;
+			margin-right: calc(#{$radio-medium} / 2)
+		}
+	}
+	&.is-large {
+		input[type="radio"] {
+			width: $radio-large;
+			height: $radio-large;
+			margin-right: calc(#{$radio-large} / 2); 
 		}
 	}
 }

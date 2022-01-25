@@ -1,3 +1,8 @@
+$checkbox-small: 1em !default;
+$checkbox-medium: 1.25em !default;
+$checkbox-large: 1.50em !default;
+
+
 .form-check {
 	&.form-check-primary {
 		input[type="checkbox"]:checked {
@@ -33,6 +38,28 @@
 		input[type="checkbox"]:checked {
 			background-color: $dark;
 			border-color: $dark 
+		}
+	}
+
+	&.is-small {
+		input[type="checkbox"] {
+			width: $checkbox-small;
+			height: $checkbox-small;
+			margin-right: calc(#{$checkbox-small} / 2); 
+		}
+	}
+	&.is-medium {
+		input[type="checkbox"] {
+			width: $checkbox-medium;
+			height: $checkbox-medium;
+			margin-right: calc(#{$checkbox-medium} / 2); 
+		}
+	}
+	&.is-large {
+		input[type="checkbox"] {
+			width: $checkbox-large;
+			height: $checkbox-large;
+			margin-right: calc(#{$checkbox-large} / 2); 
 		}
 	}
 }

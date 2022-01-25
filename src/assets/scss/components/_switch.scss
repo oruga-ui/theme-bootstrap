@@ -1,26 +1,27 @@
 $switch-background: #ced4da; 
 $switch-transition: all .2s ease-out;
+$switch-margin-right-bottom: 0.5rem;
 // is-small
 $switch-width-small: 24px;
 $switch-height-small: 14px;
 $switch-before-width-small: 10px;
 $switch-before-height-small: 10px;
 $switch-top-small: 30%;
-$switch-left-small: 10%;
+// $switch-left-small: 0;
 // is-medium
 $switch-width-medium: 28px;
 $switch-height-medium: 18px;
 $switch-before-width-medium: 14px;
 $switch-before-height-medium: 14px;
-$switch-top-medium: 15%;
-$switch-left-medium: 10%;
+$switch-top-medium: 10%;
+// $switch-left-medium: 0;
 // is large
 $switch-width-large: 38px;
 $switch-height-large: 22px;
 $switch-before-width-large: 18px;
 $switch-before-height-large:18px;
-$switch-top-large: 2%;
-$switch-left-large: 6%;
+$switch-top-large: 20%;
+// $switch-left-large: 0;
 // The move of the switch (before)
 $switch-small-translateX: 9px;
 $switch-medium-translateX: 10px;
@@ -31,7 +32,6 @@ $switch-large-translateX: 15px;
 		width: $switch-width-small;
 	    height: $switch-height-small;
 	    top: $switch-top-small;
-		left: $switch-left-small;
 	}
 	.switch:before {
 	    width: $switch-before-width-small;
@@ -49,7 +49,6 @@ $switch-large-translateX: 15px;
 		width: $switch-width-medium;
 	    height: $switch-height-medium;
 	    top: $switch-top-medium;
-		left: $switch-left-medium;
 	}
 	.switch:before {
 	    width: $switch-before-width-medium;
@@ -67,7 +66,6 @@ $switch-large-translateX: 15px;
 		width: $switch-width-large;
 	    height: $switch-height-large;
 	    top: $switch-top-large;
-		left: $switch-left-large;
 	}
 	.switch:before {
 	    width: $switch-before-width-large;
@@ -83,14 +81,18 @@ $switch-large-translateX: 15px;
 
 .form-switch {
 	position: relative;
+	padding-left: 25px;
+	margin-right: $switch-margin-right-bottom;
+
 	input {
 		opacity: 0;
+		width: 0;
 	}
 	.switch {
 		position: absolute;
 		cursor: pointer;
-		right: 0;
-		bottom: 0;
+		left: 0;
+		// bottom: 0;
 		background-color: $switch-background;
 		-webkit-transition: $switch-transition;
 		transition: $switch-transition;
@@ -98,7 +100,6 @@ $switch-large-translateX: 15px;
 		width: $switch-width-small;
 	    height: $switch-height-small;
 	    top: $switch-top-small;
-		left: $switch-left-small;
 	}
 	.switch:before {
 		position: absolute;

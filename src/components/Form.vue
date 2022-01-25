@@ -91,6 +91,18 @@
     </o-field>
   </section>
 
+  <section>
+    <o-field>
+      <o-switch size="small" :value="true" variant="success"> Success </o-switch>
+    </o-field>
+    <o-field>
+      <o-switch size="medium" :value="true" variant="danger"> Danger </o-switch>
+    </o-field>
+    <o-field>
+      <o-switch size="large" :value="true" variant="warning"> Warning </o-switch>
+    </o-field>
+  </section>
+
   <section class="mt-4 mb-4">
     <o-field>
       <o-checkbox :value="true"> Default </o-checkbox>

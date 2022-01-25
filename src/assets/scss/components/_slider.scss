@@ -11,6 +11,10 @@ $slider-tick-height: 5px !default;
 $slider-tick-radius: 3px !default;
 $slider-tick-background: $grey-light !default;
 
+$slider-small: 2px;
+$slider-medium: 5px;
+$slider-large: 7px;
+
 @mixin variant {
    
 }
@@ -143,29 +147,29 @@ $slider-tick-background: $grey-light !default;
     }
     // Size
     &.is-small {
-        height: 2px;
+        height: $slider-small;
         .b-slider-track {
             .b-slider-thumb {
-                height: calc(3px * 3);
-                width: calc(3px * 3);
+                height: calc(#{$slider-small} + 2px * 3);
+                width: calc(#{$slider-small} + 2px * 3);
             }
         }
     }
     &.is-medium {
-        height: 5px;
-        .b-slider-track {
+        height: $slider-medium;
+        .b-slider-track { 
             .b-slider-thumb {
-                height: calc(5px * 3);
-                width: calc(5px * 3);
+                height: calc(#{$slider-medium} * 3);
+                width: calc(#{$slider-medium} * 3);
             }
         }
     }
     &.is-large {
-        height: 7px;
+        height: $slider-large;
         .b-slider-track {
             .b-slider-thumb {
-                height: calc(7px * 3);
-                width: calc(7px * 3);
+                height: calc(#{$slider-large} * 3);
+                width: calc(#{$slider-large} * 3);
             }
         }
     }
