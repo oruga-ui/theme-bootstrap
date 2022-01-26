@@ -1,5 +1,5 @@
 <template>
-  <section>
+  <section class="Dropdowns">
     <h2>Dropdowns:</h2>
     <o-dropdown aria-role="list">
       <template #trigger>
@@ -67,7 +67,9 @@
       <o-dropdown-item aria-role="listitem">Something else</o-dropdown-item>
     </o-dropdown>
   </section>
-
+<!--  -->
+<!--  -->
+<!--  -->
   <section class="mt-5">
     <p class="is-size-3 mb-3">Scrollable demo</p>
     <div>
@@ -107,6 +109,37 @@
       </o-dropdown-item>
     </o-dropdown>
   </section>
+ <!--  -->
+ <!--  -->
+ <!--  -->
+  <section>
+     <o-dropdown position="top-right" aria-role="list">
+      <template #trigger>
+        <o-button variant="primary" #default="{ active }">
+          <span>Click me!</span>
+          <o-icon :icon="active ? 'caret-down' : 'caret-up'"></o-icon>
+          {{ active }}
+        </o-button>
+      </template>
+
+      <o-dropdown-item aria-role="listitem">Action</o-dropdown-item>
+      <o-dropdown-item aria-role="listitem">Another action</o-dropdown-item>
+      <o-dropdown-item aria-role="listitem">Something else</o-dropdown-item>
+    </o-dropdown>
+     <o-dropdown position="top-left" aria-role="list">
+      <template #trigger>
+        <o-button variant="primary" #default="{ active }">
+          <span>Click me!</span>
+          <o-icon :icon="active ? 'caret-down' : 'caret-up'"></o-icon>
+          {{ active }}
+        </o-button>
+      </template>
+
+      <o-dropdown-item aria-role="listitem">Action</o-dropdown-item>
+      <o-dropdown-item aria-role="listitem">Another action</o-dropdown-item>
+      <o-dropdown-item aria-role="listitem">Something else</o-dropdown-item>
+    </o-dropdown>
+  </section>
 </template>
 
 <script>
@@ -117,7 +150,7 @@ export default {
       maxHeight: 200,
       currentMenu: { icon: "users", text: "People" },
       menus: [
-        { icon: "users", text: "People" },
+        { icon: "users", text: "People", },
         { icon: "box", text: "Orders" },
         { icon: "credit-card", text: "Payments" },
         { icon: "dolly", text: "Logistics" },
@@ -131,6 +164,9 @@ export default {
 </script>
 
 <style>
+section {
+  margin: 25px;
+}
 .media {
   align-items: flex-start;
   display: flex;

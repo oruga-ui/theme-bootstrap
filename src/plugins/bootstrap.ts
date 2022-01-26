@@ -366,20 +366,20 @@ export const bootstrapConfig: any = {
         itemTag: 'a',
         rootClass: (_: string, { props, data, computed }: any) => {
             const classes = ['dropdown', 'dropdown-menu-animation'];
-            if (data.isActive || props.inline) classes.push('is-active')
-            if (computed.hoverable) classes.push('is-hoverable')
+            if (data.isActive || props.inline) classes.push('show')
+            if (computed.hoverable) classes.push('show')
             if (props.position) classes.push(`is-${props.position}`)
             return classes.join(' ')
         },
         triggerClass: 'dropdown-trigger',
         menuClass: 'dropdown-menu',
-        disabledClass: 'is-disabled',
+        disabledClass: 'disabled',
         expandedClass: 'is-expanded',
         inlineClass: 'is-inline',
         // menuPositionClass: 'is-',
-        // menuActiveClass: 'is-active'
+        menuActiveClass: 'show',
         itemClass: 'dropdown-item',
-        itemActiveClass: 'is-active',
+        // itemActiveClass: 'show',
         itemDisabledClass: 'is-disabled',
         mobileClass: 'is-mobile-modal',
         menuMobileOverlayClass: 'background'

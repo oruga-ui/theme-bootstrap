@@ -13,7 +13,7 @@
         variant="primary"
         @click="isCardModalActive = true"
       >
-        Open modal (clip scroll)
+        Open modal
       </o-button>
     </div>
 
@@ -29,15 +29,33 @@
     <o-modal v-model:active="isCardModalActive" :width="640" scroll="clip">
       <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title">Modal title</h5>
+        <h5 class="modal-title">Log in to continue using the service</h5>
         <button type="button" class="btn-close" @click="isCardModalActive = true"></button>
       </div>
       <div class="modal-body">
-        <p>Modal body text goes here.</p>
+         <o-field label="Email">
+         <o-input
+            icon="at"
+            :has-counter="true"
+            maxlength="10"
+            placeholder="Enter Your Email"
+          ></o-input>
+        </o-field>
+        <o-field label="Password">
+          <o-input
+            icon="lock"
+            :has-counter="true"
+            maxlength="10"
+            placeholder="Enter Your Password"
+          ></o-input>
+        </o-field>
+        <o-field>
+          <o-checkbox variant="info"> Remember me </o-checkbox>
+        </o-field>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" @click="isCardModalActive = false" data-bs-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
+        <button type="button" class="btn btn-primary">Log in</button>
       </div>
     </div>
     </o-modal>
@@ -58,3 +76,8 @@ export default defineComponent({
   },
 });
 </script>
+<style>
+  section {
+    margin: 25px
+  }
+</style>
