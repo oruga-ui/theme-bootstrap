@@ -26,7 +26,7 @@ export const bootstrapConfig: any = {
             if (props.icon) return 'form-control has-icon-in-left';
             return `form-control`
         },
-        // roundedClass: 'is-rounded',
+        roundedClass: 'is-rounded',
         sizeClass: (_: string, { props }: any) => {
             if (props.size == 'small'){
                 return 'form-control-sm';
@@ -136,7 +136,7 @@ export const bootstrapConfig: any = {
         override: true,
         rootClass: 'autocomplete-wrapper',
         menuClass: 'dropdown-menu show is-expanded', // @TODO add class for expanded
-        // menuPositionClass: 'is-opened-',
+        menuPositionClass: 'is-opened-', // top  bottom
         itemClass: 'dropdown-item',
         itemHoverClass: 'active',
         itemEmptyClasses: 'disabled',
@@ -201,7 +201,7 @@ export const bootstrapConfig: any = {
         tickLabelClass: 'b-slider-tick-label',
         tickHiddenClass: 'is-tick-hidden',
         tickClass: 'b-slider-tick',
-        // thumbRoundedClass: 'is-rounded'
+        thumbRoundedClass: 'is-rounded'
         // thumbDraggingClass: 'is-dragging'
     },
     tabs: {
@@ -333,7 +333,9 @@ export const bootstrapConfig: any = {
             return `btn-outline-${props.variant}`
         },
         disabledClass: 'btn-disabled',
-        // invertedClass: () => 'is-inverted',
+        invertedClass: () => (_: string, { props }: any) => {
+            return `btn-light text-${props.variant}`
+        },
         elementsWrapperClass: 'button-wrapper'
     },
     skeleton: {

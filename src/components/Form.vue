@@ -18,6 +18,7 @@
 
   <o-field label="Email" variant="success" message="valid field">
    <o-input
+      :rounded="true"
       icon="at"
       :has-counter="true"
       maxlength="10"
@@ -197,8 +198,8 @@
   <o-field horizontal label="Name">
     <o-input icon="user" expanded></o-input>
   </o-field>
-  <o-field horizontal label="Emal">
-    <o-input icon="at" rounded expanded></o-input>
+  <o-field horizontal label="Email">
+    <o-input icon="at" expanded></o-input>
   </o-field>
 
   <o-field label="Grouped">

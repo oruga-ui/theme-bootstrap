@@ -4,6 +4,7 @@ $input-padding-for-left-icon: .4rem .8rem .4rem 2rem;
 $input-padding-for-left-icon-lg: 7px 11px 7px 42px;
 $icon-left-right-position: 12px;
 $btn-border-color: #ced4da;
+$rounded-input: 50px!important;
 
 // border radius for input group
 .input-group {
@@ -149,6 +150,7 @@ $btn-border-color: #ced4da;
             right: $icon-left-right-position;
         }
     }
+
 }
 
 .input-group {
@@ -185,5 +187,11 @@ $btn-border-color: #ced4da;
     // btn 
     .btn {
     	margin: 0!important;
+    }
+    // 
+    .form-control {
+        &.is-rounded {
+            border-radius: $rounded-input;
+        }
     }
 }

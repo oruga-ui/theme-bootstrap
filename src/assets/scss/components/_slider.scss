@@ -75,12 +75,15 @@ $slider-large: 7px;
                 background-color: $primary; // default variant
                 height: calc(#{$slider-hight} * 3); // default size
                 width: calc(#{$slider-hight} * 3); // default size
-                border-radius: 50%;
+                // border-radius: 50%;
 
                 &:focus {
                     transform: scale(1.50);
                 }
                 // squared thumb
+                &.is-rounded {
+                    border-radius: 50%;
+                }
             }
 
             &.is-dragging {
