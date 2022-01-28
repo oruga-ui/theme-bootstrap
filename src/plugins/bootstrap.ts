@@ -211,7 +211,7 @@ export const bootstrapConfig: any = {
         contentClass: 'nav-content',
         // multilineClass: 'is-multiline',
         navTabsClass: 'nav nav-tabs',
-        expandedClass: 'is-fullwidth', // @TODO add class
+        expandedClass: 'is-expanded', // @TODO add class
         verticalClass: 'is-vertical', // @TODO add class
         positionClass: 'is-', // @TODO add class
         navSizeClass: 'is-', // @TODO add class
@@ -333,9 +333,7 @@ export const bootstrapConfig: any = {
             return `btn-outline-${props.variant}`
         },
         disabledClass: 'btn-disabled',
-        invertedClass: () => (_: string, { props }: any) => {
-            return `btn-light text-${props.variant}`
-        },
+        invertedClass: 'btn-inverted-',
         elementsWrapperClass: 'button-wrapper'
     },
     skeleton: {

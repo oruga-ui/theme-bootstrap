@@ -1,6 +1,6 @@
 <template>
     <section>
-        <o-tabs v-model="activeTab" multiline>
+        <o-tabs :expanded="true" v-model="activeTab" multiline>
             <o-tab-item :value="0" label="Pictures" icon="image">
                 What light is light, if Silvia be not seen? <br />
                 What joy is joy.

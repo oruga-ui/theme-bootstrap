@@ -24,7 +24,7 @@ $tabs-color: $dark !default;
 			}
 			.disabled {
 				color: grey;
-				cursor: default;
+				cursor: not-allowed;
 			}
 		}
 	}
@@ -32,4 +32,15 @@ $tabs-color: $dark !default;
 	.nav-content {
 		margin: 10px;
 	}
+	// Full width
+	&.is-expanded {
+		.nav-tabs {
+			div {
+				flex-grow: 1;
+    			flex-shrink: 0;
+			}
+		}
+	}
+	// Size
+	// Position
 } 

@@ -6,6 +6,8 @@
       <o-button variant="danger">Danger</o-button>
       <o-button variant="warning">Warning</o-button>
       <o-button variant="info">Info</o-button>
+      <o-button variant="dark">Dark</o-button>
+
     </div>
 
     <div class="buttons">
@@ -16,7 +18,18 @@
 
     <div class="buttons">
       <o-button variant="primary" outlined>Outlined</o-button>
+      <o-button variant="success" outlined>Outlined</o-button>
+      <o-button variant="danger" outlined>Outlined</o-button>
+      <o-button variant="warning" outlined>Outlined</o-button>
+      <o-button variant="info" outlined>Outlined</o-button>
+      <o-button variant="dark" outlined>Outlined</o-button>
+      <br />
       <o-button variant="primary" inverted>Inverted</o-button>
+      <o-button variant="success" inverted>Inverted</o-button>
+      <o-button variant="danger" inverted>Inverted</o-button>
+      <o-button variant="warning" inverted>Inverted</o-button>
+      <o-button variant="info" inverted>Inverted</o-button>
+      <o-button variant="dark" inverted>Inverted</o-button>
     </div>
 
     <div class="buttons">
