@@ -1,46 +1,95 @@
-$tabs-boxed-link-active-border-color: $primary !default;
+$tabs-link-active-border-color: $primary !default;
 $tabs-color: $dark !default;
+$tabs-border-bottom-color: #ced4da;
+$nav-tabs-margin-bottom: 10px;
+$nav-tabs-text-size-small: 13px;
+$nav-tabs-text-size-medium: 14px;
+$nav-tabs-text-size-large: 18px;
+$tabs-wrapper-margin: 20px;
 
 // NAVTAB
 .nav-tab-wrapper {
-	margin: 20px;
+	margin: $tabs-wrapper-margin;
 	// nav (Pictures - Musics - Books - Videos)
 	.nav {
-		margin-bottom: 10px;
+		margin-bottom: $nav-tabs-margin-bottom;
+		display: flex;
 		// each nav element is div (or li => div)
 		div {
 			cursor: pointer;
 			padding: 10px;
+			border: 1px solid transparent;
+			text-align: center;
 			a {
 				color: $tabs-color;
 				text-decoration: none;
+				width: 100%;
 			}
 			.active {
-				color: $tabs-boxed-link-active-border-color;
-				width: 80px;
-				border-bottom: 2px solid $tabs-boxed-link-active-border-color;
-				// border-radius: 3px;
-				padding-bottom: 11px;
+				color: $tabs-link-active-border-color;
+				// border-bottom: 2px solid $tabs-link-active-border-color;
+				// padding-bottom: 11px;
 			}
 			.disabled {
-				color: grey;
+				pointer-events: none;
 				cursor: not-allowed;
+				opacity: 0.5;
 			}
+		}
+		div:not(a.disabled):hover {
+			border-bottom: 1px solid $tabs-link-active-border-color;
+		}
+		div:focus {
+			border-bottom: 1px solid $tabs-link-active-border-color;
+		}
+		// div:has(> a.active) {
+		// 	border-bottom: 1px solid $tabs-link-active-border-color;
+		// }
+		// Position
+		&.is-centered {
+			justify-content: center; 
+		}
+		&.is-right {
+			justify-content: end;
+		}
+		// Size 
+		&.is-small {
+			font-size: $nav-tabs-text-size-small;
+		}
+		&.is-medium {
+			font-size: $nav-tabs-text-size-medium;
+		}
+		&.is-large {
+			font-size: $nav-tabs-text-size-large;
 		}
 	}
 	// Content of each nav
 	.nav-content {
 		margin: 10px;
+		flex-grow: 1;
 	}
 	// Full width
 	&.is-expanded {
-		.nav-tabs {
+		.nav {
 			div {
 				flex-grow: 1;
     			flex-shrink: 0;
 			}
 		}
 	}
-	// Size
 	// Position
+	// Vetical 
+	&.is-vertical {
+		display: flex;
+		flex-direction: row;
+		.nav {
+			display: block;
+			div {
+				border-bottom: 1px solid $tabs-border-bottom-color;
+			}
+		}
+		&.is-right {
+			flex-direction: row-reverse;
+		}
+	}
 } 

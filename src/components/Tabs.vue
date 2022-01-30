@@ -1,6 +1,6 @@
 <template>
     <section>
-        <o-tabs :expanded="true" v-model="activeTab" multiline>
+        <o-tabs :expanded="false" position="left" v-model="activeTab" multiline>
             <o-tab-item :value="0" label="Pictures" icon="image">
                 What light is light, if Silvia be not seen? <br />
                 What joy is joy.
@@ -56,6 +56,39 @@
                 vehicula pulvinar tellus, id sodales felis lobortis eget.
             </o-tab-item>
         </o-tabs>
+
+        <!--  <o-tabs :expanded="true" v-model="activeTab" multiline>
+            <o-tab-item :value="0" label="Pictures" icon="image">
+                What light is light, if Silvia be not seen? <br />
+                What joy is joy.
+            </o-tab-item>
+
+            <o-tab-item :value="1" label="Music" icon="music">
+                Lorem <br />
+                ipsum <br />
+                dolor <br />
+                sit <br />
+                amet.
+            </o-tab-item>
+
+            <o-tab-item :value="2" label="Articles" icon="pen">
+                What light is light, if Silvia be not seen? <br />
+                What joy is joy, if Silvia be not by— <br />
+                Unless it be to think that she is by <br />
+                And feed upon the shadow of perfection? <br />
+                Except I be by Silvia in the night, <br />
+                There is no music in the nightingale.
+            </o-tab-item>
+
+            <o-tab-item :value="3" label="Researches" icon="search">
+                What light is light, if Silvia be not seen? <br />
+                What joy is joy, if Silvia be not by— <br />
+                Unless it be to think that she is by <br />
+                And feed upon the shadow of perfection? <br />
+                Except I be by Silvia in the night, <br />
+                There is no music in the nightingale.
+            </o-tab-item>
+        </o-tabs> -->
     </section>
 </template>
 

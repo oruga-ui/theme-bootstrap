@@ -211,11 +211,11 @@ export const bootstrapConfig: any = {
         contentClass: 'nav-content',
         // multilineClass: 'is-multiline',
         navTabsClass: 'nav nav-tabs',
-        expandedClass: 'is-expanded', // @TODO add class
-        verticalClass: 'is-vertical', // @TODO add class
+        expandedClass: 'is-expanded', // done
+        verticalClass: 'is-vertical', // done
         positionClass: 'is-', // @TODO add class
-        navSizeClass: 'is-', // @TODO add class
-        navPositionClass: 'is-', // @TODO add class
+        navSizeClass: 'is-', // done
+        navPositionClass: 'is-', // done
         transitioningClass: 'is-transitioning', // @TODO add class
         itemClass: 'content-text',
         itemHeaderActiveClass: () => 'active',
