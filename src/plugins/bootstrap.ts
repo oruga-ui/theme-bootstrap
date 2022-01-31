@@ -376,12 +376,12 @@ export const bootstrapConfig: any = {
         disabledClass: 'disabled',
         expandedClass: 'is-expanded',
         inlineClass: 'is-inline',
-        // menuPositionClass: 'is-',
+        menuPositionClass: 'is-',
         menuActiveClass: 'show',
         itemClass: 'dropdown-item',
         // itemActiveClass: 'show',
         itemDisabledClass: 'is-disabled',
-        mobileClass: 'is-mobile-modal',
+        mobileClass: 'dropdown-modal',
         menuMobileOverlayClass: 'background'
     },
     datepicker: {

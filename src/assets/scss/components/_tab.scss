@@ -39,9 +39,9 @@ $tabs-wrapper-margin: 20px;
 		div:not(a.disabled):hover {
 			border-bottom: 1px solid $tabs-link-active-border-color;
 		}
-		div:focus {
-			border-bottom: 1px solid $tabs-link-active-border-color;
-		}
+		// div:focus {
+		// 	border-bottom: 1px solid $tabs-link-active-border-color;
+		// }
 		// div:has(> a.active) {
 		// 	border-bottom: 1px solid $tabs-link-active-border-color;
 		// }
@@ -86,6 +86,7 @@ $tabs-wrapper-margin: 20px;
 			display: block;
 			div {
 				border-bottom: 1px solid $tabs-border-bottom-color;
+				text-align: left;
 			}
 		}
 		&.is-right {
