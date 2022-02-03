@@ -12,13 +12,13 @@ import postcss from "postcss"
 import pkg from "./package.json"
 
 const entries = {
-  index: "src/plugins/bulma.ts",
+  index: "src/plugins/bootstrap.ts",
   scss: "src/assets/scss",
 }
 
 const exits = {
   directory: "dist",
-  css: "dist/bulma.css",
+  css: "dist/bootstrap.css",
   esm: `${pkg.module}`,
   umd: `${pkg.main}`,
 }

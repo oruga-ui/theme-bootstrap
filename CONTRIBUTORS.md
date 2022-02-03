@@ -1,13 +1,13 @@
 # Oruga Bulma contributors
 
-Thank you to everyone involved for improving this project, day by day 💚
+<strong>Thank You</strong> to everyone involved for improving this project, day by day 💚
 
-<a href="https://github.com/oruga-ui/theme-bulma">
+<a href="https://github.com/oruga-ui/theme-bootstrap">
   <img
-  src="https://contrib.rocks/image?repo=oruga-ui/theme-bulma"
+  src="https://contrib.rocks/image?repo=oruga-ui/theme-bootstrap"
   />
 </a>
 
-## Extra contributions
+<!-- ## Extra contributions
 
-- [Rubjo](https://github.com/rubjo)
+- [name](link) -->

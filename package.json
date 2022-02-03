@@ -3,9 +3,9 @@
   "version": "0.1.5",
   "description": "bootstrap theme for Oruga",
   "license": "MIT",
-  "main": "dist/bulma.js",
-  "module": "dist/bulma.js",
-  "unpkg": "dist/bulma.min.js",
+  "main": "dist/bootstrap.js",
+  "module": "dist/bootstrap.js",
+  "unpkg": "dist/bootstrap.min.js",
   "sideEffects": [
     "*.css",
     "*.scss"

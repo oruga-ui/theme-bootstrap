@@ -54,8 +54,9 @@
         </o-field>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" @click="isCardModalActive = false" data-bs-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Log in</button>
+        <o-button outlined variant="danger" @click="isCardModalActive = false">Close</o-button>
+        <o-button outlined variant="primary">Log in</o-button>
+        <!-- <o-button outlined variant="success">Create one</o-button> -->
       </div>
     </div>
     </o-modal>

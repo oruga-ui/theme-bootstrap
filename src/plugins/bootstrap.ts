@@ -231,7 +231,7 @@ export const bootstrapConfig: any = {
         emptyClass: 'is-empty',
         detailedClass: 'detail',
         footerClass: 'table-footer',
-        paginationWrapperClass: '',
+        paginationWrapperClass: 'pagination-wrapper',
         // scrollableClass: 'is-scrollable',
         //
         trSelectedClass: 'table-active',
