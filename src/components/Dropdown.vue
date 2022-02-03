@@ -1,7 +1,7 @@
 <template>
   <section class="Dropdowns">
     <h2>Dropdowns:</h2>
-    <o-dropdown aria-role="list">
+    <o-dropdown  position="top-left" aria-role="list">
       <template #trigger>
         <o-button variant="primary" #default="{ active }">
           <span>Click me!</span>

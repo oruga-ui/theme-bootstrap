@@ -11,6 +11,11 @@
     </o-field>
 
     <o-table
+        :paginated="isPaginated"
+        :per-page="perPage"
+        :current-page.sync="currentPage"
+        :pagination-simple="isPaginationSimple"
+        :pagination-position="paginationPosition"
         :data="isEmpty ? [] : dataTable"
         :bordered="isBordered"
         :striped="isStriped"
@@ -66,9 +71,9 @@
         </tr>
       </template>
 
-         <template #bottom-left>
-                        <b>Total checked</b>: {{ checkedRows.length }}
-                    </template>
+      <!--    <template #bottom-left>
+            <b>Total checked</b>: {{ checkedRows.length }}
+        </template> -->
     </o-table>
 
     <section>
@@ -166,6 +171,12 @@ export default defineComponent({
             isFocusable: false,
             isLoading: false,
             hasMobileCards: true,
+
+            isPaginated: true,
+            isPaginationSimple: false,
+            paginationPosition: 'bottom',
+            currentPage: 1,
+            perPage: 3,
             
             checkedRows: [],
             selected: null,
@@ -178,20 +189,21 @@ export default defineComponent({
           },
           {
             field: 'first_name',
-            label: 'First Name'
+            label: 'First Name',
           },
           {
             field: 'last_name',
-            label: 'Last Name'
+            label: 'Last Name',
           },
           {
             field: 'date',
-            label: 'Date',
-            position: 'centered'
+            label: 'Date'
+            // position: 'centered'
           },
           {
             field: 'gender',
-            label: 'Gender'
+            label: 'Gender',
+            position: 'left'
           }
         ]
         }

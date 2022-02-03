@@ -1,42 +1,79 @@
 $detail-padding: 8px 12px;
+$table-border-color: #dee2e6;
 
 .table-wrapper {
+    position: relative;
     .table {
         &.table-hover:focus {
         	border: solid 1px;
             border-color: $info;
-            box-shadow: 0 0 0 0.125em rgba($info, 0.25);
+            box-shadow: 0 0 0 0.225em rgba($info, 0.25);
+            th {
+                 border-color: $table-border-color;
+            }
+            tr {
+                border-color: $table-border-color;
+            }
         }
-        .is-current-sort {
-            background-color: $light;
+       
+        .icon {
+            transition: transform $speed-slow $easing, opacity 86ms $easing;
+            &.is-desc {
+                transform: rotate(180deg);
+            }
+            &.is-expanded {
+                transform: rotate(90deg);
+            }
         }
-
-        // .icon {
-        //     transition: transform $speed-slow $easing, opacity 86ms $easing;
-        //     &.is-desc {
-        //         transform: rotate(180deg);
-        //     }
-        //     &.is-expanded {
-        //         transform: rotate(90deg);
-        //     }
-        // }
-        // .icon.fas-arrow-up.is-desc {
-        // 	transition: transform $speed-slow $easing, opacity 86ms $easing;
-        // 	transform: rotate(180deg);
-        // }
-        // .sort-icon.icon.is-desc {
-        //     // background-color: red;
-        //     transform: rotate(180deg)/* translateY(-50%)*/ !important;
-        // }
+        .icon.fas-arrow-up.is-desc {
+        	transition: transform $speed-slow $easing, opacity 86ms $easing;
+        	transform: rotate(180deg);
+        }
+        .sort-icon.icon.is-desc {
+            // background-color: red;
+            transform: rotate(180deg) translateY(-50%) !important;
+        }
         // new strucutre
         thead {
-
+            th {
+                cursor: pointer; 
+            }
         }
         tfoot {
 
         }
         th {
-
+            position: relative;
+            &.is-left {
+                text-align: left;
+            }
+            &.is-centered {
+                text-align: center; 
+                justify-content: center;
+            }
+            &.is-right {
+                text-align: right;
+                flex-direction: row-reverse;
+            }
+            &.is-current-sort {
+                background-color: $light;
+            }
+            &.is-sortable:hover {
+                border-color: $grey;
+            }
+            &.is-sortable {
+                cursor: pointer;
+                /* .is-relative { */
+                > span {
+                    position: relative;
+                }
+            }
+            .sort-icon, .multi-sort-cancel-icon {
+                position: absolute;
+                bottom: 50%;
+                left: 90%;
+                transform: translateY(50%);
+            }
         }
         tr {
             &.detail {
@@ -47,7 +84,20 @@ $detail-padding: 8px 12px;
             }
         }
         td {
-
+            &.has-text-left {
+                text-align: left;
+            }
+            &.has-text-centered {
+                text-align: center; 
+            }
+            &.has-text-right {
+                text-align: right;
+            }
         }
+    }
+
+    .pagination-wrapper {
+        position: absolute;
+        right: 0;
     }
 }

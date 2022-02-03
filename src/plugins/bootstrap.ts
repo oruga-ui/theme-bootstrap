@@ -246,7 +246,7 @@ export const bootstrapConfig: any = {
         thSortIconClass: 'sort-icon',
         thUnselectableClass: 'is-unselectable',
         thStickyClass: 'is-sticky',
-        thCheckboxClass: 'th-checkbox',
+        // thCheckboxClass: 'th-checkbox',
         thDetailedClass: 'th-chevron-cell',
         tdDetailedChevronClass: 'chevron-cell',
         thPositionClass: (position: string) => {
@@ -379,7 +379,7 @@ export const bootstrapConfig: any = {
         menuPositionClass: 'is-',
         menuActiveClass: 'show',
         itemClass: 'dropdown-item',
-        // itemActiveClass: 'show',
+        // itemActiveClass: 'active',
         itemDisabledClass: 'is-disabled',
         mobileClass: 'dropdown-modal',
         menuMobileOverlayClass: 'background'
