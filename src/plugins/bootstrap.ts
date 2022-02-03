@@ -6,7 +6,7 @@ export const bootstrapConfig: any = {
         rootClass: 'input-field',
         labelClass: 'form-label',
         messageClass: 'help',
-        variantClass: 'text-',
+        variantMessageClass: 'text-',
         addonsClass: 'input-group',
         groupedClass: 'input-group',
         // groupMultilineClass: 'is-grouped-multiline',
@@ -36,10 +36,7 @@ export const bootstrapConfig: any = {
                 return 'form-control-lg'
             }
         },
-        variantClass: (_: string, { props }: any) => {
-            if (props.outlined) return '';
-            return `form-control-${props.variant}`
-        },
+        variantClass: 'border-',
         expandedClass: 'is-expanded',
         // iconLeftSpaceClass: 'input-group-text',
         iconLeftClass: 'is-left',
