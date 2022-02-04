@@ -46,23 +46,13 @@ export const bootstrapConfig: any = {
     },
     select: {
         override: true,
-        rootClass: (_: string, { props, computed }: any) => {
-            // const classes = ['form-select']
-            // if (props.size) classes.push(`is-${props.size}`)
-            // if (props.rounded) classes.push('is-rounded')
-            // if (computed.statusVariant) classes.push(`is-${computed.statusVariant}`)
-            // if (props.multiple) classes.push('is-multiple')
-            // if (props.icon) classes.push('has-icons-left')
-            // if (props.iconRight) classes.push('has-icons-right')
-            // return classes.join(' ').trim()
-            return 'select'
-        },
+        rootClass: 'select',
         selectClass: (_: string, { props }: any) => {
             if (props.icon) return 'form-select has-icon-in-left';
             return `form-select`
         },
-        // roundedClass: 'is-rounded',
-        // variantClass: 'is-',
+        roundedClass: 'is-rounded',
+        variantClass: 'border-',
         sizeClass: (_: string, { props }: any) => {
             if (props.size == 'small'){
                 return 'form-select-sm';
