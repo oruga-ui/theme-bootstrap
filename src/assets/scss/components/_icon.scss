@@ -4,20 +4,24 @@ $icon-spin-animation-timing-function: linear;
 $icon-margin-right-bottom: .4rem;
 
 // ICON
-.is-spin {
-  animation-name: spining;
-  animation-duration: $icon-spin-animation-duration;
-  animation-iteration-count: $icon-spin-animation-iteration-count;
-  animation-timing-function: $icon-spin-animation-timing-function; 
-}
-
 @keyframes spining {
     from {
+        -webkit-transform:rotate(0deg);
         transform:rotate(0deg);
     }
     to {
+        -webkit-transform:rotate(360deg);
         transform:rotate(360deg);
     }
+}
+
+.icon {
+  &.is-spin {
+    animation-name: spining;
+    animation-duration: $icon-spin-animation-duration;
+    animation-iteration-count: $icon-spin-animation-iteration-count;
+    animation-timing-function: $icon-spin-animation-timing-function; 
+  }
 }
 
 .icon:not(:last-child) {

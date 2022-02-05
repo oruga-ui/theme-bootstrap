@@ -5,8 +5,10 @@ export const bootstrapConfig: any = {
         override: true,
         rootClass: 'input-field',
         labelClass: 'form-label',
-        messageClass: 'help',
-        variantMessageClass: 'text-',
+        messageClass: (_: string, { props }: any) => {
+            return `help text-${props.variant}`
+        },
+        // variantMessageClass: 'text-',
         addonsClass: 'input-group',
         groupedClass: 'input-group',
         // groupMultilineClass: 'is-grouped-multiline',
@@ -131,7 +133,7 @@ export const bootstrapConfig: any = {
     },
     inputitems: {
         override: true,
-        rootClass: 'taginput control',
+        rootClass: 'taginput',
         containerClass: 'taginput-container is-focusable',
         itemClass: 'tag',
         closeClass: 'delete is-small'

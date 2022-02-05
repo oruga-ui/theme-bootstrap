@@ -155,7 +155,7 @@ $rounded-input: 50px!important;
 
 .input-group {
     flex-shrink: 0;
-    .input .select {
+    .input, .select {
         &.is-expanded {
             flex-grow: 1;
             flex-shrink: 1;

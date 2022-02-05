@@ -4,7 +4,7 @@
       <o-input value="Kevin Garvey"></o-input>
     </o-field>
 
-    <o-field label="Email" variant="danger" message="This email is invalid">
+    <o-field label="Email" variant="danger" message-variant='info' message="This email is invalid">
       <o-input type="email" value="john@" maxlength="30"> </o-input>
     </o-field>
 

@@ -1,4 +1,4 @@
-# Oruga Bulma contributors
+# Oruga Bootstrap contributors
 
 <strong>Thank You</strong> to everyone involved for improving this project, day by day 💚
 
