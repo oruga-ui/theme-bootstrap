@@ -1,0 +1,48 @@
+
+$tooltip-arrow-size: 5px !default;
+$tooltip-arrow-margin: 2px !default;
+$tooltip-content-multiline-width: 300px !default;
+$tooltip-colors: $colors !default;
+
+.b-tooltip {
+	position: relative;
+    // display: inline-flex;
+	.tooltip-content {
+		width: auto;
+        padding: 0.35rem 0.75rem;
+        border-radius: 3px;
+        font-size: 0.85rem;
+        // font-weight: $weight-normal;
+        box-shadow: 0px 1px 2px 1px rgba(0, 1, 0, 0.2);
+        z-index: 38;
+        white-space: nowrap;
+        position: absolute;
+        top: auto;
+        left: 50%;
+        background-color: red;
+        color: white;
+	}
+
+	&.tooltip-content {
+        &.is-always{
+            opacity: 1;
+            visibility: visible;
+        }
+        &.is-multiline {
+            text-align: center;
+            white-space: normal;
+            width: $tooltip-content-multiline-width;
+        }
+    }
+    &.is-dashed {
+        .tooltip-trigger {
+            border-bottom: 1px dashed $light;
+            cursor: default;
+        }
+    }
+    &.is-square {
+        .tooltip-content {
+            border-radius: 0;
+        }
+    }
+}
