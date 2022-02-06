@@ -4,37 +4,76 @@ $taginput-border-radius: 3px;
 $taginput-margin: calc(0.275em - 1px);
 $taginput-padding: calc(0.275em - 1px) 0.800rem;
 
+
+@mixin variant {
+	&.is-primary {
+		background-color: $primary;
+		border-color: $primary;
+		color: white;
+	}
+	&.is-success {
+		background-color: $success;
+		border-color: $success;
+		color: white;
+	}
+	&.is-danger {
+		background-color: $danger;
+		border-color: $danger;
+		color: white;
+	}
+	&.is-warning {
+		background-color: $warning;
+		border-color: $warning;
+	}
+	&.is-info {
+		background-color: $info;
+		border-color: $info;
+	}
+	&.is-dark {
+		background-color: $dark;
+		border-color: $dark;
+		color: white;
+	}
+}
+
 .taginput {
-	border: 1px solid $taginput-border-color;
-	border-radius: $taginput-border-radius;
+	.taginput-container {
+		border: 1px solid $taginput-border-color;
+		border-radius: $taginput-border-radius;
+		height: auto;
+		display: flex;
+		flex-wrap: wrap;
+		
+		&:hover {
+			border-color: $info;
+			box-shadow: 0 0 0 0.225em rgba($info, 0.25);
+		}
+
+		.tag {
+			background-color: $light; // default variant
+			margin-top: 0.275rem;
+			margin-left: 0.275rem;
+			margin-bottom: $taginput-margin;
+			padding: $taginput-padding;
+			font-size: 0.9em;
+			height: $taginput-height;
+			border: 0.5px solid $taginput-border-color;
+			border-radius: $taginput-border-radius;
+			
+			.icon {
+				margin-left: 0.275rem;
+				cursor: pointer;
+			}
+
+			@include variant;
+		}
+	}
 	input {
 		border: 0;
 		box-shadow: none;
-		&:focus {
-        box-shadow: none !important;
-    }
-	}
-	.taginput-container {
-		// position: relative;
-		display: flex;
-		.tag {
-			background-color: $light;
-			margin-top: 0.275rem;
-			margin-left: 0.275rem;
-            margin-bottom: $taginput-margin;
-            padding: $taginput-padding;
-            font-size: 0.9em;
-            height: $taginput-height;
-            border: 0.5px solid $taginput-border-color;
-            border-radius: $taginput-border-radius;
 
-            .icon {
-            	margin-left: 0.275rem;
-            	cursor: pointer;
-            }
-		}
-		.tag:hover {
-			background-color: $taginput-border-color;
+		&:focus {
+			box-shadow: none !important;
 		}
 	}
 }

@@ -1,11 +1,13 @@
 <template>
     <o-switch
         v-model="allowNew"
+        :rounded="false"
     >
         Allow new items
     </o-switch>
     <o-switch
         v-model="openOnFocus"
+        :rounded="false"
     >
         Open on focus
     </o-switch>
@@ -13,6 +15,7 @@
     <o-field label="Enter some items">
       <o-inputitems
         v-model="tags"
+        variant="primary"
         :data="filteredTags"
         autocomplete
         :allow-new="allowNew"
@@ -20,6 +23,7 @@
         field="user.first_name"
         icon="tag"
         placeholder="Add an item"
+        keep-first
         @typing="getFilteredTags"
       >
       </o-inputitems>
@@ -398,7 +402,14 @@ export default defineComponent({
     data() {
         return {
             filteredTags: data,
-            tags: [],
+            tags: [
+                {
+                  id: 60,
+                  user: { first_name: "Christopher", last_name: "Palmer" },
+                  date: "2016/05/24 08:58:12",
+                  gender: "Male",
+                }
+            ],
             allowNew: false,
             openOnFocus: false,
         }

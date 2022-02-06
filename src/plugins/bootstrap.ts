@@ -136,7 +136,8 @@ export const bootstrapConfig: any = {
         rootClass: 'taginput',
         containerClass: 'taginput-container is-focusable',
         itemClass: 'tag',
-        closeClass: 'delete is-small'
+        closeClass: 'delete is-small',
+        variantClass: 'is-'
     },
     pagination: {
         override: true,
