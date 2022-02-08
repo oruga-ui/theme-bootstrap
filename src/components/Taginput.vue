@@ -414,7 +414,7 @@ export default defineComponent({
             openOnFocus: false,
         }
     },
-     methods: {
+    methods: {
         getFilteredTags(text: string) {
             this.filteredTags = data.filter((option) => {
                 return (
@@ -425,7 +425,7 @@ export default defineComponent({
                 );
             });
         },
-  },
+    },
 })
 </script>
 <style>

@@ -5,18 +5,18 @@ $modal-background: rgba(0,0,0,.8) !default;
 	display: block;
 	background-color: $modal-background;
 	.modal-dialog {
-		// Close btn of oruga
-		.fa-times {
-			// display: none;
-			position: absolute; 
-			top: 20px;
-			right: 20px;
-		}
 		.modal-content {
 			.modal-header {
+				// Close btn of oruga
+				.fa-times {
+					display: none;
+					// position: absolute; 
+					// top: 20px;
+					// right: 20px;
+				}
 				// Close btn of bootstrap
 				button {
-					display: none;
+					display: block;
 				}
 			}
 		}

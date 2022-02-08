@@ -49,6 +49,17 @@
             placeholder="Enter Your Password"
           ></o-input>
         </o-field>
+        <o-field label="Enter some items">
+          <o-inputitems
+            v-model="tags"
+            variant="primary"
+            field="user.first_name"
+            icon="tag"
+            placeholder="Add an item"
+            keep-first
+          >
+          </o-inputitems>
+        </o-field>
         <o-field>
           <o-checkbox variant="info"> Remember me </o-checkbox>
         </o-field>
@@ -72,7 +83,8 @@ export default defineComponent({
       isImageModalActive: false,
       isCardModalActive: false,
       email:'',
-      password:''
+      password:'',
+      tags: []
     };
   },
 });
