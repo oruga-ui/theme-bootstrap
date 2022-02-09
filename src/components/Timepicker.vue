@@ -41,8 +41,8 @@
             </o-timepicker>
         </o-field>
         <o-field label="Select time">
-        <o-timepicker v-model="time" placeholder="Click to select...">
-          <o-button label="Now" variant="primary" icon-left="clock" @click="time = new Date()" />
+        <o-timepicker icon="clock" v-model="time" placeholder="Click to select...">
+          <o-button label="Now" variant="primary" icon-left="clock" outlined @click="time = new Date()" />
           <o-button label="Clear" variant="danger" icon-left="times" outlined @click="time = null" />
         </o-timepicker>
         </o-field>
@@ -53,6 +53,7 @@
 export default {
     data() {
         return {
+            time: null,
             hourFormat: undefined, // Browser locale
             enableSeconds: false,
             locale: undefined // Browser locale

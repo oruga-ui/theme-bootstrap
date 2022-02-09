@@ -1,8 +1,12 @@
 $select-margin-right: 0.2rem;
 
 .timepicker {
+	.dropdown-menu {
+		width: auto;
+	}
 	.dropdown-item {
 		display: inline-flex;
+		flex-wrap: wrap;
 	}
 	.dropdown-item:active {
 		background-color: white;
@@ -21,8 +25,17 @@ $select-margin-right: 0.2rem;
         font-weight: bolder;
     }
     .timepicker-footer {
+    	// display: inline-flex;
+    	// flex-wrap: wrap;
+    	// .btn {
+    	// 	flex-grow: 0;
+    	// }
     	.btn:not(:last-child):not(.btn-expanded) {
-		    margin: 0 $select-margin-right;
+		    margin: 0 $select-margin-right !important;
 		}
     }
+    footer.timepicker-footer {
+	    // position: absolute;
+	    // right: 16px;
+	}
 }

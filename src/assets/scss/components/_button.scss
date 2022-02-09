@@ -65,10 +65,8 @@ $btn-rounded: 30px;
 	}
 }
 .btn:not(:last-child):not(.btn-expanded) {
-	margin-right: $btn-margin-right-bottom;
+	margin-right: $btn-margin-right-bottom !important;
 }
 .btn:not(.btn-primary):not(.btn-success):not(.btn-danger):not(.btn-warning):not(.btn-info):not(.btn-dark):not(.btn-outline-primary):not(.btn-outline-success):not(.btn-outline-danger):not(.btn-outline-warning):not(.btn-outline-info):not(.btn-outline-info) {
 	border: .1px solid #ced4da;
 }
-
-// INVERTED
