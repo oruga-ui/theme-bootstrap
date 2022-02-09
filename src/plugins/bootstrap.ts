@@ -461,7 +461,11 @@ export const bootstrapConfig: any = {
         rootClass: 'timepicker control',
         boxClass: 'dropdown-item',
         selectClasses: {
-            rootClass: 'select control'
+            rootClass: 'select',
+            selectClass: (_: string, { props }: any) => {
+                // if (props.icon) return 'form-select has-icon-in-left';
+                return `form-select`
+            },
         },
         separatorClass: 'is-colon control',
         footerClass: 'timepicker-footer',

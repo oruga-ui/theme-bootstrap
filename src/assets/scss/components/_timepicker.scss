@@ -1,0 +1,28 @@
+$select-margin-right: 0.2rem;
+
+.timepicker {
+	.dropdown-item {
+		display: inline-flex;
+	}
+	.dropdown-item:active {
+		background-color: white;
+		color: $dark;
+	}
+	.dropdown-item:hover {
+		background-color: white;
+	}
+	span.is-colon.control {
+	    transform: translateY(10%);
+	    font-weight: bolder;
+	}
+
+	.select:not(:last-child) {
+        margin: 0 $select-margin-right;
+        font-weight: bolder;
+    }
+    .timepicker-footer {
+    	.btn:not(:last-child):not(.btn-expanded) {
+		    margin: 0 $select-margin-right;
+		}
+    }
+}
