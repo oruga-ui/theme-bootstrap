@@ -37,7 +37,7 @@ $switch-large-translateX: 15px;
 	    width: $switch-before-width-small;
 		height: $switch-before-height-small;
 	}
-	input[type=checkbox]:checked + .switch-wrapper .switch:before {
+	input[type=checkbox]:checked + .switch:before {
 		// Move
 		-webkit-transform: translateX($switch-small-translateX);
 		-ms-transform: translateX($switch-small-translateX);
@@ -54,7 +54,7 @@ $switch-large-translateX: 15px;
 	    width: $switch-before-width-medium;
 		height: $switch-before-height-medium;
 	}
-	input[type=checkbox]:checked + .switch-wrapper .switch:before {
+	input[type=checkbox]:checked + .switch:before {
 		// Move
 		-webkit-transform: translateX($switch-medium-translateX);
 		-ms-transform: translateX($switch-medium-translateX);
@@ -71,7 +71,7 @@ $switch-large-translateX: 15px;
 	    width: $switch-before-width-large;
 		height: $switch-before-height-large;
 	}
-	input[type=checkbox]:checked + .switch-wrapper .switch:before {
+	input[type=checkbox]:checked + .switch:before {
 		// Move
 		-webkit-transform: translateX($switch-large-translateX);
 		-ms-transform: translateX($switch-large-translateX);
@@ -114,12 +114,12 @@ $switch-large-translateX: 15px;
 		height: $switch-before-height-small;
 	}
 
-	input[type=checkbox]:checked + .switch-wrapper .switch {
+	input[type=checkbox]:checked + .switch {
 		// Default variant is-primary
 		background-color: $primary;
 	}
 
-	input[type=checkbox]:checked + .switch-wrapper .switch:before {
+	input[type=checkbox]:checked + .switch:before {
 		// Default Move is-small
 		-webkit-transform: translateX($switch-small-translateX);
 		-ms-transform: translateX($switch-small-translateX);
@@ -148,34 +148,34 @@ $switch-large-translateX: 15px;
 	}
 
 	// Variant
-	input[type=checkbox]:checked + .switch-wrapper .switch {
+	input[type=checkbox]:checked + .switch {
 		&.is-primary {
 			background-color: $primary;
 		}
 	}
-	input[type=checkbox]:checked + .switch-wrapper .switch {
+	input[type=checkbox]:checked + .switch {
 		&.is-success {
 			background-color: $success;
 		}
 	}
-	input[type=checkbox]:checked + .switch-wrapper .switch {
+	input[type=checkbox]:checked + .switch {
 		&.is-danger {
 			background-color: $danger;
 		}
 	}
-	input[type=checkbox]:checked + .switch-wrapper .switch {
+	input[type=checkbox]:checked + .switch {
 		&.is-warning {
 			background-color: $warning;
 		}
 	}
-	input[type=checkbox]:checked + .switch-wrapper .switch {
+	input[type=checkbox]:checked + .switch {
 		&.is-info {
 			background-color: $info;
 		}
 	}
 
 	// Passive Variant
-	.switch-wrapper .switch {
+	.switch {
 		&.is-primary-passive {
 			background-color: $primary;
 		}
@@ -192,11 +192,5 @@ $switch-large-translateX: 15px;
 			background-color: $info;
 		}
 	}
-	
-	//
-	.switch-wrapper {
-		.form-check-label {
-			
-		}
-	}
+
 }
