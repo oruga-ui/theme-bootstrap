@@ -1,7 +1,7 @@
 $icon-color: grey;
 $input-padding-for-left-icon: 7px 11px 7px 32px;
-$input-padding-for-left-icon: .4rem .8rem .4rem 2rem;
-$input-padding-for-left-icon-lg: 7px 11px 7px 42px;
+// $input-padding-for-left-icon: .4rem .8rem .4rem 2rem;
+$input-padding-for-left-icon-lg: 7px 11px 7px 45px;
 $icon-left-right-position: 12px;
 $btn-border-color: #ced4da;
 $rounded-input: 50px!important;
@@ -123,7 +123,7 @@ $rounded-input: 50px!important;
         // if the icon is in left then set that padding
         &.has-icon-in-left:not(.form-control-lg) {
             padding: $input-padding-for-left-icon;
-        } // if icon and the input are big, we give more space to icon
+        } // if icon and the input are large, we give more space to icon
         &.has-icon-in-left.form-control-lg {
             padding: $input-padding-for-left-icon-lg;
         }

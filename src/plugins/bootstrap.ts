@@ -462,7 +462,7 @@ export const bootstrapConfig: any = {
         boxClass: 'dropdown-item',
         selectClasses: {
             rootClass: 'select',
-            selectClass: 'form-select'
+            selectClass: 'form-select is-expanded'
         },
         separatorClass: 'is-colon control',
         footerClass: 'timepicker-footer',

@@ -41,7 +41,7 @@
             </o-timepicker>
         </o-field>
         <o-field label="Select time">
-        <o-timepicker icon="clock" v-model="time" placeholder="Click to select...">
+        <o-timepicker size="large" icon="clock" v-model="time" placeholder="Click to select...">
           <o-button label="Now" variant="primary" icon-left="clock" outlined @click="time = new Date()" />
           <o-button label="Clear" variant="danger" icon-left="times" outlined @click="time = null" />
         </o-timepicker>
