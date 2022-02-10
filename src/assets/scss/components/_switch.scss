@@ -100,6 +100,23 @@ $switch-large-translateX: 15px;
 		width: $switch-width-small;
 	    height: $switch-height-small;
 	    top: $switch-top-small;
+
+	    // Passive Variant
+	    &.is-primary-passive {
+			background-color: $primary;
+		}
+		&.is-success-passive {
+			background-color: $success;
+		}
+		&.is-danger-passive {
+			background-color: $danger;
+		}
+		&.is-warning-passive {
+			background-color: $warning;
+		}
+	    &.is-info-passive {
+			background-color: $info;
+		}
 	}
 	.switch:before {
 		position: absolute;
@@ -173,24 +190,4 @@ $switch-large-translateX: 15px;
 			background-color: $info;
 		}
 	}
-
-	// Passive Variant
-	.switch {
-		&.is-primary-passive {
-			background-color: $primary;
-		}
-		&.is-success-passive {
-			background-color: $success;
-		}
-		&.is-danger-passive {
-			background-color: $danger;
-		}
-		&.is-warning-passive {
-			background-color: $warning;
-		}
-	    &.is-info-passive {
-			background-color: $info;
-		}
-	}
-
 }

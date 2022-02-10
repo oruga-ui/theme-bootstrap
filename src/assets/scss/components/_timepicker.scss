@@ -15,7 +15,7 @@ $select-margin: 0.2rem 0.2rem 0.2rem 0;
 	.dropdown-item:hover {
 		background-color: white;
 	}
-	span.is-colon.control {
+	span.is-colon {
 	    transform: translateY(15%);
 	    font-weight: bolder;
 	    margin: $select-margin;
@@ -26,11 +26,6 @@ $select-margin: 0.2rem 0.2rem 0.2rem 0;
         font-weight: bolder;
     }
     .timepicker-footer {
-    	// display: inline-flex;
-    	// flex-wrap: wrap;
-    	// .btn {
-    	// 	flex-grow: 0;
-    	// }
     	.btn:not(:last-child):not(.btn-expanded) {
 		    margin: $select-margin!important;
 		}

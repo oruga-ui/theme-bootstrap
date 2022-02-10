@@ -114,6 +114,7 @@ export const bootstrapConfig: any = {
             if (props.passiveVariant) classes.push(`is-${props.passiveVariant}-passive`)
             return classes.join(' ');
         },
+        // elementsWrapperClass: 'switch-wrapper',
         labelClass: 'form-check-label',
         // leftLabelClass: 'has-left-label',
         sizeClass: 'is-',
@@ -457,13 +458,13 @@ export const bootstrapConfig: any = {
     },
     timepicker: {
         override: true,
-        rootClass: 'timepicker control',
+        rootClass: 'timepicker',
         boxClass: 'dropdown-item',
         selectClasses: {
             rootClass: 'select',
-            selectClass: 'form-select is-expanded'
+            selectClass: 'form-select'
         },
-        separatorClass: 'is-colon control',
+        separatorClass: 'is-colon',
         footerClass: 'timepicker-footer',
         sizeClass: 'is-',
     },
