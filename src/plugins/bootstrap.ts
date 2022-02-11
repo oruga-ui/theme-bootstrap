@@ -114,7 +114,6 @@ export const bootstrapConfig: any = {
             if (props.passiveVariant) classes.push(`is-${props.passiveVariant}-passive`)
             return classes.join(' ');
         },
-        // elementsWrapperClass: 'switch-wrapper',
         labelClass: 'form-check-label',
         // leftLabelClass: 'has-left-label',
         sizeClass: 'is-',
@@ -214,6 +213,7 @@ export const bootstrapConfig: any = {
     table: {
         override: true,
         //
+        rootClass: 'table-component',
         wrapperClass: 'table-wrapper',
         tableClass: 'table',
         borderedClass: 'table-bordered',
