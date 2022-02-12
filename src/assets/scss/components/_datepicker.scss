@@ -1,17 +1,52 @@
 .datepicker {
+	.dropdown-item:active {
+		background-color: transparent;
+		color: $dark;
+	}
+	.dropdown-item:hover {
+		background-color: transparent;
+	}
 	.datepicker-header {
 
 	}
 	.datepicker-table {
 		.datepicker-header {
+			display: flex;
 			.datepicker-cell {
-
+				padding: 5px;
+				// border:1px solid grey;
+				text-align: center;
+			    margin: 5px;
+			    width: 14%;
+			    color: $dark;
+				font-weight: bolder;
+				border-radius: 3px;
 			}
 		}
 		.datepicker-body {
+			display: block;
 			.datepicker-row {
+				display: flex;
 				.datepicker-cell {
-
+					padding: 5px;
+					// border:1px solid grey;
+	                text-align: center;
+			        margin: 5px;
+			        width: 14%;
+			        border-radius: 3px;
+				}
+				.datepicker-cell.is-unselectable {
+					color: grey;
+					cursor: not-allowed;
+				}
+				.datepicker-cell.is-selectable {
+					text-decoration: none;
+					color: $dark;
+					font-weight: bolder;
+				}
+				.datepicker-cell.is-selected {
+					background-color: $primary;
+					color: white;
 				}
 			}
 		}

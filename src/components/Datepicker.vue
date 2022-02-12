@@ -37,7 +37,7 @@
         </o-field>
       </section>
     </div>
-    <div class="column">
+    <!-- <div class="column">
       <span>
         <o-field>
           <o-switch v-model="bars">Bars</o-switch>
@@ -71,7 +71,7 @@
          Clear
         </o-button>
        </o-datepicker>
-    </div>
+    </div> -->
   </div>
 </template>
 

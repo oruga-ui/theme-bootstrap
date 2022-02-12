@@ -384,9 +384,9 @@ export const bootstrapConfig: any = {
         tableHeadClass: 'datepicker-header',
         tableHeadCellClass: 'datepicker-cell',
         headerButtonsClass: 'pagination field is-centered',
-        prevBtnClass: 'pagination-previous',
-        nextBtnClass: 'pagination-next',
-        listsClass: 'pagination-list',
+        prevBtnClass: 'pagination-previous btn',
+        nextBtnClass: 'pagination-next btn',
+        listsClass: 'pagination-list input-group',
         // tableBodyClass: 'datepicker-body',
         tableBodyClass: (_: string, { props }: any) => {
             const classes = ['datepicker-body'];
