@@ -1,3 +1,7 @@
+$datepicker-cell-margin: 5px;
+$datepicker-cell-padding: 5px;
+$datepicker-cell-width: 14%;
+
 .datepicker {
 	.dropdown-item:active {
 		background-color: transparent;
@@ -13,10 +17,10 @@
 		.datepicker-header {
 			display: flex;
 			.datepicker-cell {
-				padding: 5px;
+				padding: $datepicker-cell-padding;
 				// border:1px solid grey;
 				text-align: center;
-			    margin: 5px;
+			    margin: $datepicker-cell-margin;
 			    width: 14%;
 			    color: $dark;
 				font-weight: bolder;
@@ -28,11 +32,11 @@
 			.datepicker-row {
 				display: flex;
 				.datepicker-cell {
-					padding: 5px;
+					padding: $datepicker-cell-padding;
 					// border:1px solid grey;
 	                text-align: center;
-			        margin: 5px;
-			        width: 14%;
+			        margin: $datepicker-cell-margin;
+			        width: $datepicker-cell-width;
 			        border-radius: 3px;
 				}
 				.datepicker-cell.is-unselectable {

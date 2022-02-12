@@ -1,31 +1,43 @@
 <template>
-  <div class="columns">
+  <section class="columns">
     <div class="column">
-      <section>
-        <o-field grouped group-multiline>
-          <o-field>
-            <o-select v-model="locale" placeholder="Locale">
-              <option :value="undefined"></option>
-              <option value="de-DE">de-DE</option>
-              <option value="en-CA">en-CA</option>
-              <option value="en-GB">en-GB</option>
-              <option value="en-US">en-US</option>
-              <option value="es-ES">es-ES</option>
-              <option value="es-MX">es-MX</option>
-              <option value="fr-CA">fr-CA</option>
-              <option value="fr-FR">fr-FR</option>
-              <option value="it-IT">it-IT</option>
-              <option value="ja-JP">ja-JP</option>
-              <option value="pt-BR">pt-BR</option>
-              <option value="ru-RU">ru-RU</option>
-            </o-select>
-          </o-field>
-          <o-field>
-            <o-switch v-model="showWeekNumber">Show week number</o-switch>
-          </o-field>
+      <o-field>
+        <o-field>
+          <o-select v-model="locale" placeholder="Locale">
+            <option :value="undefined"></option>
+            <option value="de-DE">de-DE</option>
+            <option value="en-CA">en-CA</option>
+            <option value="en-GB">en-GB</option>
+            <option value="en-US">en-US</option>
+            <option value="es-ES">es-ES</option>
+            <option value="es-MX">es-MX</option>
+            <option value="fr-CA">fr-CA</option>
+            <option value="fr-FR">fr-FR</option>
+            <option value="it-IT">it-IT</option>
+            <option value="ja-JP">ja-JP</option>
+            <option value="pt-BR">pt-BR</option>
+            <option value="ru-RU">ru-RU</option>
+          </o-select>
+          <o-switch v-model="showWeekNumber">Show week number</o-switch>
         </o-field>
-        <o-field label="Select a date">
-          <o-datepicker
+      <!--     <o-field>
+          </o-field> -->
+      </o-field>
+
+
+      <o-field label="Select a date">
+        <o-datepicker
+          v-model="selected"
+          :show-week-number="showWeekNumber"
+          :locale="locale"
+          placeholder="Click to select..."
+          icon="calendar"
+          trap-focus
+        >
+        </o-datepicker>
+      </o-field>
+      <o-field label="Select a date">
+        <o-datepicker
             v-model="selected"
             :show-week-number="showWeekNumber"
             :locale="locale"
@@ -33,46 +45,23 @@
             icon="calendar"
             trap-focus
           >
-          </o-datepicker>
-        </o-field>
-      </section>
+        </o-datepicker>
+      </o-field>
     </div>
-    <!-- <div class="column">
-      <span>
-        <o-field>
-          <o-switch v-model="bars">Bars</o-switch>
-        </o-field>
-        <o-datepicker
+
+
+   <!--  <div class="column">
+       <o-datepicker
           inline
           v-model="date"
           :events="events"
           :indicators="indicators"
         >
         </o-datepicker>
-      </span>
-    </div>
-  </div>
-  <div class="columns">
-    <div class="column">
-      <o-datepicker
-          range
-          v-model="dates"
-        >
-       </o-datepicker>
-    </div>
-    <div class="column">
-      <o-datepicker
-          v-model="date1"
-        >
-        <o-button icon-left="calendar" variant="primary" @click="date1 = new Date()">
-          Today
-        </o-button>
-        <o-button icon-left="times" variant="danger" @click="date1 = null">
-         Clear
-        </o-button>
-       </o-datepicker>
     </div> -->
-  </div>
+
+
+  </section>
 </template>
 
 <script lang="ts">
@@ -142,3 +131,16 @@ export default defineComponent({
   },
 });
 </script>
+<style>
+  .columns {
+    margin: 25px;
+    /*display: flex;*/
+/*    display: grid;
+    grid-template-columns: 40% 40%;*/
+  }
+  .column {
+    /*flex-grow: 0;
+    flex-shrink: 0;*/
+    /*grid-gap: 10px;*/
+  }
+</style>
