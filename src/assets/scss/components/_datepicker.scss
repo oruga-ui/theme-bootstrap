@@ -1,6 +1,6 @@
 $datepicker-cell-margin: 5px;
-$datepicker-cell-padding: 5px;
-$datepicker-cell-width: 14%;
+$datepicker-cell-padding: 5px; /*0.5rem 0.75rem*/
+$datepicker-cell-width: calc(#{100%} / 7);
 
 .datepicker {
 	.dropdown-item:active {
@@ -11,20 +11,32 @@ $datepicker-cell-width: 14%;
 		background-color: transparent;
 	}
 	.datepicker-header {
-
+		margin-bottom: .5rem;
+		.pagination {
+			.pagination-prev {
+				order:1;
+			}
+			.pagination-list {
+				order:2;
+				flex-shrink:1;
+				width: auto;
+			}
+			.pagination-next {
+				order:3;
+			}
+		}
 	}
 	.datepicker-table {
 		.datepicker-header {
 			display: flex;
+			margin-bottom: 0;
 			.datepicker-cell {
 				padding: $datepicker-cell-padding;
 				// border:1px solid grey;
 				text-align: center;
-			    margin: $datepicker-cell-margin;
-			    width: 14%;
-			    color: $dark;
-				font-weight: bolder;
-				border-radius: 3px;
+			    // margin: $datepicker-cell-margin;
+			    width: $datepicker-cell-width;
+
 			}
 		}
 		.datepicker-body {
@@ -35,10 +47,18 @@ $datepicker-cell-width: 14%;
 					padding: $datepicker-cell-padding;
 					// border:1px solid grey;
 	                text-align: center;
-			        margin: $datepicker-cell-margin;
+			        // margin: $datepicker-cell-margin;
 			        width: $datepicker-cell-width;
-			        border-radius: 3px;
+
+			        a {
+			        	text-decoration: none;
+			        	font-weight: bolder;
+			        }
 				}
+				// Week number
+				// .datepicker-cell:nth-child(1) {
+				// 	background-color: red;
+				// }
 				.datepicker-cell.is-unselectable {
 					color: grey;
 					cursor: not-allowed;
@@ -51,6 +71,7 @@ $datepicker-cell-width: 14%;
 				.datepicker-cell.is-selected {
 					background-color: $primary;
 					color: white;
+					border-radius: 3px;
 				}
 			}
 		}

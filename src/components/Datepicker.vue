@@ -1,7 +1,7 @@
 <template>
   <section class="columns">
     <div class="column">
-      <o-field>
+      <!-- <o-field> -->
         <o-field>
           <o-select v-model="locale" placeholder="Locale">
             <option :value="undefined"></option>
@@ -18,17 +18,17 @@
             <option value="pt-BR">pt-BR</option>
             <option value="ru-RU">ru-RU</option>
           </o-select>
-          <o-switch v-model="showWeekNumber">Show week number</o-switch>
         </o-field>
-      <!--     <o-field>
-          </o-field> -->
-      </o-field>
+          <o-field>
+          <o-switch v-model="showWeekNumber">Show week number</o-switch>
+          </o-field>
+      <!-- </o-field> -->
 
 
       <o-field label="Select a date">
         <o-datepicker
           v-model="selected"
-          :show-week-number="showWeekNumber"
+          :show-week-number="true"
           :locale="locale"
           placeholder="Click to select..."
           icon="calendar"
@@ -39,7 +39,7 @@
       <o-field label="Select a date">
         <o-datepicker
             v-model="selected"
-            :show-week-number="showWeekNumber"
+            :show-week-number="true"
             :locale="locale"
             placeholder="Click to select..."
             icon="calendar"
