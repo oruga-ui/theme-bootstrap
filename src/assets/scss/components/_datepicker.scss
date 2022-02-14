@@ -32,6 +32,7 @@ $datepicker-cell-color-selected: $primary;
 		}
 	}
 	.datepicker-table {
+		margin: 0;
 		.datepicker-header {
 			display: flex;
 			margin-bottom: 0;
@@ -71,14 +72,15 @@ $datepicker-cell-color-selected: $primary;
 					text-decoration: none;
 					font-weight: $datepicker-cell-font-weight;
 
+					&.is-today {
+						color: $datepicker-cell-color-selected;
+						border: 1px solid $datepicker-cell-color-selected;
+						border-radius: 3px;
+					}
 					&.is-selected {
 						background-color: $datepicker-cell-color-selected;
 						color: white;
 						border-radius: 3px;
-					}
-					&.is-today {
-						border-color: $datepicker-cell-color-selected;
-						color: $datepicker-cell-color-selected;
 					}
 
 					&.is-first-hovered {
