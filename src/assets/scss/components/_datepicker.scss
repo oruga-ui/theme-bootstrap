@@ -1,6 +1,11 @@
 $datepicker-cell-margin: 5px;
-$datepicker-cell-padding: 5px; /*0.5rem 0.75rem*/
+$datepicker-cell-padding: 5px; /* or 0.5rem 0.75rem*/
 $datepicker-cell-width: calc(#{100%} / 7);
+$datepicker-cell-font-weight: 400;
+$datepicker-cell-text-align: center;
+$datepicker-cell-color-unselectable: rgba(0,0,0,.3);
+$datepicker-cell-color-hovered: rgba(0,0,0,.5);
+$datepicker-cell-color-selected: $primary;
 
 .datepicker {
 	.dropdown-item:active {
@@ -32,10 +37,9 @@ $datepicker-cell-width: calc(#{100%} / 7);
 			margin-bottom: 0;
 			.datepicker-cell {
 				padding: $datepicker-cell-padding;
-				// border:1px solid grey;
-				text-align: center;
-			    // margin: $datepicker-cell-margin;
+				text-align: $datepicker-cell-text-align;
 			    width: $datepicker-cell-width;
+			    font-weight: bolder;
 
 			}
 		}
@@ -45,14 +49,13 @@ $datepicker-cell-width: calc(#{100%} / 7);
 				display: flex;
 				.datepicker-cell {
 					padding: $datepicker-cell-padding;
-					// border:1px solid grey;
-	                text-align: center;
-			        // margin: $datepicker-cell-margin;
+	                text-align: $datepicker-cell-text-align;
 			        width: $datepicker-cell-width;
+			        color: $dark;
 
 			        a {
 			        	text-decoration: none;
-			        	font-weight: bolder;
+			        	font-weight: $datepicker-cell-font-weight;
 			        }
 				}
 				// Week number
@@ -60,18 +63,69 @@ $datepicker-cell-width: calc(#{100%} / 7);
 				// 	background-color: red;
 				// }
 				.datepicker-cell.is-unselectable {
-					color: grey;
+					opacity: .5;
 					cursor: not-allowed;
 				}
+
 				.datepicker-cell.is-selectable {
 					text-decoration: none;
-					color: $dark;
-					font-weight: bolder;
-				}
-				.datepicker-cell.is-selected {
-					background-color: $primary;
-					color: white;
-					border-radius: 3px;
+					font-weight: $datepicker-cell-font-weight;
+
+					&.is-selected {
+						background-color: $datepicker-cell-color-selected;
+						color: white;
+						border-radius: 3px;
+					}
+					&.is-today {
+						border-color: $datepicker-cell-color-selected;
+						color: $datepicker-cell-color-selected;
+					}
+
+					&.is-first-hovered {
+						background-color: $datepicker-cell-color-hovered;
+						color: white;
+						border-top-left-radius: 3px;
+						border-bottom-left-radius: 3px;
+						border-top-right-radius: 0;
+						border-bottom-right-radius: 0;
+					}
+					&.is-within-hovered {
+						background-color: $datepicker-cell-color-hovered;
+						color: white;
+						border-radius: 0;
+						opacity: .5;
+					}
+					&.is-last-hovered {
+						background-color: $datepicker-cell-color-hovered;
+						color: white;
+						border-top-right-radius: 3px;
+						border-bottom-right-radius: 3px;
+						border-top-left-radius: 0;
+						border-bottom-left-radius: 0;
+					}
+
+					&.is-first-selected {
+						background-color: $datepicker-cell-color-selected;
+						color: white;
+						border-top-left-radius: 3px;
+						border-bottom-left-radius: 3px;
+						border-top-right-radius: 0;
+						border-bottom-right-radius: 0;
+					}
+					&.is-within-selected {
+						background-color: $datepicker-cell-color-selected;
+						color: white;
+						border-radius: 0;
+						opacity: .5;
+					}
+					&.is-last-selected {
+						background-color: $datepicker-cell-color-selected;
+						color: white;
+						border-top-right-radius: 3px;
+						border-bottom-right-radius: 3px;
+						border-top-left-radius: 0;
+						border-bottom-left-radius: 0;
+					}
 				}
 			}
 		}

@@ -28,7 +28,7 @@
       <o-field label="Select a date">
         <o-datepicker
           v-model="selected"
-          :show-week-number="true"
+          :show-week-number="showWeekNumber"
           :locale="locale"
           placeholder="Click to select..."
           icon="calendar"
@@ -39,11 +39,12 @@
       <o-field label="Select a date">
         <o-datepicker
             v-model="selected"
-            :show-week-number="true"
+            :show-week-number="showWeekNumber"
             :locale="locale"
             placeholder="Click to select..."
             icon="calendar"
             trap-focus
+            range
           >
         </o-datepicker>
       </o-field>
