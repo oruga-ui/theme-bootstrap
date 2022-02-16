@@ -126,6 +126,64 @@ $datepicker-cell-border-radius: 3px;
 					}
 				}
 			}
+			&.has-events {
+                .datepicker-cell {
+                    padding: 0.3rem 0.75rem 0.75rem;
+                    &.has-event {
+                        position: relative;
+                        .events {
+                            bottom: .425rem;
+                            display: flex;
+                            justify-content: center;
+                            left: 0;
+                            padding: 0 .35rem;
+                            position: absolute;
+                            width: 100%;
+                            .event {
+                                background-color: $danger;
+                                &.is-primary {
+                                    background-color: $primary;
+                                }
+                                &.is-success {
+                                    background-color: $success;
+                                }
+                                 &.is-danger {
+                                    background-color: $danger;
+                                }
+                                 &.is-info {
+                                    background-color: $info;
+                                }
+                                 &.is-warning {
+                                    background-color: $warning;
+                                }
+                                 &.is-dark {
+                                    background-color: $dark;
+                                }
+                            }
+                        }
+                        &.dots .event {
+                            border-radius: 50%;
+                            height: .35em;
+                            margin: 0 .1em;
+                            width: .35em;
+                        }
+                        &.bars .event {
+                            height: .25em;
+                            width: 100%;
+                        }
+                    }
+                    &.is-selected {
+                        overflow: hidden;
+                        .events .event {
+                            // Currently datepicker only uses primary coloring
+                            // Ensure indicator is visible when selected
+                            &.is-primary {
+                                background-color: lighten($primary, 15);
+                            }
+                        }
+                    }
+                }
+            }
 		}
 	}
 	// Temporary Styles before the issue <month classes doesn't get overridden> will get solved
