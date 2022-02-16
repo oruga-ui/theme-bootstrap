@@ -6,6 +6,16 @@ $datepicker-cell-text-align: center;
 $datepicker-cell-color-unselectable: rgba(0,0,0,.3);
 $datepicker-cell-color-hovered: rgba(0,0,0,.5);
 $datepicker-cell-color-selected: $primary;
+$datepicker-cell-border-radius: 3px;
+
+@mixin datepicker-cell {
+	padding: $datepicker-cell-padding;
+    text-align: $datepicker-cell-text-align;
+    width: $datepicker-cell-width;
+    color: $dark;
+    text-decoration: none;
+    font-weight: $datepicker-cell-font-weight;
+}
 
 .datepicker {
 	.dropdown-item:active {
@@ -37,11 +47,8 @@ $datepicker-cell-color-selected: $primary;
 			display: flex;
 			margin-bottom: 0;
 			.datepicker-cell {
-				padding: $datepicker-cell-padding;
-				text-align: $datepicker-cell-text-align;
-			    width: $datepicker-cell-width;
+				@include datepicker-cell;
 			    font-weight: bolder;
-
 			}
 		}
 		.datepicker-body {
@@ -49,20 +56,9 @@ $datepicker-cell-color-selected: $primary;
 			.datepicker-row {
 				display: flex;
 				.datepicker-cell {
-					padding: $datepicker-cell-padding;
-	                text-align: $datepicker-cell-text-align;
-			        width: $datepicker-cell-width;
-			        color: $dark;
-
-			        a {
-			        	text-decoration: none;
-			        	font-weight: $datepicker-cell-font-weight;
-			        }
+					@include datepicker-cell;
 				}
-				// Week number
-				// .datepicker-cell:nth-child(1) {
-				// 	background-color: red;
-				// }
+
 				.datepicker-cell.is-unselectable {
 					opacity: .5;
 					cursor: not-allowed;
@@ -75,19 +71,19 @@ $datepicker-cell-color-selected: $primary;
 					&.is-today {
 						color: $datepicker-cell-color-selected;
 						border: 1px solid $datepicker-cell-color-selected;
-						border-radius: 3px;
+						border-radius: $datepicker-cell-border-radius;
 					}
 					&.is-selected {
 						background-color: $datepicker-cell-color-selected;
 						color: white;
-						border-radius: 3px;
+						border-radius: $datepicker-cell-border-radius;
 					}
 
 					&.is-first-hovered {
 						background-color: $datepicker-cell-color-hovered;
 						color: white;
-						border-top-left-radius: 3px;
-						border-bottom-left-radius: 3px;
+						border-top-left-radius: $datepicker-cell-border-radius;
+						border-bottom-left-radius: $datepicker-cell-border-radius;
 						border-top-right-radius: 0;
 						border-bottom-right-radius: 0;
 					}
@@ -100,8 +96,8 @@ $datepicker-cell-color-selected: $primary;
 					&.is-last-hovered {
 						background-color: $datepicker-cell-color-hovered;
 						color: white;
-						border-top-right-radius: 3px;
-						border-bottom-right-radius: 3px;
+						border-top-right-radius: $datepicker-cell-border-radius;
+						border-bottom-right-radius: $datepicker-cell-border-radius;
 						border-top-left-radius: 0;
 						border-bottom-left-radius: 0;
 					}
@@ -109,8 +105,8 @@ $datepicker-cell-color-selected: $primary;
 					&.is-first-selected {
 						background-color: $datepicker-cell-color-selected;
 						color: white;
-						border-top-left-radius: 3px;
-						border-bottom-left-radius: 3px;
+						border-top-left-radius: $datepicker-cell-border-radius;
+						border-bottom-left-radius: $datepicker-cell-border-radius;
 						border-top-right-radius: 0;
 						border-bottom-right-radius: 0;
 					}
@@ -123,8 +119,8 @@ $datepicker-cell-color-selected: $primary;
 					&.is-last-selected {
 						background-color: $datepicker-cell-color-selected;
 						color: white;
-						border-top-right-radius: 3px;
-						border-bottom-right-radius: 3px;
+						border-top-right-radius: $datepicker-cell-border-radius;
+						border-bottom-right-radius: $datepicker-cell-border-radius;
 						border-top-left-radius: 0;
 						border-bottom-left-radius: 0;
 					}
@@ -132,4 +128,78 @@ $datepicker-cell-color-selected: $primary;
 			}
 		}
 	}
+	// Temporary Styles before the issue <month classes doesn't get overridden> will get solved
+	.o-dpck__month {
+		width: 17rem;
+		margin: 0 auto 0 auto;
+	}
+	.o-dpck__month__table {
+        display: inline-flex;
+        flex-wrap: wrap;
+        flex-direction: row;
+        width: 17rem;
+        .o-dpck__month__cell  {
+            @include datepicker-cell;
+            width: 33.33%;
+            height: 2.5rem;
+
+            &--selected {
+            	background-color: $datepicker-cell-color-selected;
+				color: white;
+				border-radius: $datepicker-cell-border-radius;
+            }
+            &--selectable {
+            	font-weight: $datepicker-cell-font-weight;
+            }
+            &--first-hovered {
+				background-color: $datepicker-cell-color-hovered;
+				color: white;
+				border-top-left-radius: $datepicker-cell-border-radius;
+				border-bottom-left-radius: $datepicker-cell-border-radius;
+				border-top-right-radius: 0;
+				border-bottom-right-radius: 0;
+			}
+			&--within-hovered {
+				background-color: $datepicker-cell-color-hovered;
+				color: white;
+				border-radius: 0;
+				opacity: .5;
+			}
+			&--last-hovered {
+				background-color: $datepicker-cell-color-hovered;
+				color: white;
+				border-top-right-radius: $datepicker-cell-border-radius;
+				border-bottom-right-radius: $datepicker-cell-border-radius;
+				border-top-left-radius: 0;
+				border-bottom-left-radius: 0;
+			}
+
+			&--first-selected {
+				background-color: $datepicker-cell-color-selected;
+				color: white;
+				border-top-left-radius: $datepicker-cell-border-radius;
+				border-bottom-left-radius: $datepicker-cell-border-radius;
+				border-top-right-radius: 0;
+				border-bottom-right-radius: 0;
+			}
+			&--within-selected {
+				background-color: $datepicker-cell-color-selected;
+				color: white;
+				border-radius: 0;
+				opacity: .5;
+			}
+			&--last-selected {
+				background-color: $datepicker-cell-color-selected;
+				color: white;
+				border-top-right-radius: $datepicker-cell-border-radius;
+				border-bottom-right-radius: $datepicker-cell-border-radius;
+				border-top-left-radius: 0;
+				border-bottom-left-radius: 0;
+			}
+        }
+	}
 }
+
+// o-dpck__month__cell 
+// o-dpck__month__cell--selected         
+// o-dpck__month__cell--selectable

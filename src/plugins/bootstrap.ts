@@ -405,6 +405,19 @@ export const bootstrapConfig: any = {
         tableCellFirstSelectedClass: 'is-first-selected',
         tableCellLastSelectedClass: 'is-last-selected',
         tableCellWithinSelectedClass: 'is-within-selected',
+        //
+        // monthCellClass: 'datepicker-cell',
+        // monthCellSelectableClass: 'is-selectable',
+        // monthCellUnselectableClass: 'is-unselectable',
+        // monthCellTodayClass: 'is-today',
+        // monthCellSelectedClass: 'is-selected',
+        // monthCellWithinHoveredClass: 'is-within-hovered',
+        // monthCellFirstHoveredClass: 'is-first-hovered',
+        // monthCellLastHoveredClass: 'is-last-hovered',
+        // monthCellFirstSelectedClass: 'is-first-selected',
+        // monthCellLastSelectedClass: 'is-last-selected',
+        // monthCellWithinSelectedClass: 'is-within-selected',
+        //
         tableCellInvisibleClass: '',
         tableCellNearbyClass: 'is-nearby',
         tableCellEventsClass: (_: string, { props }: any) => {

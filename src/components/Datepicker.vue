@@ -48,10 +48,14 @@
           >
         </o-datepicker>
       </o-field>
+
+      <o-field label="Select a month">
+        <o-datepicker placeholder="Click to select..." icon="calendar" type="month"  range v-model="dates"> </o-datepicker>
+      </o-field>
     </div>
 
 
-   <!--  <div class="column">
+    <div class="column">
        <o-datepicker
           inline
           v-model="date"
@@ -59,7 +63,7 @@
           :indicators="indicators"
         >
         </o-datepicker>
-    </div> -->
+    </div>
 
 
   </section>
