@@ -1,10 +1,10 @@
 $tabs-link-active-border-color: $primary !default;
 $tabs-color: $dark !default;
-$tabs-border-bottom-color: #ced4da;
+$tabs-border-color: #ced4da;
 $nav-tabs-margin-bottom: 10px;
-$nav-tabs-text-size-small: 13px;
-$nav-tabs-text-size-medium: 14px;
-$nav-tabs-text-size-large: 18px;
+$nav-tabs-font-size-small: 13px;
+$nav-tabs-font-size-medium: 14px;
+$nav-tabs-font-size-large: 18px;
 $tabs-wrapper-margin: 20px;
 
 // NAVTAB
@@ -54,13 +54,13 @@ $tabs-wrapper-margin: 20px;
 		}
 		// Size 
 		&.is-small {
-			font-size: $nav-tabs-text-size-small;
+			font-size: $nav-tabs-font-size-small;
 		}
 		&.is-medium {
-			font-size: $nav-tabs-text-size-medium;
+			font-size: $nav-tabs-font-size-medium;
 		}
 		&.is-large {
-			font-size: $nav-tabs-text-size-large;
+			font-size: $nav-tabs-font-size-large;
 		}
 	}
 	// Content of each nav
@@ -85,7 +85,7 @@ $tabs-wrapper-margin: 20px;
 		.nav {
 			display: block;
 			div {
-				border-bottom: 1px solid $tabs-border-bottom-color;
+				border-bottom: 1px solid $tabs-border-color;
 				text-align: left;
 			}
 		}

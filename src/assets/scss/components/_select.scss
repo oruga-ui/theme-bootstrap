@@ -1,6 +1,6 @@
 $icon-color: grey;
 $input-padding-for-left-icon: 7px 11px 7px 32px;
-$icon-left-right-position: 12px;
+$icon-position-left-right: 12px;
 
 // Icon style
 .select {
@@ -18,11 +18,11 @@ $icon-left-right-position: 12px;
 		position: absolute;
 		&.is-left {
 			top: 8px;
-			left: $icon-left-right-position;
+			left: $icon-position-left-right;
 		}
 		&.is-right {
 			top: 8px;
-			right: $icon-left-right-position;
+			right: $icon-position-left-right;
 		}
 	}
 }

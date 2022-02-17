@@ -1,7 +1,7 @@
 
 /* @docs */
-$skeleton-background: linear-gradient(90deg, $grey-lighter 25%, rgba($grey-lighter, 0.5) 50%, $grey-lighter 75%) !default;
-// $skeleton-background: rgba(128,128,128,0.2) !default;
+$skeleton-background-color: linear-gradient(90deg, $grey-lighter 25%, rgba($grey-lighter, 0.5) 50%, $grey-lighter 75%) !default;
+// $skeleton-background-color: rgba(128,128,128,0.2) !default;
 $skeleton-border-radius: $base-border-radius !default;
 $skeleton-duration: 1.5s !default;
 $skeleton-margin: .5rem 0 0 0 !default;
@@ -33,7 +33,7 @@ $skeleton-margin: .5rem 0 0 0 !default;
     width: 100%;
     &__item {
         width: 100%;
-        background-image: $skeleton-background;
+        background-image: $skeleton-background-color;
         &--rounded {
             border-radius: $skeleton-border-radius;
         }

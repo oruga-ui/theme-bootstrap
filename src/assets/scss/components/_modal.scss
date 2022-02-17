@@ -1,9 +1,9 @@
-$modal-background: rgba(0,0,0,.8) !default;
+$modal-overlay-background-color: rgba(0,0,0,.8) !default;
 
 // MODAL
 .modal {
 	display: block;
-	background-color: $modal-background;
+	background-color: $modal-overlay-background-color;
 	.modal-dialog {
 		.modal-content {
 			.modal-header {

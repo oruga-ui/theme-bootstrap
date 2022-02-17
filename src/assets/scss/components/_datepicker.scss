@@ -140,7 +140,7 @@ $datepicker-cell-border-radius: 3px;
                             position: absolute;
                             width: 100%;
                             .event {
-                                background-color: $danger;
+                                background-color: $danger; // Default variant
                                 &.is-primary {
                                     background-color: $primary;
                                 }
@@ -186,7 +186,11 @@ $datepicker-cell-border-radius: 3px;
             }
 		}
 	}
-	// Temporary Styles before the issue <month classes doesn't get overridden> will get solved
+	/**
+	*
+	* Temporary Styles before the issue <month classes doesn't get overridden> will get solved
+	*
+	**/ 
 	.o-dpck__month {
 		width: 17rem;
 		margin: 0 auto 0 auto;

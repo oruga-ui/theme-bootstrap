@@ -1,4 +1,4 @@
-$padding-collapse: 0.5rem 1rem;
+$collapse-padding: 0.5rem 1rem;
 $margin-card: 0.5rem 0;
 
 .card {
@@ -13,5 +13,5 @@ $margin-card: 0.5rem 0;
 }
 
 .card-content {
-	padding: $padding-collapse;
+	padding: $collapse-padding;
 }

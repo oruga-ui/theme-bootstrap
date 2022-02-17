@@ -443,7 +443,7 @@ export const bootstrapConfig: any = {
     },
     sidebar: {
         override: true,
-        rootClass: 'b-sidebar',
+        rootClass: 'sidebar',
         variantClass: 'is-',
         contentClass: 'sidebar-content',
         staticClass: 'is-static',

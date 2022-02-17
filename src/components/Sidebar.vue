@@ -5,6 +5,7 @@
             :fullwidth="isFullwidth"
             :overlay="isOverlay"
             :right="isRight"
+            :reduce="isReduced"
             :open.sync="isOpen"
             @close="toggleSidebar()"
             >
@@ -15,7 +16,7 @@
               @click="toggleSidebar()"
             />
             <img
-                width="128"
+                width="80"
                 src="https://avatars2.githubusercontent.com/u/66300512?s=200&v=4"
                 alt="Lightweight UI components for Vue.js"
             />
@@ -28,10 +29,9 @@
                 <o-switch v-model="isFullheight">Fullheight</o-switch>
                 <o-switch v-model="isFullwidth">Fullwidth</o-switch>
                 <o-switch v-model="isRight">Right</o-switch>
+                <o-switch v-model="isReduced">Reduce</o-switch>
             </o-field>
         </div>
-
-        <br>
 
         <o-button @click="toggleSidebar()">Show</o-button>
     </section>
@@ -47,6 +47,7 @@ export default {
     const isFullheight = ref(true)
     const isFullwidth = ref(false)
     const isRight = ref(false)
+    const isReduced = ref(false)
 
     const toggleSidebar = () => {
       isOpen.value = !isOpen.value
@@ -58,8 +59,14 @@ export default {
       isOverlay,
       isFullheight,
       isFullwidth,
-      isRight
+      isRight,
+      isReduced
     }
   }
 }
 </script>
+<style>
+  section {
+    margin: 25px;
+  }
+</style>

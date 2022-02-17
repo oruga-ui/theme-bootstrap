@@ -1,10 +1,10 @@
-$icon-color: grey;
-$input-padding-for-left-icon: 7px 11px 7px 32px;
-// $input-padding-for-left-icon: .4rem .8rem .4rem 2rem;
-$input-padding-for-left-icon-lg: 7px 11px 7px 45px;
-$icon-left-right-position: 12px;
+$input-icon-color: grey;
+$input-left-icon-padding: 7px 11px 7px 32px;
+// $input-left-icon-padding: .4rem .8rem .4rem 2rem;
+$input-left-icon-padding-large: 7px 11px 7px 45px;
+$input-icon-position-left-right: 12px;
+$input-rounded: 50px!important;
 $btn-border-color: #ced4da;
-$rounded-input: 50px!important;
 
 // border radius for input group
 .input-group {
@@ -122,32 +122,32 @@ $rounded-input: 50px!important;
     .form-control {
         // if the icon is in left then set that padding
         &.has-icon-in-left:not(.form-control-lg) {
-            padding: $input-padding-for-left-icon;
+            padding: $input-left-icon-padding;
         } // if icon and the input are large, we give more space to icon
         &.has-icon-in-left.form-control-lg {
-            padding: $input-padding-for-left-icon-lg;
+            padding: $input-left-icon-padding-large;
         }
     }
     // the Position of the icon
     .icon {
-        color: $icon-color;
+        color: $input-icon-color;
         position: absolute;
         &.is-left {
             top: 8px;
-            left: $icon-left-right-position;
+            left: $input-icon-position-left-right;
         }
         &.is-right {
             top: 8px;
-            right: $icon-left-right-position;
+            right: $input-icon-position-left-right;
         }
         // small icon positioniing
         &.is-left.is-small {
             top: 6px;
-            left: $icon-left-right-position;
+            left: $input-icon-position-left-right;
         }
         &.is-right.is-small {
             top: 6px;
-            right: $icon-left-right-position;
+            right: $input-icon-position-left-right;
         }
     }
 
@@ -182,7 +182,7 @@ $rounded-input: 50px!important;
     // Rounded
     .form-control, .form-select {
         &.is-rounded {
-            border-radius: $rounded-input;
+            border-radius: $input-rounded;
         }
     }
     // Fullwidth

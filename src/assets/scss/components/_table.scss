@@ -1,5 +1,5 @@
-$detail-padding: 8px 12px;
-$table-border-color: #dee2e6;
+$table-detail-padding: 8px 12px;
+$table-border-color: #ced4da;
 $table-background-color: $light;
 
 @mixin table-cards {
@@ -156,7 +156,7 @@ $table-background-color: $light;
                 &.detail {
                     background-color: $light;
                     td {
-                        padding: $detail-padding;
+                        padding: $table-detail-padding;
                     }
                 }
             }

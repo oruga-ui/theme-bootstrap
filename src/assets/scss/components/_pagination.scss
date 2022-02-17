@@ -1,5 +1,5 @@
 $pagination-items-margin: .3rem !default;
-$border-top-bottom-left-right-radius: .3rem !default;
+$pagination-border-top-right-bottom-left-radius: .3rem !default;
 
 .pagination-wrapper {
 	position: relative;
@@ -9,14 +9,14 @@ $border-top-bottom-left-right-radius: .3rem !default;
 	.pagination-prev {
 		order:1;
 		margin: 0;
-		border-top-left-radius: $border-top-bottom-left-right-radius;
-		border-bottom-left-radius: $border-top-bottom-left-right-radius;
+		border-top-left-radius: $pagination-border-top-right-bottom-left-radius;
+		border-bottom-left-radius: $pagination-border-top-right-bottom-left-radius;
 	}
 	.pagination-next {
 		order:3;
 		margin: 0;
-		border-top-right-radius: $border-top-bottom-left-right-radius; 
-		border-bottom-right-radius: $border-top-bottom-left-right-radius;
+		border-top-right-radius: $pagination-border-top-right-bottom-left-radius; 
+		border-bottom-right-radius: $pagination-border-top-right-bottom-left-radius;
 	}
 	.pagination {
 		order:2;

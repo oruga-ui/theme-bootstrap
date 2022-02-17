@@ -1,7 +1,5 @@
 $slider-margin: 1em 0;
-$slider-track-background: transparent;
-$slider-fill-background: $success;
-$slider-thumb-background: $success;
+$slider-track-background-color: transparent;
 $slider-hight: 6px; // default
 $slider-radius: 10px;
 
@@ -9,7 +7,7 @@ $slider-tick-to-track-ratio: 0.5 !default;
 $slider-tick-width: 3px !default;
 $slider-tick-height: 5px !default;
 $slider-tick-radius: 3px !default;
-$slider-tick-background: $grey-light !default;
+$slider-tick-background-color: $grey-light !default;
 
 $slider-small: 2px;
 $slider-medium: 5px;
@@ -33,7 +31,7 @@ $slider-large: 7px;
         align-items: center;
         // position: relative;
         cursor: pointer;
-        background-color: $slider-track-background;
+        background-color: $slider-track-background-color;
 
         .b-slider-fill {
             position: absolute;
@@ -134,7 +132,7 @@ $slider-large: 7px;
             height: $slider-tick-height;
             transform: translate(-50%, -50%);
             top: 50%;
-            background: $slider-tick-background;
+            background: $slider-tick-background-color;
             border-radius: $slider-tick-radius;
             &.is-tick-hidden {
                 background: transparent;
