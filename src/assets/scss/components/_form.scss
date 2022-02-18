@@ -29,6 +29,13 @@ $btn-border-color: #ced4da;
                 border-radius: 0;
             }
         }
+        // The input is first and the last
+        &:first-child:last-child {
+            .form-control {
+                border-radius: 3px;
+                border-radius: 3px;
+            }
+        }
     }
     // Button
     // Dropdown
@@ -58,6 +65,13 @@ $btn-border-color: #ced4da;
                 }
             }
         }
+        // The input is first and the last
+        &:first-child:last-child {
+            .form-control {
+                border-radius: 3px;
+                border-radius: 3px;
+            }
+        }
     }    
     // Select    
     .select {
@@ -81,38 +95,45 @@ $btn-border-color: #ced4da;
                 border-radius: 0;
             }
         }
+        // The input is first and the last
+        &:first-child:last-child {
+            .form-control {
+                border-radius: 3px;
+                border-radius: 3px;
+            }
+        }
     }
     // If the input and button are wrapped inside divs
-    div:first-child {
-        .btn {
-            border-bottom-right-radius: 0;
-            border-top-right-radius: 0;
-        }
-        .input {
-            border-bottom-right-radius: 0;
-            border-top-right-radius: 0;
-        }
-    }
-    div:last-child {
-        .btn {
-            border-bottom-left-radius: 0;
-            border-top-left-radius: 0;
-        }
-        .input {
-            border-bottom-left-radius: 0;
-            border-top-left-radius: 0;
-        }
-    }
-    div:not(:first-child):not(:last-child) {
-        .btn {
-            border-radius: 0;
-            border-radius: 0;
-        }
-        .input {
-            border-radius: 0;
-            border-radius: 0;
-        }
-    }
+    // div:first-child {
+    //     .btn {
+    //         border-bottom-right-radius: 0;
+    //         border-top-right-radius: 0;
+    //     }
+    //     .input {
+    //         border-bottom-right-radius: 0;
+    //         border-top-right-radius: 0;
+    //     }
+    // }
+    // div:last-child {
+    //     .btn {
+    //         border-bottom-left-radius: 0;
+    //         border-top-left-radius: 0;
+    //     }
+    //     .input {
+    //         border-bottom-left-radius: 0;
+    //         border-top-left-radius: 0;
+    //     }
+    // }
+    // div:not(:first-child):not(:last-child) {
+    //     .btn {
+    //         border-radius: 0;
+    //         border-radius: 0;
+    //     }
+    //     .input {
+    //         border-radius: 0;
+    //         border-radius: 0;
+    //     }
+    // }
 }
 
 // Icon style

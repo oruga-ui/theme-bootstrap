@@ -60,6 +60,9 @@
           >
           </o-inputitems>
         </o-field>
+        <o-field label="Dark & Medium">
+          <o-slider :rounded="true" v-model="value" size="medium" variant="dark" tooltip-variant="dark"></o-slider>
+        </o-field>
         <o-field>
           <o-checkbox variant="info"> Remember me </o-checkbox>
         </o-field>
@@ -84,7 +87,8 @@ export default defineComponent({
       isCardModalActive: false,
       email:'',
       password:'',
-      tags: []
+      tags: [],
+      value: 20
     };
   },
 });

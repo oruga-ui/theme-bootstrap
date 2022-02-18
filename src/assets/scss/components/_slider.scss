@@ -1,4 +1,4 @@
-$slider-margin: 1em 0;
+$slider-margin: .4em 0;
 $slider-track-background-color: transparent;
 $slider-hight: 6px; // default
 $slider-radius: 10px;
@@ -17,7 +17,7 @@ $slider-large: 7px;
    
 }
 
-.b-slider {
+.slider {
     margin: $slider-margin;
     position: relative;
     width: 100%;
@@ -26,14 +26,14 @@ $slider-large: 7px;
     border-radius: $slider-radius;
     cursor: pointer;
 
-    .b-slider-track {
+    .slider-track {
         display: flex;
         align-items: center;
         // position: relative;
         cursor: pointer;
         background-color: $slider-track-background-color;
 
-        .b-slider-fill {
+        .slider-fill {
             position: absolute;
             left: 0%;
             background-color: $primary; // default variant
@@ -59,8 +59,11 @@ $slider-large: 7px;
             &.is-info {
                 background-color: $info;
             }
+            &.is-dark {
+                background-color: $dark;
+            }
         }
-        .b-slider-thumb-wrapper {
+        .slider-thumb-wrapper {
             display: inline-flex;
             align-items: center;
             position: absolute;
@@ -69,7 +72,7 @@ $slider-large: 7px;
             top: 50%;
             flex-direction: column; // Fix shrinked thumb at the end in IE 11
 
-            .b-slider-thumb {
+            .slider-thumb {
                 background-color: $primary; // default variant
                 height: calc(#{$slider-hight} * 3); // default size
                 width: calc(#{$slider-hight} * 3); // default size
@@ -86,7 +89,7 @@ $slider-large: 7px;
 
             &.is-dragging {
                 cursor: grabbing;
-                .b-slider-thumb {
+                .slider-thumb {
                     transform: scale(1.50);
                 }
             }
@@ -99,34 +102,39 @@ $slider-large: 7px;
             // Tooltip
             .b-tooltip {
                 &.is-primary {
-                    .b-slider-thumb {
+                    .slider-thumb {
                         background-color: $primary;
                     }
                 }
                 &.is-success {
-                    .b-slider-thumb {
+                    .slider-thumb {
                         background-color: $success;
                     }
                 }
                 &.is-danger {
-                    .b-slider-thumb {
+                    .slider-thumb {
                         background-color: $danger;
                     }
                 }
                 &.is-warning {
-                    .b-slider-thumb {
+                    .slider-thumb {
                         background-color: $warning;
                     }
                 }
                 &.is-info {
-                    .b-slider-thumb {
+                    .slider-thumb {
                         background-color: $info;
+                    }
+                }
+                &.is-dark {
+                    .slider-thumb {
+                        background-color: $dark;
                     }
                 }
             }
         }
         // tick
-        .b-slider-tick {
+        .slider-tick {
             position: absolute;
             width: $slider-tick-width;
             height: $slider-tick-height;
@@ -137,7 +145,7 @@ $slider-large: 7px;
             &.is-tick-hidden {
                 background: transparent;
             }
-            .b-slider-tick-label {
+            .slider-tick-label {
                margin: 5px;
             }
         }
@@ -149,8 +157,8 @@ $slider-large: 7px;
     // Size
     &.is-small {
         height: $slider-small;
-        .b-slider-track {
-            .b-slider-thumb {
+        .slider-track {
+            .slider-thumb {
                 height: calc(#{$slider-small} + 2px * 3);
                 width: calc(#{$slider-small} + 2px * 3);
             }
@@ -158,8 +166,8 @@ $slider-large: 7px;
     }
     &.is-medium {
         height: $slider-medium;
-        .b-slider-track { 
-            .b-slider-thumb {
+        .slider-track { 
+            .slider-thumb {
                 height: calc(#{$slider-medium} * 3);
                 width: calc(#{$slider-medium} * 3);
             }
@@ -167,8 +175,8 @@ $slider-large: 7px;
     }
     &.is-large {
         height: $slider-large;
-        .b-slider-track {
-            .b-slider-thumb {
+        .slider-track {
+            .slider-thumb {
                 height: calc(#{$slider-large} * 3);
                 width: calc(#{$slider-large} * 3);
             }
