@@ -1,6 +1,6 @@
 {
   "name": "@oruga-ui/theme-bootstrap",
-  "version": "0.1.5",
+  "version": "0.1.0",
   "description": "bootstrap theme for Oruga",
   "license": "MIT",
   "main": "dist/bootstrap.js",
