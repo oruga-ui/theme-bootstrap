@@ -26,7 +26,7 @@ $select-margin: 0.2rem 0.2rem 0.2rem 0;
         font-weight: bolder;
     }
     .timepicker-footer {
-    	.btn:not(:last-child):not(.btn-expanded) {
+    	.btn {
 		    margin: $select-margin!important;
 		}
     }

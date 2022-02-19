@@ -10,7 +10,7 @@ export const bootstrapConfig: any = {
         },
         // variantMessageClass: 'text-',
         addonsClass: 'input-group',
-        groupedClass: 'input-group',
+        groupedClass: 'input-grouped',
         // groupMultilineClass: 'is-grouped-multiline',
         horizontalClass: 'row',
         labelHorizontalClass: 'col-sm-2 col-form-label',
@@ -140,7 +140,13 @@ export const bootstrapConfig: any = {
     },
     pagination: {
         override: true,
-        rootClass: 'pagination-wrapper',
+        rootClass: (_: string, { props }: any) => {
+            if (props.rounded){
+                return 'pagination-wrapper is-rounded';
+            }else {
+                return 'pagination-wrapper'
+            }
+        },
         sizeClass: (_: string, { props }: any) => {
             if (props.size == 'small'){
                 return 'pagination-sm';
@@ -166,7 +172,7 @@ export const bootstrapConfig: any = {
         linkDisabledClass: 'disabled',
         nextBtnClass: 'pagination-next',
         prevBtnClass: 'pagination-prev',
-        // infoClass: 'info'
+        infoClass: 'info'
     },
     slider: {
         override: true,
@@ -383,7 +389,7 @@ export const bootstrapConfig: any = {
         tableClass: 'datepicker-table',
         tableHeadClass: 'datepicker-header',
         tableHeadCellClass: 'datepicker-cell',
-        headerButtonsClass: 'pagination field is-centered',
+        headerButtonsClass: 'pagination field justify-content-center',
         prevBtnClass: 'pagination-previous btn',
         nextBtnClass: 'pagination-next btn',
         listsClass: 'pagination-list input-group',

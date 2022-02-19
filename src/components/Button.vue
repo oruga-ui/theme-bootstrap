@@ -1,7 +1,6 @@
 <template>
   <section>
     <div class="buttons">
-      <o-icon pack="fas" icon="sync-alt" variant="dark" size="large" spin both> </o-icon>
       <o-button variant="primary">Primary</o-button>
       <o-button variant="success">Success</o-button>
       <o-button variant="danger">Danger</o-button>

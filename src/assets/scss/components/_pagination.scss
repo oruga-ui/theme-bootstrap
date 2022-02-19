@@ -1,5 +1,6 @@
-$pagination-items-margin: .3rem !default;
+$pagination-items-margin: .5rem !default;
 $pagination-border-top-right-bottom-left-radius: .3rem !default;
+$pagination-rounded-border-radius: 9999px;
 
 .pagination-wrapper {
 	position: relative;
@@ -29,5 +30,15 @@ $pagination-border-top-right-bottom-left-radius: .3rem !default;
 				color: white;
 			}
 		}
+	}
+
+	&.is-rounded {
+		.page-link {
+			border-radius: $pagination-rounded-border-radius;
+			margin-right: $pagination-items-margin;
+		}
+	}
+	.info {
+		margin-right: $pagination-items-margin;
 	}
 }

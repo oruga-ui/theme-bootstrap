@@ -4,7 +4,13 @@ $input-left-icon-padding: 7px 11px 7px 32px;
 $input-left-icon-padding-large: 7px 11px 7px 45px;
 $input-icon-position-left-right: 12px;
 $input-rounded: 50px!important;
+$input-margin-right: 0.5rem;
 $btn-border-color: #ced4da;
+
+/* IMPORTANT NOTE !!
+.input-group --> // Addons class
+.input-grouped --> // Grouped class
+*/
 
 // border radius for input group
 .input-group {
@@ -139,6 +145,7 @@ $btn-border-color: #ced4da;
 // Icon style
 .input {
     position: relative;
+    
     // Space for the icon
     .form-control {
         // if the icon is in left then set that padding
@@ -182,6 +189,11 @@ $btn-border-color: #ced4da;
             flex-shrink: 1;
         }
     }
+
+     // Without margin
+    .input, .select , .btn {
+        margin: 0!important;
+    }
     // Btn with border if it transparent <outlined>
     button:not(.btn-primary):not(.btn-info):not(.btn-danger):not(.btn-success):not(.btn-warning):not(.btn-dark):not(.btn-light) {
         border: .1px solid $btn-border-color;
@@ -191,15 +203,29 @@ $btn-border-color: #ced4da;
 
 .input-field {
     margin-bottom: 0.75rem;
+
+    .input-grouped {
+        display: flex;
+        .input, .select {
+            &.is-expanded {
+                flex-grow: 1;
+                flex-shrink: 1;
+            }
+        }
+        // Margin right
+        .input:not(:last-child), .select:not(:last-child), .dropdown:not(:last-child), button:not(:last-child) {
+            margin-right: $input-margin-right;
+        }
+        .input-field:not(:last-child) {
+            margin-right: $input-margin-right;
+        }
+    }
     // counter
     .counter {
     	position: absolute;
     	right: 0;
     }
-    // Btn Without margin
-    .btn {
-    	margin: 0!important;
-    }
+    
     // Rounded
     .form-control, .form-select {
         &.is-rounded {
