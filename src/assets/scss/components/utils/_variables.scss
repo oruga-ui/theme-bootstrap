@@ -11,6 +11,8 @@ $base-rounded-border-radius: 9999px !default;
 $base-line-height: 1.5 !default;
 $base-disabled-opacity: 0.5 !default;
 
+$tablet: 1023px !default;
+
 // Sizes
 
 $sizes: (
@@ -19,14 +21,21 @@ $sizes: (
     "large": 1.5rem
 ) !default;
 
-// Colors @TODO : bootstrap vars
-
 $white: #ffffff !default;
 $black: #000000 !default;
 $grey: #7a7a7a !default;
 $grey-light: #b5b5b5 !default;
 $grey-lighter: #dbdbdb !default;
 $grey-dark: #4a4a4a !default;
+
+$colors : (
+	"primary": $primary,
+	"success": $success,
+	"danger": $danger,
+	"warning": $warning,
+	"info": $info,
+	"dark": $dark,
+)!default;
 
 // $primary: $primary !default;
 // $primary-invert: $white !default;
