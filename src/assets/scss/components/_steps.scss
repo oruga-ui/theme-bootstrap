@@ -39,7 +39,6 @@ $steps-colors : (
 			background: $steps-marker-default-background-color;
 			color: white;
     		border: $steps-marker-default-border;
-		    border-radius: 9999px;
 		    padding: .1em;
 		    margin: 0 auto;
 
@@ -55,6 +54,8 @@ $steps-colors : (
 
 		    z-index: 1;
 		    overflow: hidden;
+
+		    cursor: pointer;
 
 			.icon {
 				margin: 0;
@@ -116,12 +117,12 @@ $steps-colors : (
 	            height: 3px;
 	        }
     		.step-marker {
-    			&::before, &::after {
-		            background-color: $primary;
-		            background-size: 200% 100%;
-		            background-position: right bottom;
-		            height: 3px;
-		        }
+    			// &::before, &::after {
+		     //        background-color: $primary;
+		     //        background-size: 200% 100%;
+		     //        background-position: right bottom;
+		     //        height: 3px;
+		     //    }
         		background-color: $primary;
         		border-color: $primary;
         		color: white;
@@ -175,6 +176,38 @@ $steps-colors : (
 
         // Sizes
 	}
+    &.is-rounded {
+        .step-item {
+            .step-marker {
+                border-radius: 999px;
+            }
+        }
+    }
+
+    &.is-animated {
+        .step-item {
+            &:not(:first-child), &:only-child {
+                &::before {
+                    transition: background $speed-slow $easing;
+                }
+            }
+        }
+    }
+
+//     &.has-label-right, &.has-label-left {
+//         /* .step-items { */
+//             .step-item {
+//                 .step-link {
+//                     flex-direction: row;
+
+//                     > /* .step-details { */ .step-title {
+//                         // background-color: $steps-details-background-color;
+//                         padding: .2em;
+//                     }
+//                 }
+//             }
+//         /* } */
+//     }
 }
 
 // .steps {
