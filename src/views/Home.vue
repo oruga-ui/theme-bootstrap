@@ -1,9 +1,9 @@
 <template>
-  <div class="columns is-mobile is-centered is-vcentered">
-    <div class="column is-narrow">
+  <div id="main">
+    <div class="content">
       <img class="image__oruga" src="https://raw.githubusercontent.com/oruga-ui/theme-bulma/master/public/logo.svg">
+      <h1>Bootstrap Demo</h1>
     </div>
-    <h1>Bulma demo page</h1>
   </div>
 </template>
 
@@ -16,7 +16,14 @@ export default defineComponent({
 </script>
 
 <style scoped>
+.content {
+	width: auto;
+	margin: 0 auto;
+	transform: translateY(60%);
+}
 .image__oruga {
- height: 128px;
+	height: 128px;
+	display: flex;
+	margin: 0 auto;
 }
 </style>

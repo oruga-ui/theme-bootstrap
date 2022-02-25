@@ -1,10 +1,10 @@
-$sidebar-border-color: #ced4da;
+$sidebar-border-color: $default-border-color;
 $sidebar-box-shadow: 0;
 $sidebar-width: 20%;
 $sidebar-background-color: $light;
-$sidebar-overlay-background-color: rgba(0,0,0,.8);
+$sidebar-overlay-background-color: $overlay-background-color-dark;
 $sidebar-mobile-width: 80px !default;
-$sidebar-mobile-breakpoint: 1023px !default;
+$sidebar-mobile-breakpoint: $tablet !default;
 
 .sidebar {
     .sidebar-content {

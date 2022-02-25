@@ -100,7 +100,4 @@ export default defineComponent({
 span.b-tooltip {
   margin-right: 10px;
 }
-section {
-  margin: 55px;
-}
 </style>

@@ -103,8 +103,3 @@ export default defineComponent({
     }
 })
 </script>
-<style>
-    section {
-        margin: 25px;
-    }
-</style>

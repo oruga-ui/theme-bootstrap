@@ -49,11 +49,3 @@
     </div>
   </section>
 </template>
-<style>
-  section {
-    margin:25px;
-  }
-  /*.btn {
-    margin: 5px;
-  }*/
-</style>

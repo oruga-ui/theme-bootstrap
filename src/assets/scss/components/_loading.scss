@@ -1,7 +1,7 @@
 
 /* @docs */
 $loading-overlay-legacy: #7f7f7f !default;
-$loading-overlay: rgba(255,255,255,0.5) !default;
+$loading-overlay: $overlay-background-color-light;
 $loading-zindex: 29 !default;
 $loading-fullpage-zindex: 999 !default;
 /* @docs */

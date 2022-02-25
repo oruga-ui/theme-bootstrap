@@ -13,6 +13,10 @@ $base-disabled-opacity: 0.5 !default;
 
 $tablet: 1023px !default;
 
+$overlay-background-color-dark: rgba(0,0,0,.8) !default; 
+$overlay-background-color-light: rgba(255,255,255,0.5) !default; 
+
+$default-border-color: #ced4da;
 // Sizes
 
 $sizes: (

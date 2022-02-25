@@ -1,5 +1,5 @@
 $table-detail-padding: 8px 12px;
-$table-border-color: #ced4da;
+$table-border-color: $default-border-color;
 $table-background-color: $light;
 
 @mixin table-cards {

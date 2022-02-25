@@ -104,9 +104,6 @@ export default {
 }
 </script>
 <style>
-section {
-  margin: 25px;
-}
 .toast-notification {
   margin: 0.5em 0;
   text-align: center;

@@ -164,9 +164,6 @@ export default {
 </script>
 
 <style>
-section {
-  margin: 25px;
-}
 .media {
   align-items: flex-start;
   display: flex;

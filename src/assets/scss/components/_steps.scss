@@ -4,8 +4,15 @@ $steps-previous-background-color: $primary !default;
 $steps-active-background-color: $primary !default;
 $steps-divider-height: .2em !default;
 $steps-vertical-padding: 1em 0 !default;
-$steps-mobile-max-width: 1023px !default;
-$steps-colors: $colors !default;
+$steps-mobile-max-width: $tablet !default;
+$steps-colors : (
+	"primary": $primary,
+	"success": $success,
+	"danger": $danger,
+	"warning": $warning,
+	"info": $info,
+	"dark": $dark,
+)!default;
 
 .steps {
 	display: flex;
@@ -100,26 +107,50 @@ $steps-colors: $colors !default;
             background-position: right bottom;
             height: 3px;
         }
-        // &.is-warning {
-        // 	&.is-previous {
-        // 		.step-marker {
-	       //  		background-color: $warning;
-	       //  		border-color: $warning;
-	       //  		color: white;
-        // 		}
-        // 	}
-        // 	&.is-active {
-        // 		.step-marker {
-	       //  		background-color: white;
-	       //  		border-color: $warning;
-	       //  		color: $warning;
-        // 		}
-        // 	}
-        // }
+        // Variants
+    	&.is-previous {
+    		&::before, &::after {
+	            background-color: $primary;
+	            background-size: 200% 100%;
+	            background-position: right bottom;
+	            height: 3px;
+	        }
+    		.step-marker {
+    			&::before, &::after {
+		            background-color: $primary;
+		            background-size: 200% 100%;
+		            background-position: right bottom;
+		            height: 3px;
+		        }
+        		background-color: $primary;
+        		border-color: $primary;
+        		color: white;
+    		}
+    	}
+    	&.is-active {
+    		&::before, &::after {
+	            background-color: $primary;
+	            background-size: 200% 100%;
+	            background-position: right bottom;
+	            height: 3px;
+	        }
+    		.step-marker {
+        		background-color: white;
+        		border-color: $primary;
+        		color: $primary;
+    		}
+    	}
         @each $name, $pair in $steps-colors {
+
         	// @TODO devider
         	&.is-#{$name} {
         		&.is-previous {
+		        	&::before, &::after {
+			            background-color: $pair;
+			            background-size: 200% 100%;
+			            background-position: right bottom;
+			            height: 3px;
+			        }
         			.step-marker {
 		        		background-color: $pair;
 		        		border-color: $pair;
@@ -127,6 +158,12 @@ $steps-colors: $colors !default;
         			} 
         		}
         		&.is-active {
+        			&::before, &::after {
+			            background-color: $pair;
+			            background-size: 200% 100%;
+			            background-position: right bottom;
+			            height: 3px;
+			        }
     				.step-marker {
 	        			background-color: white;
 	        			border-color: $pair;
@@ -135,19 +172,8 @@ $steps-colors: $colors !default;
         		}
         	}
         }
-        // &.is-active {
-        // 	.step-marker {
-        // 		background-color: inherit;
-        // 		border-color: inherit;
-        // 		color: inherit;
-        // 	}
-        // }
-        // &.is-previous {
-        // 	.step-marker {
-        // 		background-color: inherit;
-        // 		border-color: inherit;
-        // 	}
-        // }
+
+        // Sizes
 	}
 }
 

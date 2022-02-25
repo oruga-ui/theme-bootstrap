@@ -79,9 +79,6 @@ export default {
 </script>
 
 <style>
-  section {
-    margin: 25px;
-  }
   article {
     margin: 1rem 0;
   }

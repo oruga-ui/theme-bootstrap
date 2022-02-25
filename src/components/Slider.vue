@@ -97,9 +97,3 @@ export default {
   }
 }
 </script>
-
-<style>
-  section {
-    margin: 25px;
-  }
-</style>
