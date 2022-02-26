@@ -276,7 +276,7 @@ export const bootstrapConfig: any = {
     steps: {
         override: true,
         rootClass: (_: string, { props }: any) => {
-            const classes = ['b-steps'];
+            const classes = ['steps-wrapper'];
             if (props.variant) classes.push(`is-${props.variant}`);
             if (props.disables) classes.push('is-disabled')
             return classes.join(' ')

@@ -1,3 +1,4 @@
+$steps-items-focused-outline: none !default;
 $steps-marker-default-background-color: $grey-light !default; 
 $steps-marker-default-border: .1em solid #fff !default;
 $steps-previous-background-color: $primary !default;
@@ -14,200 +15,227 @@ $steps-colors : (
 	"dark": $dark,
 )!default;
 
-.steps {
-	display: flex;
-    // flex-direction: row;
-    // justify-content: space-evenly;
-    flex-wrap: wrap;
-    position: relative;
+.steps-wrapper {
 
-	.step-item {
-        margin-top: 0;
-        position: relative;
-        flex-grow: 1;
-        flex-basis: 1em;
+	.steps {
+		display: flex;
+	    // flex-direction: row;
+	    // justify-content: space-evenly;
+	    flex-wrap: wrap;
+	    position: relative;
 
-		.step-link {
-			text-decoration: none;
-		}
-		.step-marker {
-			align-items: center;
-		    display: flex;
-		    font-weight: 700;
-		    justify-content: center;
+		.step-item {
+	        margin-top: 0;
+	        position: relative;
+	        flex-grow: 1;
+	        flex-basis: 1em;
 
-			background: $steps-marker-default-background-color;
-			color: white;
-    		border: $steps-marker-default-border;
-		    padding: .1em;
-		    margin: 0 auto;
-
-		    width: 2rem;
-   			height: 2rem;
-
-		    font-size: 1.4em;
-
-		    text-align: center;
-	    	align-items: center;
-		    color: white;
-		    // font-weight: bold;
-
-		    z-index: 1;
-		    overflow: hidden;
-
-		    cursor: pointer;
-
-			.icon {
-				margin: 0;
+			.step-link {
+				text-decoration: none;
 			}
-		}
-		.step-title {
-			color: $dark;
-			// font-weight: bold;
-			text-align: center;
-			font-size: 20px;
-		}
+			.step-marker {
+				align-items: center;
+			    display: flex;
+			    font-weight: 700;
+			    justify-content: center;
 
-		 &:not(:first-child), &:only-child {
-            flex-shrink: 1;
+				background: $steps-marker-default-background-color;
+				color: white;
+	    		border: $steps-marker-default-border;
+			    padding: .1em;
+			    margin: 0 auto;
 
-            &::before {
-                // This will contain the divider
-                content: " ";
-                display: block;
-                position: absolute;
-                width: 100%;
-                top: 25%;
-                left: -50%;
-                z-index: -1;
-            }
-        }
-        &:only-child {
-            &::after {
-                // This will contain the divider
-                content: " ";
-                display: block;
-                position: absolute;
-                height: $steps-divider-height;
-                bottom: 0;
-                height: 3px;
-            }
-            &::before, &::after {
-                width: 25%;
-                left: 50%;
-            }
-            &::before {
-                right: 50%;
-                left: auto;
-            }
-        }
+			    width: 2rem;
+	   			height: 2rem;
 
-        &::before, &::after {
-            background: $steps-marker-default-background-color;
-            background-size: 200% 100%;
-            background-position: right bottom;
-            height: 3px;
-        }
-        // Variants
-    	&.is-previous {
-    		&::before, &::after {
-	            background-color: $primary;
+			    font-size: 1.4em;
+
+			    text-align: center;
+		    	align-items: center;
+			    color: white;
+			    // font-weight: bold;
+
+			    z-index: 1;
+			    overflow: hidden;
+
+			    cursor: pointer;
+
+				.icon {
+					margin: 0;
+				}
+			}
+			.step-title {
+				color: $dark;
+				// font-weight: bold;
+				text-align: center;
+				font-size: 20px;
+			}
+
+			 &:not(:first-child), &:only-child {
+	            flex-shrink: 1;
+
+	            &::before {
+	                // This will contain the divider
+	                content: " ";
+	                display: block;
+	                position: absolute;
+	                width: 100%;
+	                top: 25%;
+	                left: -50%;
+	                z-index: -1;
+	            }
+	        }
+	        &:only-child {
+	            &::after {
+	                // This will contain the divider
+	                content: " ";
+	                display: block;
+	                position: absolute;
+	                height: $steps-divider-height;
+	                bottom: 0;
+	                height: 3px;
+	            }
+	            &::before, &::after {
+	                width: 25%;
+	                left: 50%;
+	            }
+	            &::before {
+	                right: 50%;
+	                left: auto;
+	            }
+	        }
+
+	        &::before, &::after {
+	            background: $steps-marker-default-background-color;
 	            background-size: 200% 100%;
 	            background-position: right bottom;
 	            height: 3px;
 	        }
-    		.step-marker {
-    			// &::before, &::after {
-		     //        background-color: $primary;
-		     //        background-size: 200% 100%;
-		     //        background-position: right bottom;
-		     //        height: 3px;
-		     //    }
-        		background-color: $primary;
-        		border-color: $primary;
-        		color: white;
-    		}
-    	}
-    	&.is-active {
-    		&::before, &::after {
-	            background-color: $primary;
-	            background-size: 200% 100%;
-	            background-position: right bottom;
-	            height: 3px;
+	        // Variants
+	    	&.is-previous {
+	    		&::before, &::after {
+		            background-color: $primary;
+		            background-size: 200% 100%;
+		            background-position: right bottom;
+		            height: 3px;
+		        }
+	    		.step-marker {
+	    			// &::before, &::after {
+			     //        background-color: $primary;
+			     //        background-size: 200% 100%;
+			     //        background-position: right bottom;
+			     //        height: 3px;
+			     //    }
+	        		background-color: $primary;
+	        		border-color: $primary;
+	        		color: white;
+	    		}
+	    	}
+	    	&.is-active {
+	    		&::before, &::after {
+		            background-color: $primary;
+		            background-size: 200% 100%;
+		            background-position: right bottom;
+		            height: 3px;
+		        }
+	    		.step-marker {
+	        		background-color: white;
+	        		border-color: $primary;
+	        		color: $primary;
+	    		}
+	    	}
+	        @each $name, $pair in $steps-colors {
+
+	        	// @TODO devider
+	        	&.is-#{$name} {
+	        		&.is-previous {
+			        	&::before, &::after {
+				            background-color: $pair;
+				            background-size: 200% 100%;
+				            background-position: right bottom;
+				            height: 3px;
+				        }
+	        			.step-marker {
+			        		background-color: $pair;
+			        		border-color: $pair;
+			        		color: white;
+	        			} 
+	        		}
+	        		&.is-active {
+	        			&::before, &::after {
+				            background-color: $pair;
+				            background-size: 200% 100%;
+				            background-position: right bottom;
+				            height: 3px;
+				        }
+	    				.step-marker {
+		        			background-color: white;
+		        			border-color: $pair;
+		        			color: $pair;
+	    				}
+	        		}
+	        	}
 	        }
-    		.step-marker {
-        		background-color: white;
-        		border-color: $primary;
-        		color: $primary;
-    		}
-    	}
-        @each $name, $pair in $steps-colors {
 
-        	// @TODO devider
-        	&.is-#{$name} {
-        		&.is-previous {
-		        	&::before, &::after {
-			            background-color: $pair;
-			            background-size: 200% 100%;
-			            background-position: right bottom;
-			            height: 3px;
-			        }
-        			.step-marker {
-		        		background-color: $pair;
-		        		border-color: $pair;
-		        		color: white;
-        			} 
-        		}
-        		&.is-active {
-        			&::before, &::after {
-			            background-color: $pair;
-			            background-size: 200% 100%;
-			            background-position: right bottom;
-			            height: 3px;
-			        }
-    				.step-marker {
-	        			background-color: white;
-	        			border-color: $pair;
-	        			color: $pair;
-    				}
-        		}
-        	}
-        }
+	        // Sizes
+		}
+	    &.is-rounded {
+	        .step-item {
+	            .step-marker {
+	                border-radius: 999px;
+	            }
+	        }
+	    }
 
-        // Sizes
+	    &.is-animated {
+	        .step-item {
+	            &:not(:first-child), &:only-child {
+	                &::before {
+	                    transition: background $speed-slow $easing;
+	                }
+	            }
+	        }
+	    }
+
+
+	//     &.has-label-right, &.has-label-left {
+	//         /* .step-items { */
+	//             .step-item {
+	//                 .step-link {
+	//                     flex-direction: row;
+
+	//                     > /* .step-details { */ .step-title {
+	//                         // background-color: $steps-details-background-color;
+	//                         padding: .2em;
+	//                     }
+	//                 }
+	//             }
+	//         /* } */
+	//     }
 	}
-    &.is-rounded {
-        .step-item {
-            .step-marker {
-                border-radius: 999px;
-            }
-        }
-    }
+	.step-content {
+		position: relative;
+	    overflow: visible;
+	    display: flex;
+	    flex-direction: column;
+	    padding: 1rem;
+	    .step-link {
+	    	.title {
+	    		text-align: center;
+	    	}
+	    }
+	    .step-item {
+	        flex-shrink: 0;
+	        flex-basis: auto;
 
-    &.is-animated {
-        .step-item {
-            &:not(:first-child), &:only-child {
-                &::before {
-                    transition: background $speed-slow $easing;
-                }
-            }
-        }
-    }
-
-//     &.has-label-right, &.has-label-left {
-//         /* .step-items { */
-//             .step-item {
-//                 .step-link {
-//                     flex-direction: row;
-
-//                     > /* .step-details { */ .step-title {
-//                         // background-color: $steps-details-background-color;
-//                         padding: .2em;
-//                     }
-//                 }
-//             }
-//         /* } */
-//     }
+	        &:focus {
+	            outline: $steps-items-focused-outline;
+	        }
+	    }
+	    &.is-transitioning {
+	        overflow: hidden;
+	    }
+	}
 }
 
 // .steps {

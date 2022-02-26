@@ -36,7 +36,7 @@
 <style lang="scss">
 #main {
   display: flex;
-  section {
+  .section {
     flex-grow: 1;
     margin: 25px;
 }
