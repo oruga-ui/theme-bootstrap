@@ -1,4 +1,5 @@
 $steps-items-focused-outline: none !default;
+$steps-details-background-color: white !default; // @TODO: update 
 $steps-marker-default-background-color: $grey-light !default; 
 $steps-marker-default-border: .1em solid #fff !default;
 $steps-previous-background-color: $primary !default;
@@ -198,20 +199,20 @@ $steps-colors : (
 	    }
 
 
-	//     &.has-label-right, &.has-label-left {
-	//         /* .step-items { */
-	//             .step-item {
-	//                 .step-link {
-	//                     flex-direction: row;
+	    &.has-label-right, &.has-label-left {
+	        /* .step-items { */
+	            .step-item {
+	                .step-link {
+	                    flex-direction: row;
 
-	//                     > /* .step-details { */ .step-title {
-	//                         // background-color: $steps-details-background-color;
-	//                         padding: .2em;
-	//                     }
-	//                 }
-	//             }
-	//         /* } */
-	//     }
+	                    > /* .step-details { */ .step-title {
+	                        background-color: $steps-details-background-color;
+	                        padding: .2em;
+	                    }
+	                }
+	            }
+	        /* } */
+	    }
 	}
 	.step-content {
 		position: relative;
@@ -235,6 +236,72 @@ $steps-colors : (
 	    &.is-transitioning {
 	        overflow: hidden;
 	    }
+	}
+	&.is-vertical {
+		display: flex;
+		// flex-direction: row-reverse;
+		.steps {
+			flex-direction: column;
+		}
+		.step-item {
+			width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+			padding: $steps-vertical-padding;
+			.step-title {
+				background-color: $steps-details-background-color;
+			}
+			&:not(:first-child), &:only-child {
+	            flex-shrink: 1;
+
+	            &::before {
+	                // This will contain the divider
+	                content: " ";
+	                display: block;
+	                position: absolute;
+
+	                // width: 100%;
+	                width: 3px;
+
+	                // top: 25%;
+	                top: -50%;
+
+	                // left: -50%;
+	                left: 50%;
+	                
+	                z-index: -1;
+	            }
+	        }
+	        &:only-child {
+	            &::after {
+	                // This will contain the divider
+	                content: " ";
+	                display: block;
+	                position: absolute;
+	                height: $steps-divider-height;
+	                bottom: 0;
+	                // height: 3px;
+	            }
+	            &::before, &::after {
+	                width: 25%;
+	                left: 50%;
+	            }
+	            &::before {
+	                right: 50%;
+	                left: auto;
+	            }
+	        }
+
+	        &::before, &::after {
+	            background: $steps-marker-default-background-color;
+	            background-size: 200% 100%;
+	            background-position: right bottom;
+
+	            // height: 3px;
+	            height: 100%;
+	        }
+		}
 	}
 }
 
