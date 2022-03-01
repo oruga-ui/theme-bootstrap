@@ -16,6 +16,30 @@ $steps-colors : (
 	"dark": $dark,
 )!default;
 
+@mixin steps-size($size) {
+	.steps {
+		.step-item {
+			.step-marker {
+				width: 2rem;
+	   			height: 2rem;
+			    font-size: 2.4em;
+			}	
+			.step-title {
+				font-size: 2.4em;
+			}
+			&:only-child {
+	            &::after {
+	                // This will contain the divider
+	                height: 3px;
+	            }
+            }
+            &::before, &::after {
+	            height: 3px;
+	        }
+		}
+	}
+}
+
 .steps-wrapper {
 
 	.steps {
