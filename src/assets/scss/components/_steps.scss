@@ -33,6 +33,15 @@ $steps-colors : (
 
 			.step-link {
 				text-decoration: none;
+			    display: flex;
+                align-items: center;
+                justify-content: center;
+                flex-direction: column;
+                color: $body-color;
+
+                &:not(.is-clickable) {
+                    cursor: not-allowed;
+                }
 			}
 			.step-marker {
 				align-items: center;
@@ -81,7 +90,7 @@ $steps-colors : (
 	                display: block;
 	                position: absolute;
 	                width: 100%;
-	                top: 25%;
+	                top: 1rem;
 	                left: -50%;
 	                z-index: -1;
 	            }
@@ -204,9 +213,24 @@ $steps-colors : (
 	                        padding: .2em;
 	                    }
 	                }
+	                .step-marker {
+	                	margin: 0;
+	                }
 	            }
 	        /* } */
 	    }
+	    &.has-label-left {
+            /* .step-items { */
+                .step-item {
+                    .step-link {
+                        flex-direction: row-reverse;
+                    }
+                    .step-marker {
+                    	margin: 0;
+                    }
+                }
+            /* } */
+        }
 	}
 	.step-content {
 		position: relative;
@@ -252,32 +276,17 @@ $steps-colors : (
 	            &::before {
 	                // width: 100%;
 	                width: 3px;
-
 	                // top: 25%;
 	                top: -50%;
-
 	                // left: -50%;
 	                left: 48%;
 	            }
 	        }
 	        &:only-child {
 	            &::after {
-	                // This will contain the divider
-	                // content: " ";
-	                // display: block;
-	                // position: absolute;
-	                // height: $steps-divider-height;
-	                // bottom: 0;
+	                // This contains the divider
 	                height: 100%;
 	            }
-	            // &::before, &::after {
-	            //     width: 25%;
-	            //     left: 50%;
-	            // }
-	            // &::before {
-	            //     right: 50%;
-	            //     left: auto;
-	            // }
 	        }
 
 	        &::before, &::after {

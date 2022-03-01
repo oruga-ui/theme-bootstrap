@@ -49,7 +49,7 @@
       </o-field>
     </p>
     <o-steps
-
+      labelPosition="left"
       v-model="activeStep"
       :animated="isAnimated"
       :rounded="isRounded"
