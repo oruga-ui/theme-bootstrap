@@ -20,22 +20,24 @@ $steps-colors : (
 	.steps {
 		.step-item {
 			.step-marker {
-				width: 2rem;
-	   			height: 2rem;
-			    font-size: 2.4em;
+				width: $size * 2;
+	   			height: $size * 2;
+			    font-size: $size;
 			}	
 			.step-title {
-				font-size: 2.4em;
+				font-size: $size;
 			}
-			&:only-child {
-	            &::after {
-	                // This will contain the divider
-	                height: 3px;
-	            }
+	        &:not(:first-child), &:only-child {
+                &::before {
+                    top: #{$size};
+                }
             }
-            &::before, &::after {
-	            height: 3px;
-	        }
+            &:only-child {
+                &::after {
+	                // This will contain the divider
+                    top: #{$size};
+                }
+            }
 		}
 	}
 }
@@ -79,10 +81,10 @@ $steps-colors : (
 			    padding: .1em;
 			    margin: 0 auto;
 
-			    width: 2rem;
-	   			height: 2rem;
+			    // width: 2rem;
+	   			// height: 2rem;
 
-			    font-size: 1.4em;
+			    // font-size: 1.4em;
 
 			    text-align: center;
 		    	align-items: center;
@@ -100,9 +102,8 @@ $steps-colors : (
 			}
 			.step-title {
 				color: $dark;
-				// font-weight: bold;
 				text-align: center;
-				font-size: 20px;
+				// font-size: 20px;
 			}
 
 			 &:not(:first-child), &:only-child {
@@ -256,6 +257,19 @@ $steps-colors : (
             /* } */
         }
 	}
+
+	// Sizes
+	@include steps-size(1em);
+	&.is-small {
+        @include steps-size(.8em);
+    }
+    &.is-medium {
+        @include steps-size(1em);
+    }
+    &.is-large {
+        @include steps-size(1.2em);
+    }
+
 	.step-content {
 		position: relative;
 	    overflow: visible;
