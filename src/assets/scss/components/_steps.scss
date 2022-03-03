@@ -7,6 +7,9 @@ $steps-active-background-color: $primary !default;
 $steps-divider-height: .2em !default;
 $steps-vertical-padding: 1em 0 !default;
 $steps-mobile-max-width: $tablet !default;
+$steps-small: .8em;
+$steps-medium: 1em;
+$steps-large: 1.2em;
 $steps-colors : (
 	"primary": $primary,
 	"success": $success,
@@ -30,16 +33,20 @@ $steps-colors : (
 			}
 	        &:not(:first-child), &:only-child {
                 &::before {
-                    top: $size - .2;
-                }
-            }
-            &:only-child {
-                &::after {
-	                // This will contain the divider
-                    top: $size - .2;
+                    top: 25%;
                 }
             }
 		}
+        &.has-label-right, &.has-label-left {
+        	.step-item {
+	        	&:not(:first-child), &:only-child {
+	                &::before {
+	                    top: 45%;
+	                }
+	            }
+        		
+        	}
+        }
 	}
 }
 
@@ -116,7 +123,7 @@ $steps-colors : (
 	                display: block;
 	                position: absolute;
 	                width: 100%;
-	                top: 1rem;
+	                // top: 25%;
 	                left: -50%;
 	                z-index: -1;
 	            }
@@ -151,9 +158,6 @@ $steps-colors : (
 	    	&.is-previous {
 	    		&::before, &::after {
 		            background-color: $primary;
-		            // background-size: 200% 100%;
-		            // background-position: right bottom;
-		            // height: 3px;
 		        }
 	    		.step-marker {
 	        		background-color: $primary;
@@ -164,9 +168,6 @@ $steps-colors : (
 	    	&.is-active {
 	    		&::before, &::after {
 		            background-color: $primary;
-		            // background-size: 200% 100%;
-		            // background-position: right bottom;
-		            // height: 3px;
 		        }
 	    		.step-marker {
 	        		background-color: white;
@@ -181,9 +182,6 @@ $steps-colors : (
 	        		&.is-previous {
 			        	&::before, &::after {
 				            background-color: $pair;
-				            // background-size: 200% 100%;
-				            // background-position: right bottom;
-				            // height: 3px;
 				        }
 	        			.step-marker {
 			        		background-color: $pair;
@@ -194,9 +192,6 @@ $steps-colors : (
 	        		&.is-active {
 	        			&::before, &::after {
 				            background-color: $pair;
-				            // background-size: 200% 100%;
-				            // background-position: right bottom;
-				            // height: 3px;
 				        }
 	    				.step-marker {
 		        			background-color: white;
@@ -206,8 +201,6 @@ $steps-colors : (
 	        		}
 	        	}
 	        }
-
-	        // Sizes
 		}
 	    &.is-rounded {
 	        .step-item {
@@ -260,15 +253,16 @@ $steps-colors : (
 	}
 
 	// Sizes
-	@include steps-size(1.2em);
+	// Sizes
+	@include steps-size($steps-medium);
 	&.is-small {
-        @include steps-size(.8em); // 1
+        @include steps-size($steps-small);
     }
     &.is-medium {
-        @include steps-size(1em);  // 1.2
+        @include steps-size($steps-medium);
     }
     &.is-large {
-        @include steps-size(1.2em);  // 1.4
+        @include steps-size($steps-large);
     }
 
 	.step-content {
