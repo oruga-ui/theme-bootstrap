@@ -49,10 +49,17 @@
             <option value="left">Left</option>
           </o-select>
         </o-field>
+        <o-field label="steps position">
+          <o-select v-model="stepsPosition">
+            <option value="right">Right</option>
+            <option value="left">Left</option>
+          </o-select>
+        </o-field>
       </o-field>
     </p>
     <o-steps
       :vertical="isVertical"
+      :position="stepsPosition"
       v-model="activeStep"
       :animated="isAnimated"
       :rounded="isRounded"
@@ -181,6 +188,7 @@
         prevIcon: 'chevron-left',
         nextIcon: 'chevron-right',
         labelPosition: 'bottom',
+        stepsPosition: 'left',
         position: null,
         size: null
       }
