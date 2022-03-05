@@ -12,6 +12,9 @@
           <o-switch v-model="isRounded"> Rounded </o-switch>
         </div>
         <div class="control">
+          <o-switch v-model="isVertical"> Vertical </o-switch>
+        </div>
+        <div class="control">
           <o-switch v-model="isStepsClickable"> Clickable Marker </o-switch>
         </div>
       </o-field>
@@ -49,7 +52,7 @@
       </o-field>
     </p>
     <o-steps
-      labelPosition="left"
+      :vertical="isVertical"
       v-model="activeStep"
       :animated="isAnimated"
       :rounded="isRounded"
@@ -167,6 +170,7 @@
 
         showSocial: false,
         isAnimated: true,
+        isVertical: false,
         isRounded: true,
         isStepsClickable: false,
 

@@ -1,6 +1,7 @@
-$icon-color: $grey;
-$input-padding-for-left-icon: 7px 11px 7px 32px;
-$icon-position-left-right: 12px;
+$select-icon-color: $grey;
+$select-icon-padding-left: 7px 11px 7px 32px;
+$select-icon-left-position: 12px;
+$select-icon-right-position: 12px;
 
 // Icon style
 .select {
@@ -9,20 +10,20 @@ $icon-position-left-right: 12px;
 	.form-select {
 		// if the icon is in left then set that padding
 		&.has-icon-in-left {
-			padding: $input-padding-for-left-icon;
+			padding: $select-icon-padding-left;
 		}
 	}
 	// the Position of the icon
 	.icon {
-		color: $icon-color;
+		color: $select-icon-color;
 		position: absolute;
 		&.is-left {
 			top: 8px;
-			left: $icon-position-left-right;
+			left: $select-icon-left-position;
 		}
 		&.is-right {
 			top: 8px;
-			right: $icon-position-left-right;
+			right: $select-icon-right-position;
 		}
 	}
 }

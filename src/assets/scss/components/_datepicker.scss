@@ -3,9 +3,9 @@ $datepicker-cell-padding: 5px; /* or 0.5rem 0.75rem*/
 $datepicker-cell-width: calc(#{100%} / 7);
 $datepicker-cell-font-weight: 400;
 $datepicker-cell-text-align: center;
-$datepicker-cell-color-unselectable: rgba(0,0,0,.3);
-$datepicker-cell-color-hovered: rgba(0,0,0,.5);
-$datepicker-cell-color-selected: $primary;
+$datepicker-cell-unselectable-color: rgba(0,0,0,.3);
+$datepicker-cell-hovered-color: rgba(0,0,0,.5);
+$datepicker-cell-selected-color: $primary;
 $datepicker-cell-border-radius: 3px;
 
 @mixin datepicker-cell {
@@ -69,18 +69,18 @@ $datepicker-cell-border-radius: 3px;
 					font-weight: $datepicker-cell-font-weight;
 
 					&.is-today {
-						color: $datepicker-cell-color-selected;
-						border: 1px solid $datepicker-cell-color-selected;
+						color: $datepicker-cell-selected-color;
+						border: 1px solid $datepicker-cell-selected-color;
 						border-radius: $datepicker-cell-border-radius;
 					}
 					&.is-selected {
-						background-color: $datepicker-cell-color-selected;
+						background-color: $datepicker-cell-selected-color;
 						color: white;
 						border-radius: $datepicker-cell-border-radius;
 					}
 
 					&.is-first-hovered {
-						background-color: $datepicker-cell-color-hovered;
+						background-color: $datepicker-cell-hovered-color;
 						color: white;
 						border-top-left-radius: $datepicker-cell-border-radius;
 						border-bottom-left-radius: $datepicker-cell-border-radius;
@@ -88,13 +88,13 @@ $datepicker-cell-border-radius: 3px;
 						border-bottom-right-radius: 0;
 					}
 					&.is-within-hovered {
-						background-color: $datepicker-cell-color-hovered;
+						background-color: $datepicker-cell-hovered-color;
 						color: white;
 						border-radius: 0;
 						opacity: .5;
 					}
 					&.is-last-hovered {
-						background-color: $datepicker-cell-color-hovered;
+						background-color: $datepicker-cell-hovered-color;
 						color: white;
 						border-top-right-radius: $datepicker-cell-border-radius;
 						border-bottom-right-radius: $datepicker-cell-border-radius;
@@ -103,7 +103,7 @@ $datepicker-cell-border-radius: 3px;
 					}
 
 					&.is-first-selected {
-						background-color: $datepicker-cell-color-selected;
+						background-color: $datepicker-cell-selected-color;
 						color: white;
 						border-top-left-radius: $datepicker-cell-border-radius;
 						border-bottom-left-radius: $datepicker-cell-border-radius;
@@ -111,13 +111,13 @@ $datepicker-cell-border-radius: 3px;
 						border-bottom-right-radius: 0;
 					}
 					&.is-within-selected {
-						background-color: $datepicker-cell-color-selected;
+						background-color: $datepicker-cell-selected-color;
 						color: white;
 						border-radius: 0;
 						opacity: .5;
 					}
 					&.is-last-selected {
-						background-color: $datepicker-cell-color-selected;
+						background-color: $datepicker-cell-selected-color;
 						color: white;
 						border-top-right-radius: $datepicker-cell-border-radius;
 						border-bottom-right-radius: $datepicker-cell-border-radius;
@@ -206,7 +206,7 @@ $datepicker-cell-border-radius: 3px;
             height: 2.5rem;
 
             &--selected {
-            	background-color: $datepicker-cell-color-selected;
+            	background-color: $datepicker-cell-selected-color;
 				color: white;
 				border-radius: $datepicker-cell-border-radius;
             }
@@ -214,7 +214,7 @@ $datepicker-cell-border-radius: 3px;
             	font-weight: $datepicker-cell-font-weight;
             }
             &--first-hovered {
-				background-color: $datepicker-cell-color-hovered;
+				background-color: $datepicker-cell-hovered-color;
 				color: white;
 				border-top-left-radius: $datepicker-cell-border-radius;
 				border-bottom-left-radius: $datepicker-cell-border-radius;
@@ -222,13 +222,13 @@ $datepicker-cell-border-radius: 3px;
 				border-bottom-right-radius: 0;
 			}
 			&--within-hovered {
-				background-color: $datepicker-cell-color-hovered;
+				background-color: $datepicker-cell-hovered-color;
 				color: white;
 				border-radius: 0;
 				opacity: .5;
 			}
 			&--last-hovered {
-				background-color: $datepicker-cell-color-hovered;
+				background-color: $datepicker-cell-hovered-color;
 				color: white;
 				border-top-right-radius: $datepicker-cell-border-radius;
 				border-bottom-right-radius: $datepicker-cell-border-radius;
@@ -237,7 +237,7 @@ $datepicker-cell-border-radius: 3px;
 			}
 
 			&--first-selected {
-				background-color: $datepicker-cell-color-selected;
+				background-color: $datepicker-cell-selected-color;
 				color: white;
 				border-top-left-radius: $datepicker-cell-border-radius;
 				border-bottom-left-radius: $datepicker-cell-border-radius;
@@ -245,13 +245,13 @@ $datepicker-cell-border-radius: 3px;
 				border-bottom-right-radius: 0;
 			}
 			&--within-selected {
-				background-color: $datepicker-cell-color-selected;
+				background-color: $datepicker-cell-selected-color;
 				color: white;
 				border-radius: 0;
 				opacity: .5;
 			}
 			&--last-selected {
-				background-color: $datepicker-cell-color-selected;
+				background-color: $datepicker-cell-selected-color;
 				color: white;
 				border-top-right-radius: $datepicker-cell-border-radius;
 				border-bottom-right-radius: $datepicker-cell-border-radius;

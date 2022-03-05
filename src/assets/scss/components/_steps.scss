@@ -291,43 +291,83 @@ $steps-colors : (
 	}
 	&.is-vertical {
 		display: flex;
+		flex-direction: row;
+        flex-wrap: wrap;
+
 		// flex-direction: row-reverse;
-		.steps {
+		> .steps {
 			flex-direction: column;
-		}
-		.step-item {
-			width: 100%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-			padding: $steps-vertical-padding;
-			.step-title {
-				background-color: $steps-details-background-color;
+			.step-item {
+				width: 100%;
+	            display: flex;
+	            align-items: center;
+	            justify-content: center;
+				padding: $steps-vertical-padding;
+				.step-title {
+					background-color: $steps-details-background-color;
+				}
+				&:not(:first-child), &:only-child {
+		            flex-shrink: 1;
+
+		            &::before {
+		                // width: 100%;
+		                width: 3px;
+		                // top: 25%;
+		                top: -50%;
+		                // left: -50%;
+		                left: 48%;
+		            }
+		        }
+		        &:only-child {
+		            &::after {
+		                // This contains the divider
+		                height: 100%;
+		            }
+		        }
+
+		        &::before, &::after {
+		            // height: 3px;
+		            height: 100%;
+		        }
 			}
-			&:not(:first-child), &:only-child {
-	            flex-shrink: 1;
+			&.has-label-right {
+                /* .step-items { */
+                    .step-item {
+                        justify-content: flex-start;
+                    }
+                /* } */
+            }
+            &.has-label-left {
+                /* .step-items { */
+                    .step-item {
+                        justify-content: flex-end;
+                    }
+                /* } */
+            }
+            &:not(.has-label-right):not(.has-label-left) {
+                /* .step-items { */
+                    .step-item {
+                        .step-link {
+                            > /* .step-details { */ .step-title {
+                                background-color: $steps-details-background-color;
+                            }
+                        }
+                    }
+                /* } */
+            }
 
-	            &::before {
-	                // width: 100%;
-	                width: 3px;
-	                // top: 25%;
-	                top: -50%;
-	                // left: -50%;
-	                left: 48%;
-	            }
-	        }
-	        &:only-child {
-	            &::after {
-	                // This contains the divider
-	                height: 100%;
-	            }
-	        }
-
-	        &::before, &::after {
-	            // height: 3px;
-	            height: 100%;
-	        }
 		}
+		> .step-content {
+            flex-grow: 1;
+        }
+
+        > .step-navigation {
+            flex-basis: 100%;
+        }
+
+        &.is-right {
+            flex-direction: row-reverse;
+        }
 	}
 }
 

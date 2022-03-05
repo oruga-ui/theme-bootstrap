@@ -1,11 +1,12 @@
 $input-icon-color: $grey;
-$input-left-icon-padding: 7px 11px 7px 32px;
-// $input-left-icon-padding: .4rem .8rem .4rem 2rem;
-$input-left-icon-padding-large: 7px 11px 7px 45px;
-$input-icon-position-left-right: 12px;
+$input-icon-left-padding: 7px 11px 7px 32px;
+// $input-icon-left-padding: .4rem .8rem .4rem 2rem;
+$input-icon-large-left-position: 7px 11px 7px 45px;
+$input-icon-left-position: 12px;
+$input-icon-right-position: 12px;
 $input-rounded: 50px!important;
 $input-margin-right: 0.5rem;
-$btn-border-color: #ced4da;
+$input-btn-border-color: #ced4da;
 
 /* IMPORTANT NOTE !!
 .input-group --> // Addons class
@@ -150,10 +151,10 @@ $btn-border-color: #ced4da;
     .form-control {
         // if the icon is in left then set that padding
         &.has-icon-in-left:not(.form-control-lg) {
-            padding: $input-left-icon-padding;
+            padding: $input-icon-left-padding;
         } // if icon and the input are large, we give more space to icon
         &.has-icon-in-left.form-control-lg {
-            padding: $input-left-icon-padding-large;
+            padding: $input-icon-large-left-position;
         }
     }
     // the Position of the icon
@@ -162,20 +163,20 @@ $btn-border-color: #ced4da;
         position: absolute;
         &.is-left {
             top: 8px;
-            left: $input-icon-position-left-right;
+            left: $input-icon-left-position;
         }
         &.is-right {
             top: 8px;
-            right: $input-icon-position-left-right;
+            right: $input-icon-right-position;
         }
         // small icon positioniing
         &.is-left.is-small {
             top: 6px;
-            left: $input-icon-position-left-right;
+            left: $input-icon-left-position;
         }
         &.is-right.is-small {
             top: 6px;
-            right: $input-icon-position-left-right;
+            right: $input-icon-right-position;
         }
     }
 
@@ -196,8 +197,8 @@ $btn-border-color: #ced4da;
     }
     // Btn with border if it transparent <outlined>
     button:not(.btn-primary):not(.btn-info):not(.btn-danger):not(.btn-success):not(.btn-warning):not(.btn-dark):not(.btn-light) {
-        border: .1px solid $btn-border-color;
-        background-color: $btn-border-color;
+        border: .1px solid $input-btn-border-color;
+        background-color: $input-btn-border-color;
     }
 }
 

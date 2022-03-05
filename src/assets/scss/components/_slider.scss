@@ -1,7 +1,7 @@
 $slider-margin: .4em 0;
 $slider-track-background-color: transparent;
-$slider-hight: 6px; // default
-$slider-radius: 10px;
+$slider-height: 6px; // default
+$slider-border-radius: 10px;
 
 $slider-tick-to-track-ratio: 0.5 !default;
 $slider-tick-width: 3px !default;
@@ -21,9 +21,9 @@ $slider-large: 7px;
     margin: $slider-margin;
     position: relative;
     width: 100%;
-    height: $slider-hight; // default size
+    height: $slider-height; // default size
     background-color: $grey-lighter;
-    border-radius: $slider-radius;
+    border-radius: $slider-border-radius;
     cursor: pointer;
 
     .slider-track {
@@ -74,8 +74,8 @@ $slider-large: 7px;
 
             .slider-thumb {
                 background-color: $primary; // default variant
-                height: calc(#{$slider-hight} * 3); // default size
-                width: calc(#{$slider-hight} * 3); // default size
+                height: calc(#{$slider-height} * 3); // default size
+                width: calc(#{$slider-height} * 3); // default size
                 // border-radius: 50%;
 
                 &:focus {

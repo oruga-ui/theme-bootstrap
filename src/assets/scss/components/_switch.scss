@@ -4,23 +4,23 @@ $switch-margin-right-bottom: 0.9rem;
 // is-small
 $switch-small-width: 24px;
 $switch-small-height: 14px;
-$switch-before-small-width: 10px;
-$switch-before-small-height: 10px;
-$switch-position-top-small: 25%;
+$switch-small-before-width: 10px;
+$switch-small-before-height: 10px;
+$switch-small-top-position: 25%;
 // $switch-left-small: 0;
 // is-medium
 $switch-medium-width: 28px;
 $switch-medium-height: 18px;
-$switch-before-medium-width: 14px;
-$switch-before-medium-height: 14px;
-$switch-position-top-medium: 20%;
+$switch-medium-before-width: 14px;
+$switch-medium-before-height: 14px;
+$switch-medium-top-position: 20%;
 // $switch-left-medium: 0;
 // is large
 $switch-large-width: 38px;
 $switch-large-height: 22px;
 $switch-large-before-width: 18px;
-$switch-before-large-height:18px;
-$switch-position-top-large: 25%;
+$switch-large-before-height:18px;
+$switch-large-top-position: 25%;
 // $switch-left-large: 0;
 // The move of the switch (before)
 $switch-small-translateX: 9px;
@@ -31,11 +31,11 @@ $switch-large-translateX: 15px;
 	.switch {
 		width: $switch-small-width;
 	    height: $switch-small-height;
-	    top: $switch-position-top-small;
+	    top: $switch-small-top-position;
 	}
 	.switch:before {
-	    width: $switch-before-small-width;
-		height: $switch-before-small-height;
+	    width: $switch-small-before-width;
+		height: $switch-small-before-height;
 	}
 	input[type=checkbox]:checked + .switch:before {
 		// Move
@@ -48,11 +48,11 @@ $switch-large-translateX: 15px;
 	.switch {
 		width: $switch-medium-width;
 	    height: $switch-medium-height;
-	    top: $switch-position-top-medium;
+	    top: $switch-medium-top-position;
 	}
 	.switch:before {
-	    width: $switch-before-medium-width;
-		height: $switch-before-medium-height;
+	    width: $switch-medium-before-width;
+		height: $switch-medium-before-height;
 	}
 	input[type=checkbox]:checked + .switch:before {
 		// Move
@@ -65,11 +65,11 @@ $switch-large-translateX: 15px;
 	.switch {
 		width: $switch-large-width;
 	    height: $switch-large-height;
-	    top: $switch-position-top-large;
+	    top: $switch-large-top-position;
 	}
 	.switch:before {
 	    width: $switch-large-before-width;
-		height: $switch-before-large-height;
+		height: $switch-large-before-height;
 	}
 	input[type=checkbox]:checked + .switch:before {
 		// Move
@@ -99,7 +99,7 @@ $switch-large-translateX: 15px;
 		// Default size is-small
 		width: $switch-small-width;
 	    height: $switch-small-height;
-	    top: $switch-position-top-small;
+	    top: $switch-small-top-position;
 
 	    // Passive Variant
 	    &.is-primary-passive {
@@ -127,8 +127,8 @@ $switch-large-translateX: 15px;
 		-webkit-transition: $switch-transition;
 		transition: $switch-transition;
 		// Default size is-small
-		width: $switch-before-small-width;
-		height: $switch-before-small-height;
+		width: $switch-small-before-width;
+		height: $switch-small-before-height;
 	}
 
 	input[type=checkbox]:checked + .switch {
