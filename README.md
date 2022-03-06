@@ -1,5 +1,5 @@
 <p align="center">
-    <img width="200" src="https://raw.githubusercontent.com/oruga-ui/theme-bootstrap/master/public/logo.svg" />
+    <img width="150" src="https://raw.githubusercontent.com/oruga-ui/theme-bootstrap/master/public/logo.svg" />
 </p>
 
 <p align="center">
