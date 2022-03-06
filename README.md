@@ -3,7 +3,7 @@
 </p>
 
 <p align="center">
-  <i><a href="https://bootstrap.io" target="_blank">Bootstrap</a> theme for <a href="https://oruga.io" target="_blank">Oruga</a></i>
+  <i><a href="https://getbootstrap.com/" target="_blank">Bootstrap</a> theme for <a href="https://oruga.io" target="_blank">Oruga</a></i>
 </p>
 
 <p align="center">
@@ -153,32 +153,6 @@ createApp(App)
     .use(Oruga, custombootstrapConfig)
     .mount('#app')
 ```
-
-
-## Buefy users
-
-### Components
-
-| Buefy       | Oruga      | Note 
-| ----------- | ---------- | ----------------
-| Taginput    | Inputitems |
-| Toast       | N.A.       | You can customize Notification with `noticeClass` and/or passing a component using programmatic way
-| Snackbar    | N.A.       | You can customize Notification with `noticeClass` and/or passing a component using programmatic way
-
-At the moment you won't find Carousel, Dialog, Navbar, Menu but we'll add them soon in Oruga core code.
-
-### Props
-
-| Buefy           | Oruga      | Component      | Note 
-| --------------- | ---------- | -------------- | --------------------
-| type            | variant    |     -          | Removed prefix `is-`
-| size            | size       |     -          | Removed prefix `is-`
-| loading         | N.A.       |     -          | Not supported
-| label-position  | N.A.       | Field          | Not suppported but you can easily add `is-floating-label` or `is-floating-in-label` class to ``root-class`` prop
-| size            | N.A.       | Tooltip        | You can use `multiline-class` or `content-class`
-| custom          | N.A.       | Dropdown Item  | You can use ``tag`` prop
-| has-modal-card  | N.A.       | Modal          | You have to add `content-class="modal-content"` when you don't use modal-card classes as content
-
 
 ## Contributors
 Thank you to everyone involved for improving this project, day by day 💚
