@@ -8,19 +8,26 @@ $modal-overlay-background-color: $overlay-background-color-dark;
 		.modal-content {
 			.modal-header {
 				// Close btn of oruga
-				.icon {
-					.fa-times {
-						display: none;
+				// .icon {
+				// 	.fa-times {
+						// display: none;
 						// position: absolute; 
 						// top: 20px;
 						// right: 20px;
-					}
-				}
+				// 	}
+				// }
 				// Close btn of bootstrap
 				.btn-close {
-					display: block;
+					display: none;
 				}
 			}
+		}
+		// Close btn of oruga
+		.icon.is-clickable {
+			position: absolute; 
+			top: 20px;
+			right: 20px;
+
 		}
 	}
 }
