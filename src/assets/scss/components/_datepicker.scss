@@ -18,6 +18,9 @@ $datepicker-cell-border-radius: 3px;
 }
 
 .datepicker {
+	input.form-control {
+	    background: inherit;
+	}
 	.dropdown-item:active {
 		background-color: transparent;
 		color: $dark;

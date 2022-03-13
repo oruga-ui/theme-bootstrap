@@ -1,6 +1,9 @@
 $select-margin: 0.2rem 0.2rem 0.2rem 0;
 
 .timepicker {
+	input.form-control {
+	    background: inherit;
+	}
 	.dropdown-menu {
 		width: auto;
 	}
