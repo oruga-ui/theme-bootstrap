@@ -177,22 +177,14 @@
   </section>
 
   <o-field label="Name" grouped>
-    <div>
       <o-input icon="user"></o-input>
-    </div>
-    <div>
       <a class="btn btn-dark"> Search </a>
-    </div>
   </o-field>
 
   <o-field label="Name">
-    <div>
       <a class="btn btn-dark"> Search </a>
-    </div>
-    <o-input icon="user" expanded></o-input>
-    <div>
+   	  <o-input icon="user" expanded></o-input>
       <a class="btn btn-dark"> Search </a>
-    </div>
   </o-field>
 
   <o-field horizontal label="Name">

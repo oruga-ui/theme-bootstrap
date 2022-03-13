@@ -30,7 +30,7 @@
       <div class="modal-content">
       <div class="modal-header">
         <h5 class="modal-title">Log in to continue using the service</h5>
-          <o-icon
+        <o-icon
           clickable
           native-type="button"
           icon="times"
