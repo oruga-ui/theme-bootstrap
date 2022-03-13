@@ -7,27 +7,26 @@ $modal-overlay-background-color: $overlay-background-color-dark;
 	.modal-dialog {
 		.modal-content {
 			.modal-header {
-				// Close btn of oruga
-				// .icon {
-				// 	.fa-times {
-						// display: none;
-						// position: absolute; 
-						// top: 20px;
-						// right: 20px;
-				// 	}
-				// }
+				// <o-icon> btn of oruga
+				.icon.is-clickable {
+					// display: none;
+					position: absolute; 
+					top: 20px;
+					right: 20px;
+				}
 				// Close btn of bootstrap
 				.btn-close {
 					display: none;
 				}
 			}
 		}
-		// Close btn of oruga
-		.icon.is-clickable {
-			position: absolute; 
-			top: 20px;
-			right: 20px;
-
+		.modal-content + .icon.is-clickable {
+			display: none;
 		}
+	}
+	.icon.is-clickable {
+		position: absolute; 
+		top: 20px;
+		right: 20px;
 	}
 }

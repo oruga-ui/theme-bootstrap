@@ -224,7 +224,7 @@ export const bootstrapConfig: any = {
         tableClass: 'table',
         borderedClass: 'table-bordered',
         stripedClass: 'table-striped',
-        // narrowedClass: 'is-narrow',
+        narrowedClass: 'table-sm',
         hoverableClass: 'table-hover',
         ////
         emptyClass: 'is-empty',

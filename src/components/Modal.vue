@@ -30,7 +30,11 @@
       <div class="modal-content">
       <div class="modal-header">
         <h5 class="modal-title">Log in to continue using the service</h5>
-        <!-- <button type="button" class="btn-close" @click="isCardModalActive = true"></button> -->
+          <o-icon
+          clickable
+          native-type="button"
+          icon="times"
+          @click="isCardModalActive = false"/>
       </div>
       <div class="modal-body">
          <o-field label="Email">
