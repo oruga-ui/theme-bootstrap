@@ -121,6 +121,11 @@ const routes: Array<RouteRecordRaw> = [
     path: '/field',
     name: 'Field',
     component: () => import('../components/Field.vue')
+  },
+  {
+    path: '/upload',
+    name: 'Upload',
+    component: () => import('../components/Upload.vue')
   }
 ]
 

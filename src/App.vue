@@ -25,6 +25,7 @@
       <router-link to="/icon">Icon</router-link>
       <router-link to="/select">Select</router-link>
       <router-link to="/field">Field</router-link>
+      <router-link to="/upload">Upload</router-link>
     </div>
 
     <section class="section">
