@@ -12,6 +12,11 @@ $upload-draggable-padding: 2em;
 	    cursor: not-allowed;
 	    opacity: $base-disabled-opacity;
 	}
+	&.is-expanded {
+	    width: 100%;
+	    /* flex-grow: 1; */
+	}
+	
 	.upload-draggable {
 		border: $upload-draggable-border;
 		padding: $upload-draggable-padding;
