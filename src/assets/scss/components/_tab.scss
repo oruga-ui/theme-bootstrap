@@ -33,7 +33,7 @@ $tabs-wrapper-margin: 20px;
 			.disabled {
 				pointer-events: none;
 				cursor: not-allowed;
-				opacity: 0.5;
+				opacity: $base-disabled-opacity;
 			}
 		}
 		div:not(a.disabled):hover {

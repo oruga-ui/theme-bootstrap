@@ -1,7 +1,7 @@
 <template>
  <section>
     <o-field>
-      <o-upload v-model="dropFiles" multiple drag-drop>
+      <o-upload v-model="dropFiles" multiple variant="info" drag-drop>
         <section class="ex-center">
           <p>
             <o-icon icon="upload" size="is-large"> </o-icon>

@@ -487,4 +487,13 @@ export const bootstrapConfig: any = {
         footerClass: 'timepicker-footer',
         sizeClass: 'is-',
     },
+    upload: {
+        override: true,
+        rootClass: 'upload',
+        variantClass: 'is-',
+        draggableClass: 'upload-draggable',
+        expandedClass: 'is-expanded',
+        disabledClass: 'is-disabled',
+        hoveredClass: 'is-hovered'
+    }
 }
