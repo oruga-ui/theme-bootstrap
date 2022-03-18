@@ -146,23 +146,28 @@ $datepicker-cell-border-radius: 3px;
                             width: 100%;
                             .event {
                                 background-color: $danger; // Default variant
-                                &.is-primary {
-                                    background-color: $primary;
-                                }
-                                &.is-success {
-                                    background-color: $success;
-                                }
-                                 &.is-danger {
-                                    background-color: $danger;
-                                }
-                                 &.is-info {
-                                    background-color: $info;
-                                }
-                                 &.is-warning {
-                                    background-color: $warning;
-                                }
-                                 &.is-dark {
-                                    background-color: $dark;
+                                // &.is-primary {
+                                //     background-color: $primary;
+                                // }
+                                // &.is-success {
+                                //     background-color: $success;
+                                // }
+                                //  &.is-danger {
+                                //     background-color: $danger;
+                                // }
+                                //  &.is-info {
+                                //     background-color: $info;
+                                // }
+                                //  &.is-warning {
+                                //     background-color: $warning;
+                                // }
+                                //  &.is-dark {
+                                //     background-color: $dark;
+                                // }
+                                @each $name, $pair in $theme-colors {
+                                	&.is-#{$name} {
+	                                    background-color: $pair;
+	                                }
                                 }
                             }
                         }

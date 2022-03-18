@@ -91,7 +91,7 @@ $tooltip-colors: (
                 border-bottom: $tooltip-arrow-size solid transparent;
             }
         }
-        @each $name, $pair in $tooltip-colors {
+        @each $name, $pair in $theme-colors {
             // $color: nth($pair, 1);
             &.is-#{$name} {
                 .tooltip-content::before {
@@ -142,7 +142,7 @@ $tooltip-colors: (
         width: 100%;
     }
     // Modifiers
-    @each $name, $pair in $tooltip-colors {
+    @each $name, $pair in $theme-colors {
         &.is-#{$name} {
             .tooltip-content {
                 background: $pair;

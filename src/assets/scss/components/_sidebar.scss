@@ -70,37 +70,43 @@ $sidebar-mobile-breakpoint: $tablet !default;
             }
         }
         
-        &.is-primary {
-            background-color: $primary;
-            color: white;
-            border: 0;
+        // &.is-primary {
+        //     background-color: $primary;
+        //     color: white;
+        //     border: 0;
+        // }
+        // &.is-success {
+        //     background-color: $success;
+        //     color: white;
+        //     border: 0;
+        // }
+        // &.is-danger {
+        //     background-color: $danger;
+        //     color: white;
+        //     border: 0;
+        // }
+        // &.is-info {
+        //     background-color: $info;
+        //     color: $dark;
+        //     border: 0;
+        // }
+        // &.is-warning {
+        //     background-color: $warning;
+        //     color: white;
+        //     border: 0;
+        // }
+        // &.is-dark {
+        //     background-color: $dark;
+        //     color: white;
+        //     border: 0;
+        // }
+        @each $name, $pair in $theme-colors {
+            &.is-#{$name} {
+                background-color: $pair;
+                color: white;
+                border:0;
+            }
         }
-        &.is-success {
-            background-color: $success;
-            color: white;
-            border: 0;
-        }
-        &.is-danger {
-            background-color: $danger;
-            color: white;
-            border: 0;
-        }
-        &.is-info {
-            background-color: $info;
-            color: $dark;
-            border: 0;
-        }
-        &.is-warning {
-            background-color: $warning;
-            color: white;
-            border: 0;
-        }
-        &.is-dark {
-            background-color: $dark;
-            color: white;
-            border: 0;
-        }
-
         @media screen and (max-width: $sidebar-mobile-breakpoint - 1px) {
             &.is-mini-mobile {
                 width: $sidebar-mobile-width;

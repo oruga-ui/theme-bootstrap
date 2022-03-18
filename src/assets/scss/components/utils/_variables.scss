@@ -16,7 +16,7 @@ $tablet: 1023px !default;
 $overlay-background-color-dark: rgba(0,0,0,.8) !default; 
 $overlay-background-color-light: rgba(255,255,255,0.5) !default; 
 
-$default-border-color: #ced4da;
+$default-border-color: #ced4da !default;
 // Sizes
 
 $sizes: (
@@ -32,13 +32,26 @@ $grey-light: #b5b5b5 !default;
 $grey-lighter: #dbdbdb !default;
 $grey-dark: #4a4a4a !default;
 
-$colors : (
-	"primary": $primary,
-	"success": $success,
-	"danger": $danger,
-	"warning": $warning,
-	"info": $info,
-	"dark": $dark,
+$primary: blue;
+$success: green;
+$danger: red;
+$warning: orange;
+$info: black;
+
+$primary-invert: rgba($primary,.1)!default;
+$success-invert: rgba($success,.1)!default;
+$danger-invert: rgba($danger,.1)!default;
+$warning-invert: rgba($warning,.1)!default;
+$info-invert: rgb($info,.1)!default;
+$dark-invert: rgb($dark,.1)!default;
+
+$theme-colors-lighter: (
+  "primary": $primary-invert,
+  "success": $success-invert,
+  "danger": $danger-invert,
+  "warning": $warning-invert,
+  "info": $info-invert,
+  "dark": $dark-invert
 )!default;
 
 // $primary: $primary !default;

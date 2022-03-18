@@ -1,7 +1,7 @@
 <template>
     <section>
         <o-sidebar
-            variant="dark"
+            variant="primary"
             :fullheight="isFullheight"
             :fullwidth="isFullwidth"
             :overlay="isOverlay"
