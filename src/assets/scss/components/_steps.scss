@@ -175,7 +175,7 @@ $steps-colors : (
 	        		color: $primary;
 	    		}
 	    	}
-	        @each $name, $pair in $steps-colors {
+	        @each $name, $pair in $theme-colors {
 
 	        	// @TODO devider
 	        	&.is-#{$name} {

@@ -165,29 +165,37 @@ $switch-large-translateX: 15px;
 	}
 
 	// Variant
-	input[type=checkbox]:checked + .switch {
-		&.is-primary {
-			background-color: $primary;
-		}
-	}
-	input[type=checkbox]:checked + .switch {
-		&.is-success {
-			background-color: $success;
-		}
-	}
-	input[type=checkbox]:checked + .switch {
-		&.is-danger {
-			background-color: $danger;
-		}
-	}
-	input[type=checkbox]:checked + .switch {
-		&.is-warning {
-			background-color: $warning;
-		}
-	}
-	input[type=checkbox]:checked + .switch {
-		&.is-info {
-			background-color: $info;
-		}
+	// input[type=checkbox]:checked + .switch {
+	// 	&.is-primary {
+	// 		background-color: $primary;
+	// 	}
+	// }
+	// input[type=checkbox]:checked + .switch {
+	// 	&.is-success {
+	// 		background-color: $success;
+	// 	}
+	// }
+	// input[type=checkbox]:checked + .switch {
+	// 	&.is-danger {
+	// 		background-color: $danger;
+	// 	}
+	// }
+	// input[type=checkbox]:checked + .switch {
+	// 	&.is-warning {
+	// 		background-color: $warning;
+	// 	}
+	// }
+	// input[type=checkbox]:checked + .switch {
+	// 	&.is-info {
+	// 		background-color: $info;
+	// 	}
+	// }
+
+	@each $name, $pair in $theme-colors {
+		input[type=checkbox]:checked + .switch {
+			&.is-#{$name} {
+				background-color: $pair;
+			}
+		}		
 	}
 }
