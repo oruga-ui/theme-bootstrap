@@ -5,6 +5,19 @@ $notification-notices-zindex: 1000 !default;
 $notification-close-btn-position-top-right: 6px !default; 
 /* @docs */
 
+
+// $alert-padding-y:               $spacer;
+// $alert-padding-x:               $spacer;
+// $alert-margin-bottom:           1rem;
+// $alert-border-radius:           $border-radius;
+// $alert-link-font-weight:        $font-weight-bold;
+// $alert-border-width:            $border-width;
+// $alert-bg-scale:                -80%;
+// $alert-border-scale:            -70%;
+// $alert-color-scale:             40%;
+// $alert-dismissible-padding-r:   $alert-padding-x * 3; // 3x covers width of x plus default padding on either side
+
+
 // ALERT
 .alert {
 	// Close btn

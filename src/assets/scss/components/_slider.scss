@@ -1,17 +1,42 @@
 $slider-margin: .4em 0;
+$slider-height: $form-range-track-height; // default  $form-range-track-height
+$slider-width: $form-range-track-width;
+$slider-border-radius: $base-border-radius;
+
+$slider-track-box-shadow: $form-range-track-box-shadow;
 $slider-track-background-color: transparent;
-$slider-height: 6px; // default
-$slider-border-radius: 10px;
+$slider-track-cursor: $form-range-track-cursor;
 
 $slider-tick-to-track-ratio: 0.5 !default;
 $slider-tick-width: 3px !default;
 $slider-tick-height: 5px !default;
 $slider-tick-radius: 3px !default;
-$slider-tick-background-color: $grey-light !default;
+$slider-tick-background-color: $grey-dark !default;
 
-$slider-small: 2px;
-$slider-medium: 5px;
-$slider-large: 7px;
+$slider-small: calc(#{$form-range-track-height} - .3em);
+$slider-medium: $form-range-track-height;
+$slider-large: calc(#{$form-range-track-height} + .1em);
+
+
+// $form-range-track-width:          100%;
+// $form-range-track-height:         .5rem;
+// $form-range-track-cursor:         pointer;
+// $form-range-track-bg:             $gray-300;
+// $form-range-track-border-radius:  1rem;
+// $form-range-track-box-shadow:     $box-shadow-inset;
+
+// $form-range-thumb-width:                   1rem;
+// $form-range-thumb-height:                  $form-range-thumb-width;
+// $form-range-thumb-bg:                      $component-active-bg;
+// $form-range-thumb-border:                  0;
+// $form-range-thumb-border-radius:           1rem;
+// $form-range-thumb-box-shadow:              0 .1rem .25rem rgba($black, .1);
+// $form-range-thumb-focus-box-shadow:        0 0 0 1px $body-bg, $input-focus-box-shadow;
+// $form-range-thumb-focus-box-shadow-width:  $input-focus-width; // For focus box shadow issue in Edge
+// $form-range-thumb-active-bg:               tint-color($component-active-bg, 70%);
+// $form-range-thumb-disabled-bg:             $gray-500;
+// $form-range-thumb-transition:              background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+
 
 @mixin variant {
    
@@ -20,48 +45,32 @@ $slider-large: 7px;
 .slider {
     margin: $slider-margin;
     position: relative;
-    width: 100%;
+    width: $slider-width;
     height: $slider-height; // default size
     background-color: $grey-lighter;
     border-radius: $slider-border-radius;
-    cursor: pointer;
+    cursor: $slider-track-cursor;
+    box-shadow: $slider-track-box-shadow;
 
     .slider-track {
         display: flex;
         align-items: center;
         // position: relative;
-        cursor: pointer;
+        cursor: $slider-track-cursor;
         background-color: $slider-track-background-color;
+        box-shadow: $slider-track-box-shadow;
 
         .slider-fill {
             position: absolute;
             left: 0%;
             background-color: $primary; // default variant
             height: 100%;
-            border-radius: 10px;
+            border-radius: $slider-border-radius;
             // Fix alignment in IE 11. Cancel out for others
             top: 50%;
             transform: translateY(-50%);
             z-index: 999;
             
-            // &.is-primary {
-            //     background-color: $primary;
-            // }
-            // &.is-success {
-            //     background-color: $success;
-            // }
-            // &.is-danger {
-            //     background-color: $danger;
-            // }
-            // &.is-warning {
-            //     background-color: $warning;
-            // }
-            // &.is-info {
-            //     background-color: $info;
-            // }
-            // &.is-dark {
-            //     background-color: $dark;
-            // }
             @each $name, $pair in $theme-colors {
                &.is-#{$name} {
                     background-color: $pair;
@@ -106,36 +115,6 @@ $slider-large: 7px;
             }
             // Tooltip
             .b-tooltip {
-                // &.is-primary {
-                //     .slider-thumb {
-                //         background-color: $primary;
-                //     }
-                // }
-                // &.is-success {
-                //     .slider-thumb {
-                //         background-color: $success;
-                //     }
-                // }
-                // &.is-danger {
-                //     .slider-thumb {
-                //         background-color: $danger;
-                //     }
-                // }
-                // &.is-warning {
-                //     .slider-thumb {
-                //         background-color: $warning;
-                //     }
-                // }
-                // &.is-info {
-                //     .slider-thumb {
-                //         background-color: $info;
-                //     }
-                // }
-                // &.is-dark {
-                //     .slider-thumb {
-                //         background-color: $dark;
-                //     }
-                // }
                 @each $name, $pair in $theme-colors {
                    &.is-#{$name} {
                         .slider-thumb {
@@ -171,8 +150,8 @@ $slider-large: 7px;
         height: $slider-small;
         .slider-track {
             .slider-thumb {
-                height: calc(#{$slider-small} + 2px * 3);
-                width: calc(#{$slider-small} + 2px * 3);
+                height: calc(#{$slider-small} + 2px * 2.5);
+                width: calc(#{$slider-small} + 2px * 2.5);
             }
         }
     }
@@ -180,8 +159,8 @@ $slider-large: 7px;
         height: $slider-medium;
         .slider-track { 
             .slider-thumb {
-                height: calc(#{$slider-medium} * 3);
-                width: calc(#{$slider-medium} * 3);
+                height: calc(#{$slider-medium} * 2.5);
+                width: calc(#{$slider-medium} * 2.5);
             }
         }
     }
@@ -189,8 +168,8 @@ $slider-large: 7px;
         height: $slider-large;
         .slider-track {
             .slider-thumb {
-                height: calc(#{$slider-large} * 3);
-                width: calc(#{$slider-large} * 3);
+                height: calc(#{$slider-large} * 2.5);
+                width: calc(#{$slider-large} * 2.5);
             }
         }
     }

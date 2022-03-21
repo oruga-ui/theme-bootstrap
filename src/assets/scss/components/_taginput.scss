@@ -1,39 +1,11 @@
 $taginput-height: calc(2em - 1px) !default;
 $taginput-border-color: $default-border-color;
-$taginput-border-radius: 3px;
+$taginput-border-radius: $base-border-radius;
 $taginput-margin: calc(0.275em - 1px);
 $taginput-padding: calc(0.275em - 1px) 0.800rem;
 
 
 @mixin variant {
-	// &.is-primary {
-	// 	background-color: $primary;
-	// 	border-color: $primary;
-	// 	color: white;
-	// }
-	// &.is-success {
-	// 	background-color: $success;
-	// 	border-color: $success;
-	// 	color: white;
-	// }
-	// &.is-danger {
-	// 	background-color: $danger;
-	// 	border-color: $danger;
-	// 	color: white;
-	// }
-	// &.is-warning {
-	// 	background-color: $warning;
-	// 	border-color: $warning;
-	// }
-	// &.is-info {
-	// 	background-color: $info;
-	// 	border-color: $info;
-	// }
-	// &.is-dark {
-	// 	background-color: $dark;
-	// 	border-color: $dark;
-	// 	color: white;
-	// }
 	@each $name, $pair in $theme-colors {
 		&.is-#{$name} {
 			background-color: $pair;

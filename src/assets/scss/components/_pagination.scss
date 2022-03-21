@@ -1,6 +1,42 @@
 $pagination-items-margin: .5rem !default;
-$pagination-border-radius: .3rem !default;
+$pagination-border-radius: $base-border-radius !default;
 $pagination-rounded-border-radius: 9999px;
+
+// $pagination-padding-y:              .375rem;
+// $pagination-padding-x:              .75rem;
+// $pagination-padding-y-sm:           .25rem;
+// $pagination-padding-x-sm:           .5rem;
+// $pagination-padding-y-lg:           .75rem;
+// $pagination-padding-x-lg:           1.5rem;
+
+// $pagination-color:                  $link-color;
+// $pagination-bg:                     $white;
+// $pagination-border-width:           $border-width;
+// $pagination-border-radius:          $border-radius;
+// $pagination-margin-start:           -$pagination-border-width;
+// $pagination-border-color:           $gray-300;
+
+// $pagination-focus-color:            $link-hover-color;
+// $pagination-focus-bg:               $gray-200;
+// $pagination-focus-box-shadow:       $input-btn-focus-box-shadow;
+// $pagination-focus-outline:          0;
+
+// $pagination-hover-color:            $link-hover-color;
+// $pagination-hover-bg:               $gray-200;
+// $pagination-hover-border-color:     $gray-300;
+
+// $pagination-active-color:           $component-active-color;
+// $pagination-active-bg:              $component-active-bg;
+// $pagination-active-border-color:    $pagination-active-bg;
+
+// $pagination-disabled-color:         $gray-600;
+// $pagination-disabled-bg:            $white;
+// $pagination-disabled-border-color:  $gray-300;
+
+// $pagination-transition:              color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+
+// $pagination-border-radius-sm:       $border-radius-sm;
+// $pagination-border-radius-lg:       $border-radius-lg;
 
 .pagination-wrapper {
 	position: relative;

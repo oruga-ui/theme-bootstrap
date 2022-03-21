@@ -6,6 +6,9 @@ $btn-rounded-border-radius: 9999px;
 // BTN
 .btn {
 	margin-bottom: $btn-margin-right-bottom;
+	font-size: $btn-font-size;
+	font-family: $btn-font-family;
+	line-height: $btn-line-height;
 	.icon {
 		margin: 0 4px;
 	}
@@ -28,55 +31,6 @@ $btn-rounded-border-radius: 9999px;
 			background-color: $pair;
 		}
 	}
-
-	// &.btn-inverted-primary {
-	// 	color: $primary;
-	// 	border-color: transparent;
-	// 	background-color: transparent;
-	// }
-	// &.btn-inverted-primary:hover {
-	// 	background-color: rgba(13,110,253,.1);
-	// }
-	// &.btn-inverted-success {
-	// 	color: $success;
-	// 	border-color: transparent;
-	// 	background-color: transparent;
-	// }
-	// &.btn-inverted-success:hover {
-	// 	background-color: rgba(25,135,84,.1);
-	// }
-	// &.btn-inverted-danger {
-	// 	color: $danger;
-	// 	border-color: transparent;
-	// 	background-color: transparent;
-	// }
-	// &.btn-inverted-danger:hover {
-	// 	background-color: rgba(220,53,69,.1);
-	// }
-	// &.btn-inverted-info {
-	// 	color: $info;
-	// 	border-color: transparent;
-	// 	background-color: transparent;
-	// }
-	// &.btn-inverted-info:hover {
-	// 	background-color: rgba(13,202,240,.1);
-	// }
-	// &.btn-inverted-warning {
-	// 	color: $warning;
-	// 	border-color: transparent;
-	// 	background-color: transparent;
-	// }
-	// &.btn-inverted-warning:hover {
-	// 	background-color: rgba(220,53,69,.1);
-	// }
-	// &.btn-inverted-dark {
-	// 	color: $dark;
-	// 	border-color: transparent;
-	// 	background-color: transparent;
-	// }
-	// &.btn-inverted-dark:hover {
-	// 	background-color: rgb(33,37,41,.1);
-	// }
 }
 .btn:not(:last-child):not(.btn-expanded) {
 	margin-right: $btn-margin-right-bottom;

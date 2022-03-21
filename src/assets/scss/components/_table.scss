@@ -1,6 +1,7 @@
-$table-detail-padding: 8px 12px;
-$table-border-color: $default-border-color;
-$table-background-color: $light;
+$table-detail-padding: 8px 12px !default;
+$table-border-color: $default-border-color !default;
+$table-background-color: $table-color !default;
+$table-tr-color: $dark !default; 
 
 @mixin table-cards {
     .table {
@@ -50,8 +51,10 @@ $table-background-color: $light;
         // Disables is-*
         &:not([class*="is-"]) {
             background: $table-background-color;
+            color: $table-tr-color;
             &:hover {
                 background-color: $table-background-color;
+                color: $table-tr-color;
             }
         }
         &.detail {

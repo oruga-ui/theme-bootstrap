@@ -11,6 +11,21 @@ $tooltip-colors: (
 	"light": $light,
 ) !default;
 
+
+// $tooltip-font-size:                 $font-size-sm;
+// $tooltip-max-width:                 200px;
+// $tooltip-color:                     $white;
+// $tooltip-bg:                        $black;
+// $tooltip-border-radius:             $border-radius;
+// $tooltip-opacity:                   .9;
+// $tooltip-padding-y:                 $spacer * .25;
+// $tooltip-padding-x:                 $spacer * .5;
+// $tooltip-margin:                    0;
+
+// $tooltip-arrow-width:               .8rem;
+// $tooltip-arrow-height:              .4rem;
+// $tooltip-arrow-color:               $tooltip-bg;
+
 @mixin tooltip-arrow-color($direction, $color) {
     @if ($direction == "is-top") {
         border-top-color: $color; 

@@ -6,7 +6,7 @@ $easing: ease !default;
 
 $base-font-size: 1rem !default;
 
-$base-border-radius: 4px !default;
+$base-border-radius: $border-radius !default;
 $base-rounded-border-radius: 9999px !default;
 $base-line-height: 1.5 !default;
 $base-disabled-opacity: 0.5 !default;
@@ -16,7 +16,7 @@ $tablet: 1023px !default;
 $overlay-background-color-dark: rgba(0,0,0,.8) !default; 
 $overlay-background-color-light: rgba(255,255,255,0.5) !default; 
 
-$default-border-color: #ced4da !default;
+$default-border-color: $gray-400 !default;
 // Sizes
 
 $sizes: (
@@ -27,16 +27,16 @@ $sizes: (
 
 $white: #ffffff !default;
 $black: #000000 !default;
-$grey: #7a7a7a !default;
-$grey-light: #b5b5b5 !default;
-$grey-lighter: #dbdbdb !default;
-$grey-dark: #4a4a4a !default;
+$grey: $gray-700 !default;
+$grey-light: $gray-400 !default;
+$grey-lighter: $gray-300 !default;
+$grey-dark: $gray-900 !default;
 
-$primary: blue;
-$success: green;
-$danger: red;
-$warning: orange;
-$info: black;
+// $primary: blue;
+// $success: green;
+// $danger: red;
+// $warning: orange;
+// $info: black;
 
 $primary-invert: rgba($primary,.1)!default;
 $success-invert: rgba($success,.1)!default;
