@@ -1,6 +1,6 @@
 <template>
   <section>
-    <o-tooltip label="Tooltip right" variant="dark" position="right">
+    <o-tooltip label="Tooltip right" variant="fdb" position="right">
       <o-button> Right </o-button>
     </o-tooltip>
 

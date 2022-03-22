@@ -1,11 +1,11 @@
-$slider-margin: .4em 0;
-$slider-height: $form-range-track-height; // default  $form-range-track-height
-$slider-width: $form-range-track-width;
-$slider-border-radius: $base-border-radius;
+$slider-margin: .4em 0 !default;
+$slider-height: $form-range-track-height !default; // default  $form-range-track-height
+$slider-width: $form-range-track-width !default;
+$slider-border-radius: $base-border-radius !default;
 
-$slider-track-box-shadow: $form-range-track-box-shadow;
-$slider-track-background-color: transparent;
-$slider-track-cursor: $form-range-track-cursor;
+$slider-track-box-shadow: $form-range-track-box-shadow !default;
+$slider-track-background-color: transparent !default;
+$slider-track-cursor: $form-range-track-cursor !default;
 
 $slider-tick-to-track-ratio: 0.5 !default;
 $slider-tick-width: 3px !default;
@@ -13,9 +13,9 @@ $slider-tick-height: 5px !default;
 $slider-tick-radius: 3px !default;
 $slider-tick-background-color: $grey-dark !default;
 
-$slider-small: calc(#{$form-range-track-height} - .3em);
-$slider-medium: $form-range-track-height;
-$slider-large: calc(#{$form-range-track-height} + .1em);
+$slider-small: calc(#{$form-range-track-height} - .3em) !default;
+$slider-medium: $form-range-track-height !default;
+$slider-large: calc(#{$form-range-track-height} + .1em) !default;
 
 
 // $form-range-track-width:          100%;
@@ -90,7 +90,9 @@ $slider-large: calc(#{$form-range-track-height} + .1em);
                 background-color: $primary; // default variant
                 height: calc(#{$slider-height} * 3); // default size
                 width: calc(#{$slider-height} * 3); // default size
-                // border-radius: 50%;
+                border-radius: $form-range-thumb-border-radius;
+                box-shadow: $form-range-thumb-box-shadow;
+                transition: $form-range-thumb-transition;
 
                 &:focus {
                     transform: scale(1.50);
@@ -144,6 +146,7 @@ $slider-large: calc(#{$form-range-track-height} + .1em);
     &.is-disabled {
         cursor: not-allowed;
         opacity: .5;
+        background-color: $form-range-thumb-disabled-bg;
     }
     // Size
     &.is-small {

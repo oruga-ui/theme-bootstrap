@@ -1,5 +1,5 @@
 // @import 'bootstrap/dist/css/bootstrap.min.css';
-$border-radius:0;
+$border-radius: 10px;
 $table-color: black;
 $table-tr-color: white;
 
@@ -7,7 +7,7 @@ $primary: blue;
 $success: green;
 $danger: red;
 $warning: orange;
-$info: black;
+$info: #00c6a2;
 
 $btn-font-weight: bolder;
 $btn-disabled-opacity:.8;
@@ -15,9 +15,12 @@ $btn-disabled-opacity:.8;
 $modal-content-bg: black;
 $modal-content-color: white;
 
-$input-bg: black;
-$input-color: white;
+$tooltip-max-width: 300px;
+$tooltip-bg: red;
+$input-bg: inherit;
+// $input-color: white;
 
+$form-range-thumb-border-radius:10px;
 $body-color: black;
 // @import 'bootstrap/scss/bootstrap';
 @import "../node_modules/bootstrap/scss/bootstrap";

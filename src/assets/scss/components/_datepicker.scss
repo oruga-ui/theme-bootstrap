@@ -6,7 +6,7 @@ $datepicker-cell-text-align: center;
 $datepicker-cell-unselectable-color: rgba(0,0,0,.3);
 $datepicker-cell-hovered-color: rgba(0,0,0,.5);
 $datepicker-cell-selected-color: $primary;
-$datepicker-cell-border-radius: 3px;
+$datepicker-cell-border-radius: $base-border-radius;
 
 @mixin datepicker-cell {
 	padding: $datepicker-cell-padding;
