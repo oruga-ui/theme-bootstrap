@@ -1,15 +1,6 @@
 $tooltip-arrow-size: 5px !default;
 $tooltip-arrow-margin: 2px !default;
 $tooltip-content-multiline-width: 300px !default;
-$tooltip-colors: (
-	"primary": $primary,
-	"success": $success,
-	"danger": $danger,
-	"info": $info,
-	"warning": $warning,
-	"dark": $dark,
-	"light": $light,
-) !default;
 
 
 // $tooltip-font-size:                 $font-size-sm;
@@ -78,6 +69,8 @@ $tooltip-colors: (
                 border-right: $tooltip-arrow-size solid transparent;
                 border-bottom: $tooltip-arrow-size solid $tooltip-arrow-color;
                 border-left: $tooltip-arrow-size solid transparent;
+                width: $tooltip-arrow-width;
+                height: $tooltip-arrow-height;
             } @else if ($direction == "is-top") {
                 top: 100%;
                 right: auto;
@@ -87,6 +80,8 @@ $tooltip-colors: (
                 border-top: $tooltip-arrow-size solid $tooltip-arrow-color;
                 border-right: $tooltip-arrow-size solid transparent;
                 border-left: $tooltip-arrow-size solid transparent;
+                width: $tooltip-arrow-width;
+                height: $tooltip-arrow-height;
             } @else if ($direction == "is-left") {
                 top: 50%;
                 right: auto;
@@ -96,6 +91,8 @@ $tooltip-colors: (
                 border-top: $tooltip-arrow-size solid transparent;
                 border-bottom: $tooltip-arrow-size solid transparent;
                 border-left: $tooltip-arrow-size solid $tooltip-arrow-color;
+                width: $tooltip-arrow-width;
+                height: $tooltip-arrow-height;
             } @else if ($direction == "is-right") {
                 top: 50%;
                 right: 100%;
@@ -105,6 +102,8 @@ $tooltip-colors: (
                 border-top: $tooltip-arrow-size solid transparent;
                 border-right: $tooltip-arrow-size solid $tooltip-arrow-color;
                 border-bottom: $tooltip-arrow-size solid transparent;
+                width: $tooltip-arrow-width;
+                height: $tooltip-arrow-height;
             }
         }
         // @include tooltip-arrow-color($direction, $tooltip-arrow-color); //default
@@ -149,6 +148,8 @@ $tooltip-colors: (
         position: absolute;
         background-color: $tooltip-bg; //default
         color: $tooltip-color; // default
+        // opacity: $tooltip-opacity;
+        padding: $tooltip-padding-y $tooltip-padding-x $tooltip-padding-y $tooltip-padding-x;
     }
     .tooltip-content::before {
         position: absolute;

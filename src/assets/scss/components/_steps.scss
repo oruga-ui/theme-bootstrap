@@ -10,14 +10,6 @@ $steps-mobile-max-width: $tablet !default;
 $steps-small: .8em;
 $steps-medium: 1em;
 $steps-large: 1.2em;
-$steps-colors : (
-	"primary": $primary,
-	"success": $success,
-	"danger": $danger,
-	"warning": $warning,
-	"info": $info,
-	"dark": $dark,
-)!default;
 
 @mixin steps-size($size) {
 	.steps {

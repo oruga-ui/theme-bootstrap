@@ -21,6 +21,9 @@ export default defineComponent({
 	margin: 0 auto;
 	transform: translateY(70%);
 }
+.content h1 {
+  margin-top: .5em;
+}
 .image__oruga {
 	height: 128px;
 	display: flex;

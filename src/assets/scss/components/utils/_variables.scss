@@ -11,7 +11,7 @@ $base-rounded-border-radius: 9999px !default;
 $base-line-height: 1.5 !default;
 $base-disabled-opacity: 0.5 !default;
 
-$tablet: 1023px !default;
+$tablet: map-get($grid-breakpoints, 'md') !default;
 
 $overlay-background-color-dark: rgba(0,0,0,.8) !default; 
 $overlay-background-color-light: rgba(255,255,255,0.5) !default; 
@@ -31,12 +31,6 @@ $grey: $gray-700 !default;
 $grey-light: $gray-400 !default;
 $grey-lighter: $gray-300 !default;
 $grey-dark: $gray-900 !default;
-
-// $primary: blue;
-// $success: green;
-// $danger: red;
-// $warning: orange;
-// $info: black;
 
 $primary-invert: rgba($primary,.1)!default;
 $success-invert: rgba($success,.1)!default;
