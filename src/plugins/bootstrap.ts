@@ -180,6 +180,7 @@ export const bootstrapConfig: any = {
             const classes = ['slider'];
             if (props.variant) classes.push(`is-${props.variant}`)
             if (props.rounded) classes.push('is-rounded')
+            // if (!props.size) classes.push('is-small')
             return classes.join(' ')
         },
         disabledClass: 'is-disabled',

@@ -1,6 +1,6 @@
 <template>
    <section class="block">
-    <o-field label="Simple & Small">
+    <o-field label="Simple & Small & Default Variant">
       <o-slider :rounded="true" v-model="value" size="small"></o-slider>
     </o-field>
 
@@ -12,12 +12,12 @@
       <o-slider :rounded="true" v-model="value" size="large" variant="info" tooltip-variant="info"></o-slider>
     </o-field>
 
-    <o-field label="Disabled">
+    <o-field label="Disabled & Default Variant">
       <o-slider :rounded="true" v-model="value" disabled></o-slider>
     </o-field>
   </section>
   <section class="block">
-    <o-field label="Tooltip type">
+    <o-field label="Tooltip type & Default Variant">
       <o-slider :rounded="true" v-model="sliderValue"></o-slider>
     </o-field>
 
@@ -34,7 +34,7 @@
       <o-slider :rounded="true" :tooltip="false" variant="info" tooltip-variant="info"></o-slider>
     </o-field>
 
-    <o-field label="Custom tooltip label">
+    <o-field label="Custom tooltip label & Default Variant">
       <o-slider :rounded="true" :custom-formatter="val => val + '%'"></o-slider>
     </o-field>
 

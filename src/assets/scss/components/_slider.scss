@@ -7,19 +7,27 @@ $slider-track-box-shadow: $form-range-track-box-shadow !default;
 $slider-track-background-color: transparent !default;
 $slider-track-cursor: $form-range-track-cursor !default;
 
+$slider-thumb-width: $form-range-thumb-width !default;
+$slider-thumb-height: $form-range-thumb-height !default;
+
 $slider-tick-to-track-ratio: 0.5 !default;
 $slider-tick-width: 3px !default;
 $slider-tick-height: 5px !default;
 $slider-tick-radius: 3px !default;
 $slider-tick-background-color: $grey-dark !default;
 
-$slider-small: calc(#{$form-range-track-height} - .3em) !default;
-$slider-medium: $form-range-track-height !default;
-$slider-large: calc(#{$form-range-track-height} + .1em) !default;
+$slider-small: calc(#{$slider-height} - .3em) !default;
+$slider-medium: $slider-height !default;
+$slider-large: calc(#{$slider-height} + .1em) !default;
+
+$slider-thumb-small: $slider-thumb-height !default;
+$slider-thumb-medium: calc(#{$slider-thumb-height} * 1.5) !default;
+$slider-thumb-large: calc(#{$slider-thumb-height} * 2) !default;
 
 
 // $form-range-track-width:          100%;
 // $form-range-track-height:         .5rem;
+
 // $form-range-track-cursor:         pointer;
 // $form-range-track-bg:             $gray-300;
 // $form-range-track-border-radius:  1rem;
@@ -27,6 +35,7 @@ $slider-large: calc(#{$form-range-track-height} + .1em) !default;
 
 // $form-range-thumb-width:                   1rem;
 // $form-range-thumb-height:                  $form-range-thumb-width;
+
 // $form-range-thumb-bg:                      $component-active-bg;
 // $form-range-thumb-border:                  0;
 // $form-range-thumb-border-radius:           1rem;
@@ -47,7 +56,7 @@ $slider-large: calc(#{$form-range-track-height} + .1em) !default;
     position: relative;
     width: $slider-width;
     height: $slider-height; // default size
-    background-color: $grey-lighter;
+    background-color: $form-range-track-bg;
     border-radius: $slider-border-radius;
     cursor: $slider-track-cursor;
     box-shadow: $slider-track-box-shadow;
@@ -63,7 +72,7 @@ $slider-large: calc(#{$form-range-track-height} + .1em) !default;
         .slider-fill {
             position: absolute;
             left: 0%;
-            background-color: $primary; // default variant
+            background-color: transparent; // default variant
             height: 100%;
             border-radius: $slider-border-radius;
             // Fix alignment in IE 11. Cancel out for others
@@ -87,15 +96,19 @@ $slider-large: calc(#{$form-range-track-height} + .1em) !default;
             flex-direction: column; // Fix shrinked thumb at the end in IE 11
 
             .slider-thumb {
-                background-color: $primary; // default variant
-                height: calc(#{$slider-height} * 3); // default size
-                width: calc(#{$slider-height} * 3); // default size
+                background-color: $form-range-thumb-bg; // default variant
+                height: $slider-thumb-height; // default size
+                width:$slider-thumb-width; // default size
                 border-radius: $form-range-thumb-border-radius;
                 box-shadow: $form-range-thumb-box-shadow;
                 transition: $form-range-thumb-transition;
 
                 &:focus {
                     transform: scale(1.50);
+                    box-shadow: $form-range-thumb-focus-box-shadow;
+                }
+                &:active {
+                    background-color: $form-range-thumb-active-bg;
                 }
                 // squared thumb
                 &.is-rounded {
@@ -153,8 +166,8 @@ $slider-large: calc(#{$form-range-track-height} + .1em) !default;
         height: $slider-small;
         .slider-track {
             .slider-thumb {
-                height: calc(#{$slider-small} + 2px * 2.5);
-                width: calc(#{$slider-small} + 2px * 2.5);
+                height: $slider-thumb-small;
+                width: $slider-thumb-small;
             }
         }
     }
@@ -162,8 +175,8 @@ $slider-large: calc(#{$form-range-track-height} + .1em) !default;
         height: $slider-medium;
         .slider-track { 
             .slider-thumb {
-                height: calc(#{$slider-medium} * 2.5);
-                width: calc(#{$slider-medium} * 2.5);
+                height: $slider-thumb-medium;
+                width: $slider-thumb-medium;
             }
         }
     }
@@ -171,8 +184,8 @@ $slider-large: calc(#{$form-range-track-height} + .1em) !default;
         height: $slider-large;
         .slider-track {
             .slider-thumb {
-                height: calc(#{$slider-large} * 2.5);
-                width: calc(#{$slider-large} * 2.5);
+                height: $slider-thumb-large;
+                width: $slider-thumb-large;
             }
         }
     }
