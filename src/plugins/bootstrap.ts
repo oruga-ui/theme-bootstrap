@@ -105,8 +105,10 @@ export const bootstrapConfig: any = {
             const classes = ['form-check','form-switch'];
             if (props.rounded) classes.push('is-rounded');
             if (props.leftLabel) classes.push('has-left-label');
+            if (props.disabled) classes.push('is-disabled');
             return classes.join(' ')
         },
+        // disabledClass: 'is-disabled',
         // roundedClass: 'is-rounded',
         checkClass: (_: string, { props }: any) => {
             const classes = ['switch'];
@@ -471,7 +473,7 @@ export const bootstrapConfig: any = {
     },
     loading: {
         override: true, 
-        fullPageClass: 'loading--fullpage',
+        fullPageClass: 'loading__fullpage',
         overlayClass: 'loading__overlay',
         iconClass: 'icon',
         rootClass: 'loading'

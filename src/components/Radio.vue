@@ -1,7 +1,7 @@
 <template>
   <section>
     <div class="block">
-      <o-radio v-model="radio" name="name" native-value="Flint">
+      <o-radio disabled v-model="radio" name="name" native-value="Flint">
         Flint
       </o-radio>
       <o-radio v-model="radio" name="name" native-value="Silver">

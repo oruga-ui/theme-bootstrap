@@ -68,4 +68,8 @@ $radio-large: 1.50em !default;
 			margin-right: calc(#{$radio-large} / 2); 
 		}
 	}
+	&.is-disabled {
+		opacity: $form-check-input-disabled-opacity;
+		cursor: not-allowed;
+	}
 }

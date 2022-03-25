@@ -1,4 +1,4 @@
-$switch-background: #ced4da; 
+$switch-background-color: #ced4da; 
 $switch-transition: all .2s ease-out;
 $switch-margin-right-bottom: 0.9rem;
 // is-small
@@ -26,6 +26,40 @@ $switch-large-top-position: 25%;
 $switch-small-translateX: 9px;
 $switch-medium-translateX: 10px;
 $switch-large-translateX: 15px;
+
+// $form-check-input-width:                  1em;
+// $form-check-min-height:                   $font-size-base * $line-height-base;
+// $form-check-padding-start:                $form-check-input-width + .5em;
+// $form-check-margin-bottom:                .125rem;
+// $form-check-label-color:                  null;
+// $form-check-label-cursor:                 null;
+// $form-check-transition:                   null;
+
+// $form-check-input-active-filter:          brightness(90%);
+
+// $form-check-input-bg:                     $input-bg;
+// $form-check-input-border:                 1px solid rgba($black, .25);
+// $form-check-input-border-radius:          .25em;
+// $form-check-radio-border-radius:          50%;
+// $form-check-input-focus-border:           $input-focus-border-color;
+// $form-check-input-focus-box-shadow:       $input-btn-focus-box-shadow;
+
+// $form-check-input-checked-color:          $component-active-color;
+// $form-check-input-checked-bg-color:       $component-active-bg;
+// $form-check-input-checked-border-color:   $form-check-input-checked-bg-color;
+// $form-check-input-checked-bg-image:       url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'><path fill='none' stroke='#{$form-check-input-checked-color}' stroke-linecap='round' stroke-linejoin='round' stroke-width='3' d='M6 10l3 3l6-6'/></svg>");
+// $form-check-radio-checked-bg-image:       url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'><circle r='2' fill='#{$form-check-input-checked-color}'/></svg>");
+
+// $form-check-input-indeterminate-color:          $component-active-color;
+// $form-check-input-indeterminate-bg-color:       $component-active-bg;
+// $form-check-input-indeterminate-border-color:   $form-check-input-indeterminate-bg-color;
+// $form-check-input-indeterminate-bg-image:       url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'><path fill='none' stroke='#{$form-check-input-indeterminate-color}' stroke-linecap='round' stroke-linejoin='round' stroke-width='3' d='M6 10h8'/></svg>");
+
+// $form-check-input-disabled-opacity:        .5;
+// $form-check-label-disabled-opacity:        $form-check-input-disabled-opacity;
+// $form-check-btn-check-disabled-opacity:    $btn-disabled-opacity;
+
+// $form-check-inline-margin-end:    1rem;
 
 @mixin is-small {
 	.switch {
@@ -83,7 +117,9 @@ $switch-large-translateX: 15px;
 	position: relative;
 	padding-left: 25px;
 	margin-right: $switch-margin-right-bottom;
-
+	margin-bottom: $form-check-margin-bottom;
+	min-height: $form-check-min-height;
+	min-width: $form-check-input-width;
 	input {
 		opacity: 0;
 		width: 0;
@@ -93,29 +129,25 @@ $switch-large-translateX: 15px;
 		cursor: pointer;
 		left: 0;
 		// bottom: 0;
-		background-color: $switch-background;
+		background-color: $switch-background-color;
 		-webkit-transition: $switch-transition;
 		transition: $switch-transition;
 		// Default size is-small
 		width: $switch-small-width;
 	    height: $switch-small-height;
 	    top: $switch-small-top-position;
+	    border-radius: $form-check-input-border-radius;
 
 	    // Passive Variant
-	    &.is-primary-passive {
-			background-color: $primary;
+		@each $name, $pair in $theme-colors {
+			&.is-#{$name}-passive {
+				background-color: $pair;
+			}
 		}
-		&.is-success-passive {
-			background-color: $success;
-		}
-		&.is-danger-passive {
-			background-color: $danger;
-		}
-		&.is-warning-passive {
-			background-color: $warning;
-		}
-	    &.is-info-passive {
-			background-color: $info;
+
+		&:focus {
+			box-shadow: $form-check-input-focus-box-shadow;
+			border-color: $form-check-input-focus-border;
 		}
 	}
 	.switch:before {
@@ -129,11 +161,15 @@ $switch-large-translateX: 15px;
 		// Default size is-small
 		width: $switch-small-before-width;
 		height: $switch-small-before-height;
+		border-radius: $form-check-input-border-radius;
 	}
-
+	// .form-switch-label {
+	// 	color:$form-check-label-color;
+	// }
 	input[type=checkbox]:checked + .switch {
 		// Default variant is-primary
-		background-color: $primary;
+		background-color: $form-check-input-checked-bg-color;
+		border-color: $form-check-input-checked-border-color;
 	}
 
 	input[type=checkbox]:checked + .switch:before {
@@ -142,6 +178,10 @@ $switch-large-translateX: 15px;
 		-ms-transform: translateX($switch-small-translateX);
 		transform: translateX($switch-small-translateX);
 	} 
+	.form-check-label {
+		color:  $form-check-label-color;
+		cursor: $form-check-label-cursor;
+	}
 
 	// rounded 
 	&.is-rounded {
@@ -171,5 +211,10 @@ $switch-large-translateX: 15px;
 				background-color: $pair;
 			}
 		}		
+	}
+
+	&.is-disabled {
+		opacity: $form-check-input-disabled-opacity;
+		cursor: not-allowed;
 	}
 }

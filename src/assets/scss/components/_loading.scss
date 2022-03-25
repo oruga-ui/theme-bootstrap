@@ -17,7 +17,7 @@ $loading-fullpage-zindex: 999 !default;
     justify-content: center;
     overflow: hidden;
     @include avariable('z-index', 'loading-zindex', $loading-zindex);
-    &--fullpage {
+    &__fullpage {
         position: fixed;
         @include avariable('z-index', 'loading-fullpage-zindex', $loading-fullpage-zindex);
     }

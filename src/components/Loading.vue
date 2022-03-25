@@ -6,7 +6,7 @@
       </o-button>
     </o-field>
     <o-field>
-      <o-switch v-model="isFullPage">Display loader over full page</o-switch>
+      <o-switch disabled v-model="isFullPage">Display loader over full page</o-switch>
     </o-field>
     <p style="position: relative">
       Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce id
