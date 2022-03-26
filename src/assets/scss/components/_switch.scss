@@ -118,8 +118,8 @@ $switch-large-translateX: 15px;
 	padding-left: 25px;
 	margin-right: $switch-margin-right-bottom;
 	margin-bottom: $form-check-margin-bottom;
-	min-height: $form-check-min-height;
-	min-width: $form-check-input-width;
+	// min-height: $form-check-min-height;
+	// min-width: $form-check-input-width;
 	input {
 		opacity: 0;
 		width: 0;
@@ -134,26 +134,25 @@ $switch-large-translateX: 15px;
 		transition: $switch-transition;
 		// Default size is-small
 		width: $switch-small-width;
-	    height: $switch-small-height;
-	    top: $switch-small-top-position;
-	    border-radius: $form-check-input-border-radius;
+		height: $switch-small-height;
+		top: $switch-small-top-position;
+		border-radius: $form-check-input-border-radius;
 
-	    // Passive Variant
+		// Passive Variant
 		@each $name, $pair in $theme-colors {
 			&.is-#{$name}-passive {
 				background-color: $pair;
 			}
 		}
 
-		&:focus {
+		&:hover {
 			box-shadow: $form-check-input-focus-box-shadow;
-			border-color: $form-check-input-focus-border;
 		}
 	}
 	.switch:before {
 		position: absolute;
-	    left: 2px;
-	    bottom: 2px;
+		left: 2px;
+		bottom: 2px;
 		content: "";
 		background-color: white;
 		-webkit-transition: $switch-transition;
@@ -166,18 +165,22 @@ $switch-large-translateX: 15px;
 	// .form-switch-label {
 	// 	color:$form-check-label-color;
 	// }
+
+	input[type=checkbox]:focus + .switch {
+		box-shadow: $form-check-input-focus-box-shadow;
+	}
 	input[type=checkbox]:checked + .switch {
 		// Default variant is-primary
 		background-color: $form-check-input-checked-bg-color;
-		border-color: $form-check-input-checked-border-color;
+		// border-color: $form-check-input-checked-border-color;
 	}
-
 	input[type=checkbox]:checked + .switch:before {
 		// Default Move is-small
 		-webkit-transform: translateX($switch-small-translateX);
 		-ms-transform: translateX($switch-small-translateX);
 		transform: translateX($switch-small-translateX);
 	} 
+
 	.form-check-label {
 		color:  $form-check-label-color;
 		cursor: $form-check-label-cursor;
