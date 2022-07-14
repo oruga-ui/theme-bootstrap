@@ -1,5 +1,5 @@
-$collapse-padding: 0.5rem 1rem;
-$collapse-card-margin: 0.5rem 0;
+$collapse-padding: 0.5rem 1rem !default;
+$collapse-card-margin: 0.5rem 0 !default;
 
 .card {
 	margin: $collapse-card-margin;

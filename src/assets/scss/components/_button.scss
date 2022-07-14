@@ -1,6 +1,7 @@
-$btn-margin-right-bottom: 0.5rem;
-$btn-border-color: $default-border-color;
-$btn-rounded-border-radius: 9999px;
+$btn-margin-right-bottom: 0.5rem !default;
+$btn-border-color: $default-border-color !default;
+$btn-rounded-border-radius: 9999px !default;
+$btn-border-radius: $base-border-radius !default;
 @use "sass:map";
 
 // BTN
@@ -9,6 +10,7 @@ $btn-rounded-border-radius: 9999px;
 	font-size: $btn-font-size;
 	font-family: $btn-font-family;
 	line-height: $btn-line-height;
+	border-radius: $btn-border-radius;
 	.icon {
 		margin: 0 4px;
 	}

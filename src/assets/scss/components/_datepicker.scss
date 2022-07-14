@@ -1,12 +1,13 @@
-$datepicker-cell-margin: 5px;
-$datepicker-cell-padding: 5px; /* or 0.5rem 0.75rem*/
-$datepicker-cell-width: calc(#{100%} / 7);
-$datepicker-cell-font-weight: 400;
-$datepicker-cell-text-align: center;
-$datepicker-cell-unselectable-color: rgba(0,0,0,.3);
-$datepicker-cell-hovered-color: rgba(0,0,0,.5);
-$datepicker-cell-selected-color: $primary;
-$datepicker-cell-border-radius: $base-border-radius;
+$datepicker-background-color: $dropdown-content-background-color !default;
+$datepicker-cell-margin: 5px !default;
+$datepicker-cell-padding: 5px !default; /* or 0.5rem 0.75rem*/
+$datepicker-cell-width: calc(#{100%} / 7) !default;
+$datepicker-cell-font-weight: 400 !default;
+$datepicker-cell-text-align: center !default;
+$datepicker-cell-unselectable-color: rgba(0,0,0,.3) !default;
+$datepicker-cell-hovered-color: rgba(0,0,0,.5) !default;
+$datepicker-cell-selected-color: $primary !default;
+$datepicker-cell-border-radius: $base-border-radius !default;
 
 @mixin datepicker-cell {
 	padding: $datepicker-cell-padding;
@@ -28,6 +29,11 @@ $datepicker-cell-border-radius: $base-border-radius;
 	.dropdown-item:hover {
 		background-color: transparent;
 	}
+	.dropdown-menu {
+        background-color: $datepicker-background-color;
+        border-radius: $datepicker-radius;
+        box-shadow: $datepicker-shadow;
+    }
 	.datepicker-header {
 		margin-bottom: .5rem;
 		.pagination {
