@@ -1,4 +1,4 @@
-$datepicker-background-color: $dropdown-content-background-color !default;
+$datepicker-background-color: white !default; //
 $datepicker-cell-margin: 5px !default;
 $datepicker-cell-padding: 5px !default; /* or 0.5rem 0.75rem*/
 $datepicker-cell-width: calc(#{100%} / 7) !default;
@@ -29,11 +29,11 @@ $datepicker-cell-border-radius: $base-border-radius !default;
 	.dropdown-item:hover {
 		background-color: transparent;
 	}
-	.dropdown-menu {
-        background-color: $datepicker-background-color;
-        border-radius: $datepicker-radius;
-        box-shadow: $datepicker-shadow;
-    }
+	// .dropdown-menu {
+ //        background-color: $datepicker-background-color;
+ //        border-radius: $datepicker-radius;
+ //        box-shadow: $datepicker-shadow;
+ //    }
 	.datepicker-header {
 		margin-bottom: .5rem;
 		.pagination {
