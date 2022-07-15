@@ -1,7 +1,7 @@
-$icon-spin-animation-duration: 2000ms;
-$icon-spin-animation-iteration-count: infinite;
-$icon-spin-animation-timing-function: linear;
-$icon-margin-right-bottom: .4rem;
+$icon-spin-animation-duration: 2000ms !default;
+$icon-spin-animation-iteration-count: infinite !default;
+$icon-spin-animation-timing-function: linear !default;
+$icon-margin-right-bottom: .4rem !default;
 
 // ICON
 @keyframes spining {

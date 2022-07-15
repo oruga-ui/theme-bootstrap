@@ -1,7 +1,7 @@
-$select-icon-color: $grey;
-$select-icon-padding-left: 7px 11px 7px 32px;
-$select-icon-left-position: 12px;
-$select-icon-right-position: 12px;
+$select-icon-color: $grey !default;
+$select-icon-padding-left: 7px 11px 7px 32px !default;
+$select-icon-left-position: 12px !default;
+$select-icon-right-position: 12px !default;
 
 
 // $form-select-padding-y:             $input-padding-y;
