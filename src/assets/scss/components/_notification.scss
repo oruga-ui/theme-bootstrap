@@ -2,7 +2,7 @@
 $notification-margin-bottom: 1.5rem !default;
 $notification-notices-padding: 2em !default;
 $notification-notices-zindex: 1000 !default;
-$notification-close-btn-position-top-right: 6px !default; 
+$notification-close-btn-position: 6px !default; 
 /* @docs */
 
 
@@ -25,8 +25,8 @@ $notification-close-btn-position-top-right: 6px !default;
 		background-color: transparent;
 		border: 0;
 		position: absolute;
-		top: $notification-close-btn-position-top-right;
-		right: $notification-close-btn-position-top-right;
+		top: $notification-close-btn-position;
+		right: $notification-close-btn-position;
 	}
 }
 .notices {
