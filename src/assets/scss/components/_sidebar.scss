@@ -1,8 +1,8 @@
-$sidebar-border-color: $default-border-color;
-$sidebar-box-shadow: 0;
-$sidebar-width: 20%;
-$sidebar-background-color: $light;
-$sidebar-overlay-background-color: $overlay-background-color-dark;
+$sidebar-border-color: $default-border-color !default;
+$sidebar-box-shadow: 0 !default;
+$sidebar-width: 20% !default;
+$sidebar-background-color: $light !default;
+$sidebar-overlay-background-color: $overlay-background-color-dark !default;
 $sidebar-mobile-width: 80px !default;
 $sidebar-mobile-breakpoint: $tablet !default;
 

@@ -1,31 +1,31 @@
-// @import 'bootstrap/dist/css/bootstrap.min.css';
-// $border-radius: 10px;
-// $table-color: black;
-// $table-tr-color: white;
+@import 'bootstrap/dist/css/bootstrap.min.css';
+$border-radius: 10px;
+$table-color: black;
+$table-tr-color: white;
 
-// $primary: blue;
-// $success: green;
-// $danger: red;
-// $warning: orange;
-// $info: #00c6a2;
+$primary: blue;
+$success: green;
+$danger: red;
+$warning: orange;
+$info: #00c6a2;
 
-// $btn-font-weight: bolder;
-// $btn-disabled-opacity:.8;
+$btn-font-weight: bolder;
+$btn-disabled-opacity:.8;
 
-// $modal-content-bg: black;
-// $modal-content-color: white;
+$modal-content-bg: black;
+$modal-content-color: white;
 
-// $tooltip-max-width: 300px;
-// $tooltip-bg: red;
-// $input-bg: inherit;
-// $tooltip-padding-x: 20px;
-// // $input-color: white;
+$tooltip-max-width: 300px;
+$tooltip-bg: red;
+$input-bg: inherit;
+$tooltip-padding-x: 20px;
+// $input-color: white;
 
-// // $form-range-track-bg: red;
-// $form-check-input-disabled-opacity: .8;
-// $form-check-input-border-radius: 0;
-// $form-range-thumb-border-radius: 0;
-// $body-color: black;
+// $form-range-track-bg: red;
+$form-check-input-disabled-opacity: .8;
+$form-check-input-border-radius: 0;
+$form-range-thumb-border-radius: 0;
+$body-color: black;
 // @import 'bootstrap/scss/bootstrap';
 @import "../node_modules/bootstrap/scss/bootstrap";
 @import "bootstrap.scss";
