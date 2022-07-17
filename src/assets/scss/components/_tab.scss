@@ -75,15 +75,21 @@ $tabs-wrapper-margin: 20px;
 			justify-content: end;
 		}
 		// Size 
-		&.is-small {
-			font-size: $nav-tabs-font-size-small;
+
+		@each $name, $size in $sizes {
+			.is-#{$name} {
+				font-size: calc($size);
+			}
 		}
-		&.is-medium {
-			font-size: $nav-tabs-font-size-medium;
-		}
-		&.is-large {
-			font-size: $nav-tabs-font-size-large;
-		}
+		// &.is-small {
+		// 	font-size: $nav-tabs-font-size-small;
+		// }
+		// &.is-medium {
+		// 	font-size: $nav-tabs-font-size-medium;
+		// }
+		// &.is-large {
+		// 	font-size: $nav-tabs-font-size-large;
+		// }
 	}
 	// Content of each nav
 	.nav-content {

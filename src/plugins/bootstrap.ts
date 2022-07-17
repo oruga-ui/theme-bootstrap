@@ -205,16 +205,20 @@ export const bootstrapConfig: any = {
     tabs: {
         override: true, 
         itemTag: 'a',
+        itemHeaderClass : (_: string, { props }: any)=>{
+            console.log(props)
+            return `is-${props.size}`
+        },
         rootClass: 'nav-tab-wrapper',
         contentClass: 'nav-content',
         // multilineClass: 'is-multiline',
         navTabsClass: 'nav nav-tabs',
-        expandedClass: 'is-expanded', // done
-        verticalClass: 'is-vertical', // done
-        positionClass: 'is-', // @TODO add class
-        navSizeClass: 'is-', // done
-        navPositionClass: 'is-', // done
-        transitioningClass: 'is-transitioning', // @TODO add class
+        expandedClass: 'is-expanded',
+        verticalClass: 'is-vertical',
+        positionClass: 'is-', 
+        navSizeClass: 'is-',
+        navPositionClass: 'is-',
+        transitioningClass: 'is-transitioning', 
         itemClass: 'content-text',
         itemHeaderActiveClass: () => 'active',
         itemHeaderDisabledClass: () => 'disabled'
