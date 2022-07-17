@@ -1,7 +1,3 @@
-$checkbox-small: 1em !default;
-$checkbox-medium: 1.25em !default;
-$checkbox-large: 1.50em !default;
-
 // $form-check-input-width:                  1em;
 // $form-check-min-height:                   $font-size-base * $line-height-base;
 // $form-check-padding-start:                $form-check-input-width + .5em;
@@ -46,27 +42,18 @@ $checkbox-large: 1.50em !default;
 			}
 		}
 	}
-	&.is-small {
-		input[type="checkbox"] {
-			width: $checkbox-small;
-			height: $checkbox-small;
-			margin-right: calc(#{$checkbox-small} / 2); 
+
+
+	@each $name, $size in $sizes {
+		&.is-#{$name} {
+			input[type="checkbox"] {
+				width: $size;
+				height: $size;
+				margin-right: calc(#{$size} / 2);
+			}
 		}
 	}
-	&.is-medium {
-		input[type="checkbox"] {
-			width: $checkbox-medium;
-			height: $checkbox-medium;
-			margin-right: calc(#{$checkbox-medium} / 2); 
-		}
-	}
-	&.is-large {
-		input[type="checkbox"] {
-			width: $checkbox-large;
-			height: $checkbox-large;
-			margin-right: calc(#{$checkbox-large} / 2); 
-		}
-	}
+	
 	&.is-disabled {
 		opacity: $form-check-input-disabled-opacity;
 		cursor: not-allowed;

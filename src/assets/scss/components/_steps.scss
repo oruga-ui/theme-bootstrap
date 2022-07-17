@@ -248,13 +248,13 @@ $steps-large: 1.2em;
 	// Sizes
 	@include steps-size($steps-medium);
 	&.is-small {
-        @include steps-size($steps-small);
+        @include steps-size(map-get($sizes, "small"));
     }
     &.is-medium {
-        @include steps-size($steps-medium);
+        @include steps-size(map-get($sizes, "medium"));
     }
     &.is-large {
-        @include steps-size($steps-large);
+        @include steps-size(map-get($sizes, "large"));
     }
 
 	.step-content {

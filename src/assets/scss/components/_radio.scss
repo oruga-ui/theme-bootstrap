@@ -1,7 +1,3 @@
-$radio-small: 1em !default;
-$radio-medium: 1.25em !default;
-$radio-large: 1.50em !default;
-
 // $form-check-input-width:                  1em;
 // $form-check-min-height:                   $font-size-base * $line-height-base;
 // $form-check-padding-start:                $form-check-input-width + .5em;
@@ -47,27 +43,16 @@ $radio-large: 1.50em !default;
 		}
 	}
 
-	&.is-small {
-		input[type="radio"] {
-			width: $radio-small;
-			height: $radio-small;
-			margin-right: calc(#{$radio-small} / 2)
+	@each $name, $size in $sizes {
+		&.is-#{$name} {
+			input[type="radio"] {
+				width: $size;
+				height: $size;
+				margin-right: calc(#{$size} / 2); 
+			}
 		}
 	}
-	&.is-medium {
-		input[type="radio"] {
-			width: $radio-medium;
-			height: $radio-medium;
-			margin-right: calc(#{$radio-medium} / 2)
-		}
-	}
-	&.is-large {
-		input[type="radio"] {
-			width: $radio-large;
-			height: $radio-large;
-			margin-right: calc(#{$radio-large} / 2); 
-		}
-	}
+	
 	&.is-disabled {
 		opacity: $form-check-input-disabled-opacity;
 		cursor: not-allowed;
