@@ -1,10 +1,11 @@
 $tabs-link-active-border-color: $primary !default;
 $tabs-color: $dark !default;
 $tabs-border-color: $default-border-color;
+$tabs-default-size: 1rem !default;
 $nav-tabs-margin-bottom: 10px;
-$nav-tabs-font-size-small: 13px;
-$nav-tabs-font-size-medium: 14px;
-$nav-tabs-font-size-large: 18px;
+// $nav-tabs-font-size-small: 13px;
+// $nav-tabs-font-size-medium: 14px;
+// $nav-tabs-font-size-large: 18px;
 $tabs-wrapper-margin: 20px;
 
 // $nav-link-padding-y:                .5rem;
@@ -75,22 +76,30 @@ $tabs-wrapper-margin: 20px;
 			justify-content: end;
 		}
 		// Size 
-
-		// @each $name, $size in $sizes {
-		// 	&.is-#{$name} {
-		// 		span {
-		// 			font-size: calc($size - .3rem);
-		// 		}
+		div a span {
+			font-size: $tabs-default-size;
+		}
+		@each $name, $size in $sizes {
+			&.is-#{$name} {
+				div a span {
+					font-size: $size;
+				}
+			}
+		}
+		// &.is-small {
+		// 	div a span {
+		// 		font-size: $nav-tabs-font-size-small;
 		// 	}
 		// }
-		// &.is-small {
-		// 	font-size: $nav-tabs-font-size-small;
-		// }
 		// &.is-medium {
-		// 	font-size: $nav-tabs-font-size-medium;
+		// 	div a span {
+		// 		font-size: $nav-tabs-font-size-medium;
+		// 	}
 		// }
 		// &.is-large {
-		// 	font-size: $nav-tabs-font-size-large;
+		// 	div a span {
+		// 		font-size: $nav-tabs-font-size-large;
+		// 	}
 		// }
 	}
 	// Content of each nav
