@@ -205,10 +205,6 @@ export const bootstrapConfig: any = {
     tabs: {
         override: true, 
         itemTag: 'a',
-        itemHeaderClass : (_: string, { props }: any)=>{
-            console.log(props)
-            return `is-${props.size}`
-        },
         rootClass: 'nav-tab-wrapper',
         contentClass: 'nav-content',
         // multilineClass: 'is-multiline',

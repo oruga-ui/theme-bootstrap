@@ -76,11 +76,13 @@ $tabs-wrapper-margin: 20px;
 		}
 		// Size 
 
-		@each $name, $size in $sizes {
-			.is-#{$name} {
-				font-size: calc($size);
-			}
-		}
+		// @each $name, $size in $sizes {
+		// 	&.is-#{$name} {
+		// 		span {
+		// 			font-size: calc($size - .3rem);
+		// 		}
+		// 	}
+		// }
 		// &.is-small {
 		// 	font-size: $nav-tabs-font-size-small;
 		// }
