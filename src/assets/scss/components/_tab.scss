@@ -3,7 +3,7 @@ $tabs-color: $dark !default;
 $tabs-border-color: $default-border-color;
 $tabs-default-size: 1rem !default;
 $nav-tabs-margin-bottom: 10px;
-$tabs-wrapper-margin: 1rem;
+$tabs-wrapper-margin: 20px;
 
 // $nav-link-padding-y:                .5rem;
 // $nav-link-padding-x:                1rem;
@@ -61,9 +61,15 @@ $tabs-wrapper-margin: 1rem;
 		}
 
 		// Types
-			// Default 
-			// Tabs
-			// Pills
+		// Default 
+		// Tabs
+		&.nav-tabs {
+
+		}
+		// Pills
+		&.nav-pills {
+
+		}
 			
 		// div:focus {
 		// 	border-bottom: 1px solid $tabs-link-active-border-color;
@@ -89,21 +95,6 @@ $tabs-wrapper-margin: 1rem;
 				}
 			}
 		}
-		// &.is-small {
-		// 	div a span {
-		// 		font-size: $nav-tabs-font-size-small;
-		// 	}
-		// }
-		// &.is-medium {
-		// 	div a span {
-		// 		font-size: $nav-tabs-font-size-medium;
-		// 	}
-		// }
-		// &.is-large {
-		// 	div a span {
-		// 		font-size: $nav-tabs-font-size-large;
-		// 	}
-		// }
 	}
 	// Content of each nav
 	.nav-content {
