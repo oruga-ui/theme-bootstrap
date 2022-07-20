@@ -14,17 +14,6 @@ $tabs-wrapper-margin: 20px;
 // $nav-link-transition:               color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out;
 // $nav-link-disabled-color:           $gray-600;
 
-// $nav-tabs-border-color:             $gray-300;
-// $nav-tabs-border-width:             $border-width;
-// $nav-tabs-border-radius:            $border-radius;
-// $nav-tabs-link-hover-border-color:  $gray-200 $gray-200 $nav-tabs-border-color;
-// $nav-tabs-link-active-color:        $gray-700;
-// $nav-tabs-link-active-bg:           $body-bg;
-// $nav-tabs-link-active-border-color: $gray-300 $gray-300 $nav-tabs-link-active-bg;
-
-// $nav-pills-border-radius:           $border-radius;
-// $nav-pills-link-active-color:       $component-active-color;
-// $nav-pills-link-active-bg:          $component-active-bg;
 
 
 // NAVTAB
@@ -63,11 +52,73 @@ $tabs-wrapper-margin: 20px;
 		// Types
 		// Default 
 		// Tabs
-		&.nav-tabs {
+		&.tabs {
+			border-bottom: 1px solid $gray-300;
+			div {
+				border: 1px solid transparent;
+				a {
 
+				}
+				.active {
+					padding-bottom: 0;
+					border-top-left-radius: 3px;
+					border-top-right-radius: 3px;
+					border-top: 1px solid $gray-300;
+					border-left: 1px solid $gray-300;
+					border-right: 1px solid $gray-300;
+					border-bottom: 1px solid white;
+					background-color: $nav-tabs-link-active-bg;
+				}
+				.disabled {
+
+				}
+				&:hover {
+					padding-bottom: 0;
+					border-top-left-radius: 3px;
+					border-top-right-radius: 3px;
+					border-top: 1px solid $nav-tabs-border-color;
+					border-left: 1px solid $nav-tabs-border-color;
+					border-right: 1px solid $nav-tabs-border-color;
+					border-bottom: 1px solid white;
+				}
+
+			}
+			// div:not(a.disabled):hover {
+			// 	border-top-left-radius: 3px;
+			// 	border-top-right-radius: 3px;
+			// 	border-top: 1px solid $nav-tabs-border-color;
+			// 	border-left: 1px solid $nav-tabs-border-color;
+			// 	border-right: 1px solid $nav-tabs-border-color;
+			// }
+			// $nav-tabs-border-color:             $gray-300;
+			// $nav-tabs-border-width:             $border-width;
+			// $nav-tabs-border-radius:            $border-radius;
+			// $nav-tabs-link-hover-border-color:  $gray-200 $gray-200 $nav-tabs-border-color;
+			// $nav-tabs-link-active-color:        $gray-700;
+			// $nav-tabs-link-active-bg:           $body-bg;
+			// $nav-tabs-link-active-border-color: $gray-300 $gray-300 $nav-tabs-link-active-bg;
 		}
 		// Pills
-		&.nav-pills {
+		&.pills {
+			div {
+				border: 1px solid transparent;
+				a {
+
+				}
+				.active {
+					padding-bottom: 12px;
+					border-bottom: 1px solid $tabs-link-active-border-color;
+				}
+				.disabled {
+
+				}
+			}
+			div:not(a.disabled):hover {
+				border-bottom: 1px solid $tabs-link-active-border-color;
+			}
+			// $nav-pills-border-radius:           $border-radius;
+			// $nav-pills-link-active-color:       $component-active-color;
+			// $nav-pills-link-active-bg:          $component-active-bg;
 
 		}
 			
@@ -95,6 +146,9 @@ $tabs-wrapper-margin: 20px;
 				}
 			}
 		}
+	}
+	.nav-tabs {
+		border: 0;
 	}
 	// Content of each nav
 	.nav-content {
