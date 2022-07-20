@@ -208,16 +208,35 @@ export const bootstrapConfig: any = {
         rootClass: 'nav-tab-wrapper',
         contentClass: 'nav-content',
         // multilineClass: 'is-multiline',
-        navTabsClass: 'nav nav-tabs',
-        expandedClass: 'is-expanded',
+        navTabsClass: 'nav nav-pills',
+        expandedClass: 'nav-fill',
         verticalClass: 'is-vertical',
-        positionClass: 'is-', 
+        positionClass: (_: string, { props }: any)=>{
+            console.log(props.position == "right")
+            if (props.position == "left") {
+                return 'justify-content-start'
+            }else if (props.position == "right") {
+                return 'justify-content-end'
+            }else {
+                'justify-content-center'
+            }
+        }, 
         navSizeClass: 'is-',
-        navPositionClass: 'is-',
+        navPositionClass: (_: string, { props }: any)=>{
+            console.log(props.position == "right")
+            if (props.position == "left") {
+                return 'justify-content-start'
+            }else if (props.position == "right") {
+                return 'justify-content-end'
+            }else {
+                'justify-content-center'
+            }
+        },
         transitioningClass: 'is-transitioning', 
-        itemClass: 'content-text',
+        // itemClass: () => 'nav-item',
         itemHeaderActiveClass: () => 'active',
-        itemHeaderDisabledClass: () => 'disabled'
+        itemHeaderDisabledClass: () => 'disabled',
+        itemHeaderClass: () => 'nav-link'
     },
     table: {
         override: true,
