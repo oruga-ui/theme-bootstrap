@@ -5,179 +5,21 @@
 // $nav-tabs-margin-bottom: 10px;
 // $tabs-wrapper-margin: 20px;
 
-// // $nav-link-padding-y:                .5rem;
-// // $nav-link-padding-x:                1rem;
-// // $nav-link-font-size:                null;
-// // $nav-link-font-weight:              null;
-// // $nav-link-color:                    $link-color;
-// // $nav-link-hover-color:              $link-hover-color;
-// // $nav-link-transition:               color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out;
-// // $nav-link-disabled-color:           $gray-600;
-
-
-
-// // NAVTAB
-// .nav-tab-wrapper {
-// 	margin: $tabs-wrapper-margin;
-// 	// nav (Pictures - Musics - Books - Videos)
-// 	.nav {
-// 		margin-bottom: $nav-tabs-margin-bottom;
-// 		display: flex;
-// 		// each nav element is div (or li => div)
-// 		div {
-// 			cursor: pointer;
-// 			margin: 10px;
-// 			text-align: center;
-// 			// border: 1px solid transparent;
-// 			a {
-// 				color: $tabs-color;
-// 				text-decoration: none;
-// 				width: 100%;
-// 			}
-// 			.active {
-// 				color: $tabs-link-active-border-color;
-// 				// padding-bottom: 11px;
-// 				// border-bottom: 2px solid $tabs-link-active-border-color;
-// 			}
-// 			.disabled {
-// 				pointer-events: none;
-// 				cursor: not-allowed;
-// 				opacity: $base-disabled-opacity;
-// 			}
-// 		}
-// 		div:not(a.disabled):hover {
-// 			// border-bottom: 1px solid $tabs-link-active-border-color;
-// 		}
-
-// 		// Types
-// 		// Default 
-// 		// Tabs
-// 		&.tabs {
-// 			border-bottom: 1px solid $gray-300;
-// 			div {
-// 				border: 1px solid transparent;
-// 				a {
-
-// 				}
-// 				.active {
-// 					// padding: 0;
-// 					border-top-left-radius: 3px;
-// 					border-top-right-radius: 3px;
-// 					border-top: 1px solid $gray-300;
-// 					border-left: 1px solid $gray-300;
-// 					border-right: 1px solid $gray-300;
-// 					border-bottom: 1px solid white;
-// 					background-color: $nav-tabs-link-active-bg;
-// 				}
-// 				.disabled {
-
-// 				}
-// 				&:hover {
-// 					// padding: 0;
-// 					border-top-left-radius: 3px;
-// 					border-top-right-radius: 3px;
-// 					border-top: 1px solid $nav-tabs-border-color;
-// 					border-left: 1px solid $nav-tabs-border-color;
-// 					border-right: 1px solid $nav-tabs-border-color;
-// 					border-bottom: 1px solid white;
-// 				}
-
-// 			}
-// 			// div:not(a.disabled):hover {
-// 			// 	border-top-left-radius: 3px;
-// 			// 	border-top-right-radius: 3px;
-// 			// 	border-top: 1px solid $nav-tabs-border-color;
-// 			// 	border-left: 1px solid $nav-tabs-border-color;
-// 			// 	border-right: 1px solid $nav-tabs-border-color;
-// 			// }
-// 			// $nav-tabs-border-color:             $gray-300;
-// 			// $nav-tabs-border-width:             $border-width;
-// 			// $nav-tabs-border-radius:            $border-radius;
-// 			// $nav-tabs-link-hover-border-color:  $gray-200 $gray-200 $nav-tabs-border-color;
-// 			// $nav-tabs-link-active-color:        $gray-700;
-// 			// $nav-tabs-link-active-bg:           $body-bg;
-// 			// $nav-tabs-link-active-border-color: $gray-300 $gray-300 $nav-tabs-link-active-bg;
-// 		}
-// 		// Pills
-// 		&.pills {
-// 			div {
-// 				border: 1px solid transparent;
-// 				a {
-
-// 				}
-// 				.active {
-// 					border-radius: $border-radius;
-// 					color: $component-active-color;
-// 					background-color: $component-active-bg;
-// 					padding-bottom: 12px;
-// 					border-bottom: 1px solid $tabs-link-active-border-color;
-// 				}
-// 				.disabled {
-
-// 				}
-// 			}
-// 			div:not(a.disabled):hover {
-// 				// border-bottom: 1px solid $tabs-link-active-border-color;
-// 			}
-// 			// $nav-pills-border-radius:           $border-radius;
-// 			// $nav-pills-link-active-color:       $component-active-color;
-// 			// $nav-pills-link-active-bg:          $component-active-bg;
-
-// 		}
-			
-// 		// div:focus {
-// 		// 	border-bottom: 1px solid $tabs-link-active-border-color;
-// 		// }
-// 		// div:has(> a.active) {
-// 		// 	border-bottom: 1px solid $tabs-link-active-border-color;
-// 		// }
-// 		// Position
-// 		&.is-centered {
-// 			justify-content: center; 
-// 		}
-// 		&.is-right {
-// 			justify-content: end;
-// 		}
-// 		// Size 
-// 		div a span {
-// 			font-size: $tabs-default-size;
-// 		}
-// 		@each $name, $size in $sizes {
-// 			&.is-#{$name} {
-// 				div a span {
-// 					font-size: $size;
-// 				}
-// 			}
-// 		}
-// 	}
-// 	// Content of each nav
-// 	.nav-content {
-// 		margin: 10px;
-// 		flex-grow: 1;
-// 	}
-// 	// Full width
-// 	&.is-expanded {
-// 		.nav {
-// 			div {
-// 				flex-grow: 1;
-//     			flex-shrink: 0;
-// 			}
-// 		}
-// 	}
-// 	// Position
-// 	// Vetical 
-// 	&.is-vertical {
-// 		display: flex;
-// 		flex-direction: row;
-// 		.nav {
-// 			display: block;
-// 			div {
-// 				border-bottom: 1px solid $tabs-border-color;
-// 				text-align: left;
-// 			}
-// 		}
-// 		&.is-right {
-// 			flex-direction: row-reverse;
-// 		}
-// 	}
-// } 
+.nav-tab-wrapper {
+	.nav {
+		div {
+			cursor: pointer;
+		}
+	}
+	&.nav-fill {
+		.nav {
+			div {
+				flex-grow: 1;
+				flex-shrink: 0;
+			}
+		}
+	}
+	.nav-content {
+		margin-top: 1rem;
+	}
+}

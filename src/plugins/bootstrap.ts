@@ -208,7 +208,7 @@ export const bootstrapConfig: any = {
         rootClass: 'nav-tab-wrapper',
         contentClass: 'nav-content',
         // multilineClass: 'is-multiline',
-        navTabsClass: 'nav nav-pills',
+        navTabsClass: 'nav',
         expandedClass: 'nav-fill',
         verticalClass: 'is-vertical',
         positionClass: (_: string, { props }: any)=>{
@@ -234,7 +234,17 @@ export const bootstrapConfig: any = {
         // itemClass: () => 'nav-item',
         itemHeaderActiveClass: () => 'active',
         itemHeaderDisabledClass: () => 'disabled',
-        itemHeaderClass: () => 'nav-link'
+        itemHeaderClass: () => 'nav-link',
+        navTypeClass : (_:string, { props }: any) => {
+            if (props.type == "boxed") {
+                return 'nav-tabs';
+            }
+            else if (props.type == "toggle") {
+                return 'nav-pills'
+            }else {
+                return ''
+            }
+        }
     },
     table: {
         override: true,
