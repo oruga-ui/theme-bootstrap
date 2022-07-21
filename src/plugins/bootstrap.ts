@@ -212,24 +212,22 @@ export const bootstrapConfig: any = {
         expandedClass: 'nav-fill',
         verticalClass: 'is-vertical',
         positionClass: (_: string, { props }: any)=>{
-            console.log(props.position == "right")
             if (props.position == "left") {
-                return 'justify-content-start'
+                // return 'justify-content-start'
             }else if (props.position == "right") {
-                return 'justify-content-end'
-            }else {
-                'justify-content-center'
+                // return 'justify-content-end'
+            }else if (props.position == "centered") {
+                // return 'justify-content-center'
             }
         }, 
         navSizeClass: 'is-',
         navPositionClass: (_: string, { props }: any)=>{
-            console.log(props.position == "right")
             if (props.position == "left") {
                 return 'justify-content-start'
             }else if (props.position == "right") {
                 return 'justify-content-end'
-            }else {
-                'justify-content-center'
+            }else if (props.position == "centered") {
+                return 'justify-content-center'
             }
         },
         transitioningClass: 'is-transitioning', 
