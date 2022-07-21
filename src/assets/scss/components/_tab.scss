@@ -22,4 +22,31 @@
 	.nav-content {
 		margin-top: 1rem;
 	}
+
+	// &.is-centered {
+	// 	justify-content: center; 
+	// }
+	// &.is-right {
+	// 	justify-content: end;
+	// }
+
+	&.is-vertical {
+		display: flex;
+		flex-direction: row;
+		.nav {
+			display: block;
+			div {
+				// border-bottom: 1px solid $grey;
+				text-align: left;
+			}
+		}
+		.nav-content {
+			margin: 0;
+			margin-left: 1rem;
+		}
+
+		&.is-right {
+			flex-direction: row-reverse;
+		}
+	}
 }

@@ -211,15 +211,7 @@ export const bootstrapConfig: any = {
         navTabsClass: 'nav',
         expandedClass: 'nav-fill',
         verticalClass: 'is-vertical',
-        positionClass: (_: string, { props }: any)=>{
-            if (props.position == "left") {
-                // return 'justify-content-start'
-            }else if (props.position == "right") {
-                // return 'justify-content-end'
-            }else if (props.position == "centered") {
-                // return 'justify-content-center'
-            }
-        }, 
+        positionClass: 'is-', 
         navSizeClass: 'is-',
         navPositionClass: (_: string, { props }: any)=>{
             if (props.position == "left") {
