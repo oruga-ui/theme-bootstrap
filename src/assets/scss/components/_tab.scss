@@ -36,8 +36,19 @@
 		.nav {
 			display: block;
 			div {
-				// border-bottom: 1px solid $grey;
 				text-align: left;
+			}
+			&.nav-tabs {
+				div {
+					border-top: .01rem solid  $default-border-color;
+					// border-bottom: .01rem solid  $default-border-color;
+				}
+				// .active {
+				// 	border-top: 0;
+				// 	border-bottom: 0;
+				// 	border-left: .01rem solid  $default-border-color;
+				// 	border-right: .01rem solid  $default-border-color;
+				// }
 			}
 		}
 		.nav-content {
@@ -47,6 +58,7 @@
 
 		&.is-right {
 			flex-direction: row-reverse;
+			justify-content: space-between;
 		}
 	}
 }
