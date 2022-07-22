@@ -10,6 +10,13 @@
 		div {
 			cursor: pointer;
 		}
+		@each $name, $size in $sizes {
+			&.is-#{$name} {
+				div a span {
+					font-size: $size;
+				}
+			}
+		}
 	}
 	&.nav-fill {
 		.nav {
