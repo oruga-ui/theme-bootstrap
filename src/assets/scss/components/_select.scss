@@ -1,7 +1,7 @@
 $select-icon-color: $grey !default;
-$select-icon-padding-left: 7px 11px 7px 32px !default;
-$select-icon-left-position: 12px !default;
-$select-icon-right-position: 12px !default;
+$select-icon-padding-left: 0.43rem 0.68rem 0.43rem 2rem !default;
+$select-icon-left-position: 0.75rem !default;
+$select-icon-right-position: 0.75rem !default;
 
 
 // $form-select-padding-y:             $input-padding-y;
@@ -62,11 +62,11 @@ $select-icon-right-position: 12px !default;
 		color: $select-icon-color;
 		position: absolute;
 		&.is-left {
-			top: 8px;
+			top: 0.5rem;
 			left: $select-icon-left-position;
 		}
 		&.is-right {
-			top: 8px;
+			top: 0.5rem;
 			right: $select-icon-right-position;
 		}
 	}
