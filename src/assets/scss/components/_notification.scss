@@ -2,7 +2,7 @@
 $notification-margin-bottom: 1.5rem !default;
 $notification-notices-padding: 2em !default;
 $notification-notices-zindex: 1000 !default;
-$notification-close-btn-position: 6px !default; 
+$notification-close-btn-position: 0.37rem !default; 
 /* @docs */
 
 
@@ -44,7 +44,7 @@ $notification-close-btn-position: 6px !default;
 	// position: relative;
 	.notification {
         pointer-events: auto;
-        max-width: 600px;
+        max-width: 37.5rem;
         &.is-top, &.is-bottom {
             align-self: center;
         }
@@ -68,7 +68,7 @@ $notification-close-btn-position: 6px !default;
             margin-bottom: 0;
             &:not(:first-child) {
                 // margin-bottom: $notification-margin-bottom;
-                margin-bottom: 30px;
+                margin-bottom: 3.75rem;
             }
         }
     }

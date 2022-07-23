@@ -1,6 +1,6 @@
 $datepicker-background-color: white !default; //
-$datepicker-cell-margin: 5px !default;
-$datepicker-cell-padding: 5px !default; /* or 0.5rem 0.75rem*/
+$datepicker-cell-margin: 0.31rem !default;
+$datepicker-cell-padding: 0.31rem !default; /* or 0.5rem 0.75rem*/
 $datepicker-cell-width: calc(#{100%} / 7) !default;
 $datepicker-cell-font-weight: 400 !default;
 $datepicker-cell-text-align: center !default;
@@ -81,7 +81,7 @@ $datepicker-cell-border-radius: $base-border-radius !default;
 
 					&.is-today {
 						color: $datepicker-cell-selected-color;
-						border: 1px solid $datepicker-cell-selected-color;
+						border: 0.06rem solid $datepicker-cell-selected-color;
 						border-radius: $datepicker-cell-border-radius;
 					}
 					&.is-selected {
