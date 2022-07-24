@@ -11,9 +11,9 @@ $slider-thumb-width: $form-range-thumb-width !default;
 $slider-thumb-height: $form-range-thumb-height !default;
 
 $slider-tick-to-track-ratio: 0.5 !default;
-$slider-tick-width: 3px !default;
-$slider-tick-height: 5px !default;
-$slider-tick-radius: 3px !default;
+$slider-tick-width: 0.18rem !default;
+$slider-tick-height: 0.31rem !default;
+$slider-tick-radius: 0.18rem !default;
 $slider-tick-background-color: $grey-dark !default;
 
 $slider-small: calc(#{$slider-height} - .3em) !default;
@@ -119,7 +119,7 @@ $slider-thumb-large: calc(#{$slider-thumb-height} * 2) !default;
                 }
             }
             &.has-indicator {
-                padding: 16px 10px;
+                padding: 1rem 0.62rem;
                 display: flex;
                 align-items: center;
                 width: auto;
@@ -148,7 +148,7 @@ $slider-thumb-large: calc(#{$slider-thumb-height} * 2) !default;
                 background: transparent;
             }
             .slider-tick-label {
-               margin: 5px;
+               margin: 0.31rem;
             }
         }
     }
