@@ -1,10 +1,3 @@
-// $tabs-link-active-border-color: $primary !default;
-// $tabs-color: $dark !default;
-// $tabs-border-color: $default-border-color;
-// $tabs-default-size: 1rem !default;
-// $nav-tabs-margin-bottom: 10px;
-// $tabs-wrapper-margin: 20px;
-
 .nav-tab-wrapper {
 	.nav {
 		div {
@@ -30,13 +23,6 @@
 		margin-top: 1rem;
 	}
 
-	// &.is-centered {
-	// 	justify-content: center; 
-	// }
-	// &.is-right {
-	// 	justify-content: end;
-	// }
-
 	&.is-vertical {
 		display: flex;
 		flex-direction: row;
@@ -48,14 +34,7 @@
 			&.nav-tabs {
 				div {
 					border-top: .01rem solid  $default-border-color;
-					// border-bottom: .01rem solid  $default-border-color;
 				}
-				// .active {
-				// 	border-top: 0;
-				// 	border-bottom: 0;
-				// 	border-left: .01rem solid  $default-border-color;
-				// 	border-right: .01rem solid  $default-border-color;
-				// }
 			}
 		}
 		.nav-content {

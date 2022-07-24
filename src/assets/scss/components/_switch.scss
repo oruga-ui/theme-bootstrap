@@ -115,7 +115,7 @@ $switch-large-translateX: 15px;
 
 .form-switch {
 	position: relative;
-	padding-left: 25px;
+	padding-left: 1.56rem;
 	margin-right: $switch-margin-right-bottom;
 	margin-bottom: $form-check-margin-bottom;
 	// min-height: $form-check-min-height;
@@ -151,8 +151,8 @@ $switch-large-translateX: 15px;
 	}
 	.switch:before {
 		position: absolute;
-		left: 2px;
-		bottom: 2px;
+		left: 0.12rem;
+		bottom: 0.12rem;
 		content: "";
 		background-color: white;
 		-webkit-transition: $switch-transition;
@@ -189,7 +189,7 @@ $switch-large-translateX: 15px;
 	// rounded 
 	&.is-rounded {
 		.switch {
-			border-radius: 34px;
+			border-radius: 2.12rem;
 		}
 		.switch:before {
 			border-radius: 50%;
