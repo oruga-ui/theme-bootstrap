@@ -1,6 +1,6 @@
-$tooltip-arrow-size: 5px !default;
-$tooltip-arrow-margin: 2px !default;
-$tooltip-content-multiline-width: 300px !default;
+$tooltip-arrow-size: 0.31rem !default;
+$tooltip-arrow-margin: 0.12rem !default;
+$tooltip-content-multiline-width: 18.75rem !default;
 
 
 // $tooltip-font-size:                 $font-size-sm;
@@ -142,7 +142,7 @@ $tooltip-content-multiline-width: 300px !default;
         border-radius: $tooltip-border-radius;
         font-size: $tooltip-font-size;
         // font-weight: $weight-normal;
-        box-shadow: 0px 1px 2px 1px rgba(0, 1, 0, 0.2);
+        box-shadow: 0 0.06rem 0.12rem 0.06rem rgba(0, 1, 0, 0.2);
         z-index: 38;
         white-space: nowrap;
         position: absolute;
@@ -191,7 +191,7 @@ $tooltip-content-multiline-width: 300px !default;
     }
     &.is-dashed {
         .tooltip-trigger {
-            border-bottom: 1px dashed $grey-light;
+            border-bottom: 0.06rem dashed $grey-light;
             cursor: default;
         }
     }

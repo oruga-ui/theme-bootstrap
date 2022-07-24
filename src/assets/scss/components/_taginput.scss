@@ -1,8 +1,8 @@
-$taginput-height: calc(2em - 1px) !default;
+$taginput-height: calc(2em - 0.06rem) !default;
 $taginput-border-color: $default-border-color !default;
 $taginput-border-radius: $base-border-radius !default;
-$taginput-margin: calc(0.275em - 1px) !default;
-$taginput-padding: calc(0.275em - 1px) 0.800rem !default;
+$taginput-margin: calc(0.275em - 0.06rem) !default;
+$taginput-padding: calc(0.275em - 0.06rem) 0.800rem !default;
 
 
 @mixin variant {
@@ -17,7 +17,7 @@ $taginput-padding: calc(0.275em - 1px) 0.800rem !default;
 
 .taginput {
 	.taginput-container {
-		border: 1px solid $taginput-border-color;
+		border: 0.06rem solid $taginput-border-color;
 		border-radius: $taginput-border-radius;
 		height: auto;
 		display: flex;
@@ -36,7 +36,7 @@ $taginput-padding: calc(0.275em - 1px) 0.800rem !default;
 			padding: $taginput-padding;
 			font-size: 0.9em;
 			height: $taginput-height;
-			border: 0.5px solid $taginput-border-color;
+			border: 0.031rem solid $taginput-border-color;
 			border-radius: $taginput-border-radius;
 			
 			.icon {
