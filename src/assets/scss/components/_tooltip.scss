@@ -2,7 +2,7 @@ $tooltip-arrow-size: 0.31rem !default;
 $tooltip-arrow-margin: 0.12rem !default;
 $tooltip-content-multiline-width: 18.75rem !default;
 
-
+/* @bootstrap docs */
 // $tooltip-font-size:                 $font-size-sm;
 // $tooltip-max-width:                 200px;
 // $tooltip-color:                     $white;
@@ -16,6 +16,7 @@ $tooltip-content-multiline-width: 18.75rem !default;
 // $tooltip-arrow-width:               .8rem;
 // $tooltip-arrow-height:              .4rem;
 // $tooltip-arrow-color:               $tooltip-bg;
+/* @bootstrap docs */
 
 @mixin tooltip-arrow-color($direction, $color) {
     @if ($direction == "is-top") {

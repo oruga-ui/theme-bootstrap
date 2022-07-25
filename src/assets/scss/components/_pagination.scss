@@ -2,6 +2,7 @@ $pagination-items-margin: .5rem !default;
 $pagination-border-radius: $pagination-border-radius !default;
 $pagination-rounded-border-radius: $base-rounded-border-radius !default;
 
+/* @bootstrap docs */
 // $pagination-padding-y:              .375rem;
 // $pagination-padding-x:              .75rem;
 // $pagination-padding-y-sm:           .25rem;
@@ -37,6 +38,7 @@ $pagination-rounded-border-radius: $base-rounded-border-radius !default;
 
 // $pagination-border-radius-sm:       $border-radius-sm;
 // $pagination-border-radius-lg:       $border-radius-lg;
+/* @bootstrap docs */
 
 .pagination-wrapper {
 	position: relative;

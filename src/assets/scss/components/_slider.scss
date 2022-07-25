@@ -16,7 +16,7 @@ $slider-tick-height: 0.31rem !default;
 $slider-tick-radius: 0.18rem !default;
 $slider-tick-background-color: $grey-dark !default;
 
-
+/* @bootstrap docs */
 // $form-range-track-width:          100%;
 // $form-range-track-height:         .5rem;
 
@@ -37,7 +37,7 @@ $slider-tick-background-color: $grey-dark !default;
 // $form-range-thumb-active-bg:               tint-color($component-active-bg, 70%);
 // $form-range-thumb-disabled-bg:             $gray-500;
 // $form-range-thumb-transition:              background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out;
-
+/* @bootstrap docs */
 
 .slider {
     margin: $slider-margin;
