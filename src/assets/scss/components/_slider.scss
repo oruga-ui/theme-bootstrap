@@ -16,14 +16,6 @@ $slider-tick-height: 0.31rem !default;
 $slider-tick-radius: 0.18rem !default;
 $slider-tick-background-color: $grey-dark !default;
 
-// $slider-small: calc(#{$slider-height} - .3em) !default;
-// $slider-medium: $slider-height !default;
-// $slider-large: calc(#{$slider-height} + .1em) !default;
-
-// $slider-thumb-small: $slider-thumb-height !default;
-// $slider-thumb-medium: calc(#{$slider-thumb-height} * 1.5) !default;
-// $slider-thumb-large: calc(#{$slider-thumb-height} * 2) !default;
-
 
 // $form-range-track-width:          100%;
 // $form-range-track-height:         .5rem;
@@ -182,31 +174,4 @@ $slider-tick-background-color: $grey-dark !default;
             }
         }
     }
-    // &.is-small {
-    //     height: $slider-small;
-    //     .slider-track {
-    //         .slider-thumb {
-    //             height: $slider-thumb-small;
-    //             width: $slider-thumb-small;
-    //         }
-    //     }
-    // }
-    // &.is-medium {
-    //     height: $slider-medium;
-    //     .slider-track { 
-    //         .slider-thumb {
-    //             height: $slider-thumb-medium;
-    //             width: $slider-thumb-medium;
-    //         }
-    //     }
-    // }
-    // &.is-large {
-    //     height: $slider-large;
-    //     .slider-track {
-    //         .slider-thumb {
-    //             height: $slider-thumb-large;
-    //             width: $slider-thumb-large;
-    //         }
-    //     }
-    // }
 }

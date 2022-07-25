@@ -7,7 +7,7 @@ $steps-active-background-color: $primary !default;
 $steps-divider-height: .2em !default;
 $steps-vertical-padding: 1em 0 !default;
 $steps-mobile-max-width: $tablet !default;
-$steps-size-default: 1em;
+$steps-default-size: 1em;
 
 @mixin steps-size($size) {
 	.steps {
@@ -44,8 +44,6 @@ $steps-size-default: 1em;
 
 	.steps {
 		display: flex;
-	    // flex-direction: row;
-	    // justify-content: space-evenly;
 	    flex-wrap: wrap;
 	    position: relative;
 
@@ -102,7 +100,6 @@ $steps-size-default: 1em;
 	                display: block;
 	                position: absolute;
 	                width: 100%;
-	                // top: 25%;
 	                left: -50%;
 	                z-index: -1;
 	            }
@@ -232,7 +229,7 @@ $steps-size-default: 1em;
 	}
 
 	// Sizes
-	@include steps-size($steps-size-default);
+	@include steps-size($steps-default-size);
 	&.is-small {
         @include steps-size(map-get($sizes, "small"));
     }
@@ -301,7 +298,6 @@ $steps-size-default: 1em;
 		        }
 
 		        &::before, &::after {
-		            // height: 0.18rem;
 		            height: 100%;
 		        }
 			}

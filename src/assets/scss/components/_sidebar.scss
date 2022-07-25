@@ -10,11 +10,6 @@ $sidebar-mobile-breakpoint: $tablet !default;
     .sidebar-content {
         background: $light;
         width: $sidebar-width;
-
-        // position: absolute;
-        // top: 0;
-        // position: fixed;
-
         border-left: 1px solid $sidebar-border-color;
         border-right: 1px solid $sidebar-border-color;
         box-shadow: $sidebar-box-shadow;
@@ -70,36 +65,6 @@ $sidebar-mobile-breakpoint: $tablet !default;
             }
         }
         
-        // &.is-primary {
-        //     background-color: $primary;
-        //     color: white;
-        //     border: 0;
-        // }
-        // &.is-success {
-        //     background-color: $success;
-        //     color: white;
-        //     border: 0;
-        // }
-        // &.is-danger {
-        //     background-color: $danger;
-        //     color: white;
-        //     border: 0;
-        // }
-        // &.is-info {
-        //     background-color: $info;
-        //     color: $dark;
-        //     border: 0;
-        // }
-        // &.is-warning {
-        //     background-color: $warning;
-        //     color: white;
-        //     border: 0;
-        // }
-        // &.is-dark {
-        //     background-color: $dark;
-        //     color: white;
-        //     border: 0;
-        // }
         @each $name, $pair in $theme-colors {
             &.is-#{$name} {
                 background-color: $pair;
