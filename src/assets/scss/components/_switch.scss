@@ -61,6 +61,7 @@ $switch-large-translateX: 15px;
 
 // $form-check-inline-margin-end:    1rem;
 
+// Sizes
 @mixin is-small {
 	.switch {
 		width: $switch-small-width;
@@ -190,7 +191,7 @@ $switch-large-translateX: 15px;
 		}
 	}
 
-	// Size
+	// Sizes
 	&.is-small {
 		@include is-small;
 	}

@@ -116,7 +116,7 @@ $slider-tick-background-color: $grey-dark !default;
                 align-items: center;
                 width: auto;
             }
-            // Tooltip
+            // Colors
             .b-tooltip {
                 @each $name, $pair in $theme-colors {
                    &.is-#{$name} {
@@ -149,7 +149,7 @@ $slider-tick-background-color: $grey-dark !default;
         opacity: .5;
         background-color: $form-range-thumb-disabled-bg;
     }
-    // Size
+    // Sizes
     @each $name, $size in $sizes {
         @if ($name == 'small') {
             &.is-#{$name} {

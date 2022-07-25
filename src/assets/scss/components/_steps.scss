@@ -151,6 +151,7 @@ $steps-default-size: 1em;
 	        		color: $primary;
 	    		}
 	    	}
+	    	// Colors
 	        @each $name, $pair in $theme-colors {
 
 	        	// @TODO devider

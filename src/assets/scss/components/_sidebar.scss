@@ -65,6 +65,7 @@ $sidebar-mobile-breakpoint: $tablet !default;
             }
         }
         
+        // Colors
         @each $name, $pair in $theme-colors {
             &.is-#{$name} {
                 background-color: $pair;

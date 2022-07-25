@@ -160,7 +160,7 @@ $tooltip-content-multiline-width: 18.75rem !default;
     .tooltip-trigger {
         width: 100%;
     }
-    // Modifiers
+    // Colors
     @each $name, $pair in $theme-colors {
         &.is-#{$name} {
             .tooltip-content {

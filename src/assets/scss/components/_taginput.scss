@@ -4,7 +4,7 @@ $taginput-border-radius: $base-border-radius !default;
 $taginput-margin: calc(0.275em - 0.06rem) !default;
 $taginput-padding: calc(0.275em - 0.06rem) 0.800rem !default;
 
-
+// Colors
 @mixin variant {
 	@each $name, $pair in $theme-colors {
 		&.is-#{$name} {

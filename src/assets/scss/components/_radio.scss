@@ -34,6 +34,7 @@
 
 
 .form-check {
+	// Colors
 	@each $name, $pair in $theme-colors {
 		&.form-check-#{$name} {
 			input[type="radio"]:checked {
@@ -42,7 +43,7 @@
 			}
 		}
 	}
-
+	// Sizes
 	@each $name, $size in $sizes {
 		&.is-#{$name} {
 			input[type="radio"] {
