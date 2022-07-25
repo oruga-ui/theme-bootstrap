@@ -28,7 +28,7 @@ $table-tr-color: $dark !default;
     }
     tfoot {
          th {
-            border: 0; // Disable is-bordered
+            border: 0; 
             display: inherit;
          }
     }
@@ -39,7 +39,7 @@ $table-tr-color: $dark !default;
         position: relative;
         display: block;
         td {
-            border: 0; // Disable is-bordered
+            border: 0; 
             display: inherit;
             &:last-child {
                 border-bottom: 0;
@@ -110,7 +110,6 @@ $table-tr-color: $dark !default;
             	transform: rotate(180deg);
             }
             .sort-icon.icon.is-desc {
-                // background-color: red;
                 transform: rotate(180deg) translateY(-50%) !important;
             }
             // new strucutre
@@ -188,5 +187,4 @@ $table-tr-color: $dark !default;
         position: absolute;
         right: 0;
     }
-    // Loading
 }
