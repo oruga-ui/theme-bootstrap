@@ -70,29 +70,15 @@
 	}
 	
 	&.is-top-right:not(.dropdown-modal) {
-		// position: absolute;
 		.dropdown-menu {
-			// position: absolute;
 			top: auto;
             bottom: 100%;
 		}
 	}
 	&.is-top-left:not(.dropdown-modal) {
-		// position: absolute;
 		.dropdown-menu {
-			// position: absolute;
 			top: auto;
             bottom: 100%;
-            // right: 0; Later!
-            // left: auto; Later!
-		}
-	}
-	&.is-bottom-right {
-		// position: absolute;
-		.dropdown-menu {
-			// position: absolute;
-			// right: 0;  Later!
-			// left: auto; Later!
 		}
 	}
 }
