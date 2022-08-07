@@ -7,7 +7,7 @@ $steps-active-background-color: $primary !default;
 $steps-divider-height: .2em !default;
 $steps-vertical-padding: 1em 0 !default;
 $steps-mobile-max-width: $tablet !default;
-$steps-default-size: 1em;
+$steps-default-size: 1em !default;
 
 @mixin steps-size($size) {
 	.steps {

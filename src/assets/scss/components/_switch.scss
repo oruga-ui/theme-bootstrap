@@ -1,6 +1,6 @@
-$switch-background-color: #ced4da; 
-$switch-transition: all .2s ease-out;
-$switch-margin-right-bottom: 0.9rem;
+$switch-background-color: #ced4da !default; 
+$switch-transition: all .2s ease-out !default;
+$switch-margin-right-bottom: 0.9rem !default;
 // is-small
 $switch-small-width: 24px;
 $switch-small-height: 14px;
