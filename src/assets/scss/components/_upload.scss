@@ -1,42 +1,45 @@
-$upload-draggable-border: 0.06rem dashed $grey-light;
-$upload-draggable-border-radius: $base-border-radius;
-$upload-draggable-disabled-opacity:	$base-disabled-opacity;
-$upload-draggable-hover-border-color: $grey-light;
-$upload-draggable-padding: 2em;
+/* @docs */
+$upload-draggable-border: 1px dashed $grey-light !default;
+$upload-draggable-border-radius: $base-border-radius !default;
+$upload-draggable-disabled-opacity: $base-disabled-opacity !default;
+$upload-draggable-hover-border-color: $grey-light !default;
+$upload-draggable-padding: 2em !default;
+/* @docs */
+
 @use "sass:map";
 
 .upload {
-	input {
-		display: none;
-	}
-	&.is-disabled {
-	    cursor: not-allowed;
-	    opacity: $base-disabled-opacity;
-	}
-	&.is-expanded {
-	    width: 100%;
-	    /* flex-grow: 1; */
-	}
-	
-	.upload-draggable {
-		border: $upload-draggable-border;
-		padding: $upload-draggable-padding;
-		&.is-hovered {
-			background-color: $upload-draggable-hover-border-color;
-		}
+  input {
+    display: none;
+  }
+  &.is-disabled {
+    cursor: not-allowed;
+    opacity: $base-disabled-opacity;
+  }
+  &.is-expanded {
+    width: 100%;
+    /* flex-grow: 1; */
+  }
 
-		@each $name, $pair in $theme-colors-lighter {
-			$variant: map.get($theme-colors, #{$name});
-			&.is-#{$name} {
-				background-color: $pair;
-				border-color: $variant
-			}
-		}
+  .upload-draggable {
+    border: $upload-draggable-border;
+    padding: $upload-draggable-padding;
+    &.is-hovered {
+      background-color: $upload-draggable-hover-border-color;
+    }
 
-		.ex-center {
-			p {
-				text-align: center;
-			}
-		}
-	}
+    @each $name, $pair in $theme-colors-lighter {
+      $variant: map.get($theme-colors, #{$name});
+      &.is-#{$name} {
+        background-color: $pair;
+        border-color: $variant
+      }
+    }
+
+    .ex-center {
+      p {
+        text-align: center;
+      }
+    }
+  }
 }

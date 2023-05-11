@@ -1,3 +1,4 @@
+/* @docs */
 $slider-margin: .4em 0 !default;
 $slider-height: $form-range-track-height !default; // default  $form-range-track-height
 $slider-width: $form-range-track-width !default;
@@ -15,6 +16,7 @@ $slider-tick-width: 0.18rem !default;
 $slider-tick-height: 0.31rem !default;
 $slider-tick-radius: 0.18rem !default;
 $slider-tick-background-color: $grey-dark !default;
+/* @docs */
 
 /* @bootstrap docs */
 // $form-range-track-width:          100%;
@@ -40,138 +42,130 @@ $slider-tick-background-color: $grey-dark !default;
 /* @bootstrap docs */
 
 .slider {
-    margin: $slider-margin;
-    position: relative;
-    width: $slider-width;
-    height: $slider-height; // default size
-    background-color: $form-range-track-bg;
-    border-radius: $slider-border-radius;
+  margin: $slider-margin;
+  position: relative;
+  width: $slider-width;
+  height: $slider-height; // default size
+  background-color: $form-range-track-bg;
+  border-radius: $slider-border-radius;
+  cursor: $slider-track-cursor;
+  box-shadow: $slider-track-box-shadow;
+
+  .slider-track {
+    display: flex;
+    align-items: center;
+    // position: relative;
     cursor: $slider-track-cursor;
+    background-color: $slider-track-background-color;
     box-shadow: $slider-track-box-shadow;
 
-    .slider-track {
+    .slider-fill {
+      position: absolute;
+      left: 0%;
+      background-color: transparent; // default variant
+      height: 100%;
+      border-radius: $slider-border-radius;
+      // Fix alignment in IE 11. Cancel out for others
+      top: 50%;
+      transform: translateY(-50%);
+      z-index: 999;
+
+      @each $name, $pair in $theme-colors {
+        &.is-#{$name} {
+          background-color: $pair;
+        }
+      }
+    }
+    .slider-thumb-wrapper {
+      display: inline-flex;
+      align-items: center;
+      position: absolute;
+      cursor: grab;
+      transform: translate(-50%, -50%);
+      top: 50%;
+      flex-direction: column; // Fix shrinked thumb at the end in IE 11
+
+      .slider-thumb {
+        background-color: $form-range-thumb-bg; // default variant
+        height: $slider-thumb-height; // default size
+        width: $slider-thumb-width; // default size
+        border-radius: $form-range-thumb-border-radius;
+        box-shadow: $form-range-thumb-box-shadow;
+        transition: $form-range-thumb-transition;
+
+        &:focus {
+          transform: scale(1.50);
+          box-shadow: $form-range-thumb-focus-box-shadow;
+        }
+        &:active {
+          background-color: $form-range-thumb-active-bg;
+        }
+        // squared thumb
+        &.is-rounded {
+          border-radius: 50%;
+        }
+      }
+
+      &.is-dragging {
+        cursor: grabbing;
+        .slider-thumb {
+          transform: scale(1.50);
+        }
+      }
+      &.has-indicator {
+        padding: 1rem 0.62rem;
         display: flex;
         align-items: center;
-        // position: relative;
-        cursor: $slider-track-cursor;
-        background-color: $slider-track-background-color;
-        box-shadow: $slider-track-box-shadow;
-
-        .slider-fill {
-            position: absolute;
-            left: 0%;
-            background-color: transparent; // default variant
-            height: 100%;
-            border-radius: $slider-border-radius;
-            // Fix alignment in IE 11. Cancel out for others
-            top: 50%;
-            transform: translateY(-50%);
-            z-index: 999;
-            
-            @each $name, $pair in $theme-colors {
-               &.is-#{$name} {
-                    background-color: $pair;
-                } 
-            }
-        }
-        .slider-thumb-wrapper {
-            display: inline-flex;
-            align-items: center;
-            position: absolute;
-            cursor: grab;
-            transform: translate(-50%, -50%);
-            top: 50%;
-            flex-direction: column; // Fix shrinked thumb at the end in IE 11
-
+        width: auto;
+      }
+      // Colors
+      .b-tooltip {
+        @each $name, $pair in $theme-colors {
+          &.is-#{$name} {
             .slider-thumb {
-                background-color: $form-range-thumb-bg; // default variant
-                height: $slider-thumb-height; // default size
-                width:$slider-thumb-width; // default size
-                border-radius: $form-range-thumb-border-radius;
-                box-shadow: $form-range-thumb-box-shadow;
-                transition: $form-range-thumb-transition;
-
-                &:focus {
-                    transform: scale(1.50);
-                    box-shadow: $form-range-thumb-focus-box-shadow;
-                }
-                &:active {
-                    background-color: $form-range-thumb-active-bg;
-                }
-                // squared thumb
-                &.is-rounded {
-                    border-radius: 50%;
-                }
+              background-color: $pair;
             }
-
-            &.is-dragging {
-                cursor: grabbing;
-                .slider-thumb {
-                    transform: scale(1.50);
-                }
-            }
-            &.has-indicator {
-                padding: 1rem 0.62rem;
-                display: flex;
-                align-items: center;
-                width: auto;
-            }
-            // Colors
-            .b-tooltip {
-                @each $name, $pair in $theme-colors {
-                   &.is-#{$name} {
-                        .slider-thumb {
-                            background-color: $pair;
-                        }
-                    } 
-                }
-            }
+          }
         }
-        // tick
-        .slider-tick {
-            position: absolute;
-            width: $slider-tick-width;
-            height: $slider-tick-height;
-            transform: translate(-50%, -50%);
-            top: 50%;
-            background: $slider-tick-background-color;
-            border-radius: $slider-tick-radius;
-            &.is-tick-hidden {
-                background: transparent;
-            }
-            .slider-tick-label {
-               margin: 0.31rem;
-            }
-        }
+      }
     }
-    &.is-disabled {
-        cursor: not-allowed;
-        opacity: .5;
-        background-color: $form-range-thumb-disabled-bg;
+    // tick
+    .slider-tick {
+      position: absolute;
+      width: $slider-tick-width;
+      height: $slider-tick-height;
+      transform: translate(-50%, -50%);
+      top: 50%;
+      background: $slider-tick-background-color;
+      border-radius: $slider-tick-radius;
+      &.is-tick-hidden {
+        background: transparent;
+      }
+      .slider-tick-label {
+        margin: 5px;
+      }
     }
-    // Sizes
-    @each $name, $size in $sizes {
-        @if ($name == 'small') {
-            &.is-#{$name} {
-                height: .2rem;
-                .slider-track {
-                    .slider-thumb {
-                        height: $size;
-                        width: $size;
-                    }
-                }
-            }
-        }
-        @else {
-            &.is-#{$name} {
-                height: calc($size);
-                .slider-track {
-                    .slider-thumb {
-                        height: $size;
-                        width: $size;
-                    }
-                }
-            }
-        }
+  }
+  &.is-disabled {
+    cursor: not-allowed;
+    opacity: .5;
+    background-color: $form-range-thumb-disabled-bg;
+  }
+  // Sizes
+  @each $name, $size in $sizes {
+    &.is-#{$name} {
+      @if ($name == 'small') {
+        height: .2rem;
+      }
+      @else {
+        height: calc($size);
+      }
+      .slider-track {
+          .slider-thumb {
+              height: $size;
+              width: $size;
+          }
+      }
     }
+  }
 }

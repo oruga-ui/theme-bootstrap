@@ -1,58 +1,60 @@
-$taginput-height: calc(2em - 0.06rem) !default;
+/* @docs */
+$taginput-height: calc(2em - 1px) !default;
 $taginput-border-color: $default-border-color !default;
 $taginput-border-radius: $base-border-radius !default;
-$taginput-margin: calc(0.275em - 0.06rem) !default;
-$taginput-padding: calc(0.275em - 0.06rem) 0.800rem !default;
+$taginput-margin: calc(0.275em - 1px) !default;
+$taginput-padding: calc(0.275em - 1px) 0.800rem !default;
+/* @docs */
 
 // Colors
 @mixin variant {
-	@each $name, $pair in $theme-colors {
-		&.is-#{$name} {
-			background-color: $pair;
-			border-color: $pair;
-			color: white;
-		}
-	}
+  @each $name, $pair in $theme-colors {
+    &.is-#{$name} {
+      background-color: $pair;
+      border-color: $pair;
+      color: white;
+    }
+  }
 }
 
 .taginput {
-	.taginput-container {
-		border: 0.06rem solid $taginput-border-color;
-		border-radius: $taginput-border-radius;
-		height: auto;
-		display: flex;
-		flex-wrap: wrap;
-		
-		&:hover {
-			border-color: $info;
-			box-shadow: 0 0 0 0.225em rgba($info, 0.25);
-		}
+  .taginput-container {
+    border: 1px solid $taginput-border-color;
+    border-radius: $taginput-border-radius;
+    height: auto;
+    display: flex;
+    flex-wrap: wrap;
 
-		.tag {
+    &:hover {
+      border-color: $info;
+      box-shadow: 0 0 0 0.225em rgba($info, 0.25);
+    }
+
+    .tag {
 			background-color: $light;
-			margin-top: 0.275rem;
-			margin-left: 0.275rem;
-			margin-bottom: $taginput-margin;
-			padding: $taginput-padding;
-			font-size: 0.9em;
-			height: $taginput-height;
-			border: 0.031rem solid $taginput-border-color;
-			border-radius: $taginput-border-radius;
-			
-			.icon {
-				margin-left: 0.275rem;
-				cursor: pointer;
-			}
+      margin-top: 0.275rem;
+      margin-left: 0.275rem;
+      margin-bottom: $taginput-margin;
+      padding: $taginput-padding;
+      font-size: 0.9em;
+      height: $taginput-height;
+      border: 0.5px solid $taginput-border-color;
+      border-radius: $taginput-border-radius;
 
-			@include variant;
-		}
-	}
-	input {
-		border: 0;
-		box-shadow: none;
+      .icon {
+        margin-left: 0.275rem;
+        cursor: pointer;
+      }
 
-		&:focus {
-			box-shadow: none !important;
-		}
-	}
+      @include variant;
+    }
+  }
+  input {
+    border: 0;
+    box-shadow: none;
+
+    &:focus {
+      box-shadow: none !important;
+    }
+  }
 }

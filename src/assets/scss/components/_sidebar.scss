@@ -1,3 +1,4 @@
+/* @docs */
 $sidebar-border-color: $default-border-color !default;
 $sidebar-box-shadow: 0 !default;
 $sidebar-width: 20% !default;
@@ -5,103 +6,113 @@ $sidebar-background-color: $light !default;
 $sidebar-overlay-background-color: $overlay-background-color-dark !default;
 $sidebar-mobile-width: 5rem !default;
 $sidebar-mobile-breakpoint: $tablet !default;
+/* @docs */
 
 .sidebar {
-    .sidebar-content {
-        background: $light;
-        width: $sidebar-width;
-        border-left: 1px solid $sidebar-border-color;
-        border-right: 1px solid $sidebar-border-color;
-        box-shadow: $sidebar-box-shadow;
-        z-index: 999;
+  .sidebar-content {
+    @extend .offcanvas;
+    visibility: visible;
+    transition: unset;
+    background: $light;
+    width: $sidebar-width;
+    border-left: 1px solid $sidebar-border-color;
+    border-right: 1px solid $sidebar-border-color;
+    box-shadow: $sidebar-box-shadow;
+    z-index: 999;
 
-        // Modifiers
-        &.is-static {
-            position: static;
-        }
-        &.is-fixed {
-            position: fixed;
-            left: 0;
-            top: 0;
-            &.is-right {
-                  left: auto;
-                  right: 0;
-            }
-        }
-        &.is-absolute {
-            position: absolute;
-            left: 0;
-            top: 0;
-            &.is-right {
-                left: auto;
-                right: 0;
-            }
-        }
-        &.is-fullheight {
-            height: 100%;
-            max-height: 100%;
-            overflow: hidden;
-            overflow-y: auto;
-            display: flex;
-            flex-direction: column;
-            align-content: stretch;
-        }
-        &.is-fullwidth {
-            width: 100%;
-        }
-        &.is-mini-mobile {
-            width: 10%;
-        }
-        &.is-mini {
-            width: $sidebar-mobile-width;
-            &.is-mini-expand:hover:not(.is-mini-delayed) {
-                transition: width $speed-slow $easing;
-                &:not(.is-fullwidth) {
-                    width: $sidebar-width;
-                    &.is-mini-expand-fixed {
-                        position: fixed;
-                    }
-                }
-            }
-        }
-        
-        // Colors
-        @each $name, $pair in $theme-colors {
-            &.is-#{$name} {
-                background-color: $pair;
-                color: white;
-                border:0;
-            }
-        }
-        @media screen and (max-width: $sidebar-mobile-breakpoint - 1px) {
-            &.is-mini-mobile {
-                width: $sidebar-mobile-width;
-                &.is-mini-expand:hover {
-                    &:not(.is-fullwidth-mobile) {
-                        width: $sidebar-width;
-                        &.is-mini-expand-fixed {
-                            position: fixed;
-                        }
-                    }
-                }
-            }
-            &.is-hidden-mobile {
-                width: 0;
-                height: 0;
-                overflow: hidden;
-            }
-            &.is-fullwidth-mobile {
-                width: 100%;
-                max-width: 100%;
-            }
-        }
+    // Modifiers
+    &.is-static {
+      position: static;
     }
-    .sidebar-background {
-        background: $sidebar-overlay-background-color;
-        width: 100%;
-        height: 100%;
+    &.is-fixed {
         position: fixed;
+        left: 0;
         top: 0;
-        z-index: 38;
+        &.is-right {
+              left: auto;
+              right: 0;
+        }
     }
+    &.is-absolute {
+      position: absolute;
+    }
+
+    &.is-right {
+      @extend .offcanvas-end;
+      transform: unset;
+    }
+
+    &:not(.is-right) {
+      @extend .offcanvas-start;
+      transform: unset;
+    }
+    &.is-fullheight {
+      height: 100%;
+      max-height: 100%;
+      overflow: hidden;
+      overflow-y: auto;
+      display: flex;
+      flex-direction: column;
+      align-content: stretch;
+    }
+    &.is-fullwidth {
+      width: 100%;
+    }
+    &.is-mini-mobile {
+      width: 10%;
+    }
+    &.is-mini {
+      width: $sidebar-mobile-width;
+      &.is-mini-expand:hover:not(.is-mini-delayed) {
+        transition: width $speed-slow $easing;
+        &:not(.is-fullwidth) {
+          width: $sidebar-width;
+          &.is-mini-expand-fixed {
+            position: fixed;
+          }
+        }
+      }
+    }
+
+        // Colors
+    @each $name, $pair in $theme-colors {
+      &.is-#{$name} {
+        background-color: $pair;
+        color: white;
+        border: 0;
+      }
+    }
+    @media screen and (max-width: calc($sidebar-mobile-breakpoint - 1px)) {
+      &.is-mini-mobile {
+        width: $sidebar-mobile-width;
+        &.is-mini-expand:hover {
+          &:not(.is-fullwidth-mobile) {
+            width: $sidebar-width;
+            &.is-mini-expand-fixed {
+              position: fixed;
+            }
+          }
+        }
+      }
+      &.is-hidden-mobile {
+        width: 0;
+        height: 0;
+        overflow: hidden;
+      }
+      &.is-fullwidth-mobile {
+        width: 100%;
+        max-width: 100%;
+      }
+    }
+  }
+  .sidebar-background {
+    background: $sidebar-overlay-background-color;
+    @extend .offcanvas-backdrop;
+    @extend .show;
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    z-index: 38;
+  }
 }

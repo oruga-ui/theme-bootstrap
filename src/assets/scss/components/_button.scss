@@ -1,42 +1,49 @@
+/* @docs */
 $btn-margin-right-bottom: 0.5rem !default;
 $btn-border-color: $default-border-color !default;
 $btn-rounded-border-radius: 9999px !default;
 $btn-border-radius: $base-border-radius !default;
+/* @docs */
 @use "sass:map";
 
 // BTN
 .btn {
-	margin-bottom: $btn-margin-right-bottom;
-	font-size: $btn-font-size;
-	font-family: $btn-font-family;
-	line-height: $btn-line-height;
+  margin-bottom: $btn-margin-right-bottom;
+  font-size: $btn-font-size;
+  font-family: $btn-font-family;
+  line-height: $btn-line-height;
 	border-radius: $btn-border-radius;
-	.icon {
-		margin: 0 4px;
-	}
-	&.is-expanded {
-		width: 100%;
-	}
-	&.is-rounded {
-		border-radius: $btn-rounded-border-radius;
-	}
+  .icon {
+    margin: 0 4px;
+  }
+  &.is-expanded {
+    width: 100%;
+  }
+  &.is-rounded {
+    border-radius: $btn-rounded-border-radius;
+  }
 
-	// inverted 
-	@each $name, $pair in $theme-colors-lighter {
-		$variant: map.get($theme-colors, #{$name});
-		&.btn-inverted-#{$name} {
-			color: $variant;
-			border-color: transparent;
-			background-color: transparent;
-		}
-		&.btn-inverted-#{$name}:hover {
-			background-color: $pair;
-		}
-	}
+  // inverted
+  @each $name, $pair in $theme-colors-lighter {
+    $variant: map.get($theme-colors, #{$name});
+    &.btn-inverted-#{$name} {
+      color: $variant;
+      border-color: transparent;
+      background-color: transparent;
+    }
+    &.btn-inverted-#{$name}:hover {
+      background-color: $pair;
+    }
+  }
 }
 .btn:not(:last-child):not(.btn-expanded) {
-	margin-right: $btn-margin-right-bottom;
+  margin-right: $btn-margin-right-bottom;
 }
-.btn:not(.btn-primary):not(.btn-success):not(.btn-danger):not(.btn-warning):not(.btn-info):not(.btn-dark):not(.btn-outline-primary):not(.btn-outline-success):not(.btn-outline-danger):not(.btn-outline-warning):not(.btn-outline-info):not(.btn-outline-info) {
-	border: .1px solid #ced4da;
+
+.btn:not(.btn-primary):not(.btn-success):not(.btn-danger):not(.btn-warning):not(.btn-info):not(.btn-dark):not(
+    .btn-outline-primary
+  ):not(.btn-outline-success):not(.btn-outline-danger):not(.btn-outline-warning):not(.btn-outline-info):not(
+    .btn-outline-info
+  ) {
+  border: 0.1px solid #ced4da;
 }
