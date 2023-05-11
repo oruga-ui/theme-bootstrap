@@ -10,7 +10,7 @@ export const bootstrapConfig: any = {
         },
         // variantMessageClass: 'text-',
         addonsClass: 'input-group',
-        groupedClass: 'input-grouped',
+        groupedClass: 'input-group',
         // groupMultilineClass: 'is-grouped-multiline',
         horizontalClass: 'row',
         labelHorizontalClass: 'col-sm-2 col-form-label',
@@ -203,40 +203,27 @@ export const bootstrapConfig: any = {
         // thumbDraggingClass: 'is-dragging'
     },
     tabs: {
-        override: true, 
+        override: true,
         itemTag: 'a',
         rootClass: 'nav-tab-wrapper',
         contentClass: 'nav-content',
         // multilineClass: 'is-multiline',
         navTabsClass: 'nav',
-        expandedClass: 'nav-fill',
-        verticalClass: 'is-vertical',
-        positionClass: 'is-', 
+        navTypeClass: (_: string, { props }: any) => `nav-${props.type}`,
+        tabItemWrapperClass: 'nav-item',
+        expandedClass: 'is-expanded',
+        verticalClass: 'flex-column',
         navSizeClass: 'is-',
-        navPositionClass: (_: string, { props }: any)=>{
-            if (props.position == "left") {
-                return 'justify-content-start'
-            }else if (props.position == "right") {
-                return 'justify-content-end'
-            }else if (props.position == "centered") {
-                return 'justify-content-center'
-            }
+        positionClass: (_: string, { props }: any) => {
+            if (props.position == "left") return 'justify-content-start';
+            if (props.position == 'centered') return 'justify-content-center';
+            if (props.position == 'right') return 'justify-content-end';
         },
-        transitioningClass: 'is-transitioning', 
-        // itemClass: () => 'nav-item',
+        navPositionClass: 'is-', 
+        transitioningClass: 'is-transitioning',
+        itemHeaderClass: 'nav-link',
         itemHeaderActiveClass: () => 'active',
         itemHeaderDisabledClass: () => 'disabled',
-        itemHeaderClass: () => 'nav-link',
-        navTypeClass : (_:string, { props }: any) => {
-            if (props.type == "boxed") {
-                return 'nav-tabs';
-            }
-            else if (props.type == "toggle") {
-                return 'nav-pills'
-            }else {
-                return ''
-            }
-        }
     },
     table: {
         override: true,
@@ -284,9 +271,10 @@ export const bootstrapConfig: any = {
         override: true,
         rootClass: (_: string, { props }: any) => {
             const classes = ['b-tooltip'];
-            if (props.variant) classes.push(`is-${props.variant}`); else classes.push(`is-primary`)
-            if (props.position) classes.push(`is-${props.position}`)
-            return classes.join(' ')
+            if (props.variant) classes.push(`is-${props.variant}`);
+            else classes.push(`is-primary`);
+            if (props.position) classes.push(`is-${props.position}`);
+            return classes.join(' ');
         },
         contentClass: 'tooltip-content',
         triggerClass: 'tooltip-trigger',
@@ -374,7 +362,7 @@ export const bootstrapConfig: any = {
         wrapperClass: 'alert-wrapper',
         // contentClass: '',
         iconClass: 'media-left',
-        // closeClass: '',
+        closeClass: 'btn-close',
         positionClass: 'is-',
         noticeClass: 'notices',
         noticePositionClass: 'is-'
@@ -464,10 +452,11 @@ export const bootstrapConfig: any = {
             if (props.active) classes.push('show')
             return classes.join(' ')
         },
-        // overlayClass: 'modal-background',
-        contentClass: 'modal-dialog',
+        // overlayClass: 'modal-backdrop',
+        contentClass: 'modal-dialog modal-dialog-centered',
         // closeClass: 'btn-close',
         // fullScreenClass: 'is-full-screen'
+        scrollClipClass: 'modal-open',
     },
     sidebar: {
         override: true,
@@ -491,7 +480,7 @@ export const bootstrapConfig: any = {
         rightClass: 'is-right'
     },
     loading: {
-        override: true, 
+        override: true,
         fullPageClass: 'loading__fullpage',
         overlayClass: 'loading__overlay',
         iconClass: 'icon',
