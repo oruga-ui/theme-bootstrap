@@ -1,7 +1,9 @@
+/* @docs */
 $table-detail-padding: 0.5rem 0.75rem !default;
 $table-border-color: $default-border-color !default;
 $table-background-color: $table-color !default;
 $table-tr-color: $dark !default;
+/* @docs */
 
 @mixin table-cards {
   .table {
@@ -148,11 +150,15 @@ $table-tr-color: $dark !default;
             position: relative;
           }
         }
+        &.is-sticky {
+          position: -webkit-sticky;
+          position: sticky;
+          left: 0;
+          z-index: var(--oruga-table-sticky-zindex,1);
+        }
         .sort-icon, .multi-sort-cancel-icon {
           position: absolute;
-          bottom: 50%;
-          left: 90%;
-          transform: translateY(50%);
+          right: 0;
         }
       }
       tr {
@@ -172,6 +178,12 @@ $table-tr-color: $dark !default;
         }
         &.has-text-right {
           text-align: right;
+        }
+        &.is-sticky {
+          position: -webkit-sticky;
+          position: sticky;
+          left: 0;
+          z-index: var(--oruga-table-sticky-zindex, 10);
         }
       }
     }

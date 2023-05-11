@@ -1,3 +1,4 @@
+/* @docs */
 $steps-items-focused-outline: none !default;
 $steps-details-background-color: white !default; 
 $steps-marker-default-background-color: $grey-light !default; 
@@ -8,6 +9,7 @@ $steps-divider-height: .2em !default;
 $steps-vertical-padding: 1em 0 !default;
 $steps-mobile-max-width: $tablet !default;
 $steps-default-size: 1em !default;
+/* @docs */
 
 @mixin steps-size($size) {
 	.steps {
@@ -112,7 +114,7 @@ $steps-default-size: 1em !default;
 	                position: absolute;
 	                height: $steps-divider-height;
 	                bottom: 0;
-	                height: 0.18rem;
+					height: 3px;
 	            }
 	            &::before, &::after {
 	                width: 25%;
@@ -128,7 +130,7 @@ $steps-default-size: 1em !default;
 	            background: $steps-marker-default-background-color;
 	            background-size: 200% 100%;
 	            background-position: right bottom;
-	            height: 0.18rem;
+				height: 3px;
 	        }
 	        // Variants
 	    	&.is-previous {
@@ -286,7 +288,7 @@ $steps-default-size: 1em !default;
 		            flex-shrink: 1;
 
 		            &::before {
-		                width: 0.18rem;
+                        width: 3px;
 		                top: -50%;
 		                left: 48%;
 		            }

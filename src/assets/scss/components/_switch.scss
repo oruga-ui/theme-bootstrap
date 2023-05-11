@@ -1,3 +1,4 @@
+/* @docs */
 $switch-background-color: #ced4da !default; 
 $switch-transition: all .2s ease-out !default;
 $switch-margin-right-bottom: 0.9rem !default;
@@ -26,7 +27,9 @@ $switch-padding-left-large: 45px;
 $switch-small-translateX: 9px;
 $switch-medium-translateX: 10px;
 $switch-large-translateX: 15px;
+/* @docs */
 
+/* @bootstrap docs */
 // $form-check-input-width:                  1em;
 // $form-check-min-height:                   $font-size-base * $line-height-base;
 // $form-check-padding-start:                $form-check-input-width + .5em;
@@ -176,7 +179,7 @@ $switch-large-translateX: 15px;
   // rounded
   &.is-rounded {
     .switch {
-			border-radius: 2.12rem;
+			border-radius: 2rem;
     }
     .switch:before {
       border-radius: 50%;

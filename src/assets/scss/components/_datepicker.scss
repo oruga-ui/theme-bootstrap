@@ -1,3 +1,4 @@
+/* @docs */
 $datepicker-background-color: white !default;
 $datepicker-cell-margin: 0.31rem !default;
 $datepicker-cell-padding: 0.31rem !default; /* or 0.5rem 0.75rem*/
@@ -8,6 +9,7 @@ $datepicker-cell-unselectable-color: rgba(0,0,0,.3) !default;
 $datepicker-cell-hovered-color: rgba(0,0,0,.5) !default;
 $datepicker-cell-selected-color: $primary !default;
 $datepicker-cell-border-radius: $base-border-radius !default;
+/* @docs */
 
 @mixin datepicker-cell {
   padding: $datepicker-cell-padding;

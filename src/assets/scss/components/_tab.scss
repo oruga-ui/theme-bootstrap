@@ -1,7 +1,9 @@
+/* @docs */
 $tabs-link-active-border-color: $primary !default;
 $tabs-color: $dark !default;
 $tabs-border-color: $default-border-color;
 $nav-tabs-margin-bottom: 10px !default;
+/* @docs */
 
 /* @bootstrap docs */
 // $nav-link-padding-y:                .5rem;
@@ -90,7 +92,7 @@ $nav-tabs-margin-bottom: 10px !default;
       }
 			&.nav-tabs {
 				div {
-					border-top: .01rem solid  $default-border-color;
+					border-top: 1px solid  $default-border-color;
 				}
 			}
 		}

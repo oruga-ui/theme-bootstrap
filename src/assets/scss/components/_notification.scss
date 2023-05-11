@@ -4,7 +4,6 @@ $notification-notices-padding: 2em !default;
 $notification-notices-zindex: 1000 !default;
 $notification-close-btn-position: 0.37rem !default; 
 $notification-padding: 1.25rem 1rem !default; 
-
 /* @docs */
 
 /* @bootstrap docs */
@@ -47,7 +46,7 @@ $notification-padding: 1.25rem 1rem !default;
   // position: relative;
   .notification {
     pointer-events: auto;
-    max-width: 37.5rem;
+    max-width: 600px;
     &.is-top, &.is-bottom {
       align-self: center;
     }

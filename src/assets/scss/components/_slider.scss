@@ -1,3 +1,4 @@
+/* @docs */
 $slider-margin: .4em 0 !default;
 $slider-height: $form-range-track-height !default; // default  $form-range-track-height
 $slider-width: $form-range-track-width !default;
@@ -15,6 +16,7 @@ $slider-tick-width: 0.18rem !default;
 $slider-tick-height: 0.31rem !default;
 $slider-tick-radius: 0.18rem !default;
 $slider-tick-background-color: $grey-dark !default;
+/* @docs */
 
 /* @bootstrap docs */
 // $form-range-track-width:          100%;
@@ -140,7 +142,7 @@ $slider-tick-background-color: $grey-dark !default;
         background: transparent;
       }
       .slider-tick-label {
-        margin: 0.31rem;
+        margin: 5px;
       }
     }
   }

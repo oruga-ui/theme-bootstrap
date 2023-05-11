@@ -1,8 +1,11 @@
+/* @docs */
 $upload-draggable-border: 1px dashed $grey-light !default;
 $upload-draggable-border-radius: $base-border-radius !default;
 $upload-draggable-disabled-opacity: $base-disabled-opacity !default;
 $upload-draggable-hover-border-color: $grey-light !default;
 $upload-draggable-padding: 2em !default;
+/* @docs */
+
 @use "sass:map";
 
 .upload {
