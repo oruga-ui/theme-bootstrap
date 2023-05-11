@@ -233,14 +233,11 @@ $steps-default-size: 1em !default;
 
 	// Sizes
 	@include steps-size($steps-default-size);
-	&.is-small {
-        @include steps-size(map-get($sizes, "small"));
-    }
-    &.is-medium {
-        @include steps-size(map-get($sizes, "medium"));
-    }
-    &.is-large {
-        @include steps-size(map-get($sizes, "large"));
+	
+    @each $name, $value in $sizes {
+        &.is-#{$name} {
+            @include steps-size($value, $name);
+        }
     }
 
 	.step-content {
