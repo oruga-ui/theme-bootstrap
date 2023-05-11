@@ -10,7 +10,7 @@ export const bootstrapConfig: any = {
         },
         // variantMessageClass: 'text-',
         addonsClass: 'input-group',
-        groupedClass: 'input-group',
+        groupedClass: 'input-grouped',
         // groupMultilineClass: 'is-grouped-multiline',
         horizontalClass: 'row',
         labelHorizontalClass: 'col-sm-2 col-form-label',
