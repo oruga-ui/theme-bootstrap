@@ -1,190 +1,186 @@
 $table-detail-padding: 0.5rem 0.75rem !default;
 $table-border-color: $default-border-color !default;
 $table-background-color: $table-color !default;
-$table-tr-color: $dark !default; 
+$table-tr-color: $dark !default;
 
 @mixin table-cards {
-    .table {
-        background-color: transparent;
-    }
-    thead {
-        tr {
-            box-shadow: none;
-            border-width: 0;
-            th {
-                display: none;
-            }
-            .checkbox-cell {
-                display: block;
-                width: 100%;
-                text-align: right;
-                margin-bottom: 1rem;
-                border: 0;
-            }
-        }
-    }
-    tbody {
-        border-top: 0!important;
-    }
-    tfoot {
-         th {
-            border: 0; 
-            display: inherit;
-         }
-    }
+  .table {
+    background-color: transparent;
+  }
+  thead {
     tr {
-        // Card style — Cannot extend inside media query
-        box-shadow: 0 0.12rem 0.18rem rgba($dark, 0.1), 0 0 0 0.06rem rgba($dark, 0.1);
-        max-width: 100%;
-        position: relative;
+      box-shadow: none;
+      border-width: 0;
+      th {
+        display: none;
+      }
+      .checkbox-cell {
         display: block;
-        td {
-            border: 0; 
-            display: inherit;
-            &:last-child {
-                border-bottom: 0;
-            }
-        }
-        &:not(:last-child) {
-            margin-bottom: 1rem;
-        }
-        // Disables is-*
-        &:not([class*="is-"]) {
-            background: $table-background-color;
-            color: $table-tr-color;
-            &:hover {
-                background-color: $table-background-color;
-                color: $table-tr-color;
-            }
-        }
-        &.detail {
-            margin-top: -1rem;
-            background-color: white;
-        }
+        width: 100%;
+        text-align: right;
+        margin-bottom: 1rem;
+        border: 0;
+      }
     }
-    tr:not(.detail):not(.is-empty):not(.table-footer) {
-        td {
-            display: flex;
-            width: auto;
-            justify-content: space-between;
-            text-align: right;
-            border-bottom: 0.06rem solid $table-border-color;
-            &:before {
-                content: attr(data-label);
-                font-weight: bold;
-                padding-right: 0.5em;
-                text-align: left;
-            }
-        }
+  }
+  tbody {
+    border-top: 0 !important;
+  }
+  tfoot {
+    th {
+      border: 0; 
+      display: inherit;
     }
+  }
+  tr {
+    // Card style — Cannot extend inside media query
+    box-shadow: 0 2px 3px rgba($dark, 0.1), 0 0 0 1px rgba($dark, 0.1);
+    max-width: 100%;
+    position: relative;
+    display: block;
+    td {
+      border: 0; 
+      display: inherit;
+      &:last-child {
+        border-bottom: 0;
+      }
+    }
+    &:not(:last-child) {
+      margin-bottom: 1rem;
+    }
+    // Disables is-*
+    &:not([class*="is-"]) {
+      background: $table-background-color;
+      color: $table-tr-color;
+      &:hover {
+        background-color: $table-background-color;
+        color: $table-tr-color;
+      }
+    }
+    &.detail {
+      margin-top: -1rem;
+      background-color: white;
+    }
+  }
+  tr:not(.detail):not(.is-empty):not(.table-footer) {
+    td {
+      display: flex;
+      width: auto;
+      justify-content: space-between;
+      text-align: right;
+      border-bottom: 1px solid $table-border-color;
+
+      &:before {
+        content: attr(data-label);
+        font-weight: bold;
+        padding-right: 0.5em;
+        text-align: left;
+      }
+    }
+  }
 }
 .table-component {
-    position: relative;
+  position: relative;
 
-    // Table
-    .table-wrapper {
-        .table {
-            &.table-hover:focus {
-            	border: solid 0.06rem;
-                border-color: $info;
-                box-shadow: 0 0 0 0.225em rgba($info, 0.25);
-                th {
-                    border-color: $table-border-color;
-                }
-                tr {
-                    border-color: $table-border-color;
-                }
-            }
-           
-            .icon {
-                transition: transform $speed-slow $easing, opacity 86ms $easing;
-                &.is-desc {
-                    transform: rotate(180deg);
-                }
-                &.is-expanded {
-                    transform: rotate(90deg);
-                }
-            }
-            .icon.fas-arrow-up.is-desc {
-            	transition: transform $speed-slow $easing, opacity 86ms $easing;
-            	transform: rotate(180deg);
-            }
-            .sort-icon.icon.is-desc {
-                transform: rotate(180deg) translateY(-50%) !important;
-            }
-            // new strucutre
-            thead {
-                th {
-                    cursor: pointer; 
-                }
-            }
-            tfoot {
+  // Table
+  .table-wrapper {
+    .table {
+      &.table-hover:focus {
+        border: solid 1px;
+        border-color: $info;
+        box-shadow: 0 0 0 0.225em rgba($info, 0.25);
+        th {
+          border-color: $table-border-color;
+        }
+        tr {
+          border-color: $table-border-color;
+        }
+      }
 
-            }
-            th {
-                position: relative;
-                &.is-left {
-                    text-align: left;
-                }
-                &.is-centered {
-                    text-align: center; 
-                    justify-content: center;
-                }
-                &.is-right {
-                    text-align: right;
-                    flex-direction: row-reverse;
-                }
-                &.is-current-sort {
-                    background-color: $light;
-                }
-                &.is-sortable:hover {
-                    border-color: $grey;
-                }
-                &.is-sortable {
-                    cursor: pointer;
-                    /* .is-relative { */
-                    > span {
-                        position: relative;
-                    }
-                }
-                .sort-icon, .multi-sort-cancel-icon {
-                    position: absolute;
-                    bottom: 50%;
-                    left: 90%;
-                    transform: translateY(50%);
-                }
-            }
-            tr {
-                &.detail {
-                    background-color: $light;
-                    td {
-                        padding: $table-detail-padding;
-                    }
-                }
-            }
-            td {
-                &.has-text-left {
-                    text-align: left;
-                }
-                &.has-text-centered {
-                    text-align: center; 
-                }
-                &.has-text-right {
-                    text-align: right;
-                }
-            }
+      .icon {
+        transition: transform $speed-slow $easing, opacity 86ms $easing;
+        &.is-desc {
+          transform: rotate(180deg);
         }
+        &.is-expanded {
+          transform: rotate(90deg);
+        }
+      }
+      .icon.fas-arrow-up.is-desc {
+        transition: transform $speed-slow $easing, opacity 86ms $easing;
+        transform: rotate(180deg);
+      }
+      .sort-icon.icon.is-desc {
+        transform: rotate(180deg) translateY(-50%) !important;
+      }
+      // new strucutre
+      thead {
+        th {
+          cursor: pointer;
+        }
+      }
+      tfoot {
 
-        &.has-mobile-cards {
-            @include table-cards;
+      }
+      th {
+        position: relative;
+        &.is-left {
+          text-align: left;
         }
-         &.is-card-list {
-            @include table-cards
+        &.is-centered {
+          text-align: center;
+          justify-content: center;
         }
+        &.is-right {
+          text-align: right;
+          flex-direction: row-reverse;
+        }
+        &.is-current-sort {
+          background-color: $light;
+        }
+        &.is-sortable:hover {
+          border-color: $grey;
+        }
+        &.is-sortable {
+          cursor: pointer;
+          /* .is-relative { */
+          > span {
+            position: relative;
+          }
+        }
+        .sort-icon, .multi-sort-cancel-icon {
+          position: absolute;
+          bottom: 50%;
+          left: 90%;
+          transform: translateY(50%);
+        }
+      }
+      tr {
+        &.detail {
+          background-color: $light;
+          td {
+            padding: $table-detail-padding;
+          }
+        }
+      }
+      td {
+        &.has-text-left {
+          text-align: left;
+        }
+        &.has-text-centered {
+          text-align: center;
+        }
+        &.has-text-right {
+          text-align: right;
+        }
+      }
     }
-    // Pagination
-    .pagination-wrapper {
-        position: absolute;
-        right: 0;
+
+    &.has-mobile-cards {
+      @include table-cards;
     }
+    &.is-card-list {
+      @include table-cards
+    }
+  }
 }

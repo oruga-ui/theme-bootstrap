@@ -1,50 +1,102 @@
+$tabs-link-active-border-color: $primary !default;
+$tabs-color: $dark !default;
+$tabs-border-color: $default-border-color;
+$nav-tabs-margin-bottom: 10px !default;
+
+/* @bootstrap docs */
+// $nav-link-padding-y:                .5rem;
+// $nav-link-padding-x:                1rem;
+// $nav-link-font-size:                null;
+// $nav-link-font-weight:              null;
+// $nav-link-color:                    $link-color;
+// $nav-link-hover-color:              $link-hover-color;
+// $nav-link-transition:               color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out;
+// $nav-link-disabled-color:           $gray-600;
+
+// $nav-tabs-border-color:             $gray-300;
+// $nav-tabs-border-width:             $border-width;
+// $nav-tabs-border-radius:            $border-radius;
+// $nav-tabs-link-hover-border-color:  $gray-200 $gray-200 $nav-tabs-border-color;
+// $nav-tabs-link-active-color:        $gray-700;
+// $nav-tabs-link-active-bg:           $body-bg;
+// $nav-tabs-link-active-border-color: $gray-300 $gray-300 $nav-tabs-link-active-bg;
+
+// $nav-pills-border-radius:           $border-radius;
+// $nav-pills-link-active-color:       $component-active-color;
+// $nav-pills-link-active-bg:          $component-active-bg;
+/* @bootstrap docs */
+
+// NAVTAB
 .nav-tab-wrapper {
-	.nav {
-		div {
-			cursor: pointer;
-		}
+  display: block;
+  overflow: hidden;
+  // nav (Pictures - Musics - Books - Videos)
+  .nav {
+    margin-bottom: $nav-tabs-margin-bottom;
+    display: flex;
+    // each nav element is div (or li => div)
+    div {
+      cursor: pointer;
+      text-align: center;
+
+      a {
+        color: $tabs-color;
+        text-decoration: none;
+        width: 100%;
+      }
+
+      .active {
+        color: $tabs-link-active-border-color;
+      }
+
+      .disabled {
+        pointer-events: none;
+        cursor: not-allowed;
+        opacity: $base-disabled-opacity;
+      }
+    }
+
+    // Sizes
 		@each $name, $size in $sizes {
 			&.is-#{$name} {
-				div a span {
-					font-size: $size;
-				}
+        font-size: $size;
 			}
 		}
-	}
-	&.nav-fill {
-		.nav {
-			div {
-				flex-grow: 1;
-				flex-shrink: 0;
-			}
-		}
-	}
-	.nav-content {
-		margin-top: 1rem;
-	}
+  }
 
-	&.is-vertical {
-		display: flex;
-		flex-direction: row;
-		.nav {
-			display: block;
-			div {
-				text-align: left;
-			}
+  .nav-content {
+    position: relative
+  }
+
+  // Full width
+  &.is-expanded {
+    .nav {
+      div {
+        flex-grow: 1;
+        flex-shrink: 0;
+      }
+    }
+  }
+
+  // Position Vetical
+  &.is-vertical {
+    display: flex;
+    flex-direction: row;
+    .nav {
+      display: block;
+      div {
+        border-bottom: 1px solid $tabs-border-color;
+        text-align: left;
+      }
 			&.nav-tabs {
 				div {
 					border-top: .01rem solid  $default-border-color;
 				}
 			}
 		}
-		.nav-content {
-			margin: 0;
-			margin-left: 1rem;
-		}
 
-		&.is-right {
-			flex-direction: row-reverse;
-			justify-content: space-between;
-		}
-	}
-}
+    &.is-right {
+      flex-direction: row-reverse;
+    }
+  }
+} 

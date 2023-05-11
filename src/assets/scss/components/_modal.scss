@@ -41,32 +41,40 @@ $modal-overlay-background-color: $overlay-background-color-dark !default;
 /* @bootstrap docs */
 
 // MODAL
+html.modal-open {
+  overflow: hidden;
+  padding-right: 16px;
+}
+
 .modal {
-	display: block;
-	background-color: $modal-overlay-background-color;
-	.modal-dialog {
-		.modal-content {
-			.modal-header {
-				// <o-icon> btn of oruga
-				.icon.is-clickable {
-					// display: none;
-					position: absolute; 
-					top: 20px;
-					right: 20px;
-				}
-				// Close btn of bootstrap
-				.btn-close {
-					display: none;
-				}
-			}
-		}
-		.modal-content + .icon.is-clickable {
-			display: none;
-		}
-	}
-	.icon.is-clickable {
-		position: absolute; 
-		top: 20px;
-		right: 20px;
-	}
+  display: block;
+  background-color: $modal-overlay-background-color;
+
+  .modal-dialog {
+    pointer-events: all;
+
+    .modal-content {
+      overflow: hidden;
+      .modal-header {
+        // <o-icon> btn of oruga
+        .icon.is-clickable {
+          cursor: pointer;
+          position: absolute;
+          top: 20px;
+          right: 20px;
+        }
+      }
+    }
+
+    .modal-content + .icon.is-clickable {
+      display: none;
+    }
+  }
+
+  .icon.is-clickable {
+    cursor: pointer;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+  }
 }
