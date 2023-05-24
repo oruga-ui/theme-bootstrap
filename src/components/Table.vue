@@ -118,8 +118,8 @@
 
 </template>
 
-<script>
-import { defineComponent } from "@vue/runtime-core";
+<script lang="ts">
+import { defineComponent } from "vue";
 
 const dataTable = [
   {

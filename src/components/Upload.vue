@@ -32,17 +32,18 @@
   </section>
 </template>
 
-<script>
-import { defineComponent } from "@vue/runtime-core";
+<script lang="ts">
+import { defineComponent } from "vue";
 
 export default defineComponent({
   data() {
       return {
-        dropFiles: []
+        dropFiles: [] as File[],
+        file: null as File | null,
       }
     },
     methods: {
-      deleteDropFile(index) {
+      deleteDropFile(index: number) {
         this.dropFiles.splice(index, 1)
       }
     }
