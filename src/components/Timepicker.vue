@@ -49,11 +49,11 @@
     </section>
 </template>
 
-<script>
+<script lang="ts">
 export default {
     data() {
         return {
-            time: null,
+            time: null as Date | null,
             hourFormat: undefined, // Browser locale
             enableSeconds: false,
             locale: undefined // Browser locale

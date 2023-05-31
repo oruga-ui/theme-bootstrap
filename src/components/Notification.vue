@@ -68,35 +68,44 @@
     </div>
   </section>
 </template>
-<script>
+
+<script lang="ts">
+import { useProgrammatic } from '@oruga-ui/oruga-next';
+
 export default {
   methods: {
     simple() {
-      this.$oruga.notification.open('Something happened')
+      const { oruga } = useProgrammatic()
+      oruga.notification.open('Something happened')
     },
     success() {
-      this.$oruga.notification.open({
+      const { oruga } = useProgrammatic()
+      oruga.notification.open({
         message: 'Something happened correctly!',
         variant: 'success',
         closable: true
       })
     },
     toast() {
-      this.$oruga.notification.open({
+      const { oruga } = useProgrammatic()
+      oruga.notification.open({
         message: 'Something happened correctly!',
         rootClass: 'toast-notification',
         position: 'top'
       })
     },
     danger() {
-      const notif = this.$oruga.notification.open({
+      const { oruga } = useProgrammatic()
+      
+      const notif = oruga.notification.open({
         duration: 5000,
         message: `Something's not good, also I'm on <b>bottom</b>`,
         position: 'bottom-right',
         variant: 'danger',
         closable: true,
         onClose: () => {
-          this.$oruga.notification.open('Custom notification closed!')
+          const { oruga } = useProgrammatic()
+          oruga.notification.open('Custom notification closed!')
         }
       })
     }

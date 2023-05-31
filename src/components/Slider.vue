@@ -35,7 +35,7 @@
     </o-field>
 
     <o-field label="Custom tooltip label & Default Variant">
-      <o-slider :rounded="true" :custom-formatter="val => val + '%'"></o-slider>
+      <o-slider :rounded="true" :custom-formatter="(val: any) => val + '%'"></o-slider>
     </o-field>
 
     <o-field label="Squared thumb">
@@ -75,7 +75,7 @@
   </section>
 </template>
 
-<script>
+<script lang="ts">
 export default {
   data() {
     return {
