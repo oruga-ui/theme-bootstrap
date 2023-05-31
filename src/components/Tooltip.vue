@@ -1,6 +1,6 @@
 <template>
   <section>
-    <o-tooltip label="Tooltip right"  position="right">
+    <o-tooltip label="Tooltip right" position="right">
       <o-button> Right </o-button>
     </o-tooltip>
 
@@ -22,38 +22,43 @@
   </section>
   <hr />
   <section>
-    <o-tooltip variant="info" label="Tooltip multiline, probably because it's too long for a casual tooltip" multiline>
-      <o-button>
-        Multiline (default)
-      </o-button>
-    </o-tooltip>
-
-    <o-tooltip variant="info" label="It's not brief, but it's also not long" multiline>
-      <o-button>
-        Multiline (small)
-      </o-button>
+    <o-tooltip
+      variant="info"
+      label="Tooltip multiline, probably because it's too long for a casual tooltip"
+      multiline>
+      <o-button> Multiline (default) </o-button>
     </o-tooltip>
 
     <o-tooltip
-        variant="info"
-        label="Tooltip large multiline, because it's too long to be on a medium size. Did I tell you it's really long? Yes, it is — I assure you!"
-        position="bottom"
-        multiline
-    >
-      <o-button>
-        Multiline (large)
-      </o-button>
+      variant="info"
+      label="It's not brief, but it's also not long"
+      multiline>
+      <o-button> Multiline (small) </o-button>
+    </o-tooltip>
+
+    <o-tooltip
+      variant="info"
+      label="Tooltip large multiline, because it's too long to be on a medium size. Did I tell you it's really long? Yes, it is — I assure you!"
+      position="bottom"
+      multiline>
+      <o-button> Multiline (large) </o-button>
     </o-tooltip>
   </section>
   <hr />
   <section>
     <o-tooltip variant="light" position="bottom" multiline>
       <o-button>Html Content</o-button>
-      <template v-slot:content> <b>Lorem ipsum dolor sit amet</b>, consectetur warning elit. <i>Fusce id fermentum quam</i>. </template>
+      <template #content>
+        <b>Lorem ipsum dolor sit amet</b>, consectetur warning elit.
+        <i>Fusce id fermentum quam</i>.
+      </template>
     </o-tooltip>
 
-    <o-tooltip variant="light" :triggers="['click']" :auto-close="['outside', 'escape']">
-      <template v-slot:content>
+    <o-tooltip
+      variant="light"
+      :triggers="['click']"
+      :auto-close="['outside', 'escape']">
+      <template #content>
         <o-icon icon="heart" variant="dark"></o-icon>
         <o-icon icon="thumbs-up" variant="dark"></o-icon>
         <o-icon icon="thumbs-down" variant="dark"></o-icon>
@@ -65,20 +70,23 @@
   <hr />
   <section>
     <o-field>
-      <o-switch @click="active = !active">
-        Toggle
-      </o-switch>
+      <o-switch @click="active = !active"> Toggle </o-switch>
     </o-field>
-    <o-tooltip variant="danger" label="I'm never closing" :active="active" always position="bottom">
-      <o-button>
-        Always
-      </o-button>
+    <o-tooltip
+      variant="danger"
+      label="I'm never closing"
+      :active="active"
+      always
+      position="bottom">
+      <o-button> Always </o-button>
     </o-tooltip>
 
-    <o-tooltip variant="danger" label="Tooltip right" position="right" :active="active">
-      <o-button>
-        Right
-      </o-button>
+    <o-tooltip
+      variant="danger"
+      label="Tooltip right"
+      position="right"
+      :active="active">
+      <o-button> Right </o-button>
     </o-tooltip>
   </section>
 </template>
@@ -90,7 +98,7 @@ export default defineComponent({
   data() {
     return {
       activeTab: 0,
-      active: true
+      active: true,
     };
   },
 });

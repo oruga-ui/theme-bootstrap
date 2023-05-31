@@ -1,7 +1,7 @@
 <template>
   <section>
-    <o-notification 
-      closable 
+    <o-notification
+      closable
       variant="primary"
       aria-close-label="Close notification">
       Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce id
@@ -11,8 +11,7 @@
     <o-notification
       closable
       variant="info"
-      aria-close-label="Close notification"
-    >
+      aria-close-label="Close notification">
       Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce id
       fermentum quam. Proin sagittis, nibh id hendrerit imperdiet, elit sapien
       laoreet elit
@@ -20,8 +19,7 @@
     <o-notification
       closable
       variant="success"
-      aria-close-label="Close notification"
-    >
+      aria-close-label="Close notification">
       Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce id
       fermentum quam. Proin sagittis, nibh id hendrerit imperdiet, elit sapien
       laoreet elit
@@ -30,8 +28,7 @@
       closable
       variant="warning"
       aria-close-label="Close notification"
-      role="alert"
-    >
+      role="alert">
       Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce id
       fermentum quam. Proin sagittis, nibh id hendrerit imperdiet, elit sapien
       laoreet elit
@@ -40,8 +37,7 @@
       closable
       variant="danger"
       aria-close-label="Close notification"
-      role="alert"
-    >
+      role="alert">
       Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce id
       fermentum quam. Proin sagittis, nibh id hendrerit imperdiet, elit sapien
       laoreet elit
@@ -51,8 +47,7 @@
       closable
       type="info"
       variant="info"
-      aria-close-label="Close notification"
-    >
+      aria-close-label="Close notification">
       Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce id
       fermentum quam. Proin sagittis, nibh id hendrerit imperdiet, elit sapien
       laoreet elit
@@ -61,57 +56,69 @@
   <hr />
   <section>
     <div class="buttons">
-      <o-button label="Launch notification (default)" size="medium" @click="simple" />
-      <o-button label="Launch notification (custom)" variant="success" size="medium" @click="success" />
+      <o-button
+        label="Launch notification (default)"
+        size="medium"
+        @click="simple" />
+      <o-button
+        label="Launch notification (custom)"
+        variant="success"
+        size="medium"
+        @click="success" />
       <o-button label="Launch toast" size="medium" @click="toast" />
-      <o-button label="Launch notification (custom)" variant="danger" size="medium" @click="danger" />
+      <o-button
+        label="Launch notification (custom)"
+        variant="danger"
+        size="medium"
+        @click="danger" />
     </div>
   </section>
 </template>
 
 <script lang="ts">
-import { useProgrammatic } from '@oruga-ui/oruga-next';
+import { useProgrammatic } from "@oruga-ui/oruga-next";
 
 export default {
   methods: {
     simple() {
-      const { oruga } = useProgrammatic()
-      oruga.notification.open('Something happened')
+      const { oruga } = useProgrammatic();
+      oruga.notification.open("Something happened");
     },
     success() {
-      const { oruga } = useProgrammatic()
+      const { oruga } = useProgrammatic();
       oruga.notification.open({
-        message: 'Something happened correctly!',
-        variant: 'success',
-        closable: true
-      })
+        message: "Something happened correctly!",
+        variant: "success",
+        closable: true,
+      });
     },
     toast() {
-      const { oruga } = useProgrammatic()
+      const { oruga } = useProgrammatic();
       oruga.notification.open({
-        message: 'Something happened correctly!',
-        rootClass: 'toast-notification',
-        position: 'top'
-      })
+        message: "Something happened correctly!",
+        rootClass: "toast-notification",
+        position: "top",
+      });
     },
     danger() {
-      const { oruga } = useProgrammatic()
-      
+      const { oruga } = useProgrammatic();
+
       const notif = oruga.notification.open({
         duration: 5000,
         message: `Something's not good, also I'm on <b>bottom</b>`,
-        position: 'bottom-right',
-        variant: 'danger',
+        position: "bottom-right",
+        variant: "danger",
         closable: true,
         onClose: () => {
-          const { oruga } = useProgrammatic()
-          oruga.notification.open('Custom notification closed!')
-        }
-      })
-    }
-  }
-}
+          const { oruga } = useProgrammatic();
+          oruga.notification.open("Custom notification closed!");
+        },
+      });
+    },
+  },
+};
 </script>
+
 <style>
 .toast-notification {
   margin: 0.5em 0;

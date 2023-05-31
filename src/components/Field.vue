@@ -4,11 +4,18 @@
       <o-input value="Kevin Garvey"></o-input>
     </o-field>
 
-    <o-field label="Email" variant="danger" message-variant='info' message="This email is invalid">
+    <o-field
+      label="Email"
+      variant="danger"
+      message-variant="info"
+      message="This email is invalid">
       <o-input type="email" value="john@" maxlength="30"> </o-input>
     </o-field>
 
-    <o-field label="Username" variant="success" message="This username is available">
+    <o-field
+      label="Username"
+      variant="success"
+      message="This username is available">
       <o-input value="johnsilver" maxlength="30" has-counter></o-input>
     </o-field>
 
@@ -23,7 +30,10 @@
       </o-select>
     </o-field>
 
-    <o-field label="Wrong subject" variant="danger" message="Selected subject is wrong">
+    <o-field
+      label="Wrong subject"
+      variant="danger"
+      message="Selected subject is wrong">
       <o-select placeholder="Select a subject">
         <option value="1">Option 1</option>
         <option value="2">Option 2</option>
@@ -82,12 +92,10 @@
     </o-field>
 
     <o-field>
-      <o-button variant="primary">
-        Button
-      </o-button>
+      <o-button variant="primary"> Button </o-button>
       <o-dropdown>
-        <template v-slot:trigger>
-          <o-button variant="primary" >
+        <template #trigger>
+          <o-button variant="primary">
             <o-icon icon="caret-down"></o-icon>
           </o-button>
         </template>
@@ -101,15 +109,19 @@
     <o-field>
       <o-input icon="search" type="search" placeholder="Search..."></o-input>
       <o-dropdown>
-        <template v-slot:trigger>
+        <template #trigger>
           <o-button>
             <span>Filters</span>
             <o-icon icon="caret-down"></o-icon>
           </o-button>
         </template>
-        <o-dropdown-item value="open_issues">Open Issues and Pull Requests</o-dropdown-item>
+        <o-dropdown-item value="open_issues"
+          >Open Issues and Pull Requests</o-dropdown-item
+        >
         <o-dropdown-item value="your_issues">Your Issues</o-dropdown-item>
-        <o-dropdown-item value="pull_requests">Your Pull Requests</o-dropdown-item>
+        <o-dropdown-item value="pull_requests"
+          >Your Pull Requests</o-dropdown-item
+        >
         <o-dropdown-item value="everything">Everything</o-dropdown-item>
       </o-dropdown>
     </o-field>
@@ -140,13 +152,22 @@
   </section>
   <hr />
   <section class="container">
-    <o-field horizontal label="Subject" variant="danger" message="Please enter a subject">
+    <o-field
+      horizontal
+      label="Subject"
+      variant="danger"
+      message="Please enter a subject">
       <o-input name="subject" icon="pen" expanded></o-input>
     </o-field>
 
     <o-field horizontal label="From">
       <o-input name="name" placeholder="Name" icon="user" expanded></o-input>
-      <o-input name="email" type="email" placeholder="nobody@nowhere.com" icon="at" expanded></o-input>
+      <o-input
+        name="email"
+        type="email"
+        placeholder="nobody@nowhere.com"
+        icon="at"
+        expanded></o-input>
     </o-field>
 
     <o-field horizontal label="Topic">
@@ -162,17 +183,16 @@
     </o-field>
 
     <o-field horizontal
-    ><!-- Label left empty for spacing -->
+      ><!-- Label left empty for spacing -->
       <o-button variant="primary" icon-left="envelope" outlined>
         Send message
       </o-button>
-
     </o-field>
   </section>
   <hr />
   <section>
     <o-field horizontal>
-      <template v-slot:label>
+      <template #label>
         With tooltip
         <o-tooltip label="Help text here for explanation">
           <o-icon size="small" icon="question-circle"></o-icon>
@@ -182,9 +202,9 @@
     </o-field>
 
     <o-field>
-      <template v-slot:label> Label with custom <i>style</i> </template>
+      <template #label> Label with custom <i>style</i> </template>
       <o-input></o-input>
-      <template v-slot:message> Message with custom <b>style</b> </template>
+      <template #message> Message with custom <b>style</b> </template>
     </o-field>
   </section>
 </template>

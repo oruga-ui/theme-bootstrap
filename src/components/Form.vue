@@ -5,8 +5,7 @@
       size="large"
       :has-counter="true"
       maxlength="10"
-      placeholder="Enter Text"
-    ></o-input>
+      placeholder="Enter Text"></o-input>
     <!-- <o-input
       icon="user"
       size="large"
@@ -17,21 +16,19 @@
   </o-field>
 
   <o-field label="Email" variant="success" message="valid field">
-   <o-input
+    <o-input
       :rounded="true"
       icon="at"
       :has-counter="true"
       maxlength="10"
-      placeholder="Enter Text"
-    ></o-input>
+      placeholder="Enter Text"></o-input>
   </o-field>
   <o-field label="Password" variant="success" message="valid field">
     <o-input
       icon="lock"
       :has-counter="true"
       maxlength="10"
-      placeholder="Enter Text"
-    ></o-input>
+      placeholder="Enter Text"></o-input>
   </o-field>
 
   <o-field label="Name" variant="danger" message="Invalid field">
@@ -69,8 +66,7 @@
     variant="danger"
     passive-variant="warning"
     left-label
-    :rounded="false"
-  >
+    :rounded="false">
     Open on focus
   </o-switch>
 
@@ -94,13 +90,17 @@
 
   <section>
     <o-field>
-      <o-switch size="small" :value="true" variant="success"> Success </o-switch>
+      <o-switch size="small" :value="true" variant="success">
+        Success
+      </o-switch>
     </o-field>
     <o-field>
       <o-switch size="medium" :value="true" variant="danger"> Danger </o-switch>
     </o-field>
     <o-field>
-      <o-switch size="large" :value="true" variant="warning"> Warning </o-switch>
+      <o-switch size="large" :value="true" variant="warning">
+        Warning
+      </o-switch>
     </o-field>
   </section>
 
@@ -127,9 +127,7 @@
       <o-checkbox disabled> Disabled </o-checkbox>
     </o-field>
     <o-field>
-      <o-checkbox indeterminate>
-        Default Indeterminate
-      </o-checkbox>
+      <o-checkbox indeterminate> Default Indeterminate </o-checkbox>
     </o-field>
     <o-field>
       <o-checkbox variant="primary" indeterminate>
@@ -155,36 +153,28 @@
       </o-checkbox>
     </o-field>
     <o-field>
-      <o-checkbox size="small">
-        Small
-      </o-checkbox>
+      <o-checkbox size="small"> Small </o-checkbox>
     </o-field>
     <o-field>
-      <o-checkbox>
-        Default
-      </o-checkbox>
+      <o-checkbox> Default </o-checkbox>
     </o-field>
     <o-field>
-      <o-checkbox size="medium">
-        Medium
-      </o-checkbox>
+      <o-checkbox size="medium"> Medium </o-checkbox>
     </o-field>
     <o-field>
-      <o-checkbox size="large">
-        Large
-      </o-checkbox>
+      <o-checkbox size="large"> Large </o-checkbox>
     </o-field>
   </section>
 
   <o-field label="Name" grouped>
-      <o-input icon="user"></o-input>
-      <a class="btn btn-dark"> Search </a>
+    <o-input icon="user"></o-input>
+    <a class="btn btn-dark"> Search </a>
   </o-field>
 
   <o-field label="Name">
-      <a class="btn btn-dark"> Search </a>
-   	  <o-input icon="user" expanded></o-input>
-      <a class="btn btn-dark"> Search </a>
+    <a class="btn btn-dark"> Search </a>
+    <o-input icon="user" expanded></o-input>
+    <a class="btn btn-dark"> Search </a>
   </o-field>
 
   <o-field horizontal label="Name">

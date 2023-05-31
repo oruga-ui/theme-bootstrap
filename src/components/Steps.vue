@@ -26,7 +26,9 @@
           <o-switch v-model="customNavigation"> Custom Navigation </o-switch>
         </div>
         <div class="control">
-          <o-switch v-model="isProfileSuccess"> Set <code>success</code> for profile </o-switch>
+          <o-switch v-model="isProfileSuccess">
+            Set <code>success</code> for profile
+          </o-switch>
         </div>
       </o-field>
       <o-field v-if="hasNavigation" grouped group-multiline>
@@ -58,47 +60,70 @@
       </o-field>
     </p>
     <o-steps
+      v-model="activeStep"
       :vertical="isVertical"
       :position="stepsPosition"
-      v-model="activeStep"
       :animated="isAnimated"
       :rounded="isRounded"
       :has-navigation="hasNavigation"
       :icon-prev="prevIcon"
       :icon-next="nextIcon"
-      :label-position="labelPosition"
-    >
+      :label-position="labelPosition">
       <o-step-item step="1" label="Account" :clickable="isStepsClickable">
         <h1 class="title has-text-centered">Account</h1>
         Lorem ipsum dolor sit amet.
       </o-step-item>
 
-      <o-step-item step="2" label="Profile" :clickable="isStepsClickable" :variant="isProfileSuccess ? 'success': ''">
+      <o-step-item
+        step="2"
+        label="Profile"
+        :clickable="isStepsClickable"
+        :variant="isProfileSuccess ? 'success' : ''">
         <h1 class="title has-text-centered">Profile</h1>
         Lorem ipsum dolor sit amet.
       </o-step-item>
 
-      <o-step-item step="3" :visible="showSocial" label="Social" :clickable="isStepsClickable">
+      <o-step-item
+        step="3"
+        :visible="showSocial"
+        label="Social"
+        :clickable="isStepsClickable">
         <h1 class="title has-text-centered">Social</h1>
         Lorem ipsum dolor sit amet.
       </o-step-item>
 
-      <o-step-item :step="showSocial ? '4' : '3'" label="Finish" :clickable="isStepsClickable" disabled>
+      <o-step-item
+        :step="showSocial ? '4' : '3'"
+        label="Finish"
+        :clickable="isStepsClickable"
+        disabled>
         <h1 class="title has-text-centered">Finish</h1>
         Lorem ipsum dolor sit amet.
       </o-step-item>
 
-      <template v-if="customNavigation" v-slot:navigation="{previous, next}">
-        <o-button outlined variant="danger" icon-pack="fas" icon-left="backward" :disabled="previous.disabled" @click.prevent="previous.action">
+      <template v-if="customNavigation" #navigation="{ previous, next }">
+        <o-button
+          outlined
+          variant="danger"
+          icon-pack="fas"
+          icon-left="backward"
+          :disabled="previous.disabled"
+          @click.prevent="previous.action">
           Previous
         </o-button>
-        <o-button outlined variant="success" icon-pack="fas" icon-right="forward" :disabled="next.disabled" @click.prevent="next.action">
+        <o-button
+          outlined
+          variant="success"
+          icon-pack="fas"
+          icon-right="forward"
+          :disabled="next.disabled"
+          @click.prevent="next.action">
           Next
         </o-button>
       </template>
     </o-steps>
   </section>
-  <hr/>
+  <hr />
   <section>
     <h4>Warning</h4>
     <o-steps variant="warning">
@@ -121,11 +146,13 @@
       <o-step-item label="Social" icon="user-plus">empty</o-step-item>
     </o-steps>
   </section>
-  <hr/>
+  <hr />
   <section>
     <o-field grouped group-multiline>
       <div class="control">
-        <o-switch v-model="position" true-value="right"> Right position</o-switch>
+        <o-switch v-model="position" true-value="right">
+          Right position</o-switch
+        >
       </div>
       <o-field label="Size">
         <o-select v-model="size" placeholder="Size">
@@ -144,25 +171,29 @@
       </o-field>
     </o-field>
 
-    <o-steps :position="position" :label-position="labelPosition" :size="size" vertical>
+    <o-steps
+      :position="position"
+      :label-position="labelPosition"
+      :size="size"
+      vertical>
       <o-step-item label="Account" icon="user-lock">
-        Account: Lorem ipsum dolor sit amet. <br/>
-        Account: Lorem ipsum dolor sit amet. <br/>
+        Account: Lorem ipsum dolor sit amet. <br />
+        Account: Lorem ipsum dolor sit amet. <br />
         Account: Lorem ipsum dolor sit amet.
       </o-step-item>
 
       <o-step-item label="Profile" icon="user">
-        Profile: Lorem ipsum dolor sit amet. <br/>
-        Profile: Lorem ipsum dolor sit amet.? <br/>
-        Profile: Lorem ipsum dolor sit amet. <br/>
+        Profile: Lorem ipsum dolor sit amet. <br />
+        Profile: Lorem ipsum dolor sit amet.? <br />
+        Profile: Lorem ipsum dolor sit amet. <br />
         Profile: Lorem ipsum dolor sit amet.
       </o-step-item>
 
       <o-step-item label="Social" icon="user-plus" disabled>
-        Social: Lorem ipsum dolor sit amet. <br/>
-        Social: Lorem ipsum dolor sit amet. <br/>
-        Social: Lorem ipsum dolor sit amet. <br/>
-        Social: Lorem ipsum dolor sit amet. <br/>
+        Social: Lorem ipsum dolor sit amet. <br />
+        Social: Lorem ipsum dolor sit amet. <br />
+        Social: Lorem ipsum dolor sit amet. <br />
+        Social: Lorem ipsum dolor sit amet. <br />
         Social: Lorem ipsum dolor sit amet.
       </o-step-item>
     </o-steps>
@@ -170,28 +201,28 @@
 </template>
 
 <script lang="ts">
-  export default {
-    data() {
-      return {
-        activeStep: "0",
+export default {
+  data() {
+    return {
+      activeStep: "0",
 
-        showSocial: false,
-        isAnimated: true,
-        isVertical: false,
-        isRounded: true,
-        isStepsClickable: false,
+      showSocial: false,
+      isAnimated: true,
+      isVertical: false,
+      isRounded: true,
+      isStepsClickable: false,
 
-        hasNavigation: true,
-        customNavigation: false,
-        isProfileSuccess: false,
+      hasNavigation: true,
+      customNavigation: false,
+      isProfileSuccess: false,
 
-        prevIcon: 'chevron-left',
-        nextIcon: 'chevron-right',
-        labelPosition: 'bottom',
-        stepsPosition: 'left',
-        position: null,
-        size: null
-      }
-    }
-  }
+      prevIcon: "chevron-left",
+      nextIcon: "chevron-right",
+      labelPosition: "bottom",
+      stepsPosition: "left",
+      position: null,
+      size: null,
+    };
+  },
+};
 </script>
