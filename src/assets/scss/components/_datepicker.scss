@@ -1,3 +1,5 @@
+@use "sass:color";
+
 /* @docs */
 $datepicker-background-color: white !default;
 $datepicker-cell-margin: 0.31rem !default;
@@ -203,7 +205,7 @@ $datepicker-cell-border-radius: $base-border-radius !default;
               // Ensure indicator is visible when selected
 
               &.is-primary {
-                background-color: lighten($primary, 15);
+                background-color: color.adjust($primary, $lightness: 15%);
               }
             }
           }

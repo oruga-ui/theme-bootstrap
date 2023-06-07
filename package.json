@@ -27,7 +27,7 @@
     "build:lib": "rimraf dist && rollup -c",
     "serve": "vite preview",
     "lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs,.ts,.tsx,.cts,.mts --fix --ignore-path .gitignore",
-    "style": "stylelint **/*.{css,scss,js,ts} --fix",
+    "style": "stylelint **/*.{css,scss} --fix --ignore-path .gitignore",
     "update": "ncu -u"
   },
   "dependencies": {
