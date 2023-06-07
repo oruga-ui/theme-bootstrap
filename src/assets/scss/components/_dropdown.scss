@@ -46,20 +46,23 @@
 /* @bootstrap docs */
 
 .dropdown {
+
   .dropdown-menu {
     background: $dropdown-bg;
   }
+
   &.dropdown-modal {
+
     .dropdown-menu {
       position: fixed;
-			top: 25%;
+      top: 25%;
       left: 50%;
       width: 80%;
       max-width: 90%;
       min-width: 70%;
-			transform: translate3d(-50%,-25%,0);
-
+      transform: translate3d(-50%, -25%, 0);
     }
+
     .background {
       background-color: $overlay-background-color-dark;
       position: fixed;
@@ -73,12 +76,15 @@
   }
 
   &.is-top-right:not(.dropdown-modal) {
+
     .dropdown-menu {
       top: auto;
       bottom: 100%;
     }
   }
+
   &.is-top-left:not(.dropdown-modal) {
+
     .dropdown-menu {
       top: auto;
       bottom: 100%;

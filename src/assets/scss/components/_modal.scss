@@ -43,6 +43,7 @@ $modal-overlay-background-color: $overlay-background-color-dark !default;
 /* @bootstrap docs */
 
 // MODAL
+
 html.modal-open {
   overflow: hidden;
   padding-right: 16px;
@@ -57,8 +58,10 @@ html.modal-open {
 
     .modal-content {
       overflow: hidden;
+
       .modal-header {
         // <o-icon> btn of oruga
+
         .icon.is-clickable {
           cursor: pointer;
           position: absolute;

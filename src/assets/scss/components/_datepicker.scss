@@ -5,8 +5,8 @@ $datepicker-cell-padding: 0.31rem !default; /* or 0.5rem 0.75rem*/
 $datepicker-cell-width: calc(#{100%} / 7) !default;
 $datepicker-cell-font-weight: 400 !default;
 $datepicker-cell-text-align: center !default;
-$datepicker-cell-unselectable-color: rgba(0,0,0,.3) !default;
-$datepicker-cell-hovered-color: rgba(0,0,0,.5) !default;
+$datepicker-cell-unselectable-color: rgba(0, 0, 0, 0.3) !default;
+$datepicker-cell-hovered-color: rgba(0, 0, 0, 0.5) !default;
 $datepicker-cell-selected-color: $primary !default;
 $datepicker-cell-border-radius: $base-border-radius !default;
 /* @docs */
@@ -21,54 +21,68 @@ $datepicker-cell-border-radius: $base-border-radius !default;
 }
 
 .datepicker {
+
   input.form-control {
     background: inherit;
   }
+
   .dropdown-item:active {
     background-color: transparent;
     color: $dark;
   }
+
   .dropdown-item:hover {
     background-color: transparent;
   }
+
   .datepicker-header {
-    margin-bottom: .5rem;
+    margin-bottom: 0.5rem;
+
     .pagination {
+
       .pagination-previous {
-				order:1;
+        order: 1;
         margin: 0;
       }
+
       .pagination-list {
-				order:2;
-				flex-shrink:1;
+        order: 2;
+        flex-shrink: 1;
         width: auto;
       }
+
       .pagination-next {
-				order:3;
+        order: 3;
         margin: 0;
       }
     }
   }
+
   .datepicker-table {
     margin: 0;
+
     .datepicker-header {
       display: flex;
       margin-bottom: 0;
+
       .datepicker-cell {
         @include datepicker-cell;
         font-weight: bolder;
       }
     }
+
     .datepicker-body {
       display: block;
+
       .datepicker-row {
         display: flex;
+
         .datepicker-cell {
           @include datepicker-cell;
         }
 
         .datepicker-cell.is-unselectable {
-          opacity: .5;
+          opacity: 0.5;
           cursor: not-allowed;
         }
 
@@ -81,6 +95,7 @@ $datepicker-cell-border-radius: $base-border-radius !default;
             border: 1px solid $datepicker-cell-selected-color;
             border-radius: $datepicker-cell-border-radius;
           }
+
           &.is-selected {
             background-color: $datepicker-cell-selected-color;
             color: white;
@@ -95,12 +110,14 @@ $datepicker-cell-border-radius: $base-border-radius !default;
             border-top-right-radius: 0;
             border-bottom-right-radius: 0;
           }
+
           &.is-within-hovered {
             background-color: $datepicker-cell-hovered-color;
             color: white;
             border-radius: 0;
-            opacity: .5;
+            opacity: 0.5;
           }
+
           &.is-last-hovered {
             background-color: $datepicker-cell-hovered-color;
             color: white;
@@ -118,12 +135,14 @@ $datepicker-cell-border-radius: $base-border-radius !default;
             border-top-right-radius: 0;
             border-bottom-right-radius: 0;
           }
+
           &.is-within-selected {
             background-color: $datepicker-cell-selected-color;
             color: white;
             border-radius: 0;
-            opacity: .5;
+            opacity: 0.5;
           }
+
           &.is-last-selected {
             background-color: $datepicker-cell-selected-color;
             color: white;
@@ -134,19 +153,24 @@ $datepicker-cell-border-radius: $base-border-radius !default;
           }
         }
       }
+
       &.has-events {
+
         .datepicker-cell {
           padding: 0.3rem 0.75rem 0.75rem;
+
           &.has-event {
             position: relative;
+
             .events {
-              bottom: .425rem;
+              bottom: 0.425rem;
               display: flex;
               justify-content: center;
               left: 0;
-              padding: 0 .35rem;
+              padding: 0 0.35rem;
               position: absolute;
               width: 100%;
+
               .event {
                 background-color: $danger; // Default variant
 
@@ -157,22 +181,27 @@ $datepicker-cell-border-radius: $base-border-radius !default;
                 }
               }
             }
+
             &.dots .event {
               border-radius: 50%;
-              height: .35em;
-              margin: 0 .1em;
-              width: .35em;
+              height: 0.35em;
+              margin: 0 0.1em;
+              width: 0.35em;
             }
+
             &.bars .event {
-              height: .25em;
+              height: 0.25em;
               width: 100%;
             }
           }
+
           &.is-selected {
             overflow: hidden;
+
             .events .event {
               // Currently datepicker only uses primary coloring
               // Ensure indicator is visible when selected
+
               &.is-primary {
                 background-color: lighten($primary, 15);
               }
@@ -187,16 +216,19 @@ $datepicker-cell-border-radius: $base-border-radius !default;
   * Temporary Styles before the issue <month classes doesn't get overridden> will get solved
   *
   **/
+
   .o-dpck__month {
     width: 17rem;
     margin: 0 auto 0 auto;
   }
+
   .o-dpck__month__table {
     display: inline-flex;
     flex-wrap: wrap;
     flex-direction: row;
     width: 17rem;
-    .o-dpck__month__cell  {
+
+    .o-dpck__month__cell {
       @include datepicker-cell;
       width: 33.33%;
       height: 2.5rem;
@@ -206,9 +238,11 @@ $datepicker-cell-border-radius: $base-border-radius !default;
         color: white;
         border-radius: $datepicker-cell-border-radius;
       }
+
       &--selectable {
         font-weight: $datepicker-cell-font-weight;
       }
+
       &--first-hovered {
         background-color: $datepicker-cell-hovered-color;
         color: white;
@@ -217,12 +251,14 @@ $datepicker-cell-border-radius: $base-border-radius !default;
         border-top-right-radius: 0;
         border-bottom-right-radius: 0;
       }
+
       &--within-hovered {
         background-color: $datepicker-cell-hovered-color;
         color: white;
         border-radius: 0;
-        opacity: .5;
+        opacity: 0.5;
       }
+
       &--last-hovered {
         background-color: $datepicker-cell-hovered-color;
         color: white;
@@ -240,12 +276,14 @@ $datepicker-cell-border-radius: $base-border-radius !default;
         border-top-right-radius: 0;
         border-bottom-right-radius: 0;
       }
+
       &--within-selected {
         background-color: $datepicker-cell-selected-color;
         color: white;
         border-radius: 0;
-        opacity: .5;
+        opacity: 0.5;
       }
+
       &--last-selected {
         background-color: $datepicker-cell-selected-color;
         color: white;
@@ -258,6 +296,6 @@ $datepicker-cell-border-radius: $base-border-radius !default;
   }
 }
 
-// o-dpck__month__cell 
-// o-dpck__month__cell--selected         
+// o-dpck__month__cell
+// o-dpck__month__cell--selected
 // o-dpck__month__cell--selectable

@@ -27,6 +27,7 @@
     "build:lib": "rimraf dist && rollup -c",
     "serve": "vite preview",
     "lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs,.ts,.tsx,.cts,.mts --fix --ignore-path .gitignore",
+    "style": "stylelint **/*.{css,scss,js,ts} --fix",
     "update": "ncu -u"
   },
   "dependencies": {
@@ -55,6 +56,11 @@
     "rollup-plugin-sass": "1.12.19",
     "rollup-plugin-terser": "7.0.2",
     "sass": "1.62.1",
+    "stylelint": "^15.6.2",
+    "stylelint-config-recommended": "^12.0.0",
+    "stylelint-config-recommended-scss": "^11.0.0",
+    "stylelint-prettier": "^3.0.0",
+    "stylelint-scss": "^5.0.0",
     "tslib": "2.5.2",
     "typescript": "5.0.4",
     "vite": "4.3.8",

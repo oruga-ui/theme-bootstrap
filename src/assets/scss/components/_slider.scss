@@ -1,5 +1,5 @@
 /* @docs */
-$slider-margin: .4em 0 !default;
+$slider-margin: 0.4em 0 !default;
 $slider-height: $form-range-track-height !default; // default  $form-range-track-height
 $slider-width: $form-range-track-width !default;
 $slider-border-radius: $form-range-track-border-radius !default;
@@ -76,6 +76,7 @@ $slider-tick-background-color: $grey-dark !default;
         }
       }
     }
+
     .slider-thumb-wrapper {
       display: inline-flex;
       align-items: center;
@@ -94,13 +95,15 @@ $slider-tick-background-color: $grey-dark !default;
         transition: $form-range-thumb-transition;
 
         &:focus {
-          transform: scale(1.50);
+          transform: scale(1.5);
           box-shadow: $form-range-thumb-focus-box-shadow;
         }
+
         &:active {
           background-color: $form-range-thumb-active-bg;
         }
         // squared thumb
+
         &.is-rounded {
           border-radius: 50%;
         }
@@ -108,10 +111,12 @@ $slider-tick-background-color: $grey-dark !default;
 
       &.is-dragging {
         cursor: grabbing;
+
         .slider-thumb {
-          transform: scale(1.50);
+          transform: scale(1.5);
         }
       }
+
       &.has-indicator {
         padding: 1rem 0.62rem;
         display: flex;
@@ -119,9 +124,11 @@ $slider-tick-background-color: $grey-dark !default;
         width: auto;
       }
       // Colors
+
       .b-tooltip {
         @each $name, $pair in $theme-colors {
           &.is-#{$name} {
+
             .slider-thumb {
               background-color: $pair;
             }
@@ -130,6 +137,7 @@ $slider-tick-background-color: $grey-dark !default;
       }
     }
     // tick
+
     .slider-tick {
       position: absolute;
       width: $slider-tick-width;
@@ -138,33 +146,37 @@ $slider-tick-background-color: $grey-dark !default;
       top: 50%;
       background: $slider-tick-background-color;
       border-radius: $slider-tick-radius;
+
       &.is-tick-hidden {
         background: transparent;
       }
+
       .slider-tick-label {
         margin: 5px;
       }
     }
   }
+
   &.is-disabled {
     cursor: not-allowed;
-    opacity: .5;
+    opacity: 0.5;
     background-color: $form-range-thumb-disabled-bg;
   }
   // Sizes
   @each $name, $size in $sizes {
     &.is-#{$name} {
-      @if ($name == 'small') {
-        height: .2rem;
-      }
-      @else {
+      @if ($name == "small") {
+        height: 0.2rem;
+      } @else {
         height: calc($size);
       }
+
       .slider-track {
-          .slider-thumb {
-              height: $size;
-              width: $size;
-          }
+
+        .slider-thumb {
+          height: $size;
+          width: $size;
+        }
       }
     }
   }

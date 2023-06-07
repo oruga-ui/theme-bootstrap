@@ -3,7 +3,7 @@ $taginput-height: calc(2em - 1px) !default;
 $taginput-border-color: $default-border-color !default;
 $taginput-border-radius: $base-border-radius !default;
 $taginput-margin: calc(0.275em - 1px) !default;
-$taginput-padding: calc(0.275em - 1px) 0.800rem !default;
+$taginput-padding: calc(0.275em - 1px) 0.8rem !default;
 /* @docs */
 
 // Colors
@@ -18,6 +18,7 @@ $taginput-padding: calc(0.275em - 1px) 0.800rem !default;
 }
 
 .taginput {
+
   .taginput-container {
     border: 1px solid $taginput-border-color;
     border-radius: $taginput-border-radius;
@@ -31,7 +32,7 @@ $taginput-padding: calc(0.275em - 1px) 0.800rem !default;
     }
 
     .tag {
-			background-color: $light;
+      background-color: $light;
       margin-top: 0.275rem;
       margin-left: 0.275rem;
       margin-bottom: $taginput-margin;
@@ -49,6 +50,7 @@ $taginput-padding: calc(0.275em - 1px) 0.800rem !default;
       @include variant;
     }
   }
+
   input {
     border: 0;
     box-shadow: none;

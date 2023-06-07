@@ -4,16 +4,18 @@ $collapse-card-margin: 0.5rem 0 !default;
 /* @docs */
 
 .card {
-	margin: $collapse-card-margin;
-	.card-header {
-		.card-header-icon {
-			position: absolute;
-			top: 0.5rem;
-			right: 1rem;
-		}
-	}
+  margin: $collapse-card-margin;
+
+  .card-header {
+
+    .card-header-icon {
+      position: absolute;
+      top: 0.5rem;
+      right: 1rem;
+    }
+  }
 }
 
 .card-content {
-	padding: $collapse-padding;
+  padding: $collapse-padding;
 }

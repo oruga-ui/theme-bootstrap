@@ -1,5 +1,5 @@
 /* @docs */
-$pagination-items-margin: .5rem !default;
+$pagination-items-margin: 0.5rem !default;
 $pagination-border-radius: $pagination-border-radius !default;
 $pagination-rounded-border-radius: $base-rounded-border-radius !default;
 /* @docs */
@@ -43,41 +43,47 @@ $pagination-rounded-border-radius: $base-rounded-border-radius !default;
 /* @bootstrap docs */
 
 .pagination-wrapper {
-	position: relative;
-	display: flex;
-	flex-direction: row;
-	
-	.pagination-prev {
-		order:1;
-		margin: 0;
-		border-top-left-radius: $pagination-border-radius;
-		border-bottom-left-radius: $pagination-border-radius;
-	}
-	.pagination-next {
-		order:3;
-		margin: 0;
-		border-top-right-radius: $pagination-border-radius; 
-		border-bottom-right-radius: $pagination-border-radius;
-	}
-	.pagination {
-		order:2;
-		margin: 0;
-		.page-link {
-			margin: 0;
-			&.active {
-				background-color: $primary;
-				color: white;
-			}
-		}
-	}
+  position: relative;
+  display: flex;
+  flex-direction: row;
 
-	&.is-rounded {
-		.page-link {
-			border-radius: $pagination-rounded-border-radius;
-			margin-right: $pagination-items-margin;
-		}
-	}
-	.info {
-		margin-right: $pagination-items-margin;
-	}
+  .pagination-prev {
+    order: 1;
+    margin: 0;
+    border-top-left-radius: $pagination-border-radius;
+    border-bottom-left-radius: $pagination-border-radius;
+  }
+
+  .pagination-next {
+    order: 3;
+    margin: 0;
+    border-top-right-radius: $pagination-border-radius;
+    border-bottom-right-radius: $pagination-border-radius;
+  }
+
+  .pagination {
+    order: 2;
+    margin: 0;
+
+    .page-link {
+      margin: 0;
+
+      &.active {
+        background-color: $primary;
+        color: white;
+      }
+    }
+  }
+
+  &.is-rounded {
+
+    .page-link {
+      border-radius: $pagination-rounded-border-radius;
+      margin-right: $pagination-items-margin;
+    }
+  }
+
+  .info {
+    margin-right: $pagination-items-margin;
+  }
 }

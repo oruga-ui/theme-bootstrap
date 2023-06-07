@@ -11,18 +11,18 @@ $base-rounded-border-radius: 9999px !default;
 $base-line-height: 1.5 !default;
 $base-disabled-opacity: 0.5 !default;
 
-$tablet: map-get($grid-breakpoints, 'md') !default;
+$tablet: map-get($grid-breakpoints, "md") !default;
 
-$overlay-background-color-dark: rgba(0,0,0,.8) !default; 
-$overlay-background-color-light: rgba(255,255,255,0.5) !default; 
+$overlay-background-color-dark: rgba(0, 0, 0, 0.8) !default;
+$overlay-background-color-light: rgba(255, 255, 255, 0.5) !default;
 
 $default-border-color: $gray-400 !default;
 // Sizes
 
 $sizes: (
-    "small": .75rem,
-    "medium": 1.25rem,
-    "large": 1.5rem
+  "small": 0.75rem,
+  "medium": 1.25rem,
+  "large": 1.5rem,
 ) !default;
 
 $white: #ffffff !default;
@@ -32,12 +32,12 @@ $grey-light: $gray-400 !default;
 $grey-lighter: $gray-300 !default;
 $grey-dark: $gray-900 !default;
 
-$primary-invert: rgba($primary,.1)!default;
-$success-invert: rgba($success,.1)!default;
-$danger-invert: rgba($danger,.1)!default;
-$warning-invert: rgba($warning,.1)!default;
-$info-invert: rgb($info,.1)!default;
-$dark-invert: rgb($dark,.1)!default;
+$primary-invert: rgba($primary, 0.1) !default;
+$success-invert: rgba($success, 0.1) !default;
+$danger-invert: rgba($danger, 0.1) !default;
+$warning-invert: rgba($warning, 0.1) !default;
+$info-invert: rgb($info, 0.1) !default;
+$dark-invert: rgb($dark, 0.1) !default;
 
 $theme-colors-lighter: (
   "primary": $primary-invert,
@@ -45,8 +45,8 @@ $theme-colors-lighter: (
   "danger": $danger-invert,
   "warning": $warning-invert,
   "info": $info-invert,
-  "dark": $dark-invert
-)!default;
+  "dark": $dark-invert,
+) !default;
 
 // $primary: $primary !default;
 // $primary-invert: $white !default;

@@ -50,27 +50,33 @@ $select-icon-right-position: 0.75rem !default;
 /* @bootstrap docs */
 
 // Icon style
+
 .select {
   position: relative;
   // Space for the icon
+
   .form-select {
     cursor: pointer;
     height: 100%;
     // if the icon is in left then set that padding
+
     &.has-icon-in-left {
       padding: $select-icon-padding-left;
     }
   }
   // the Position of the icon
+
   .icon {
     color: $select-icon-color;
     position: absolute;
+
     &.is-left {
-			top: 0.5rem;
+      top: 0.5rem;
       left: $select-icon-left-position;
     }
+
     &.is-right {
-			top: 0.5rem;
+      top: 0.5rem;
       right: $select-icon-right-position;
     }
   }

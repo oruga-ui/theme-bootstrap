@@ -3,37 +3,44 @@ $select-margin: 0.2rem 0.2rem 0.2rem 0 !default;
 /* @docs */
 
 .timepicker {
-	input.form-control {
-	    background: inherit;
-	}
-	.dropdown-menu {
-		width: auto;
-	}
-	.dropdown-item {
-		display: inline-flex;
-		flex-wrap: wrap;
-	}
-	.dropdown-item:active {
-		background-color: white;
-		color: $dark;
-	}
-	.dropdown-item:hover {
-		background-color: white;
-	}
-	span.is-colon {
-	    transform: translateY(15%);
-	    font-weight: bolder;
-	    margin: $select-margin;
-	}
 
-	.select {
-        margin: $select-margin;
-        font-weight: bolder;
+  input.form-control {
+    background: inherit;
+  }
+
+  .dropdown-menu {
+    width: auto;
+  }
+
+  .dropdown-item {
+    display: inline-flex;
+    flex-wrap: wrap;
+  }
+
+  .dropdown-item:active {
+    background-color: white;
+    color: $dark;
+  }
+
+  .dropdown-item:hover {
+    background-color: white;
+  }
+
+  span.is-colon {
+    transform: translateY(15%);
+    font-weight: bolder;
+    margin: $select-margin;
+  }
+
+  .select {
+    margin: $select-margin;
+    font-weight: bolder;
+  }
+
+  .timepicker-footer {
+
+    .btn {
+      margin: $select-margin !important;
     }
-    .timepicker-footer {
-    	.btn {
-		    margin: $select-margin!important;
-		}
-    }
-    
+  }
 }

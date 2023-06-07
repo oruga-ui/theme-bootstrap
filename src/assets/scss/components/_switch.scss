@@ -1,6 +1,6 @@
 /* @docs */
-$switch-background-color: #ced4da !default; 
-$switch-transition: all .2s ease-out !default;
+$switch-background-color: #ced4da !default;
+$switch-transition: all 0.2s ease-out !default;
 $switch-margin-right-bottom: 0.9rem !default;
 // is-small
 $switch-small-width: 24px;
@@ -68,16 +68,19 @@ $switch-large-translateX: 15px;
 // Sizes
 @mixin is-small {
   padding-left: $switch-padding-left-small;
+
   .switch {
     width: $switch-small-width;
     height: $switch-small-height;
     top: $switch-small-top-position;
   }
+
   .switch:before {
     width: $switch-small-before-width;
     height: $switch-small-before-height;
   }
-  input[type=checkbox]:checked + .switch:before {
+
+  input[type="checkbox"]:checked + .switch:before {
     // Move
     -webkit-transform: translateX($switch-small-translateX);
     -ms-transform: translateX($switch-small-translateX);
@@ -86,16 +89,19 @@ $switch-large-translateX: 15px;
 }
 @mixin is-medium {
   padding-left: $switch-padding-left-medium;
+
   .switch {
     width: $switch-medium-width;
     height: $switch-medium-height;
     top: $switch-medium-top-position;
   }
+
   .switch:before {
     width: $switch-medium-before-width;
     height: $switch-medium-before-height;
   }
-  input[type=checkbox]:checked + .switch:before {
+
+  input[type="checkbox"]:checked + .switch:before {
     // Move
     -webkit-transform: translateX($switch-medium-translateX);
     -ms-transform: translateX($switch-medium-translateX);
@@ -104,16 +110,19 @@ $switch-large-translateX: 15px;
 }
 @mixin is-large {
   padding-left: $switch-padding-left-large;
+
   .switch {
     width: $switch-large-width;
     height: $switch-large-height;
     top: $switch-large-top-position;
   }
+
   .switch:before {
     width: $switch-large-before-width;
     height: $switch-large-before-height;
   }
-  input[type=checkbox]:checked + .switch:before {
+
+  input[type="checkbox"]:checked + .switch:before {
     // Move
     -webkit-transform: translateX($switch-large-translateX);
     -ms-transform: translateX($switch-large-translateX);
@@ -130,10 +139,12 @@ $switch-large-translateX: 15px;
   margin-bottom: $form-check-margin-bottom;
   // min-height: $form-check-min-height;
   // min-width: $form-check-input-width;
+
   input {
     opacity: 0;
     width: 0;
   }
+
   .switch {
     position: absolute;
     cursor: pointer;
@@ -154,20 +165,22 @@ $switch-large-translateX: 15px;
       box-shadow: $form-check-input-focus-box-shadow;
     }
   }
+
   .switch:before {
     position: absolute;
-		left: 0.12rem;
-		bottom: 0.12rem;
+    left: 0.12rem;
+    bottom: 0.12rem;
     content: "";
     background-color: white;
     -webkit-transition: $switch-transition;
     transition: $switch-transition;
   }
 
-  input[type=checkbox]:focus + .switch {
+  input[type="checkbox"]:focus + .switch {
     box-shadow: $form-check-input-focus-box-shadow;
   }
-  input[type=checkbox]:checked + .switch {
+
+  input[type="checkbox"]:checked + .switch {
     background-color: $form-check-input-checked-bg-color;
   }
 
@@ -177,29 +190,36 @@ $switch-large-translateX: 15px;
   }
 
   // rounded
+
   &.is-rounded {
+
     .switch {
-			border-radius: 2rem;
+      border-radius: 2rem;
     }
+
     .switch:before {
       border-radius: 50%;
     }
   }
 
   // Sizes
+
   &.is-small {
     @include is-small;
   }
+
   &.is-medium {
     @include is-medium;
   }
+
   &.is-large {
     @include is-large;
   }
 
   // Variant
   @each $name, $pair in $theme-colors {
-    input[type=checkbox]:checked + .switch {
+
+    input[type="checkbox"]:checked + .switch {
       &.is-#{$name} {
         background-color: $pair;
       }

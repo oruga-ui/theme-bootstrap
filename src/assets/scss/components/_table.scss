@@ -6,16 +6,21 @@ $table-tr-color: $dark !default;
 /* @docs */
 
 @mixin table-cards {
+
   .table {
     background-color: transparent;
   }
+
   thead {
+
     tr {
       box-shadow: none;
       border-width: 0;
+
       th {
         display: none;
       }
+
       .checkbox-cell {
         display: block;
         width: 100%;
@@ -25,46 +30,58 @@ $table-tr-color: $dark !default;
       }
     }
   }
+
   tbody {
     border-top: 0 !important;
   }
+
   tfoot {
+
     th {
-      border: 0; 
+      border: 0;
       display: inherit;
     }
   }
+
   tr {
     // Card style — Cannot extend inside media query
     box-shadow: 0 2px 3px rgba($dark, 0.1), 0 0 0 1px rgba($dark, 0.1);
     max-width: 100%;
     position: relative;
     display: block;
+
     td {
-      border: 0; 
+      border: 0;
       display: inherit;
+
       &:last-child {
         border-bottom: 0;
       }
     }
+
     &:not(:last-child) {
       margin-bottom: 1rem;
     }
     // Disables is-*
+
     &:not([class*="is-"]) {
       background: $table-background-color;
       color: $table-tr-color;
+
       &:hover {
         background-color: $table-background-color;
         color: $table-tr-color;
       }
     }
+
     &.detail {
       margin-top: -1rem;
       background-color: white;
     }
   }
+
   tr:not(.detail):not(.is-empty):not(.table-footer) {
+
     td {
       display: flex;
       width: auto;
@@ -81,19 +98,25 @@ $table-tr-color: $dark !default;
     }
   }
 }
+
 .table-component {
   position: relative;
 
   // Table
+
   .table-wrapper {
+
     .table {
+
       &.table-hover:focus {
         border: solid 1px;
         border-color: $info;
         box-shadow: 0 0 0 0.225em rgba($info, 0.25);
+
         th {
           border-color: $table-border-color;
         }
+
         tr {
           border-color: $table-border-color;
         }
@@ -101,84 +124,109 @@ $table-tr-color: $dark !default;
 
       .icon {
         transition: transform $speed-slow $easing, opacity 86ms $easing;
+
         &.is-desc {
           transform: rotate(180deg);
         }
+
         &.is-expanded {
           transform: rotate(90deg);
         }
       }
+
       .icon.fas-arrow-up.is-desc {
         transition: transform $speed-slow $easing, opacity 86ms $easing;
         transform: rotate(180deg);
       }
+
       .sort-icon.icon.is-desc {
         transform: rotate(180deg) translateY(-50%) !important;
       }
       // new strucutre
+
       thead {
+
         th {
           cursor: pointer;
         }
       }
-      tfoot {
 
+      tfoot {
       }
+
       th {
         position: relative;
+
         &.is-left {
           text-align: left;
         }
+
         &.is-centered {
           text-align: center;
           justify-content: center;
         }
+
         &.is-right {
           text-align: right;
           flex-direction: row-reverse;
         }
+
         &.is-current-sort {
           background-color: $light;
         }
+
         &.is-sortable:hover {
           border-color: $grey;
         }
+
         &.is-sortable {
           cursor: pointer;
           /* .is-relative { */
+
           > span {
             position: relative;
           }
         }
+
         &.is-sticky {
           position: -webkit-sticky;
           position: sticky;
           left: 0;
-          z-index: var(--oruga-table-sticky-zindex,1);
+          z-index: var(--oruga-table-sticky-zindex, 1);
         }
-        .sort-icon, .multi-sort-cancel-icon {
+
+        .sort-icon,
+        .multi-sort-cancel-icon {
           position: absolute;
           right: 0;
         }
       }
+
       tr {
+
         &.detail {
           background-color: $light;
+
           td {
             padding: $table-detail-padding;
           }
         }
       }
+
       td {
+
         &.has-text-left {
           text-align: left;
         }
+
         &.has-text-centered {
           text-align: center;
         }
+
         &.has-text-right {
           text-align: right;
         }
+
         &.is-sticky {
           position: -webkit-sticky;
           position: sticky;
@@ -191,8 +239,9 @@ $table-tr-color: $dark !default;
     &.has-mobile-cards {
       @include table-cards;
     }
+
     &.is-card-list {
-      @include table-cards
+      @include table-cards;
     }
   }
 }

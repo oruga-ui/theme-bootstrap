@@ -1,17 +1,20 @@
 .autocomplete-wrapper {
-	 position: relative;
-	.dropdown-menu {
-		// overflow: auto;
-		&.is-expanded {
-			width: 50%;
-		}
-		&.is-opened-top {
-			top: auto;
-            bottom: 100%;
-		}
-	}
+  position: relative;
+
+  .dropdown-menu {
+    // overflow: auto;
+
+    &.is-expanded {
+      width: 50%;
+    }
+
+    &.is-opened-top {
+      top: auto;
+      bottom: 100%;
+    }
+  }
 }
 
 .has-text-weight-bold {
-	font-weight: bolder;
+  font-weight: bolder;
 }
