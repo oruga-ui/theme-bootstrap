@@ -3,7 +3,7 @@
     <h2>Dropdowns:</h2>
     <o-dropdown aria-role="list">
       <template #trigger>
-        <o-button variant="primary" #default="{ active }">
+        <o-button v-slot="{ active }" variant="primary">
           <span>Click me!</span>
           <o-icon :icon="active ? 'caret-up' : 'caret-down'"></o-icon>
           {{ active }}
@@ -44,12 +44,7 @@
     <o-dropdown aria-role="list">
       <template #trigger>
         Custom
-        <o-icon
-          variant="success"
-          icon="caret-down"
-          role="button"
-        >
-        </o-icon>
+        <o-icon variant="success" icon="caret-down" role="button"> </o-icon>
       </template>
 
       <o-dropdown-item aria-role="listitem">Action</o-dropdown-item>
@@ -67,9 +62,9 @@
       <o-dropdown-item aria-role="listitem">Something else</o-dropdown-item>
     </o-dropdown>
   </section>
-<!--  -->
-<!--  -->
-<!--  -->
+  <!--  -->
+  <!--  -->
+  <!--  -->
   <section class="mt-5">
     <p class="is-size-3 mb-3">Scrollable demo</p>
     <div>
@@ -81,15 +76,14 @@
     <br />
 
     <o-dropdown
+      v-model="currentMenu"
       :scrollable="isScrollable"
       :max-height="maxHeight"
-      v-model="currentMenu"
-      aria-role="list"
-    >
+      aria-role="list">
       <template #trigger>
         <o-button variant="primary" type="button">
           <o-icon :icon="currentMenu.icon"></o-icon>
-            <span>{{ currentMenu.text }}</span>
+          <span>{{ currentMenu.text }}</span>
           <o-icon icon="caret-down"></o-icon>
         </o-button>
       </template>
@@ -98,8 +92,7 @@
         v-for="(menu, index) in menus"
         :key="index"
         :value="menu"
-        aria-role="listitem"
-      >
+        aria-role="listitem">
         <div class="media">
           <o-icon class="media-left" :icon="menu.icon"></o-icon>
           <div class="media-content">
@@ -109,13 +102,13 @@
       </o-dropdown-item>
     </o-dropdown>
   </section>
- <!--  -->
- <!--  -->
- <!--  -->
+  <!--  -->
+  <!--  -->
+  <!--  -->
   <section>
-     <o-dropdown position="top-right" aria-role="list">
+    <o-dropdown position="top-right" aria-role="list">
       <template #trigger>
-        <o-button variant="primary" #default="{ active }">
+        <o-button v-slot="{ active }" variant="primary">
           <span>Click me!</span>
           <o-icon :icon="active ? 'caret-down' : 'caret-up'"></o-icon>
           {{ active }}
@@ -126,9 +119,9 @@
       <o-dropdown-item aria-role="listitem">Another action</o-dropdown-item>
       <o-dropdown-item aria-role="listitem">Something else</o-dropdown-item>
     </o-dropdown>
-     <o-dropdown position="top-left" aria-role="list">
+    <o-dropdown position="top-left" aria-role="list">
       <template #trigger>
-        <o-button variant="primary" #default="{ active }">
+        <o-button v-slot="{ active }" variant="primary">
           <span>Click me!</span>
           <o-icon :icon="active ? 'caret-down' : 'caret-up'"></o-icon>
           {{ active }}
@@ -150,7 +143,7 @@ export default {
       maxHeight: 200,
       currentMenu: { icon: "users", text: "People" },
       menus: [
-        { icon: "users", text: "People", },
+        { icon: "users", text: "People" },
         { icon: "box", text: "Orders" },
         { icon: "credit-card", text: "Payments" },
         { icon: "dolly", text: "Logistics" },
@@ -159,7 +152,7 @@ export default {
         { icon: "cog", text: "Configuration" },
       ],
     };
-  }
+  },
 };
 </script>
 

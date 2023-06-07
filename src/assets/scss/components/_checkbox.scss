@@ -35,29 +35,31 @@
 /* @bootstrap docs */
 
 .form-check {
-	// Colors
-	@each $name, $pair in $theme-colors {
-		&.form-check-#{$name} {
-			input[type="checkbox"]:checked {
-				background-color: $pair;
-				border-color: $pair;
-			}
-		}
-	}
+  // Colors
+  @each $name, $pair in $theme-colors {
+    &.form-check-#{$name} {
 
-	// Sizes
-	@each $name, $size in $sizes {
-		&.is-#{$name} {
-			input[type="checkbox"] {
-				width: $size;
-				height: $size;
-				margin-right: calc(#{$size} / 2);
-			}
-		}
-	}
-	
-	&.is-disabled {
-		opacity: $form-check-input-disabled-opacity;
-		cursor: not-allowed;
-	}
+      input[type="checkbox"]:checked {
+        background-color: $pair;
+        border-color: $pair;
+      }
+    }
+  }
+
+  // Sizes
+  @each $name, $size in $sizes {
+    &.is-#{$name} {
+
+      input[type="checkbox"] {
+        width: $size;
+        height: $size;
+        margin-right: calc(#{$size} / 2);
+      }
+    }
+  }
+
+  &.is-disabled {
+    opacity: $form-check-input-disabled-opacity;
+    cursor: not-allowed;
+  }
 }

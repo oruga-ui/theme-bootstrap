@@ -33,7 +33,10 @@
       </o-select>
     </o-field>
 
-    <o-field label="Error" variant="danger" message="Something went wrong with this field">
+    <o-field
+      label="Error"
+      variant="danger"
+      message="Something went wrong with this field">
       <o-select placeholder="Select a character">
         <option value="flint">Flint</option>
         <option value="silver">Silver</option>
@@ -76,7 +79,7 @@
     </o-field>
 
     <o-field label="Multiple">
-      <o-select multiple native-size="8" v-model="selectedOptions">
+      <o-select v-model="selectedOptions" multiple native-size="8">
         <option value="flint">Flint</option>
         <option value="silver">Silver</option>
         <option value="vane">Vane</option>
@@ -92,11 +95,11 @@
 </template>
 
 <script lang="ts">
-  export default {
-    data() {
-      return {
-        selectedOptions: []
-      }
-    }
-  }
+export default {
+  data() {
+    return {
+      selectedOptions: [],
+    };
+  },
+};
 </script>

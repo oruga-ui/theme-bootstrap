@@ -7,7 +7,6 @@
       <o-button variant="warning">Warning</o-button>
       <o-button variant="info">Info</o-button>
       <o-button variant="dark">Dark</o-button>
-
     </div>
 
     <div class="buttons">
@@ -42,8 +41,9 @@
     <div class="buttons">
       <o-button variant="danger" icon-left="trash">Delete</o-button>
       <o-button variant="danger" icon-right="trash">Delete</o-button>
-      <o-button variant="danger" icon-right="trash"/>
+      <o-button variant="danger" icon-right="trash" />
     </div>
+
     <div class="buttons">
       <o-button variant="primary" expanded>Expanded</o-button>
     </div>

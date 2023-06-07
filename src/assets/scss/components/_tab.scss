@@ -29,14 +29,17 @@ $nav-tabs-margin-bottom: 10px !default;
 /* @bootstrap docs */
 
 // NAVTAB
+
 .nav-tab-wrapper {
   display: block;
   overflow: hidden;
   // nav (Pictures - Musics - Books - Videos)
+
   .nav {
     margin-bottom: $nav-tabs-margin-bottom;
     display: flex;
     // each nav element is div (or li => div)
+
     div {
       cursor: pointer;
       text-align: center;
@@ -59,20 +62,23 @@ $nav-tabs-margin-bottom: 10px !default;
     }
 
     // Sizes
-		@each $name, $size in $sizes {
-			&.is-#{$name} {
+    @each $name, $size in $sizes {
+      &.is-#{$name} {
         font-size: $size;
-			}
-		}
+      }
+    }
   }
 
   .nav-content {
-    position: relative
+    position: relative;
   }
 
   // Full width
+
   &.is-expanded {
+
     .nav {
+
       div {
         flex-grow: 1;
         flex-shrink: 0;
@@ -81,24 +87,29 @@ $nav-tabs-margin-bottom: 10px !default;
   }
 
   // Position Vetical
+
   &.is-vertical {
     display: flex;
     flex-direction: row;
+
     .nav {
       display: block;
+
       div {
         border-bottom: 1px solid $tabs-border-color;
         text-align: left;
       }
-			&.nav-tabs {
-				div {
-					border-top: 1px solid  $default-border-color;
-				}
-			}
-		}
+
+      &.nav-tabs {
+
+        div {
+          border-top: 1px solid $default-border-color;
+        }
+      }
+    }
 
     &.is-right {
       flex-direction: row-reverse;
     }
   }
-} 
+}

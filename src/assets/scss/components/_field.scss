@@ -1,8 +1,8 @@
 // FIELD
+
 .input-field {
-  &.row {
-    & > div {
-      @extend .col;
-    }
+
+  &.row > div {
+    @extend .col;
   }
 }

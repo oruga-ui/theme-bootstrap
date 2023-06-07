@@ -35,28 +35,30 @@
 /* @bootstrap docs */
 
 .form-check {
-	// Colors
-	@each $name, $pair in $theme-colors {
-		&.form-check-#{$name} {
-			input[type="radio"]:checked {
-				background-color: $pair;
-				border-color: $pair;
-			}
-		}
-	}
-	// Sizes
-	@each $name, $size in $sizes {
-		&.is-#{$name} {
-			input[type="radio"] {
-				width: $size;
-				height: $size;
-				margin-right: calc(#{$size} / 2); 
-			}
-		}
-	}
-	
-	&.is-disabled {
-		opacity: $form-check-input-disabled-opacity;
-		cursor: not-allowed;
-	}
+  // Colors
+  @each $name, $pair in $theme-colors {
+    &.form-check-#{$name} {
+
+      input[type="radio"]:checked {
+        background-color: $pair;
+        border-color: $pair;
+      }
+    }
+  }
+  // Sizes
+  @each $name, $size in $sizes {
+    &.is-#{$name} {
+
+      input[type="radio"] {
+        width: $size;
+        height: $size;
+        margin-right: calc(#{$size} / 2);
+      }
+    }
+  }
+
+  &.is-disabled {
+    opacity: $form-check-input-disabled-opacity;
+    cursor: not-allowed;
+  }
 }

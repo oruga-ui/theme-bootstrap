@@ -9,13 +9,16 @@ $upload-draggable-padding: 2em !default;
 @use "sass:map";
 
 .upload {
+
   input {
     display: none;
   }
+
   &.is-disabled {
     cursor: not-allowed;
     opacity: $base-disabled-opacity;
   }
+
   &.is-expanded {
     width: 100%;
     /* flex-grow: 1; */
@@ -24,6 +27,7 @@ $upload-draggable-padding: 2em !default;
   .upload-draggable {
     border: $upload-draggable-border;
     padding: $upload-draggable-padding;
+
     &.is-hovered {
       background-color: $upload-draggable-hover-border-color;
     }
@@ -32,11 +36,12 @@ $upload-draggable-padding: 2em !default;
       $variant: map.get($theme-colors, #{$name});
       &.is-#{$name} {
         background-color: $pair;
-        border-color: $variant
+        border-color: $variant;
       }
     }
 
     .ex-center {
+
       p {
         text-align: center;
       }

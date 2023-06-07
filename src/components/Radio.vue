@@ -1,15 +1,13 @@
 <template>
   <section>
     <div class="block">
-      <o-radio disabled v-model="radio" name="name" native-value="Flint">
+      <o-radio v-model="radio" disabled name="name" native-value="Flint">
         Flint
       </o-radio>
       <o-radio v-model="radio" name="name" native-value="Silver">
         Silver
       </o-radio>
-      <o-radio v-model="radio" name="name" native-value="Jack">
-        Jack
-      </o-radio>
+      <o-radio v-model="radio" name="name" native-value="Jack"> Jack </o-radio>
       <o-radio v-model="radio" name="name" native-value="Vane" disabled>
         Vane
       </o-radio>
@@ -18,9 +16,7 @@
 
     <div class="block">
       <o-field>
-        <o-radio v-model="variant" native-value="default">
-          Default
-        </o-radio>
+        <o-radio v-model="variant" native-value="default"> Default </o-radio>
       </o-field>
       <o-field>
         <o-radio v-model="variant" native-value="info" variant="info">
@@ -65,13 +61,13 @@
 </template>
 
 <script lang="ts">
-  export default {
-    data() {
-      return {
-        radio: 'Jack',
-        variant: 'success',
-        size: 'small'
-      }
-    }
-  }
+export default {
+  data() {
+    return {
+      radio: "Jack",
+      variant: "success",
+      size: "small",
+    };
+  },
+};
 </script>

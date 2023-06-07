@@ -34,6 +34,7 @@ $tooltip-content-multiline-width: 18.75rem !default;
 
 @mixin tooltip($direction) {
   &.#{$direction} {
+
     .tooltip-content {
       @if ($direction == "is-top") {
         top: auto;
@@ -61,8 +62,8 @@ $tooltip-content-multiline-width: 18.75rem !default;
         transform: translateY(-50%);
       }
     }
-    .tooltip-content::before {
 
+    .tooltip-content::before {
       @if ($direction == "is-bottom") {
         top: auto;
         right: auto;
@@ -113,8 +114,9 @@ $tooltip-content-multiline-width: 18.75rem !default;
     @each $name, $pair in $theme-colors {
       // $color: nth($pair, 1);
       &.is-#{$name} {
+
         .tooltip-content::before {
-          @include tooltip-arrow-color($direction, $pair)
+          @include tooltip-arrow-color($direction, $pair);
         }
         // If light and dark colors are provided
         // @if length($pair) >= 4 {
@@ -131,6 +133,7 @@ $tooltip-content-multiline-width: 18.75rem !default;
 }
 
 // Base
+
 .b-tooltip {
   @include tooltip("is-top");
   @include tooltip("is-right");
@@ -138,10 +141,10 @@ $tooltip-content-multiline-width: 18.75rem !default;
   @include tooltip("is-left");
   position: relative;
   display: inline-flex;
+
   .tooltip-content {
     width: auto;
     max-width: $tooltip-max-width;
-    padding: 0.35rem 0.75rem;
     border-radius: $tooltip-border-radius;
     font-size: $tooltip-font-size;
     // font-weight: $weight-normal;
@@ -152,53 +155,63 @@ $tooltip-content-multiline-width: 18.75rem !default;
     background-color: $tooltip-bg; //default
     color: $tooltip-color; // default
     // opacity: $tooltip-opacity;
-    padding: $tooltip-padding-y $tooltip-padding-x $tooltip-padding-y $tooltip-padding-x;
+    padding: $tooltip-padding-y $tooltip-padding-x $tooltip-padding-y
+      $tooltip-padding-x;
   }
+
   .tooltip-content::before {
     position: absolute;
     content: "";
     pointer-events: none;
     z-index: 38;
   }
+
   .tooltip-trigger {
     width: 100%;
   }
-    // Colors
+  // Colors
   @each $name, $pair in $theme-colors {
     &.is-#{$name} {
+
       .tooltip-content {
         background: $pair;
-        @if($name == "light") {
+        @if ($name == "light") {
           color: $dark;
         }
-          // @else if($name == "info") {
-          // 	color: $dark;
-          // }
+        // @else if($name == "info") {
+        // 	color: $dark;
+        // }
         @else {
           color: white;
         }
       }
     }
   }
-  
+
   & .tooltip-content {
-    &.is-always{
+
+    &.is-always {
       opacity: 1;
       visibility: visible;
     }
+
     &.is-multiline {
       text-align: center;
       white-space: normal;
       width: $tooltip-content-multiline-width;
     }
   }
+
   &.is-dashed {
+
     .tooltip-trigger {
       border-bottom: 1px dashed $grey-light;
       cursor: default;
     }
   }
+
   &.is-square {
+
     .tooltip-content {
       border-radius: 0;
     }

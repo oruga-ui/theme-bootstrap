@@ -1,343 +1,411 @@
 /* @docs */
 $steps-items-focused-outline: none !default;
-$steps-details-background-color: white !default; 
-$steps-marker-default-background-color: $grey-light !default; 
-$steps-marker-default-border: .1em solid #fff !default;
+$steps-details-background-color: white !default;
+$steps-marker-default-background-color: $grey-light !default;
+$steps-marker-default-border: 0.1em solid #fff !default;
 $steps-previous-background-color: $primary !default;
 $steps-active-background-color: $primary !default;
-$steps-divider-height: .2em !default;
+$steps-divider-height: 0.2em !default;
 $steps-vertical-padding: 1em 0 !default;
 $steps-mobile-max-width: $tablet !default;
 $steps-default-size: 1em !default;
 /* @docs */
 
 @mixin steps-size($size) {
-	.steps {
-		min-height: $size * 2;
-		.step-item {
-			.step-marker {
-				width: $size * 2;
-	   			height: $size * 2;
-			    font-size: $size;
-			}	
-			.step-title {
-				font-size: $size;
-			}
-	        &:not(:first-child), &:only-child {
-                &::before {
-                    top: 25%;
-                }
-            }
-		}
-        &.has-label-right, &.has-label-left {
-        	.step-item {
-	        	&:not(:first-child), &:only-child {
-	                &::before {
-	                    top: 45%;
-	                }
-	            }
-        		
-        	}
+
+  .steps {
+    min-height: $size * 2;
+
+    .step-item {
+
+      .step-marker {
+        width: $size * 2;
+        height: $size * 2;
+        font-size: $size;
+      }
+
+      .step-title {
+        font-size: $size;
+      }
+
+      &:not(:first-child),
+      &:only-child {
+
+        &::before {
+          top: 25%;
         }
-	}
+      }
+    }
+
+    &.has-label-right,
+    &.has-label-left {
+
+      .step-item {
+
+        &:not(:first-child),
+        &:only-child {
+
+          &::before {
+            top: 45%;
+          }
+        }
+      }
+    }
+  }
 }
 
 .steps-wrapper {
 
-	.steps {
-		display: flex;
-	    flex-wrap: wrap;
-	    position: relative;
+  .steps {
+    display: flex;
+    flex-wrap: wrap;
+    position: relative;
 
-		.step-item {
-	        margin-top: 0;
-	        position: relative;
-	        flex-grow: 1;
-	        flex-basis: 1em;
+    .step-item {
+      margin-top: 0;
+      position: relative;
+      flex-grow: 1;
+      flex-basis: 1em;
 
-			.step-link {
-				text-decoration: none;
-			    display: flex;
-                align-items: center;
-                justify-content: center;
-                flex-direction: column;
-                color: $body-color;
+      .step-link {
+        text-decoration: none;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        color: $body-color;
 
-                &:not(.is-clickable) {
-                    cursor: not-allowed;
-                }
-			}
-			.step-marker {
-				align-items: center;
-			    display: flex;
-			    font-weight: 700;
-			    justify-content: center;
-				background: $steps-marker-default-background-color;
-				color: white;
-	    		border: $steps-marker-default-border;
-			    padding: .1em;
-			    margin: 0 auto;
-			    text-align: center;
-		    	align-items: center;
-			    color: white;
-			    z-index: 1;
-			    overflow: hidden;
-			    cursor: pointer;
-
-				.icon {
-					margin: 0;
-				}
-			}
-			.step-title {
-				color: $dark;
-				text-align: center;
-			}
-
-			 &:not(:first-child), &:only-child {
-	            flex-shrink: 1;
-
-	            &::before {
-	                // This will contain the divider
-	                content: " ";
-	                display: block;
-	                position: absolute;
-	                width: 100%;
-	                left: -50%;
-	                z-index: -1;
-	            }
-	        }
-	        &:only-child {
-	            &::after {
-	                // This will contain the divider
-	                content: " ";
-	                display: block;
-	                position: absolute;
-	                height: $steps-divider-height;
-	                bottom: 0;
-					height: 3px;
-	            }
-	            &::before, &::after {
-	                width: 25%;
-	                left: 50%;
-	            }
-	            &::before {
-	                right: 50%;
-	                left: auto;
-	            }
-	        }
-
-	        &::before, &::after {
-	            background: $steps-marker-default-background-color;
-	            background-size: 200% 100%;
-	            background-position: right bottom;
-				height: 3px;
-	        }
-	        // Variants
-	    	&.is-previous {
-	    		&::before, &::after {
-		            background-color: $primary;
-		        }
-	    		.step-marker {
-	        		background-color: $primary;
-	        		border-color: $primary;
-	        		color: white;
-	    		}
-	    	}
-	    	&.is-active {
-	    		&::before, &::after {
-		            background-color: $primary;
-		        }
-	    		.step-marker {
-	        		background-color: white;
-	        		border-color: $primary;
-	        		color: $primary;
-	    		}
-	    	}
-	    	// Colors
-	        @each $name, $pair in $theme-colors {
-
-	        	// @TODO devider
-	        	&.is-#{$name} {
-	        		&.is-previous {
-			        	&::before, &::after {
-				            background-color: $pair;
-				        }
-	        			.step-marker {
-			        		background-color: $pair;
-			        		border-color: $pair;
-			        		color: white;
-	        			} 
-	        		}
-	        		&.is-active {
-	        			&::before, &::after {
-				            background-color: $pair;
-				        }
-	    				.step-marker {
-		        			background-color: white;
-		        			border-color: $pair;
-		        			color: $pair;
-	    				}
-	        		}
-	        	}
-	        }
-		}
-	    &.is-rounded {
-	        .step-item {
-	            .step-marker {
-	                border-radius: 9999px;
-	            }
-	        }
-	    }
-
-	    &.is-animated {
-	        .step-item {
-	            &:not(:first-child), &:only-child {
-	                &::before {
-	                    transition: background $speed-slow $easing;
-	                }
-	            }
-	        }
-	    }
-
-
-	    &.has-label-right, &.has-label-left {
-	        /* .step-items { */
-	            .step-item {
-	                .step-link {
-	                    flex-direction: row;
-
-	                    > /* .step-details { */ .step-title {
-	                        background-color: $steps-details-background-color;
-	                        padding: .2em;
-	                    }
-	                }
-	                .step-marker {
-	                	margin: 0;
-	                }
-	            }
-	        /* } */
-	    }
-	    &.has-label-left {
-            /* .step-items { */
-                .step-item {
-                    .step-link {
-                        flex-direction: row-reverse;
-                    }
-                    .step-marker {
-                    	margin: 0;
-                    }
-                }
-            /* } */
+        &:not(.is-clickable) {
+          cursor: not-allowed;
         }
-	}
+      }
 
-	// Sizes
-	@include steps-size($steps-default-size);
-	
-    @each $name, $value in $sizes {
+      .step-marker {
+        display: flex;
+        font-weight: 700;
+        justify-content: center;
+        background: $steps-marker-default-background-color;
+        border: $steps-marker-default-border;
+        padding: 0.1em;
+        margin: 0 auto;
+        text-align: center;
+        align-items: center;
+        color: white;
+        z-index: 1;
+        overflow: hidden;
+        cursor: pointer;
+
+        .icon {
+          margin: 0;
+        }
+      }
+
+      .step-title {
+        color: $dark;
+        text-align: center;
+      }
+
+      &:not(:first-child),
+      &:only-child {
+        flex-shrink: 1;
+
+        &::before {
+          // This will contain the divider
+          content: " ";
+          display: block;
+          position: absolute;
+          width: 100%;
+          left: -50%;
+          z-index: -1;
+        }
+      }
+
+      &:only-child {
+
+        &::after {
+          // This will contain the divider
+          content: " ";
+          display: block;
+          position: absolute;
+          bottom: 0;
+          height: 3px;
+        }
+
+        &::before,
+        &::after {
+          width: 25%;
+          left: 50%;
+        }
+
+        &::before {
+          right: 50%;
+          left: auto;
+        }
+      }
+
+      &::before,
+      &::after {
+        background: $steps-marker-default-background-color;
+        background-size: 200% 100%;
+        background-position: right bottom;
+        height: 3px;
+      }
+      // Variants
+
+      &.is-previous {
+
+        &::before,
+        &::after {
+          background-color: $primary;
+        }
+
+        .step-marker {
+          background-color: $primary;
+          border-color: $primary;
+          color: white;
+        }
+      }
+
+      &.is-active {
+
+        &::before,
+        &::after {
+          background-color: $primary;
+        }
+
+        .step-marker {
+          background-color: white;
+          border-color: $primary;
+          color: $primary;
+        }
+      }
+      // Colors
+      @each $name, $pair in $theme-colors {
+        // @TODO devider
         &.is-#{$name} {
-            @include steps-size($value);
+
+          &.is-previous {
+
+            &::before,
+            &::after {
+              background-color: $pair;
+            }
+
+            .step-marker {
+              background-color: $pair;
+              border-color: $pair;
+              color: white;
+            }
+          }
+
+          &.is-active {
+
+            &::before,
+            &::after {
+              background-color: $pair;
+            }
+
+            .step-marker {
+              background-color: white;
+              border-color: $pair;
+              color: $pair;
+            }
+          }
         }
+      }
     }
 
-	.step-content {
-		margin-top: 1rem;
-		position: relative;
-	    overflow: visible;
-	    display: flex;
-	    flex-direction: column;
-	    padding: 1rem;
-	    .step-link {
-	    	.title {
-	    		text-align: center;
-	    	}
-	    }
-	    .step-item {
-	        flex-shrink: 0;
-	        flex-basis: auto;
+    &.is-rounded {
 
-	        &:focus {
-	            outline: $steps-items-focused-outline;
-	        }
-	    }
-	    &.is-transitioning {
-	        overflow: hidden;
-	    }
-	}
-	&.is-vertical {
-		display: flex;
-		flex-direction: row;
-        flex-wrap: wrap;
+      .step-item {
 
-		// flex-direction: row-reverse;
-		> .steps {
-			flex-direction: column;
-			.step-item {
-				width: 100%;
-	            display: flex;
-	            align-items: center;
-	            justify-content: center;
-				padding: $steps-vertical-padding;
-				.step-title {
-					background-color: $steps-details-background-color;
-				}
-				&:not(:first-child), &:only-child {
-		            flex-shrink: 1;
+        .step-marker {
+          border-radius: 9999px;
+        }
+      }
+    }
 
-		            &::before {
-                        width: 3px;
-		                top: -50%;
-		                left: 48%;
-		            }
-		        }
-		        &:only-child {
-		            &::after {
-		                // This contains the divider
-		                height: 100%;
-		            }
-		        }
+    &.is-animated {
 
-		        &::before, &::after {
-		            height: 100%;
-		        }
-			}
-			&.has-label-right {
-                /* .step-items { */
-                    .step-item {
-                        justify-content: flex-start;
-                    }
-                /* } */
-            }
-            &.has-label-left {
-                /* .step-items { */
-                    .step-item {
-                        justify-content: flex-end;
-                    }
-                /* } */
-            }
-            &:not(.has-label-right):not(.has-label-left) {
-                /* .step-items { */
-                    .step-item {
-                        .step-link {
-                            > /* .step-details { */ .step-title {
-                                background-color: $steps-details-background-color;
-                            }
-                        }
-                    }
-                /* } */
-            }
+      .step-item {
 
-		}
-		> .step-content {
-            flex-grow: 1;
+        &:not(:first-child),
+        &:only-child {
+
+          &::before {
+            transition: background $speed-slow $easing;
+          }
+        }
+      }
+    }
+
+    &.has-label-right,
+    &.has-label-left {
+      /* .step-items { */
+
+      .step-item {
+
+        .step-link {
+          flex-direction: row;
+
+          > /* .step-details { */ .step-title {
+            background-color: $steps-details-background-color;
+            padding: 0.2em;
+          }
         }
 
-        > .step-navigation {
-            flex-basis: 100%;
+        .step-marker {
+          margin: 0;
+        }
+      }
+      /* } */
+    }
+
+    &.has-label-left {
+      /* .step-items { */
+
+      .step-item {
+
+        .step-link {
+          flex-direction: row-reverse;
         }
 
-        &.is-right {
-            flex-direction: row-reverse;
+        .step-marker {
+          margin: 0;
         }
-	}
+      }
+      /* } */
+    }
+  }
+
+  // Sizes
+  @include steps-size($steps-default-size);
+
+  @each $name, $value in $sizes {
+    &.is-#{$name} {
+      @include steps-size($value);
+    }
+  }
+
+  .step-content {
+    margin-top: 1rem;
+    position: relative;
+    overflow: visible;
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+
+    .step-link {
+
+      .title {
+        text-align: center;
+      }
+    }
+
+    .step-item {
+      flex-shrink: 0;
+      flex-basis: auto;
+
+      &:focus {
+        outline: $steps-items-focused-outline;
+      }
+    }
+
+    &.is-transitioning {
+      overflow: hidden;
+    }
+  }
+
+  &.is-vertical {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+
+    // flex-direction: row-reverse;
+
+    > .steps {
+      flex-direction: column;
+
+      .step-item {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: $steps-vertical-padding;
+
+        .step-title {
+          background-color: $steps-details-background-color;
+        }
+
+        &:not(:first-child),
+        &:only-child {
+          flex-shrink: 1;
+
+          &::before {
+            width: 3px;
+            top: -50%;
+            left: 48%;
+          }
+        }
+
+        &:only-child {
+
+          &::after {
+            // This contains the divider
+            height: 100%;
+          }
+        }
+
+        &::before,
+        &::after {
+          height: 100%;
+        }
+      }
+
+      &.has-label-right {
+        /* .step-items { */
+
+        .step-item {
+          justify-content: flex-start;
+        }
+        /* } */
+      }
+
+      &.has-label-left {
+        /* .step-items { */
+
+        .step-item {
+          justify-content: flex-end;
+        }
+        /* } */
+      }
+
+      &:not(.has-label-right):not(.has-label-left) {
+        /* .step-items { */
+
+        .step-item {
+
+          .step-link {
+
+            > /* .step-details { */ .step-title {
+              background-color: $steps-details-background-color;
+            }
+          }
+        }
+        /* } */
+      }
+    }
+
+    > .step-content {
+      flex-grow: 1;
+    }
+
+    > .step-navigation {
+      flex-basis: 100%;
+    }
+
+    &.is-right {
+      flex-direction: row-reverse;
+    }
+  }
 }

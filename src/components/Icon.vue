@@ -21,7 +21,8 @@
     <div class="block">
       <o-icon pack="fas" icon="user" size="large" variant="success"> </o-icon>
       <o-icon pack="fas" icon="home" size="large" variant="info"> </o-icon>
-      <o-icon pack="fas" icon="tachometer-alt" size="large" variant="primary"> </o-icon>
+      <o-icon pack="fas" icon="tachometer-alt" size="large" variant="primary">
+      </o-icon>
     </div>
 
     <o-button variant="success">
@@ -42,5 +43,5 @@
 </template>
 
 <script lang="ts">
-  export default {}
+export default {};
 </script>
