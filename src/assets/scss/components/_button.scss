@@ -3,7 +3,7 @@
 /* @docs */
 $btn-margin-right: 0.5rem !default;
 $btn-rounded-border-radius: var(--bs-border-radius-pill) !default;
-$btn-border-default: 0.1px solid var(--bs-gray-400) !default; //  var(--oruga-button-border);
+$btn-border-default: 0.1px solid $default-border-color !default; //  var(--oruga-button-border);
 /* @docs */
 
 
