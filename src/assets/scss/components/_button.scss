@@ -85,7 +85,7 @@ $btn-border-default: 0.1px solid var(--bs-gray-400) !default; //  var(--oruga-bu
 
     &.btn-inverted-#{$name}:active {
       --bs-btn-active-color: #{$variant};
-    } 
+    }
   }
 }
 
