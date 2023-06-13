@@ -49,3 +49,9 @@
     </div>
   </section>
 </template>
+
+<style scoped lang="scss">
+.buttons button {
+  margin-bottom: 0.5rem;
+}
+</style>
