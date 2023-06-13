@@ -4,55 +4,42 @@
 // $dropdown-padding-y:                .5rem;
 // $dropdown-spacer:                   .125rem;
 // $dropdown-font-size:                $font-size-base;
-// $dropdown-color:                    $body-color;
-// $dropdown-bg:                       $white;
-// $dropdown-border-color:             rgba($black, .15);
-// $dropdown-border-radius:            $border-radius;
-// $dropdown-border-width:             $border-width;
-// $dropdown-inner-border-radius:      subtract($dropdown-border-radius, $dropdown-border-width);
+// $dropdown-color:                    var(--#{$prefix}body-color);
+// $dropdown-bg:                       var(--#{$prefix}body-bg);
+// $dropdown-border-color:             var(--#{$prefix}border-color-translucent);
+// $dropdown-border-radius:            var(--#{$prefix}border-radius);
+// $dropdown-border-width:             var(--#{$prefix}border-width);
+// $dropdown-inner-border-radius:      calc(#{$dropdown-border-radius} - #{$dropdown-border-width}); // stylelint-disable-line function-disallowed-list
 // $dropdown-divider-bg:               $dropdown-border-color;
 // $dropdown-divider-margin-y:         $spacer * .5;
 // $dropdown-box-shadow:               $box-shadow;
 
-// $dropdown-link-color:               $gray-900;
-// $dropdown-link-hover-color:         shade-color($dropdown-link-color, 10%);
-// $dropdown-link-hover-bg:            $gray-200;
+// $dropdown-link-color:               var(--#{$prefix}body-color);
+// $dropdown-link-hover-color:         $dropdown-link-color;
+// $dropdown-link-hover-bg:            var(--#{$prefix}tertiary-bg);
 
 // $dropdown-link-active-color:        $component-active-color;
 // $dropdown-link-active-bg:           $component-active-bg;
 
-// $dropdown-link-disabled-color:      $gray-500;
+// $dropdown-link-disabled-color:      var(--#{$prefix}tertiary-color);
 
 // $dropdown-item-padding-y:           $spacer * .25;
 // $dropdown-item-padding-x:           $spacer;
 
 // $dropdown-header-color:             $gray-600;
-// $dropdown-header-padding:           $dropdown-padding-y $dropdown-item-padding-x;
-// Variables for the dark dropdown:
-
-// Copy
-// $dropdown-dark-color:               $gray-300;
-// $dropdown-dark-bg:                  $gray-800;
-// $dropdown-dark-border-color:        $dropdown-border-color;
-// $dropdown-dark-divider-bg:          $dropdown-divider-bg;
-// $dropdown-dark-box-shadow:          null;
-// $dropdown-dark-link-color:          $dropdown-dark-color;
-// $dropdown-dark-link-hover-color:    $white;
-// $dropdown-dark-link-hover-bg:       rgba($white, .15);
-// $dropdown-dark-link-active-color:   $dropdown-link-active-color;
-// $dropdown-dark-link-active-bg:      $dropdown-link-active-bg;
-// $dropdown-dark-link-disabled-color: $gray-500;
-// $dropdown-dark-header-color:        $gray-500;
+// $dropdown-header-padding-x:         $dropdown-item-padding-x;
+// $dropdown-header-padding-y:         $dropdown-padding-y;
+// // fusv-disable
+// $dropdown-header-padding:           $dropdown-header-padding-y $dropdown-header-padding-x; // Deprecated in v5.2.0
+// // fusv-enable
 /* @bootstrap docs */
 
 .dropdown {
-
   .dropdown-menu {
     background: $dropdown-bg;
   }
 
   &.dropdown-modal {
-
     .dropdown-menu {
       position: fixed;
       top: 25%;
@@ -76,7 +63,6 @@
   }
 
   &.is-top-right:not(.dropdown-modal) {
-
     .dropdown-menu {
       top: auto;
       bottom: 100%;
@@ -84,7 +70,6 @@
   }
 
   &.is-top-left:not(.dropdown-modal) {
-
     .dropdown-menu {
       top: auto;
       bottom: 100%;
