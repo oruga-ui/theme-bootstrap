@@ -1,5 +1,7 @@
 <template>
   <section>
+    <h2>Button Demo</h2>
+
     <div class="buttons">
       <o-button variant="primary">Primary</o-button>
       <o-button variant="success">Success</o-button>
