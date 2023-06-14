@@ -214,12 +214,12 @@ export const bootstrapConfig: any = {
     tabItemWrapperClass: "nav-item",
     expandedClass: "is-expanded",
     verticalClass: "flex-column",
-    navSizeClass: "is-",
     positionClass: (_: string, { props }: any) => {
       if (props.position == "left") return "justify-content-start";
       if (props.position == "centered") return "justify-content-center";
       if (props.position == "right") return "justify-content-end";
     },
+    navSizeClass: "is-",
     navPositionClass: "is-",
     transitioningClass: "is-transitioning",
     itemHeaderClass: "nav-link",
@@ -370,26 +370,28 @@ export const bootstrapConfig: any = {
   },
   dropdown: {
     override: true,
-    itemTag: "a",
-    rootClass: (_: string, { props, data, computed }: any) => {
-      const classes = ["dropdown", "dropdown-menu-animation"];
-      if (data.isActive || props.inline) classes.push("show");
-      if (computed.hoverable) classes.push("show");
+    rootClass: (_: string, { props }: any) => {
+      const classes = ["dropdown", "btn-group"];
       if (props.position) classes.push(`is-${props.position}`);
       return classes.join(" ");
     },
     triggerClass: "dropdown-trigger",
-    menuClass: "dropdown-menu",
     disabledClass: "disabled",
     expandedClass: "is-expanded",
     inlineClass: "is-inline",
+    menuClass: (_: string, { props, data, computed }: any) => {
+      const classes = ["dropdown-menu"];
+      if (computed.hoverable) classes.push("show");
+      return classes.join(" ");
+    },
     menuPositionClass: "is-",
     menuActiveClass: "show",
+    menuMobileOverlayClass: "background",
+    itemTag: "a",
     itemClass: "dropdown-item",
-    // itemActiveClass: 'active',
+    itemActiveClass: "active",
     itemDisabledClass: "is-disabled",
     mobileClass: "dropdown-modal",
-    menuMobileOverlayClass: "background",
   },
   datepicker: {
     override: true,
