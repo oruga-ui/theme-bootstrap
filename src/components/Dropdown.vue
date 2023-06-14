@@ -19,10 +19,11 @@ const selectedOptions = ref([]);
 <template>
   <section>
     <h2>Dropdown Demo</h2>
-
     <hr />
+  </section>
 
-    <h2>Base</h2>
+  <section class="mt-3">
+    <h3>Base</h3>
 
     <div class="dropdown-example">
       <o-dropdown aria-role="list">
