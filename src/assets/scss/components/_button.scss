@@ -67,22 +67,19 @@ $btn-border-default: 0.1px solid $default-border-color !default; //  var(--oruga
   }
 
   // inverted
-
   @each $name, $pair in $theme-colors-lighter {
     $variant: map.get($theme-colors, #{$name});
 
     &.btn-inverted-#{$name} {
+      // default style
+      --bs-btn-color: #{$variant};
+      --bs-btn-bg: transparent;
+      --bs-btn-border-color: transparent;
+
+      // hover style
       --bs-btn-hover-color: #{$variant};
-      --bs-btn-hover-border-color: transparent;
-      --bs-btn-hover-bg: transparent;
-    }
-
-    &.btn-inverted-#{$name}:hover {
       --bs-btn-hover-bg: #{$pair};
-    }
-
-    &.btn-inverted-#{$name}:active {
-      --bs-btn-active-color: #{$variant};
+      --bs-btn-hover-border-color: transparent;
     }
   }
 }
