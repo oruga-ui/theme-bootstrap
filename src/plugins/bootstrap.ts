@@ -228,7 +228,6 @@ export const bootstrapConfig: any = {
   },
   table: {
     override: true,
-    //
     rootClass: "table-component",
     wrapperClass: "table-wrapper",
     tableClass: "table",
@@ -236,33 +235,31 @@ export const bootstrapConfig: any = {
     stripedClass: "table-striped",
     narrowedClass: "table-sm",
     hoverableClass: "table-hover",
-    ////
     emptyClass: "is-empty",
     detailedClass: "detail",
     footerClass: "table-footer",
     paginationWrapperClass: "pagination-wrapper",
-    // scrollableClass: 'is-scrollable',
-    //
+    scrollableClass: "is-scrollable",
     trSelectedClass: "table-active",
-    ////
-    // thSortableClass: 'is-sortable',
-    //
+    thSortableClass: "is-sortable",
     thCurrentSortClass: "is-current-sort",
-    ////
     thSortIconClass: "sort-icon",
     thUnselectableClass: "is-unselectable",
-    thStickyClass: "is-sticky",
-    // thCheckboxClass: 'th-checkbox',
+    thCheckboxClass: "th-checkbox",
     thDetailedClass: "th-chevron-cell",
-    tdDetailedChevronClass: "chevron-cell",
+    thStickyClass: "is-sticky",
     thPositionClass: (position: string) => {
-      if (position === "centered") return "is-centered";
+      if (position === "left") return "is-left";
+      else if (position === "centered") return "is-centered";
       else if (position === "right") return "is-right";
       return;
     },
+    tdDetailedChevronClass: "chevron-cell",
+    tdStickyClass: "is-sticky",
     tdPositionClass: (position: string) => {
-      if (position === "centered") return "has-text-centered";
-      else if (position === "right") return "has-text-right";
+      if (position === "left") return "is-left";
+      else if (position === "centered") return "is-centered";
+      else if (position === "right") return "is-right";
       return;
     },
     mobileClass: "has-mobile-cards",
