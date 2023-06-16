@@ -144,38 +144,34 @@ export const bootstrapConfig: any = {
   pagination: {
     override: true,
     rootClass: (_: string, { props }: any) => {
-      if (props.rounded) {
-        return "pagination-wrapper is-rounded";
-      } else {
-        return "pagination-wrapper";
-      }
+      const classes = ["pagination-wrapper pagination"];
+      if (props.rounded) classes.push("is-rounded");
+      return classes.join(" ");
     },
     sizeClass: (_: string, { props }: any) => {
-      if (props.size == "small") {
-        return "pagination-sm";
-      } else if (props.size == "medium") {
-        return "pagination-md";
-      } else if (props.size == "large") {
-        return "pagination-lg";
-      }
+      if (props.size == "small") return "pagination-sm";
+      else if (props.size == "medium") return "pagination-md";
+      else if (props.size == "large") return "pagination-lg";
     },
     simpleClass: "is-simple",
-    orderClass: (_: string, { props }: any) => {
-      if (props.order == "") {
-        return "justify-content-start";
-      } else if (props.order == "centered") {
-        return "justify-content-center";
-      } else if (props.order == "right") {
-        return "justify-content-end";
-      }
+    orderClass: (order: string) => {
+      return "order-" + order;
     },
-    listClass: "pagination",
+    listClass: (_: string, { props }: any) => {
+      const classes = ["pagination"];
+      if (props.size == "small") classes.push("pagination-sm");
+      else if (props.size == "medium") classes.push("pagination-md");
+      else if (props.size == "large") classes.push("pagination-lg");
+      return classes.join(" ");
+    },
+    // itemClass: "page-item", // not implementend in oruga yet
     linkClass: "page-link",
     linkCurrentClass: "active",
     linkDisabledClass: "disabled",
-    nextBtnClass: "pagination-next",
-    prevBtnClass: "pagination-prev",
-    infoClass: "info",
+    ellipsisClass: "pagination-ellipsis",
+    nextBtnClass: "pagination-next page-item",
+    prevBtnClass: "pagination-prev page-item",
+    infoClass: "pagination-info",
   },
   slider: {
     override: true,
@@ -238,7 +234,7 @@ export const bootstrapConfig: any = {
     emptyClass: "is-empty",
     detailedClass: "detail",
     footerClass: "table-footer",
-    paginationWrapperClass: "pagination-wrapper",
+    paginationWrapperClass: "table-pagination",
     scrollableClass: "is-scrollable",
     trSelectedClass: "table-active",
     thSortableClass: "is-sortable",
