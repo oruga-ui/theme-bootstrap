@@ -1,8 +1,8 @@
+@use "sass:math";
+
 /* @docs */
-$tabs-link-active-border-color: $primary !default;
-$tabs-color: $dark !default;
-$tabs-border-color: $default-border-color;
-$nav-tabs-margin-bottom: 10px !default;
+$tabs-color: var(--bs-body-color) !default;
+$nav-tabs-margin-bottom: 1rem !default;
 /* @docs */
 
 /* @bootstrap docs */
@@ -10,61 +10,78 @@ $nav-tabs-margin-bottom: 10px !default;
 // $nav-link-padding-x:                1rem;
 // $nav-link-font-size:                null;
 // $nav-link-font-weight:              null;
-// $nav-link-color:                    $link-color;
-// $nav-link-hover-color:              $link-hover-color;
+// $nav-link-color:                    var(--#{$prefix}link-color);
+// $nav-link-hover-color:              var(--#{$prefix}link-hover-color);
 // $nav-link-transition:               color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out;
-// $nav-link-disabled-color:           $gray-600;
+// $nav-link-disabled-color:           var(--#{$prefix}secondary-color);
+// $nav-link-focus-box-shadow:         $focus-ring-box-shadow;
 
-// $nav-tabs-border-color:             $gray-300;
-// $nav-tabs-border-width:             $border-width;
-// $nav-tabs-border-radius:            $border-radius;
-// $nav-tabs-link-hover-border-color:  $gray-200 $gray-200 $nav-tabs-border-color;
-// $nav-tabs-link-active-color:        $gray-700;
-// $nav-tabs-link-active-bg:           $body-bg;
-// $nav-tabs-link-active-border-color: $gray-300 $gray-300 $nav-tabs-link-active-bg;
+// $nav-tabs-border-color:             var(--#{$prefix}border-color);
+// $nav-tabs-border-width:             var(--#{$prefix}border-width);
+// $nav-tabs-border-radius:            var(--#{$prefix}border-radius);
+// $nav-tabs-link-hover-border-color:  var(--#{$prefix}secondary-bg) var(--#{$prefix}secondary-bg) $nav-tabs-border-color;
+// $nav-tabs-link-active-color:        var(--#{$prefix}emphasis-color);
+// $nav-tabs-link-active-bg:           var(--#{$prefix}body-bg);
+// $nav-tabs-link-active-border-color: var(--#{$prefix}border-color) var(--#{$prefix}border-color) $nav-tabs-link-active-bg;
 
-// $nav-pills-border-radius:           $border-radius;
+// $nav-pills-border-radius:           var(--#{$prefix}border-radius);
 // $nav-pills-link-active-color:       $component-active-color;
 // $nav-pills-link-active-bg:          $component-active-bg;
-/* @bootstrap docs */
 
-// NAVTAB
+// $nav-underline-gap:                 1rem;
+// $nav-underline-border-width:        .125rem;
+// $nav-underline-link-active-color:   var(--#{$prefix}emphasis-color);
+/* @bootstrap docs */
 
 .nav-tab-wrapper {
   display: block;
   overflow: hidden;
-  // nav (Pictures - Musics - Books - Videos)
 
   .nav {
     margin-bottom: $nav-tabs-margin-bottom;
-    display: flex;
-    // each nav element is div (or li => div)
 
-    div {
-      cursor: pointer;
-      text-align: center;
-
-      a {
-        color: $tabs-color;
-        text-decoration: none;
-        width: 100%;
+    .nav-link {
+      &:not(.disabled) {
+        cursor: pointer;
       }
 
-      .active {
-        color: $tabs-link-active-border-color;
-      }
-
-      .disabled {
-        pointer-events: none;
+      &.disabled {
         cursor: not-allowed;
         opacity: $base-disabled-opacity;
       }
     }
 
+    &:not(.nav-default) .nav-link {
+      --bs-nav-link-color: #{$tabs-color};
+    }
+
+    // style toggle / underline
+    &.nav-unterline,
+    &.nav-toggle {
+      .active {
+        background-color: $nav-tabs-link-active-bg;
+        border-color: $nav-tabs-border-color;
+        color: $nav-tabs-link-active-color;
+        border-bottom: $nav-underline-border-width solid
+          $nav-tabs-link-active-color;
+      }
+    }
+
+    // style boxed / tabs
+    &.nav-boxed {
+      @extend .nav-tabs;
+    }
+
     // Sizes
     @each $name, $size in $sizes {
       &.is-#{$name} {
-        font-size: $size;
+        --bs-nav-link-font-size: #{$size};
+        --bs-nav-link-padding-x: #{calc(
+            $nav-link-padding-x * strip-unit($size)
+          )};
+        --bs-nav-link-padding-y: #{calc(
+            $nav-link-padding-y * strip-unit($size)
+          )};
       }
     }
   }
@@ -73,21 +90,12 @@ $nav-tabs-margin-bottom: 10px !default;
     position: relative;
   }
 
-  // Full width
-
-  &.is-expanded {
-
-    .nav {
-
-      div {
-        flex-grow: 1;
-        flex-shrink: 0;
-      }
-    }
+  // fullwidth
+  &.is-expanded:not(.is-vertical) .nav {
+    @extend .nav-fill;
   }
 
-  // Position Vetical
-
+  // position vetical
   &.is-vertical {
     display: flex;
     flex-direction: row;
@@ -95,21 +103,34 @@ $nav-tabs-margin-bottom: 10px !default;
     .nav {
       display: block;
 
-      div {
-        border-bottom: 1px solid $tabs-border-color;
+      &.nav-default .nav-link {
+        border-bottom: $nav-underline-border-width solid $nav-tabs-border-color;
         text-align: left;
       }
 
       &.nav-tabs {
-
-        div {
-          border-top: 1px solid $default-border-color;
+        .nav-item:not(:has(+ [aria-selected="true"])) .nav-link {
+          border-bottom: 1px solid $nav-tabs-border-color;
         }
+      }
+    }
+
+    &:not(.is-right) {
+      .nav {
+        margin-right: $nav-tabs-margin-bottom;
       }
     }
 
     &.is-right {
       flex-direction: row-reverse;
+
+      .nav {
+        margin-left: $nav-tabs-margin-bottom;
+      }
+    }
+
+    .nav-content {
+      flex-grow: 1;
     }
   }
 }
