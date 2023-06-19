@@ -205,26 +205,29 @@ export const bootstrapConfig: any = {
   },
   tabs: {
     override: true,
-    itemTag: "a",
     rootClass: "nav-tab-wrapper",
-    contentClass: "nav-content",
-    // multilineClass: 'is-multiline',
-    navTabsClass: "nav",
-    navTypeClass: (_: string, { props }: any) => `nav-${props.type}`,
-    tabItemWrapperClass: "nav-item",
+    positionClass: "is-",
     expandedClass: "is-expanded",
-    verticalClass: "flex-column",
+    verticalClass: "is-vertical",
+    multilineClass: "is-multiline",
+    navTabsClass: "nav",
+    navTypeClass: "nav-",
     navSizeClass: "is-",
-    positionClass: (_: string, { props }: any) => {
-      if (props.position == "left") return "justify-content-start";
-      if (props.position == "centered") return "justify-content-center";
-      if (props.position == "right") return "justify-content-end";
+    navPositionClass: (position: string, { data }: any) => {
+      const classes = ["is-" + position];
+      if (data.position === "left") classes.push("justify-content-start");
+      else if (data.position === "centered")
+        classes.push("justify-content-center");
+      else if (data.position === "right") classes.push("justify-content-end");
+      return classes.join(" ");
     },
-    navPositionClass: "is-",
-    transitioningClass: "is-transitioning",
+    tabItemWrapperClass: "nav-item",
+    itemTag: "a",
     itemHeaderClass: "nav-link",
     itemHeaderActiveClass: () => "active",
     itemHeaderDisabledClass: () => "disabled",
+    contentClass: "nav-content",
+    transitioningClass: "is-transitioning",
   },
   table: {
     override: true,
