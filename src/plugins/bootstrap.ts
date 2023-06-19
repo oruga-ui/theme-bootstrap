@@ -5,27 +5,27 @@ export const bootstrapConfig: any = {
     override: true,
     rootClass: "input-field",
     labelClass: "form-label",
+    // bodyClass: ''
     messageClass: (_: string, { props }: any) => {
       return `help text-${props.variant}`;
     },
-    // variantMessageClass: 'text-',
+    // variantMessageClass: '',
     addonsClass: "input-group",
     groupedClass: "input-grouped",
-    // groupMultilineClass: 'is-grouped-multiline',
-    horizontalClass: "row",
-    labelHorizontalClass: "col-sm-2 col-form-label",
-    bodyHorizontalClass: "col-sm-10",
-    // bodyClass: ''
+    groupMultilineClass: "is-grouped-multiline",
+    horizontalClass: "field-horizontal row",
+    labelHorizontalClass: "col-form-label",
+    bodyHorizontalClass: "col-form-field",
   },
   input: {
     override: true,
     rootClass: "input",
     inputClass: (_: string, { props }: any) => {
-      if (props.icon) return "form-control has-icon-in-left";
+      if (props.icon) return "form-control icon-left";
       return `form-control`;
     },
     textareaClass: (_: string, { props }: any) => {
-      if (props.icon) return "form-control has-icon-in-left";
+      if (props.icon) return "form-control icon-left";
       return `form-control`;
     },
     roundedClass: "is-rounded",

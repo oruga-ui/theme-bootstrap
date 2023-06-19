@@ -1,8 +1,141 @@
-// FIELD
+/* @docs */
+$input-field-grouped-margin-right: 0.5rem !default;
+$input-field-margin-bottom: 0.75rem !default;
+$input-field-btn-border-color: $input-border-color !default;
+/* @docs */
+
+/* @bootstrap docs */
+// $input-group-addon-padding-y:           $input-padding-y;
+// $input-group-addon-padding-x:           $input-padding-x;
+// $input-group-addon-font-weight:         $input-font-weight;
+// $input-group-addon-color:               $input-color;
+// $input-group-addon-bg:                  var(--#{$prefix}tertiary-bg);
+// $input-group-addon-border-color:        $input-border-color;
+/* @bootstrap docs */
+
+/* IMPORTANT NOTE !!
+.input-group --> // Addons class
+.input-grouped --> // Grouped class
+*/
+
+@mixin radii($selector) {
+  // the first and the last inputs should be rounded
+  &:first-child {
+    #{$selector} {
+      border-bottom-right-radius: 0;
+      border-top-right-radius: 0;
+    }
+  }
+
+  &:last-child {
+    #{$selector} {
+      border-bottom-left-radius: 0;
+      border-top-left-radius: 0;
+    }
+  }
+
+  // The input in middle shouldn't be rounded
+  &:not(:first-child):not(:last-child) {
+    #{$selector} {
+      --bs-border-radius: 0;
+    }
+  }
+
+  // The input is first and the last
+  &:first-child:last-child {
+    .form-control {
+      --bs-border-radius: #{$border-radius};
+    }
+  }
+}
 
 .input-field {
+  margin-bottom: $input-field-margin-bottom;
 
   &.row > div {
     @extend .col;
+  }
+
+  &.is-grouped-multiline {
+    flex-wrap: wrap;
+  }
+
+  &.field-horizontal {
+    .col-form-label {
+      flex-basis: 0;
+      flex-grow: 1;
+      flex-shrink: 0;
+      text-align: right;
+    }
+
+    .col-form-field {
+      flex-basis: 0;
+      flex-grow: 5;
+      flex-shrink: 1;
+    }
+  }
+
+  // input fullwidth
+  .input,
+  .select,
+  .dropdown,
+  .btn {
+    flex-shrink: 0;
+
+    &.is-expanded,
+    &.is-fullwidth {
+      flex-grow: 1;
+      flex-shrink: 1;
+    }
+  }
+
+  // has group
+  .input-group {
+    flex-shrink: 0;
+
+    // remove margin
+    .input,
+    .select,
+    .dropdown,
+    .btn {
+      margin: 0;
+    }
+
+    // Btn with border if it transparent <outlined>
+    .btn:not(.btn-primary):not(.btn-info):not(.btn-danger):not(
+        .btn-success
+      ):not(.btn-warning):not(.btn-dark):not(.btn-light) {
+      --bs-btn-border-color: #{$input-field-btn-border-color};
+      --bs-btn-bg: #{$input-field-btn-border-color};
+    }
+
+    .input {
+      @include radii(".form-control");
+    }
+
+    .dropdown {
+      @include radii(".dropdown-trigger .btn");
+    }
+
+    .select {
+      @include radii(".form-select");
+    }
+  }
+
+  // is grouped
+  .input-grouped {
+    display: flex;
+
+    // Margin right
+    & > input:not(:last-child),
+    & > .input:not(:last-child),
+    & > select:not(:last-child),
+    & > .select:not(:last-child),
+    & > .dropdown:not(:last-child),
+    & > .btn:not(:last-child),
+    & > button:not(:last-child),
+    & > .input-field:not(:last-child) {
+      margin-right: $input-field-grouped-margin-right;
+    }
   }
 }
