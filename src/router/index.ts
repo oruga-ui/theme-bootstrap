@@ -12,6 +12,11 @@ const routes: Array<RouteRecordRaw> = [
     component: Home,
   },
   {
+    path: "/checkbox",
+    name: "Checkbox",
+    component: () => import("../components/Checkbox.vue"),
+  },
+  {
     path: "/steps",
     name: "Steps",
     component: () => import("../components/Steps.vue"),
