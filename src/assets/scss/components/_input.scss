@@ -152,6 +152,11 @@ $input-icon-right-position: 0.75rem !default;
     &.icon-left.form-control-sm {
       padding: $input-icon-left-padding-sm;
     }
+
+    // is rounded
+    &.is-rounded {
+      @extend .rounded-pill;
+    }
   }
 
   // the Position of the icon
