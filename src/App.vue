@@ -22,6 +22,7 @@
       <router-link to="/sidebar">Sidebar</router-link>
       <router-link to="/loading">Loading</router-link>
       <router-link to="/timepicker">Timepicker</router-link>
+      <router-link to="/switch">Switch</router-link>
       <router-link to="/radio">Radio</router-link>
       <router-link to="/icon">Icon</router-link>
       <router-link to="/select">Select</router-link>

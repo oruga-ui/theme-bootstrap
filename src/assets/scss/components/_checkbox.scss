@@ -37,7 +37,7 @@
 .form-check {
   // Colors
   @each $name, $pair in $theme-colors {
-    &.form-check-#{$name} {
+    &.is-#{$name} {
       input[type="radio"],
       input[type="checkbox"] {
         background-color: $pair;
@@ -51,11 +51,14 @@
     &.is-#{$name} {
       font-size: $size;
 
-      input[type="radio"],
-      input[type="checkbox"] {
-        width: $size;
-        height: $size;
-        margin-right: calc(#{$size} / 2);
+      // input size should not defined for switch style
+      &:not(.form-switch) {
+        input[type="radio"],
+        input[type="checkbox"] {
+          width: $size;
+          height: $size;
+          margin-right: calc(#{$size} / 2);
+        }
       }
     }
   }
