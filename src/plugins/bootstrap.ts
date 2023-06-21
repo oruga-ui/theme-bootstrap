@@ -126,12 +126,13 @@ export const bootstrapConfig: any = {
   autocomplete: {
     override: true,
     rootClass: "autocomplete-wrapper",
-    menuClass: "dropdown-menu show is-expanded", // @TODO add class for expanded
+    expendedClass: "is-expanded",
+    menuClass: "dropdown-menu show",
     menuPositionClass: "is-opened-", // top  bottom
     itemClass: "dropdown-item",
     itemHoverClass: "active",
     itemEmptyClasses: "disabled",
-    itemGroupTitleClass: "has-text-weight-bold",
+    itemGroupTitleClass: "fw-bold",
   },
   inputitems: {
     override: true,
