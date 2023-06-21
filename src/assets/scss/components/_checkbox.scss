@@ -38,6 +38,7 @@
   // Colors
   @each $name, $pair in $theme-colors {
     &.form-check-#{$name} {
+      input[type="radio"],
       input[type="checkbox"] {
         background-color: $pair;
         border-color: $pair;
@@ -50,6 +51,7 @@
     &.is-#{$name} {
       font-size: $size;
 
+      input[type="radio"],
       input[type="checkbox"] {
         width: $size;
         height: $size;
@@ -61,5 +63,11 @@
   &.is-disabled {
     opacity: $form-check-input-disabled-opacity;
     cursor: not-allowed;
+  }
+}
+
+.input-field.input-group {
+  .form-check {
+    @extend .form-check-inline;
   }
 }
