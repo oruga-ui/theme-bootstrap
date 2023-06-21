@@ -4,7 +4,7 @@
     <hr />
   </section>
 
-  <section class="mt-3">
+  <section class="my-4">
     <h3>Base</h3>
     <o-field label="Name">
       <o-input />
@@ -62,10 +62,14 @@
     </o-field>
   </section>
 
-  <section class="mt-3">
+  <section class="my-4">
     <h3>Sizes</h3>
     <o-field>
       <o-input placeholder="small" size="small" icon="user" />
+    </o-field>
+
+    <o-field>
+      <o-input placeholder="default" icon="user" />
     </o-field>
 
     <o-field>
@@ -77,7 +81,7 @@
     </o-field>
   </section>
 
-  <section class="mt-3">
+  <section class="my-4">
     <h3>With Icons</h3>
     <o-field>
       <o-input

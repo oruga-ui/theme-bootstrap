@@ -50,7 +50,7 @@ export const bootstrapConfig: any = {
     override: true,
     rootClass: "select",
     selectClass: (_: string, { props }: any) => {
-      if (props.icon) return "form-select has-icon-in-left";
+      if (props.icon) return "form-select icon-left";
       return `form-select`;
     },
     roundedClass: "is-rounded",
@@ -64,13 +64,13 @@ export const bootstrapConfig: any = {
         return "form-select-lg";
       }
     },
-    expandedClass: "is-fullwidth",
-    // iconLeftSpaceClass: 'has-icons has-icons-left',
+    expandedClass: "is-expanded",
     iconLeftClass: "is-left",
     iconRightClass: "is-right",
-    // iconRightSpaceClass: 'has-icons has-icons-right',
+    // iconLeftSpaceClass: '',
+    // iconRightSpaceClass: '',
     // arrowClass: '',
-    // multipleClass: 'is-multiple',
+    multipleClass: "is-multiple",
     placeholderClass: "is-empty",
   },
   icon: {

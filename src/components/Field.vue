@@ -4,7 +4,7 @@
     <hr />
   </section>
 
-  <section class="mt-3">
+  <section class="my-4">
     <h3>Base</h3>
     <o-field label="Name">
       <o-input value="Kevin Garvey" />
@@ -47,7 +47,7 @@
     </o-field>
   </section>
 
-  <section class="mt-3">
+  <section class="my-4">
     <h3>Addons</h3>
     <o-field variant="danger">
       <o-input placeholder="Search..." type="search" icon="search" />
@@ -150,7 +150,7 @@
     </o-field>
   </section>
 
-  <section class="mt-3">
+  <section class="my-4">
     <h3>Grouped</h3>
     <o-field grouped variant="danger" message="What do you want to search?">
       <o-input placeholder="Search..." />
@@ -175,7 +175,7 @@
     </o-field>
   </section>
 
-  <section class="mt-3 container">
+  <section class="my-4 container">
     <h3>Horizontal</h3>
     <o-field
       horizontal
@@ -215,7 +215,7 @@
     </o-field>
   </section>
 
-  <section class="mt-3">
+  <section class="my-4">
     <h3>Slot</h3>
     <o-field horizontal>
       <template #label>
