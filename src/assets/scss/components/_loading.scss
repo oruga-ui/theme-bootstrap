@@ -1,8 +1,7 @@
 /* @docs */
-$loading-overlay-legacy: #7f7f7f !default;
+$loading-zindex: $zindex-sticky !default;
+$loading-fullpage-zindex: $zindex-fixed !default;
 $loading-overlay: $overlay-background-color-light !default;
-$loading-zindex: 29 !default;
-$loading-fullpage-zindex: 999 !default;
 /* @docs */
 
 .loading {
@@ -11,33 +10,23 @@ $loading-fullpage-zindex: 999 !default;
   left: 0;
   right: 0;
   top: 0;
-  align-items: center;
   display: flex;
+  align-items: center;
   justify-content: center;
   overflow: hidden;
-  @include avariable("z-index", "loading-zindex", $loading-zindex);
+  z-index: $loading-zindex;
 
-  &__fullpage {
+  &.is-fullpage {
     position: fixed;
-    @include avariable(
-      "z-index",
-      "loading-fullpage-zindex",
-      $loading-fullpage-zindex
-    );
+    z-index: $loading-fullpage-zindex;
   }
 
-  &__overlay {
+  .loading-overlay {
     position: absolute;
     bottom: 0;
     left: 0;
     right: 0;
     top: 0;
     background-color: $loading-overlay;
-    @include avariable(
-      "background",
-      "loading-overlay-legacy",
-      $loading-overlay-legacy
-    );
-    @include avariable("background", "loading-overlay", $loading-overlay);
   }
 }

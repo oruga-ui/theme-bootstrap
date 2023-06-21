@@ -1,14 +1,32 @@
+<script setup lang="ts">
+import { ref } from "vue";
+
+const isLoading = ref(false);
+const isFullPage = ref(true);
+const isCustomLoading = ref(false);
+const isCustomFullPage = ref(true);
+</script>
+
 <template>
   <section>
+    <h2>Loading Demo</h2>
+    <hr />
+  </section>
+
+  <section class="my-4">
+    <h3>Base</h3>
     <o-field>
-      <o-button size="medium" variant="primary" @click="openLoading">
+      <o-button
+        size="medium"
+        variant="primary"
+        @click="() => (isLoading = true)">
         Launch loading
       </o-button>
     </o-field>
     <o-field>
-      <o-switch v-model="isFullPage" disabled
-        >Display loader over full page</o-switch
-      >
+      <o-switch v-model="isFullPage" disabled>
+        Display loader over full page
+      </o-switch>
     </o-field>
     <p style="position: relative">
       Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce id
@@ -17,18 +35,25 @@
       <o-loading
         v-model:active="isLoading"
         :full-page="isFullPage"
-        :can-cancel="true"></o-loading>
+        :can-cancel="true" />
     </p>
-    <h2>Custom Slot</h2>
+  </section>
+
+  <section class="my-4">
+    <h3>Base Custom Slot</h3>
+
     <o-field>
-      <o-button size="medium" variant="primary" @click="openCustomLoading">
+      <o-button
+        size="medium"
+        variant="primary"
+        @click="() => (isCustomLoading = true)">
         Launch loading
       </o-button>
     </o-field>
     <o-field>
-      <o-switch v-model="isCustomFullPage"
-        >Display loader over full page</o-switch
-      >
+      <o-switch v-model="isCustomFullPage">
+        Display loader over full page
+      </o-switch>
     </o-field>
     <p style="position: relative">
       Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce id
@@ -38,29 +63,8 @@
         v-model:active="isCustomLoading"
         :full-page="isCustomFullPage"
         :can-cancel="true">
-        <o-icon pack="fas" icon="sync-alt" size="large" spin> </o-icon>
+        <o-icon pack="fas" icon="sync-alt" size="large" spin />
       </o-loading>
     </p>
   </section>
 </template>
-
-<script lang="ts">
-export default {
-  data() {
-    return {
-      isLoading: false,
-      isFullPage: true,
-      isCustomLoading: false,
-      isCustomFullPage: true,
-    };
-  },
-  methods: {
-    openLoading() {
-      this.isLoading = true;
-    },
-    openCustomLoading() {
-      this.isCustomLoading = true;
-    },
-  },
-};
-</script>

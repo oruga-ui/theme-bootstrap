@@ -482,10 +482,10 @@ export const bootstrapConfig: any = {
   },
   loading: {
     override: true,
-    fullPageClass: "loading__fullpage",
-    overlayClass: "loading__overlay",
-    iconClass: "icon",
     rootClass: "loading",
+    fullPageClass: "is-fullpage",
+    overlayClass: "loading-overlay",
+    iconClass: "icon",
   },
   timepicker: {
     override: true,
