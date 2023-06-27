@@ -276,13 +276,10 @@ const customSettings = reactive({
   text-align: center;
 }
 img {
-  max-width: 100%;
-  height: auto;
-}
-.image img {
   display: block;
   height: auto;
   width: 100%;
+  max-width: 100%;
 }
 .img-indicator {
   filter: grayscale(100%);

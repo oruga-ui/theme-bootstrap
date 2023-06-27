@@ -2,6 +2,7 @@
 $carousel-control-top: 50% !default;
 $carousel-overlay-background: $overlay-background-color-dark !default;
 $carousel-overlay-zindex: $zindex-fixed !default;
+$carousel-indicator-bg: $primary !default;
 /* docs */
 
 /* @bootstrap docs */
@@ -85,22 +86,6 @@ $carousel-overlay-zindex: $zindex-fixed !default;
   }
 
   .carousel-indicators {
-    &.is-inside {
-      position: absolute;
-
-      &.is-bottom {
-        bottom: 0;
-        top: unset;
-        margin-bottom: 1rem;
-      }
-
-      &.is-top {
-        top: 0;
-        bottom: unset;
-        margin-top: 1rem;
-      }
-    }
-
     .carousel-indicator {
       box-sizing: content-box;
       flex: 0 1 auto;
@@ -113,7 +98,7 @@ $carousel-overlay-zindex: $zindex-fixed !default;
       border-top: $carousel-indicator-hit-area-height solid transparent;
       border-bottom: $carousel-indicator-hit-area-height solid transparent;
 
-      .carousel-indicator-item {
+      & > .carousel-indicator-item {
         display: block;
         background-color: $carousel-indicator-active-bg;
         background-clip: padding-box;
@@ -135,6 +120,30 @@ $carousel-overlay-zindex: $zindex-fixed !default;
         &.is-dots {
           border-radius: 50%;
         }
+      }
+    }
+
+    &:not(.is-inside) {
+      position: relative;
+
+      .carousel-indicator > .carousel-indicator-item {
+        background-color: $carousel-indicator-bg;
+      }
+    }
+
+    &.is-inside {
+      position: absolute;
+
+      &.is-bottom {
+        bottom: 0;
+        top: unset;
+        margin-bottom: 1rem;
+      }
+
+      &.is-top {
+        top: 0;
+        bottom: unset;
+        margin-top: 1rem;
       }
     }
   }
