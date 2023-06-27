@@ -2,6 +2,7 @@
   <div id="main">
     <div id="nav">
       <router-link to="/">Home</router-link>
+      <router-link to="/carousel">Carousel</router-link>
       <router-link to="/steps">Steps</router-link>
       <router-link to="/slider">Slider</router-link>
       <router-link to="/pagination">Pagination</router-link>
