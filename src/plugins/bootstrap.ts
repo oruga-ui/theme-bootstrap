@@ -508,4 +508,27 @@ export const bootstrapConfig: any = {
     disabledClass: "is-disabled",
     hoveredClass: "is-hovered",
   },
+  carousel: {
+    override: true,
+    rootClass: "carousel-wrapper",
+    sceneClass: "x",
+    itemsClass: "carousel-items carousel-innerx",
+    itemClass: "carousel-itemx",
+    itemActiveClass: "active",
+    // overlayClass
+    arrowIconClass: "carousel-control",
+    arrowIconNextClass: "carousel-control-next",
+    arrowIconPrevClass: "carousel-control-prev",
+
+    // indicatorPosition
+    indicatorsClass: "carousel-indicators",
+    indicatorClass: "carousel-indicator",
+    // indicatorsInsideClass:
+    // indicatorsInsidePositionClass
+    indicatorItemClass: "carousel-indicator-item",
+    // indicatorItemStyleClass
+    indicatorItemActiveClass: "active",
+
+    // itemsDraggingClass
+  },
 };
