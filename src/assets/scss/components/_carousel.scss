@@ -1,3 +1,9 @@
+/* docs */
+$carousel-control-top: 50% !default;
+$carousel-overlay-background: $overlay-background-color-dark !default;
+$carousel-overlay-zindex: $zindex-fixed !default;
+/* docs */
+
 /* @bootstrap docs */
 // $carousel-control-color:             $white;
 // $carousel-control-width:             15%;
@@ -38,16 +44,42 @@
   overflow: hidden;
   width: 100%;
 
-  > div {
-    position: relative;
+  &.is-overlay {
+    bottom: 0;
+    left: 0;
+    right: 0;
+    top: 0;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    max-height: 100vh;
+    position: fixed;
+    background-color: $carousel-overlay-background;
+    z-index: $carousel-overlay-zindex;
+    display: flex;
+
+    .carousel-indicator.has-background {
+      background: transparent;
+    }
+  }
+
+  .carousel-scene {
     width: 100%;
+    position: relative;
 
     .carousel-items {
       display: flex;
-      width: 100%;
+      overflow: visible;
 
-      > div {
+      &:not(.is-dragging) {
+        transition: all $speed-slower ease-out 0s;
+      }
+
+      .carousel-item {
         flex-shrink: 0;
+        border: 2px solid transparent;
+        display: block;
+        margin: unset;
       }
     }
   }
@@ -78,6 +110,19 @@
       &.active {
         opacity: $carousel-indicator-active-opacity;
       }
+    }
+  }
+
+  .carousel-control-next-icon,
+  .carousel-control-prev-icon {
+    top: $carousel-control-top;
+    -webkit-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+    width: $carousel-control-width;
+
+    i {
+      display: none;
     }
   }
 }
