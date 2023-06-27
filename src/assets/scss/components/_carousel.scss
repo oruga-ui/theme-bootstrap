@@ -150,6 +150,7 @@ $carousel-indicator-bg: $primary !default;
 
   .carousel-control-next-icon,
   .carousel-control-prev-icon {
+    cursor: pointer;
     top: $carousel-control-top;
     -webkit-transform: translateY(-50%);
     -ms-transform: translateY(-50%);
