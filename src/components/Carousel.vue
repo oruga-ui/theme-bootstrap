@@ -79,6 +79,8 @@ const customSettings = reactive({
   pauseHover: false,
   interval: 3000,
   repeat: false,
+  position: "bottom",
+  style: "dots",
 });
 </script>
 
@@ -231,10 +233,28 @@ const customSettings = reactive({
             step="1000"
             :disabled="!customSettings.autoplay" />
         </o-field>
+        <o-field label="Indicator Position">
+          <o-select v-model="customSettings.position">
+            <option value="top">top</option>
+            <option value="bottom">bottom</option>
+          </o-select>
+        </o-field>
+        <o-field label="Indicator Style">
+          <o-select v-model="customSettings.style">
+            <option value="boxes ">boxes</option>
+            <option value="dots">dots</option>
+            <option value="lines ">lines</option>
+          </o-select>
+        </o-field>
       </o-field>
     </div>
 
-    <o-carousel v-model="carousel" v-bind="customSettings">
+    <o-carousel
+      v-model="carousel"
+      v-bind="customSettings"
+      :indicator-position="customSettings.position"
+      indicator-inside
+      :indicator-style="customSettings.style">
       <o-carousel-item v-for="(slide, i) in carousels" :key="i">
         <section class="ex-slide" :style="{ 'background-color': slide.color }">
           <h1>{{ slide.text }}</h1>

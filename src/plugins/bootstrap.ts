@@ -517,12 +517,10 @@ export const bootstrapConfig: any = {
     itemsDraggingClass: "is-dragging",
     itemClass: "carousel-item",
     itemActiveClass: "active",
-
     arrowIconClass: "carousel-control",
     arrowIconNextClass: "carousel-control-next carousel-control-next-icon",
     arrowIconPrevClass: "carousel-control-prev carousel-control-prev-icon",
-
-    // indicatorPosition
+    indicatorPosition: "is-",
     indicatorsClass: "carousel-indicators",
     indicatorClass: "carousel-indicator",
     indicatorsInsideClass: "is-inside",
