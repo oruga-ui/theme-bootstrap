@@ -70,12 +70,18 @@ $slider-tick-background-color: $grey-dark !default;
         background-color: $form-range-thumb-bg;
         border: $form-range-thumb-border;
         border-radius: $form-range-thumb-border-radius;
-        box-shadow: $form-range-thumb-box-shadow;
         transition: $form-range-thumb-transition;
 
+        &:not(.focus-ring) {
+          box-shadow: $form-range-thumb-box-shadow;
+        }
+
         &:focus {
-          transform: scale(1.5);
-          box-shadow: $form-range-thumb-focus-box-shadow;
+          transform: scale(1.2);
+
+          &:not(.focus-ring) {
+            box-shadow: $form-range-thumb-focus-box-shadow;
+          }
         }
 
         &:active {

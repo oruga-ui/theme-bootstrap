@@ -195,7 +195,11 @@ export const bootstrapConfig: any = {
       return classes.join(" ");
     },
     sizeClass: "is-",
-    thumbClass: "slider-thumb",
+    thumbClass: (_: string, { props }: any) => {
+      const classes = ["slider-thumb", "focus-ring"];
+      if (props.variant) classes.push(`focus-ring-${props.variant}`);
+      return classes.join(" ");
+    },
     tickLabelClass: "slider-tick-label",
     tickHiddenClass: "is-tick-hidden",
     tickClass: "slider-tick",
