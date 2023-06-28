@@ -173,4 +173,23 @@ $tootlip-zindex: $zindex-tooltip;
       }
     }
   }
+
+  // States
+  &[disabled="true"] {
+    .tooltip-content {
+      display: none;
+    }
+  }
+
+  &.is-dashed {
+    .tooltip-content {
+      border-bottom: 1px dashed $grey-light;
+    }
+  }
+
+  &.is-square {
+    .tooltip-content {
+      border-radius: 0;
+    }
+  }
 }
