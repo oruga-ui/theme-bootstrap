@@ -4,6 +4,7 @@
 // Helper function to replace characters in a string
 @function str-replace($string, $search, $replace: "") {
   $index: string.index($string, $search);
+
   @return if(
     $index,
     string.slice($string, 1, $index - 1) + $replace +
@@ -23,6 +24,7 @@
   $slice: 2000;
   $index: 0;
   $loops: math.ceil(divide(string.length($svg), $slice));
+
   @for $i from 1 through $loops {
     $chunk: string.slice($svg, $index, $index + $slice - 1);
     // Encode
@@ -37,9 +39,9 @@
     $encoded: #{$encoded}#{$chunk};
     $index: $index + $slice;
   }
+
   @return "data:image/svg+xml,#{$encoded}";
 }
-
 @function checkmark($color) {
   $start: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1">';
   $content: '<path style="fill:#{$color}" d="M 0.04038059,0.6267767 0.14644661,0.52071068 0.42928932,0.80355339 0.3232233,0.90961941 z M 0.21715729,0.80355339 0.85355339,0.16715729 0.95961941,0.2732233 0.3232233,0.90961941 z"></path>';
@@ -47,7 +49,6 @@
 
   @return svg-encode("#{$start}#{$content}#{$end}");
 }
-
 @function indeterminate($color) {
   $start: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1">';
   $content: '<rect style="fill:#{$color}" width="0.7" height="0.2" x=".15" y=".4"></rect>';
@@ -66,6 +67,7 @@
 ///   Variable value
 @mixin avariable($attribute, $name, $value) {
   $variable: variable($name, $value);
+
   @if $variable {
     #{$attribute}: $variable;
   }
@@ -92,5 +94,38 @@
   } @else if $forceval == true {
     @return #{$value};
   }
+
   @return null;
+}
+
+/// Generates is-{color} variant for background and text color.
+/// This Color and background helper combines the power of our .text-* utilities and .bg-* utilities in one class.
+/// Using the Sass color-contrast() function, a contrasting color is automatically determined for a particular background-color.
+@mixin variant-text-bg() {
+  @each $color, $value in $theme-colors {
+    .is-#{$color} {
+      color: color-contrast($value);
+      background-color: $value;
+    }
+  }
+}
+
+/// Generates is-{color} variant for background color.
+/// This helper creates one background-color utility class for each color theme.
+@mixin variant-bg() {
+  @each $color, $value in $theme-colors {
+    .is-#{$color} {
+      background-color: $value;
+    }
+  }
+}
+
+/// Generates is-{color} variant for text color.
+/// This helper creates one text color utility class for each color theme.
+@mixin variant-text() {
+  @each $color, $value in $theme-colors {
+    .is-#{$color} {
+      color: $value;
+    }
+  }
 }

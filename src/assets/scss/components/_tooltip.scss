@@ -142,34 +142,24 @@ $tootlip-zindex: $zindex-tooltip;
   }
 
   // Colors
-  @each $name, $pair in $theme-colors {
+  @include variant-text-bg();
+
+  @each $name, $value in $theme-colors {
     .is-#{$name} {
-      background-color: var(--bs-#{$name});
-
-      @if ($name == "light") {
-        color: $dark;
-      } @else if ($name == "info") {
-        color: $dark;
-      } @else if ($name == "warning") {
-        color: $dark;
-      } @else {
-        color: white;
-      }
-
       &.is-top::before {
-        border-top-color: $pair;
+        border-top-color: $value;
       }
 
       &.is-bottom::before {
-        border-bottom-color: $pair;
+        border-bottom-color: $value;
       }
 
       &.is-right::before {
-        border-right-color: $pair;
+        border-right-color: $value;
       }
 
       &.is-left::before {
-        border-left-color: $pair;
+        border-left-color: $value;
       }
     }
   }
