@@ -183,16 +183,15 @@ export const bootstrapConfig: any = {
       const classes = ["slider"];
       if (props.variant) classes.push(`is-${props.variant}`);
       if (props.rounded) classes.push("is-rounded");
-      // if (!props.size) classes.push('is-small')
       return classes.join(" ");
     },
     disabledClass: "is-disabled",
     variantClass: "is-",
     trackClass: "slider-track",
     fillClass: "slider-fill",
-    thumbWrapperClass: (_: string, { data }: any) => {
+    thumbWrapperClass: (_: string, { props }: any) => {
       const classes = ["slider-thumb-wrapper"];
-      if (data.dragging) classes.push(`is-dragging`);
+      if (props.dragging) classes.push(`is-dragging`);
       return classes.join(" ");
     },
     sizeClass: "is-",
@@ -201,7 +200,7 @@ export const bootstrapConfig: any = {
     tickHiddenClass: "is-tick-hidden",
     tickClass: "slider-tick",
     thumbRoundedClass: "is-rounded",
-    // thumbDraggingClass: 'is-dragging'
+    thumbDraggingClass: "is-dragging",
   },
   tabs: {
     override: true,

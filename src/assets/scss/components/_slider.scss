@@ -1,35 +1,20 @@
 /* @docs */
-$slider-margin: 0.4em 0 !default;
-$slider-height: $form-range-track-height !default; // default  $form-range-track-height
-$slider-width: $form-range-track-width !default;
-$slider-border-radius: $form-range-track-border-radius !default;
-
-$slider-track-box-shadow: $form-range-track-box-shadow !default;
-$slider-track-background-color: transparent !default;
-$slider-track-cursor: $form-range-track-cursor !default;
-
-$slider-thumb-width: $form-range-thumb-width !default;
-$slider-thumb-height: $form-range-thumb-height !default;
-
-$slider-tick-to-track-ratio: 0.5 !default;
-$slider-tick-width: 0.18rem !default;
-$slider-tick-height: 0.31rem !default;
-$slider-tick-radius: 0.18rem !default;
+$slider-tick-width: 0.25rem !default;
+$slider-tick-height: 0.25rem !default;
+$slider-tick-radius: 50% !default;
 $slider-tick-background-color: $grey-dark !default;
 /* @docs */
 
 /* @bootstrap docs */
 // $form-range-track-width:          100%;
 // $form-range-track-height:         .5rem;
-
 // $form-range-track-cursor:         pointer;
-// $form-range-track-bg:             $gray-300;
+// $form-range-track-bg:             var(--#{$prefix}tertiary-bg);
 // $form-range-track-border-radius:  1rem;
 // $form-range-track-box-shadow:     $box-shadow-inset;
 
 // $form-range-thumb-width:                   1rem;
 // $form-range-thumb-height:                  $form-range-thumb-width;
-
 // $form-range-thumb-bg:                      $component-active-bg;
 // $form-range-thumb-border:                  0;
 // $form-range-thumb-border-radius:           1rem;
@@ -37,38 +22,31 @@ $slider-tick-background-color: $grey-dark !default;
 // $form-range-thumb-focus-box-shadow:        0 0 0 1px $body-bg, $input-focus-box-shadow;
 // $form-range-thumb-focus-box-shadow-width:  $input-focus-width; // For focus box shadow issue in Edge
 // $form-range-thumb-active-bg:               tint-color($component-active-bg, 70%);
-// $form-range-thumb-disabled-bg:             $gray-500;
+// $form-range-thumb-disabled-bg:             var(--#{$prefix}secondary-color);
 // $form-range-thumb-transition:              background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out;
 /* @bootstrap docs */
 
 .slider {
-  margin: $slider-margin;
   position: relative;
-  width: $slider-width;
-  height: $slider-height; // default size
+  width: $form-range-track-width;
+  height: $form-range-track-height;
+  border-radius: $form-range-track-border-radius;
   background-color: $form-range-track-bg;
-  border-radius: $slider-border-radius;
-  cursor: $slider-track-cursor;
-  box-shadow: $slider-track-box-shadow;
+  cursor: $form-range-track-cursor;
+  box-shadow: $form-range-track-box-shadow;
 
   .slider-track {
     display: flex;
     align-items: center;
-    // position: relative;
-    cursor: $slider-track-cursor;
-    background-color: $slider-track-background-color;
-    box-shadow: $slider-track-box-shadow;
+    box-shadow: $form-range-track-box-shadow;
 
     .slider-fill {
       position: absolute;
       left: 0%;
-      background-color: transparent; // default variant
-      height: 100%;
-      border-radius: $slider-border-radius;
-      // Fix alignment in IE 11. Cancel out for others
       top: 50%;
       transform: translateY(-50%);
-      z-index: 999;
+      height: 100%;
+      border-radius: $form-range-track-border-radius;
 
       @each $name, $pair in $theme-colors {
         &.is-#{$name} {
@@ -79,17 +57,18 @@ $slider-tick-background-color: $grey-dark !default;
 
     .slider-thumb-wrapper {
       display: inline-flex;
+      flex-direction: column;
       align-items: center;
       position: absolute;
-      cursor: grab;
-      transform: translate(-50%, -50%);
       top: 50%;
-      flex-direction: column; // Fix shrinked thumb at the end in IE 11
+      transform: translate(-50%, -50%);
+      cursor: grab;
 
       .slider-thumb {
-        background-color: $form-range-thumb-bg; // default variant
-        height: $slider-thumb-height; // default size
-        width: $slider-thumb-width; // default size
+        height: $form-range-thumb-height;
+        width: $form-range-thumb-width;
+        background-color: $form-range-thumb-bg;
+        border: $form-range-thumb-border;
         border-radius: $form-range-thumb-border-radius;
         box-shadow: $form-range-thumb-box-shadow;
         transition: $form-range-thumb-transition;
@@ -102,8 +81,8 @@ $slider-tick-background-color: $grey-dark !default;
         &:active {
           background-color: $form-range-thumb-active-bg;
         }
-        // squared thumb
 
+        // rounded thumb
         &.is-rounded {
           border-radius: 50%;
         }
@@ -123,21 +102,18 @@ $slider-tick-background-color: $grey-dark !default;
         align-items: center;
         width: auto;
       }
+
       // Colors
-
-      .b-tooltip {
-        @each $name, $pair in $theme-colors {
-          &.is-#{$name} {
-
-            .slider-thumb {
-              background-color: $pair;
-            }
+      @each $name, $pair in $theme-colors {
+        .is-#{$name} {
+          .slider-thumb {
+            background-color: $pair;
           }
         }
       }
     }
-    // tick
 
+    // tick
     .slider-tick {
       position: absolute;
       width: $slider-tick-width;
@@ -152,7 +128,8 @@ $slider-tick-background-color: $grey-dark !default;
       }
 
       .slider-tick-label {
-        margin: 5px;
+        position: relative;
+        bottom: calc(-1 * $form-range-thumb-height);
       }
     }
   }
@@ -162,20 +139,30 @@ $slider-tick-background-color: $grey-dark !default;
     opacity: 0.5;
     background-color: $form-range-thumb-disabled-bg;
   }
+
   // Sizes
   @each $name, $size in $sizes {
     &.is-#{$name} {
+      height: $size;
+
       @if ($name == "small") {
-        height: 0.2rem;
-      } @else {
-        height: calc($size);
+        $size: 0.5rem;
+        height: $size * 0.5;
       }
 
       .slider-track {
-
         .slider-thumb {
-          height: $size;
-          width: $size;
+          height: calc($size * 1.35);
+          width: calc($size * 1.35);
+        }
+      }
+
+      .slider-tick {
+        height: calc($size * 0.5);
+        width: calc($size * 0.5);
+
+        .slider-tick-label {
+          bottom: calc(-1 * $size);
         }
       }
     }
