@@ -474,23 +474,28 @@ export const bootstrapConfig: any = {
   sidebar: {
     override: true,
     rootClass: "sidebar",
+    overlayClass: "offcanvas-backdrop",
+    contentClass: (_: string, { props }: any) => {
+      const classes = ["offcanvas"];
+      if (props.position === "left") classes.push("offcanvas-start");
+      else if (props.position === "right") classes.push("offcanvas-end");
+      else if (props.position === "top") classes.push("offcanvas-top");
+      else if (props.position === "bottom") classes.push("offcanvas-bottom");
+      else if (props.right) classes.push("offcanvas-end");
+      else classes.push("offcanvas-start");
+      return classes.join(" ");
+    },
     variantClass: "is-",
-    contentClass: "sidebar-content",
-    staticClass: "is-static",
-    absoluteClass: "is-absolute",
-    fixedClass: "is-fixed",
-    expandOnHoverClass: "is-mini-expand",
-    expandOnHoverFixedClass: "is-mini-expand",
+    staticClass: "position-static",
+    absoluteClass: "position-absolute",
+    fixedClass: "position-fixed",
+    rightClass: "is-right",
+    reduceClass: "is-reduced",
+    expandOnHoverClass: "is-reduced-expand",
+    expandOnHoverFixedClass: "is-reduced-expand-fixed",
     fullheightClass: "is-fullheight",
     fullwidthClass: "is-fullwidth",
-    mobileClass: (_: string, { props }: any) => {
-      if (props.mobile && props.mobile !== "reduce") {
-        return `is-${props.mobile}-mobile`;
-      }
-    },
-    overlayClass: "sidebar-background",
-    reduceClass: "is-mini-mobile",
-    rightClass: "is-right",
+    mobileClass: "is-",
   },
   loading: {
     override: true,
