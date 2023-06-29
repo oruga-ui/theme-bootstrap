@@ -390,6 +390,12 @@ export const bootstrapConfig: any = {
     itemDisabledClass: "is-disabled",
     mobileClass: "dropdown-modal",
   },
+  collapse: {
+    override: true,
+    rootClass: "collapse show",
+    triggerClass: "collapse-trigger",
+    contentClass: "collapse-content",
+  },
   datepicker: {
     override: true,
     rootClass: "datepicker",
