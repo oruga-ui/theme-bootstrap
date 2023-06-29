@@ -346,12 +346,11 @@ export const bootstrapConfig: any = {
   skeleton: {
     override: true,
     rootClass: "skeleton",
-    itemClass: (_: string, { props }: any) => {
-      const classes = ["skeleton__item"];
-      if (props.animated) classes.push("skeleton__item--animated");
-      return classes.join(" ");
-    },
-    itemRoundedClass: "skeleton__item--rounded",
+    itemClass: "skeleton-item",
+    itemRoundedClass: "is-rounded",
+    animationClass: "is-animated",
+    sizeClass: "is-",
+    positionClass: "is-",
   },
   notification: {
     override: true,

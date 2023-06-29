@@ -10,42 +10,22 @@ $skeleton-duration: 1.5s !default;
 $skeleton-margin: 0.5rem 0 0 0 !default;
 /* @docs */
 
-@keyframes skeleton-loading {
-
-  0% {
-    background-position: 100% 50%;
-  }
-
-  100% {
-    background-position: 0 50%;
-  }
-}
-
-@mixin steps-size($size, $name: null) {
-  @if ($name) {
-    // @include avariable('line-height', ('skeleton-font-size-' + #{$name}), $size);
-    line-height: $size;
-  } @else {
-    // @include avariable('line-height', 'skeleton-font-size', $size);
-    line-height: $size;
-  }
-}
-
 .skeleton {
   display: inline-flex;
   flex-direction: column;
   vertical-align: middle;
   width: 100%;
 
-  &__item {
+  .skeleton-item {
     width: 100%;
     background-image: $skeleton-background-color;
+    margin: $skeleton-margin;
 
-    &--rounded {
+    &.is-rounded {
       border-radius: $skeleton-border-radius;
     }
 
-    &--animated {
+    &.is-animated {
       background-size: 400% 100%;
       animation-name: skeleton-loading;
       animation-iteration-count: infinite;
@@ -55,22 +35,38 @@ $skeleton-margin: 0.5rem 0 0 0 !default;
     &::after {
       content: "\00a0";
     }
-    margin: $skeleton-margin;
 
-    @include steps-size($base-font-size);
+    // Sizes
+    line-height: $base-font-size;
+
     @each $name, $value in $sizes {
-      &--#{$name} {
-        @include steps-size($value, $name);
+      &.is-#{$name} {
+        // @include avariable('line-height', ('skeleton-font-size-' + #{$name}), $size);
+        line-height: $value;
       }
     }
   }
 
-  &--centered {
+  // Positioning
+  &.is-left {
+    align-items: flex-start;
+  }
+
+  &.is-centered {
     align-items: center;
   }
 
-  &--right {
+  &.is-right {
     align-items: flex-end;
-    margin: $skeleton-margin;
+  }
+}
+
+@keyframes skeleton-loading {
+  0% {
+    background-position: 100% 50%;
+  }
+
+  100% {
+    background-position: 0 50%;
   }
 }
