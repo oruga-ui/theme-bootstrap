@@ -1,10 +1,42 @@
+<script setup lang="ts">
+import { ref } from "vue";
+
+const dropFiles = ref<File[]>([]);
+const file = ref<File | null>(null);
+
+function deleteDropFile(index: number) {
+  dropFiles.value.splice(index, 1);
+}
+</script>
+
 <template>
   <section>
+    <h2>Upload Demo</h2>
+    <hr />
+  </section>
+
+  <section class="py-4">
+    <h3>Base</h3>
+
+    <o-field class="file">
+      <o-upload v-model="file">
+        <o-button
+          tag="a"
+          variant="primary"
+          icon-left="upload"
+          label="Click to upload" />
+      </o-upload>
+    </o-field>
+    <p class="file-name">Selected File: {{ file?.name }}</p>
+  </section>
+
+  <section class="py-4">
+    <h3>Drag&Drop</h3>
     <o-field>
       <o-upload v-model="dropFiles" multiple variant="info" expanded drag-drop>
         <section class="ex-center">
           <p>
-            <o-icon icon="upload" size="is-large"> </o-icon>
+            <o-icon icon="upload" size="large" />
           </p>
           <p>Drop your files here or click to upload</p>
         </section>
@@ -12,47 +44,22 @@
     </o-field>
 
     <div class="tags">
-      <span v-for="(file, index) in dropFiles" :key="index">
-        {{ file.name }}
+      <span v-for="(f, index) in dropFiles" :key="index">
+        {{ f.name }}
         <o-button
           icon-left="times"
           size="small"
           native-type="button"
-          @click="deleteDropFile(index)">
-        </o-button>
+          @click="deleteDropFile(index)" />
       </span>
     </div>
-
-    <o-field class="file">
-      <o-upload v-model="file">
-        <o-button tag="a" variant="primary">
-          <o-icon icon="upload"></o-icon>
-          <span>Click to upload</span>
-        </o-button>
-      </o-upload>
-      <span v-if="file" class="file-name">
-        {{ file.name }}
-      </span>
-    </o-field>
   </section>
 </template>
 
-<script lang="ts">
-import { defineComponent } from "vue";
-
-export default defineComponent({
-  data() {
-    return {
-      dropFiles: [] as File[],
-      file: null as File | null,
-    };
-  },
-  methods: {
-    deleteDropFile(index: number) {
-      this.dropFiles.splice(index, 1);
-    },
-  },
-});
-</script>
-
-<style lang="css" scoped></style>
+<style scoped lang="scss">
+.ex-center {
+  p {
+    text-align: center;
+  }
+}
+</style>
