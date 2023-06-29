@@ -151,38 +151,34 @@ export const bootstrapConfig: any = {
   pagination: {
     override: true,
     rootClass: (_: string, { props }: any) => {
-      if (props.rounded) {
-        return "pagination-wrapper is-rounded";
-      } else {
-        return "pagination-wrapper";
-      }
+      const classes = ["pagination-wrapper pagination"];
+      if (props.rounded) classes.push("is-rounded");
+      return classes.join(" ");
     },
     sizeClass: (_: string, { props }: any) => {
-      if (props.size == "small") {
-        return "pagination-sm";
-      } else if (props.size == "medium") {
-        return "pagination-md";
-      } else if (props.size == "large") {
-        return "pagination-lg";
-      }
+      if (props.size == "small") return "pagination-sm";
+      else if (props.size == "medium") return "pagination-md";
+      else if (props.size == "large") return "pagination-lg";
     },
     simpleClass: "is-simple",
-    orderClass: (_: string, { props }: any) => {
-      if (props.order == "") {
-        return "justify-content-start";
-      } else if (props.order == "centered") {
-        return "justify-content-center";
-      } else if (props.order == "right") {
-        return "justify-content-end";
-      }
+    orderClass: (order: string) => {
+      return "order-" + order;
     },
-    listClass: "pagination",
+    listClass: (_: string, { props }: any) => {
+      const classes = ["pagination"];
+      if (props.size == "small") classes.push("pagination-sm");
+      else if (props.size == "medium") classes.push("pagination-md");
+      else if (props.size == "large") classes.push("pagination-lg");
+      return classes.join(" ");
+    },
+    // itemClass: "page-item", // not implementend in oruga yet
     linkClass: "page-link",
     linkCurrentClass: "active",
     linkDisabledClass: "disabled",
-    nextBtnClass: "pagination-next",
-    prevBtnClass: "pagination-prev",
-    infoClass: "info",
+    ellipsisClass: "pagination-ellipsis",
+    nextBtnClass: "pagination-next page-item",
+    prevBtnClass: "pagination-prev page-item",
+    infoClass: "pagination-info",
   },
   slider: {
     override: true,
@@ -238,7 +234,6 @@ export const bootstrapConfig: any = {
   },
   table: {
     override: true,
-    //
     rootClass: "table-component",
     wrapperClass: "table-wrapper",
     tableClass: "table",
@@ -246,33 +241,31 @@ export const bootstrapConfig: any = {
     stripedClass: "table-striped",
     narrowedClass: "table-sm",
     hoverableClass: "table-hover",
-    ////
     emptyClass: "is-empty",
     detailedClass: "detail",
     footerClass: "table-footer",
-    paginationWrapperClass: "pagination-wrapper",
-    // scrollableClass: 'is-scrollable',
-    //
+    paginationWrapperClass: "table-pagination",
+    scrollableClass: "is-scrollable",
     trSelectedClass: "table-active",
-    ////
-    // thSortableClass: 'is-sortable',
-    //
+    thSortableClass: "is-sortable",
     thCurrentSortClass: "is-current-sort",
-    ////
     thSortIconClass: "sort-icon",
     thUnselectableClass: "is-unselectable",
-    thStickyClass: "is-sticky",
-    // thCheckboxClass: 'th-checkbox',
+    thCheckboxClass: "th-checkbox",
     thDetailedClass: "th-chevron-cell",
-    tdDetailedChevronClass: "chevron-cell",
+    thStickyClass: "is-sticky",
     thPositionClass: (position: string) => {
-      if (position === "centered") return "is-centered";
+      if (position === "left") return "is-left";
+      else if (position === "centered") return "is-centered";
       else if (position === "right") return "is-right";
       return;
     },
+    tdDetailedChevronClass: "chevron-cell",
+    tdStickyClass: "is-sticky",
     tdPositionClass: (position: string) => {
-      if (position === "centered") return "has-text-centered";
-      else if (position === "right") return "has-text-right";
+      if (position === "left") return "is-left";
+      else if (position === "centered") return "is-centered";
+      else if (position === "right") return "is-right";
       return;
     },
     mobileClass: "has-mobile-cards",

@@ -1,149 +1,44 @@
-<template>
-  <o-field grouped group-multiline>
-    <o-switch v-model="isBordered" :rounded="true">Bordered</o-switch>
-    <o-switch v-model="isStriped" :rounded="false">Striped</o-switch>
-    <o-switch v-model="isNarrowed" :rounded="true">Narrowed</o-switch>
-    <o-switch v-model="isHoverable" :rounded="true">Hoverable</o-switch>
-    <o-switch v-model="isFocusable" :rounded="true">Focusable</o-switch>
-    <o-switch v-model="isLoading" :rounded="true">Loading state</o-switch>
-    <o-switch v-model="isEmpty" :rounded="true">Empty</o-switch>
-    <o-switch v-model="hasMobileCards" :rounded="true"
-      >Mobile cards <small>(collapsed rows)</small></o-switch
-    >
-  </o-field>
+<script setup lang="ts">
+import { ref } from "vue";
 
-  <o-table
-    v-model:current-page="currentPage"
-    v-model:checked-rows="checkedRows"
-    :paginated="isPaginated"
-    :per-page="perPage"
-    :pagination-simple="isPaginationSimple"
-    :pagination-position="paginationPosition"
-    :data="isEmpty ? [] : dataTable"
-    :bordered="isBordered"
-    :striped="isStriped"
-    :narrowed="isNarrowed"
-    :hoverable="isHoverable"
-    :loading="isLoading"
-    :focusable="isFocusable"
-    :mobile-cards="hasMobileCards"
-    checkable
-    detailed>
-    <o-table-column
-      v-slot="props"
-      field="id"
-      label="ID"
-      width="40"
-      sortable
-      position="right">
-      {{ props.row.id }}
-    </o-table-column>
+const columns = ref([
+  {
+    field: "id",
+    label: "ID",
+    width: "40",
+    numeric: true,
+  },
+  {
+    field: "first_name",
+    label: "First Name",
+    sortable: true,
+  },
+  {
+    field: "last_name",
+    label: "Last Name",
+    sortable: true,
+  },
+  {
+    field: "date",
+    label: "Date",
+    position: "centered",
+    sortable: false,
+    display: (v: string) => new Date(v).toLocaleDateString(),
+  },
+  {
+    field: "gender",
+    label: "Gender",
+    position: "right",
+    sortable: true,
+    component: (v: string) => ({
+      is: "o-icon",
+      pack: "fas",
+      icon: v === "Male" ? "mars" : "venus",
+    }),
+  },
+]);
 
-    <o-table-column
-      v-slot="props"
-      field="first_name"
-      label="First Name"
-      sortable>
-      {{ props.row.first_name }}
-    </o-table-column>
-
-    <o-table-column v-slot="props" field="last_name" label="Last Name" sortable>
-      {{ props.row.last_name }}
-    </o-table-column>
-
-    <o-table-column
-      v-slot="props"
-      field="date"
-      label="Date"
-      position="centered">
-      {{ new Date(props.row.date).toLocaleDateString() }}
-    </o-table-column>
-
-    <o-table-column v-slot="props" label="Gender">
-      <span>
-        <o-icon
-          pack="fas"
-          :icon="props.row.gender === 'Male' ? 'mars' : 'venus'">
-        </o-icon>
-        {{ props.row.gender }}
-      </span>
-    </o-table-column>
-
-    <template #detail="props">
-      <tr>
-        <td>{{ props.row.id }}</td>
-        <td>{{ props.row.first_name }}</td>
-        <td>{{ props.row.last_name }}</td>
-        <td>{{ props.row.gender }}</td>
-      </tr>
-    </template>
-
-    <!--    <template #bottom-left>
-            <b>Total checked</b>: {{ checkedRows.length }}
-        </template> -->
-  </o-table>
-
-  <section>
-    <o-button
-      variant="danger"
-      :disabled="!selected"
-      icon-left="times"
-      @click="selected = null">
-      <span>Clear selected</span>
-    </o-button>
-    <p>{{ selected }}</p>
-    <o-table v-model:selected="selected" :data="dataTable" focusable>
-      <o-table-column
-        v-slot="props"
-        field="id"
-        label="ID"
-        width="40"
-        sortable
-        position="right">
-        {{ props.row.id }}
-      </o-table-column>
-
-      <o-table-column
-        v-slot="props"
-        field="first_name"
-        label="First Name"
-        sortable>
-        {{ props.row.first_name }}
-      </o-table-column>
-
-      <o-table-column
-        v-slot="props"
-        field="last_name"
-        label="Last Name"
-        sortable>
-        {{ props.row.last_name }}
-      </o-table-column>
-
-      <o-table-column
-        v-slot="props"
-        field="date"
-        label="Date"
-        position="centered">
-        {{ new Date(props.row.date).toLocaleDateString() }}
-      </o-table-column>
-
-      <o-table-column v-slot="props" label="Gender">
-        <span>
-          <o-icon
-            pack="fas"
-            :icon="props.row.gender === 'Male' ? 'mars' : 'venus'">
-          </o-icon>
-          {{ props.row.gender }}
-        </span>
-      </o-table-column>
-    </o-table>
-  </section>
-</template>
-
-<script lang="ts">
-import { defineComponent } from "vue";
-
-const dataTable = [
+const dataTable = ref([
   {
     id: 1,
     first_name: "Jesse",
@@ -179,56 +74,211 @@ const dataTable = [
     date: "2016/12/06 14:38:38",
     gender: "Female",
   },
-];
-
-export default defineComponent({
-  data() {
-    return {
-      dataTable,
-      isEmpty: false,
-      isBordered: false,
-      isStriped: false,
-      isNarrowed: false,
-      isHoverable: false,
-      isFocusable: false,
-      isLoading: false,
-      hasMobileCards: true,
-
-      isPaginated: true,
-      isPaginationSimple: false,
-      paginationPosition: "bottom",
-      currentPage: 1,
-      perPage: 3,
-
-      checkedRows: [],
-      selected: null,
-      columns: [
-        {
-          field: "id",
-          label: "ID",
-          width: "40",
-          numeric: true,
-        },
-        {
-          field: "first_name",
-          label: "First Name",
-        },
-        {
-          field: "last_name",
-          label: "Last Name",
-        },
-        {
-          field: "date",
-          label: "Date",
-          // position: 'centered'
-        },
-        {
-          field: "gender",
-          label: "Gender",
-          position: "left",
-        },
-      ],
-    };
+  {
+    id: 6,
+    first_name: "Sara",
+    last_name: "Armstrong",
+    date: "2016/09/23 18:50:04",
+    gender: "Female",
   },
-});
+  {
+    id: 7,
+    first_name: "Anthony",
+    last_name: "Webb",
+    date: "2016/08/30 23:49:38",
+    gender: "Male",
+  },
+  {
+    id: 8,
+    first_name: "Andrew",
+    last_name: "Greene",
+    date: "2016/11/20 14:57:47",
+    gender: "Male",
+  },
+  {
+    id: 9,
+    first_name: "Russell",
+    last_name: "White",
+    date: "2016/07/13 09:29:49",
+    gender: "Male",
+  },
+  {
+    id: 10,
+    first_name: "Lori",
+    last_name: "Hunter",
+    date: "2016/12/09 01:44:05",
+    gender: "Female",
+  },
+]);
+
+const isEmpty = ref(false);
+const isBordered = ref(false);
+const isStriped = ref(false);
+const isNarrowed = ref(false);
+const isHoverable = ref(false);
+const isFocusable = ref(false);
+const isLoading = ref(false);
+const hasMobileCards = ref(true);
+
+const currentPage = ref(1);
+const isPaginated = ref(true);
+const isPaginationSimple = ref(false);
+const paginationPosition = ref("bottom");
+const perPage = ref(3);
+
+const checkedRows = ref([]);
+const selected = ref(null);
 </script>
+
+<template>
+  <section>
+    <h2>Table Demo</h2>
+    <hr />
+  </section>
+
+  <section class="mt-3">
+    <h3>Sandbox</h3>
+
+    <o-field grouped group-multiline>
+      <o-switch v-model="isBordered" :rounded="true">Bordered</o-switch>
+      <o-switch v-model="isStriped" :rounded="true">Striped</o-switch>
+      <o-switch v-model="isNarrowed" :rounded="true">Narrowed</o-switch>
+      <o-switch v-model="isHoverable" :rounded="true">Hoverable</o-switch>
+      <o-switch v-model="isFocusable" :rounded="true">Focusable</o-switch>
+      <o-switch v-model="isLoading" :rounded="true">Loading state</o-switch>
+      <o-switch v-model="isEmpty" :rounded="true">Empty</o-switch>
+      <o-switch v-model="hasMobileCards" :rounded="true">
+        Mobile cards <small>(collapsed rows)</small>
+      </o-switch>
+    </o-field>
+
+    <o-table
+      v-model:checked-rows="checkedRows"
+      :paginated="false"
+      :data="isEmpty ? [] : dataTable"
+      :bordered="isBordered"
+      :striped="isStriped"
+      :narrowed="isNarrowed"
+      :hoverable="isHoverable"
+      :loading="isLoading"
+      :focusable="isFocusable"
+      :mobile-cards="hasMobileCards"
+      checkable
+      detailed>
+      <o-table-column
+        v-for="(column, idx) in columns"
+        :key="idx"
+        v-slot="{ row }"
+        v-bind="column">
+        <span>
+          <component
+            :is="column.component(row[column.field]).is"
+            v-if="column.component"
+            v-bind="column.component(row[column.field])" />
+          {{
+            column.display
+              ? column.display(row[column.field])
+              : row[column.field]
+          }}
+        </span>
+      </o-table-column>
+
+      <template #detail="props">
+        <tr>
+          <td>{{ props.row.id }}</td>
+          <td>{{ props.row.first_name }}</td>
+          <td>{{ props.row.last_name }}</td>
+          <td>{{ props.row.gender }}</td>
+        </tr>
+      </template>
+
+      <template #bottom-left>
+        <b>Total checked</b>: {{ checkedRows.length }}
+      </template>
+    </o-table>
+  </section>
+
+  <section class="mt-4">
+    <h3>Paginated</h3>
+
+    <o-field grouped group-multiline>
+      <o-switch v-model="isPaginated" :rounded="true"> Paginated </o-switch>
+      <o-switch v-model="isPaginationSimple" :rounded="true">
+        Simple Paginated
+      </o-switch>
+      <o-select v-model="perPage" :disabled="!isPaginated">
+        <option value="3">3 per page</option>
+        <option value="5">5 per page</option>
+        <option value="10">10 per page</option>
+        <option value="15">15 per page</option>
+        <option value="20">20 per page</option>
+      </o-select>
+      <o-select v-model="paginationPosition" :disabled="!isPaginated">
+        <option value="bottom">bottom pagination</option>
+        <option value="top">top pagination</option>
+        <option value="both">both</option>
+      </o-select>
+    </o-field>
+    <p>Page: {{ currentPage }}</p>
+
+    <o-table
+      v-model:current-page="currentPage"
+      :data="dataTable"
+      :paginated="isPaginated"
+      :per-page="perPage"
+      :pagination-simple="isPaginationSimple"
+      :pagination-position="paginationPosition">
+      <o-table-column
+        v-for="(column, idx) in columns"
+        :key="idx"
+        v-slot="{ row }"
+        v-bind="column">
+        <span>
+          <component
+            :is="column.component(row[column.field]).is"
+            v-if="column.component"
+            v-bind="column.component(row[column.field])" />
+          {{
+            column.display
+              ? column.display(row[column.field])
+              : row[column.field]
+          }}
+        </span>
+      </o-table-column>
+    </o-table>
+  </section>
+
+  <section class="mt-4">
+    <h3>Selection</h3>
+
+    <o-button
+      variant="danger"
+      :disabled="!selected"
+      icon-left="times"
+      @click="selected = null">
+      <span>Clear selected</span>
+    </o-button>
+
+    <p>Selected: {{ selected }}</p>
+
+    <o-table v-model:selected="selected" :data="dataTable" focusable>
+      <o-table-column
+        v-for="(column, idx) in columns"
+        :key="idx"
+        v-slot="{ row }"
+        v-bind="column">
+        <span>
+          <component
+            :is="column.component(row[column.field]).is"
+            v-if="column.component"
+            v-bind="column.component(row[column.field])" />
+          {{
+            column.display
+              ? column.display(row[column.field])
+              : row[column.field]
+          }}
+        </span>
+      </o-table-column>
+    </o-table>
+  </section>
+</template>
