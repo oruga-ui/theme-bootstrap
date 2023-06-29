@@ -136,10 +136,16 @@ export const bootstrapConfig: any = {
   inputitems: {
     override: true,
     rootClass: "taginput",
-    containerClass: "taginput-container is-focusable",
-    itemClass: "tag",
-    closeClass: "delete is-small",
+    containerClass: (_: string, { props }: any) => {
+      const classes = ["taginput-wrapper", "focus-ring"];
+      if (props.variant) classes.push(`focus-ring-${props.variant}`);
+      return classes.join(" ");
+    },
+    itemClass: "badge",
+    closeClass: "btn-close",
     variantClass: "is-",
+    expandedClass: "is-expanded",
+    counterClass: "counter",
   },
   pagination: {
     override: true,
