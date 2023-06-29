@@ -279,19 +279,14 @@ export const bootstrapConfig: any = {
   },
   tooltip: {
     override: true,
-    rootClass: (_: string, { props }: any) => {
-      const classes = ["b-tooltip"];
-      if (props.variant) classes.push(`is-${props.variant}`);
-      else classes.push(`is-primary`);
-      if (props.position) classes.push(`is-${props.position}`);
-      return classes.join(" ");
-    },
+    rootClass: "tooltip-wrapper",
     contentClass: "tooltip-content",
     triggerClass: "tooltip-trigger",
     alwaysClass: "is-always",
     multilineClass: "is-multiline",
-    variantClass: "is-",
     orderClass: "is-",
+    variantClass: "is-",
+    positionClass: "is-",
   },
   steps: {
     override: true,
