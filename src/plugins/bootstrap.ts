@@ -460,11 +460,18 @@ export const bootstrapConfig: any = {
       if (props.active) classes.push("show");
       return classes.join(" ");
     },
-    // overlayClass: 'modal-backdrop',
-    contentClass: "modal-dialog modal-dialog-centered",
-    // closeClass: 'btn-close',
-    // fullScreenClass: 'is-full-screen'
+    overlayClass: "modal-backdrop fade",
+    contentClass: (_: string, { props }: any) => {
+      const classes = ["modal-dialog"];
+      if (!props.fullScreen) classes.push("modal-dialog-centered");
+      return classes.join(" ");
+    },
+    closeIcon: "",
+    closeClass: "btn-close",
+    fullScreenClass: "is-full-screen",
+    // mobileClass: '',
     scrollClipClass: "modal-open",
+    // noScrollClass: '',
   },
   sidebar: {
     override: true,
