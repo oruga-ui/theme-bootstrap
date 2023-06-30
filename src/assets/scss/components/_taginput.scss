@@ -1,5 +1,5 @@
 /* @docs */
-$taginput-border-color: $default-border-color !default;
+$taginput-border-color: var(--bs-border-color) !default;
 $taginput-border-radius: $base-border-radius !default;
 
 $taginput-badge-bg: $light;
