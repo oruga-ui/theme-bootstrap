@@ -45,15 +45,15 @@ $taginput-counter-font-size: 0.75rem !default;
       display: inline-flex;
       align-items: center;
 
+      // Colors
+      @include variant-text-bg();
+
       .icon {
         margin-left: $taginput-badge-icon-space;
         margin-bottom: 0;
         cursor: pointer;
       }
     }
-
-    // Colors
-    @include variant-text-bg();
   }
 
   input {
@@ -71,9 +71,5 @@ $taginput-counter-font-size: 0.75rem !default;
     float: right;
     font-size: $taginput-counter-font-size;
     margin: $taginput-counter-margin;
-  }
-
-  &.is-expanded {
-    width: 100%;
   }
 }
