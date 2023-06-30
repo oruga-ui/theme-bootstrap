@@ -463,7 +463,7 @@ export const bootstrapConfig: any = {
     closeIcon: "",
     closeClass: "btn-close",
     fullScreenClass: "is-full-screen",
-    // mobileClass: '',
+    mobileClass: "is-mobile",
     scrollClipClass: "modal-open",
     // noScrollClass: '',
   },
