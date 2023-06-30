@@ -108,22 +108,22 @@ const customSettings = reactive({
 
     <div class="example-component">
       <o-field grouped group-multiline>
-        <div class="control">
+        <o-field>
           <o-switch v-model="listSettings.arrow">Arrow</o-switch>
-        </div>
-        <div class="control">
+        </o-field>
+        <o-field>
           <o-switch
             v-model="listSettings.arrowHover"
             :disabled="!listSettings.arrow">
             Arrow on hover
           </o-switch>
-        </div>
-        <div class="control">
+        </o-field>
+        <o-field>
           <o-switch v-model="listSettings.hasDrag">Drag event</o-switch>
-        </div>
-        <div class="control">
+        </o-field>
+        <o-field>
           <o-switch v-model="listSettings.repeat">Repeat</o-switch>
-        </div>
+        </o-field>
       </o-field>
       <o-field grouped group-multiline>
         <o-field label="Items to Show">
@@ -196,26 +196,26 @@ const customSettings = reactive({
 
     <div class="example-component">
       <o-field grouped group-multiline>
-        <div class="control">
+        <o-field>
           <o-switch v-model="customSettings.autoplay">Autoplay</o-switch>
-        </div>
-        <div class="control">
+        </o-field>
+        <o-field>
           <o-switch
             v-model="customSettings.pauseHover"
             :disabled="!customSettings.autoplay">
             Pause on hover
           </o-switch>
-        </div>
-        <div class="control">
+        </o-field>
+        <o-field>
           <o-switch v-model="customSettings.hasDrag">Drag event</o-switch>
-        </div>
-        <div class="control">
+        </o-field>
+        <o-field>
           <o-switch
             v-model="customSettings.repeat"
             :disabled="!customSettings.autoplay">
             Repeat
           </o-switch>
-        </div>
+        </o-field>
       </o-field>
       <o-field grouped group-multiline>
         <o-field label="Value">
