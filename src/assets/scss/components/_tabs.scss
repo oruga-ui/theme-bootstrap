@@ -74,7 +74,7 @@ $nav-tabs-margin-bottom: 1rem !default;
 
     // Sizes
     @each $name, $size in $sizes {
-      &.is-#{$name} {
+      &.size-#{$name} {
         --bs-nav-link-font-size: #{$size};
         --bs-nav-link-padding-x: #{calc(
             $nav-link-padding-x * strip-unit($size)

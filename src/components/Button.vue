@@ -15,6 +15,7 @@
       <o-button variant="warning">Warning</o-button>
       <o-button variant="info">Info</o-button>
       <o-button variant="dark">Dark</o-button>
+      <o-button variant="light">Light</o-button>
     </div>
   </section>
 
@@ -39,6 +40,7 @@
       <o-button variant="warning" outlined>Outlined</o-button>
       <o-button variant="info" outlined>Outlined</o-button>
       <o-button variant="dark" outlined>Outlined</o-button>
+      <o-button variant="light" outlined>Outlined</o-button>
     </div>
   </section>
 
@@ -53,6 +55,7 @@
       <o-button variant="warning" inverted>Inverted</o-button>
       <o-button variant="info" inverted>Inverted</o-button>
       <o-button variant="dark" inverted>Inverted</o-button>
+      <o-button variant="light" outlined>Inverted</o-button>
     </div>
   </section>
 

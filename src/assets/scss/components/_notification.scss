@@ -56,9 +56,9 @@ $notification-notices-space: 1.5rem !default;
     right: $notification-close-btn-position;
   }
 
-  // Colors
+  // Colors variants
   @each $name, $pair in $theme-colors {
-    &.is-#{$name} {
+    &.variant-#{$name} {
       @extend .alert-#{$name};
 
       > .btn-close {

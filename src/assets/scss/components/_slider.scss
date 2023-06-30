@@ -135,7 +135,7 @@ $slider-tick-background-color: $grey-dark !default;
 
   // Sizes
   @each $name, $size in $sizes {
-    &.is-#{$name} {
+    &.size-#{$name} {
       height: $size;
 
       @if ($name == "small") {

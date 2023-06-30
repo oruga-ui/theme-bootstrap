@@ -35,9 +35,9 @@
 /* @bootstrap docs */
 
 .form-check {
-  // Colors
+  // Color variants
   @each $name, $pair in $theme-colors {
-    &.is-#{$name} {
+    &.variant-#{$name} {
       input[type="radio"],
       input[type="checkbox"] {
         background-color: $pair;
@@ -48,7 +48,7 @@
 
   // Sizes
   @each $name, $size in $sizes {
-    &.is-#{$name} {
+    &.size-#{$name} {
       font-size: $size;
 
       // input size should not defined for switch style

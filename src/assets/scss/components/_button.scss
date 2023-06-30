@@ -91,10 +91,12 @@ $btn-border-default: 0.1px solid $default-border-color !default; //  var(--oruga
 
 .btn:not(.btn-primary):not(.btn-secondary):not(.btn-success):not(
     .btn-danger
-  ):not(.btn-warning):not(.btn-info):not(.btn-dark):not(
+  ):not(.btn-warning):not(.btn-info):not(.btn-dark):not(.btn-light):not(
     .btn-outline-primary
-  ):not(.btn-outline-success):not(.btn-outline-danger):not(
-    .btn-outline-warning
-  ):not(.btn-outline-info):not(.btn-outline-info) {
+  ):not(.btn-outline-secondary):not(.btn-outline-success):not(
+    .btn-outline-danger
+  ):not(.btn-outline-warning):not(.btn-outline-info):not(.btn-outline-dark):not(
+    .btn-outline-light
+  ) {
   border: $btn-border-default;
 }

@@ -32,7 +32,7 @@ $upload-draggable-padding: 2em !default;
 
     @each $name, $pair in $theme-colors-lighter {
       $variant: map.get($theme-colors, #{$name});
-      &.is-#{$name} {
+      &.variant-#{$name} {
         background-color: $pair;
         border-color: $variant;
       }

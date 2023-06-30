@@ -8,7 +8,6 @@ $steps-active-background-color: $primary !default;
 $steps-divider-height: 0.2em !default;
 $steps-vertical-padding: 1em 0 !default;
 $steps-mobile-max-width: $tablet !default;
-$steps-default-size: 1em !default;
 /* @docs */
 
 @mixin steps-size($size) {
@@ -125,7 +124,6 @@ $steps-default-size: 1em !default;
         height: 3px;
       }
 
-      // Variants
       &.previous {
         &::before,
         &::after {
@@ -152,9 +150,9 @@ $steps-default-size: 1em !default;
         }
       }
 
-      // Colors
+      // Colors variants
       @each $name, $pair in $theme-colors {
-        &.is-#{$name} {
+        &.variant-#{$name} {
           &.previous {
             &::before,
             &::after {
@@ -234,10 +232,10 @@ $steps-default-size: 1em !default;
   }
 
   // Sizes
-  @include steps-size($steps-default-size);
+  @include steps-size(1em);
 
   @each $name, $value in $sizes {
-    &.is-#{$name} {
+    &.size-#{$name} {
       @include steps-size($value);
     }
   }

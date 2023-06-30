@@ -34,24 +34,11 @@ $skeleton-margin: 0.5rem 0 0 0 !default;
 
     // Sizes
     @each $name, $value in $sizes {
-      &.is-#{$name} {
+      &.size-#{$name} {
         // @include avariable('line-height', ('skeleton-font-size-' + #{$name}), $size);
         line-height: $value;
       }
     }
-  }
-
-  // Positioning
-  &.is-left {
-    align-items: flex-start;
-  }
-
-  &.is-centered {
-    align-items: center;
-  }
-
-  &.is-right {
-    align-items: flex-end;
   }
 }
 

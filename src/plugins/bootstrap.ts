@@ -69,7 +69,7 @@ export const bootstrapConfig: any = {
     override: true,
     rootClass: "icon",
     variantClass: "text-",
-    sizeClass: "is-",
+    sizeClass: "size-",
     clickableClass: "clickable",
     spinClass: "spin",
   },
@@ -79,8 +79,8 @@ export const bootstrapConfig: any = {
     disabledClass: "disabled",
     checkClass: "form-check-input",
     labelClass: "form-check-label",
-    variantClass: "is-",
-    sizeClass: "is-",
+    variantClass: "variant-",
+    sizeClass: "size-",
   },
   radio: {
     override: true,
@@ -88,8 +88,8 @@ export const bootstrapConfig: any = {
     disabledClass: "disabled",
     checkClass: "form-check-input",
     labelClass: "form-check-label",
-    variantClass: "is-",
-    sizeClass: "is-",
+    variantClass: "variant-",
+    sizeClass: "size-",
   },
   switch: {
     override: true,
@@ -104,9 +104,9 @@ export const bootstrapConfig: any = {
     },
     labelClass: "form-check-label",
     disabledClass: "disabled",
-    sizeClass: "is-",
-    variantClass: "is-",
-    passiveVariantClass: "is-",
+    sizeClass: "size-",
+    variantClass: "variant-",
+    passiveVariantClass: "variant-",
     // roundedClass: "rounded",
     // checkClass: "switch",
   },
@@ -131,7 +131,7 @@ export const bootstrapConfig: any = {
     },
     itemClass: "badge",
     closeClass: "btn-close",
-    variantClass: "is-",
+    variantClass: "variant-",
     expandedClass: "expanded",
     counterClass: "counter",
   },
@@ -175,12 +175,12 @@ export const bootstrapConfig: any = {
     override: true,
     rootClass: (_: string, { props }: any) => {
       const classes = ["slider"];
-      if (props.variant) classes.push(`is-${props.variant}`);
+      if (props.variant) classes.push(`variant-${props.variant}`);
       if (props.rounded) classes.push("rounded-pill");
       return classes.join(" ");
     },
     disabledClass: "disabled",
-    variantClass: "is-",
+    variantClass: "variant-",
     trackClass: "slider-track",
     fillClass: "slider-fill",
     thumbWrapperClass: (_: string, { props }: any) => {
@@ -188,10 +188,10 @@ export const bootstrapConfig: any = {
       if (props.dragging) classes.push(`is-dragging`);
       return classes.join(" ");
     },
-    sizeClass: "is-",
+    sizeClass: "size-",
     thumbClass: (_: string, { props }: any) => {
       const classes = ["slider-thumb", "focus-ring"];
-      if (props.variant) classes.push(`is-${props.variant}`);
+      if (props.variant) classes.push(`variant-${props.variant}`);
       if (props.variant) classes.push(`focus-ring-${props.variant}`);
       return classes.join(" ");
     },
@@ -210,14 +210,11 @@ export const bootstrapConfig: any = {
     multilineClass: "multiline",
     navTabsClass: "nav",
     navTypeClass: "nav-",
-    navSizeClass: "is-",
+    navSizeClass: "size-",
     navPositionClass: (position: string, { props }: any) => {
-      const classes = ["is-" + position];
-      if (props.position === "left") classes.push("justify-content-start");
-      else if (props.position === "centered")
-        classes.push("justify-content-center");
-      else if (props.position === "right") classes.push("justify-content-end");
-      return classes.join(" ");
+      if (props.position === "left") return "justify-content-start";
+      else if (props.position === "centered") return "justify-content-center";
+      else if (props.position === "right") return "justify-content-end";
     },
     tabItemWrapperClass: "nav-item",
     itemTag: "a",
@@ -274,14 +271,14 @@ export const bootstrapConfig: any = {
     alwaysClass: "always",
     multilineClass: "multiline",
     orderClass: "is-",
-    variantClass: "is-",
+    variantClass: "variant-",
     positionClass: "is-",
   },
   steps: {
     override: true,
     rootClass: (_: string, { props }: any) => {
       const classes = ["steps-wrapper"];
-      if (props.variant) classes.push(`is-${props.variant}`);
+      if (props.variant) classes.push(`variant-${props.variant}`);
       if (props.disables) classes.push("disabled");
       return classes.join(" ");
     },
@@ -295,7 +292,7 @@ export const bootstrapConfig: any = {
     },
     itemClass: "step-link",
     itemHeaderClass: "step-item",
-    itemHeaderVariantClass: "is-",
+    itemHeaderVariantClass: "variant-",
     itemHeaderActiveClass: "active",
     itemHeaderPreviousClass: "previous",
     stepLinkClass: "step-link",
@@ -308,16 +305,16 @@ export const bootstrapConfig: any = {
     stepContentClass: "step-content",
     positionClass: "is-",
     stepContentTransitioningClass: "transition",
-    sizeClass: "is-",
-    variantClass: "is-",
+    sizeClass: "size-",
+    variantClass: "variant-",
   },
   button: {
     override: true,
     rootClass: "btn",
-    sizeClass: (_: string, { props }: any) => {
-      if (props.size == "small") return "btn-sm";
-      else if (props.size == "medium") return "btn-md";
-      else if (props.size == "large") return "btn-lg";
+    sizeClass: (size: string) => {
+      if (size == "small") return "btn-sm";
+      else if (size == "medium") return "btn-md";
+      else if (size == "large") return "btn-lg";
     },
     variantClass: (_: string, { props }: any) => {
       if (props.outlined) return "";
@@ -338,13 +335,17 @@ export const bootstrapConfig: any = {
     itemClass: "skeleton-item",
     itemRoundedClass: "rounded-pill",
     animationClass: "animated",
-    sizeClass: "is-",
-    positionClass: "is-",
+    sizeClass: "size-",
+    positionClass: (position: string) => {
+      if (position == "left") return "align-items-start";
+      else if (position == "centered") return "align-items-center";
+      else if (position == "right") return "align-items-end";
+    },
   },
   notification: {
     override: true,
     rootClass: "notifictation alert",
-    variantClass: "is-",
+    variantClass: "variant-",
     wrapperClass: "notifictation-wrapper",
     contentClass: "notifictation-content",
     positionClass: "is-",
@@ -473,7 +474,7 @@ export const bootstrapConfig: any = {
       else classes.push("offcanvas-start");
       return classes.join(" ");
     },
-    variantClass: "is-",
+    variantClass: "variant-",
     staticClass: "position-static",
     absoluteClass: "position-absolute",
     fixedClass: "position-fixed",
@@ -507,7 +508,7 @@ export const bootstrapConfig: any = {
   upload: {
     override: true,
     rootClass: "upload",
-    variantClass: "is-",
+    variantClass: "variant-",
     draggableClass: "upload-draggable",
     expandedClass: "expanded",
     disabledClass: "disabled",
