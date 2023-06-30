@@ -1,40 +1,92 @@
 /* @docs */
-$notification-margin-bottom: 1.5rem !default;
+$notification-close-btn-position: 1rem !default;
 $notification-notices-padding: 2em !default;
-$notification-notices-zindex: 1000 !default;
-$notification-close-btn-position: 0.37rem !default;
-$notification-padding: 1.25rem 1rem !default;
+$notification-notices-zindex: $zindex-toast !default;
+$notification-notices-max-width: 600px !default;
+$notification-notices-space: 1.5rem !default;
 /* @docs */
 
 /* @bootstrap docs */
 // $alert-padding-y:               $spacer;
 // $alert-padding-x:               $spacer;
 // $alert-margin-bottom:           1rem;
-// $alert-border-radius:           $border-radius;
+// $alert-border-radius:           var(--#{$prefix}border-radius);
 // $alert-link-font-weight:        $font-weight-bold;
-// $alert-border-width:            $border-width;
+// $alert-border-width:            var(--#{$prefix}border-width);
 // $alert-bg-scale:                -80%;
 // $alert-border-scale:            -70%;
 // $alert-color-scale:             40%;
 // $alert-dismissible-padding-r:   $alert-padding-x * 3; // 3x covers width of x plus default padding on either side
 /* @bootstrap docs */
 
-// ALERT
+/* @bootstrap docs */
+// $toast-max-width:                   350px;
+// $toast-padding-x:                   .75rem;
+// $toast-padding-y:                   .5rem;
+// $toast-font-size:                   .875rem;
+// $toast-color:                       null;
+// $toast-background-color:            rgba(var(--#{$prefix}body-bg-rgb), .85);
+// $toast-border-width:                var(--#{$prefix}border-width);
+// $toast-border-color:                var(--#{$prefix}border-color-translucent);
+// $toast-border-radius:               var(--#{$prefix}border-radius);
+// $toast-box-shadow:                  var(--#{$prefix}box-shadow);
+// $toast-spacing:                     $container-padding-x;
+
+// $toast-header-color:                var(--#{$prefix}secondary-color);
+// $toast-header-background-color:     rgba(var(--#{$prefix}body-bg-rgb), .85);
+// $toast-header-border-color:         $toast-border-color;
+/* @bootstrap docs */
+
+.notifictation {
+  .notifictation-wrapper {
+    display: flex;
+
+    .notifictation-content {
+      padding-right: calc($notification-close-btn-position + $alert-padding-x);
+    }
+  }
+
+  .btn-close i {
+    display: none;
+  }
+}
 
 .alert {
-  // Close btn
-
   button {
     background-color: transparent;
     border: 0;
     position: absolute;
     top: $notification-close-btn-position;
     right: $notification-close-btn-position;
-    padding: $notification-padding;
+  }
+
+  // Colors
+  @each $name, $pair in $theme-colors {
+    &.is-#{$name} {
+      @extend .alert-#{$name};
+    }
   }
 }
 
-.notices {
+.toast {
+  @extend .show;
+  margin-bottom: var(--bs-alert-margin-bottom);
+  text-align: center;
+  padding: $alert-padding-x $alert-padding-y;
+
+  // Colors
+  @each $name, $pair in $theme-colors {
+    &.is-#{$name} {
+      @extend .text-bg-#{$name};
+
+      .btn-close {
+        @extend .btn-close-white;
+      }
+    }
+  }
+}
+
+.notifictations {
   position: fixed;
   display: flex;
   top: 0;
@@ -45,12 +97,10 @@ $notification-padding: 1.25rem 1rem !default;
   pointer-events: none;
   padding: $notification-notices-padding;
   z-index: $notification-notices-zindex;
-  // pointer-events: auto;
-  // position: relative;
 
-  .notification {
+  .alert {
     pointer-events: auto;
-    max-width: 600px;
+    max-width: $notification-notices-max-width;
 
     &.is-top,
     &.is-bottom {
@@ -75,16 +125,8 @@ $notification-padding: 1.25rem 1rem !default;
   &.is-bottom {
     flex-direction: column-reverse;
 
-    // Since the columns are reversed, we need to reverse the margin logic from
-    // :not(:last-child) to :not(:first-child)
-
-    .notification {
+    .div:first-child {
       margin-bottom: 0;
-
-      &:not(:first-child) {
-        // margin-bottom: $notification-margin-bottom;
-        margin-bottom: 3.75rem;
-      }
     }
   }
 }
