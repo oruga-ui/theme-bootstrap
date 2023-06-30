@@ -1,233 +1,70 @@
 /* @docs */
-$switch-background-color: #ced4da !default;
-$switch-transition: all 0.2s ease-out !default;
-$switch-margin-right-bottom: 0.9rem !default;
-// is-small
-$switch-small-width: 24px;
-$switch-small-height: 14px;
-$switch-small-before-width: 10px;
-$switch-small-before-height: 10px;
-$switch-small-top-position: 25%;
-$switch-padding-left-small: 25px;
-// is-medium
-$switch-medium-width: 28px;
-$switch-medium-height: 18px;
-$switch-medium-before-width: 14px;
-$switch-medium-before-height: 14px;
-$switch-medium-top-position: 20%;
-$switch-padding-left-medium: 33px;
-// is large
-$switch-large-width: 38px;
-$switch-large-height: 22px;
-$switch-large-before-width: 18px;
-$switch-large-before-height: 18px;
-$switch-large-top-position: 25%;
-$switch-padding-left-large: 45px;
-// The move of the switch (before)
-$switch-small-translateX: 9px;
-$switch-medium-translateX: 10px;
-$switch-large-translateX: 15px;
+$switch-height: 1.25em !default;
+$switch-margin-right: 0.5rem !default;
+$switch-border-radius: 4px !default;
 /* @docs */
 
 /* @bootstrap docs */
-// $form-check-input-width:                  1em;
-// $form-check-min-height:                   $font-size-base * $line-height-base;
-// $form-check-padding-start:                $form-check-input-width + .5em;
-// $form-check-margin-bottom:                .125rem;
-// $form-check-label-color:                  null;
-// $form-check-label-cursor:                 null;
-// $form-check-transition:                   null;
+// $form-switch-color:               rgba($black, .25);
+// $form-switch-width:               2em;
+// $form-switch-padding-start:       $form-switch-width + .5em;
+// $form-switch-bg-image:            url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'><circle r='3' fill='#{$form-switch-color}'/></svg>");
+// $form-switch-border-radius:       $form-switch-width;
+// $form-switch-transition:          background-position .15s ease-in-out;
 
-// $form-check-input-active-filter:          brightness(90%);
+// $form-switch-focus-color:         $input-focus-border-color;
+// $form-switch-focus-bg-image:      url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'><circle r='3' fill='#{$form-switch-focus-color}'/></svg>");
 
-// $form-check-input-bg:                     $input-bg;
-// $form-check-input-border:                 1px solid rgba($black, .25);
-// $form-check-input-border-radius:          .25em;
-// $form-check-radio-border-radius:          50%;
-// $form-check-input-focus-border:           $input-focus-border-color;
-// $form-check-input-focus-box-shadow:       $input-btn-focus-box-shadow;
-
-// $form-check-input-checked-color:          $component-active-color;
-// $form-check-input-checked-bg-color:       $component-active-bg;
-// $form-check-input-checked-border-color:   $form-check-input-checked-bg-color;
-// $form-check-input-checked-bg-image:       url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'><path fill='none' stroke='#{$form-check-input-checked-color}' stroke-linecap='round' stroke-linejoin='round' stroke-width='3' d='M6 10l3 3l6-6'/></svg>");
-// $form-check-radio-checked-bg-image:       url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'><circle r='2' fill='#{$form-check-input-checked-color}'/></svg>");
-
-// $form-check-input-indeterminate-color:          $component-active-color;
-// $form-check-input-indeterminate-bg-color:       $component-active-bg;
-// $form-check-input-indeterminate-border-color:   $form-check-input-indeterminate-bg-color;
-// $form-check-input-indeterminate-bg-image:       url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'><path fill='none' stroke='#{$form-check-input-indeterminate-color}' stroke-linecap='round' stroke-linejoin='round' stroke-width='3' d='M6 10h8'/></svg>");
-
-// $form-check-input-disabled-opacity:        .5;
-// $form-check-label-disabled-opacity:        $form-check-input-disabled-opacity;
-// $form-check-btn-check-disabled-opacity:    $btn-disabled-opacity;
-
-// $form-check-inline-margin-end:    1rem;
+// $form-switch-checked-color:       $component-active-color;
+// $form-switch-checked-bg-image:    url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'><circle r='3' fill='#{$form-switch-checked-color}'/></svg>");
+// $form-switch-checked-bg-position: right center;
 /* @bootstrap docs */
 
-// Sizes
-@mixin is-small {
-  padding-left: $switch-padding-left-small;
-
-  .switch {
-    width: $switch-small-width;
-    height: $switch-small-height;
-    top: $switch-small-top-position;
-  }
-
-  .switch:before {
-    width: $switch-small-before-width;
-    height: $switch-small-before-height;
-  }
-
-  input[type="checkbox"]:checked + .switch:before {
-    // Move
-    -webkit-transform: translateX($switch-small-translateX);
-    -ms-transform: translateX($switch-small-translateX);
-    transform: translateX($switch-small-translateX);
-  }
-}
-@mixin is-medium {
-  padding-left: $switch-padding-left-medium;
-
-  .switch {
-    width: $switch-medium-width;
-    height: $switch-medium-height;
-    top: $switch-medium-top-position;
-  }
-
-  .switch:before {
-    width: $switch-medium-before-width;
-    height: $switch-medium-before-height;
-  }
-
-  input[type="checkbox"]:checked + .switch:before {
-    // Move
-    -webkit-transform: translateX($switch-medium-translateX);
-    -ms-transform: translateX($switch-medium-translateX);
-    transform: translateX($switch-medium-translateX);
-  }
-}
-@mixin is-large {
-  padding-left: $switch-padding-left-large;
-
-  .switch {
-    width: $switch-large-width;
-    height: $switch-large-height;
-    top: $switch-large-top-position;
-  }
-
-  .switch:before {
-    width: $switch-large-before-width;
-    height: $switch-large-before-height;
-  }
-
-  input[type="checkbox"]:checked + .switch:before {
-    // Move
-    -webkit-transform: translateX($switch-large-translateX);
-    -ms-transform: translateX($switch-large-translateX);
-    transform: translateX($switch-large-translateX);
-  }
-}
-
 .form-switch {
-  // Default size is-medium
-  @include is-medium;
-
   position: relative;
-  margin-right: $switch-margin-right-bottom;
-  margin-bottom: $form-check-margin-bottom;
-  // min-height: $form-check-min-height;
-  // min-width: $form-check-input-width;
 
-  input {
-    opacity: 0;
-    width: 0;
-  }
+  height: $switch-height;
 
   .switch {
-    position: absolute;
-    cursor: pointer;
-    left: 0;
-    background-color: $switch-background-color;
-    -webkit-transition: $switch-transition;
-    transition: $switch-transition;
-    border-radius: $form-check-input-border-radius;
-
-    // Passive Variant
-    @each $name, $pair in $theme-colors {
-      &.is-#{$name}-passive {
-        background-color: $pair;
-      }
-    }
-
-    &:hover {
-      box-shadow: $form-check-input-focus-box-shadow;
-    }
+    display: none;
   }
 
-  .switch:before {
-    position: absolute;
-    left: 0.12rem;
-    bottom: 0.12rem;
-    content: "";
-    background-color: white;
-    -webkit-transition: $switch-transition;
-    transition: $switch-transition;
+  // disable rounded
+  &:not(.is-rounded) .form-check-input {
+    border-radius: $switch-border-radius;
   }
 
-  input[type="checkbox"]:focus + .switch {
-    box-shadow: $form-check-input-focus-box-shadow;
-  }
-
-  input[type="checkbox"]:checked + .switch {
-    background-color: $form-check-input-checked-bg-color;
-  }
-
-  .form-check-label {
-    color: $form-check-label-color;
-    cursor: $form-check-label-cursor;
-  }
-
-  // rounded
-
-  &.is-rounded {
-
-    .switch {
-      border-radius: 2rem;
-    }
-
-    .switch:before {
-      border-radius: 50%;
-    }
-  }
-
-  // Sizes
-
-  &.is-small {
-    @include is-small;
-  }
-
-  &.is-medium {
-    @include is-medium;
-  }
-
-  &.is-large {
-    @include is-large;
+  &:not(:last-child) {
+    margin-right: $switch-margin-right;
   }
 
   // Variant
   @each $name, $pair in $theme-colors {
+    &.is-#{$name} input[type="checkbox"] {
+      $form-switch-color: none;
+      --bs-form-switch-bg: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'%3e%3ccircle r='3' fill='%23fff'/%3e%3c/svg%3e");
+    }
 
-    input[type="checkbox"]:checked + .switch {
-      &.is-#{$name} {
+    // possive colors variant
+    &.is-#{$name}-passive {
+      input[type="checkbox"]:checked {
         background-color: $pair;
+        border-color: $pair;
       }
     }
   }
 
-  &.is-disabled {
-    opacity: $form-check-input-disabled-opacity;
-    cursor: not-allowed;
+  &.reversed {
+    display: flex;
+    padding-left: unset;
+
+    .form-check-input {
+      order: 2;
+      margin-left: 0.5em;
+    }
+
+    .form-check-label {
+      order: 1;
+    }
   }
 }

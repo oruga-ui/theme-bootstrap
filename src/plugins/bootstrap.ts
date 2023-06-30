@@ -87,7 +87,7 @@ export const bootstrapConfig: any = {
     disabledClass: "is-disabled",
     checkClass: "form-check-input",
     labelClass: "form-check-label",
-    variantClass: "form-check-",
+    variantClass: "is-",
     sizeClass: "is-",
   },
   radio: {
@@ -96,7 +96,7 @@ export const bootstrapConfig: any = {
     disabledClass: "is-disabled",
     checkClass: "form-check-input",
     labelClass: "form-check-label",
-    variantClass: "form-check-",
+    variantClass: "is-",
     sizeClass: "is-",
   },
   switch: {
@@ -104,24 +104,19 @@ export const bootstrapConfig: any = {
     rootClass: (_: string, { props }: any) => {
       const classes = ["form-check", "form-switch"];
       if (props.rounded) classes.push("is-rounded");
-      if (props.leftLabel) classes.push("has-left-label");
-      if (props.disabled) classes.push("is-disabled");
       return classes.join(" ");
     },
-    // disabledClass: 'is-disabled',
-    // roundedClass: 'is-rounded',
-    checkClass: (_: string, { props }: any) => {
-      const classes = ["switch"];
-      if (props.variant) classes.push(`is-${props.variant}`);
-      if (props.passiveVariant)
-        classes.push(`is-${props.passiveVariant}-passive`);
-      return classes.join(" ");
+    positionClass: (position: string) => {
+      if (position == "left") return "reversed";
     },
-    labelClass: "form-check-label",
-    // leftLabelClass: 'has-left-label',
     sizeClass: "is-",
-    // variantClass: 'is-',
-    // passiveVariantClass: (passiveVariant: string) => (`is-${passiveVariant}-passive`)
+    variantClass: "is-",
+    passiveVariantClass: "is-",
+    disabledClass: "is-disabled",
+    // roundedClass: "is-rounded",
+    // checkClass: "switch",
+    inputClass: "form-check-input",
+    labelClass: "form-check-label",
   },
   autocomplete: {
     override: true,
