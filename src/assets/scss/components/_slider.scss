@@ -72,6 +72,20 @@ $slider-tick-background-color: $grey-dark !default;
         // Colors
         @include variant-bg();
 
+        &:hover {
+          box-shadow: var(--bs-focus-ring-x, 0) var(--bs-focus-ring-y, 0)
+            var(--bs-focus-ring-blur, 0) var(--bs-focus-ring-width)
+            var(--bs-focus-ring-color);
+        }
+
+        &:active {
+          transform: scale(1.2);
+          background-color: $form-range-thumb-active-bg;
+          box-shadow: var(--bs-focus-ring-x, 0) var(--bs-focus-ring-y, 0)
+            var(--bs-focus-ring-blur, 0) var(--bs-focus-ring-width)
+            var(--bs-focus-ring-color);
+        }
+
         &:not(.focus-ring) {
           box-shadow: $form-range-thumb-box-shadow;
         }
@@ -82,10 +96,6 @@ $slider-tick-background-color: $grey-dark !default;
           &:not(.focus-ring) {
             box-shadow: $form-range-thumb-focus-box-shadow;
           }
-        }
-
-        &:active {
-          background-color: $form-range-thumb-active-bg;
         }
 
         // rounded thumb

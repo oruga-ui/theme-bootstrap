@@ -74,14 +74,30 @@ const sliderType = computed(() => {
     <h3>Variant</h3>
 
     <o-field label="Default">
-      <o-slider v-model="value" :rounded="true" :tooltip="false" />
+      <o-slider v-model="value" :rounded="true" :tooltip="true" />
     </o-field>
 
+    <o-field label="Primary">
+      <o-slider
+        v-model="value"
+        :rounded="true"
+        :tooltip="true"
+        variant="primary"
+        tooltip-variant="primary" />
+    </o-field>
+    <o-field label="Secondary">
+      <o-slider
+        v-model="value"
+        :rounded="true"
+        :tooltip="true"
+        variant="secondary"
+        tooltip-variant="secondary" />
+    </o-field>
     <o-field label="Success">
       <o-slider
         v-model="value"
         :rounded="true"
-        :tooltip="false"
+        :tooltip="true"
         variant="success"
         tooltip-variant="success" />
     </o-field>
@@ -89,7 +105,7 @@ const sliderType = computed(() => {
       <o-slider
         v-model="value"
         :rounded="true"
-        :tooltip="false"
+        :tooltip="true"
         variant="info"
         tooltip-variant="info" />
     </o-field>
@@ -97,7 +113,7 @@ const sliderType = computed(() => {
       <o-slider
         v-model="value"
         :rounded="true"
-        :tooltip="false"
+        :tooltip="true"
         variant="warning"
         tooltip-variant="warning" />
     </o-field>
@@ -105,7 +121,7 @@ const sliderType = computed(() => {
       <o-slider
         v-model="value"
         :rounded="true"
-        :tooltip="false"
+        :tooltip="true"
         variant="danger"
         tooltip-variant="danger" />
     </o-field>
