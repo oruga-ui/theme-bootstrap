@@ -417,6 +417,21 @@ function getFilteredTags(text: string) {
     </o-field>
 
     <p><b>Items:</b> {{ tags }}</p>
+
+    <o-field label="Disabled">
+      <o-inputitems
+        variant="primary"
+        disabled
+        :model-value="['One']"
+        :data="['One', 'Two', 'Three', 'Four']"
+        autocomplete
+        :allow-new="allowNew"
+        :open-on-focus="openOnFocus"
+        icon="tag"
+        placeholder="Add an item"
+        keep-first
+        expanded />
+    </o-field>
   </section>
 
   <section class="py-3">

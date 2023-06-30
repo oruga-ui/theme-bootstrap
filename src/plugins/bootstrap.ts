@@ -123,7 +123,11 @@ export const bootstrapConfig: any = {
   },
   inputitems: {
     override: true,
-    rootClass: "taginput",
+    rootClass: (_: string, { props }: any) => {
+      const classes = ["taginput"];
+      if (props.disabled) classes.push("disabled");
+      return classes.join(" ");
+    },
     containerClass: (_: string, { props }: any) => {
       const classes = ["taginput-wrapper", "focus-ring"];
       if (props.variant) classes.push(`focus-ring-${props.variant}`);
