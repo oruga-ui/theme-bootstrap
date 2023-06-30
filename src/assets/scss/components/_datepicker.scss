@@ -23,7 +23,6 @@ $datepicker-cell-border-radius: $base-border-radius !default;
 }
 
 .datepicker {
-
   input.form-control {
     background: inherit;
   }
@@ -41,7 +40,6 @@ $datepicker-cell-border-radius: $base-border-radius !default;
     margin-bottom: 0.5rem;
 
     .pagination {
-
       .pagination-previous {
         order: 1;
         margin: 0;
@@ -157,7 +155,6 @@ $datepicker-cell-border-radius: $base-border-radius !default;
       }
 
       &.has-events {
-
         .datepicker-cell {
           padding: 0.3rem 0.75rem 0.75rem;
 
