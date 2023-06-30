@@ -1,7 +1,13 @@
 <template>
   <div id="main">
     <div id="nav">
-      <router-link to="/">Home</router-link>
+      <router-link to="/" class="py-4 ps-0 text-center">
+        <img
+          class="image__oruga"
+          src="https://raw.githubusercontent.com/oruga-ui/theme-bootstrap/master/public/logo.svg"
+          alt="Logo Oruga Theme Bootstrap" />
+        <b class="fs-5 text-white">Oruga Bootstrap Theme</b>
+      </router-link>
       <router-link to="/autocomplete">Autocomplete</router-link>
       <router-link to="/button">Button</router-link>
       <router-link to="/carousel">Carousel</router-link>
@@ -65,6 +71,13 @@
     }
   }
 }
+
+.image__oruga {
+  height: 64px;
+  display: flex;
+  margin: 0 auto;
+}
+
 @media (max-width: 576px) {
   #main {
     #nav {
