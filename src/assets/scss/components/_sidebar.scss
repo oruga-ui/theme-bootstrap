@@ -40,20 +40,13 @@ $sidebar-reduced-height: 10vh !default;
     @extend .show;
 
     .btn-close {
-      border: none !important;
       position: absolute;
       right: 0.5rem;
       top: 0.5rem;
     }
 
     // Colors
-    @each $name, $pair in $theme-colors {
-      &.is-#{$name} {
-        background-color: $pair;
-        color: white;
-        border: 0;
-      }
-    }
+    @include variant-text-bg();
 
     &.is-fullwidth {
       @extend .is-expanded;
