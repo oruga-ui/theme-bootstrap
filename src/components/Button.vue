@@ -9,6 +9,7 @@
 
     <div class="buttons">
       <o-button variant="primary">Primary</o-button>
+      <o-button variant="secondary">Secondary</o-button>
       <o-button variant="success">Success</o-button>
       <o-button variant="danger">Danger</o-button>
       <o-button variant="warning">Warning</o-button>
@@ -32,6 +33,7 @@
 
     <div class="buttons">
       <o-button variant="primary" outlined>Outlined</o-button>
+      <o-button variant="secondary" outlined>Outlined</o-button>
       <o-button variant="success" outlined>Outlined</o-button>
       <o-button variant="danger" outlined>Outlined</o-button>
       <o-button variant="warning" outlined>Outlined</o-button>
@@ -45,6 +47,7 @@
 
     <div class="buttons">
       <o-button variant="primary" inverted>Inverted</o-button>
+      <o-button variant="secondary" inverted>Inverted</o-button>
       <o-button variant="success" inverted>Inverted</o-button>
       <o-button variant="danger" inverted>Inverted</o-button>
       <o-button variant="warning" inverted>Inverted</o-button>

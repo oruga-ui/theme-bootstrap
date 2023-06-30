@@ -84,10 +84,12 @@ $btn-border-default: 0.1px solid $default-border-color !default; //  var(--oruga
   margin-right: $btn-margin-right;
 }
 
-.btn:not(.btn-primary):not(.btn-success):not(.btn-danger):not(.btn-warning):not(
-    .btn-info
-  ):not(.btn-dark):not(.btn-outline-primary):not(.btn-outline-success):not(
-    .btn-outline-danger
-  ):not(.btn-outline-warning):not(.btn-outline-info):not(.btn-outline-info) {
+.btn:not(.btn-primary):not(.btn-secondary):not(.btn-success):not(
+    .btn-danger
+  ):not(.btn-warning):not(.btn-info):not(.btn-dark):not(
+    .btn-outline-primary
+  ):not(.btn-outline-success):not(.btn-outline-danger):not(
+    .btn-outline-warning
+  ):not(.btn-outline-info):not(.btn-outline-info) {
   border: $btn-border-default;
 }
