@@ -47,7 +47,7 @@ function danger() {
     <hr />
   </section>
 
-  <section class="py-4">
+  <section class="py-3">
     <h3>Base</h3>
 
     <o-notification
@@ -104,7 +104,7 @@ function danger() {
     </o-notification>
   </section>
 
-  <section class="py-4">
+  <section class="py-3">
     <h3>Programmatically opening</h3>
 
     <div class="buttons">
