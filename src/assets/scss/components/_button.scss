@@ -55,6 +55,14 @@ $btn-border-default: 0.1px solid $default-border-color !default; //  var(--oruga
 .btn {
   .icon {
     margin: 0 4px;
+
+    &:not(:last-child) {
+      margin-right: $btn-margin-right;
+    }
+
+    &:not(:first-child) {
+      margin-left: $btn-margin-right;
+    }
   }
 
   &.expanded {

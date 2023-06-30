@@ -4,7 +4,6 @@ $icon-spin-animation-duration: 2000ms !default;
 $icon-spin-adnimation-speed: $spinner-animation-speed !default;
 $icon-spin-animation-iteration-count: infinite !default;
 $icon-spin-animation-timing-function: linear !default;
-$icon-margin-right: 0.5rem !default;
 /* @docs */
 
 @keyframes spining {
@@ -35,9 +34,5 @@ $icon-margin-right: 0.5rem !default;
 
   &.clickable {
     cursor: pointer;
-  }
-
-  &:not(:last-child) {
-    margin-right: $icon-margin-right;
   }
 }

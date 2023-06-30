@@ -56,3 +56,9 @@
     </o-button>
   </section>
 </template>
+
+<style lang="scss">
+.icon:not(:last-child) {
+  margin-right: 0.5rem;
+}
+</style>
