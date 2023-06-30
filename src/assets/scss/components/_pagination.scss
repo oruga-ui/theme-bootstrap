@@ -1,6 +1,5 @@
 /* @docs */
 $pagination-items-margin: 0.5rem !default;
-$pagination-border-radius: $pagination-border-radius !default;
 $pagination-rounded-border-radius: $base-rounded-border-radius !default;
 /* @docs */
 
@@ -12,40 +11,65 @@ $pagination-rounded-border-radius: $base-rounded-border-radius !default;
 // $pagination-padding-y-lg:           .75rem;
 // $pagination-padding-x-lg:           1.5rem;
 
-// $pagination-color:                  $link-color;
-// $pagination-bg:                     $white;
-// $pagination-border-width:           $border-width;
-// $pagination-border-radius:          $border-radius;
-// $pagination-margin-start:           -$pagination-border-width;
-// $pagination-border-color:           $gray-300;
+// $pagination-font-size:              $font-size-base;
 
-// $pagination-focus-color:            $link-hover-color;
-// $pagination-focus-bg:               $gray-200;
-// $pagination-focus-box-shadow:       $input-btn-focus-box-shadow;
+// $pagination-color:                  var(--#{$prefix}link-color);
+// $pagination-bg:                     var(--#{$prefix}body-bg);
+// $pagination-border-radius:          var(--#{$prefix}border-radius);
+// $pagination-border-width:           var(--#{$prefix}border-width);
+// $pagination-margin-start:           calc(#{$pagination-border-width} * -1); // stylelint-disable-line function-disallowed-list
+// $pagination-border-color:           var(--#{$prefix}border-color);
+
+// $pagination-focus-color:            var(--#{$prefix}link-hover-color);
+// $pagination-focus-bg:               var(--#{$prefix}secondary-bg);
+// $pagination-focus-box-shadow:       $focus-ring-box-shadow;
 // $pagination-focus-outline:          0;
 
-// $pagination-hover-color:            $link-hover-color;
-// $pagination-hover-bg:               $gray-200;
-// $pagination-hover-border-color:     $gray-300;
+// $pagination-hover-color:            var(--#{$prefix}link-hover-color);
+// $pagination-hover-bg:               var(--#{$prefix}tertiary-bg);
+// $pagination-hover-border-color:     var(--#{$prefix}border-color); // Todo in v6: remove this?
 
 // $pagination-active-color:           $component-active-color;
 // $pagination-active-bg:              $component-active-bg;
-// $pagination-active-border-color:    $pagination-active-bg;
+// $pagination-active-border-color:    $component-active-bg;
 
-// $pagination-disabled-color:         $gray-600;
-// $pagination-disabled-bg:            $white;
-// $pagination-disabled-border-color:  $gray-300;
+// $pagination-disabled-color:         var(--#{$prefix}secondary-color);
+// $pagination-disabled-bg:            var(--#{$prefix}secondary-bg);
+// $pagination-disabled-border-color:  var(--#{$prefix}border-color);
 
 // $pagination-transition:              color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out;
 
-// $pagination-border-radius-sm:       $border-radius-sm;
-// $pagination-border-radius-lg:       $border-radius-lg;
+// $pagination-border-radius-sm:       var(--#{$prefix}border-radius-sm);
+// $pagination-border-radius-lg:       var(--#{$prefix}border-radius-lg);
 /* @bootstrap docs */
+
+@mixin roundEdge {
+  .pagination {
+    li:first-child .page-link {
+      border-top-left-radius: $pagination-border-radius;
+      border-bottom-left-radius: $pagination-border-radius;
+    }
+
+    li:last-child .page-link {
+      border-top-right-radius: $pagination-border-radius;
+      border-bottom-right-radius: $pagination-border-radius;
+    }
+  }
+}
 
 .pagination-wrapper {
   position: relative;
   display: flex;
   flex-direction: row;
+
+  .pagination-prev,
+  .pagination-next {
+    @include vertical-centered;
+
+    .icon {
+      margin: unset;
+    }
+  }
 
   .pagination-prev {
     order: 1;
@@ -66,24 +90,78 @@ $pagination-rounded-border-radius: $base-rounded-border-radius !default;
     margin: 0;
 
     .page-link {
-      margin: 0;
+      height: 100%;
+    }
+  }
 
-      &.active {
-        background-color: $primary;
-        color: white;
+  .pagination-ellipsis {
+    @include vertical-centered;
+    height: 100%;
+    margin-right: $pagination-items-margin;
+    margin-left: $pagination-items-margin;
+  }
+
+  .pagination-info {
+    @include vertical-centered;
+    margin-right: $pagination-items-margin;
+  }
+
+  &:not(.is-simple) {
+    &.order-left {
+      @include roundEdge;
+      justify-content: space-between;
+
+      .pagination-prev {
+        order: 2;
+      }
+
+      .pagination-next {
+        order: 3;
+      }
+
+      .pagination {
+        order: 1;
+        flex-grow: 1;
+        justify-content: flex-start;
+      }
+    }
+
+    &.order-centered {
+      @include roundEdge;
+      justify-content: space-between;
+    }
+
+    &.order-right {
+      @include roundEdge;
+      justify-content: space-between;
+
+      .pagination-next {
+        order: 2;
+      }
+
+      .pagination {
+        order: 3;
+        flex-grow: 1;
+        justify-content: flex-end;
       }
     }
   }
 
-  &.is-rounded {
+  &.is-simple {
+    &.order-centered {
+      justify-content: center;
+    }
 
+    &.order-right {
+      justify-content: flex-end;
+    }
+  }
+
+  &.is-rounded {
+    .pagination-ellipsis,
     .page-link {
       border-radius: $pagination-rounded-border-radius;
       margin-right: $pagination-items-margin;
     }
-  }
-
-  .info {
-    margin-right: $pagination-items-margin;
   }
 }

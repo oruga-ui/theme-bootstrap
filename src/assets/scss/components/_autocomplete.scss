@@ -1,20 +1,17 @@
+/* @docs */
+$autocomplete-menu-max-height: 200px !default;
+/* @docs */
+
 .autocomplete-wrapper {
   position: relative;
 
   .dropdown-menu {
-    // overflow: auto;
-
-    &.is-expanded {
-      width: 50%;
-    }
+    max-height: $autocomplete-menu-max-height;
+    overflow: auto;
 
     &.is-opened-top {
       top: auto;
       bottom: 100%;
     }
   }
-}
-
-.has-text-weight-bold {
-  font-weight: bolder;
 }

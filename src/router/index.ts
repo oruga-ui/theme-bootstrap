@@ -12,6 +12,16 @@ const routes: Array<RouteRecordRaw> = [
     component: Home,
   },
   {
+    path: "/checkbox",
+    name: "Checkbox",
+    component: () => import("../components/Checkbox.vue"),
+  },
+  {
+    path: "/carousel",
+    name: "Carousel",
+    component: () => import("../components/Carousel.vue"),
+  },
+  {
     path: "/steps",
     name: "Steps",
     component: () => import("../components/Steps.vue"),
@@ -50,6 +60,11 @@ const routes: Array<RouteRecordRaw> = [
     path: "/button",
     name: "Button",
     component: () => import("../components/Button.vue"),
+  },
+  {
+    path: "/switch",
+    name: "Switch",
+    component: () => import("../components/Switch.vue"),
   },
   {
     path: "/tabs",
@@ -115,6 +130,11 @@ const routes: Array<RouteRecordRaw> = [
     path: "/icon",
     name: "Icon",
     component: () => import("../components/Icon.vue"),
+  },
+  {
+    path: "/input",
+    name: "Input",
+    component: () => import("../components/Input.vue"),
   },
   {
     path: "/select",

@@ -1,21 +1,44 @@
+<script setup lang="ts">
+import { ref } from "vue";
+
+const isImageModalActive = ref(false);
+const isCardModalActive = ref(false);
+const isFullScreenModalActive = ref(false);
+
+const tags = ref([]);
+const value = ref(20);
+</script>
+
 <template>
   <section>
+    <h2>Modal Demo</h2>
+    <hr />
+  </section>
+
+  <section class="mt-3">
+    <h3>Base</h3>
     <div class="buttons">
       <o-button
         size="medium"
         variant="primary"
-        @click="isImageModalActive = true">
-        Open modal
-      </o-button>
+        label="Open Image Modal"
+        @click="isImageModalActive = true" />
+
       <o-button
         size="medium"
         variant="primary"
-        @click="isCardModalActive = true">
-        Open modal
-      </o-button>
+        label="Open Card Modal"
+        @click="isCardModalActive = true" />
+
+      <o-button
+        size="medium"
+        variant="primary"
+        label="Open FullScreen Modal"
+        @click="isFullScreenModalActive = true" />
     </div>
 
-    <o-modal v-model:active="isImageModalActive" content-class="modal-content">
+    <!-- image modal -->
+    <o-modal v-model:active="isImageModalActive">
       <p style="text-align: center">
         <img
           style="background-color: white"
@@ -23,7 +46,8 @@
       </p>
     </o-modal>
 
-    <o-modal v-model:active="isCardModalActive" :width="640" scroll="clip">
+    <!-- card modal -->
+    <o-modal v-model:active="isCardModalActive" :width="720" scroll="clip">
       <div class="modal-content">
         <div class="modal-header">
           <h5 class="modal-title">Log in to continue using the service</h5>
@@ -39,14 +63,14 @@
               icon="at"
               :has-counter="true"
               maxlength="10"
-              placeholder="Enter Your Email"></o-input>
+              placeholder="Enter Your Email" />
           </o-field>
           <o-field label="Password">
             <o-input
               icon="lock"
               :has-counter="true"
               maxlength="10"
-              placeholder="Enter Your Password"></o-input>
+              placeholder="Enter Your Password" />
           </o-field>
           <o-field label="Enter some items">
             <o-inputitems
@@ -55,8 +79,7 @@
               field="user.first_name"
               icon="tag"
               placeholder="Add an item"
-              keep-first>
-            </o-inputitems>
+              keep-first />
           </o-field>
           <o-field label="Dark & Medium">
             <o-slider
@@ -64,37 +87,84 @@
               :rounded="true"
               size="medium"
               variant="dark"
-              tooltip-variant="dark"></o-slider>
+              tooltip-variant="dark" />
           </o-field>
           <o-field>
             <o-checkbox variant="info"> Remember me </o-checkbox>
           </o-field>
         </div>
         <div class="modal-footer">
-          <o-button outlined variant="danger" @click="isCardModalActive = false"
-            >Close</o-button
-          >
-          <o-button outlined variant="primary">Log in</o-button>
-          <!-- <o-button outlined variant="success">Create one</o-button> -->
+          <o-button
+            outlined
+            variant="danger"
+            label="Close"
+            @click="isCardModalActive = false" />
+          <o-button outlined variant="primary" label="Log in" />
+        </div>
+      </div>
+    </o-modal>
+
+    <!-- fullscreen modal -->
+    <o-modal
+      v-model:active="isFullScreenModalActive"
+      :width="720"
+      scroll="clip"
+      :can-cancel="['escape', 'button']"
+      full-screen>
+      <div class="modal-content h-100">
+        <div class="modal-header">
+          <h5 class="modal-title">Log in to continue using the service</h5>
+          <o-icon
+            clickable
+            native-type="button"
+            icon="times"
+            @click="isFullScreenModalActive = false" />
+        </div>
+        <div class="modal-body">
+          <o-field label="Email">
+            <o-input
+              icon="at"
+              :has-counter="true"
+              maxlength="10"
+              placeholder="Enter Your Email" />
+          </o-field>
+          <o-field label="Password">
+            <o-input
+              icon="lock"
+              :has-counter="true"
+              maxlength="10"
+              placeholder="Enter Your Password" />
+          </o-field>
+          <o-field label="Enter some items">
+            <o-inputitems
+              v-model="tags"
+              variant="primary"
+              field="user.first_name"
+              icon="tag"
+              placeholder="Add an item"
+              keep-first />
+          </o-field>
+          <o-field label="Dark & Medium">
+            <o-slider
+              v-model="value"
+              :rounded="true"
+              size="medium"
+              variant="dark"
+              tooltip-variant="dark" />
+          </o-field>
+          <o-field>
+            <o-checkbox variant="info"> Remember me </o-checkbox>
+          </o-field>
+        </div>
+        <div class="modal-footer">
+          <o-button
+            outlined
+            variant="danger"
+            label="Close"
+            @click="isFullScreenModalActive = false" />
+          <o-button outlined variant="primary" label="Log in" />
         </div>
       </div>
     </o-modal>
   </section>
 </template>
-
-<script lang="ts">
-import { defineComponent } from "vue";
-
-export default defineComponent({
-  data() {
-    return {
-      isImageModalActive: false,
-      isCardModalActive: false,
-      email: "",
-      password: "",
-      tags: [],
-      value: 20,
-    };
-  },
-});
-</script>

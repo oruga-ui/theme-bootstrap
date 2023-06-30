@@ -10,16 +10,16 @@
 // $form-check-input-active-filter:          brightness(90%);
 
 // $form-check-input-bg:                     $input-bg;
-// $form-check-input-border:                 1px solid rgba($black, .25);
+// $form-check-input-border:                 var(--#{$prefix}border-width) solid var(--#{$prefix}border-color);
 // $form-check-input-border-radius:          .25em;
 // $form-check-radio-border-radius:          50%;
 // $form-check-input-focus-border:           $input-focus-border-color;
-// $form-check-input-focus-box-shadow:       $input-btn-focus-box-shadow;
+// $form-check-input-focus-box-shadow:       $focus-ring-box-shadow;
 
 // $form-check-input-checked-color:          $component-active-color;
 // $form-check-input-checked-bg-color:       $component-active-bg;
 // $form-check-input-checked-border-color:   $form-check-input-checked-bg-color;
-// $form-check-input-checked-bg-image:       url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'><path fill='none' stroke='#{$form-check-input-checked-color}' stroke-linecap='round' stroke-linejoin='round' stroke-width='3' d='M6 10l3 3l6-6'/></svg>");
+// $form-check-input-checked-bg-image:       url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'><path fill='none' stroke='#{$form-check-input-checked-color}' stroke-linecap='round' stroke-linejoin='round' stroke-width='3' d='m6 10 3 3 6-6'/></svg>");
 // $form-check-radio-checked-bg-image:       url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'><circle r='2' fill='#{$form-check-input-checked-color}'/></svg>");
 
 // $form-check-input-indeterminate-color:          $component-active-color;
@@ -37,9 +37,9 @@
 .form-check {
   // Colors
   @each $name, $pair in $theme-colors {
-    &.form-check-#{$name} {
-
-      input[type="checkbox"]:checked {
+    &.is-#{$name} {
+      input[type="radio"],
+      input[type="checkbox"] {
         background-color: $pair;
         border-color: $pair;
       }
@@ -49,11 +49,16 @@
   // Sizes
   @each $name, $size in $sizes {
     &.is-#{$name} {
+      font-size: $size;
 
-      input[type="checkbox"] {
-        width: $size;
-        height: $size;
-        margin-right: calc(#{$size} / 2);
+      // input size should not defined for switch style
+      &:not(.form-switch) {
+        input[type="radio"],
+        input[type="checkbox"] {
+          width: $size;
+          height: $size;
+          margin-right: calc(#{$size} / 2);
+        }
       }
     }
   }
@@ -61,5 +66,11 @@
   &.is-disabled {
     opacity: $form-check-input-disabled-opacity;
     cursor: not-allowed;
+  }
+}
+
+.input-field.input-group {
+  .form-check {
+    @extend .form-check-inline;
   }
 }

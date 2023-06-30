@@ -1,78 +1,159 @@
+<script setup lang="ts">
+import { computed, reactive, ref } from "vue";
+
+const value = ref(5);
+const sliderValue = ref(4);
+const numbers = ref([2, 5]);
+const numbers2 = ref([2, 6]);
+
+const settings = reactive({
+  rounded: false,
+  tooltip: true,
+  variant: "warning",
+  size: "medium",
+});
+
+const sliderType = computed(() => {
+  if (sliderValue.value > 25 && sliderValue.value < 75) return "warning";
+  else if (sliderValue.value >= 75) return "success";
+  return "danger";
+});
+</script>
+
 <template>
-  <section class="block">
-    <o-field label="Simple & Small & Default Variant">
-      <o-slider v-model="value" :rounded="true" size="small"></o-slider>
+  <section>
+    <h2>Slider Demo</h2>
+    <hr />
+  </section>
+
+  <section class="my-4">
+    <h3>Base</h3>
+
+    <o-field label="Simple">
+      <o-slider :model-value="8" />
     </o-field>
 
-    <o-field label="Warning & Medium">
-      <o-slider
-        v-model="value"
-        :rounded="true"
-        size="medium"
-        variant="warning"
-        tooltip-variant="warning"></o-slider>
+    <o-field label="Disabled">
+      <o-slider :model-value="30" disabled />
     </o-field>
 
-    <o-field label="Info & Large">
-      <o-slider
-        v-model="value"
-        :rounded="true"
-        size="large"
-        variant="info"
-        tooltip-variant="info"></o-slider>
+    <o-field label="Rounded thumb & No Tooltip">
+      <o-slider :model-value="8" rounded :tooltip="false" />
     </o-field>
 
-    <o-field label="Disabled & Default Variant">
-      <o-slider v-model="value" :rounded="true" disabled></o-slider>
+    <o-field label="Custom tooltip label">
+      <o-slider :rounded="true" :custom-formatter="(val: any) => val + '%'" />
+    </o-field>
+
+    <o-field label="Tooltip type">
+      <o-slider v-model="sliderValue" :tooltip-variant="sliderType" />
     </o-field>
   </section>
-  <section class="block">
-    <o-field label="Tooltip type & Default Variant">
-      <o-slider v-model="sliderValue" :rounded="true"></o-slider>
+
+  <section class="my-4">
+    <h3>Sizes</h3>
+
+    <o-field label="Small">
+      <o-slider v-model="value" size="small" />
     </o-field>
 
-    <o-field label="success">
+    <o-field label="Default">
+      <o-slider v-model="value" />
+    </o-field>
+
+    <o-field label="Medium">
+      <o-slider v-model="value" size="medium" />
+    </o-field>
+
+    <o-field label="Large">
+      <o-slider v-model="value" size="large" />
+    </o-field>
+  </section>
+
+  <section class="py-4">
+    <h3>Variant</h3>
+
+    <o-field label="Default">
+      <o-slider v-model="value" :rounded="true" :tooltip="false" />
+    </o-field>
+
+    <o-field label="Success">
       <o-slider
+        v-model="value"
         :rounded="true"
         :tooltip="false"
         variant="success"
-        tooltip-variant="success"></o-slider>
+        tooltip-variant="success" />
     </o-field>
-    <o-field label="danger">
+    <o-field label="Info">
       <o-slider
-        :rounded="true"
-        :tooltip="false"
-        variant="danger"
-        tooltip-variant="danger"></o-slider>
-    </o-field>
-    <o-field label="warning">
-      <o-slider
-        :rounded="true"
-        :tooltip="false"
-        variant="warning"
-        tooltip-variant="warning"></o-slider>
-    </o-field>
-    <o-field label="info">
-      <o-slider
+        v-model="value"
         :rounded="true"
         :tooltip="false"
         variant="info"
-        tooltip-variant="info"></o-slider>
+        tooltip-variant="info" />
     </o-field>
-
-    <o-field label="Custom tooltip label & Default Variant">
+    <o-field label="Warning">
       <o-slider
+        v-model="value"
         :rounded="true"
-        :custom-formatter="(val: any) => val + '%'"></o-slider>
+        :tooltip="false"
+        variant="warning"
+        tooltip-variant="warning" />
     </o-field>
-
-    <o-field label="Squared thumb">
-      <o-slider></o-slider>
+    <o-field label="Danger">
+      <o-slider
+        v-model="value"
+        :rounded="true"
+        :tooltip="false"
+        variant="danger"
+        tooltip-variant="danger" />
     </o-field>
   </section>
-  <section class="block">
+
+  <section class="py-4">
+    <h3>Customize</h3>
+    <o-field>
+      <o-field>
+        <o-switch v-model="settings.rounded">Rounded</o-switch>
+      </o-field>
+      <o-field>
+        <o-switch v-model="settings.tooltip">With Tooltip</o-switch>
+      </o-field>
+      <o-field label="Size">
+        <o-select v-model="settings.size">
+          <option value="small">small</option>
+          <option value="default">default</option>
+          <option value="medium">medium</option>
+          <option value="large">large</option>
+        </o-select>
+      </o-field>
+      <o-field label="Variant">
+        <o-select v-model="settings.variant">
+          <option value="default">default</option>
+          <option value="primary">primary</option>
+          <option value="success">success</option>
+          <option value="info">info</option>
+          <option value="warning">warning</option>
+          <option value="danger">danger</option>
+        </o-select>
+      </o-field>
+    </o-field>
+
+    <o-field label="Tooltip type & Default Variant">
+      <o-slider
+        :rounded="settings.rounded"
+        :tooltip="settings.tooltip"
+        :variant="settings.variant"
+        :size="settings.size" />
+    </o-field>
+  </section>
+
+  <section class="py-4">
+    <h3>Tick and label</h3>
+
     <o-field label="Show ticks">
-      <o-slider :rounded="true" :min="1" :max="10" ticks></o-slider>
+      <o-slider :rounded="true" size="small" :min="1" :max="10" ticks />
     </o-field>
 
     <o-field label="Custom tick and label">
@@ -97,7 +178,10 @@
       </o-slider>
     </o-field>
   </section>
-  <section class="block">
+
+  <section class="py-4">
+    <h3>Range</h3>
+
     <o-field label="Range">
       <o-slider
         v-model="numbers"
@@ -108,6 +192,7 @@
         ticks>
       </o-slider>
     </o-field>
+    <p>{{ numbers }}</p>
 
     <o-field>
       <o-slider
@@ -119,28 +204,6 @@
         :step="2">
       </o-slider>
     </o-field>
+    <p>{{ numbers2 }}</p>
   </section>
 </template>
-
-<script lang="ts">
-export default {
-  data() {
-    return {
-      value: 5,
-      sliderValue: 4,
-      numbers: [2, 5],
-      numbers2: [2, 6],
-    };
-  },
-  computed: {
-    sliderType() {
-      if (this.sliderValue > 25 && this.sliderValue < 75) {
-        return "warning";
-      } else if (this.sliderValue >= 75) {
-        return "success";
-      }
-      return "danger";
-    },
-  },
-};
-</script>
