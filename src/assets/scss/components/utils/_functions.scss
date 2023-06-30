@@ -107,7 +107,7 @@
 /// @return {Number} - Unitless number
 @function strip-unit($number) {
   @if type-of($number) == "number" and not unitless($number) {
-    @return $number / ($number * 0 + 1);
+    @return math.div($number, ($number * 0 + 1));
   }
 
   @return $number;
@@ -129,7 +129,7 @@
 /// This helper creates one background-color utility class for each color theme.
 @mixin variant-bg() {
   @each $color, $value in $theme-colors {
-    .is-#{$color} {
+    &.is-#{$color} {
       background-color: $value;
     }
   }
@@ -139,7 +139,7 @@
 /// This helper creates one text color utility class for each color theme.
 @mixin variant-text() {
   @each $color, $value in $theme-colors {
-    .is-#{$color} {
+    &.is-#{$color} {
       color: $value;
     }
   }
