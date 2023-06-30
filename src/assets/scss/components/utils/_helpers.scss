@@ -44,12 +44,13 @@
 }
 
 // btn-close overrides
-.btn-close > .icon {
+.btn-close > .icon,
+.btn-close.icon i {
   visibility: hidden;
 }
 
 @each $name, $pair in $theme-colors {
-  .is-#{$name} > .btn-close {
+  .variant-#{$name} > .btn-close {
     @extend .btn-close-white;
   }
 }
