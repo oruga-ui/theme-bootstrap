@@ -3,6 +3,7 @@
     <div id="nav">
       <router-link to="/">Home</router-link>
       <router-link to="/checkbox">Checkbox</router-link>
+      <router-link to="/carousel">Carousel</router-link>
       <router-link to="/steps">Steps</router-link>
       <router-link to="/slider">Slider</router-link>
       <router-link to="/pagination">Pagination</router-link>
@@ -25,6 +26,7 @@
       <router-link to="/switch">Switch</router-link>
       <router-link to="/radio">Radio</router-link>
       <router-link to="/icon">Icon</router-link>
+      <router-link to="/input">Input</router-link>
       <router-link to="/select">Select</router-link>
       <router-link to="/field">Field</router-link>
       <router-link to="/upload">Upload</router-link>

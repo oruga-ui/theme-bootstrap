@@ -1,197 +1,59 @@
 /* @docs */
-$tooltip-arrow-size: 0.31rem !default;
-$tooltip-arrow-margin: 0.12rem !default;
-$tooltip-content-multiline-width: 18.75rem !default;
+$tooltip-arrow-size: 6px !default;
+$tooltip-arrow-margin: 2px !default;
+$tooltip-content-multiline-width: 50vw !default;
+$tooltip-shadow: $box-shadow-sm !default;
+$tootlip-zindex: $zindex-tooltip;
 /* @docs */
 
 /* @bootstrap docs */
 // $tooltip-font-size:                 $font-size-sm;
 // $tooltip-max-width:                 200px;
-// $tooltip-color:                     $white;
-// $tooltip-bg:                        $black;
-// $tooltip-border-radius:             $border-radius;
+// $tooltip-color:                     var(--#{$prefix}body-bg);
+// $tooltip-bg:                        var(--#{$prefix}emphasis-color);
+// $tooltip-border-radius:             var(--#{$prefix}border-radius);
 // $tooltip-opacity:                   .9;
 // $tooltip-padding-y:                 $spacer * .25;
 // $tooltip-padding-x:                 $spacer * .5;
-// $tooltip-margin:                    0;
+// $tooltip-margin:                    null; // TODO: remove this in v6
 
 // $tooltip-arrow-width:               .8rem;
 // $tooltip-arrow-height:              .4rem;
-// $tooltip-arrow-color:               $tooltip-bg;
+// $tooltip-bg:               null; // Deprecated in Bootstrap 5.2.0 for CSS variables
 /* @bootstrap docs */
 
-@mixin tooltip-arrow-color($direction, $color) {
-  @if ($direction == "is-top") {
-    border-top-color: $color;
-  } @else if ($direction == "is-bottom") {
-    border-bottom-color: $color;
-  } @else if ($direction == "is-right") {
-    border-right-color: $color;
-  } @else if ($direction == "is-left") {
-    border-left-color: $color;
-  }
-}
-
-@mixin tooltip($direction) {
-  &.#{$direction} {
-
-    .tooltip-content {
-      @if ($direction == "is-top") {
-        top: auto;
-        right: auto;
-        bottom: calc(100% + #{$tooltip-arrow-size} + #{$tooltip-arrow-margin});
-        left: 50%;
-        transform: translateX(-50%);
-      } @else if ($direction == "is-bottom") {
-        top: calc(100% + #{$tooltip-arrow-size} + #{$tooltip-arrow-margin});
-        right: auto;
-        bottom: auto;
-        left: 50%;
-        transform: translateX(-50%);
-      } @else if ($direction == "is-right") {
-        top: 50%;
-        right: auto;
-        bottom: auto;
-        left: calc(100% + #{$tooltip-arrow-size} + #{$tooltip-arrow-margin});
-        transform: translateY(-50%);
-      } @else if ($direction == "is-left") {
-        top: 50%;
-        right: calc(100% + #{$tooltip-arrow-size} + #{$tooltip-arrow-margin});
-        bottom: auto;
-        left: auto;
-        transform: translateY(-50%);
-      }
-    }
-
-    .tooltip-content::before {
-      @if ($direction == "is-bottom") {
-        top: auto;
-        right: auto;
-        bottom: 100%;
-        left: 50%;
-        transform: translateX(-50%);
-        border-right: $tooltip-arrow-size solid transparent;
-        border-bottom: $tooltip-arrow-size solid $tooltip-arrow-color;
-        border-left: $tooltip-arrow-size solid transparent;
-        width: $tooltip-arrow-width;
-        height: $tooltip-arrow-height;
-      } @else if ($direction == "is-top") {
-        top: 100%;
-        right: auto;
-        bottom: auto;
-        left: 50%;
-        transform: translateX(-50%);
-        border-top: $tooltip-arrow-size solid $tooltip-arrow-color;
-        border-right: $tooltip-arrow-size solid transparent;
-        border-left: $tooltip-arrow-size solid transparent;
-        width: $tooltip-arrow-width;
-        height: $tooltip-arrow-height;
-      } @else if ($direction == "is-left") {
-        top: 50%;
-        right: auto;
-        bottom: auto;
-        left: 100%;
-        transform: translateY(-50%);
-        border-top: $tooltip-arrow-size solid transparent;
-        border-bottom: $tooltip-arrow-size solid transparent;
-        border-left: $tooltip-arrow-size solid $tooltip-arrow-color;
-        width: $tooltip-arrow-width;
-        height: $tooltip-arrow-height;
-      } @else if ($direction == "is-right") {
-        top: 50%;
-        right: 100%;
-        bottom: auto;
-        left: auto;
-        transform: translateY(-50%);
-        border-top: $tooltip-arrow-size solid transparent;
-        border-right: $tooltip-arrow-size solid $tooltip-arrow-color;
-        border-bottom: $tooltip-arrow-size solid transparent;
-        width: $tooltip-arrow-width;
-        height: $tooltip-arrow-height;
-      }
-    }
-    // @include tooltip-arrow-color($direction, $tooltip-arrow-color); //default
-    @each $name, $pair in $theme-colors {
-      // $color: nth($pair, 1);
-      &.is-#{$name} {
-
-        .tooltip-content::before {
-          @include tooltip-arrow-color($direction, $pair);
-        }
-        // If light and dark colors are provided
-        // @if length($pair) >= 4 {
-        //     $color-light: nth($pair, 3);
-        //     &.is-light {
-        //         .tooltip-content::before {
-        //             @include tooltip-arrow-color($direction, $color-light)
-        //         }
-        //     }
-        // }
-      }
-    }
-  }
-}
-
-// Base
-
-.b-tooltip {
-  @include tooltip("is-top");
-  @include tooltip("is-right");
-  @include tooltip("is-bottom");
-  @include tooltip("is-left");
+.tooltip-wrapper {
   position: relative;
   display: inline-flex;
+
+  .tooltip-trigger {
+    width: 100%;
+  }
 
   .tooltip-content {
     width: auto;
     max-width: $tooltip-max-width;
     border-radius: $tooltip-border-radius;
     font-size: $tooltip-font-size;
-    // font-weight: $weight-normal;
-    box-shadow: 0px 1px 2px 1px rgba(0, 1, 0, 0.2);
-    z-index: 38;
+    box-shadow: $tooltip-shadow;
+    z-index: $tootlip-zindex;
     white-space: nowrap;
     position: absolute;
-    background-color: $tooltip-bg; //default
-    color: $tooltip-color; // default
-    // opacity: $tooltip-opacity;
-    padding: $tooltip-padding-y $tooltip-padding-x $tooltip-padding-y
-      $tooltip-padding-x;
-  }
+    background-color: $tooltip-bg;
+    color: $tooltip-color;
+    padding: $tooltip-padding-y $tooltip-padding-x;
 
-  .tooltip-content::before {
-    position: absolute;
-    content: "";
-    pointer-events: none;
-    z-index: 38;
-  }
-
-  .tooltip-trigger {
-    width: 100%;
-  }
-  // Colors
-  @each $name, $pair in $theme-colors {
-    &.is-#{$name} {
-
-      .tooltip-content {
-        background: $pair;
-        @if ($name == "light") {
-          color: $dark;
-        }
-        // @else if($name == "info") {
-        // 	color: $dark;
-        // }
-        @else {
-          color: white;
-        }
-      }
+    &::before {
+      position: absolute;
+      content: "";
+      pointer-events: none;
+      z-index: $tootlip-zindex;
+      border-top-color: $tooltip-bg;
+      width: $tooltip-arrow-width;
+      height: $tooltip-arrow-height;
     }
-  }
-
-  & .tooltip-content {
 
     &.is-always {
-      opacity: 1;
       visibility: visible;
     }
 
@@ -200,18 +62,122 @@ $tooltip-content-multiline-width: 18.75rem !default;
       white-space: normal;
       width: $tooltip-content-multiline-width;
     }
+
+    //Position
+    &.is-top {
+      top: auto;
+      right: auto;
+      bottom: calc(100% + #{$tooltip-arrow-size} + #{$tooltip-arrow-margin});
+      left: 50%;
+      transform: translateX(-50%);
+
+      &::before {
+        top: 100%;
+        right: auto;
+        bottom: auto;
+        left: 50%;
+        transform: translateX(-50%);
+        border-top: $tooltip-arrow-size solid $tooltip-bg;
+        border-right: $tooltip-arrow-size solid transparent;
+        border-left: $tooltip-arrow-size solid transparent;
+      }
+    }
+
+    &.is-bottom {
+      top: calc(100% + #{$tooltip-arrow-size} + #{$tooltip-arrow-margin});
+      right: auto;
+      bottom: auto;
+      left: 50%;
+      transform: translateX(-50%);
+
+      &::before {
+        top: auto;
+        right: auto;
+        bottom: 100%;
+        left: 50%;
+        transform: translateX(-50%);
+        border-right: $tooltip-arrow-size solid transparent;
+        border-bottom: $tooltip-arrow-size solid $tooltip-bg;
+        border-left: $tooltip-arrow-size solid transparent;
+      }
+    }
+
+    &.is-right {
+      top: 50%;
+      right: auto;
+      bottom: auto;
+      left: calc(100% + #{$tooltip-arrow-size} + #{$tooltip-arrow-margin});
+      transform: translateY(-50%);
+
+      &::before {
+        top: 50%;
+        right: 100%;
+        bottom: auto;
+        left: auto;
+        transform: translateY(-50%);
+        border-top: $tooltip-arrow-size solid transparent;
+        border-right: $tooltip-arrow-size solid $tooltip-bg;
+        border-bottom: $tooltip-arrow-size solid transparent;
+      }
+    }
+
+    &.is-left {
+      top: 50%;
+      right: calc(100% + #{$tooltip-arrow-size} + #{$tooltip-arrow-margin});
+      bottom: auto;
+      left: auto;
+      transform: translateY(-50%);
+
+      &::before {
+        top: 50%;
+        right: auto;
+        bottom: auto;
+        left: 100%;
+        transform: translateY(-50%);
+        border-top: $tooltip-arrow-size solid transparent;
+        border-bottom: $tooltip-arrow-size solid transparent;
+        border-left: $tooltip-arrow-size solid $tooltip-bg;
+      }
+    }
+  }
+
+  // Colors
+  @include variant-text-bg();
+
+  @each $name, $value in $theme-colors {
+    .is-#{$name} {
+      &.is-top::before {
+        border-top-color: $value;
+      }
+
+      &.is-bottom::before {
+        border-bottom-color: $value;
+      }
+
+      &.is-right::before {
+        border-right-color: $value;
+      }
+
+      &.is-left::before {
+        border-left-color: $value;
+      }
+    }
+  }
+
+  // States
+  &[disabled="true"] {
+    .tooltip-content {
+      display: none;
+    }
   }
 
   &.is-dashed {
-
-    .tooltip-trigger {
+    .tooltip-content {
       border-bottom: 1px dashed $grey-light;
-      cursor: default;
     }
   }
 
   &.is-square {
-
     .tooltip-content {
       border-radius: 0;
     }

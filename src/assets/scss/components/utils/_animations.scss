@@ -2,7 +2,6 @@
 
 // Fade out
 @keyframes fadeOut {
-
   from {
     opacity: 1;
   }
@@ -17,7 +16,6 @@
 }
 
 @keyframes fadeOutDown {
-
   from {
     opacity: 1;
   }
@@ -33,7 +31,6 @@
 }
 
 @keyframes fadeOutUp {
-
   from {
     opacity: 1;
   }
@@ -50,7 +47,6 @@
 
 // Fade In
 @keyframes fadeIn {
-
   from {
     opacity: 0;
   }
@@ -65,7 +61,6 @@
 }
 
 @keyframes fadeInDown {
-
   from {
     opacity: 0;
     transform: translate3d(0, -100%, 0);
@@ -82,7 +77,6 @@
 }
 
 @keyframes fadeInUp {
-
   from {
     opacity: 0;
     transform: translate3d(0, 100%, 0);
@@ -103,7 +97,6 @@
  */
 
 // Fade
-
 .fade-enter-active,
 .fade-leave-active {
   transition: opacity $speed-slow $easing;
@@ -116,12 +109,10 @@
 }
 
 // Zoom In
-
 .zoom-in-enter-active,
 .zoom-in-leave-active {
   transition: opacity $speed-slow $easing;
 
-  .animation-content,
   .animation-content {
     transition: transform $speed-slow $easing;
   }
@@ -132,19 +123,16 @@
 .zoom-in-leave-active {
   opacity: 0;
 
-  .animation-content,
   .animation-content {
     transform: scale(0.95);
   }
 }
 
 // Zoom Out
-
 .zoom-out-enter-active,
 .zoom-out-leave-active {
   transition: opacity $speed-slow $easing;
 
-  .animation-content,
   .animation-content {
     transition: transform $speed-slow $easing;
   }
@@ -155,14 +143,12 @@
 .zoom-out-leave-active {
   opacity: 0;
 
-  .animation-content,
   .animation-content {
     transform: scale(1.05);
   }
 }
 
 // Slide
-
 .slide-next-enter-active,
 .slide-next-leave-active,
 .slide-prev-enter-active,
