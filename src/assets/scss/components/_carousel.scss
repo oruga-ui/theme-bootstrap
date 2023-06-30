@@ -158,7 +158,7 @@ $carousel-indicator-bg: $primary !default;
     width: $carousel-control-width;
 
     i {
-      display: none;
+      visibility: hidden;
     }
   }
 }
