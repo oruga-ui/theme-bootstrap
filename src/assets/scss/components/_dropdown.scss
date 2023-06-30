@@ -50,6 +50,7 @@
   }
 
   &.is-inline .dropdown-menu {
+    --bs-dropdown-zindex: 10;
     position: relative;
     top: 0;
   }
