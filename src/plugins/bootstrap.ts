@@ -30,13 +30,9 @@ export const bootstrapConfig: any = {
     },
     roundedClass: "is-rounded",
     sizeClass: (_: string, { props }: any) => {
-      if (props.size == "small") {
-        return "form-control-sm";
-      } else if (props.size == "medium") {
-        return "form-control-md";
-      } else if (props.size == "large") {
-        return "form-control-lg";
-      }
+      if (props.size == "small") return "form-control-sm";
+      else if (props.size == "medium") return "form-control-md";
+      else if (props.size == "large") return "form-control-lg";
     },
     variantClass: "border-",
     expandedClass: "is-expanded",
@@ -56,13 +52,9 @@ export const bootstrapConfig: any = {
     roundedClass: "is-rounded",
     variantClass: "border-",
     sizeClass: (_: string, { props }: any) => {
-      if (props.size == "small") {
-        return "form-select-sm";
-      } else if (props.size == "medium") {
-        return "form-select-md";
-      } else if (props.size == "large") {
-        return "form-select-lg";
-      }
+      if (props.size == "small") return "form-select-sm";
+      else if (props.size == "medium") return "form-select-md";
+      else if (props.size == "large") return "form-select-lg";
     },
     expandedClass: "is-expanded",
     iconLeftClass: "is-left",
@@ -166,7 +158,7 @@ export const bootstrapConfig: any = {
       else if (props.size == "large") classes.push("pagination-lg");
       return classes.join(" ");
     },
-    // itemClass: "page-item", // not implementend in oruga yet
+    listItemClass: "page-item", // not implementend in oruga yet
     linkClass: "page-link",
     linkCurrentClass: "active",
     linkDisabledClass: "disabled",
@@ -319,13 +311,9 @@ export const bootstrapConfig: any = {
     override: true,
     rootClass: "btn",
     sizeClass: (_: string, { props }: any) => {
-      if (props.size == "small") {
-        return "btn-sm";
-      } else if (props.size == "medium") {
-        return "btn-md";
-      } else if (props.size == "large") {
-        return "btn-lg";
-      }
+      if (props.size == "small") return "btn-sm";
+      else if (props.size == "medium") return "btn-md";
+      else if (props.size == "large") return "btn-lg";
     },
     variantClass: (_: string, { props }: any) => {
       if (props.outlined) return "";
