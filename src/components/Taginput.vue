@@ -449,6 +449,14 @@ function getFilteredTags(text: string) {
         variant="primary" />
     </o-field>
 
+    <o-field label="Secondary">
+      <o-inputitems
+        :model-value="['One']"
+        :data="['One', 'Two', 'Three', 'Four']"
+        :allow-new="false"
+        variant="secondary" />
+    </o-field>
+
     <o-field label="Success">
       <o-inputitems
         :model-value="['One']"

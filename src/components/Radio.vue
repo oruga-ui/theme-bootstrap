@@ -37,6 +37,16 @@ const size = ref("small");
       <o-radio v-model="variant" native-value="default"> Default </o-radio>
     </o-field>
     <o-field>
+      <o-radio v-model="variant" native-value="primary" variant="primary">
+        Priamry
+      </o-radio>
+    </o-field>
+    <o-field>
+      <o-radio v-model="variant" native-value="secondary" variant="secondary">
+        Secondary
+      </o-radio>
+    </o-field>
+    <o-field>
       <o-radio v-model="variant" native-value="info" variant="info">
         Info
       </o-radio>

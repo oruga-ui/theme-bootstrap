@@ -60,6 +60,14 @@ function danger() {
     </o-notification>
     <o-notification
       closable
+      variant="secondary"
+      aria-close-label="Close notification">
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce id
+      fermentum quam. Proin sagittis, nibh id hendrerit imperdiet, elit sapien
+      laoreet elit
+    </o-notification>
+    <o-notification
+      closable
       variant="info"
       aria-close-label="Close notification">
       Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce id

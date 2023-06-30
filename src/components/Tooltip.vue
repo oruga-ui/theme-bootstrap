@@ -45,6 +45,10 @@ const active = ref(true);
       <o-button label="Primary" />
     </o-tooltip>
 
+    <o-tooltip label="Secondary" variant="secondary">
+      <o-button label="Secondary" />
+    </o-tooltip>
+
     <o-tooltip label="Success" variant="success">
       <o-button label="Success" />
     </o-tooltip>

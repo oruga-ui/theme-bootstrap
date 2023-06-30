@@ -44,6 +44,12 @@ const passive = ref(null);
       <o-switch :value="true"> Default </o-switch>
     </o-field>
     <o-field>
+      <o-switch :value="true" variant="primary"> Primary </o-switch>
+    </o-field>
+    <o-field>
+      <o-switch :value="true" variant="secondary"> Secondary </o-switch>
+    </o-field>
+    <o-field>
       <o-switch :value="true" variant="info"> Info </o-switch>
     </o-field>
     <o-field>
@@ -88,7 +94,9 @@ const passive = ref(null);
       <o-select v-model="variant" expanded placeholder="Variant">
         <option value="null">Default</option>
         <option value="primary">Primary</option>
+        <option value="secondary">Secondary</option>
         <option value="success">Success</option>
+        <option value="info">Info</option>
         <option value="warning">Warning</option>
         <option value="danger">Danger</option>
       </o-select>
@@ -97,7 +105,9 @@ const passive = ref(null);
       <o-select v-model="passive" expanded placeholder="Passive Variant">
         <option value="null">Default</option>
         <option value="primary">Primary</option>
+        <option value="secondary">Secondary</option>
         <option value="success">Success</option>
+        <option value="info">Info</option>
         <option value="warning">Warning</option>
         <option value="danger">Danger</option>
       </o-select>
