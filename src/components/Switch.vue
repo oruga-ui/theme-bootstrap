@@ -16,8 +16,9 @@ const passive = ref(null);
     <hr />
   </section>
 
-  <section class="my-4">
+  <section class="py-3">
     <h3>Base</h3>
+
     <o-field>
       <o-switch>Default </o-switch>
     </o-field>
@@ -36,7 +37,7 @@ const passive = ref(null);
     </o-field>
   </section>
 
-  <section class="my-4">
+  <section class="py-3">
     <h3>Variant</h3>
 
     <o-field>
@@ -56,8 +57,9 @@ const passive = ref(null);
     </o-field>
   </section>
 
-  <section class="my-4">
+  <section class="py-3">
     <h3>Size</h3>
+
     <o-field>
       <o-switch size="small">Small</o-switch>
     </o-field>
@@ -72,7 +74,7 @@ const passive = ref(null);
     </o-field>
   </section>
 
-  <section class="my-4">
+  <section class="py-3">
     <h3>Style variants</h3>
 
     <o-field grouped>

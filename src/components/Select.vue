@@ -1,11 +1,18 @@
+<script setup lang="ts">
+import { ref } from "vue";
+
+const selectedOptions = ref([]);
+</script>
+
 <template>
   <section>
     <h2>Select Demo</h2>
     <hr />
   </section>
 
-  <section class="mt-4">
+  <section class="py-3">
     <h3>Base</h3>
+
     <o-field label="Simple">
       <o-select placeholder="Select a name">
         <option value="flint">Flint</option>
@@ -94,6 +101,7 @@
 
   <section class="my-4">
     <h3>Sizes</h3>
+
     <o-field label="Size 'small'">
       <o-select placeholder="Select a name" size="small">
         <option value="flint">Flint</option>
@@ -125,6 +133,7 @@
 
   <section class="my-4">
     <h3>With Icons</h3>
+
     <o-field>
       <o-select placeholder="Select a name" icon="search" icon-clickable>
         <option value="flint">Flint</option>
@@ -144,13 +153,3 @@
     </o-field>
   </section>
 </template>
-
-<script lang="ts">
-export default {
-  data() {
-    return {
-      selectedOptions: [],
-    };
-  },
-};
-</script>

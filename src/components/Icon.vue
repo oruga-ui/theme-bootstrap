@@ -4,8 +4,9 @@
     <hr />
   </section>
 
-  <section class="my-4">
+  <section class="py-3">
     <h3>Base</h3>
+
     <o-field>
       <o-icon pack="fas" icon="user" size="small" />
       <o-icon pack="fas" icon="home" size="small" />
@@ -31,8 +32,9 @@
     </o-field>
   </section>
 
-  <section class="my-4">
+  <section class="py-3">
     <h3>Buttons</h3>
+
     <o-button variant="success">
       <o-icon pack="fas" icon="check" />
       <span>Finish</span>

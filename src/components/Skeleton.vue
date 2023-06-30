@@ -10,8 +10,9 @@ const animated = ref(true);
     <hr />
   </section>
 
-  <section class="py-4">
+  <section class="py-3">
     <h3>Base</h3>
+
     <o-field grouped group-multiline>
       <o-switch v-model="animated">Animated</o-switch>
     </o-field>
@@ -25,13 +26,13 @@ const animated = ref(true);
     <o-skeleton :animated="animated" :count="2" />
   </section>
 
-  <section class="py-4">
+  <section class="py-3">
     <h3>Circle</h3>
 
     <o-skeleton :animated="animated" circle width="64px" height="64px" />
   </section>
 
-  <section class="py-4">
+  <section class="py-3">
     <h3>Sizes</h3>
     Small
     <o-skeleton :animated="animated" size="small" />
@@ -43,8 +44,9 @@ const animated = ref(true);
     <o-skeleton :animated="animated" size="large" />
   </section>
 
-  <section class="py-4">
+  <section class="py-3">
     <h3>Position</h3>
+
     Left
     <o-skeleton width="30%" position="left" :animated="animated" />
     Center

@@ -487,8 +487,9 @@ function getMoreAsyncData() {
     <hr />
   </section>
 
-  <section class="my-4">
+  <section class="py-3">
     <h2>Base</h2>
+
     <o-field label="Find a JS framework">
       <o-autocomplete
         v-model="nameBase"
@@ -502,11 +503,12 @@ function getMoreAsyncData() {
         <template #empty>No results found</template>
       </o-autocomplete>
     </o-field>
-    <p class="content"><b>Selected:</b> {{ selectedBase }}</p>
+    <p><b>Selected:</b> {{ selectedBase }}</p>
   </section>
 
-  <section class="my-4">
+  <section class="py-3">
     <h2>Objects array</h2>
+
     <o-field grouped group-multiline>
       <o-switch v-model="openOnFocus">Open dropdown on focus</o-switch>
       <o-switch v-model="keepFirst">Keep-first</o-switch>
@@ -522,11 +524,12 @@ function getMoreAsyncData() {
         field="user.first_name"
         @select="(option: any) => (selectedObjects = option)" />
     </o-field>
-    <p class="content"><b>Selected:</b> {{ selectedObjects }}</p>
+    <p><b>Selected:</b> {{ selectedObjects }}</p>
   </section>
 
-  <section class="my-4">
+  <section class="py-3">
     <h2>Groups</h2>
+
     <o-field label="Find a food">
       <o-autocomplete
         v-model="nameGroups"
@@ -537,11 +540,12 @@ function getMoreAsyncData() {
         field="user.first_name"
         @select="(option:any) => (selectedGroups = option)" />
     </o-field>
-    <p class="content"><b>Selected:</b> {{ selectedGroups }}</p>
+    <p><b>Selected:</b> {{ selectedGroups }}</p>
   </section>
 
-  <section class="my-4">
+  <section class="py-3">
     <h2>Infinite Scroll</h2>
+
     <o-field label="Find a movie">
       <o-autocomplete
         :data="dataInfinite"
@@ -575,7 +579,7 @@ function getMoreAsyncData() {
         </template>
       </o-autocomplete>
     </o-field>
-    <p class="content"><b>Selected:</b> {{ selectedInfinite }}</p>
+    <p><b>Selected:</b> {{ selectedInfinite }}</p>
   </section>
 </template>
 

@@ -89,7 +89,7 @@ const customSettings = reactive({
     <h2>Carousel Demo</h2>
     <hr />
   </section>
-  <section class="my-4 container">
+  <section class="py-4 container">
     <h3>Base</h3>
 
     <o-carousel>
@@ -103,7 +103,7 @@ const customSettings = reactive({
     </o-carousel>
   </section>
 
-  <section class="my-4 container">
+  <section class="py-4 container">
     <h3>Carousel List</h3>
 
     <div class="example-component">
@@ -147,10 +147,10 @@ const customSettings = reactive({
         <img :src="item.image" />
       </o-carousel-item>
     </o-carousel>
-    <p>Current Item: {{ carousel }}</p>
+    <p><b>Current Item:</b> {{ carousel }}</p>
   </section>
 
-  <section class="my-4 container">
+  <section class="py-4 container">
     <h3>Custom As indicators</h3>
 
     <o-carousel
@@ -191,7 +191,7 @@ const customSettings = reactive({
     </o-carousel>
   </section>
 
-  <section class="my-4 container">
+  <section class="py-4 container">
     <h3>Custom</h3>
 
     <div class="example-component">

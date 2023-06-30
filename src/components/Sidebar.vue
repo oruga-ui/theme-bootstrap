@@ -20,7 +20,9 @@ const toggleSidebar = () => {
     <hr />
   </section>
 
-  <section class="mt-4">
+  <section class="py-3">
+    <h3>Base</h3>
+
     <o-sidebar
       v-model:open="isOpen"
       variant="primary"

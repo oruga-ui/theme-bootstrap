@@ -4,8 +4,9 @@
     <hr />
   </section>
 
-  <section class="mt-3">
+  <section class="py-3">
     <h3>Base</h3>
+
     <div class="buttons">
       <o-button variant="primary">Primary</o-button>
       <o-button variant="success">Success</o-button>
@@ -16,8 +17,9 @@
     </div>
   </section>
 
-  <section class="mt-3">
+  <section class="py-3">
     <h3>States</h3>
+
     <div class="buttons">
       <o-button>Normal</o-button>
       <o-button disabled>Disabled</o-button>
@@ -25,8 +27,9 @@
     </div>
   </section>
 
-  <section class="mt-3">
+  <section class="py-3">
     <h3>Outlined</h3>
+
     <div class="buttons">
       <o-button variant="primary" outlined>Outlined</o-button>
       <o-button variant="success" outlined>Outlined</o-button>
@@ -37,8 +40,9 @@
     </div>
   </section>
 
-  <section class="mt-3">
+  <section class="py-3">
     <h3>Inverted</h3>
+
     <div class="buttons">
       <o-button variant="primary" inverted>Inverted</o-button>
       <o-button variant="success" inverted>Inverted</o-button>
@@ -49,8 +53,9 @@
     </div>
   </section>
 
-  <section class="mt-3">
+  <section class="py-3">
     <h3>Icons</h3>
+
     <div class="buttons">
       <o-button variant="primary" size="small" icon-left="plus">Add</o-button>
       <o-button variant="primary" icon-left="plus">Add</o-button>
@@ -65,8 +70,9 @@
     </div>
   </section>
 
-  <section class="mt-3">
+  <section class="py-3">
     <h3>Expanded</h3>
+
     <div class="buttons">
       <o-button variant="primary" expanded>Expanded</o-button>
     </div>

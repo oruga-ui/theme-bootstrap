@@ -15,8 +15,9 @@ const value = ref(20);
     <hr />
   </section>
 
-  <section class="mt-3">
+  <section class="py-3">
     <h3>Base</h3>
+
     <div class="buttons">
       <o-button
         size="medium"

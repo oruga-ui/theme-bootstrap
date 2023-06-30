@@ -20,7 +20,7 @@ const nextIcon = ref("chevron-right");
     <hr />
   </section>
 
-  <section class="mt-3">
+  <section class="py-3">
     <h3>Base</h3>
 
     <o-field grouped group-multiline>

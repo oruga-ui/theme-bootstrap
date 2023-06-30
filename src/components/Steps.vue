@@ -27,7 +27,9 @@ const size = ref(null);
     <hr />
   </section>
 
-  <section class="py-4">
+  <section class="py-3">
+    <h3>Base</h3>
+
     <o-field grouped group-multiline>
       <div class="control">
         <o-switch v-model="showSocial"> Show Social step </o-switch>
@@ -151,23 +153,24 @@ const size = ref(null);
     </o-steps>
   </section>
 
-  <section class="py-4">
+  <section class="py-3">
     <h3>Variants</h3>
-    <h5>Warning</h5>
+
+    Warning
     <o-steps variant="warning">
       <o-step-item label="Account" icon="user-lock">empty</o-step-item>
       <o-step-item label="Profile" icon="user">empty</o-step-item>
       <o-step-item label="Social" icon="user-plus">empty</o-step-item>
     </o-steps>
 
-    <h5>Info</h5>
+    Info
     <o-steps variant="info">
       <o-step-item label="Account" icon="user-lock">empty</o-step-item>
       <o-step-item label="Profile" icon="user">empty</o-step-item>
       <o-step-item label="Social" icon="user-plus">empty</o-step-item>
     </o-steps>
 
-    <h5>Success</h5>
+    Success
     <o-steps variant="success">
       <o-step-item label="Account" icon="user-lock">empty</o-step-item>
       <o-step-item label="Profile" icon="user">empty</o-step-item>
@@ -175,8 +178,9 @@ const size = ref(null);
     </o-steps>
   </section>
 
-  <section class="py-4">
+  <section class="py-3">
     <h3>Vertical</h3>
+
     <o-field grouped group-multiline>
       <div class="control">
         <o-switch v-model="position" true-value="right">

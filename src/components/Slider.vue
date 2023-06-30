@@ -26,7 +26,7 @@ const sliderType = computed(() => {
     <hr />
   </section>
 
-  <section class="my-4">
+  <section class="py-3">
     <h3>Base</h3>
 
     <o-field label="Simple">
@@ -50,7 +50,7 @@ const sliderType = computed(() => {
     </o-field>
   </section>
 
-  <section class="my-4">
+  <section class="py-3">
     <h3>Sizes</h3>
 
     <o-field label="Small">
@@ -70,7 +70,7 @@ const sliderType = computed(() => {
     </o-field>
   </section>
 
-  <section class="py-4">
+  <section class="py-3">
     <h3>Variant</h3>
 
     <o-field label="Default">
@@ -127,7 +127,7 @@ const sliderType = computed(() => {
     </o-field>
   </section>
 
-  <section class="py-4">
+  <section class="py-3">
     <h3>Customize</h3>
     <o-field>
       <o-field>
@@ -165,7 +165,7 @@ const sliderType = computed(() => {
     </o-field>
   </section>
 
-  <section class="py-4">
+  <section class="py-3">
     <h3>Tick and label</h3>
 
     <o-field label="Show ticks">
@@ -195,7 +195,7 @@ const sliderType = computed(() => {
     </o-field>
   </section>
 
-  <section class="py-4">
+  <section class="py-3">
     <h3>Range</h3>
 
     <o-field label="Range">

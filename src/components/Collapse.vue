@@ -27,8 +27,9 @@ const collapses = ref([
     <h2>Collapse Demo</h2>
   </section>
 
-  <section class="mt-4">
+  <section class="py-3">
     <h2>Base</h2>
+
     <o-collapse :open="false" aria-id="contentIdForA11y1">
       <template #trigger>
         <o-button variant="primary" aria-controls="contentIdForA11y1">
@@ -48,7 +49,7 @@ const collapses = ref([
     </o-collapse>
   </section>
 
-  <section class="mt-4">
+  <section class="py-3">
     <h2>Accordion I</h2>
 
     <o-collapse
@@ -74,7 +75,7 @@ const collapses = ref([
     </o-collapse>
   </section>
 
-  <section class="mt-4">
+  <section class="py-3">
     <h2>Accordion II</h2>
 
     <article v-for="(collapse, index) of collapses" :key="index">

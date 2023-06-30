@@ -15,7 +15,7 @@ function deleteDropFile(index: number) {
     <hr />
   </section>
 
-  <section class="py-4">
+  <section class="py-3">
     <h3>Base</h3>
 
     <o-field class="file">
@@ -27,11 +27,12 @@ function deleteDropFile(index: number) {
           label="Click to upload" />
       </o-upload>
     </o-field>
-    <p class="file-name">Selected File: {{ file?.name }}</p>
+    <p><b>Selected File:</b> {{ file?.name }}</p>
   </section>
 
-  <section class="py-4">
+  <section class="py-3">
     <h3>Drag&Drop</h3>
+
     <o-field>
       <o-upload v-model="dropFiles" multiple variant="info" expanded drag-drop>
         <section class="ex-center">

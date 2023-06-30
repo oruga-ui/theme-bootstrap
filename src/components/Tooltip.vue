@@ -10,7 +10,7 @@ const active = ref(true);
     <hr />
   </section>
 
-  <section class="my-4">
+  <section class="py-3">
     <h3>Base</h3>
 
     <o-tooltip label="Tooltip right" position="right">
@@ -34,7 +34,7 @@ const active = ref(true);
     </o-tooltip>
   </section>
 
-  <section class="my-4">
+  <section class="py-3">
     <h3>Colors</h3>
 
     <o-tooltip label="Default">
@@ -70,7 +70,7 @@ const active = ref(true);
     </o-tooltip>
   </section>
 
-  <section class="my-4">
+  <section class="py-3">
     <h3>Multiline</h3>
 
     <o-tooltip
@@ -96,7 +96,7 @@ const active = ref(true);
     </o-tooltip>
   </section>
 
-  <section class="my-4">
+  <section class="py-3">
     <h3>Slot</h3>
 
     <o-tooltip variant="light" position="bottom" multiline>
@@ -121,7 +121,7 @@ const active = ref(true);
     </o-tooltip>
   </section>
 
-  <section class="my-4">
+  <section class="py-3">
     <h3>Toggle</h3>
 
     <o-field>

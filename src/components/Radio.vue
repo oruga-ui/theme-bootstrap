@@ -12,8 +12,9 @@ const size = ref("small");
     <hr />
   </section>
 
-  <section class="my-4">
+  <section class="py-3">
     <h3>Base</h3>
+
     <o-field>
       <o-radio v-model="radio" name="name" native-value="Flint">
         Flint
@@ -26,10 +27,10 @@ const size = ref("small");
         Vane
       </o-radio>
     </o-field>
-    <p class="content"><b>Selection:</b> {{ radio }}</p>
+    <p><b>Selection:</b> {{ radio }}</p>
   </section>
 
-  <section class="my-4">
+  <section class="py-3">
     <h3>Variant</h3>
 
     <o-field>
@@ -55,11 +56,12 @@ const size = ref("small");
         Warning
       </o-radio>
     </o-field>
-    <p class="content"><b>Selection:</b> {{ variant }}</p>
+    <p><b>Selection:</b> {{ variant }}</p>
   </section>
 
-  <section class="my-4">
+  <section class="py-3">
     <h3>Size</h3>
+
     <o-field>
       <o-radio v-model="size" native-value="small" size="small">
         Small
@@ -78,6 +80,6 @@ const size = ref("small");
         Large
       </o-radio>
     </o-field>
-    <p class="content"><b>Selection:</b> {{ size }}</p>
+    <p><b>Selection:</b> {{ size }}</p>
   </section>
 </template>
