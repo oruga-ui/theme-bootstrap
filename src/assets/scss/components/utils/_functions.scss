@@ -107,8 +107,40 @@
 /// @return {Number} - Unitless number
 @function strip-unit($number) {
   @if type-of($number) == "number" and not unitless($number) {
-    @return $number / ($number * 0 + 1);
+    @return math.div($number, ($number * 0 + 1));
   }
 
   @return $number;
+}
+
+/// Generates is-{color} variant for background and text color.
+/// This Color and background helper combines the power of our .text-* utilities and .bg-* utilities in one class.
+/// Using the Sass color-contrast() function, a contrasting color is automatically determined for a particular background-color.
+@mixin variant-text-bg() {
+  @each $color, $value in $theme-colors {
+    .is-#{$color} {
+      color: color-contrast($value);
+      background-color: $value;
+    }
+  }
+}
+
+/// Generates is-{color} variant for background color.
+/// This helper creates one background-color utility class for each color theme.
+@mixin variant-bg() {
+  @each $color, $value in $theme-colors {
+    .is-#{$color} {
+      background-color: $value;
+    }
+  }
+}
+
+/// Generates is-{color} variant for text color.
+/// This helper creates one text color utility class for each color theme.
+@mixin variant-text() {
+  @each $color, $value in $theme-colors {
+    .is-#{$color} {
+      color: $value;
+    }
+  }
 }
