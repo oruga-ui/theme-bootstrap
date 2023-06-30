@@ -351,17 +351,14 @@ export const bootstrapConfig: any = {
   },
   notification: {
     override: true,
-    rootClass: (_: string, { props }: any) => {
-      const classes = ["alert", "notification"];
-      if (props.variant) classes.push(`alert-${props.variant}`);
-      return classes.join(" ");
-    },
-    wrapperClass: "alert-wrapper",
-    // contentClass: '',
-    iconClass: "media-left",
-    closeClass: "btn-close",
+    rootClass: "notifictation alert",
+    variantClass: "is-",
+    wrapperClass: "notifictation-wrapper",
+    contentClass: "notifictation-content",
     positionClass: "is-",
-    noticeClass: "notices",
+    iconClass: "media",
+    closeClass: "btn-close",
+    noticeClass: "notifictations",
     noticePositionClass: "is-",
   },
   dropdown: {

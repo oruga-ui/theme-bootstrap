@@ -1,5 +1,55 @@
+<script setup lang="ts">
+import { useProgrammatic } from "@oruga-ui/oruga-next";
+
+function simple() {
+  const { oruga } = useProgrammatic();
+  oruga.notification.open("Something happened");
+}
+function success() {
+  const { oruga } = useProgrammatic();
+  oruga.notification.open({
+    message: "Something happened correctly!",
+    variant: "success",
+    closable: true,
+  });
+}
+function toast() {
+  const { oruga } = useProgrammatic();
+  oruga.notification.open({
+    message: "Something happened correctly!",
+    rootClass: "toast",
+    position: "top",
+  });
+}
+function danger() {
+  const { oruga } = useProgrammatic();
+
+  oruga.notification.open({
+    message: `Something's not good, also I'm on <b>bottom</b>`,
+    position: "bottom-right",
+    variant: "danger",
+    closable: true,
+    indefinite: true,
+    ariaLive: "assertive",
+    ariaAtomic: true,
+    ariaCloseLabel: "Close",
+    onClose: () => {
+      const { oruga } = useProgrammatic();
+      oruga.notification.open("Custom notification closed!");
+    },
+  });
+}
+</script>
+
 <template>
   <section>
+    <h2>Notification Demo</h2>
+    <hr />
+  </section>
+
+  <section class="py-4">
+    <h3>Base</h3>
+
     <o-notification
       closable
       variant="primary"
@@ -53,8 +103,10 @@
       laoreet elit
     </o-notification>
   </section>
-  <hr />
-  <section>
+
+  <section class="py-4">
+    <h3>Programmatically opening</h3>
+
     <div class="buttons">
       <o-button
         label="Launch notification (default)"
@@ -74,60 +126,3 @@
     </div>
   </section>
 </template>
-
-<script lang="ts">
-import { useProgrammatic } from "@oruga-ui/oruga-next";
-
-export default {
-  methods: {
-    simple() {
-      const { oruga } = useProgrammatic();
-      oruga.notification.open("Something happened");
-    },
-    success() {
-      const { oruga } = useProgrammatic();
-      oruga.notification.open({
-        message: "Something happened correctly!",
-        variant: "success",
-        closable: true,
-      });
-    },
-    toast() {
-      const { oruga } = useProgrammatic();
-      oruga.notification.open({
-        message: "Something happened correctly!",
-        rootClass: "toast-notification",
-        position: "top",
-      });
-    },
-    danger() {
-      const { oruga } = useProgrammatic();
-
-      const notif = oruga.notification.open({
-        duration: 5000,
-        message: `Something's not good, also I'm on <b>bottom</b>`,
-        position: "bottom-right",
-        variant: "danger",
-        closable: true,
-        onClose: () => {
-          const { oruga } = useProgrammatic();
-          oruga.notification.open("Custom notification closed!");
-        },
-      });
-    },
-  },
-};
-</script>
-
-<style>
-.toast-notification {
-  margin: 0.5em 0;
-  text-align: center;
-  box-shadow: 0 1px 4px rgb(0 0 0 / 12%), 0 0 6px rgb(0 0 0 / 4%);
-  border-radius: 2em;
-  padding: 0.75em 1.5em;
-  pointer-events: auto;
-  color: rgba(0, 0, 0, 0.7);
-  background: #ffdd57;
-}
-</style>
