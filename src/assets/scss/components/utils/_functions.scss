@@ -91,9 +91,7 @@
     @if is-empty-whitelist() or is-in-whitelist($name) {
       @return var(#{$variable-prefix}#{$name}, #{$value});
     }
-  }
-
- @else if $sass-vars == true {
+  } @else if $sass-vars == true {
     @if is-empty-whitelist() or is-in-whitelist($name) {
       @return #{$value};
     }

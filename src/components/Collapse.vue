@@ -1,5 +1,56 @@
+<script setup lang="ts">
+import { ref } from "vue";
+
+const isOpen = ref(1);
+const isOpen1 = ref(1);
+const collapses = ref([
+  {
+    title: "Open to read something intersting written for you!",
+    text: `Lorem ipsum dolor sit amet, consectetur adipiscing elit.  <br />
+          Nulla accumsan, metus ultrices eleifend gravida,   <br />
+          nulla nunc varius lectus, nec rutrum justo nibh eu lectus.  <br />
+          Ut vulputate semper dui. Fusce erat odio, sollicitudin vel erat vel, interdum mattis neque.`,
+  },
+  {
+    title: "What the different between Oruga and Buefy?",
+    text: "Nulla accumsan, metus ultrices eleifend gravida, nulla nunc varius lectus, nec rutrum justo nibh eu lectus. <br />",
+  },
+  {
+    title: "Nothing special, ignore it!",
+    text: "Ut vulputate semper dui. Fusce erat odio, sollicitudin vel erat vel, interdum mattis neque.",
+  },
+]);
+</script>
+
 <template>
   <section>
+    <h2>Collapse Demo</h2>
+  </section>
+
+  <section class="mt-4">
+    <h2>Base</h2>
+    <o-collapse :open="false" aria-id="contentIdForA11y1">
+      <template #trigger>
+        <o-button variant="primary" aria-controls="contentIdForA11y1">
+          Click me!
+        </o-button>
+      </template>
+      <div class="card card-body">
+        <h3>Subtitle</h3>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. <br />
+          Nulla accumsan, metus ultrices eleifend gravida, nulla nunc varius
+          lectus, nec rutrum justo nibh eu lectus. <br />
+          Ut vulputate semper dui. Fusce erat odio, sollicitudin vel erat vel,
+          interdum mattis neque.
+        </p>
+      </div>
+    </o-collapse>
+  </section>
+
+  <section class="mt-4">
+    <h2>Accordion I</h2>
+
     <o-collapse
       v-for="(collapse, index) of collapses"
       :key="index"
@@ -13,16 +64,18 @@
             {{ collapse.title }}
           </p>
           <a class="card-header-icon">
-            <o-icon :icon="props.open ? 'caret-up' : 'caret-down'"> </o-icon>
+            <o-icon :icon="props.open ? 'caret-up' : 'caret-down'" />
           </a>
         </div>
       </template>
-      <div class="card-content">
-        <div class="content">
-          {{ collapse.text }}
-        </div>
+      <div class="card-content p-2">
+        <div class="content" v-html="collapse.text" />
       </div>
     </o-collapse>
+  </section>
+
+  <section class="mt-4">
+    <h2>Accordion II</h2>
 
     <article v-for="(collapse, index) of collapses" :key="index">
       <o-collapse
@@ -30,52 +83,28 @@
         :open="isOpen1 == index"
         @update:open="isOpen1 = index">
         <template #trigger>
-          <div class="" role="button">
-            <o-button variant="success">{{ collapse.title }}</o-button>
-          </div>
+          <o-button variant="success" :label="collapse.title" />
         </template>
         <div class="card card-body">
-          <div class="content">
-            {{ collapse.text }}
-          </div>
+          <div class="content" v-html="collapse.text" />
         </div>
       </o-collapse>
     </article>
   </section>
 </template>
 
-<script lang="ts">
-export default {
-  data() {
-    return {
-      isOpen: 1,
-      isOpen1: 1,
-      collapses: [
-        {
-          title: "Open to read something intersting written for you!",
-          text: `
-                      Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                      Nulla accumsan, metus ultrices eleifend gravida, 
-                      nulla nunc varius lectus, nec rutrum justo nibh eu lectus.
-                      Ut vulputate semper dui. Fusce erat odio, sollicitudin vel erat vel, interdum mattis neque.
-                    `,
-        },
-        {
-          title: "What the different between Oruga and Buefy?",
-          text: "Nulla accumsan, metus ultrices eleifend gravida, nulla nunc varius lectus, nec rutrum justo nibh eu lectus. <br />",
-        },
-        {
-          title: "Nothing special, ignore it!",
-          text: "Ut vulputate semper dui. Fusce erat odio, sollicitudin vel erat vel, interdum mattis neque.",
-        },
-      ],
-    };
-  },
-};
-</script>
-
-<style>
+<style scoped lang="scss">
 article {
   margin: 1rem 0;
+}
+
+.card {
+  margin: 1rem 0;
+}
+
+.card-header-icon {
+  position: absolute;
+  top: 0.5rem;
+  right: 1rem;
 }
 </style>

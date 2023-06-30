@@ -1,89 +1,49 @@
 /* @docs */
-$sidebar-border-color: $default-border-color !default;
-$sidebar-box-shadow: 0 !default;
-$sidebar-width: 20% !default;
-$sidebar-background-color: $light !default;
-$sidebar-overlay-background-color: $overlay-background-color-dark !default;
-$sidebar-mobile-width: 5rem !default;
-$sidebar-mobile-breakpoint: $tablet !default;
+$sidebar-reduced-width: 5rem !default;
+$sidebar-reduced-height: 10vh !default;
 /* @docs */
 
+/* @bootstrap docs */
+// $offcanvas-padding-y:               $modal-inner-padding;
+// $offcanvas-padding-x:               $modal-inner-padding;
+// $offcanvas-horizontal-width:        400px;
+// $offcanvas-vertical-height:         30vh;
+// $offcanvas-transition-duration:     .3s;
+// $offcanvas-border-color:            $modal-content-border-color;
+// $offcanvas-border-width:            $modal-content-border-width;
+// $offcanvas-title-line-height:       $modal-title-line-height;
+// $offcanvas-bg-color:                var(--#{$prefix}body-bg);
+// $offcanvas-color:                   var(--#{$prefix}body-color);
+// $offcanvas-box-shadow:              $modal-content-box-shadow-xs;
+// $offcanvas-backdrop-bg:             $modal-backdrop-bg;
+// $offcanvas-backdrop-opacity:        $modal-backdrop-opacity;
+/* @bootstrap docs */
+
+@mixin size($height, $width) {
+  &.offcanvas-start,
+  &.offcanvas-end {
+    --bs-offcanvas-width: #{$width};
+  }
+
+  &.offcanvas-top,
+  &.offcanvas-bottom {
+    --bs-offcanvas-height: #{$height};
+  }
+}
+
 .sidebar {
+  .offcanvas-backdrop {
+    @extend .show;
+  }
 
-  .sidebar-content {
-    @extend .offcanvas;
-    visibility: visible;
-    transition: unset;
-    background: $light;
-    width: $sidebar-width;
-    border-left: 1px solid $sidebar-border-color;
-    border-right: 1px solid $sidebar-border-color;
-    box-shadow: $sidebar-box-shadow;
-    z-index: 999;
+  .offcanvas {
+    @extend .show;
 
-    // Modifiers
-
-    &.is-static {
-      position: static;
-    }
-
-    &.is-fixed {
-      position: fixed;
-      left: 0;
-      top: 0;
-
-      &.is-right {
-        left: auto;
-        right: 0;
-      }
-    }
-
-    &.is-absolute {
+    .btn-close {
+      border: none !important;
       position: absolute;
-    }
-
-    &.is-right {
-      @extend .offcanvas-end;
-      transform: unset;
-    }
-
-    &:not(.is-right) {
-      @extend .offcanvas-start;
-      transform: unset;
-    }
-
-    &.is-fullheight {
-      height: 100%;
-      max-height: 100%;
-      overflow: hidden;
-      overflow-y: auto;
-      display: flex;
-      flex-direction: column;
-      align-content: stretch;
-    }
-
-    &.is-fullwidth {
-      width: 100%;
-    }
-
-    &.is-mini-mobile {
-      width: 10%;
-    }
-
-    &.is-mini {
-      width: $sidebar-mobile-width;
-
-      &.is-mini-expand:hover:not(.is-mini-delayed) {
-        transition: width $speed-slow $easing;
-
-        &:not(.is-fullwidth) {
-          width: $sidebar-width;
-
-          &.is-mini-expand-fixed {
-            position: fixed;
-          }
-        }
-      }
+      right: 0.5rem;
+      top: 0.5rem;
     }
 
     // Colors
@@ -94,44 +54,37 @@ $sidebar-mobile-breakpoint: $tablet !default;
         border: 0;
       }
     }
-    @media screen and (max-width: calc($sidebar-mobile-breakpoint - 1px)) {
 
-      &.is-mini-mobile {
-        width: $sidebar-mobile-width;
+    &.is-fullwidth {
+      width: 100%;
+    }
 
-        &.is-mini-expand:hover {
+    &:not(.is-fullheight) {
+      bottom: unset;
+    }
 
-          &:not(.is-fullwidth-mobile) {
-            width: $sidebar-width;
+    // reduced
+    &.is-reduced {
+      transition: width $speed-slow $easing, height $speed-slow $easing;
 
-            &.is-mini-expand-fixed {
-              position: fixed;
-            }
+      @include size($sidebar-reduced-height, $sidebar-reduced-width);
+
+      &.is-reduced-expand:hover:not(.is-reduced-delayed) {
+        &.is-fullwidth {
+          @include size(100%, 100%h);
+        }
+
+        &:not(.is-fullwidth) {
+          @include size(
+            $offcanvas-vertical-height,
+            $offcanvas-horizontal-width
+          );
+
+          &.is-reduced-expand-fixed {
+            position: fixed;
           }
         }
       }
-
-      &.is-hidden-mobile {
-        width: 0;
-        height: 0;
-        overflow: hidden;
-      }
-
-      &.is-fullwidth-mobile {
-        width: 100%;
-        max-width: 100%;
-      }
     }
-  }
-
-  .sidebar-background {
-    background: $sidebar-overlay-background-color;
-    @extend .offcanvas-backdrop;
-    @extend .show;
-    width: 100%;
-    height: 100%;
-    position: fixed;
-    top: 0;
-    z-index: 38;
   }
 }

@@ -1,64 +1,91 @@
+<script setup lang="ts">
+import { ref } from "vue";
+
+const activeStep = ref("0");
+
+const showSocial = ref(false);
+const isAnimated = ref(true);
+const isVertical = ref(false);
+const isRounded = ref(true);
+const isStepsClickable = ref(false);
+
+const hasNavigation = ref(true);
+const customNavigation = ref(false);
+const isProfileSuccess = ref(false);
+
+const prevIcon = ref("chevron-left");
+const nextIcon = ref("chevron-right");
+const labelPosition = ref("bottom");
+const stepsPosition = ref("left");
+const position = ref(null);
+const size = ref(null);
+</script>
+
 <template>
   <section>
-    <p>
-      <o-field grouped group-multiline>
-        <div class="control">
-          <o-switch v-model="showSocial"> Show Social step </o-switch>
-        </div>
-        <div class="control">
-          <o-switch v-model="isAnimated"> Animated </o-switch>
-        </div>
-        <div class="control">
-          <o-switch v-model="isRounded"> Rounded </o-switch>
-        </div>
-        <div class="control">
-          <o-switch v-model="isVertical"> Vertical </o-switch>
-        </div>
-        <div class="control">
-          <o-switch v-model="isStepsClickable"> Clickable Marker </o-switch>
-        </div>
+    <h2>Steps Demo</h2>
+    <hr />
+  </section>
+
+  <section class="py-4">
+    <o-field grouped group-multiline>
+      <div class="control">
+        <o-switch v-model="showSocial"> Show Social step </o-switch>
+      </div>
+      <div class="control">
+        <o-switch v-model="isAnimated"> Animated </o-switch>
+      </div>
+      <div class="control">
+        <o-switch v-model="isRounded"> Rounded </o-switch>
+      </div>
+      <div class="control">
+        <o-switch v-model="isVertical"> Vertical </o-switch>
+      </div>
+      <div class="control">
+        <o-switch v-model="isStepsClickable"> Clickable Marker </o-switch>
+      </div>
+    </o-field>
+    <o-field grouped group-multiline>
+      <div class="control">
+        <o-switch v-model="hasNavigation"> Navigation Buttons </o-switch>
+      </div>
+      <div class="control">
+        <o-switch v-model="customNavigation"> Custom Navigation </o-switch>
+      </div>
+      <div class="control">
+        <o-switch v-model="isProfileSuccess">
+          Set <code>success</code> for profile
+        </o-switch>
+      </div>
+    </o-field>
+    <o-field v-if="hasNavigation" grouped group-multiline>
+      <o-field label="Prev icon">
+        <o-select v-model="prevIcon">
+          <option value="chevron-left">Chevron</option>
+          <option value="arrow-left">Arrow</option>
+        </o-select>
       </o-field>
-      <o-field grouped group-multiline>
-        <div class="control">
-          <o-switch v-model="hasNavigation"> Navigation Buttons </o-switch>
-        </div>
-        <div class="control">
-          <o-switch v-model="customNavigation"> Custom Navigation </o-switch>
-        </div>
-        <div class="control">
-          <o-switch v-model="isProfileSuccess">
-            Set <code>success</code> for profile
-          </o-switch>
-        </div>
+      <o-field label="Next icon">
+        <o-select v-model="nextIcon">
+          <option value="chevron-right">Chevron</option>
+          <option value="arrow-right">Arrow</option>
+        </o-select>
       </o-field>
-      <o-field v-if="hasNavigation" grouped group-multiline>
-        <o-field label="Prev icon">
-          <o-select v-model="prevIcon">
-            <option value="chevron-left">Chevron</option>
-            <option value="arrow-left">Arrow</option>
-          </o-select>
-        </o-field>
-        <o-field label="Next icon">
-          <o-select v-model="nextIcon">
-            <option value="chevron-right">Chevron</option>
-            <option value="arrow-right">Arrow</option>
-          </o-select>
-        </o-field>
-        <o-field label="Label position">
-          <o-select v-model="labelPosition">
-            <option value="bottom">Bottom</option>
-            <option value="right">Right</option>
-            <option value="left">Left</option>
-          </o-select>
-        </o-field>
-        <o-field label="steps position">
-          <o-select v-model="stepsPosition">
-            <option value="right">Right</option>
-            <option value="left">Left</option>
-          </o-select>
-        </o-field>
+      <o-field label="Label position">
+        <o-select v-model="labelPosition">
+          <option value="bottom">Bottom</option>
+          <option value="right">Right</option>
+          <option value="left">Left</option>
+        </o-select>
       </o-field>
-    </p>
+      <o-field label="steps position">
+        <o-select v-model="stepsPosition">
+          <option value="right">Right</option>
+          <option value="left">Left</option>
+        </o-select>
+      </o-field>
+    </o-field>
+
     <o-steps
       v-model="activeStep"
       :vertical="isVertical"
@@ -123,31 +150,33 @@
       </template>
     </o-steps>
   </section>
-  <hr />
-  <section>
-    <h4>Warning</h4>
+
+  <section class="py-4">
+    <h3>Variants</h3>
+    <h5>Warning</h5>
     <o-steps variant="warning">
       <o-step-item label="Account" icon="user-lock">empty</o-step-item>
       <o-step-item label="Profile" icon="user">empty</o-step-item>
       <o-step-item label="Social" icon="user-plus">empty</o-step-item>
     </o-steps>
 
-    <h4>Info</h4>
+    <h5>Info</h5>
     <o-steps variant="info">
       <o-step-item label="Account" icon="user-lock">empty</o-step-item>
       <o-step-item label="Profile" icon="user">empty</o-step-item>
       <o-step-item label="Social" icon="user-plus">empty</o-step-item>
     </o-steps>
 
-    <h4>Success</h4>
+    <h5>Success</h5>
     <o-steps variant="success">
       <o-step-item label="Account" icon="user-lock">empty</o-step-item>
       <o-step-item label="Profile" icon="user">empty</o-step-item>
       <o-step-item label="Social" icon="user-plus">empty</o-step-item>
     </o-steps>
   </section>
-  <hr />
-  <section>
+
+  <section class="py-4">
+    <h3>Vertical</h3>
     <o-field grouped group-multiline>
       <div class="control">
         <o-switch v-model="position" true-value="right">
@@ -199,30 +228,3 @@
     </o-steps>
   </section>
 </template>
-
-<script lang="ts">
-export default {
-  data() {
-    return {
-      activeStep: "0",
-
-      showSocial: false,
-      isAnimated: true,
-      isVertical: false,
-      isRounded: true,
-      isStepsClickable: false,
-
-      hasNavigation: true,
-      customNavigation: false,
-      isProfileSuccess: false,
-
-      prevIcon: "chevron-left",
-      nextIcon: "chevron-right",
-      labelPosition: "bottom",
-      stepsPosition: "left",
-      position: null,
-      size: null,
-    };
-  },
-};
-</script>

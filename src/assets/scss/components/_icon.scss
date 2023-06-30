@@ -1,15 +1,13 @@
 /* @docs */
 $icon-spin-animation-name: spining !default;
 $icon-spin-animation-duration: 2000ms !default;
-$icon-spin-adnimation-speed: 0.75s !default;
+$icon-spin-adnimation-speed: $spinner-animation-speed !default;
 $icon-spin-animation-iteration-count: infinite !default;
 $icon-spin-animation-timing-function: linear !default;
-$icon-margin-right-bottom: 0.4rem !default;
+$icon-margin-right: 0.5rem !default;
 /* @docs */
 
-// ICON
 @keyframes spining {
-
   from {
     -webkit-transform: rotate(0deg);
     transform: rotate(0deg);
@@ -34,12 +32,8 @@ $icon-margin-right-bottom: 0.4rem !default;
     animation-iteration-count: $icon-spin-animation-iteration-count;
     animation-timing-function: $icon-spin-animation-timing-function;
   }
-}
 
-.icon:not(:last-child) {
-  margin-right: $icon-margin-right-bottom;
-}
-
-.icon {
-  margin-bottom: $icon-margin-right-bottom;
+  &:not(:last-child) {
+    margin-right: $icon-margin-right;
+  }
 }

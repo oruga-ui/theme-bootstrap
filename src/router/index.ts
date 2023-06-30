@@ -12,6 +12,11 @@ const routes: Array<RouteRecordRaw> = [
     component: Home,
   },
   {
+    path: "/carousel",
+    name: "Carousel",
+    component: () => import("../components/Carousel.vue"),
+  },
+  {
     path: "/steps",
     name: "Steps",
     component: () => import("../components/Steps.vue"),
@@ -115,6 +120,11 @@ const routes: Array<RouteRecordRaw> = [
     path: "/icon",
     name: "Icon",
     component: () => import("../components/Icon.vue"),
+  },
+  {
+    path: "/input",
+    name: "Input",
+    component: () => import("../components/Input.vue"),
   },
   {
     path: "/select",

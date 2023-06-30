@@ -1,46 +1,59 @@
 /* @docs */
 $table-detail-padding: 0.5rem 0.75rem !default;
-$table-border-color: $default-border-color !default;
-$table-background-color: $table-color !default;
-$table-tr-color: $dark !default;
 /* @docs */
 
+/* @bootstrap docs */
+// $table-cell-padding-y:        .5rem;
+// $table-cell-padding-x:        .5rem;
+// $table-cell-padding-y-sm:     .25rem;
+// $table-cell-padding-x-sm:     .25rem;
+
+// $table-cell-vertical-align:   top;
+
+// $table-color:                 var(--#{$prefix}body-color);
+// $table-bg:                    var(--#{$prefix}body-bg);
+// $table-accent-bg:             transparent;
+
+// $table-th-font-weight:        null;
+
+// $table-striped-color:         $table-color;
+// $table-striped-bg-factor:     .05;
+// $table-striped-bg:            rgba($black, $table-striped-bg-factor);
+
+// $table-active-color:          $table-color;
+// $table-active-bg-factor:      .1;
+// $table-active-bg:             rgba($black, $table-active-bg-factor);
+
+// $table-hover-color:           $table-color;
+// $table-hover-bg-factor:       .075;
+// $table-hover-bg:              rgba($black, $table-hover-bg-factor);
+
+// $table-border-factor:         .1;
+// $table-border-width:          var(--#{$prefix}border-width);
+// $table-border-color:          var(--#{$prefix}border-color);
+
+// $table-striped-order:         odd;
+// $table-striped-columns-order: even;
+
+// $table-group-separator-color: currentcolor;
+
+// $table-caption-color:         var(--#{$prefix}secondary-color);
+
+// $table-bg-scale:              -80%;
+/* @bootstrap docs */
+
 @mixin table-cards {
-
-  .table {
-    background-color: transparent;
-  }
-
-  thead {
-
-    tr {
-      box-shadow: none;
-      border-width: 0;
-
-      th {
-        display: none;
-      }
-
-      .checkbox-cell {
-        display: block;
-        width: 100%;
-        text-align: right;
-        margin-bottom: 1rem;
-        border: 0;
-      }
-    }
+  thead th {
+    display: none;
   }
 
   tbody {
     border-top: 0 !important;
   }
 
-  tfoot {
-
-    th {
-      border: 0;
-      display: inherit;
-    }
+  tfoot th {
+    border: 0;
+    display: inherit;
   }
 
   tr {
@@ -62,26 +75,24 @@ $table-tr-color: $dark !default;
     &:not(:last-child) {
       margin-bottom: 1rem;
     }
-    // Disables is-*
 
+    // Disables is-*
     &:not([class*="is-"]) {
-      background: $table-background-color;
-      color: $table-tr-color;
+      background: $table-bg;
+      color: $table-color;
 
       &:hover {
-        background-color: $table-background-color;
-        color: $table-tr-color;
+        background: $table-bg;
+        color: $table-color;
       }
     }
 
     &.detail {
       margin-top: -1rem;
-      background-color: white;
     }
   }
 
   tr:not(.detail):not(.is-empty):not(.table-footer) {
-
     td {
       display: flex;
       width: auto;
@@ -102,91 +113,20 @@ $table-tr-color: $dark !default;
 .table-component {
   position: relative;
 
-  // Table
-
   .table-wrapper {
-
     .table {
-
-      &.table-hover:focus {
-        border: solid 1px;
-        border-color: $info;
-        box-shadow: 0 0 0 0.225em rgba($info, 0.25);
-
-        th {
-          border-color: $table-border-color;
-        }
-
-        tr {
-          border-color: $table-border-color;
-        }
-      }
-
-      .icon {
-        transition: transform $speed-slow $easing, opacity 86ms $easing;
-
-        &.is-desc {
-          transform: rotate(180deg);
-        }
-
-        &.is-expanded {
-          transform: rotate(90deg);
-        }
-      }
-
-      .icon.fas-arrow-up.is-desc {
-        transition: transform $speed-slow $easing, opacity 86ms $easing;
-        transform: rotate(180deg);
-      }
-
-      .sort-icon.icon.is-desc {
-        transform: rotate(180deg) translateY(-50%) !important;
-      }
-      // new strucutre
-
-      thead {
-
-        th {
-          cursor: pointer;
-        }
-      }
-
-      tfoot {
-        // nothing here
-      }
-
-      th {
-        position: relative;
-
+      th,
+      td {
         &.is-left {
           text-align: left;
         }
 
         &.is-centered {
           text-align: center;
-          justify-content: center;
         }
 
         &.is-right {
           text-align: right;
-          flex-direction: row-reverse;
-        }
-
-        &.is-current-sort {
-          background-color: $light;
-        }
-
-        &.is-sortable:hover {
-          border-color: $grey;
-        }
-
-        &.is-sortable {
-          cursor: pointer;
-          /* .is-relative { */
-
-          > span {
-            position: relative;
-          }
         }
 
         &.is-sticky {
@@ -194,6 +134,27 @@ $table-tr-color: $dark !default;
           position: sticky;
           left: 0;
           z-index: var(--oruga-table-sticky-zindex, 1);
+        }
+      }
+
+      th {
+        position: relative;
+
+        &.is-sortable {
+          cursor: pointer;
+
+          > span {
+            display: block;
+            position: relative;
+          }
+
+          &:hover {
+            border-color: $grey;
+          }
+        }
+
+        &.is-current-sort {
+          --bs-table-bg: #{$light};
         }
 
         .sort-icon,
@@ -204,7 +165,6 @@ $table-tr-color: $dark !default;
       }
 
       tr {
-
         &.detail {
           background-color: $light;
 
@@ -214,34 +174,31 @@ $table-tr-color: $dark !default;
         }
       }
 
-      td {
+      &.table-hover:focus {
+        border: solid 1px;
+        border-color: $info;
+        box-shadow: 0 0 0 0.225em rgba($info, 0.25);
 
-        &.has-text-left {
-          text-align: left;
-        }
-
-        &.has-text-centered {
-          text-align: center;
-        }
-
-        &.has-text-right {
-          text-align: right;
-        }
-
-        &.is-sticky {
-          position: -webkit-sticky;
-          position: sticky;
-          left: 0;
-          z-index: var(--oruga-table-sticky-zindex, 10);
+        th,
+        tr {
+          border-color: $table-border-color;
         }
       }
     }
 
-    &.has-mobile-cards {
-      @include table-cards;
+    .icon {
+      transition: transform $speed-slow $easing, opacity 86ms $easing;
+
+      &.is-desc {
+        transform: rotate(180deg);
+      }
+
+      &.is-expanded {
+        transform: rotate(90deg);
+      }
     }
 
-    &.is-card-list {
+    &.has-mobile-cards {
       @include table-cards;
     }
   }
