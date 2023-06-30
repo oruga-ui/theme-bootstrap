@@ -10,23 +10,17 @@
   </div>
 </template>
 
-<script lang="ts">
-import { defineComponent } from "vue";
-
-export default defineComponent({
-  name: "Home",
-});
-</script>
-
-<style scoped>
+<style scoped lang="scss">
 .content {
   width: auto;
   margin: 0 auto;
   transform: translateY(70%);
+
+  h1 {
+    margin-top: 0.5em;
+  }
 }
-.content h1 {
-  margin-top: 0.5em;
-}
+
 .image__oruga {
   height: 128px;
   display: flex;
