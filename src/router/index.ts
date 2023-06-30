@@ -12,49 +12,9 @@ const routes: Array<RouteRecordRaw> = [
     component: Home,
   },
   {
-    path: "/checkbox",
-    name: "Checkbox",
-    component: () => import("../components/Checkbox.vue"),
-  },
-  {
-    path: "/carousel",
-    name: "Carousel",
-    component: () => import("../components/Carousel.vue"),
-  },
-  {
-    path: "/steps",
-    name: "Steps",
-    component: () => import("../components/Steps.vue"),
-  },
-  {
-    path: "/slider",
-    name: "Slider",
-    component: () => import("../components/Slider.vue"),
-  },
-  {
-    path: "/pagination",
-    name: "Pagination",
-    component: () => import("../components/Pagination.vue"),
-  },
-  {
-    path: "/collapse",
-    name: "Collapse",
-    component: () => import("../components/Collapse.vue"),
-  },
-  {
-    path: "/form",
-    name: "Form",
-    component: () => import("../components/Form.vue"),
-  },
-  {
     path: "/autocomplete",
     name: "Autocomplete",
     component: () => import("../components/Autocomplete.vue"),
-  },
-  {
-    path: "/taginput",
-    name: "Taginput",
-    component: () => import("../components/Taginput.vue"),
   },
   {
     path: "/button",
@@ -62,34 +22,19 @@ const routes: Array<RouteRecordRaw> = [
     component: () => import("../components/Button.vue"),
   },
   {
-    path: "/switch",
-    name: "Switch",
-    component: () => import("../components/Switch.vue"),
+    path: "/carousel",
+    name: "Carousel",
+    component: () => import("../components/Carousel.vue"),
   },
   {
-    path: "/tabs",
-    name: "Tabs",
-    component: () => import("../components/Tabs.vue"),
+    path: "/checkbox",
+    name: "Checkbox",
+    component: () => import("../components/Checkbox.vue"),
   },
   {
-    path: "/tooltip",
-    name: "Tooltip",
-    component: () => import("../components/Tooltip.vue"),
-  },
-  {
-    path: "/skeleton",
-    name: "Skeleton",
-    component: () => import("../components/Skeleton.vue"),
-  },
-  {
-    path: "/notification",
-    name: "Notification",
-    component: () => import("../components/Notification.vue"),
-  },
-  {
-    path: "/dropdown",
-    name: "Dropdown",
-    component: () => import("../components/Dropdown.vue"),
+    path: "/collapse",
+    name: "Collapse",
+    component: () => import("../components/Collapse.vue"),
   },
   {
     path: "/datepicker",
@@ -97,34 +42,14 @@ const routes: Array<RouteRecordRaw> = [
     component: () => import("../components/Datepicker.vue"),
   },
   {
-    path: "/table",
-    name: "Table",
-    component: () => import("../components/Table.vue"),
+    path: "/dropdown",
+    name: "Dropdown",
+    component: () => import("../components/Dropdown.vue"),
   },
   {
-    path: "/modal",
-    name: "Modal",
-    component: () => import("../components/Modal.vue"),
-  },
-  {
-    path: "/timepicker",
-    name: "Timepicker",
-    component: () => import("../components/Timepicker.vue"),
-  },
-  {
-    path: "/sidebar",
-    name: "Sidebar",
-    component: () => import("../components/Sidebar.vue"),
-  },
-  {
-    path: "/loading",
-    name: "Loading",
-    component: () => import("../components/Loading.vue"),
-  },
-  {
-    path: "/radio",
-    name: "Radio",
-    component: () => import("../components/Radio.vue"),
+    path: "/field",
+    name: "Field",
+    component: () => import("../components/Field.vue"),
   },
   {
     path: "/icon",
@@ -137,14 +62,84 @@ const routes: Array<RouteRecordRaw> = [
     component: () => import("../components/Input.vue"),
   },
   {
+    path: "/loading",
+    name: "Loading",
+    component: () => import("../components/Loading.vue"),
+  },
+  {
+    path: "/modal",
+    name: "Modal",
+    component: () => import("../components/Modal.vue"),
+  },
+  {
+    path: "/notification",
+    name: "Notification",
+    component: () => import("../components/Notification.vue"),
+  },
+  {
+    path: "/pagination",
+    name: "Pagination",
+    component: () => import("../components/Pagination.vue"),
+  },
+  {
     path: "/select",
     name: "Select",
     component: () => import("../components/Select.vue"),
   },
   {
-    path: "/field",
-    name: "Field",
-    component: () => import("../components/Field.vue"),
+    path: "/radio",
+    name: "Radio",
+    component: () => import("../components/Radio.vue"),
+  },
+  {
+    path: "/skeleton",
+    name: "Skeleton",
+    component: () => import("../components/Skeleton.vue"),
+  },
+  {
+    path: "/slider",
+    name: "Slider",
+    component: () => import("../components/Slider.vue"),
+  },
+  {
+    path: "/steps",
+    name: "Steps",
+    component: () => import("../components/Steps.vue"),
+  },
+  {
+    path: "/switch",
+    name: "Switch",
+    component: () => import("../components/Switch.vue"),
+  },
+  {
+    path: "/taginput",
+    name: "Taginput",
+    component: () => import("../components/Taginput.vue"),
+  },
+  {
+    path: "/tabs",
+    name: "Tabs",
+    component: () => import("../components/Tabs.vue"),
+  },
+  {
+    path: "/tooltip",
+    name: "Tooltip",
+    component: () => import("../components/Tooltip.vue"),
+  },
+  {
+    path: "/table",
+    name: "Table",
+    component: () => import("../components/Table.vue"),
+  },
+  {
+    path: "/timepicker",
+    name: "Timepicker",
+    component: () => import("../components/Timepicker.vue"),
+  },
+  {
+    path: "/sidebar",
+    name: "Sidebar",
+    component: () => import("../components/Sidebar.vue"),
   },
   {
     path: "/upload",
