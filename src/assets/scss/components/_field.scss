@@ -75,17 +75,17 @@ $input-field-btn-border-color: $input-border-color !default;
     }
   }
 
-  // input fullwidth
+  // input expanded
   .input,
   .select,
   .dropdown,
   .btn {
     flex-shrink: 0;
 
-    &.is-expanded,
-    &.is-fullwidth {
+    &.is-expanded {
       flex-grow: 1;
       flex-shrink: 1;
+      width: auto;
     }
   }
 

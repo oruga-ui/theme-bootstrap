@@ -56,7 +56,7 @@ $sidebar-reduced-height: 10vh !default;
     }
 
     &.is-fullwidth {
-      width: 100%;
+      @extend .is-expanded;
     }
 
     &:not(.is-fullheight) {

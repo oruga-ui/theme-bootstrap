@@ -90,7 +90,6 @@ $nav-tabs-margin-bottom: 1rem !default;
     position: relative;
   }
 
-  // fullwidth
   &.is-expanded:not(.is-vertical) .nav {
     @extend .nav-fill;
   }
