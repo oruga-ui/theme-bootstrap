@@ -4,3 +4,18 @@
   width: 100%;
   bottom: 0;
 }
+
+.is-expanded {
+  width: 100%;
+}
+
+// btn-close overrides
+.btn-close > i {
+  visibility: hidden;
+}
+
+@each $name, $pair in $theme-colors {
+  .is-#{$name} > .btn-close {
+    @extend .btn-close-white;
+  }
+}

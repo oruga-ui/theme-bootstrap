@@ -56,6 +56,10 @@ $pagination-rounded-border-radius: $base-rounded-border-radius !default;
     }
   }
 }
+@mixin vertical-centered {
+  display: flex;
+  align-items: center;
+}
 
 .pagination-wrapper {
   position: relative;

@@ -23,10 +23,6 @@ $taginput-counter-font-size: 0.75rem !default;
 .taginput {
   .btn-close {
     font-size: 0.8em;
-
-    i {
-      visibility: hidden;
-    }
   }
 
   .taginput-wrapper {
@@ -58,14 +54,6 @@ $taginput-counter-font-size: 0.75rem !default;
 
     // Colors
     @include variant-text-bg();
-
-    @each $name, $pair in $theme-colors {
-      .is-#{$name} {
-        .btn-close {
-          @extend .btn-close-white;
-        }
-      }
-    }
   }
 
   input {

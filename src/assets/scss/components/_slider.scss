@@ -48,11 +48,8 @@ $slider-tick-background-color: $grey-dark !default;
       height: 100%;
       border-radius: $form-range-track-border-radius;
 
-      @each $name, $pair in $theme-colors {
-        &.is-#{$name} {
-          background-color: $pair;
-        }
-      }
+      // Colors
+      @include variant-bg();
     }
 
     .slider-thumb-wrapper {
@@ -71,6 +68,9 @@ $slider-tick-background-color: $grey-dark !default;
         border: $form-range-thumb-border;
         border-radius: $form-range-thumb-border-radius;
         transition: $form-range-thumb-transition;
+
+        // Colors
+        @include variant-bg();
 
         &:not(.focus-ring) {
           box-shadow: $form-range-thumb-box-shadow;
@@ -107,15 +107,6 @@ $slider-tick-background-color: $grey-dark !default;
         display: flex;
         align-items: center;
         width: auto;
-      }
-
-      // Colors
-      @each $name, $pair in $theme-colors {
-        .is-#{$name} {
-          .slider-thumb {
-            background-color: $pair;
-          }
-        }
       }
     }
 
