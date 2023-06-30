@@ -31,34 +31,34 @@ const size = ref(null);
     <h3>Base</h3>
 
     <o-field grouped group-multiline>
-      <div class="control">
+      <o-field>
         <o-switch v-model="showSocial"> Show Social step </o-switch>
-      </div>
-      <div class="control">
+      </o-field>
+      <o-field>
         <o-switch v-model="isAnimated"> Animated </o-switch>
-      </div>
-      <div class="control">
+      </o-field>
+      <o-field>
         <o-switch v-model="isRounded"> Rounded </o-switch>
-      </div>
-      <div class="control">
+      </o-field>
+      <o-field>
         <o-switch v-model="isVertical"> Vertical </o-switch>
-      </div>
-      <div class="control">
+      </o-field>
+      <o-field>
         <o-switch v-model="isStepsClickable"> Clickable Marker </o-switch>
-      </div>
+      </o-field>
     </o-field>
     <o-field grouped group-multiline>
-      <div class="control">
+      <o-field>
         <o-switch v-model="hasNavigation"> Navigation Buttons </o-switch>
-      </div>
-      <div class="control">
+      </o-field>
+      <o-field>
         <o-switch v-model="customNavigation"> Custom Navigation </o-switch>
-      </div>
-      <div class="control">
+      </o-field>
+      <o-field>
         <o-switch v-model="isProfileSuccess">
           Set <code>success</code> for profile
         </o-switch>
-      </div>
+      </o-field>
     </o-field>
     <o-field v-if="hasNavigation" grouped group-multiline>
       <o-field label="Prev icon">
@@ -182,11 +182,11 @@ const size = ref(null);
     <h3>Vertical</h3>
 
     <o-field grouped group-multiline>
-      <div class="control">
+      <o-field>
         <o-switch v-model="position" true-value="right">
           Right position</o-switch
         >
-      </div>
+      </o-field>
       <o-field label="Size">
         <o-select v-model="size" placeholder="Size">
           <option :value="null">Default</option>

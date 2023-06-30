@@ -2,7 +2,6 @@
 
 /* @docs */
 $btn-margin-right: 0.5rem !default;
-$btn-border-rounded-radius: var(--bs-border-radius-pill) !default;
 $btn-border-default: 0.1px solid $default-border-color !default; //  var(--oruga-button-border);
 /* @docs */
 
@@ -58,8 +57,14 @@ $btn-border-default: 0.1px solid $default-border-color !default; //  var(--oruga
     margin: 0 4px;
   }
 
-  &.is-rounded {
-    --bs-btn-border-radius: #{$btn-border-rounded-radius};
+  &.expanded {
+    width: 100%;
+  }
+
+  &.disabled,
+  &.btn-disabled {
+    pointer-events: auto;
+    cursor: not-allowed;
   }
 
   // inverted

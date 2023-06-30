@@ -1,7 +1,5 @@
 /* @docs */
-$switch-height: 1.25em !default;
 $switch-margin-right: 0.5rem !default;
-$switch-border-radius: 4px !default;
 /* @docs */
 
 /* @bootstrap docs */
@@ -23,15 +21,8 @@ $switch-border-radius: 4px !default;
 .form-switch {
   position: relative;
 
-  height: $switch-height;
-
   .switch {
     display: none;
-  }
-
-  // disable rounded
-  &:not(.is-rounded) .form-check-input {
-    border-radius: $switch-border-radius;
   }
 
   &:not(:last-child) {

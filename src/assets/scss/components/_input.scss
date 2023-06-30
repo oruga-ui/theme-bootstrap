@@ -136,6 +136,10 @@ $input-icon-right-position: 0.75rem !default;
 .input {
   position: relative;
 
+  &.expanded {
+    width: 100%;
+  }
+
   // Space for the icon
   .form-select,
   .form-control {
@@ -152,11 +156,6 @@ $input-icon-right-position: 0.75rem !default;
     &.icon-left.form-control-sm {
       padding: $input-icon-left-padding-sm;
     }
-
-    // is rounded
-    &.is-rounded {
-      @extend .rounded-pill;
-    }
   }
 
   // the Position of the icon
@@ -165,29 +164,35 @@ $input-icon-right-position: 0.75rem !default;
     color: $input-icon-color;
     margin: 0;
 
-    &.is-left {
+    &.icon-left {
       top: 12px;
       left: $input-icon-left-position;
     }
 
-    &.is-right {
+    &.icon-right {
       top: 12px;
       right: $input-icon-right-position;
     }
 
-    &.is-left.is-small,
-    &.is-right.is-small {
-      top: 15px;
+    &.is-small {
+      &.icon-left,
+      &.icon-right {
+        top: 15px;
+      }
     }
 
-    &.is-left.is-medium,
-    &.is-right.is-medium {
-      top: 17px;
+    &.is-medium {
+      &.icon-left,
+      &.icon-right {
+        top: 17px;
+      }
     }
 
-    &.is-left.is-large,
-    &.is-right.is-large {
-      top: 8px;
+    &.is-large {
+      &.icon-left,
+      &.icon-right {
+        top: 8px;
+      }
     }
   }
 }

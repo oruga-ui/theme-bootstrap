@@ -8,7 +8,7 @@
     <h3>Base</h3>
 
     <o-field label="Name">
-      <o-input />
+      <o-input expanded />
     </o-field>
 
     <o-field label="Email" variant="danger" message="This email is invalid">

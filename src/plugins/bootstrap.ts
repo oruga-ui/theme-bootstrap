@@ -4,15 +4,15 @@ export const bootstrapConfig: any = {
   field: {
     override: true,
     rootClass: "input-field",
+    bodyClass: "field-wrapper",
     labelClass: "form-label",
-    // bodyClass: ''
     messageClass: (_: string, { props }: any) => {
       return `help text-${props.variant}`;
     },
     // variantMessageClass: '',
     addonsClass: "input-group",
     groupedClass: "input-grouped",
-    groupMultilineClass: "is-grouped-multiline",
+    groupMultilineClass: "grouped-multiline",
     horizontalClass: "field-horizontal row",
     labelHorizontalClass: "col-form-label",
     bodyHorizontalClass: "col-form-field",
@@ -28,17 +28,17 @@ export const bootstrapConfig: any = {
       if (props.icon) return "form-control icon-left";
       return `form-control`;
     },
-    roundedClass: "is-rounded",
     sizeClass: (_: string, { props }: any) => {
       if (props.size == "small") return "form-control-sm";
       else if (props.size == "medium") return "form-control-md";
       else if (props.size == "large") return "form-control-lg";
     },
     variantClass: "border-",
-    expandedClass: "is-expanded",
+    expandedClass: "expanded",
+    roundedClass: "rounded-pill",
+    iconLeftClass: "icon-left",
+    iconRightClass: "icon-right",
     // iconLeftSpaceClass: 'input-group-text',
-    iconLeftClass: "is-left",
-    iconRightClass: "is-right",
     // iconRightSpaceClass: 'input-group-text',
     counterClass: "help counter",
   },
@@ -49,34 +49,34 @@ export const bootstrapConfig: any = {
       if (props.icon) return "form-select icon-left";
       return `form-select`;
     },
-    roundedClass: "is-rounded",
-    variantClass: "border-",
     sizeClass: (_: string, { props }: any) => {
       if (props.size == "small") return "form-select-sm";
       else if (props.size == "medium") return "form-select-md";
       else if (props.size == "large") return "form-select-lg";
     },
-    expandedClass: "is-expanded",
-    iconLeftClass: "is-left",
-    iconRightClass: "is-right",
-    // iconLeftSpaceClass: '',
-    // iconRightSpaceClass: '',
+    variantClass: "border-",
+    expandedClass: "expanded",
+    roundedClass: "rounded-pill",
+    iconLeftClass: "icon-left",
+    iconRightClass: "icon-right",
+    // iconLeftSpaceClass: 'input-group-text',
+    // iconRightSpaceClass: 'input-group-text',
     // arrowClass: '',
-    multipleClass: "is-multiple",
-    placeholderClass: "is-empty",
+    multipleClass: "multiple",
+    placeholderClass: "empty",
   },
   icon: {
     override: true,
     rootClass: "icon",
     variantClass: "text-",
     sizeClass: "is-",
-    clickableClass: "is-clickable",
-    spinClass: "is-spin",
+    clickableClass: "clickable",
+    spinClass: "spin",
   },
   checkbox: {
     override: true,
     rootClass: "form-check",
-    disabledClass: "is-disabled",
+    disabledClass: "disabled",
     checkClass: "form-check-input",
     labelClass: "form-check-label",
     variantClass: "is-",
@@ -85,7 +85,7 @@ export const bootstrapConfig: any = {
   radio: {
     override: true,
     rootClass: "form-check",
-    disabledClass: "is-disabled",
+    disabledClass: "disabled",
     checkClass: "form-check-input",
     labelClass: "form-check-label",
     variantClass: "is-",
@@ -93,32 +93,32 @@ export const bootstrapConfig: any = {
   },
   switch: {
     override: true,
-    rootClass: (_: string, { props }: any) => {
-      const classes = ["form-check", "form-switch"];
-      if (props.rounded) classes.push("is-rounded");
-      return classes.join(" ");
-    },
+    rootClass: "form-check form-switch",
     positionClass: (position: string) => {
       if (position == "left") return "reversed";
     },
+    inputClass: (_: string, { props }: any) => {
+      const classes = ["form-check-input"];
+      if (props.rounded) classes.push("rounded-pill");
+      return classes.join(" ");
+    },
+    labelClass: "form-check-label",
+    disabledClass: "disabled",
     sizeClass: "is-",
     variantClass: "is-",
     passiveVariantClass: "is-",
-    disabledClass: "is-disabled",
-    // roundedClass: "is-rounded",
+    // roundedClass: "rounded",
     // checkClass: "switch",
-    inputClass: "form-check-input",
-    labelClass: "form-check-label",
   },
   autocomplete: {
     override: true,
     rootClass: "autocomplete-wrapper",
-    expendedClass: "is-expanded",
-    menuClass: "dropdown-menu show",
-    menuPositionClass: "is-opened-", // top  bottom
+    expendedClass: "expanded",
+    menuClass: "dropdown-menu",
+    menuPositionClass: "opened-", // top  bottom
     itemClass: "dropdown-item",
     itemHoverClass: "active",
-    itemEmptyClasses: "disabled",
+    itemEmptyClass: "disabled",
     itemGroupTitleClass: "fw-bold",
   },
   inputitems: {
@@ -132,14 +132,14 @@ export const bootstrapConfig: any = {
     itemClass: "badge",
     closeClass: "btn-close",
     variantClass: "is-",
-    expandedClass: "is-expanded",
+    expandedClass: "expanded",
     counterClass: "counter",
   },
   pagination: {
     override: true,
     rootClass: (_: string, { props }: any) => {
       const classes = ["pagination-wrapper pagination"];
-      if (props.rounded) classes.push("is-rounded");
+      if (props.rounded) classes.push("rounded");
       return classes.join(" ");
     },
     sizeClass: (_: string, { props }: any) => {
@@ -147,7 +147,7 @@ export const bootstrapConfig: any = {
       else if (props.size == "medium") return "pagination-md";
       else if (props.size == "large") return "pagination-lg";
     },
-    simpleClass: "is-simple",
+    simpleClass: "simple",
     orderClass: (order: string) => {
       return "order-" + order;
     },
@@ -159,7 +159,11 @@ export const bootstrapConfig: any = {
       return classes.join(" ");
     },
     listItemClass: "page-item", // not implementend in oruga yet
-    linkClass: "page-link",
+    linkClass: (_: string, { props }: any) => {
+      const classes = ["page-link"];
+      if (props.rounded) classes.push("rounded-pill");
+      return classes.join(" ");
+    },
     linkCurrentClass: "active",
     linkDisabledClass: "disabled",
     ellipsisClass: "pagination-ellipsis",
@@ -172,10 +176,10 @@ export const bootstrapConfig: any = {
     rootClass: (_: string, { props }: any) => {
       const classes = ["slider"];
       if (props.variant) classes.push(`is-${props.variant}`);
-      if (props.rounded) classes.push("is-rounded");
+      if (props.rounded) classes.push("rounded-pill");
       return classes.join(" ");
     },
-    disabledClass: "is-disabled",
+    disabledClass: "disabled",
     variantClass: "is-",
     trackClass: "slider-track",
     fillClass: "slider-fill",
@@ -192,18 +196,18 @@ export const bootstrapConfig: any = {
       return classes.join(" ");
     },
     tickLabelClass: "slider-tick-label",
-    tickHiddenClass: "is-tick-hidden",
+    tickHiddenClass: "tick-hidden",
     tickClass: "slider-tick",
-    thumbRoundedClass: "is-rounded",
+    thumbRoundedClass: "rounded-pill",
     thumbDraggingClass: "is-dragging",
   },
   tabs: {
     override: true,
     rootClass: "nav-tab-wrapper",
     positionClass: "is-",
-    expandedClass: "is-expanded",
-    verticalClass: "is-vertical",
-    multilineClass: "is-multiline",
+    expandedClass: "expanded",
+    verticalClass: "vertical",
+    multilineClass: "multiline",
     navTabsClass: "nav",
     navTypeClass: "nav-",
     navSizeClass: "is-",
@@ -221,7 +225,7 @@ export const bootstrapConfig: any = {
     itemHeaderActiveClass: () => "active",
     itemHeaderDisabledClass: () => "disabled",
     contentClass: "nav-content",
-    transitioningClass: "is-transitioning",
+    transitioningClass: "transition",
   },
   table: {
     override: true,
@@ -232,43 +236,43 @@ export const bootstrapConfig: any = {
     stripedClass: "table-striped",
     narrowedClass: "table-sm",
     hoverableClass: "table-hover",
-    emptyClass: "is-empty",
-    detailedClass: "detail",
+    emptyClass: "table-empty",
+    detailedClass: "table-detail",
     footerClass: "table-footer",
     paginationWrapperClass: "table-pagination",
-    scrollableClass: "is-scrollable",
+    scrollableClass: "scrollable",
     trSelectedClass: "table-active",
-    thSortableClass: "is-sortable",
-    thCurrentSortClass: "is-current-sort",
+    thSortableClass: "sortable",
+    thCurrentSortClass: "current-sort",
     thSortIconClass: "sort-icon",
-    thUnselectableClass: "is-unselectable",
+    thUnselectableClass: "unselectable",
     thCheckboxClass: "th-checkbox",
     thDetailedClass: "th-chevron-cell",
-    thStickyClass: "is-sticky",
+    thStickyClass: "sticky",
     thPositionClass: (position: string) => {
-      if (position === "left") return "is-left";
-      else if (position === "centered") return "is-centered";
-      else if (position === "right") return "is-right";
+      if (position === "left") return "text-left";
+      else if (position === "centered") return "text-centered";
+      else if (position === "right") return "text-right";
       return;
     },
     tdDetailedChevronClass: "chevron-cell",
-    tdStickyClass: "is-sticky",
+    tdStickyClass: "sticky",
     tdPositionClass: (position: string) => {
-      if (position === "left") return "is-left";
-      else if (position === "centered") return "is-centered";
-      else if (position === "right") return "is-right";
+      if (position === "left") return "text-left";
+      else if (position === "centered") return "text-centered";
+      else if (position === "right") return "text-right";
       return;
     },
-    mobileClass: "has-mobile-cards",
-    mobileSortClass: "table-mobile-sort field",
+    mobileClass: "mobile-cards",
+    mobileSortClass: "table-mobile-sort",
   },
   tooltip: {
     override: true,
     rootClass: "tooltip-wrapper",
     contentClass: "tooltip-content",
     triggerClass: "tooltip-trigger",
-    alwaysClass: "is-always",
-    multilineClass: "is-multiline",
+    alwaysClass: "always",
+    multilineClass: "multiline",
     orderClass: "is-",
     variantClass: "is-",
     positionClass: "is-",
@@ -278,32 +282,32 @@ export const bootstrapConfig: any = {
     rootClass: (_: string, { props }: any) => {
       const classes = ["steps-wrapper"];
       if (props.variant) classes.push(`is-${props.variant}`);
-      if (props.disables) classes.push("is-disabled");
+      if (props.disables) classes.push("disabled");
       return classes.join(" ");
     },
+    verticalClass: "vertical",
     stepsClass: (_: string, { props }: any) => {
       const classes = ["steps"];
-      if (props.animated) classes.push("is-animated");
-      if (props.rounded) classes.push("is-rounded");
-      if (props.labelPosition === "left") classes.push("has-label-left");
-      if (props.labelPosition === "right") classes.push("has-label-right");
+      if (props.animated) classes.push("animated");
+      if (props.labelPosition === "left") classes.push("label-left");
+      if (props.labelPosition === "right") classes.push("label-right");
       return classes.join(" ");
     },
     itemClass: "step-link",
     itemHeaderClass: "step-item",
     itemHeaderVariantClass: "is-",
-    itemHeaderActiveClass: "is-active",
-    itemHeaderPreviousClass: "is-previous",
+    itemHeaderActiveClass: "active",
+    itemHeaderPreviousClass: "previous",
     stepLinkClass: "step-link",
     stepLinkLabelClass: "step-title",
-    stepLinkClickableClass: "is-clickable",
+    stepLinkClickableClass: "clickable",
     // stepLinkLabelPositionClass: 'is-',
     stepMarkerClass: "step-marker",
+    stepMarkerRoundedClass: "rounded-pill",
     stepNavigationClass: "step-navigation",
     stepContentClass: "step-content",
-    verticalClass: "is-vertical",
     positionClass: "is-",
-    stepContentTransitioningClass: "is-transitioning",
+    stepContentTransitioningClass: "transition",
     sizeClass: "is-",
     variantClass: "is-",
   },
@@ -319,8 +323,8 @@ export const bootstrapConfig: any = {
       if (props.outlined) return "";
       return `btn-${props.variant}`;
     },
-    roundedClass: "is-rounded",
-    expandedClass: "is-expanded",
+    roundedClass: "rounded-pill",
+    expandedClass: "expanded",
     outlinedClass: (_: string, { props }: any) => {
       return `btn-outline-${props.variant}`;
     },
@@ -332,8 +336,8 @@ export const bootstrapConfig: any = {
     override: true,
     rootClass: "skeleton",
     itemClass: "skeleton-item",
-    itemRoundedClass: "is-rounded",
-    animationClass: "is-animated",
+    itemRoundedClass: "rounded-pill",
+    animationClass: "animated",
     sizeClass: "is-",
     positionClass: "is-",
   },
@@ -358,8 +362,9 @@ export const bootstrapConfig: any = {
     },
     triggerClass: "dropdown-trigger",
     disabledClass: "disabled",
-    expandedClass: "is-expanded",
-    inlineClass: "is-inline",
+    expandedClass: "expanded",
+    inlineClass: "inline",
+    menuMobileOverlayClass: "dropdown-backdrop",
     menuClass: (_: string, { props, data, computed }: any) => {
       const classes = ["dropdown-menu"];
       if (computed.hoverable) classes.push("show");
@@ -367,16 +372,15 @@ export const bootstrapConfig: any = {
     },
     menuPositionClass: "is-",
     menuActiveClass: "show",
-    menuMobileOverlayClass: "background",
     itemTag: "a",
     itemClass: "dropdown-item",
     itemActiveClass: "active",
-    itemDisabledClass: "is-disabled",
+    itemDisabledClass: "disabled",
     mobileClass: "dropdown-modal",
   },
   collapse: {
     override: true,
-    rootClass: "collapse show",
+    rootClass: "collapse",
     triggerClass: "collapse-trigger",
     contentClass: "collapse-content",
   },
@@ -442,7 +446,7 @@ export const bootstrapConfig: any = {
       if (props.active) classes.push("show");
       return classes.join(" ");
     },
-    overlayClass: "modal-backdrop fade",
+    overlayClass: "modal-backdrop",
     contentClass: (_: string, { props }: any) => {
       const classes = ["modal-dialog"];
       if (!props.fullScreen) classes.push("modal-dialog-centered");
@@ -450,10 +454,10 @@ export const bootstrapConfig: any = {
     },
     closeIcon: "",
     closeClass: "btn-close",
-    fullScreenClass: "is-full-screen",
-    mobileClass: "is-mobile",
+    fullScreenClass: "fullscreen",
+    mobileClass: "mobile",
     scrollClipClass: "modal-open",
-    // noScrollClass: '',
+    noScrollClass: "noScroll",
   },
   sidebar: {
     override: true,
@@ -473,18 +477,18 @@ export const bootstrapConfig: any = {
     staticClass: "position-static",
     absoluteClass: "position-absolute",
     fixedClass: "position-fixed",
-    rightClass: "is-right",
-    reduceClass: "is-reduced",
-    expandOnHoverClass: "is-reduced-expand",
-    expandOnHoverFixedClass: "is-reduced-expand-fixed",
-    fullheightClass: "is-fullheight",
-    fullwidthClass: "is-fullwidth",
-    mobileClass: "is-",
+    rightClass: "right",
+    reduceClass: "reduced",
+    expandOnHoverClass: "reduced-expand",
+    expandOnHoverFixedClass: "reduced-expand-fixed",
+    fullheightClass: "fullheight",
+    fullwidthClass: "fullwidth",
+    mobileClass: "mobile",
   },
   loading: {
     override: true,
     rootClass: "loading",
-    fullPageClass: "is-fullpage",
+    fullPageClass: "fullpage",
     overlayClass: "loading-overlay",
     iconClass: "icon",
   },
@@ -505,14 +509,14 @@ export const bootstrapConfig: any = {
     rootClass: "upload",
     variantClass: "is-",
     draggableClass: "upload-draggable",
-    expandedClass: "is-expanded",
-    disabledClass: "is-disabled",
-    hoveredClass: "is-hovered",
+    expandedClass: "expanded",
+    disabledClass: "disabled",
+    hoveredClass: "hovered",
   },
   carousel: {
     override: true,
     rootClass: "carousel-wrapper",
-    overlayClass: "is-overlay",
+    overlayClass: "carousel-overlay",
     sceneClass: "carousel-scene",
     itemsClass: "carousel-items carousel-inner",
     itemsDraggingClass: "is-dragging",
@@ -524,10 +528,10 @@ export const bootstrapConfig: any = {
     indicatorPosition: "is-",
     indicatorsClass: "carousel-indicators",
     indicatorClass: "carousel-indicator",
-    indicatorsInsideClass: "is-inside",
+    indicatorsInsideClass: "inside",
     indicatorsInsidePositionClass: "is-",
     indicatorItemClass: "carousel-indicator-item",
-    indicatorItemStyleClass: "is-",
+    indicatorItemStyleClass: "indicator-",
     indicatorItemActiveClass: "active",
   },
 };

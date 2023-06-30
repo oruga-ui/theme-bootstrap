@@ -1,0 +1,8 @@
+/* @bootstrap docs */
+// $transition-collapse: height 0.35s ease;
+// $transition-collapse-width: width 0.35s ease;
+/* @bootstrap docs */
+
+.collapse {
+  @extend .show;
+}

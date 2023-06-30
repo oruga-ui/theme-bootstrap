@@ -61,7 +61,7 @@ $notification-notices-space: 1.5rem !default;
     &.is-#{$name} {
       @extend .alert-#{$name};
 
-      .btn-close {
+      > .btn-close {
         filter: unset;
       }
     }
@@ -117,7 +117,7 @@ $notification-notices-space: 1.5rem !default;
   &.is-bottom {
     flex-direction: column-reverse;
 
-    .div:first-child {
+    > .div:first-child {
       margin-bottom: 0;
     }
   }

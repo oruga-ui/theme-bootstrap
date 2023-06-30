@@ -55,7 +55,7 @@ const selectedOptions = ref([]);
     <div class="dropdown-example">
       <o-dropdown disabled aria-role="list">
         <template #trigger>
-          <o-button class="dropdown-toggle" label="Disabled" />
+          <o-button class="dropdown-toggle" label="Disabled" disabled />
         </template>
 
         <o-dropdown-item aria-role="listitem">Action</o-dropdown-item>

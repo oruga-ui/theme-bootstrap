@@ -56,11 +56,11 @@ $tootlip-zindex: $zindex-tooltip;
       height: $tooltip-arrow-height;
     }
 
-    &.is-always {
+    &.always {
       visibility: visible;
     }
 
-    &.is-multiline {
+    &.multiline {
       text-align: center;
       white-space: normal;
       width: $tooltip-content-multiline-width;
@@ -171,13 +171,13 @@ $tootlip-zindex: $zindex-tooltip;
     }
   }
 
-  &.is-dashed {
+  &.dashed {
     .tooltip-content {
       border-bottom: 1px dashed $grey-light;
     }
   }
 
-  &.is-square {
+  &.square {
     .tooltip-content {
       border-radius: 0;
     }

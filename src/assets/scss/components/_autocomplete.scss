@@ -6,10 +6,11 @@ $autocomplete-menu-max-height: 200px !default;
   position: relative;
 
   .dropdown-menu {
+    @extend .show;
     max-height: $autocomplete-menu-max-height;
     overflow: auto;
 
-    &.is-opened-top {
+    &.opened-top {
       top: auto;
       bottom: 100%;
     }

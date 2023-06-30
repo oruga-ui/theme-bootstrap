@@ -49,7 +49,7 @@ $steps-default-size: 1em !default;
         flex-direction: column;
         color: $body-color;
 
-        &:not(.is-clickable) {
+        &:not(.clickable) {
           cursor: not-allowed;
         }
       }
@@ -126,7 +126,7 @@ $steps-default-size: 1em !default;
       }
 
       // Variants
-      &.is-previous {
+      &.previous {
         &::before,
         &::after {
           background-color: $primary;
@@ -139,7 +139,7 @@ $steps-default-size: 1em !default;
         }
       }
 
-      &.is-active {
+      &.active {
         &::before,
         &::after {
           background-color: $primary;
@@ -155,7 +155,7 @@ $steps-default-size: 1em !default;
       // Colors
       @each $name, $pair in $theme-colors {
         &.is-#{$name} {
-          &.is-previous {
+          &.previous {
             &::before,
             &::after {
               background-color: $pair;
@@ -168,7 +168,7 @@ $steps-default-size: 1em !default;
             }
           }
 
-          &.is-active {
+          &.active {
             &::before,
             &::after {
               background-color: $pair;
@@ -184,15 +184,7 @@ $steps-default-size: 1em !default;
       }
     }
 
-    &.is-rounded {
-      .step-item {
-        .step-marker {
-          border-radius: 9999px;
-        }
-      }
-    }
-
-    &.is-animated {
+    &.animated {
       .step-item {
         &:not(:first-child),
         &:only-child {
@@ -203,8 +195,8 @@ $steps-default-size: 1em !default;
       }
     }
 
-    &.has-label-right,
-    &.has-label-left {
+    &.label-right,
+    &.label-left {
       .step-item {
         &:not(:first-child),
         &:only-child {
@@ -228,7 +220,7 @@ $steps-default-size: 1em !default;
       }
     }
 
-    &.has-label-left {
+    &.label-left {
       .step-item {
         .step-link {
           flex-direction: row-reverse;
@@ -273,12 +265,12 @@ $steps-default-size: 1em !default;
       }
     }
 
-    &.is-transitioning {
+    &.transition {
       overflow: hidden;
     }
   }
 
-  &.is-vertical {
+  &.vertical {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -321,19 +313,19 @@ $steps-default-size: 1em !default;
         }
       }
 
-      &.has-label-right {
+      &.label-right {
         .step-item {
           justify-content: flex-start;
         }
       }
 
-      &.has-label-left {
+      &.label-left {
         .step-item {
           justify-content: flex-end;
         }
       }
 
-      &:not(.has-label-right):not(.has-label-left) {
+      &:not(.label-right):not(.label-left) {
         .step-item {
           .step-link {
             > .step-title {

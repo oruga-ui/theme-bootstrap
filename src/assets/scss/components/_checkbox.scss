@@ -63,8 +63,8 @@
     }
   }
 
-  &.is-disabled {
-    opacity: $form-check-input-disabled-opacity;
+  &.disabled,
+  &.disabled .form-check-label {
     cursor: not-allowed;
   }
 }

@@ -26,9 +26,14 @@
     </o-field>
 
     <o-field>
-      <o-icon pack="fas" icon="user" size="large" variant="success" />
-      <o-icon pack="fas" icon="home" size="large" variant="info" />
-      <o-icon pack="fas" icon="tachometer-alt" size="large" variant="primary" />
+      <o-icon pack="fas" icon="user" size="large" variant="success" clickable />
+      <o-icon pack="fas" icon="home" size="large" variant="info" clickable />
+      <o-icon
+        pack="fas"
+        icon="tachometer-alt"
+        size="large"
+        variant="primary"
+        clickable />
     </o-field>
   </section>
 

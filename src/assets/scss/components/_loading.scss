@@ -16,7 +16,7 @@ $loading-overlay: $overlay-background-color-light !default;
   overflow: hidden;
   z-index: $loading-zindex;
 
-  &.is-fullpage {
+  &.fullpage {
     position: fixed;
     z-index: $loading-fullpage-zindex;
   }

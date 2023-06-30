@@ -13,7 +13,11 @@ $upload-draggable-padding: 2em !default;
     display: none;
   }
 
-  &.is-disabled {
+  &.expanded {
+    width: 100%;
+  }
+
+  &.disabled {
     cursor: not-allowed;
     opacity: $base-disabled-opacity;
   }
@@ -22,7 +26,7 @@ $upload-draggable-padding: 2em !default;
     border: $upload-draggable-border;
     padding: $upload-draggable-padding;
 
-    &.is-hovered {
+    &.hovered {
       background-color: $upload-draggable-hover-border-color;
     }
 

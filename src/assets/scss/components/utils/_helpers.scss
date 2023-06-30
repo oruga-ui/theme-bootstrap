@@ -1,5 +1,46 @@
-.is-expanded {
+// utility classes
+.clickable {
+  cursor: pointer;
+}
+
+.not-clickable {
+  cursor: unset !important;
+}
+
+.fit-content {
+  width: fit-content;
+}
+
+.fullwidth {
   width: 100%;
+}
+
+.width-unset {
+  width: unset;
+}
+
+.text-right {
+  text-align: right;
+}
+
+.text-left {
+  text-align: left;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-uppercase {
+  text-transform: uppercase;
+}
+
+.text-lowercase {
+  text-transform: lowercase;
+}
+
+.text-break {
+  white-space: break-spaces;
 }
 
 // btn-close overrides

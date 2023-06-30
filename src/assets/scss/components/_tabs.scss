@@ -90,12 +90,12 @@ $nav-tabs-margin-bottom: 1rem !default;
     position: relative;
   }
 
-  &.is-expanded:not(.is-vertical) .nav {
+  &.expanded:not(.vertical) .nav {
     @extend .nav-fill;
   }
 
   // position vetical
-  &.is-vertical {
+  &.vertical {
     display: flex;
     flex-direction: row;
 

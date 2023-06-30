@@ -43,13 +43,17 @@
     top: 100%;
   }
 
-  &.is-expanded,
-  &.is-expanded .dropdown-trigger {
+  &.expanded,
+  &.expanded .dropdown-trigger {
     width: 100%;
     display: block;
   }
 
-  &.is-inline .dropdown-menu {
+  &.disabled {
+    cursor: not-allowed;
+  }
+
+  &.inline .dropdown-menu {
     --bs-dropdown-zindex: 10;
     position: relative;
     top: 0;
@@ -67,14 +71,18 @@
       transform: translate3d(-50%, -25%, 0);
     }
 
-    .background {
-      background-color: $overlay-background-color-dark;
+    .dropdown-backdrop {
+      --bs-backdrop-bg: #{$modal-backdrop-bg};
+      --bs-backdrop-zindex: #{$zindex-modal-backdrop};
+      --bs-backdrop-opacity: #{$modal-backdrop-opacity};
       position: fixed;
-      bottom: 0;
-      left: 0;
-      right: 0;
       top: 0;
-      z-index: $zindex-modal-backdrop;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      z-index: var(--bs-backdrop-zindex);
+      background-color: var(--bs-backdrop-bg);
+      opacity: var(--bs-backdrop-opacity);
     }
   }
 

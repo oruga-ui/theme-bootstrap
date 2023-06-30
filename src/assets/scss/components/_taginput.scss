@@ -21,6 +21,10 @@ $taginput-counter-font-size: 0.75rem !default;
 /* @bootstrap docs */
 
 .taginput {
+  &.expanded {
+    width: 100%;
+  }
+
   .btn-close {
     font-size: 0.8em;
   }
