@@ -43,6 +43,9 @@ const checkboxGroup = ref(["Flint"]);
       <o-checkbox :value="true" variant="primary"> Primary </o-checkbox>
     </o-field>
     <o-field>
+      <o-checkbox :value="true" variant="secondary"> Secondary </o-checkbox>
+    </o-field>
+    <o-field>
       <o-checkbox :value="true" variant="info"> Info </o-checkbox>
     </o-field>
     <o-field>
@@ -68,6 +71,11 @@ const checkboxGroup = ref(["Flint"]);
     <o-field>
       <o-checkbox variant="primary" indeterminate>
         Primary Indeterminate
+      </o-checkbox>
+    </o-field>
+    <o-field>
+      <o-checkbox variant="secondary" indeterminate>
+        Secondary Indeterminate
       </o-checkbox>
     </o-field>
     <o-field>
