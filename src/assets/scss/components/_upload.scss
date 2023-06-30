@@ -18,10 +18,6 @@ $upload-draggable-padding: 2em !default;
     opacity: $base-disabled-opacity;
   }
 
-  &.is-expanded {
-    width: 100%;
-  }
-
   .upload-draggable {
     border: $upload-draggable-border;
     padding: $upload-draggable-padding;

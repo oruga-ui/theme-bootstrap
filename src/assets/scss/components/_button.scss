@@ -58,10 +58,6 @@ $btn-border-default: 0.1px solid $default-border-color !default; //  var(--oruga
     margin: 0 4px;
   }
 
-  &.is-expanded {
-    width: 100%;
-  }
-
   &.is-rounded {
     --bs-btn-border-radius: #{$btn-border-rounded-radius};
   }
