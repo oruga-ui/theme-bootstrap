@@ -11,7 +11,6 @@ $speed-slower: 250ms !default;
 
 $easing: ease !default;
 
-$base-border-radius: var(--bs-border-radius) !default;
 $base-rounded-border-radius: 9999px !default;
 $base-line-height: 1.5 !default;
 $base-disabled-opacity: 0.5 !default;
@@ -20,8 +19,6 @@ $tablet: map.get($grid-breakpoints, "md") !default;
 
 $overlay-background-color-dark: rgba(0, 0, 0, 0.8) !default;
 $overlay-background-color-light: rgba(255, 255, 255, 0.5) !default;
-
-$default-border-color: var(--bs-border-color) !default;
 
 // Sizes
 $sizes: (

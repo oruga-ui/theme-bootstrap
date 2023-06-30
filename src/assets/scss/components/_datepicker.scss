@@ -10,7 +10,7 @@ $datepicker-cell-text-align: center !default;
 $datepicker-cell-unselectable-color: rgba(0, 0, 0, 0.3) !default;
 $datepicker-cell-hovered-color: rgba(0, 0, 0, 0.5) !default;
 $datepicker-cell-selected-color: $primary !default;
-$datepicker-cell-border-radius: $base-border-radius !default;
+$datepicker-cell-border-radius: var(--bs-border-radius) !default;
 /* @docs */
 
 @mixin datepicker-cell {

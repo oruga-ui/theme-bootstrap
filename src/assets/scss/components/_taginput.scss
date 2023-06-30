@@ -1,6 +1,6 @@
 /* @docs */
 $taginput-border-color: var(--bs-border-color) !default;
-$taginput-border-radius: $base-border-radius !default;
+$taginput-border-radius: var(--bs-border-radius) !default;
 
 $taginput-badge-bg: $light;
 $taginput-badge-color: $dark;
