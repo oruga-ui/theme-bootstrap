@@ -20,31 +20,11 @@ $sizes: (
 ) !default;
 
 // Colors
-$white: #ffffff !default;
 $gray: $gray-400 !default;
-$black: #000000 !default;
 
-$primary-light: rgba($primary, 0.1) !default;
-$secondary-light: rgba($primary, 0.1) !default;
-$success-light: rgba($success, 0.1) !default;
-$danger-light: rgba($danger, 0.1) !default;
-$warning-light: rgba($warning, 0.1) !default;
-$info-light: rgb($info, 0.1) !default;
-$dark-light: rgb($dark, 0.1) !default;
-
-$theme-colors-light: (
-  "primary": $primary-light,
-  "secondary": $primary-light,
-  "success": $success-light,
-  "danger": $danger-light,
-  "warning": $warning-light,
-  "info": $info-light,
-  "dark": $dark-light,
-) !default;
-
-// there are also the maps:
-// - $theme-colors
-// - $theme-colors-text
-// - $theme-colors-rgb
-// - $theme-colors-bg-subtle
-// - $theme-colors-border-subtle
+// these color theme maps are available:
+// - $theme-colors                -> var(--#{$prefix}#{$name});
+// - $theme-colors-text           -> var(--#{$prefix}#{$name}-text-emphasis);
+// - $theme-colors-rgb            -> var(--#{$prefix}#{$name}-rgb);
+// - $theme-colors-bg-subtle      -> var(--#{$prefix}#{$name}-bg-subtle)
+// - $theme-colors-border-subtle  -> var(--#{$prefix}#{$name}-border-subtle)

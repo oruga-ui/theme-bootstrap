@@ -36,11 +36,10 @@ $upload-draggable-padding: 2em !default;
     }
 
     // Color variant
-    @each $name, $color-light in $theme-colors-light {
-      $color: map.get($theme-colors, #{$name});
+    @each $name, $color-light in $theme-colors {
       &.variant-#{$name} {
-        background-color: $color-light;
-        border-color: $color;
+        background-color: var(--#{$prefix}#{$name}-bg-subtle);
+        border-color: var(--#{$prefix}#{$name});
       }
     }
   }
