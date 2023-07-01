@@ -71,19 +71,18 @@ html.modal-open {
       overflow: hidden;
 
       .modal-header {
-        .icon.clickable {
-          cursor: pointer;
+        > .icon {
           position: absolute;
           top: 1.5rem;
           right: 1.2rem;
         }
 
-        &:has(.icon.clickable) {
+        &:has(> .icon.clickable) {
           padding-right: 3rem;
         }
       }
 
-      &:has(.icon.clickable) + .icon.clickable {
+      &:has(> .icon.clickable) + .icon.clickable {
         display: none;
       }
     }

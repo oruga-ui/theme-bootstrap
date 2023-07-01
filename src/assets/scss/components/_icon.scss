@@ -31,8 +31,4 @@ $icon-spin-animation-timing-function: linear !default;
     animation-iteration-count: $icon-spin-animation-iteration-count;
     animation-timing-function: $icon-spin-animation-timing-function;
   }
-
-  &.clickable {
-    cursor: pointer;
-  }
 }
