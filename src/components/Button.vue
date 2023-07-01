@@ -60,6 +60,21 @@
   </section>
 
   <section class="py-3">
+    <h3>Variant Subtle</h3>
+
+    <div class="buttons">
+      <o-button variant="primary-subtle">Subtle</o-button>
+      <o-button variant="secondary-subtle">Subtle</o-button>
+      <o-button variant="success-subtle">Subtle</o-button>
+      <o-button variant="danger-subtle">Subtle</o-button>
+      <o-button variant="warning-subtle">Subtle</o-button>
+      <o-button variant="info-subtle">Subtle</o-button>
+      <o-button variant="dark-subtle">Subtle</o-button>
+      <o-button variant="light-subtle">Subtle</o-button>
+    </div>
+  </section>
+
+  <section class="py-3">
     <h3>Icons</h3>
 
     <div class="buttons">

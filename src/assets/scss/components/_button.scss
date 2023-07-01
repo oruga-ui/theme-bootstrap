@@ -76,7 +76,8 @@ $btn-border-default: 0.1px solid var(--bs-border-color) !default;
   }
 
   // inverted color
-  @each $name, $color-light in $theme-colors {
+  @each $name, $color in $theme-colors {
+    &.variant-#{$name}-inverted,
     &.btn-inverted-#{$name} {
       // default style
       --bs-btn-color: var(--#{$prefix}#{$name});
@@ -87,6 +88,19 @@ $btn-border-default: 0.1px solid var(--bs-border-color) !default;
       --bs-btn-hover-color: var(--#{$prefix}#{$name});
       --bs-btn-hover-bg: var(--#{$prefix}#{$name}-bg-subtle);
       --bs-btn-hover-border-color: var(--#{$prefix}#{$name}-border-subtle);
+    }
+
+    &.variant-#{$name}-subtle,
+    &.btn-#{$name}-subtle {
+      // default style
+      --bs-btn-color: var(--#{$prefix}#{$name});
+      --bs-btn-bg: var(--#{$prefix}#{$name}-bg-subtle);
+      --bs-btn-border-color: var(--#{$prefix}#{$name}-border-subtle);
+
+      // hover style
+      --bs-btn-hover-color: #{color-contrast($color)};
+      --bs-btn-hover-bg: var(--#{$prefix}#{$name});
+      --bs-btn-hover-border-color: var(--#{$prefix}#{$name});
     }
   }
 }
