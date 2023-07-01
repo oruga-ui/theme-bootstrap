@@ -99,6 +99,40 @@ const checkboxGroup = ref(["Flint"]);
   </section>
 
   <section class="py-3">
+    <h3>Variant Inverted</h3>
+
+    <o-field>
+      <o-checkbox indeterminate> Default </o-checkbox>
+    </o-field>
+    <o-field>
+      <o-checkbox variant="primary-inverted" indeterminate>
+        Primary
+      </o-checkbox>
+    </o-field>
+    <o-field>
+      <o-checkbox variant="secondary-inverted" indeterminate>
+        Secondary
+      </o-checkbox>
+    </o-field>
+    <o-field>
+      <o-checkbox variant="info-inverted" indeterminate> Info </o-checkbox>
+    </o-field>
+    <o-field>
+      <o-checkbox variant="success-inverted" indeterminate>
+        Success
+      </o-checkbox>
+    </o-field>
+    <o-field>
+      <o-checkbox variant="danger-inverted" indeterminate> Danger </o-checkbox>
+    </o-field>
+    <o-field>
+      <o-checkbox variant="warning-inverted" indeterminate>
+        Warning
+      </o-checkbox>
+    </o-field>
+  </section>
+
+  <section class="py-3">
     <h3>Size</h3>
 
     <o-field>

@@ -3,6 +3,7 @@ import { ref } from "vue";
 
 const radio = ref("Jack");
 const variant = ref("success");
+const variantInvert = ref("success");
 const size = ref("small");
 </script>
 
@@ -38,7 +39,7 @@ const size = ref("small");
     </o-field>
     <o-field>
       <o-radio v-model="variant" native-value="primary" variant="primary">
-        Priamry
+        Primary
       </o-radio>
     </o-field>
     <o-field>
@@ -67,6 +68,65 @@ const size = ref("small");
       </o-radio>
     </o-field>
     <p><b>Selection:</b> {{ variant }}</p>
+  </section>
+
+  <section class="py-3">
+    <h3>Variant Inverted</h3>
+
+    <o-field>
+      <o-radio v-model="variantInvert" native-value="default">
+        Default
+      </o-radio>
+    </o-field>
+    <o-field>
+      <o-radio
+        v-model="variantInvert"
+        native-value="primary"
+        variant="primary-inverted">
+        Primary
+      </o-radio>
+    </o-field>
+    <o-field>
+      <o-radio
+        v-model="variantInvert"
+        native-value="secondary"
+        variant="secondary-inverted">
+        Secondary
+      </o-radio>
+    </o-field>
+    <o-field>
+      <o-radio
+        v-model="variantInvert"
+        native-value="inverted"
+        variant="info-inverted">
+        Info
+      </o-radio>
+    </o-field>
+    <o-field>
+      <o-radio
+        v-model="variantInvert"
+        native-value="success"
+        variant="success-inverted">
+        Success
+      </o-radio>
+    </o-field>
+    <o-field>
+      <o-radio
+        v-model="variantInvert"
+        native-value="danger"
+        variant="danger-inverted">
+        Danger
+      </o-radio>
+    </o-field>
+    <o-field>
+      <o-radio
+        v-model="variantInvert"
+        native-value="warning"
+        variant="warning-inverted">
+        Warning
+      </o-radio>
+    </o-field>
+    <p><b>Selection:</b> {{ variantInvert }}</p>
   </section>
 
   <section class="py-3">
