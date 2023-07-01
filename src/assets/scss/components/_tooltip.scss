@@ -144,6 +144,7 @@ $tootlip-zindex: $zindex-tooltip;
     }
   }
 
+  // Color variants
   @each $name, $value in $theme-colors {
     .variant-#{$name} {
       &.is-top::before {
@@ -173,7 +174,7 @@ $tootlip-zindex: $zindex-tooltip;
 
   &.dashed {
     .tooltip-content {
-      border-bottom: 1px dashed $grey-light;
+      border-bottom: 1px dashed $gray;
     }
   }
 

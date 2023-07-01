@@ -1,8 +1,9 @@
 @use "sass:math";
 
 /* @docs */
-$tabs-color: var(--bs-body-color) !default;
+$nav-tabs-color: var(--bs-body-color) !default;
 $nav-tabs-margin-bottom: 1rem !default;
+$nav-tabs-disabled-opacity: 0.5 !default;
 /* @docs */
 
 /* @bootstrap docs */
@@ -47,12 +48,12 @@ $nav-tabs-margin-bottom: 1rem !default;
 
       &.disabled {
         cursor: not-allowed;
-        opacity: $base-disabled-opacity;
+        opacity: $nav-tabs-disabled-opacity;
       }
     }
 
     &:not(.nav-default) .nav-link {
-      --bs-nav-link-color: #{$tabs-color};
+      --bs-nav-link-color: #{$nav-tabs-color};
     }
 
     // style toggle / underline

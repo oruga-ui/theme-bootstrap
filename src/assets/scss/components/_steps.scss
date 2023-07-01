@@ -1,13 +1,12 @@
 /* @docs */
 $steps-items-focused-outline: none !default;
 $steps-details-background-color: white !default;
-$steps-marker-default-background-color: $grey-light !default;
+$steps-marker-default-background-color: $gray !default;
 $steps-marker-default-border: 0.1em solid #fff !default;
 $steps-previous-background-color: $primary !default;
 $steps-active-background-color: $primary !default;
 $steps-divider-height: 0.2em !default;
 $steps-vertical-padding: 1em 0 !default;
-$steps-mobile-max-width: $tablet !default;
 /* @docs */
 
 @mixin steps-size($size) {

@@ -1,10 +1,13 @@
 @use "sass:map";
 
 /* @docs */
-$upload-draggable-border: 1px dashed $grey-light !default;
+$upload-draggable-bg: transparent !default;
+$upload-draggable-bg-hover: transparent !default;
+$upload-draggable-border-color: var(--bs-border-color) !default;
+$upload-draggable-border-color-hover: var(--#{$prefix}dark-bg-subtle) !default;
+$upload-draggable-border-width: var(--bs-border-width) !default;
 $upload-draggable-border-radius: var(--bs-border-radius) !default;
-$upload-draggable-disabled-opacity: $base-disabled-opacity !default;
-$upload-draggable-hover-border-color: $grey-light !default;
+$upload-draggable-disabled-opacity: 0.5 !default;
 $upload-draggable-padding: 2em !default;
 /* @docs */
 
@@ -19,22 +22,25 @@ $upload-draggable-padding: 2em !default;
 
   &.disabled {
     cursor: not-allowed;
-    opacity: $base-disabled-opacity;
+    opacity: $upload-draggable-disabled-opacity;
   }
 
   .upload-draggable {
-    border: $upload-draggable-border;
+    background-color: $upload-draggable-bg;
+    border: $upload-draggable-border-width dashed $upload-draggable-border-color;
     padding: $upload-draggable-padding;
 
     &.hovered {
-      background-color: $upload-draggable-hover-border-color;
+      background-color: $upload-draggable-bg-hover;
+      border-color: $upload-draggable-border-color-hover;
     }
 
-    @each $name, $pair in $theme-colors-lighter {
-      $variant: map.get($theme-colors, #{$name});
+    // Color variant
+    @each $name, $color-light in $theme-colors-light {
+      $color: map.get($theme-colors, #{$name});
       &.variant-#{$name} {
-        background-color: $pair;
-        border-color: $variant;
+        background-color: $color-light;
+        border-color: $color;
       }
     }
   }

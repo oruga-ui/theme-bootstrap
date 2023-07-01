@@ -8,47 +8,43 @@ $variable-prefix: $prefix;
 
 $speed-slow: 150ms !default;
 $speed-slower: 250ms !default;
-
 $easing: ease !default;
-
-$base-rounded-border-radius: 9999px !default;
-$base-line-height: 1.5 !default;
-$base-disabled-opacity: 0.5 !default;
-
-$tablet: map.get($grid-breakpoints, "md") !default;
-
-$overlay-background-color-dark: rgba(0, 0, 0, 0.8) !default;
-$overlay-background-color-light: rgba(255, 255, 255, 0.5) !default;
 
 // Sizes
 $sizes: (
+  "x-small": 0.5rem,
   "small": 0.75rem,
   "medium": 1.25rem,
   "large": 1.5rem,
+  "x-large": 2rem,
 ) !default;
 
 // Colors
 $white: #ffffff !default;
+$gray: $gray-400 !default;
 $black: #000000 !default;
-$grey: $gray-700 !default;
-$grey-light: $gray-400 !default;
-$grey-lighter: $gray-300 !default;
-$grey-dark: $gray-900 !default;
 
-$primary-invert: rgba($primary, 0.1) !default;
-$secondary-invert: rgba($primary, 0.1) !default;
-$success-invert: rgba($success, 0.1) !default;
-$danger-invert: rgba($danger, 0.1) !default;
-$warning-invert: rgba($warning, 0.1) !default;
-$info-invert: rgb($info, 0.1) !default;
-$dark-invert: rgb($dark, 0.1) !default;
+$primary-light: rgba($primary, 0.1) !default;
+$secondary-light: rgba($primary, 0.1) !default;
+$success-light: rgba($success, 0.1) !default;
+$danger-light: rgba($danger, 0.1) !default;
+$warning-light: rgba($warning, 0.1) !default;
+$info-light: rgb($info, 0.1) !default;
+$dark-light: rgb($dark, 0.1) !default;
 
-$theme-colors-lighter: (
-  "primary": $primary-invert,
-  "secondary": $primary-invert,
-  "success": $success-invert,
-  "danger": $danger-invert,
-  "warning": $warning-invert,
-  "info": $info-invert,
-  "dark": $dark-invert,
+$theme-colors-light: (
+  "primary": $primary-light,
+  "secondary": $primary-light,
+  "success": $success-light,
+  "danger": $danger-light,
+  "warning": $warning-light,
+  "info": $info-light,
+  "dark": $dark-light,
 ) !default;
+
+// there are also the maps:
+// - $theme-colors
+// - $theme-colors-text
+// - $theme-colors-rgb
+// - $theme-colors-bg-subtle
+// - $theme-colors-border-subtle

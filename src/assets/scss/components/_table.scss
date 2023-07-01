@@ -1,5 +1,6 @@
 /* @docs */
 $table-detail-padding: 0.5rem 0.75rem !default;
+$table-sortable-hover: $secondary;
 /* @docs */
 
 /* @bootstrap docs */
@@ -137,7 +138,7 @@ $table-detail-padding: 0.5rem 0.75rem !default;
           }
 
           &:hover {
-            border-color: $grey;
+            border-color: $table-sortable-hover;
           }
         }
 
