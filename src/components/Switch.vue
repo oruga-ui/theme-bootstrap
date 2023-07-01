@@ -64,6 +64,32 @@ const passive = ref(null);
   </section>
 
   <section class="py-3">
+    <h3>Variant Subtle</h3>
+
+    <o-field>
+      <o-switch :value="true"> Default </o-switch>
+    </o-field>
+    <o-field>
+      <o-switch :value="true" variant="primary-subtle"> Primary </o-switch>
+    </o-field>
+    <o-field>
+      <o-switch :value="true" variant="secondary-subtle"> Secondary </o-switch>
+    </o-field>
+    <o-field>
+      <o-switch :value="true" variant="info-subtle"> Info </o-switch>
+    </o-field>
+    <o-field>
+      <o-switch :value="true" variant="success-subtle"> Success </o-switch>
+    </o-field>
+    <o-field>
+      <o-switch :value="true" variant="danger-subtle"> Danger </o-switch>
+    </o-field>
+    <o-field>
+      <o-switch :value="true" variant="warning-subtle"> Warning </o-switch>
+    </o-field>
+  </section>
+
+  <section class="py-3">
     <h3>Size</h3>
 
     <o-field>

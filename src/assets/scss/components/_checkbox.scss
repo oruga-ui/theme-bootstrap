@@ -1,3 +1,5 @@
+@use "sass:map";
+
 /* @bootstrap docs */
 // $form-check-input-width:                  1em;
 // $form-check-min-height:                   $font-size-base * $line-height-base;
@@ -34,25 +36,31 @@
 // $form-check-inline-margin-end:    1rem;
 /* @bootstrap docs */
 
-@function checkmark($color) {
-  @return str-replace(
-    $form-check-input-checked-bg-image,
-    "#{$form-check-input-checked-color}",
-    $color
+@function checkmarkSVG($color) {
+  @return escape-svg(
+    str-replace(
+      $form-check-input-checked-bg-image,
+      "#{$form-check-input-checked-color}",
+      $color
+    )
   );
 }
-@function checkcircle($color) {
-  @return str-replace(
-    $form-check-radio-checked-bg-image,
-    "#{$form-check-input-checked-color}",
-    $color
+@function checkcircleSVG($color) {
+  @return escape-svg(
+    str-replace(
+      $form-check-radio-checked-bg-image,
+      "#{$form-check-input-checked-color}",
+      $color
+    )
   );
 }
-@function indeterminate($color) {
-  @return str-replace(
-    $form-check-input-indeterminate-bg-image,
-    "#{$form-check-input-indeterminate-color}",
-    $color
+@function indeterminateSVG($color) {
+  @return escape-svg(
+    str-replace(
+      $form-check-input-indeterminate-bg-image,
+      "#{$form-check-input-indeterminate-color}",
+      $color
+    )
   );
 }
 
@@ -69,27 +77,49 @@
   }
 
   // Color variant inverted
-  @each $name, $variant in $theme-colors {
+  @each $name, $color in $theme-colors {
     &.variant-#{$name}-inverted {
       input[type="radio"],
       input[type="checkbox"] {
         background-color: transparent;
-        border-color: $variant;
+        border-color: var(--#{$prefix}#{$name});
 
         &[type="checkbox"] {
           &:checked {
-            --#{$prefix}form-check-bg-image: #{escape-svg(checkmark($variant))};
+            --#{$prefix}form-check-bg-image: #{checkmarkSVG($color)};
           }
 
           &:indeterminate {
-            --#{$prefix}form-check-bg-image: #{escape-svg(
-                indeterminate($variant)
-              )};
+            --#{$prefix}form-check-bg-image: #{indeterminateSVG($color)};
           }
         }
 
         &[type="radio"]:checked {
-          --#{$prefix}form-check-bg-image: #{escape-svg(checkcircle($variant))};
+          --#{$prefix}form-check-bg-image: #{checkcircleSVG($color)};
+        }
+      }
+    }
+
+    &.variant-#{$name}-subtle {
+      $color: map.get($theme-colors-bg-subtle, #{$name});
+
+      input[type="radio"],
+      input[type="checkbox"] {
+        background-color: transparent;
+        border-color: var(--#{$prefix}#{$name}-border-subtle);
+
+        &[type="checkbox"] {
+          &:checked {
+            --#{$prefix}form-check-bg-image: #{checkmarkSVG($color)};
+          }
+
+          &:indeterminate {
+            --#{$prefix}form-check-bg-image: #{indeterminateSVG($color)};
+          }
+        }
+
+        &[type="radio"]:checked {
+          --#{$prefix}form-check-bg-image: #{checkcircleSVG($color)};
         }
       }
     }

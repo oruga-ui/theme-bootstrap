@@ -52,13 +52,10 @@ const checkboxGroup = ref(["Flint"]);
       <o-checkbox :value="true" variant="success"> Success </o-checkbox>
     </o-field>
     <o-field>
-      <o-checkbox :value="true" variant="danger"> Danger </o-checkbox>
-    </o-field>
-    <o-field>
       <o-checkbox :value="true" variant="warning"> Warning </o-checkbox>
     </o-field>
     <o-field>
-      <o-checkbox disabled> Disabled </o-checkbox>
+      <o-checkbox :value="true" variant="danger"> Danger </o-checkbox>
     </o-field>
   </section>
 
@@ -87,13 +84,13 @@ const checkboxGroup = ref(["Flint"]);
       </o-checkbox>
     </o-field>
     <o-field>
-      <o-checkbox variant="danger" indeterminate>
-        Danger Indeterminate
+      <o-checkbox variant="warning" indeterminate>
+        Warning Indeterminate
       </o-checkbox>
     </o-field>
     <o-field>
-      <o-checkbox variant="warning" indeterminate>
-        Warning Indeterminate
+      <o-checkbox variant="danger" indeterminate>
+        Danger Indeterminate
       </o-checkbox>
     </o-field>
   </section>
@@ -123,12 +120,40 @@ const checkboxGroup = ref(["Flint"]);
       </o-checkbox>
     </o-field>
     <o-field>
-      <o-checkbox variant="danger-inverted" indeterminate> Danger </o-checkbox>
-    </o-field>
-    <o-field>
       <o-checkbox variant="warning-inverted" indeterminate>
         Warning
       </o-checkbox>
+    </o-field>
+    <o-field>
+      <o-checkbox variant="danger-inverted" indeterminate> Danger </o-checkbox>
+    </o-field>
+  </section>
+
+  <section class="py-3">
+    <h3>Variant Subtle</h3>
+
+    <o-field>
+      <o-checkbox indeterminate> Default </o-checkbox>
+    </o-field>
+    <o-field>
+      <o-checkbox variant="primary-subtle" indeterminate> Primary </o-checkbox>
+    </o-field>
+    <o-field>
+      <o-checkbox variant="secondary-subtle" indeterminate>
+        Secondary
+      </o-checkbox>
+    </o-field>
+    <o-field>
+      <o-checkbox variant="info-subtle" indeterminate> Info </o-checkbox>
+    </o-field>
+    <o-field>
+      <o-checkbox variant="success-subtle" indeterminate> Success </o-checkbox>
+    </o-field>
+    <o-field>
+      <o-checkbox variant="warning-subtle" indeterminate> Warning </o-checkbox>
+    </o-field>
+    <o-field>
+      <o-checkbox variant="danger-subtle" indeterminate> Danger </o-checkbox>
     </o-field>
   </section>
 

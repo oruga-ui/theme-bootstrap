@@ -4,6 +4,7 @@ import { ref } from "vue";
 const radio = ref("Jack");
 const variant = ref("success");
 const variantInvert = ref("success");
+const variantSubtle = ref("success");
 const size = ref("small");
 </script>
 
@@ -58,13 +59,13 @@ const size = ref("small");
       </o-radio>
     </o-field>
     <o-field>
-      <o-radio v-model="variant" native-value="danger" variant="danger">
-        Danger
+      <o-radio v-model="variant" native-value="warning" variant="warning">
+        Warning
       </o-radio>
     </o-field>
     <o-field>
-      <o-radio v-model="variant" native-value="warning" variant="warning">
-        Warning
+      <o-radio v-model="variant" native-value="danger" variant="danger">
+        Danger
       </o-radio>
     </o-field>
     <p><b>Selection:</b> {{ variant }}</p>
@@ -113,20 +114,79 @@ const size = ref("small");
     <o-field>
       <o-radio
         v-model="variantInvert"
-        native-value="danger"
-        variant="danger-inverted">
-        Danger
-      </o-radio>
-    </o-field>
-    <o-field>
-      <o-radio
-        v-model="variantInvert"
         native-value="warning"
         variant="warning-inverted">
         Warning
       </o-radio>
     </o-field>
+    <o-field>
+      <o-radio
+        v-model="variantInvert"
+        native-value="danger"
+        variant="danger-inverted">
+        Danger
+      </o-radio>
+    </o-field>
     <p><b>Selection:</b> {{ variantInvert }}</p>
+  </section>
+
+  <section class="py-3">
+    <h3>Variant Subtle</h3>
+
+    <o-field>
+      <o-radio v-model="variantSubtle" native-value="default">
+        Default
+      </o-radio>
+    </o-field>
+    <o-field>
+      <o-radio
+        v-model="variantSubtle"
+        native-value="primary"
+        variant="primary-subtle">
+        Primary
+      </o-radio>
+    </o-field>
+    <o-field>
+      <o-radio
+        v-model="variantSubtle"
+        native-value="secondary"
+        variant="secondary-subtle">
+        Secondary
+      </o-radio>
+    </o-field>
+    <o-field>
+      <o-radio
+        v-model="variantSubtle"
+        native-value="inverted"
+        variant="info-subtle">
+        Info
+      </o-radio>
+    </o-field>
+    <o-field>
+      <o-radio
+        v-model="variantSubtle"
+        native-value="success"
+        variant="success-subtle">
+        Success
+      </o-radio>
+    </o-field>
+    <o-field>
+      <o-radio
+        v-model="variantSubtle"
+        native-value="warning"
+        variant="warning-subtle">
+        Warning
+      </o-radio>
+    </o-field>
+    <o-field>
+      <o-radio
+        v-model="variantSubtle"
+        native-value="danger"
+        variant="danger-subtle">
+        Danger
+      </o-radio>
+    </o-field>
+    <p><b>Selection:</b> {{ variantSubtle }}</p>
   </section>
 
   <section class="py-3">
