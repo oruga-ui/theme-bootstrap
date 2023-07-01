@@ -73,10 +73,10 @@
 /// This Color and background helper combines the power of our .text-* utilities and .bg-* utilities in one class.
 /// Using the Sass color-contrast() function, a contrasting color is automatically determined for a particular background-color.
 @mixin variant-text-bg($map: $theme-colors) {
-  @each $color, $value in $map {
-    &.variant-#{$color} {
-      color: color-contrast($value);
-      background-color: $value;
+  @each $name, $color in $map {
+    &.variant-#{$name} {
+      color: color-contrast($color);
+      background-color: $color;
     }
   }
 }
@@ -84,9 +84,9 @@
 /// Generates variant-{color} and set background color.
 /// This helper creates one background-color utility class for each color theme.
 @mixin variant-bg($map: $theme-colors) {
-  @each $color, $value in $map {
-    &.variant-#{$color} {
-      background-color: $value;
+  @each $name, $color in $map {
+    &.variant-#{$name} {
+      background-color: $color;
     }
   }
 }
@@ -94,9 +94,9 @@
 /// Generates is-{color} and set text color.
 /// This helper creates one text color utility class for each color theme.
 @mixin variant-text($map: $theme-colors) {
-  @each $color, $value in $map {
-    &.variant-#{$color} {
-      color: $value;
+  @each $name, $color in $map {
+    &.variant-#{$name} {
+      color: $color;
     }
   }
 }
