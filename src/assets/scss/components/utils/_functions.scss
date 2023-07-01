@@ -17,50 +17,6 @@
   );
 }
 
-// Encode svg function by http://codepen.io/jakob-e/pen/doMoML
-@function svg-encode($svg) {
-  // Chunk up string in order to avoid "stack level too deep" error
-  $encoded: "";
-  $slice: 2000;
-  $index: 0;
-  $loops: math.ceil(divide(string.length($svg), $slice));
-
-  @for $i from 1 through $loops {
-    $chunk: string.slice($svg, $index, $index + $slice - 1);
-    // Encode
-    $chunk: str-replace($chunk, '"', "'");
-    $chunk: str-replace($chunk, "%", "%25");
-    $chunk: str-replace($chunk, "#", "%23");
-    $chunk: str-replace($chunk, "{", "%7B");
-    $chunk: str-replace($chunk, "}", "%7D");
-    $chunk: str-replace($chunk, "<", "%3C");
-    $chunk: str-replace($chunk, ">", "%3E");
-
-    $encoded: #{$encoded}#{$chunk};
-    $index: $index + $slice;
-  }
-
-  @return "data:image/svg+xml,#{$encoded}";
-}
-
-// Helper function
-@function checkmark($color) {
-  $start: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1">';
-  $content: '<path style="fill:#{$color}" d="M 0.04038059,0.6267767 0.14644661,0.52071068 0.42928932,0.80355339 0.3232233,0.90961941 z M 0.21715729,0.80355339 0.85355339,0.16715729 0.95961941,0.2732233 0.3232233,0.90961941 z"></path>';
-  $end: "</svg>";
-
-  @return svg-encode("#{$start}#{$content}#{$end}");
-}
-
-// Helper function
-@function indeterminate($color) {
-  $start: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1">';
-  $content: '<rect style="fill:#{$color}" width="0.7" height="0.2" x=".15" y=".4"></rect>';
-  $end: "</svg>";
-
-  @return svg-encode("#{$start}#{$content}#{$end}");
-}
-
 /// Assigns a specific variable to an attribute
 ///
 /// @param {string} $attribute
@@ -113,11 +69,11 @@
   @return $number;
 }
 
-/// Generates is-{color} variant for background and text color.
+/// Generates variant-{color} and setting background and contrast text color.
 /// This Color and background helper combines the power of our .text-* utilities and .bg-* utilities in one class.
 /// Using the Sass color-contrast() function, a contrasting color is automatically determined for a particular background-color.
-@mixin variant-text-bg() {
-  @each $color, $value in $theme-colors {
+@mixin variant-text-bg($map: $theme-colors) {
+  @each $color, $value in $map {
     &.variant-#{$color} {
       color: color-contrast($value);
       background-color: $value;
@@ -125,20 +81,20 @@
   }
 }
 
-/// Generates is-{color} variant for background color.
+/// Generates variant-{color} and setting background color.
 /// This helper creates one background-color utility class for each color theme.
-@mixin variant-bg() {
-  @each $color, $value in $theme-colors {
+@mixin variant-bg($map: $theme-colors) {
+  @each $color, $value in $map {
     &.variant-#{$color} {
       background-color: $value;
     }
   }
 }
 
-/// Generates is-{color} variant for text color.
+/// Generates is-{color} and setting text color.
 /// This helper creates one text color utility class for each color theme.
-@mixin variant-text() {
-  @each $color, $value in $theme-colors {
+@mixin variant-text($map: $theme-colors) {
+  @each $color, $value in $map {
     &.variant-#{$color} {
       color: $value;
     }
