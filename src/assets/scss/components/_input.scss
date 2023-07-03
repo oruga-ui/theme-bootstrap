@@ -1,6 +1,6 @@
 /* @docs */
 $input-icon-color: $input-color !default;
-$input-icon-space: 0.75rem !default;
+$input-icon-spacer: 0.75rem !default;
 
 $input-icon-left-padding-sm: $input-btn-padding-y-sm $input-btn-padding-x-sm
   $input-btn-padding-y-sm 2rem !default;
@@ -182,7 +182,7 @@ $input-icon-right-padding-lg: $input-btn-padding-y-lg 3rem
   // the Position of the icon
   .icon {
     --#{$prefix}input-icon-color: #{$input-icon-color};
-    --#{$prefix}input-icon-space: #{$input-icon-space};
+    --#{$prefix}input-icon-spacer: #{$input-icon-spacer};
 
     position: absolute;
     margin: 0;
@@ -190,12 +190,12 @@ $input-icon-right-padding-lg: $input-btn-padding-y-lg 3rem
 
     &.icon-left {
       top: 12px;
-      left: var(--#{$prefix}input-icon-space);
+      left: var(--#{$prefix}input-icon-spacer);
     }
 
     &.icon-right {
       top: 12px;
-      right: var(--#{$prefix}input-icon-space);
+      right: var(--#{$prefix}input-icon-spacer);
     }
 
     &.is-small {

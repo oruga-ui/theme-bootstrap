@@ -70,12 +70,16 @@ $notification-notices-space: 1.5rem !default;
 
 .toast {
   @extend .show;
-  text-align: center;
-  padding: $alert-padding-x $alert-padding-y;
+  padding: var(--#{$prefix}toast-padding-x) var(--#{$prefix}toast-padding-y);
   margin-bottom: var(--#{$prefix}alert-margin-bottom);
 
-  // Colors
-  @include variant-text-bg();
+  // Color variants
+  @each $name, $color in $theme-colors {
+    &.variant-#{$name} {
+      --#{$prefix}toast-color: var(--#{$prefix}#{$name}-contrast);
+      --#{$prefix}toast-bg: var(--#{$prefix}#{$name});
+    }
+  }
 }
 
 .notifictations {

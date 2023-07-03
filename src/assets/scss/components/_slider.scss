@@ -50,6 +50,7 @@ $slider-tick-bg: var(--bs-gray) !default;
 
     .slider-fill {
       --#{$prefix}slider-track-border-radius: #{$form-range-track-border-radius};
+      --#{$prefix}slider-bg: transparent;
 
       position: absolute;
       left: 0%;
@@ -57,9 +58,14 @@ $slider-tick-bg: var(--bs-gray) !default;
       transform: translateY(-50%);
       height: 100%;
       border-radius: var(--#{$prefix}slider-track-border-radius);
+      background: var(--#{$prefix}slider-bg);
 
-      // Colors
-      @include variant-bg();
+      // Color variants
+      @each $name, $color in $theme-colors {
+        &.variant-#{$name} {
+          --#{$prefix}slider-bg: var(--#{$prefix}#{$name});
+        }
+      }
     }
 
     .slider-thumb-wrapper {
@@ -87,8 +93,12 @@ $slider-tick-bg: var(--bs-gray) !default;
         border-radius: var(--#{$prefix}slider-thumb-border-radius);
         transition: var(--#{$prefix}slider-thumb-transition);
 
-        // Colors
-        @include variant-bg();
+        // Color variants
+        @each $name, $color in $theme-colors {
+          &.variant-#{$name} {
+            --#{$prefix}slider-thumb-bg: var(--#{$prefix}#{$name});
+          }
+        }
 
         &:active,
         &:hover {

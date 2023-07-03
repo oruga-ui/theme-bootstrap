@@ -2,6 +2,7 @@
 
 /* @docs */
 $btn-spacer: 0.5rem !default;
+$btn-hover-box-shadow: $box-shadow-sm !default;
 /* @docs */
 
 /* @bootstrap docs */
@@ -53,6 +54,9 @@ $btn-spacer: 0.5rem !default;
 
 .btn {
   --#{$prefix}btn-spacer: #{$btn-spacer};
+  --#{$prefix}btn-border-color: var(--#{$prefix}border-color);
+  --#{$prefix}btn-hover-border-color: var(--#{$prefix}border-color);
+  --#{$prefix}btn-hover-box-shadow: #{$btn-hover-box-shadow};
 
   .icon {
     margin: 0 4px;
@@ -64,6 +68,10 @@ $btn-spacer: 0.5rem !default;
     &:not(:first-child) {
       margin-left: var(--#{$prefix}btn-spacer);
     }
+  }
+
+  &:hover {
+    box-shadow: var(-#{$prefix}btn-hover-box-shadow);
   }
 
   &.expanded {
@@ -101,7 +109,7 @@ $btn-spacer: 0.5rem !default;
       --#{$prefix}btn-border-color: var(--#{$prefix}#{$name}-border-subtle);
 
       // hover style
-      --#{$prefix}btn-hover-color: #{color-contrast($color)};
+      --#{$prefix}btn-hover-color: var(--#{$prefix}#{$name}-contrast);
       --#{$prefix}btn-hover-bg: var(--#{$prefix}#{$name});
       --#{$prefix}btn-hover-border-color: var(--#{$prefix}#{$name});
     }
@@ -110,17 +118,4 @@ $btn-spacer: 0.5rem !default;
 
 .btn:not(:last-child):not(.btn-expanded) {
   margin-right: var(--#{$prefix}btn-spacer);
-}
-
-.btn:not(.btn-primary):not(.btn-secondary):not(.btn-success):not(
-    .btn-danger
-  ):not(.btn-warning):not(.btn-info):not(.btn-dark):not(.btn-light):not(
-    .btn-outline-primary
-  ):not(.btn-outline-secondary):not(.btn-outline-success):not(
-    .btn-outline-danger
-  ):not(.btn-outline-warning):not(.btn-outline-info):not(.btn-outline-dark):not(
-    .btn-outline-light
-  ) {
-  --#{$prefix}btn-border-color: var(--#{$prefix}border-color);
-  --#{$prefix}btn-hover-border-color: var(--#{$prefix}border-color);
 }

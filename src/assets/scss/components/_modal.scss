@@ -58,7 +58,7 @@ html.modal-open {
     pointer-events: all;
 
     &.fullscreen {
-      --bs-modal-width: 100%;
+      --#{$prefix}modal-width: 100%;
       width: 100%;
     }
 

@@ -65,13 +65,16 @@ $dropdown-menu-zindex: $zindex-modal !default;
 
   &.dropdown-modal {
     .dropdown-menu {
+      --#{$prefix}dropdown-width: 75%;
+      --#{$prefix}dropdown-min-width: 50%;
+      --#{$prefix}dropdown-max-width: 90%;
       --#{$prefix}dropdown-zindex: #{$dropdown-menu-zindex};
       position: fixed;
       top: 25%;
       left: 50%;
-      width: 80%;
-      max-width: 90%;
-      min-width: 70%;
+      width: var(--#{$prefix}dropdown-width);
+      max-width: var(--#{$prefix}dropdown-max-width);
+      min-width: var(--#{$prefix}dropdown-min-width);
       transform: translate3d(-50%, -25%, 0);
       z-index: var(--#{$prefix}dropdown-zindex);
     }

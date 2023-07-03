@@ -505,7 +505,7 @@ export const bootstrapConfig: any = {
       rootClass: "select",
       selectClass: "form-select",
     },
-    separatorClass: "is-colon",
+    separatorClass: "separator",
     footerClass: "timepicker-footer",
     sizeClass: "is-",
   },

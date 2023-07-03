@@ -45,8 +45,13 @@ $sidebar-reduced-height: 10vh !default;
       top: 0.5rem;
     }
 
-    // Colors
-    @include variant-text-bg();
+    // Color variants
+    @each $name, $color in $theme-colors {
+      &.variant-#{$name} {
+        --#{$prefix}offcanvas-color: var(--#{$prefix}#{$name}-contrast);
+        --#{$prefix}offcanvas-bg: var(--#{$prefix}#{$name});
+      }
+    }
 
     &.fullwidth {
       --#{$prefix}offcanvas-width: 100%;

@@ -51,8 +51,13 @@ $taginput-counter-font-size: 0.75rem !default;
       background: var(--#{$prefix}badge-bg);
       margin: var(--#{$prefix}badge-margin);
 
-      // Colors
-      @include variant-text-bg();
+      // Color variants
+      @each $name, $color in $theme-colors {
+        &.variant-#{$name} {
+          --#{$prefix}badge-color: var(--#{$prefix}#{$name}-contrast);
+          --#{$prefix}badge-bg: var(--#{$prefix}#{$name});
+        }
+      }
 
       .icon {
         margin-left: var(--#{$prefix}badge-icon-space);
