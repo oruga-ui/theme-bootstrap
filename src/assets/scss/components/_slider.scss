@@ -136,7 +136,6 @@ $slider-tick-bg: var(--bs-gray) !default;
       }
     }
 
-    // tick
     .slider-tick {
       --#{$prefix}slider-tick-width: #{$slider-tick-width};
       --#{$prefix}slider-tick-height: #{$slider-tick-height};

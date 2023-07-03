@@ -69,6 +69,7 @@ $dropdown-menu-zindex: $zindex-modal !default;
       --#{$prefix}dropdown-min-width: 50%;
       --#{$prefix}dropdown-max-width: 90%;
       --#{$prefix}dropdown-zindex: #{$dropdown-menu-zindex};
+
       position: fixed;
       top: 25%;
       left: 50%;
@@ -83,6 +84,7 @@ $dropdown-menu-zindex: $zindex-modal !default;
       --#{$prefix}backdrop-bg: #{$modal-backdrop-bg};
       --#{$prefix}backdrop-zindex: #{$zindex-modal-backdrop};
       --#{$prefix}backdrop-opacity: #{$modal-backdrop-opacity};
+
       position: fixed;
       top: 0;
       left: 0;
