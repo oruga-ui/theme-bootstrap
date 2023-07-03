@@ -174,21 +174,21 @@ $input-icon-right-position: 0.75rem !default;
       right: $input-icon-right-position;
     }
 
-    &.is-small {
+    &.size-small {
       &.icon-left,
       &.icon-right {
         top: 15px;
       }
     }
 
-    &.is-medium {
+    &.size-medium {
       &.icon-left,
       &.icon-right {
         top: 17px;
       }
     }
 
-    &.is-large {
+    &.size-large {
       &.icon-left,
       &.icon-right {
         top: 8px;
