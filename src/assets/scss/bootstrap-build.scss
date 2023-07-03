@@ -1,9 +1,13 @@
-// import bootstrap scss functions
+// import bootstrap scss required imports
 @import "../node_modules/bootstrap/scss/functions";
 @import "../node_modules/bootstrap/scss/mixins";
+@import "../node_modules/bootstrap/scss/variables";
+
+// include custom theme variables
+@import "./components/utils/variables";
 
 // import bootstrap scss
 @import "../node_modules/bootstrap/scss/bootstrap";
 
 // import oruga theme scss
-@import "bootstrap";
+@import "./bootstrap";

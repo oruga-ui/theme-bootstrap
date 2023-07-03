@@ -1,11 +1,5 @@
 @use "sass:map";
 
-// enable css variables of sass properties
-$css-vars: true !default;
-// Most CSS variables use a prefix to avoid collisions with your own codebase.
-// This prefix is in addition to the -- that’s required on every CSS variable.
-$variable-prefix: $prefix;
-
 $speed-slow: 150ms !default;
 $speed-slower: 250ms !default;
 $easing: ease !default;
@@ -19,10 +13,13 @@ $sizes: (
   "x-large": 2rem,
 ) !default;
 
-// Colors
-$gray: $gray-400 !default;
+// Adding aditional gray-light color to colors map
+$custom-colors: (
+  "gray-light": $gray-400,
+);
+$colors: map.merge($colors, $custom-colors);
 
-// these color theme maps are available:
+// these theme color maps are available:
 // - $theme-colors                -> var(--#{$prefix}#{$name});
 // - $theme-colors-text           -> var(--#{$prefix}#{$name}-text-emphasis);
 // - $theme-colors-rgb            -> var(--#{$prefix}#{$name}-rgb);
