@@ -2,7 +2,9 @@
 $carousel-control-top: 50% !default;
 $carousel-overlay-background: rgba(0, 0, 0, 0.8) !default;
 $carousel-overlay-zindex: $zindex-fixed !default;
-$carousel-indicator-bg: $primary !default;
+$carousel-indicator-bg: $secondary !default;
+$carousel-indicator-size: 10px !default;
+$carousel-indicator-space: $spacer !default;
 /* docs */
 
 /* @bootstrap docs */
@@ -36,6 +38,12 @@ $carousel-indicator-bg: $primary !default;
 /* @bootstrap docs */
 
 .carousel-wrapper {
+  --#{$prefix}carousel-control-top: #{$carousel-control-top};
+  --#{$prefix}carousel-overlay-background: #{$carousel-overlay-background};
+  --#{$prefix}carousel-overlay-zindex: #{$carousel-overlay-zindex};
+  --#{$prefix}carousel-indicator-bg: #{$carousel-indicator-bg};
+  --#{$prefix}carousel-indicator-size: #{$carousel-indicator-size};
+  --#{$prefix}carousel-indicator-space: #{$carousel-indicator-size};
   -webkit-touch-callout: none;
   -webkit-user-select: none;
   -moz-user-select: none;
@@ -46,18 +54,18 @@ $carousel-indicator-bg: $primary !default;
   width: 100%;
 
   &.carousel-overlay {
+    position: fixed;
     bottom: 0;
     left: 0;
     right: 0;
     top: 0;
+    display: flex;
     align-items: center;
     flex-direction: column;
     justify-content: center;
     max-height: 100vh;
-    position: fixed;
-    background-color: $carousel-overlay-background;
-    z-index: $carousel-overlay-zindex;
-    display: flex;
+    background-color: var(--#{$prefix}carousel-overlay-background);
+    z-index: var(--#{$prefix}carousel-overlay-zindex);
 
     .carousel-indicator.has-background {
       background: transparent;
@@ -87,34 +95,65 @@ $carousel-indicator-bg: $primary !default;
 
   .carousel-indicators {
     .carousel-indicator {
-      box-sizing: content-box;
       flex: 0 1 auto;
       padding: 0;
-      margin-right: $carousel-indicator-spacer;
-      margin-left: $carousel-indicator-spacer;
-      text-indent: -999px;
+      box-sizing: content-box;
+      margin-right: var(
+        --#{$prefix}carousel-indicator-spacer,
+        $carousel-indicator-spacer
+      );
+      margin-left: var(
+        --#{$prefix}carousel-indicator-spacer,
+        $carousel-indicator-spacer
+      );
       cursor: pointer;
       border: 0;
-      border-top: $carousel-indicator-hit-area-height solid transparent;
-      border-bottom: $carousel-indicator-hit-area-height solid transparent;
+      border-top: var(
+          --#{$prefix}carousel-indicator-hit-area-height,
+          $carousel-indicator-hit-area-height
+        )
+        solid transparent;
+      border-bottom: var(
+          --#{$prefix}carousel-indicator-hit-area-height,
+          $carousel-indicator-hit-area-height
+        )
+        solid transparent;
 
       & > .carousel-indicator-item {
         display: block;
-        background-color: $carousel-indicator-active-bg;
+        background-color: var(
+          --#{$prefix}carousel-indicator-active-bg,
+          $carousel-indicator-active-bg
+        );
         background-clip: padding-box;
-        opacity: $carousel-indicator-opacity;
-        transition: $carousel-indicator-transition;
-        width: $carousel-indicator-width;
-        height: $carousel-indicator-height;
+        opacity: var(
+          --#{$prefix}carousel-indicator-opacity,
+          $carousel-indicator-opacity
+        );
+        transition: var(
+          --#{$prefix}carousel-indicator-transition,
+          $carousel-indicator-transition
+        );
+        width: var(
+          --#{$prefix}carousel-indicator-width,
+          $carousel-indicator-width
+        );
+        height: var(
+          --#{$prefix}carousel-indicator-height,
+          $carousel-indicator-height
+        );
 
         &.active {
-          opacity: $carousel-indicator-active-opacity;
+          opacity: var(
+            --#{$prefix}carousel-indicator-active-opacity,
+            $carousel-indicator-active-opacity
+          );
         }
 
         &.indicator-dots,
         &.indicator-boxes {
-          height: 10px;
-          width: 10px;
+          height: var(--#{$prefix}carousel-indicator-size);
+          width: var(--#{$prefix}carousel-indicator-size);
         }
 
         &.indicator-dots {
@@ -127,7 +166,10 @@ $carousel-indicator-bg: $primary !default;
       position: relative;
 
       .carousel-indicator > .carousel-indicator-item {
-        background-color: $carousel-indicator-bg;
+        background-color: var(
+          --#{$prefix}carousel-indicator-bg,
+          $carousel-indicator-bg
+        );
       }
     }
 
@@ -137,13 +179,13 @@ $carousel-indicator-bg: $primary !default;
       &.is-bottom {
         bottom: 0;
         top: unset;
-        margin-bottom: 1rem;
+        margin-bottom: var(--#{$prefix}carousel-indicator-space);
       }
 
       &.is-top {
         top: 0;
         bottom: unset;
-        margin-top: 1rem;
+        margin-top: var(--#{$prefix}carousel-indicator-space);
       }
     }
   }
@@ -151,11 +193,11 @@ $carousel-indicator-bg: $primary !default;
   .carousel-control-next-icon,
   .carousel-control-prev-icon {
     cursor: pointer;
-    top: $carousel-control-top;
     -webkit-transform: translateY(-50%);
     -ms-transform: translateY(-50%);
     transform: translateY(-50%);
-    width: $carousel-control-width;
+    top: var(--#{$prefix}carousel-control-top);
+    width: var(--#{$prefix}carousel-control-width, $carousel-control-width);
 
     i {
       visibility: hidden;

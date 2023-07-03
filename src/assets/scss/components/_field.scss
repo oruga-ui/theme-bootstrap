@@ -1,6 +1,6 @@
 /* @docs */
-$input-field-grouped-margin-right: 0.5rem !default;
-$input-field-margin-bottom: 0.75rem !default;
+$input-field-grouped-spacer: 0.5rem !default;
+$input-field-margin-bottom: $spacer !default;
 $input-field-btn-border-color: $input-border-color !default;
 /* @docs */
 
@@ -50,7 +50,11 @@ $input-field-btn-border-color: $input-border-color !default;
 }
 
 .input-field {
-  margin-bottom: $input-field-margin-bottom;
+  --#{$prefix}input-field-grouped-spacer: #{$input-field-grouped-spacer};
+  --#{$prefix}input-field-margin-bottom: #{$input-field-margin-bottom};
+  --#{$prefix}input-field-btn-border-color: #{$input-border-color};
+
+  margin-bottom: var(--#{$prefix}input-field-margin-bottom);
 
   &.row > div {
     @extend .col;
@@ -135,7 +139,7 @@ $input-field-btn-border-color: $input-border-color !default;
     & > .btn:not(:last-child),
     & > button:not(:last-child),
     & > .input-field:not(:last-child) {
-      margin-right: $input-field-grouped-margin-right;
+      margin-right: var(--#{$prefix}input-field-grouped-spacer);
     }
   }
 }

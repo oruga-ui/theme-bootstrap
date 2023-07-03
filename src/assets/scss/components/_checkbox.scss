@@ -66,12 +66,12 @@
 
 .form-check {
   // Color variants
-  @each $name, $variant in $theme-colors {
+  @each $name, $color in $theme-colors {
     &.variant-#{$name} {
       input[type="radio"],
       input[type="checkbox"] {
-        background-color: $variant;
-        border-color: $variant;
+        background-color: ar(--#{$prefix}#{$name});
+        border-color: ar(--#{$prefix}#{$name});
       }
     }
   }

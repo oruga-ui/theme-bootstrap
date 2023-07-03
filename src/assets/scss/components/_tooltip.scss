@@ -174,7 +174,7 @@ $tootlip-zindex: $zindex-tooltip;
 
   &.dashed {
     .tooltip-content {
-      border-bottom: 1px dashed $gray;
+      border-bottom: 1px dashed var(--bs-gray-light);
     }
   }
 

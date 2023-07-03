@@ -1,17 +1,9 @@
 /* @docs */
 $icon-spin-animation-name: spining !default;
-$icon-spin-animation-duration: 2000ms !default;
-$icon-spin-adnimation-speed: $spinner-animation-speed !default;
-$icon-spin-animation-iteration-count: infinite !default;
-$icon-spin-animation-timing-function: linear !default;
+$icon-spin-animation-duration: 1.5s !default;
 /* @docs */
 
 @keyframes spining {
-  from {
-    -webkit-transform: rotate(0deg);
-    transform: rotate(0deg);
-  }
-
   to {
     -webkit-transform: rotate(360deg);
     transform: rotate(360deg);
@@ -25,10 +17,10 @@ $icon-spin-animation-timing-function: linear !default;
   transition: transform 150ms ease-out, opacity 0.3s ease-out;
 
   &.spin {
+    --#{$prefix}spin-animation-name: #{$icon-spin-animation-name};
+    --#{$prefix}spin-animation-speed: #{$icon-spin-animation-duration};
     display: inline-block;
-    animation-name: $icon-spin-animation-name;
-    animation-duration: $icon-spin-animation-duration;
-    animation-iteration-count: $icon-spin-animation-iteration-count;
-    animation-timing-function: $icon-spin-animation-timing-function;
+    animation: var(--#{$prefix}spin-animation-speed) linear infinite
+      var(--#{$prefix}spin-animation-name);
   }
 }

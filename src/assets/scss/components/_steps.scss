@@ -1,7 +1,7 @@
 /* @docs */
 $steps-items-focused-outline: none !default;
 $steps-details-background-color: white !default;
-$steps-marker-default-background-color: $gray !default;
+$steps-marker-default-background-color: var(--bs-gray-light) !default;
 $steps-marker-default-border: 0.1em solid #fff !default;
 $steps-previous-background-color: $primary !default;
 $steps-active-background-color: $primary !default;

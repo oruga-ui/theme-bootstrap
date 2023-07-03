@@ -1,8 +1,7 @@
 @use "sass:map";
 
 /* @docs */
-$btn-margin-right: 0.5rem !default;
-$btn-border-default: 0.1px solid var(--bs-border-color) !default;
+$btn-spacer: 0.5rem !default;
 /* @docs */
 
 /* @bootstrap docs */
@@ -53,15 +52,17 @@ $btn-border-default: 0.1px solid var(--bs-border-color) !default;
 /* @bootstrap docs */
 
 .btn {
+  --#{$prefix}btn-spacer: #{$btn-spacer};
+
   .icon {
     margin: 0 4px;
 
     &:not(:last-child) {
-      margin-right: $btn-margin-right;
+      margin-right: var(--#{$prefix}btn-spacer);
     }
 
     &:not(:first-child) {
-      margin-left: $btn-margin-right;
+      margin-left: var(--#{$prefix}btn-spacer);
     }
   }
 
@@ -80,33 +81,35 @@ $btn-border-default: 0.1px solid var(--bs-border-color) !default;
     &.variant-#{$name}-inverted,
     &.btn-inverted-#{$name} {
       // default style
-      --bs-btn-color: var(--#{$prefix}#{$name});
-      --bs-btn-bg: transparent;
-      --bs-btn-border-color: transparent;
+      --#{$prefix}btn-color: var(--#{$prefix}#{$name});
+      --#{$prefix}btn-bg: transparent;
+      --#{$prefix}btn-border-color: transparent;
 
       // hover style
-      --bs-btn-hover-color: var(--#{$prefix}#{$name});
-      --bs-btn-hover-bg: var(--#{$prefix}#{$name}-bg-subtle);
-      --bs-btn-hover-border-color: var(--#{$prefix}#{$name}-border-subtle);
+      --#{$prefix}btn-hover-color: var(--#{$prefix}#{$name});
+      --#{$prefix}btn-hover-bg: var(--#{$prefix}#{$name}-bg-subtle);
+      --#{$prefix}btn-hover-border-color: var(
+        --#{$prefix}#{$name}-border-subtle
+      );
     }
 
     &.variant-#{$name}-subtle,
     &.btn-#{$name}-subtle {
       // default style
-      --bs-btn-color: var(--#{$prefix}#{$name});
-      --bs-btn-bg: var(--#{$prefix}#{$name}-bg-subtle);
-      --bs-btn-border-color: var(--#{$prefix}#{$name}-border-subtle);
+      --#{$prefix}btn-color: var(--#{$prefix}#{$name});
+      --#{$prefix}btn-bg: var(--#{$prefix}#{$name}-bg-subtle);
+      --#{$prefix}btn-border-color: var(--#{$prefix}#{$name}-border-subtle);
 
       // hover style
-      --bs-btn-hover-color: #{color-contrast($color)};
-      --bs-btn-hover-bg: var(--#{$prefix}#{$name});
-      --bs-btn-hover-border-color: var(--#{$prefix}#{$name});
+      --#{$prefix}btn-hover-color: #{color-contrast($color)};
+      --#{$prefix}btn-hover-bg: var(--#{$prefix}#{$name});
+      --#{$prefix}btn-hover-border-color: var(--#{$prefix}#{$name});
     }
   }
 }
 
 .btn:not(:last-child):not(.btn-expanded) {
-  margin-right: $btn-margin-right;
+  margin-right: var(--#{$prefix}btn-spacer);
 }
 
 .btn:not(.btn-primary):not(.btn-secondary):not(.btn-success):not(
@@ -118,5 +121,5 @@ $btn-border-default: 0.1px solid var(--bs-border-color) !default;
   ):not(.btn-outline-warning):not(.btn-outline-info):not(.btn-outline-dark):not(
     .btn-outline-light
   ) {
-  border: $btn-border-default;
+  --#{$prefix}btn-border-color: var(--#{$prefix}border-color);
 }
