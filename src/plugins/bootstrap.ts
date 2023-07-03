@@ -124,12 +124,12 @@ export const bootstrapConfig: any = {
   inputitems: {
     override: true,
     rootClass: (_: string, { props }: any) => {
-      const classes = ["taginput"];
+      const classes = ["taginput-wrapper"];
       if (props.disabled) classes.push("disabled");
       return classes.join(" ");
     },
     containerClass: (_: string, { props }: any) => {
-      const classes = ["taginput-wrapper", "focus-ring"];
+      const classes = ["taginput", "focus-ring"];
       if (props.variant) classes.push(`focus-ring-${props.variant}`);
       return classes.join(" ");
     },
@@ -294,7 +294,6 @@ export const bootstrapConfig: any = {
       if (props.labelPosition === "right") classes.push("label-right");
       return classes.join(" ");
     },
-    itemClass: "step-link",
     itemHeaderClass: "step-item",
     itemHeaderVariantClass: "variant-",
     itemHeaderActiveClass: "active",
@@ -307,10 +306,11 @@ export const bootstrapConfig: any = {
     stepMarkerRoundedClass: "rounded-pill",
     stepNavigationClass: "step-navigation",
     stepContentClass: "step-content",
+    itemClass: "step-item",
     positionClass: "is-",
-    stepContentTransitioningClass: "transition",
     sizeClass: "size-",
     variantClass: "variant-",
+    stepContentTransitioningClass: "transition",
   },
   button: {
     override: true,

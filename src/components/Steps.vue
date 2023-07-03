@@ -99,7 +99,7 @@ const size = ref(null);
       :icon-next="nextIcon"
       :label-position="labelPosition">
       <o-step-item step="1" label="Account" :clickable="isStepsClickable">
-        <h1 class="title has-text-centered">Account</h1>
+        <h1 class="title text-center">Account</h1>
         Lorem ipsum dolor sit amet.
       </o-step-item>
 
@@ -108,7 +108,7 @@ const size = ref(null);
         label="Profile"
         :clickable="isStepsClickable"
         :variant="isProfileSuccess ? 'success' : ''">
-        <h1 class="title has-text-centered">Profile</h1>
+        <h1 class="title text-center">Profile</h1>
         Lorem ipsum dolor sit amet.
       </o-step-item>
 
@@ -117,7 +117,7 @@ const size = ref(null);
         :visible="showSocial"
         label="Social"
         :clickable="isStepsClickable">
-        <h1 class="title has-text-centered">Social</h1>
+        <h1 class="title text-center">Social</h1>
         Lorem ipsum dolor sit amet.
       </o-step-item>
 
@@ -126,7 +126,7 @@ const size = ref(null);
         label="Finish"
         :clickable="isStepsClickable"
         disabled>
-        <h1 class="title has-text-centered">Finish</h1>
+        <h1 class="title text-center">Finish</h1>
         Lorem ipsum dolor sit amet.
       </o-step-item>
 

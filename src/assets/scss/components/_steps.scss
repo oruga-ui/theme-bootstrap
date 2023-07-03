@@ -1,11 +1,13 @@
 /* @docs */
-$steps-items-focused-outline: none !default;
-$steps-details-background-color: white !default;
-$steps-marker-default-background-color: var(--bs-gray-light) !default;
-$steps-marker-default-border: 0.1em solid #fff !default;
-$steps-previous-background-color: $primary !default;
-$steps-active-background-color: $primary !default;
+$steps-marker-bg: var(--bs-gray-light) !default;
+$steps-marker-border: $white !default;
+$steps-marker-color: $white;
+$steps-color-active: $primary;
+$steps-title-color: $dark;
+$steps-title-bg: $white !default;
 $steps-divider-height: 0.2em !default;
+$steps-content-spacer: 1rem !default;
+$steps-content-padding: 1rem !default;
 $steps-vertical-padding: 1em 0 !default;
 /* @docs */
 
@@ -26,46 +28,75 @@ $steps-vertical-padding: 1em 0 !default;
     }
   }
 }
+@mixin steps-color($color) {
+  &.previous {
+    &::before,
+    &::after {
+      background-color: $color;
+    }
+
+    .step-marker {
+      --#{$prefix}steps-marker-bg: #{$color};
+      --#{$prefix}steps-marker-border: #{$color};
+      --#{$prefix}steps-marker-color: #{$white};
+    }
+  }
+
+  &.active {
+    &::before,
+    &::after {
+      background-color: $color;
+    }
+
+    .step-marker {
+      --#{$prefix}steps-marker-bg: #{$white};
+      --#{$prefix}steps-marker-border: #{$color};
+      --#{$prefix}steps-marker-color: #{$color};
+    }
+  }
+}
 
 .steps-wrapper {
   .steps {
+    --#{$prefix}steps-divider-height: #{$steps-divider-height};
+    --#{$prefix}steps-title-bg: #{$steps-title-bg};
+    --#{$prefix}steps-title-color: #{$steps-title-color};
+    --#{$prefix}steps-marker-bg: #{$steps-marker-bg};
+    --#{$prefix}steps-marker-border: #{$steps-marker-border};
+    --#{$prefix}steps-marker-color: #{$steps-marker-color};
+
+    position: relative;
     display: flex;
     flex-wrap: wrap;
-    position: relative;
 
     .step-item {
-      margin-top: 0;
       position: relative;
       flex-grow: 1;
       flex-basis: 1em;
 
       .step-link {
-        text-decoration: none;
         display: flex;
         align-items: center;
         justify-content: center;
         flex-direction: column;
-        color: $body-color;
+        text-decoration: none;
 
-        &:not(.clickable) {
-          cursor: not-allowed;
+        &.clickable .step-marker {
+          cursor: pointer;
         }
       }
 
       .step-marker {
         display: flex;
-        font-weight: 700;
         justify-content: center;
-        background: $steps-marker-default-background-color;
-        border: $steps-marker-default-border;
-        padding: 0.1em;
-        margin: 0 auto;
-        text-align: center;
         align-items: center;
-        color: white;
-        z-index: 1;
+        text-align: center;
+        background: var(--#{$prefix}steps-marker-bg);
+        border: 1px solid var(--#{$prefix}steps-marker-border);
+        color: var(--#{$prefix}steps-marker-color);
+        margin: 0 auto;
+        font-weight: 700;
         overflow: hidden;
-        cursor: pointer;
 
         .icon {
           margin: 0;
@@ -73,8 +104,17 @@ $steps-vertical-padding: 1em 0 !default;
       }
 
       .step-title {
-        color: $dark;
+        color: var(--#{$prefix}steps-title-color);
         text-align: center;
+      }
+
+      &::before,
+      &::after {
+        // This will contain the divider
+        background: var(--#{$prefix}steps-marker-bg);
+        background-size: 200% 100%;
+        background-position: right bottom;
+        height: var(--#{$prefix}steps-divider-height);
       }
 
       &:not(:first-child),
@@ -94,6 +134,12 @@ $steps-vertical-padding: 1em 0 !default;
       }
 
       &:only-child {
+        &::before,
+        &::after {
+          width: 25%;
+          left: 50%;
+        }
+
         &::after {
           // This will contain the divider
           content: " ";
@@ -103,80 +149,19 @@ $steps-vertical-padding: 1em 0 !default;
           height: 3px;
         }
 
-        &::before,
-        &::after {
-          width: 25%;
-          left: 50%;
-        }
-
         &::before {
           right: 50%;
           left: auto;
         }
       }
 
-      &::before,
-      &::after {
-        background: $steps-marker-default-background-color;
-        background-size: 200% 100%;
-        background-position: right bottom;
-        height: 3px;
-      }
-
-      &.previous {
-        &::before,
-        &::after {
-          background-color: $primary;
-        }
-
-        .step-marker {
-          background-color: $primary;
-          border-color: $primary;
-          color: white;
-        }
-      }
-
-      &.active {
-        &::before,
-        &::after {
-          background-color: $primary;
-        }
-
-        .step-marker {
-          background-color: white;
-          border-color: $primary;
-          color: $primary;
-        }
-      }
+      // Colors default variants
+      @include steps-color($steps-color-active);
 
       // Colors variants
-      @each $name, $pair in $theme-colors {
+      @each $name, $color in $theme-colors {
         &.variant-#{$name} {
-          &.previous {
-            &::before,
-            &::after {
-              background-color: $pair;
-            }
-
-            .step-marker {
-              background-color: $pair;
-              border-color: $pair;
-              color: white;
-            }
-          }
-
-          &.active {
-            &::before,
-            &::after {
-              background-color: $pair;
-            }
-
-            .step-marker {
-              background-color: white;
-              border-color: $pair;
-              color: $pair;
-            }
-          }
+          @include steps-color($color);
         }
       }
     }
@@ -206,7 +191,7 @@ $steps-vertical-padding: 1em 0 !default;
           flex-direction: row;
 
           > .step-title {
-            background-color: $steps-details-background-color;
+            background: var(--#{$prefix}steps-title-bg);
             padding: 0.2em;
           }
         }
@@ -222,44 +207,34 @@ $steps-vertical-padding: 1em 0 !default;
         .step-link {
           flex-direction: row-reverse;
         }
-
-        .step-marker {
-          margin: 0;
-        }
       }
     }
   }
 
-  // Sizes
+  // Default size
   @include steps-size(1em);
 
-  @each $name, $value in $sizes {
+  // Sizes
+  @each $name, $size in $sizes {
     &.size-#{$name} {
-      @include steps-size($value);
+      @include steps-size($size);
     }
   }
 
   .step-content {
-    margin-top: 1rem;
+    --#{$prefix}steps-content-spacer: #{$steps-content-spacer};
+    --#{$prefix}steps-content-padding: #{$steps-content-padding};
+
     position: relative;
-    overflow: visible;
     display: flex;
     flex-direction: column;
-    padding: 1rem;
-
-    .step-link {
-      .title {
-        text-align: center;
-      }
-    }
+    overflow: visible;
+    margin-top: var(--#{$prefix}steps-content-spacer);
+    padding: var(--#{$prefix}steps-content-padding);
 
     .step-item {
       flex-shrink: 0;
       flex-basis: auto;
-
-      &:focus {
-        outline: $steps-items-focused-outline;
-      }
     }
 
     &.transition {
@@ -268,6 +243,8 @@ $steps-vertical-padding: 1em 0 !default;
   }
 
   &.vertical {
+    --#{$prefix}steps-vertical-padding: #{$steps-vertical-padding};
+
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -276,14 +253,19 @@ $steps-vertical-padding: 1em 0 !default;
       flex-direction: column;
 
       .step-item {
-        width: 100%;
         display: flex;
         align-items: center;
         justify-content: center;
-        padding: $steps-vertical-padding;
+        width: 100%;
+        padding: var(--#{$prefix}steps-vertical-padding);
 
         .step-title {
-          background-color: $steps-details-background-color;
+          background: var(--#{$prefix}steps-title-bg);
+        }
+
+        &::before,
+        &::after {
+          height: 100%;
         }
 
         &:not(:first-child),
@@ -303,11 +285,6 @@ $steps-vertical-padding: 1em 0 !default;
             height: 100%;
           }
         }
-
-        &::before,
-        &::after {
-          height: 100%;
-        }
       }
 
       &.label-right {
@@ -319,16 +296,6 @@ $steps-vertical-padding: 1em 0 !default;
       &.label-left {
         .step-item {
           justify-content: flex-end;
-        }
-      }
-
-      &:not(.label-right):not(.label-left) {
-        .step-item {
-          .step-link {
-            > .step-title {
-              background-color: $steps-details-background-color;
-            }
-          }
         }
       }
     }

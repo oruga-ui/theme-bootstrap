@@ -1,3 +1,7 @@
+/* @docs */
+$dropdown-menu-zindex: $zindex-modal !default;
+/* @docs */
+
 /* @bootstrap docs */
 // $dropdown-min-width:                10rem;
 // $dropdown-padding-x:                0;
@@ -54,14 +58,14 @@
   }
 
   &.inline .dropdown-menu {
-    --bs-dropdown-zindex: 10;
+    --#{$prefix}dropdown-zindex: 10;
     position: relative;
     top: 0;
   }
 
   &.dropdown-modal {
     .dropdown-menu {
-      z-index: $zindex-modal;
+      --#{$prefix}dropdown-zindex: #{$dropdown-menu-zindex};
       position: fixed;
       top: 25%;
       left: 50%;
@@ -69,20 +73,21 @@
       max-width: 90%;
       min-width: 70%;
       transform: translate3d(-50%, -25%, 0);
+      z-index: var(--#{$prefix}dropdown-zindex);
     }
 
     .dropdown-backdrop {
-      --bs-backdrop-bg: #{$modal-backdrop-bg};
-      --bs-backdrop-zindex: #{$zindex-modal-backdrop};
-      --bs-backdrop-opacity: #{$modal-backdrop-opacity};
+      --#{$prefix}backdrop-bg: #{$modal-backdrop-bg};
+      --#{$prefix}backdrop-zindex: #{$zindex-modal-backdrop};
+      --#{$prefix}backdrop-opacity: #{$modal-backdrop-opacity};
       position: fixed;
       top: 0;
       left: 0;
       width: 100vw;
       height: 100vh;
-      z-index: var(--bs-backdrop-zindex);
-      background-color: var(--bs-backdrop-bg);
-      opacity: var(--bs-backdrop-opacity);
+      z-index: var(--#{$prefix}backdrop-zindex);
+      background-color: var(--#{$prefix}backdrop-bg);
+      opacity: var(--#{$prefix}backdrop-opacity);
     }
   }
 

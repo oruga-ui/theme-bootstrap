@@ -109,8 +109,8 @@ $input-field-btn-border-color: $input-border-color !default;
     .btn:not(.btn-primary):not(.btn-secondary):not(.btn-info):not(
         .btn-danger
       ):not(.btn-success):not(.btn-warning):not(.btn-dark):not(.btn-light) {
-      --bs-btn-border-color: #{$input-field-btn-border-color};
-      --bs-btn-bg: #{$input-field-btn-border-color};
+      --#{$prefix}btn-border-color: #{$input-field-btn-border-color};
+      --#{$prefix}btn-bg: #{$input-field-btn-border-color};
     }
 
     .input {

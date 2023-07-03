@@ -18,7 +18,6 @@
       <router-link to="/field">Field</router-link>
       <router-link to="/icon">Icon</router-link>
       <router-link to="/input">Input</router-link>
-      <router-link to="/taginput">Taginput</router-link>
       <router-link to="/loading">Loading</router-link>
       <router-link to="/modal">Modal</router-link>
       <router-link to="/notification">Notification</router-link>
@@ -32,6 +31,7 @@
       <router-link to="/switch">Switch</router-link>
       <router-link to="/table">Table</router-link>
       <router-link to="/tabs">Tabs</router-link>
+      <router-link to="/taginput">Taginput</router-link>
       <router-link to="/timepicker">Timepicker</router-link>
       <router-link to="/tooltip">Tooltip</router-link>
       <router-link to="/upload">Upload</router-link>

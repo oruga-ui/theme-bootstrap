@@ -2,7 +2,7 @@
 
 /* @docs */
 $nav-tabs-color: var(--bs-body-color) !default;
-$nav-tabs-margin-bottom: 1rem !default;
+$nav-tabs-spacer: $spacer !default;
 $nav-tabs-disabled-opacity: 0.5 !default;
 /* @docs */
 
@@ -35,20 +35,24 @@ $nav-tabs-disabled-opacity: 0.5 !default;
 /* @bootstrap docs */
 
 .nav-tab-wrapper {
-  display: block;
-  overflow: hidden;
+  --#{$prefix}nav-tabs-spacer: #{$nav-tabs-spacer};
+  --#{$prefix}nav-tabs-disabled-opacity: #{$nav-tabs-disabled-opacity};
 
   .nav {
-    margin-bottom: $nav-tabs-margin-bottom;
+    margin-bottom: var(--#{$prefix}nav-tabs-spacer);
 
     .nav-link {
+      .icon {
+        margin-right: 0.5em;
+      }
+
       &:not(.disabled) {
         cursor: pointer;
       }
 
       &.disabled {
         cursor: not-allowed;
-        opacity: $nav-tabs-disabled-opacity;
+        opacity: var(--#{$prefix}nav-tabs-disabled-opacity);
       }
     }
 
@@ -59,12 +63,17 @@ $nav-tabs-disabled-opacity: 0.5 !default;
     // style toggle / underline
     &.nav-unterline,
     &.nav-toggle {
+      --#{$prefix}nav-underline-link-active-bg: #{$nav-tabs-link-active-bg};
+      --#{$prefix}nav-underline-border-color: #{$nav-tabs-border-color};
+      --#{$prefix}nav-underline-link-active-color: #{$nav-tabs-link-active-color};
+      --#{$prefix}nav-underline-border-width: #{$nav-underline-border-width};
+
       .active {
-        background-color: $nav-tabs-link-active-bg;
-        border-color: $nav-tabs-border-color;
-        color: $nav-tabs-link-active-color;
+        background-color: var(--#{$prefix}nav-underline-link-active-bg);
+        border-color: var(--#{$prefix}nav-underline-border-color);
+        color: var(--#{$prefix}nav-underline-link-active-color);
         border-bottom: $nav-underline-border-width solid
-          $nav-tabs-link-active-color;
+          var(--#{$prefix}nav-underline-link-active-color);
       }
     }
 
@@ -76,11 +85,11 @@ $nav-tabs-disabled-opacity: 0.5 !default;
     // Sizes
     @each $name, $size in $sizes {
       &.size-#{$name} {
-        --bs-nav-link-font-size: #{$size};
-        --bs-nav-link-padding-x: #{calc(
+        --#{$prefix}nav-link-font-size: #{$size};
+        --#{$prefix}nav-link-padding-x: #{calc(
             $nav-link-padding-x * strip-unit($size)
           )};
-        --bs-nav-link-padding-y: #{calc(
+        --#{$prefix}nav-link-padding-y: #{calc(
             $nav-link-padding-y * strip-unit($size)
           )};
       }
@@ -97,6 +106,9 @@ $nav-tabs-disabled-opacity: 0.5 !default;
 
   // position vetical
   &.vertical {
+    --#{$prefix}nav-underline-border-width: #{$nav-underline-border-width};
+    --#{$prefix}nav-underline-border-color: #{$nav-tabs-border-color};
+
     display: flex;
     flex-direction: row;
 
@@ -104,20 +116,22 @@ $nav-tabs-disabled-opacity: 0.5 !default;
       display: block;
 
       &.nav-default .nav-link {
-        border-bottom: $nav-underline-border-width solid $nav-tabs-border-color;
+        border-bottom: var(--#{$prefix}nav-underline-border-width) solid
+          var(--#{$prefix}nav-underline-border-color);
         text-align: left;
       }
 
       &.nav-tabs {
         .nav-item:not(:has(+ [aria-selected="true"])) .nav-link {
-          border-bottom: 1px solid $nav-tabs-border-color;
+          border-bottom: var(--#{$prefix}nav-underline-border-width) solid
+            var(--#{$prefix}nav-underline-border-color);
         }
       }
     }
 
     &:not(.is-right) {
       .nav {
-        margin-right: $nav-tabs-margin-bottom;
+        margin-right: var(--#{$prefix}nav-tabs-spacer);
       }
     }
 
@@ -125,7 +139,7 @@ $nav-tabs-disabled-opacity: 0.5 !default;
       flex-direction: row-reverse;
 
       .nav {
-        margin-left: $nav-tabs-margin-bottom;
+        margin-left: var(--#{$prefix}nav-tabs-spacer);
       }
     }
 

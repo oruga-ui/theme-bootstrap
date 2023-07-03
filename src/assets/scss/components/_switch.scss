@@ -1,7 +1,7 @@
 @use "sass:map";
 
 /* @docs */
-$switch-margin-right: 0.5rem !default;
+$switch-spacer: 0.5rem !default;
 /* @docs */
 
 /* @bootstrap docs */
@@ -25,6 +25,8 @@ $switch-margin-right: 0.5rem !default;
 }
 
 .form-switch {
+  --#{$prefix}switch-spacer: #{$switch-spacer};
+
   position: relative;
 
   .switch {
@@ -32,7 +34,7 @@ $switch-margin-right: 0.5rem !default;
   }
 
   &:not(:last-child) {
-    margin-right: $switch-margin-right;
+    margin-right: var(--#{$prefix}switch-spacer);
   }
 
   // Variant
@@ -41,7 +43,7 @@ $switch-margin-right: 0.5rem !default;
       background-color: transparent;
       border-color: var(--#{$prefix}#{$name});
 
-      --bs-form-switch-bg: #{switchSVG(
+      --#{$prefix}form-switch-bg: #{switchSVG(
           $color,
           $form-switch-bg-image,
           $form-switch-color
@@ -49,7 +51,7 @@ $switch-margin-right: 0.5rem !default;
 
       &:checked {
         background-color: var(--#{$prefix}#{$name});
-        --bs-form-switch-bg: #{switchSVG(
+        --#{$prefix}form-switch-bg: #{switchSVG(
             $white,
             $form-switch-checked-bg-image,
             $form-switch-checked-color
@@ -72,7 +74,7 @@ $switch-margin-right: 0.5rem !default;
       background-color: transparent;
       border-color: var(--#{$prefix}#{$name}-border-subtle);
 
-      --bs-form-switch-bg: #{switchSVG(
+      --#{$prefix}form-switch-bg: #{switchSVG(
           $color,
           $form-switch-bg-image,
           $form-switch-color
@@ -80,7 +82,7 @@ $switch-margin-right: 0.5rem !default;
 
       &:checked {
         background-color: var(--#{$prefix}#{$name}-bg-subtle);
-        --bs-form-switch-bg: #{switchSVG(
+        --#{$prefix}form-switch-bg: #{switchSVG(
             $white,
             $form-switch-checked-bg-image,
             $form-switch-checked-color

@@ -122,4 +122,5 @@ $btn-spacer: 0.5rem !default;
     .btn-outline-light
   ) {
   --#{$prefix}btn-border-color: var(--#{$prefix}border-color);
+  --#{$prefix}btn-hover-border-color: var(--#{$prefix}border-color);
 }

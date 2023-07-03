@@ -43,23 +43,23 @@
 
 html.modal-open {
   overflow: hidden;
-  padding-right: 16px;
+  padding-right: 1rem;
 }
 
 .modal {
   display: flex;
 
   .modal-backdrop {
-    opacity: var(--bs-backdrop-opacity);
+    opacity: var(--#{$prefix}backdrop-opacity);
   }
 
   .modal-dialog {
+    z-index: var(--#{$prefix}modal-zindex);
     pointer-events: all;
-    z-index: $zindex-modal;
 
     &.fullscreen {
-      width: 100%;
       --bs-modal-width: 100%;
+      width: 100%;
     }
 
     &:not(.fullscreen) {
@@ -88,7 +88,7 @@ html.modal-open {
     }
 
     > .btn-close {
-      --bs-btn-close-opacity: 1;
+      --#{$prefix}btn-close-opacity: 1;
       position: fixed;
       top: 1.5rem;
       right: 1.5rem;

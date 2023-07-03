@@ -57,7 +57,7 @@ $notification-notices-space: 1.5rem !default;
   }
 
   // Colors variants
-  @each $name, $pair in $theme-colors {
+  @each $name, $color in $theme-colors {
     &.variant-#{$name} {
       @extend .alert-#{$name};
 
@@ -70,29 +70,33 @@ $notification-notices-space: 1.5rem !default;
 
 .toast {
   @extend .show;
-  margin-bottom: var(--bs-alert-margin-bottom);
   text-align: center;
   padding: $alert-padding-x $alert-padding-y;
+  margin-bottom: var(--#{$prefix}alert-margin-bottom);
 
   // Colors
   @include variant-text-bg();
 }
 
 .notifictations {
-  position: fixed;
+  --#{$prefix}notification-notices-padding: #{$notification-notices-padding};
+  --#{$prefix}notification-notices-zindex: #{$notification-notices-zindex};
+  --#{$prefix}notification-notices-max-width: #{$notification-notices-max-width};
+
   display: flex;
+  position: fixed;
   top: 0;
   bottom: 0;
   left: 0;
   right: 0;
   overflow: hidden;
   pointer-events: none;
-  padding: $notification-notices-padding;
-  z-index: $notification-notices-zindex;
+  padding: var(--#{$prefix}notification-notices-padding);
+  z-index: var(--#{$prefix}notification-notices-zindex);
 
   .alert {
     pointer-events: auto;
-    max-width: $notification-notices-max-width;
+    max-width: var(--#{$prefix}notification-notices-max-width);
 
     &.is-top,
     &.is-bottom {

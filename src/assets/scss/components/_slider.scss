@@ -2,7 +2,7 @@
 $slider-tick-width: 0.25rem !default;
 $slider-tick-height: 0.25rem !default;
 $slider-tick-radius: 50% !default;
-$slider-tick-background-color: var(--bs-gray) !default;
+$slider-tick-bg: var(--bs-gray) !default;
 /* @docs */
 
 /* @bootstrap docs */
@@ -27,26 +27,36 @@ $slider-tick-background-color: var(--bs-gray) !default;
 /* @bootstrap docs */
 
 .slider {
+  --#{$prefix}slider-width: #{$form-range-track-width};
+  --#{$prefix}slider-height: #{$form-range-track-height};
+  --#{$prefix}slider-border-radius: #{$form-range-track-border-radius};
+  --#{$prefix}slider-bg: #{$form-range-track-bg};
+  --#{$prefix}slider-cursor: #{$form-range-track-cursor};
+  --#{$prefix}slider-box-shadow: #{$form-range-track-box-shadow};
+  --#{$prefix}slider-disabled-bg: #{$form-range-thumb-disabled-bg};
+
   position: relative;
-  width: $form-range-track-width;
-  height: $form-range-track-height;
-  border-radius: $form-range-track-border-radius;
-  background-color: $form-range-track-bg;
-  cursor: $form-range-track-cursor;
-  box-shadow: $form-range-track-box-shadow;
+  width: var(--#{$prefix}slider-width);
+  height: var(--#{$prefix}slider-height);
+  border-radius: var(--#{$prefix}slider-border-radius);
+  background: var(--#{$prefix}slider-bg);
+  cursor: var(--#{$prefix}slider-cursor);
+  box-shadow: var(--#{$prefix}slider-box-shadow);
 
   .slider-track {
     display: flex;
     align-items: center;
-    box-shadow: $form-range-track-box-shadow;
+    box-shadow: var(--#{$prefix}slider-shadow);
 
     .slider-fill {
+      --#{$prefix}slider-track-border-radius: #{$form-range-track-border-radius};
+
       position: absolute;
       left: 0%;
       top: 50%;
       transform: translateY(-50%);
       height: 100%;
-      border-radius: $form-range-track-border-radius;
+      border-radius: var(--#{$prefix}slider-track-border-radius);
 
       // Colors
       @include variant-bg();
@@ -62,21 +72,29 @@ $slider-tick-background-color: var(--bs-gray) !default;
       cursor: grab;
 
       .slider-thumb {
-        height: $form-range-thumb-height;
-        width: $form-range-thumb-width;
-        background-color: $form-range-thumb-bg;
-        border: $form-range-thumb-border;
-        border-radius: $form-range-thumb-border-radius;
-        transition: $form-range-thumb-transition;
+        --#{$prefix}slider-thumb-width: #{$form-range-thumb-width};
+        --#{$prefix}slider-thumb-height: #{$form-range-thumb-height};
+        --#{$prefix}slider-thumb-border: #{$form-range-thumb-border};
+        --#{$prefix}slider-thumb-border-radius: #{$form-range-thumb-border-radius};
+        --#{$prefix}slider-thumb-bg: #{$form-range-thumb-bg};
+        --#{$prefix}slider-thumb-transition: #{$form-range-thumb-transition};
+        --#{$prefix}slider-thumb-box-shadow: #{$form-range-thumb-box-shadow};
+
+        width: var(--#{$prefix}slider-thumb-width);
+        height: var(--#{$prefix}slider-thumb-height);
+        background: var(--#{$prefix}slider-thumb-bg);
+        border: var(--#{$prefix}slider-thumb-border);
+        border-radius: var(--#{$prefix}slider-thumb-border-radius);
+        transition: var(--#{$prefix}slider-thumb-transition);
 
         // Colors
         @include variant-bg();
 
         &:active,
         &:hover {
-          box-shadow: var(--bs-focus-ring-x, 0) var(--bs-focus-ring-y, 0)
-            var(--bs-focus-ring-blur, 0) var(--bs-focus-ring-width)
-            var(--bs-focus-ring-color);
+          box-shadow: var(--#{$prefix}focus-ring-x, 0)
+            var(--#{$prefix}focus-ring-y, 0) var(--#{$prefix}focus-ring-blur, 0)
+            var(--#{$prefix}focus-ring-width) var(--#{$prefix}focus-ring-color);
         }
 
         &:active {
@@ -85,14 +103,16 @@ $slider-tick-background-color: var(--bs-gray) !default;
         }
 
         &:not(.focus-ring) {
-          box-shadow: $form-range-thumb-box-shadow;
+          box-shadow: var(--#{$prefix}slider-thumb-box-shadow);
         }
 
         &:focus {
+          --#{$prefix}slider-thumb-focus-box-shadow: #{$form-range-thumb-focus-box-shadow};
+
           transform: scale(1.2);
 
           &:not(.focus-ring) {
-            box-shadow: $form-range-thumb-focus-box-shadow;
+            box-shadow: var(--#{$prefix}slider-thumb-focus-box-shadow);
           }
         }
       }
@@ -108,13 +128,18 @@ $slider-tick-background-color: var(--bs-gray) !default;
 
     // tick
     .slider-tick {
+      --#{$prefix}slider-tick-width: #{$slider-tick-width};
+      --#{$prefix}slider-tick-height: #{$slider-tick-height};
+      --#{$prefix}slider-tick-bg: #{$slider-tick-bg};
+      --#{$prefix}slider-tick-radius: #{$slider-tick-radius};
+
       position: absolute;
-      width: $slider-tick-width;
-      height: $slider-tick-height;
-      transform: translate(-50%, -50%);
       top: 50%;
-      background: $slider-tick-background-color;
-      border-radius: $slider-tick-radius;
+      transform: translate(-50%, -50%);
+      width: var(--#{$prefix}slider-tick-width);
+      height: var(--#{$prefix}slider-tick-height);
+      background: var(--#{$prefix}slider-tick-bg);
+      border-radius: var(--#{$prefix}slider-tick-radius);
 
       &.tick-hidden {
         background: transparent;
@@ -130,7 +155,7 @@ $slider-tick-background-color: var(--bs-gray) !default;
   &.disabled {
     cursor: not-allowed;
     opacity: 0.5;
-    background-color: $form-range-thumb-disabled-bg;
+    background: var(--#{$prefix}slider-disabled-bg);
   }
 
   // Sizes

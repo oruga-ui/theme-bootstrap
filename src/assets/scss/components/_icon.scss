@@ -1,9 +1,8 @@
 /* @docs */
-$icon-spin-animation-name: spining !default;
 $icon-spin-animation-duration: 1.5s !default;
 /* @docs */
 
-@keyframes spining {
+@keyframes icon-spin {
   to {
     -webkit-transform: rotate(360deg);
     transform: rotate(360deg);
@@ -17,10 +16,12 @@ $icon-spin-animation-duration: 1.5s !default;
   transition: transform 150ms ease-out, opacity 0.3s ease-out;
 
   &.spin {
-    --#{$prefix}spin-animation-name: #{$icon-spin-animation-name};
-    --#{$prefix}spin-animation-speed: #{$icon-spin-animation-duration};
+    --#{$prefix}icon-spin-duration: #{$icon-spin-animation-duration};
+
     display: inline-block;
-    animation: var(--#{$prefix}spin-animation-speed) linear infinite
-      var(--#{$prefix}spin-animation-name);
+    animation-name: icon-spin;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+    animation-duration: var(--#{$prefix}icon-spin-duration);
   }
 }

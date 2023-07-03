@@ -115,36 +115,37 @@ const passive = ref(null);
         Label on left
       </o-switch>
     </o-field>
-
-    <o-field label="Variant">
-      <o-select v-model="variant" expanded placeholder="Variant">
-        <option value="null">Default</option>
-        <option value="primary">Primary</option>
-        <option value="secondary">Secondary</option>
-        <option value="success">Success</option>
-        <option value="info">Info</option>
-        <option value="warning">Warning</option>
-        <option value="danger">Danger</option>
-      </o-select>
-    </o-field>
-    <o-field label="Passive Variant">
-      <o-select v-model="passive" expanded placeholder="Passive Variant">
-        <option value="null">Default</option>
-        <option value="primary">Primary</option>
-        <option value="secondary">Secondary</option>
-        <option value="success">Success</option>
-        <option value="info">Info</option>
-        <option value="warning">Warning</option>
-        <option value="danger">Danger</option>
-      </o-select>
-    </o-field>
-    <o-field label="Size">
-      <o-select v-model="size" expanded>
-        <option value="">Default</option>
-        <option value="small">small</option>
-        <option value="medium">medium</option>
-        <option value="large">large</option>
-      </o-select>
+    <o-field grouped>
+      <o-field label="Variant">
+        <o-select v-model="variant" expanded placeholder="Variant">
+          <option value="null">Default</option>
+          <option value="primary">Primary</option>
+          <option value="secondary">Secondary</option>
+          <option value="success">Success</option>
+          <option value="info">Info</option>
+          <option value="warning">Warning</option>
+          <option value="danger">Danger</option>
+        </o-select>
+      </o-field>
+      <o-field label="Passive Variant">
+        <o-select v-model="passive" expanded placeholder="Passive Variant">
+          <option value="null">Default</option>
+          <option value="primary">Primary</option>
+          <option value="secondary">Secondary</option>
+          <option value="success">Success</option>
+          <option value="info">Info</option>
+          <option value="warning">Warning</option>
+          <option value="danger">Danger</option>
+        </o-select>
+      </o-field>
+      <o-field label="Size">
+        <o-select v-model="size" expanded>
+          <option value="">Default</option>
+          <option value="small">small</option>
+          <option value="medium">medium</option>
+          <option value="large">large</option>
+        </o-select>
+      </o-field>
     </o-field>
 
     <o-switch

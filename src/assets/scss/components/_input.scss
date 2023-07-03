@@ -183,9 +183,10 @@ $input-icon-right-padding-lg: $input-btn-padding-y-lg 3rem
   .icon {
     --#{$prefix}input-icon-color: #{$input-icon-color};
     --#{$prefix}input-icon-space: #{$input-icon-space};
+
     position: absolute;
-    color: var(--#{$prefix}input-icon-color);
     margin: 0;
+    color: var(--#{$prefix}input-icon-color);
 
     &.icon-left {
       top: 12px;

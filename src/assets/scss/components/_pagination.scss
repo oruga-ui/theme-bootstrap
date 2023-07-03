@@ -1,5 +1,5 @@
 /* @docs */
-$pagination-items-margin: 0.5rem !default;
+$pagination-items-spacer: 0.5rem !default;
 /* @docs */
 
 /* @bootstrap docs */
@@ -61,6 +61,8 @@ $pagination-items-margin: 0.5rem !default;
 }
 
 .pagination-wrapper {
+  --#{$prefix}pagination-items-spacer: #{$pagination-items-spacer};
+
   position: relative;
   display: flex;
   flex-direction: row;
@@ -100,13 +102,13 @@ $pagination-items-margin: 0.5rem !default;
   .pagination-ellipsis {
     @include vertical-centered;
     height: 100%;
-    margin-right: $pagination-items-margin;
-    margin-left: $pagination-items-margin;
+    margin-right: var(--#{$prefix}pagination-items-spacer);
+    margin-left: var(--#{$prefix}pagination-items-spacer);
   }
 
   .pagination-info {
     @include vertical-centered;
-    margin-right: $pagination-items-margin;
+    margin-right: var(--#{$prefix}pagination-items-spacer);
   }
 
   &:not(.simple) {
@@ -163,7 +165,7 @@ $pagination-items-margin: 0.5rem !default;
   &.rounded {
     .pagination-ellipsis,
     .page-link {
-      margin-right: $pagination-items-margin;
+      margin-right: var(--#{$prefix}pagination-items-spacer);
     }
   }
 }
