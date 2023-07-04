@@ -1,10 +1,10 @@
 /* @docs */
 $steps-marker-bg: var(--#{$prefix}gray-light) !default;
-$steps-marker-border: $white !default;
-$steps-marker-color: $white;
-$steps-color-active: $primary;
-$steps-title-color: $dark;
-$steps-title-bg: $white !default;
+$steps-marker-border: var(--#{$prefix}white) !default;
+$steps-marker-color: var(--#{$prefix}white);
+$steps-color-active: var(--#{$prefix}primary);
+$steps-title-color: var(--#{$prefix}dark);
+$steps-title-bg: var(--#{$prefix}white) !default;
 $steps-divider-height: 0.2em !default;
 $steps-content-spacer: 1rem !default;
 $steps-content-padding: 1rem !default;
