@@ -85,18 +85,21 @@ You have two options for including the theme: include all the styling at once (i
 
 // 3. Include remainder of required Bootstrap stylesheets (including any separate color mode stylesheets)
 @import "/node_modules/bootstrap/scss/variables";
-@import "../node_modules/bootstrap/scss/variables-dark";
+@import "/node_modules/bootstrap/scss/variables-dark";
 
 // 4. Include the Oruga Bootstrap theme variables
 @import "/node_modules/@oruga-ui/theme-bootstrap/dist/scss/components/utils/variables";
 
-// 5. Include the remaining parts or full Bootstrap
+// 5. Include any default map overrides here
+// ...
+
+// 6. Include the remaining parts or full Bootstrap
 @import "/node_modules/bootstrap/scss/bootstrap";
 
-// 6. Include the Oruga Bootstrap theme components styles
+// 7. Include the Oruga Bootstrap theme components styles
 @import "/node_modules/@oruga-ui/theme-bootstrap/dist/scss/bootstrap";
 
-// 7. Add additional custom code here
+// 8. Add additional custom code here
 // ...
 ```
 
