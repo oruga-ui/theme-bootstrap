@@ -7,10 +7,23 @@
 </p>
 
 <p align="center">
-    <a href="https://www.npmjs.com/package/@oruga-ui/theme-bootstrap"><img src="https://img.shields.io/npm/v/@oruga-ui/theme-bootstrap.svg?logo=npm" /><a>
-    <a href="https://www.npmjs.com/package/@oruga-ui/theme-bootstrap"><img src="https://img.shields.io/npm/dt/@oruga-ui/theme-bootstrap.svg" /></a>
-    <a href="https://discord.gg/RuKuBYN"><img src="https://img.shields.io/badge/chat-on%20discord-7289DA.svg?logo=discord" /></a>
+    <a href="https://www.npmjs.com/package/@oruga-ui/theme-bootstrap">
+        <img src="https://img.shields.io/npm/v/@oruga-ui/theme-bootstrap.svg?logo=npm" alt="Oruga Bootstrap theme version" />
+    <a>
+    <a href="https://www.npmjs.com/package/@oruga-ui/theme-bootstrap">
+        <img src="https://img.shields.io/npm/dt/@oruga-ui/theme-bootstrap.svg" alt="Oruga Bootstrap theme downloads" />
+    </a>
+    <a href="https://getbootstrap.com/docs">
+        <img src="https://img.shields.io/badge/bootstrap-5.3.x-712cf9" alt="Bootstrap version">
+    </a>
+    <a href="https://vuejs.org">
+        <img src="https://img.shields.io/badge/vue.js-3.x-4fc08d" alt="Vue.js version">
+    </a>
+    <a href="https://discord.gg/RuKuBYN">
+        <img src="https://img.shields.io/badge/chat-on%20discord-7289DA.svg?logo=discord"  alt="Discord Link"/>
+    </a>
 </p>
+
 
 ### Install
 
@@ -30,103 +43,62 @@ yarn add @oruga-ui/theme-bootstrap
 import { createApp } from 'vue'
 import App from './App.vue'
 
+// import Oruga
 import Oruga from '@oruga-ui/oruga-next'
+// import Oruga Bootstrap theme config
 import { bootstrapConfig } from '@oruga-ui/theme-bootstrap'
 
+// import Bootstrap and Oruga styling
 import '@oruga-ui/theme-bootstrap/dist/bootstrap.css'
 
 createApp(App)
     .use(Oruga, bootstrapConfig)
     .mount('#app')
 ```
-Please note, the package also works for `@oruga-ui/oruga` (Vue 2) and you can use it without importing the full Oruga bundle.
+Please note, the package also works for `@oruga-ui/oruga` (Vue 2) and can be used without importing any other Oruga styling or the full Oruga bundle.
 
 ### Customization (SASS/SCSS)
 
-<!-- Using the following sample code you don't need `import '@oruga-ui/theme-bootstrap/dist/bootstrap.css'` but you have to add a custom sass/scss file to customize bootstrap and theme variables.
+You have two options for including the theme: include all the styling at once (including the full Bootstrap), or include the Oruga theme and Bootstrap separately.
 
 ```scss
-@import "~bootstrap/sass/utilities/_all";
+// Option A: Include all styling (including Bootstrap)
 
-// Set your colors
-$primary: #8c67ef;
-$primary-light: findLightColor($primary);
-$primary-dark: findDarkColor($primary);
-$primary-invert: findColorInvert($primary);
-$twitter: #4099FF;
-$twitter-invert: findColorInvert($twitter);
+// Include any default variable overrides here (though functions and maps won't be available here)
+// ...
 
-// Lists and maps
-$custom-colors: null !default;
-$custom-shades: null !default;
+// Include the Oruga Bootstrap theme with Bootstrap included
+@import "/node_modules/@oruga-ui/theme-bootstrap/dist/bootstrap.css";
 
-// Setup $colors to use as bootstrap classes (e.g. 'is-twitter')
-$colors: mergeColorMaps(
-    (
-        "white": (
-            $white,
-            $black,
-        ),
-        "black": (
-            $black,
-            $white,
-        ),
-        "light": (
-            $light,
-            $light-invert,
-        ),
-        "dark": (
-            $dark,
-            $dark-invert,
-        ),
-        "primary": (
-            $primary,
-            $primary-invert,
-            $primary-light,
-            $primary-dark,
-        ),
-        "link": (
-            $link,
-            $link-invert,
-            $link-light,
-            $link-dark,
-        ),
-        "info": (
-            $info,
-            $info-invert,
-            $info-light,
-            $info-dark,
-        ),
-        "success": (
-            $success,
-            $success-invert,
-            $success-light,
-            $success-dark,
-        ),
-        "warning": (
-            $warning,
-            $warning-invert,
-            $warning-light,
-            $warning-dark,
-        ),
-        "danger": (
-            $danger,
-            $danger-invert,
-            $danger-light,
-            $danger-dark,
-        ),
-    ),
-    $custom-colors
-);
+// Then add additional custom code here
+// ...
+```
 
-// Links
-$link: $primary;
-$link-invert: $primary-invert;
-$link-focus-border: $primary;
+```scss
+// Option B: Include the Oruga theme and Bootstrap separately
 
-@import "~bootstrap/bootstrap";
-@import '~@oruga-ui/theme-bootstrap/dist/scss/bootstrap';
-``` -->
+// 1. Include Bootstrap functions first (so you can manipulate colors, SVGs, calc, etc)
+@import "/node_modules/bootstrap/scss/functions";
+
+// 2. Include any default variable overrides here
+// ...
+
+// 3. Include remainder of required Bootstrap stylesheets (including any separate color mode stylesheets)
+@import "/node_modules/bootstrap/scss/variables";
+@import "../node_modules/bootstrap/scss/variables-dark";
+
+// 4. Include the Oruga Bootstrap theme variables
+@import "/node_modules/@oruga-ui/theme-bootstrap/dist/scss/components/utils/variables";
+
+// 5. Include the remaining parts or full Bootstrap
+@import "/node_modules/bootstrap/scss/bootstrap";
+
+// 6. Include the Oruga Bootstrap theme components styles
+@import "/node_modules/@oruga-ui/theme-bootstrap/dist/scss/bootstrap";
+
+// 7. Add additional custom code here
+// ...
+```
 
 ### Override default config
 
