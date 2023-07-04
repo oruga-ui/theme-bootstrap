@@ -4,7 +4,7 @@ $carousel-overlay-background: rgba(0, 0, 0, 0.8) !default;
 $carousel-overlay-zindex: $zindex-fixed !default;
 $carousel-indicator-bg: $secondary !default;
 $carousel-indicator-size: 10px !default;
-$carousel-indicator-space: $spacer !default;
+$carousel-indicator-spacer: $spacer !default;
 /* docs */
 
 /* @bootstrap docs */
@@ -43,7 +43,7 @@ $carousel-indicator-space: $spacer !default;
   --#{$prefix}carousel-overlay-zindex: #{$carousel-overlay-zindex};
   --#{$prefix}carousel-indicator-bg: #{$carousel-indicator-bg};
   --#{$prefix}carousel-indicator-size: #{$carousel-indicator-size};
-  --#{$prefix}carousel-indicator-space: #{$carousel-indicator-size};
+  --#{$prefix}carousel-indicator-spacer: #{$carousel-indicator-spacer};
 
   -webkit-touch-callout: none;
   -webkit-user-select: none;
@@ -180,13 +180,13 @@ $carousel-indicator-space: $spacer !default;
       &.is-bottom {
         bottom: 0;
         top: unset;
-        margin-bottom: var(--#{$prefix}carousel-indicator-space);
+        margin-bottom: var(--#{$prefix}carousel-indicator-spacer);
       }
 
       &.is-top {
         top: 0;
         bottom: unset;
-        margin-top: var(--#{$prefix}carousel-indicator-space);
+        margin-top: var(--#{$prefix}carousel-indicator-spacer);
       }
     }
   }
