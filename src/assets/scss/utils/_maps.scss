@@ -1,17 +1,8 @@
+/**********************************
+*   Map overrides and theme maps
+***********************************/
+
 @use "sass:map";
-
-$speed-slow: 150ms !default;
-$speed-slower: 250ms !default;
-$easing: ease !default;
-
-// Sizes
-$sizes: (
-  "x-small": 0.5rem,
-  "small": 0.75rem,
-  "medium": 1.25rem,
-  "large": 1.5rem,
-  "x-large": 2rem,
-) !default;
 
 // Adding aditional gray-light color to colors map
 $custom-colors: (

@@ -1,13 +1,22 @@
-// import bootstrap scss required imports
-@import "../node_modules/bootstrap/scss/functions";
-@import "../node_modules/bootstrap/scss/mixins";
-@import "../node_modules/bootstrap/scss/variables";
+/*************************************
+*   Oruga Theme Boostrap Full Build
+**************************************/
 
-// include custom theme variables
-@import "./components/utils/variables";
+// import bootstrap functions first (so you can manipulate colors, SVGs, calc, etc)
+@import "../node_modules/bootstrap/scss/functions";
+
+// import custom theme variables and overrides
+@import "./utils/variables";
+
+// import remainder of required bootstrap parts
+@import "../node_modules/bootstrap/scss/variables";
+@import "../node_modules/bootstrap/scss/variables-dark";
+
+// import custom theme map overrides
+@import "./utils/maps";
 
 // import bootstrap scss
 @import "../node_modules/bootstrap/scss/bootstrap";
 
-// import oruga theme scss
+// import oruga theme styles
 @import "./bootstrap";

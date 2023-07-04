@@ -1,4 +1,7 @@
-// utility classes
+/****************************
+*   Global utility classes
+*****************************/
+
 .clickable {
   cursor: pointer;
 }
@@ -11,12 +14,22 @@
   width: fit-content;
 }
 
+.max-width,
 .fullwidth {
   width: 100%;
 }
 
 .width-unset {
   width: unset;
+}
+
+.max-height,
+.fullheight {
+  height: 100%;
+}
+
+.height-unset {
+  height: unset;
 }
 
 .text-right {

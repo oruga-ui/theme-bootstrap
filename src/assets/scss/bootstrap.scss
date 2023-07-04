@@ -1,5 +1,14 @@
-@import "components/utils/all";
+/**************************
+*   Oruga Theme Boostrap 
+***************************/
 
+// Globals, helpers and functions
+@import "utils/animations";
+@import "utils/functions";
+@import "utils/helpers";
+@import "utils/root";
+
+// Oruga components
 @import "components/autocomplete";
 @import "components/button";
 @import "components/carousel";
