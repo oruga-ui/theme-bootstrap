@@ -48,26 +48,26 @@ $tooltip-zindex: $zindex-tooltip;
   }
 
   .tooltip-content {
+    position: absolute;
+    white-space: nowrap;
+    color: var(--#{$prefix}tooltip-color);
+    border-radius: var(--#{$prefix}tooltip-border-radius);
+    background: var(--#{$prefix}tooltip-bg);
+    box-shadow: var(--#{$prefix}tooltip-shadow);
     width: auto;
     max-width: var(--#{$prefix}tooltip-max-width);
-    border-radius: var(--#{$prefix}tooltip-border-radius);
-    font-size: var(--#{$prefix}tooltip-font-size);
-    box-shadow: var(--#{$prefix}tooltip-shadow);
-    z-index: var(--#{$prefix}tooltip-zindex);
-    white-space: nowrap;
-    position: absolute;
-    background: var(--#{$prefix}tooltip-bg);
-    color: var(--#{$prefix}tooltip-color);
     padding: $tooltip-padding-y $tooltip-padding-x;
+    font-size: var(--#{$prefix}tooltip-font-size);
+    z-index: var(--#{$prefix}tooltip-zindex);
 
     &::before {
       position: absolute;
       content: "";
       pointer-events: none;
-      z-index: var(--#{$prefix}tooltip-zindex);
       border-top-color: var(--#{$prefix}tooltip-bg);
       width: var(--#{$prefix}tooltip-arrow-width);
       height: var(--#{$prefix}tooltip-arrow-height);
+      z-index: var(--#{$prefix}tooltip-zindex);
     }
 
     &.always {
