@@ -19,8 +19,6 @@ function toast() {
     message: "Something happened correctly!",
     rootClass: "toast",
     position: "top",
-    indefinite: true,
-    variant: "danger",
   });
 }
 function danger() {
