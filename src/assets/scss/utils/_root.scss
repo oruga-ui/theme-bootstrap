@@ -1,3 +1,7 @@
+/*******************************
+*   Root variables extensions
+********************************/
+
 :root {
   // generate contrast variables
   @each $name, $color in $theme-colors {
