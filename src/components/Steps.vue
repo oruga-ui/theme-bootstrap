@@ -27,36 +27,38 @@ const size = ref(null);
     <hr />
   </section>
 
-  <section class="py-4">
+  <section class="py-3">
+    <h3>Base</h3>
+
     <o-field grouped group-multiline>
-      <div class="control">
+      <o-field>
         <o-switch v-model="showSocial"> Show Social step </o-switch>
-      </div>
-      <div class="control">
+      </o-field>
+      <o-field>
         <o-switch v-model="isAnimated"> Animated </o-switch>
-      </div>
-      <div class="control">
+      </o-field>
+      <o-field>
         <o-switch v-model="isRounded"> Rounded </o-switch>
-      </div>
-      <div class="control">
+      </o-field>
+      <o-field>
         <o-switch v-model="isVertical"> Vertical </o-switch>
-      </div>
-      <div class="control">
+      </o-field>
+      <o-field>
         <o-switch v-model="isStepsClickable"> Clickable Marker </o-switch>
-      </div>
+      </o-field>
     </o-field>
     <o-field grouped group-multiline>
-      <div class="control">
+      <o-field>
         <o-switch v-model="hasNavigation"> Navigation Buttons </o-switch>
-      </div>
-      <div class="control">
+      </o-field>
+      <o-field>
         <o-switch v-model="customNavigation"> Custom Navigation </o-switch>
-      </div>
-      <div class="control">
+      </o-field>
+      <o-field>
         <o-switch v-model="isProfileSuccess">
           Set <code>success</code> for profile
         </o-switch>
-      </div>
+      </o-field>
     </o-field>
     <o-field v-if="hasNavigation" grouped group-multiline>
       <o-field label="Prev icon">
@@ -151,23 +153,24 @@ const size = ref(null);
     </o-steps>
   </section>
 
-  <section class="py-4">
+  <section class="py-3">
     <h3>Variants</h3>
-    <h5>Warning</h5>
+
+    Warning
     <o-steps variant="warning">
       <o-step-item label="Account" icon="user-lock">empty</o-step-item>
       <o-step-item label="Profile" icon="user">empty</o-step-item>
       <o-step-item label="Social" icon="user-plus">empty</o-step-item>
     </o-steps>
 
-    <h5>Info</h5>
+    Info
     <o-steps variant="info">
       <o-step-item label="Account" icon="user-lock">empty</o-step-item>
       <o-step-item label="Profile" icon="user">empty</o-step-item>
       <o-step-item label="Social" icon="user-plus">empty</o-step-item>
     </o-steps>
 
-    <h5>Success</h5>
+    Success
     <o-steps variant="success">
       <o-step-item label="Account" icon="user-lock">empty</o-step-item>
       <o-step-item label="Profile" icon="user">empty</o-step-item>
@@ -175,14 +178,15 @@ const size = ref(null);
     </o-steps>
   </section>
 
-  <section class="py-4">
+  <section class="py-3">
     <h3>Vertical</h3>
+
     <o-field grouped group-multiline>
-      <div class="control">
+      <o-field>
         <o-switch v-model="position" true-value="right">
           Right position</o-switch
         >
-      </div>
+      </o-field>
       <o-field label="Size">
         <o-select v-model="size" placeholder="Size">
           <option :value="null">Default</option>

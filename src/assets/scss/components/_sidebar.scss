@@ -40,47 +40,39 @@ $sidebar-reduced-height: 10vh !default;
     @extend .show;
 
     .btn-close {
-      border: none !important;
       position: absolute;
       right: 0.5rem;
       top: 0.5rem;
     }
 
     // Colors
-    @each $name, $pair in $theme-colors {
-      &.is-#{$name} {
-        background-color: $pair;
-        color: white;
-        border: 0;
-      }
+    @include variant-text-bg();
+
+    &.fullwidth {
+      --bs-offcanvas-width: 100%;
     }
 
-    &.is-fullwidth {
-      width: 100%;
+    &.fullheight {
+      --bs-offcanvas-height: 100%;
     }
 
-    &:not(.is-fullheight) {
-      bottom: unset;
-    }
-
-    // reduced
-    &.is-reduced {
+    &.reduced {
       transition: width $speed-slow $easing, height $speed-slow $easing;
 
       @include size($sidebar-reduced-height, $sidebar-reduced-width);
 
-      &.is-reduced-expand:hover:not(.is-reduced-delayed) {
-        &.is-fullwidth {
-          @include size(100%, 100%h);
+      &.reduced-expand:hover:not(.reduced-delayed) {
+        &.fullwidth {
+          @include size(100%, 100%);
         }
 
-        &:not(.is-fullwidth) {
+        &:not(.fullwidth) {
           @include size(
             $offcanvas-vertical-height,
             $offcanvas-horizontal-width
           );
 
-          &.is-reduced-expand-fixed {
+          &.reduced-expand-fixed {
             position: fixed;
           }
         }

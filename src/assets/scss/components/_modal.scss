@@ -57,12 +57,12 @@ html.modal-open {
     pointer-events: all;
     z-index: $zindex-modal;
 
-    &.is-full-screen {
+    &.fullscreen {
       width: 100%;
       --bs-modal-width: 100%;
     }
 
-    &:not(.is-full-screen) {
+    &:not(.fullscreen) {
       margin-right: auto;
       margin-left: auto;
     }
@@ -71,29 +71,27 @@ html.modal-open {
       overflow: hidden;
 
       .modal-header {
-        .icon.is-clickable {
-          cursor: pointer;
+        > .icon {
           position: absolute;
           top: 1.5rem;
           right: 1.2rem;
         }
 
-        &:has(.icon.is-clickable) {
+        &:has(> .icon.clickable) {
           padding-right: 3rem;
         }
       }
 
-      &:has(.icon.is-clickable) + .icon.is-clickable {
+      &:has(> .icon.clickable) + .icon.clickable {
         display: none;
       }
     }
 
     > .btn-close {
-      cursor: pointer;
+      --bs-btn-close-opacity: 1;
       position: fixed;
       top: 1.5rem;
       right: 1.5rem;
-      --bs-btn-close-opacity: 1;
     }
   }
 }

@@ -89,7 +89,7 @@ const customSettings = reactive({
     <h2>Carousel Demo</h2>
     <hr />
   </section>
-  <section class="my-4 container">
+  <section class="py-4 container">
     <h3>Base</h3>
 
     <o-carousel>
@@ -103,27 +103,27 @@ const customSettings = reactive({
     </o-carousel>
   </section>
 
-  <section class="my-4 container">
+  <section class="py-4 container">
     <h3>Carousel List</h3>
 
     <div class="example-component">
       <o-field grouped group-multiline>
-        <div class="control">
+        <o-field>
           <o-switch v-model="listSettings.arrow">Arrow</o-switch>
-        </div>
-        <div class="control">
+        </o-field>
+        <o-field>
           <o-switch
             v-model="listSettings.arrowHover"
             :disabled="!listSettings.arrow">
             Arrow on hover
           </o-switch>
-        </div>
-        <div class="control">
+        </o-field>
+        <o-field>
           <o-switch v-model="listSettings.hasDrag">Drag event</o-switch>
-        </div>
-        <div class="control">
+        </o-field>
+        <o-field>
           <o-switch v-model="listSettings.repeat">Repeat</o-switch>
-        </div>
+        </o-field>
       </o-field>
       <o-field grouped group-multiline>
         <o-field label="Items to Show">
@@ -147,10 +147,10 @@ const customSettings = reactive({
         <img :src="item.image" />
       </o-carousel-item>
     </o-carousel>
-    <p>Current Item: {{ carousel }}</p>
+    <p><b>Current Item:</b> {{ carousel }}</p>
   </section>
 
-  <section class="my-4 container">
+  <section class="py-4 container">
     <h3>Custom As indicators</h3>
 
     <o-carousel
@@ -191,31 +191,31 @@ const customSettings = reactive({
     </o-carousel>
   </section>
 
-  <section class="my-4 container">
+  <section class="py-4 container">
     <h3>Custom</h3>
 
     <div class="example-component">
       <o-field grouped group-multiline>
-        <div class="control">
+        <o-field>
           <o-switch v-model="customSettings.autoplay">Autoplay</o-switch>
-        </div>
-        <div class="control">
+        </o-field>
+        <o-field>
           <o-switch
             v-model="customSettings.pauseHover"
             :disabled="!customSettings.autoplay">
             Pause on hover
           </o-switch>
-        </div>
-        <div class="control">
+        </o-field>
+        <o-field>
           <o-switch v-model="customSettings.hasDrag">Drag event</o-switch>
-        </div>
-        <div class="control">
+        </o-field>
+        <o-field>
           <o-switch
             v-model="customSettings.repeat"
             :disabled="!customSettings.autoplay">
             Repeat
           </o-switch>
-        </div>
+        </o-field>
       </o-field>
       <o-field grouped group-multiline>
         <o-field label="Value">

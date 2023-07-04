@@ -20,7 +20,9 @@ const toggleSidebar = () => {
     <hr />
   </section>
 
-  <section class="mt-4">
+  <section class="py-3">
+    <h3>Base</h3>
+
     <o-sidebar
       v-model:open="isOpen"
       variant="primary"
@@ -32,7 +34,7 @@ const toggleSidebar = () => {
       :expand-on-hover="expandOnHover"
       mobile="fullwidth"
       @close="toggleSidebar()">
-      <o-button class="btn-close" aria-label="Close" @click="toggleSidebar()" />
+      <a class="btn-close" aria-label="Close" @click="toggleSidebar()" />
       <img
         width="80"
         src="https://avatars2.githubusercontent.com/u/66300512?s=200&v=4"

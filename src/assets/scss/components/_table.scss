@@ -1,5 +1,6 @@
 /* @docs */
 $table-detail-padding: 0.5rem 0.75rem !default;
+$table-sortable-hover: $secondary;
 /* @docs */
 
 /* @bootstrap docs */
@@ -87,12 +88,12 @@ $table-detail-padding: 0.5rem 0.75rem !default;
       }
     }
 
-    &.detail {
+    &.table-detail {
       margin-top: -1rem;
     }
   }
 
-  tr:not(.detail):not(.is-empty):not(.table-footer) {
+  tr:not(.table-detail):not(.table-empty):not(.table-footer) {
     td {
       display: flex;
       width: auto;
@@ -117,19 +118,7 @@ $table-detail-padding: 0.5rem 0.75rem !default;
     .table {
       th,
       td {
-        &.is-left {
-          text-align: left;
-        }
-
-        &.is-centered {
-          text-align: center;
-        }
-
-        &.is-right {
-          text-align: right;
-        }
-
-        &.is-sticky {
+        &.sticky {
           position: -webkit-sticky;
           position: sticky;
           left: 0;
@@ -140,7 +129,7 @@ $table-detail-padding: 0.5rem 0.75rem !default;
       th {
         position: relative;
 
-        &.is-sortable {
+        &.sortable {
           cursor: pointer;
 
           > span {
@@ -149,16 +138,15 @@ $table-detail-padding: 0.5rem 0.75rem !default;
           }
 
           &:hover {
-            border-color: $grey;
+            border-color: $table-sortable-hover;
           }
         }
 
-        &.is-current-sort {
+        &.current-sort {
           --bs-table-bg: #{$light};
         }
 
-        .sort-icon,
-        .multi-sort-cancel-icon {
+        .sort-icon {
           position: absolute;
           right: 0;
         }
@@ -193,12 +181,12 @@ $table-detail-padding: 0.5rem 0.75rem !default;
         transform: rotate(180deg);
       }
 
-      &.is-expanded {
+      &.expanded {
         transform: rotate(90deg);
       }
     }
 
-    &.has-mobile-cards {
+    &.mobile-cards {
       @include table-cards;
     }
   }

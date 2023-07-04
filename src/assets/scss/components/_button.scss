@@ -2,8 +2,7 @@
 
 /* @docs */
 $btn-margin-right: 0.5rem !default;
-$btn-border-rounded-radius: var(--bs-border-radius-pill) !default;
-$btn-border-default: 0.1px solid $default-border-color !default; //  var(--oruga-button-border);
+$btn-border-default: 0.1px solid var(--bs-border-color) !default;
 /* @docs */
 
 /* @bootstrap docs */
@@ -56,30 +55,52 @@ $btn-border-default: 0.1px solid $default-border-color !default; //  var(--oruga
 .btn {
   .icon {
     margin: 0 4px;
+
+    &:not(:last-child) {
+      margin-right: $btn-margin-right;
+    }
+
+    &:not(:first-child) {
+      margin-left: $btn-margin-right;
+    }
   }
 
-  &.is-expanded {
+  &.expanded {
     width: 100%;
   }
 
-  &.is-rounded {
-    --bs-btn-border-radius: #{$btn-border-rounded-radius};
+  &.disabled,
+  &.btn-disabled {
+    pointer-events: auto;
+    cursor: not-allowed;
   }
 
-  // inverted
-  @each $name, $pair in $theme-colors-lighter {
-    $variant: map.get($theme-colors, #{$name});
-
+  // inverted color
+  @each $name, $color in $theme-colors {
+    &.variant-#{$name}-inverted,
     &.btn-inverted-#{$name} {
       // default style
-      --bs-btn-color: #{$variant};
+      --bs-btn-color: var(--#{$prefix}#{$name});
       --bs-btn-bg: transparent;
       --bs-btn-border-color: transparent;
 
       // hover style
-      --bs-btn-hover-color: #{$variant};
-      --bs-btn-hover-bg: #{$pair};
-      --bs-btn-hover-border-color: transparent;
+      --bs-btn-hover-color: var(--#{$prefix}#{$name});
+      --bs-btn-hover-bg: var(--#{$prefix}#{$name}-bg-subtle);
+      --bs-btn-hover-border-color: var(--#{$prefix}#{$name}-border-subtle);
+    }
+
+    &.variant-#{$name}-subtle,
+    &.btn-#{$name}-subtle {
+      // default style
+      --bs-btn-color: var(--#{$prefix}#{$name});
+      --bs-btn-bg: var(--#{$prefix}#{$name}-bg-subtle);
+      --bs-btn-border-color: var(--#{$prefix}#{$name}-border-subtle);
+
+      // hover style
+      --bs-btn-hover-color: #{color-contrast($color)};
+      --bs-btn-hover-bg: var(--#{$prefix}#{$name});
+      --bs-btn-hover-border-color: var(--#{$prefix}#{$name});
     }
   }
 }
@@ -88,10 +109,14 @@ $btn-border-default: 0.1px solid $default-border-color !default; //  var(--oruga
   margin-right: $btn-margin-right;
 }
 
-.btn:not(.btn-primary):not(.btn-success):not(.btn-danger):not(.btn-warning):not(
-    .btn-info
-  ):not(.btn-dark):not(.btn-outline-primary):not(.btn-outline-success):not(
+.btn:not(.btn-primary):not(.btn-secondary):not(.btn-success):not(
+    .btn-danger
+  ):not(.btn-warning):not(.btn-info):not(.btn-dark):not(.btn-light):not(
+    .btn-outline-primary
+  ):not(.btn-outline-secondary):not(.btn-outline-success):not(
     .btn-outline-danger
-  ):not(.btn-outline-warning):not(.btn-outline-info):not(.btn-outline-info) {
+  ):not(.btn-outline-warning):not(.btn-outline-info):not(.btn-outline-dark):not(
+    .btn-outline-light
+  ) {
   border: $btn-border-default;
 }

@@ -1,8 +1,9 @@
 @use "sass:math";
 
 /* @docs */
-$tabs-color: var(--bs-body-color) !default;
+$nav-tabs-color: var(--bs-body-color) !default;
 $nav-tabs-margin-bottom: 1rem !default;
+$nav-tabs-disabled-opacity: 0.5 !default;
 /* @docs */
 
 /* @bootstrap docs */
@@ -47,12 +48,12 @@ $nav-tabs-margin-bottom: 1rem !default;
 
       &.disabled {
         cursor: not-allowed;
-        opacity: $base-disabled-opacity;
+        opacity: $nav-tabs-disabled-opacity;
       }
     }
 
     &:not(.nav-default) .nav-link {
-      --bs-nav-link-color: #{$tabs-color};
+      --bs-nav-link-color: #{$nav-tabs-color};
     }
 
     // style toggle / underline
@@ -74,7 +75,7 @@ $nav-tabs-margin-bottom: 1rem !default;
 
     // Sizes
     @each $name, $size in $sizes {
-      &.is-#{$name} {
+      &.size-#{$name} {
         --bs-nav-link-font-size: #{$size};
         --bs-nav-link-padding-x: #{calc(
             $nav-link-padding-x * strip-unit($size)
@@ -90,13 +91,12 @@ $nav-tabs-margin-bottom: 1rem !default;
     position: relative;
   }
 
-  // fullwidth
-  &.is-expanded:not(.is-vertical) .nav {
+  &.expanded:not(.vertical) .nav {
     @extend .nav-fill;
   }
 
   // position vetical
-  &.is-vertical {
+  &.vertical {
     display: flex;
     flex-direction: row;
 

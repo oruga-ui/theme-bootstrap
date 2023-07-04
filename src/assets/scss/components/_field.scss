@@ -56,7 +56,7 @@ $input-field-btn-border-color: $input-border-color !default;
     @extend .col;
   }
 
-  &.is-grouped-multiline {
+  &.grouped-multiline {
     flex-wrap: wrap;
   }
 
@@ -75,17 +75,17 @@ $input-field-btn-border-color: $input-border-color !default;
     }
   }
 
-  // input fullwidth
+  // input expanded
   .input,
   .select,
   .dropdown,
   .btn {
     flex-shrink: 0;
 
-    &.is-expanded,
-    &.is-fullwidth {
+    &.expanded {
       flex-grow: 1;
       flex-shrink: 1;
+      width: auto;
     }
   }
 
@@ -102,9 +102,9 @@ $input-field-btn-border-color: $input-border-color !default;
     }
 
     // Btn with border if it transparent <outlined>
-    .btn:not(.btn-primary):not(.btn-info):not(.btn-danger):not(
-        .btn-success
-      ):not(.btn-warning):not(.btn-dark):not(.btn-light) {
+    .btn:not(.btn-primary):not(.btn-secondary):not(.btn-info):not(
+        .btn-danger
+      ):not(.btn-success):not(.btn-warning):not(.btn-dark):not(.btn-light) {
       --bs-btn-border-color: #{$input-field-btn-border-color};
       --bs-btn-bg: #{$input-field-btn-border-color};
     }

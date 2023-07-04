@@ -4,8 +4,9 @@
     <hr />
   </section>
 
-  <section class="my-4">
+  <section class="py-3">
     <h3>Base</h3>
+
     <o-field label="Name">
       <o-input value="Kevin Garvey" />
     </o-field>
@@ -47,8 +48,9 @@
     </o-field>
   </section>
 
-  <section class="my-4">
+  <section class="py-3">
     <h3>Addons</h3>
+
     <o-field variant="danger">
       <o-input placeholder="Search..." type="search" icon="search" />
       <o-button variant="primary">Search</o-button>
@@ -150,8 +152,9 @@
     </o-field>
   </section>
 
-  <section class="my-4">
+  <section class="py-3">
     <h3>Grouped</h3>
+
     <o-field grouped variant="danger" message="What do you want to search?">
       <o-input placeholder="Search..." />
       <o-button variant="primary">Search</o-button>
@@ -175,8 +178,9 @@
     </o-field>
   </section>
 
-  <section class="my-4 container">
+  <section class="py-4 container">
     <h3>Horizontal</h3>
+
     <o-field
       horizontal
       label="Subject"
@@ -215,8 +219,9 @@
     </o-field>
   </section>
 
-  <section class="my-4">
+  <section class="py-3">
     <h3>Slot</h3>
+
     <o-field horizontal>
       <template #label>
         With tooltip

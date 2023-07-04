@@ -9,10 +9,19 @@ module.exports = {
     "stylelint-scss",
   ],
   rules: {
-    "prettier/prettier": true,
-    "rule-empty-line-before": "always-multi-line",
+    "scss/at-extend-no-missing-placeholder": null,
     "no-duplicate-selectors": [true, { "severity": "warning" }],
     "no-descending-specificity": [true, { "severity": "warning" }],
-    "scss/at-extend-no-missing-placeholder": null,
+    "rule-empty-line-before": ["always", { 
+      except: ["first-nested"],
+      ignore: ["after-comment"],
+    }],
+    "at-rule-empty-line-before": ["always", { 
+      except: ["first-nested", "after-same-name"],
+      ignore: ["after-comment", "blockless-after-blockless"],
+      ignoreAtRules: ["if", "else"]
+    }],
+    "prettier/prettier": [true, { endOfLine: "auto" },
+    ],
   },
 };

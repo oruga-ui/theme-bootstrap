@@ -47,12 +47,20 @@ function danger() {
     <hr />
   </section>
 
-  <section class="py-4">
+  <section class="py-3">
     <h3>Base</h3>
 
     <o-notification
       closable
       variant="primary"
+      aria-close-label="Close notification">
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce id
+      fermentum quam. Proin sagittis, nibh id hendrerit imperdiet, elit sapien
+      laoreet elit
+    </o-notification>
+    <o-notification
+      closable
+      variant="secondary"
       aria-close-label="Close notification">
       Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce id
       fermentum quam. Proin sagittis, nibh id hendrerit imperdiet, elit sapien
@@ -104,7 +112,7 @@ function danger() {
     </o-notification>
   </section>
 
-  <section class="py-4">
+  <section class="py-3">
     <h3>Programmatically opening</h3>
 
     <div class="buttons">

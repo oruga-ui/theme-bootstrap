@@ -1,7 +1,4 @@
 /* @docs */
-$taginput-border-color: $default-border-color !default;
-$taginput-border-radius: $base-border-radius !default;
-
 $taginput-badge-bg: $light;
 $taginput-badge-color: $dark;
 $taginput-badge-font-size: 0.9em !default;
@@ -23,15 +20,11 @@ $taginput-counter-font-size: 0.75rem !default;
 .taginput {
   .btn-close {
     font-size: 0.8em;
-
-    i {
-      visibility: hidden;
-    }
   }
 
   .taginput-wrapper {
-    border: 1px solid $taginput-border-color;
-    border-radius: $taginput-border-radius;
+    border: $input-border-width solid $input-border-color;
+    border-radius: $input-border-radius;
     display: flex;
     flex-wrap: wrap;
 
@@ -49,21 +42,13 @@ $taginput-counter-font-size: 0.75rem !default;
       display: inline-flex;
       align-items: center;
 
+      // Colors
+      @include variant-text-bg();
+
       .icon {
         margin-left: $taginput-badge-icon-space;
         margin-bottom: 0;
         cursor: pointer;
-      }
-    }
-
-    // Colors
-    @include variant-text-bg();
-
-    @each $name, $pair in $theme-colors {
-      .is-#{$name} {
-        .btn-close {
-          @extend .btn-close-white;
-        }
       }
     }
   }
@@ -85,7 +70,24 @@ $taginput-counter-font-size: 0.75rem !default;
     margin: $taginput-counter-margin;
   }
 
-  &.is-expanded {
+  &.expanded {
     width: 100%;
+  }
+
+  &.disabled {
+    .taginput-wrapper {
+      border-color: $input-disabled-border-color;
+      color: $input-disabled-color;
+      background-color: $input-disabled-bg;
+      cursor: not-allowed;
+
+      input {
+        cursor: not-allowed;
+      }
+
+      .btn-close {
+        display: none;
+      }
+    }
   }
 }

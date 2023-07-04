@@ -13,8 +13,9 @@ const isCustomFullPage = ref(true);
     <hr />
   </section>
 
-  <section class="my-4">
+  <section class="py-3">
     <h3>Base</h3>
+
     <o-field>
       <o-button
         size="medium"
@@ -39,7 +40,7 @@ const isCustomFullPage = ref(true);
     </p>
   </section>
 
-  <section class="my-4">
+  <section class="py-3">
     <h3>Base Custom Slot</h3>
 
     <o-field>

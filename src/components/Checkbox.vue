@@ -12,8 +12,9 @@ const checkboxGroup = ref(["Flint"]);
     <hr />
   </section>
 
-  <section class="my-4">
+  <section class="py-3">
     <h3>Base</h3>
+
     <o-field>
       <o-checkbox v-model="checkbox">
         {{ checkbox }}
@@ -32,7 +33,7 @@ const checkboxGroup = ref(["Flint"]);
     </o-field>
   </section>
 
-  <section class="my-4">
+  <section class="py-3">
     <h3>Variant</h3>
 
     <o-field>
@@ -42,23 +43,23 @@ const checkboxGroup = ref(["Flint"]);
       <o-checkbox :value="true" variant="primary"> Primary </o-checkbox>
     </o-field>
     <o-field>
+      <o-checkbox :value="true" variant="secondary"> Secondary </o-checkbox>
+    </o-field>
+    <o-field>
       <o-checkbox :value="true" variant="info"> Info </o-checkbox>
     </o-field>
     <o-field>
       <o-checkbox :value="true" variant="success"> Success </o-checkbox>
     </o-field>
     <o-field>
-      <o-checkbox :value="true" variant="danger"> Danger </o-checkbox>
-    </o-field>
-    <o-field>
       <o-checkbox :value="true" variant="warning"> Warning </o-checkbox>
     </o-field>
     <o-field>
-      <o-checkbox disabled> Disabled </o-checkbox>
+      <o-checkbox :value="true" variant="danger"> Danger </o-checkbox>
     </o-field>
   </section>
 
-  <section class="my-4">
+  <section class="py-3">
     <h3>Indeterminate</h3>
 
     <o-field>
@@ -70,6 +71,11 @@ const checkboxGroup = ref(["Flint"]);
       </o-checkbox>
     </o-field>
     <o-field>
+      <o-checkbox variant="secondary" indeterminate>
+        Secondary Indeterminate
+      </o-checkbox>
+    </o-field>
+    <o-field>
       <o-checkbox variant="info" indeterminate> Info Indeterminate </o-checkbox>
     </o-field>
     <o-field>
@@ -78,19 +84,82 @@ const checkboxGroup = ref(["Flint"]);
       </o-checkbox>
     </o-field>
     <o-field>
-      <o-checkbox variant="danger" indeterminate>
-        Danger Indeterminate
-      </o-checkbox>
-    </o-field>
-    <o-field>
       <o-checkbox variant="warning" indeterminate>
         Warning Indeterminate
       </o-checkbox>
     </o-field>
+    <o-field>
+      <o-checkbox variant="danger" indeterminate>
+        Danger Indeterminate
+      </o-checkbox>
+    </o-field>
   </section>
 
-  <section class="my-4">
+  <section class="py-3">
+    <h3>Variant Inverted</h3>
+
+    <o-field>
+      <o-checkbox indeterminate> Default </o-checkbox>
+    </o-field>
+    <o-field>
+      <o-checkbox variant="primary-inverted" indeterminate>
+        Primary
+      </o-checkbox>
+    </o-field>
+    <o-field>
+      <o-checkbox variant="secondary-inverted" indeterminate>
+        Secondary
+      </o-checkbox>
+    </o-field>
+    <o-field>
+      <o-checkbox variant="info-inverted" indeterminate> Info </o-checkbox>
+    </o-field>
+    <o-field>
+      <o-checkbox variant="success-inverted" indeterminate>
+        Success
+      </o-checkbox>
+    </o-field>
+    <o-field>
+      <o-checkbox variant="warning-inverted" indeterminate>
+        Warning
+      </o-checkbox>
+    </o-field>
+    <o-field>
+      <o-checkbox variant="danger-inverted" indeterminate> Danger </o-checkbox>
+    </o-field>
+  </section>
+
+  <section class="py-3">
+    <h3>Variant Subtle</h3>
+
+    <o-field>
+      <o-checkbox indeterminate> Default </o-checkbox>
+    </o-field>
+    <o-field>
+      <o-checkbox variant="primary-subtle" indeterminate> Primary </o-checkbox>
+    </o-field>
+    <o-field>
+      <o-checkbox variant="secondary-subtle" indeterminate>
+        Secondary
+      </o-checkbox>
+    </o-field>
+    <o-field>
+      <o-checkbox variant="info-subtle" indeterminate> Info </o-checkbox>
+    </o-field>
+    <o-field>
+      <o-checkbox variant="success-subtle" indeterminate> Success </o-checkbox>
+    </o-field>
+    <o-field>
+      <o-checkbox variant="warning-subtle" indeterminate> Warning </o-checkbox>
+    </o-field>
+    <o-field>
+      <o-checkbox variant="danger-subtle" indeterminate> Danger </o-checkbox>
+    </o-field>
+  </section>
+
+  <section class="py-3">
     <h3>Size</h3>
+
     <o-field>
       <o-checkbox size="small"> Small </o-checkbox>
     </o-field>
@@ -105,8 +174,9 @@ const checkboxGroup = ref(["Flint"]);
     </o-field>
   </section>
 
-  <section class="my-4">
+  <section class="py-3">
     <h3>Array</h3>
+
     <o-field>
       <o-checkbox v-model="checkboxGroup" native-value="Silver">
         Silver
@@ -121,9 +191,6 @@ const checkboxGroup = ref(["Flint"]);
         Billy
       </o-checkbox>
     </o-field>
-    <p class="content">
-      <b>Selection:</b>
-      {{ checkboxGroup }}
-    </p>
+    <p><b>Selection:</b> {{ checkboxGroup }}</p>
   </section>
 </template>

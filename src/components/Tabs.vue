@@ -46,8 +46,9 @@ const type = ref("default");
     <hr />
   </section>
 
-  <section class="mt-4">
+  <section class="py-3">
     <h3>Base</h3>
+
     <o-tabs>
       <o-tab-item
         v-for="(tab, i) in tabs"
@@ -60,10 +61,10 @@ const type = ref("default");
     </o-tabs>
   </section>
 
-  <section class="mt-4">
+  <section class="py-3">
     <h3>Styles</h3>
 
-    <h5>Toggle / Underline</h5>
+    Toggle / Underline
     <o-tabs type="toggle">
       <o-tab-item
         v-for="(tab, i) in tabs"
@@ -74,7 +75,7 @@ const type = ref("default");
         :disabled="tab.disabled" />
     </o-tabs>
 
-    <h5>Boxed / Tabs</h5>
+    Boxed / Tabs
     <o-tabs type="boxed">
       <o-tab-item
         v-for="(tab, i) in tabs"
@@ -85,7 +86,7 @@ const type = ref("default");
         :disabled="tab.disabled" />
     </o-tabs>
 
-    <h5>Pills</h5>
+    Pills
     <o-tabs type="pills">
       <o-tab-item
         v-for="(tab, i) in tabs"
@@ -97,8 +98,9 @@ const type = ref("default");
     </o-tabs>
   </section>
 
-  <section class="mt-4">
+  <section class="py-3">
     <h3>Position</h3>
+
     <o-tabs position="left" type="boxed">
       <o-tab-item
         v-for="(tab, i) in tabs"
@@ -128,7 +130,7 @@ const type = ref("default");
     </o-tabs>
   </section>
 
-  <section class="mt-4">
+  <section class="py-3">
     <h3>Expanded</h3>
     <o-tabs type="boxed" expanded>
       <o-tab-item
@@ -141,7 +143,7 @@ const type = ref("default");
     </o-tabs>
   </section>
 
-  <section class="mt-4">
+  <section class="py-3">
     <h3>Sizes</h3>
     <o-tabs size="small" type="boxed">
       <o-tab-item
@@ -172,7 +174,7 @@ const type = ref("default");
     </o-tabs>
   </section>
 
-  <section class="mt-4">
+  <section class="py-3">
     <h3>Vertical</h3>
     <o-field grouped group-multiline>
       <o-field>

@@ -43,6 +43,9 @@ $tootlip-zindex: $zindex-tooltip;
     color: $tooltip-color;
     padding: $tooltip-padding-y $tooltip-padding-x;
 
+    // Colors
+    @include variant-text-bg();
+
     &::before {
       position: absolute;
       content: "";
@@ -53,11 +56,11 @@ $tootlip-zindex: $zindex-tooltip;
       height: $tooltip-arrow-height;
     }
 
-    &.is-always {
+    &.always {
       visibility: visible;
     }
 
-    &.is-multiline {
+    &.multiline {
       text-align: center;
       white-space: normal;
       width: $tooltip-content-multiline-width;
@@ -141,11 +144,9 @@ $tootlip-zindex: $zindex-tooltip;
     }
   }
 
-  // Colors
-  @include variant-text-bg();
-
+  // Color variants
   @each $name, $value in $theme-colors {
-    .is-#{$name} {
+    .variant-#{$name} {
       &.is-top::before {
         border-top-color: $value;
       }
@@ -171,13 +172,13 @@ $tootlip-zindex: $zindex-tooltip;
     }
   }
 
-  &.is-dashed {
+  &.dashed {
     .tooltip-content {
-      border-bottom: 1px dashed $grey-light;
+      border-bottom: 1px dashed $gray;
     }
   }
 
-  &.is-square {
+  &.square {
     .tooltip-content {
       border-radius: 0;
     }

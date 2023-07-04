@@ -136,7 +136,7 @@ const selected = ref(null);
     <hr />
   </section>
 
-  <section class="mt-3">
+  <section class="py-3">
     <h3>Sandbox</h3>
 
     <o-field grouped group-multiline>
@@ -198,7 +198,7 @@ const selected = ref(null);
     </o-table>
   </section>
 
-  <section class="mt-4">
+  <section class="py-3">
     <h3>Paginated</h3>
 
     <o-field grouped group-multiline>
@@ -219,7 +219,7 @@ const selected = ref(null);
         <option value="both">both</option>
       </o-select>
     </o-field>
-    <p>Page: {{ currentPage }}</p>
+    <p><b>Page:</b> {{ currentPage }}</p>
 
     <o-table
       v-model:current-page="currentPage"
@@ -248,7 +248,7 @@ const selected = ref(null);
     </o-table>
   </section>
 
-  <section class="mt-4">
+  <section class="py-3">
     <h3>Selection</h3>
 
     <o-button
@@ -259,7 +259,7 @@ const selected = ref(null);
       <span>Clear selected</span>
     </o-button>
 
-    <p>Selected: {{ selected }}</p>
+    <p><b>Selected:</b> {{ selected }}</p>
 
     <o-table v-model:selected="selected" :data="dataTable" focusable>
       <o-table-column

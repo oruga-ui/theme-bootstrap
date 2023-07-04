@@ -1,63 +1,30 @@
 @use "sass:map";
 
+// enable css variables of sass properties
+$css-vars: true !default;
+// Most CSS variables use a prefix to avoid collisions with your own codebase.
+// This prefix is in addition to the -- that’s required on every CSS variable.
+$variable-prefix: $prefix;
+
 $speed-slow: 150ms !default;
 $speed-slower: 250ms !default;
-
-$css-vars: true !default;
 $easing: ease !default;
 
-$base-font-size: 1rem !default;
-
-$base-border-radius: $border-radius !default;
-$base-rounded-border-radius: 9999px !default;
-$base-line-height: 1.5 !default;
-$base-disabled-opacity: 0.5 !default;
-
-$tablet: map.get($grid-breakpoints, "md") !default;
-
-$overlay-background-color-dark: rgba(0, 0, 0, 0.8) !default;
-$overlay-background-color-light: rgba(255, 255, 255, 0.5) !default;
-
-$default-border-color: $gray-400 !default;
 // Sizes
-
 $sizes: (
+  "x-small": 0.5rem,
   "small": 0.75rem,
   "medium": 1.25rem,
   "large": 1.5rem,
+  "x-large": 2rem,
 ) !default;
 
-$white: #ffffff !default;
-$black: #000000 !default;
-$grey: $gray-700 !default;
-$grey-light: $gray-400 !default;
-$grey-lighter: $gray-300 !default;
-$grey-dark: $gray-900 !default;
+// Colors
+$gray: $gray-400 !default;
 
-$primary-invert: rgba($primary, 0.1) !default;
-$success-invert: rgba($success, 0.1) !default;
-$danger-invert: rgba($danger, 0.1) !default;
-$warning-invert: rgba($warning, 0.1) !default;
-$info-invert: rgb($info, 0.1) !default;
-$dark-invert: rgb($dark, 0.1) !default;
-
-$theme-colors-lighter: (
-  "primary": $primary-invert,
-  "success": $success-invert,
-  "danger": $danger-invert,
-  "warning": $warning-invert,
-  "info": $info-invert,
-  "dark": $dark-invert,
-) !default;
-
-// $primary: $primary !default;
-// $primary-invert: $white !default;
-
-// $danger: #b60000 !default;
-// $danger-invert: $white !default;
-// $warning: #f4c300 !default;
-// $warning-invert: $black !default;
-// $success: $success !default;
-// $success-invert: $white !default;
-// $info: #005c98 !default;
-// $info-invert: $white !default;
+// these color theme maps are available:
+// - $theme-colors                -> var(--#{$prefix}#{$name});
+// - $theme-colors-text           -> var(--#{$prefix}#{$name}-text-emphasis);
+// - $theme-colors-rgb            -> var(--#{$prefix}#{$name}-rgb);
+// - $theme-colors-bg-subtle      -> var(--#{$prefix}#{$name}-bg-subtle)
+// - $theme-colors-border-subtle  -> var(--#{$prefix}#{$name}-border-subtle)

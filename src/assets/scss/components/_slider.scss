@@ -2,7 +2,7 @@
 $slider-tick-width: 0.25rem !default;
 $slider-tick-height: 0.25rem !default;
 $slider-tick-radius: 50% !default;
-$slider-tick-background-color: $grey-dark !default;
+$slider-tick-background-color: $gray-900 !default;
 /* @docs */
 
 /* @bootstrap docs */
@@ -48,11 +48,8 @@ $slider-tick-background-color: $grey-dark !default;
       height: 100%;
       border-radius: $form-range-track-border-radius;
 
-      @each $name, $pair in $theme-colors {
-        &.is-#{$name} {
-          background-color: $pair;
-        }
-      }
+      // Colors
+      @include variant-bg();
     }
 
     .slider-thumb-wrapper {
@@ -72,6 +69,21 @@ $slider-tick-background-color: $grey-dark !default;
         border-radius: $form-range-thumb-border-radius;
         transition: $form-range-thumb-transition;
 
+        // Colors
+        @include variant-bg();
+
+        &:active,
+        &:hover {
+          box-shadow: var(--bs-focus-ring-x, 0) var(--bs-focus-ring-y, 0)
+            var(--bs-focus-ring-blur, 0) var(--bs-focus-ring-width)
+            var(--bs-focus-ring-color);
+        }
+
+        &:active {
+          transform: scale(1.2);
+          // background-color: $form-range-thumb-active-bg;
+        }
+
         &:not(.focus-ring) {
           box-shadow: $form-range-thumb-box-shadow;
         }
@@ -83,15 +95,6 @@ $slider-tick-background-color: $grey-dark !default;
             box-shadow: $form-range-thumb-focus-box-shadow;
           }
         }
-
-        &:active {
-          background-color: $form-range-thumb-active-bg;
-        }
-
-        // rounded thumb
-        &.is-rounded {
-          border-radius: 50%;
-        }
       }
 
       &.is-dragging {
@@ -99,22 +102,6 @@ $slider-tick-background-color: $grey-dark !default;
 
         .slider-thumb {
           transform: scale(1.5);
-        }
-      }
-
-      &.has-indicator {
-        padding: 1rem 0.62rem;
-        display: flex;
-        align-items: center;
-        width: auto;
-      }
-
-      // Colors
-      @each $name, $pair in $theme-colors {
-        .is-#{$name} {
-          .slider-thumb {
-            background-color: $pair;
-          }
         }
       }
     }
@@ -129,7 +116,7 @@ $slider-tick-background-color: $grey-dark !default;
       background: $slider-tick-background-color;
       border-radius: $slider-tick-radius;
 
-      &.is-tick-hidden {
+      &.tick-hidden {
         background: transparent;
       }
 
@@ -140,7 +127,7 @@ $slider-tick-background-color: $grey-dark !default;
     }
   }
 
-  &.is-disabled {
+  &.disabled {
     cursor: not-allowed;
     opacity: 0.5;
     background-color: $form-range-thumb-disabled-bg;
@@ -148,7 +135,7 @@ $slider-tick-background-color: $grey-dark !default;
 
   // Sizes
   @each $name, $size in $sizes {
-    &.is-#{$name} {
+    &.size-#{$name} {
       height: $size;
 
       @if ($name == "small") {

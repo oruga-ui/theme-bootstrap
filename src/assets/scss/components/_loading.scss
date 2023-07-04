@@ -1,7 +1,7 @@
 /* @docs */
 $loading-zindex: $zindex-sticky !default;
 $loading-fullpage-zindex: $zindex-fixed !default;
-$loading-overlay: $overlay-background-color-light !default;
+$loading-overlay: rgba(255, 255, 255, 0.5) !default;
 /* @docs */
 
 .loading {
@@ -16,7 +16,7 @@ $loading-overlay: $overlay-background-color-light !default;
   overflow: hidden;
   z-index: $loading-zindex;
 
-  &.is-fullpage {
+  &.fullpage {
     position: fixed;
     z-index: $loading-fullpage-zindex;
   }

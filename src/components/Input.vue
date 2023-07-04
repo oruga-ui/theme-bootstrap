@@ -4,10 +4,11 @@
     <hr />
   </section>
 
-  <section class="my-4">
+  <section class="py-3">
     <h3>Base</h3>
+
     <o-field label="Name">
-      <o-input />
+      <o-input expanded />
     </o-field>
 
     <o-field label="Email" variant="danger" message="This email is invalid">
@@ -38,15 +39,24 @@
       <o-input placeholder="No label" rounded />
     </o-field>
 
-    <o-field label="Success" variant="success">
-      <o-input placeholder="Success" />
+    <o-field label="Disabled">
+      <o-input placeholder="Disabled" disabled />
+    </o-field>
+  </section>
+
+  <section class="py-3">
+    <h3>Variants</h3>
+
+    <o-field label="Primary" variant="primary">
+      <o-input placeholder="Primary" />
     </o-field>
 
-    <o-field
-      label="Error"
-      variant="danger"
-      message="You can have a message too">
-      <o-input placeholder="Error" />
+    <o-field label="Secondary" variant="secondary">
+      <o-input placeholder="Secondary" />
+    </o-field>
+
+    <o-field label="Success" variant="success">
+      <o-input placeholder="Success" />
     </o-field>
 
     <o-field label="Info" variant="info">
@@ -57,13 +67,17 @@
       <o-input placeholder="Warning" />
     </o-field>
 
-    <o-field label="Disabled">
-      <o-input placeholder="Disabled" disabled />
+    <o-field
+      label="Error"
+      variant="danger"
+      message="You can have a message too">
+      <o-input placeholder="Error" />
     </o-field>
   </section>
 
-  <section class="my-4">
+  <section class="py-3">
     <h3>Sizes</h3>
+
     <o-field>
       <o-input placeholder="small" size="small" icon="user" />
     </o-field>
@@ -81,14 +95,24 @@
     </o-field>
   </section>
 
-  <section class="my-4">
+  <section class="py-3">
     <h3>With Icons</h3>
+
     <o-field>
       <o-input
         placeholder="Search..."
         type="search"
         icon="search"
         icon-clickable>
+      </o-input>
+    </o-field>
+
+    <o-field>
+      <o-input
+        placeholder="Search..."
+        type="search"
+        icon-right="search"
+        icon-right-clickable>
       </o-input>
     </o-field>
 

@@ -4,8 +4,9 @@
     <hr />
   </section>
 
-  <section class="my-4">
+  <section class="py-3">
     <h3>Base</h3>
+
     <o-field>
       <o-icon pack="fas" icon="user" size="small" />
       <o-icon pack="fas" icon="home" size="small" />
@@ -25,14 +26,20 @@
     </o-field>
 
     <o-field>
-      <o-icon pack="fas" icon="user" size="large" variant="success" />
-      <o-icon pack="fas" icon="home" size="large" variant="info" />
-      <o-icon pack="fas" icon="tachometer-alt" size="large" variant="primary" />
+      <o-icon pack="fas" icon="user" size="large" variant="success" clickable />
+      <o-icon pack="fas" icon="home" size="large" variant="info" clickable />
+      <o-icon
+        pack="fas"
+        icon="tachometer-alt"
+        size="large"
+        variant="primary"
+        clickable />
     </o-field>
   </section>
 
-  <section class="my-4">
+  <section class="py-3">
     <h3>Buttons</h3>
+
     <o-button variant="success">
       <o-icon pack="fas" icon="check" />
       <span>Finish</span>
@@ -49,3 +56,9 @@
     </o-button>
   </section>
 </template>
+
+<style lang="scss">
+.icon:not(:last-child) {
+  margin-right: 0.5rem;
+}
+</style>

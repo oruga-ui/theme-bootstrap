@@ -4,20 +4,24 @@
     <hr />
   </section>
 
-  <section class="mt-3">
+  <section class="py-3">
     <h3>Base</h3>
+
     <div class="buttons">
       <o-button variant="primary">Primary</o-button>
+      <o-button variant="secondary">Secondary</o-button>
       <o-button variant="success">Success</o-button>
       <o-button variant="danger">Danger</o-button>
       <o-button variant="warning">Warning</o-button>
       <o-button variant="info">Info</o-button>
       <o-button variant="dark">Dark</o-button>
+      <o-button variant="light">Light</o-button>
     </div>
   </section>
 
-  <section class="mt-3">
+  <section class="py-3">
     <h3>States</h3>
+
     <div class="buttons">
       <o-button>Normal</o-button>
       <o-button disabled>Disabled</o-button>
@@ -25,32 +29,54 @@
     </div>
   </section>
 
-  <section class="mt-3">
+  <section class="py-3">
     <h3>Outlined</h3>
+
     <div class="buttons">
       <o-button variant="primary" outlined>Outlined</o-button>
+      <o-button variant="secondary" outlined>Outlined</o-button>
       <o-button variant="success" outlined>Outlined</o-button>
       <o-button variant="danger" outlined>Outlined</o-button>
       <o-button variant="warning" outlined>Outlined</o-button>
       <o-button variant="info" outlined>Outlined</o-button>
       <o-button variant="dark" outlined>Outlined</o-button>
+      <o-button variant="light" outlined>Outlined</o-button>
     </div>
   </section>
 
-  <section class="mt-3">
+  <section class="py-3">
     <h3>Inverted</h3>
+
     <div class="buttons">
       <o-button variant="primary" inverted>Inverted</o-button>
+      <o-button variant="secondary" inverted>Inverted</o-button>
       <o-button variant="success" inverted>Inverted</o-button>
       <o-button variant="danger" inverted>Inverted</o-button>
       <o-button variant="warning" inverted>Inverted</o-button>
       <o-button variant="info" inverted>Inverted</o-button>
       <o-button variant="dark" inverted>Inverted</o-button>
+      <o-button variant="light" outlined>Inverted</o-button>
     </div>
   </section>
 
-  <section class="mt-3">
+  <section class="py-3">
+    <h3>Variant Subtle</h3>
+
+    <div class="buttons">
+      <o-button variant="primary-subtle">Subtle</o-button>
+      <o-button variant="secondary-subtle">Subtle</o-button>
+      <o-button variant="success-subtle">Subtle</o-button>
+      <o-button variant="danger-subtle">Subtle</o-button>
+      <o-button variant="warning-subtle">Subtle</o-button>
+      <o-button variant="info-subtle">Subtle</o-button>
+      <o-button variant="dark-subtle">Subtle</o-button>
+      <o-button variant="light-subtle">Subtle</o-button>
+    </div>
+  </section>
+
+  <section class="py-3">
     <h3>Icons</h3>
+
     <div class="buttons">
       <o-button variant="primary" size="small" icon-left="plus">Add</o-button>
       <o-button variant="primary" icon-left="plus">Add</o-button>
@@ -65,16 +91,11 @@
     </div>
   </section>
 
-  <section class="mt-3">
+  <section class="py-3">
     <h3>Expanded</h3>
+
     <div class="buttons">
       <o-button variant="primary" expanded>Expanded</o-button>
     </div>
   </section>
 </template>
-
-<style scoped lang="scss">
-.buttons button {
-  margin-bottom: 0.5rem;
-}
-</style>

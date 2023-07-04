@@ -16,8 +16,9 @@ const passive = ref(null);
     <hr />
   </section>
 
-  <section class="my-4">
+  <section class="py-3">
     <h3>Base</h3>
+
     <o-field>
       <o-switch>Default </o-switch>
     </o-field>
@@ -36,11 +37,17 @@ const passive = ref(null);
     </o-field>
   </section>
 
-  <section class="my-4">
+  <section class="py-3">
     <h3>Variant</h3>
 
     <o-field>
       <o-switch :value="true"> Default </o-switch>
+    </o-field>
+    <o-field>
+      <o-switch :value="true" variant="primary"> Primary </o-switch>
+    </o-field>
+    <o-field>
+      <o-switch :value="true" variant="secondary"> Secondary </o-switch>
     </o-field>
     <o-field>
       <o-switch :value="true" variant="info"> Info </o-switch>
@@ -56,8 +63,35 @@ const passive = ref(null);
     </o-field>
   </section>
 
-  <section class="my-4">
+  <section class="py-3">
+    <h3>Variant Subtle</h3>
+
+    <o-field>
+      <o-switch :value="true"> Default </o-switch>
+    </o-field>
+    <o-field>
+      <o-switch :value="true" variant="primary-subtle"> Primary </o-switch>
+    </o-field>
+    <o-field>
+      <o-switch :value="true" variant="secondary-subtle"> Secondary </o-switch>
+    </o-field>
+    <o-field>
+      <o-switch :value="true" variant="info-subtle"> Info </o-switch>
+    </o-field>
+    <o-field>
+      <o-switch :value="true" variant="success-subtle"> Success </o-switch>
+    </o-field>
+    <o-field>
+      <o-switch :value="true" variant="danger-subtle"> Danger </o-switch>
+    </o-field>
+    <o-field>
+      <o-switch :value="true" variant="warning-subtle"> Warning </o-switch>
+    </o-field>
+  </section>
+
+  <section class="py-3">
     <h3>Size</h3>
+
     <o-field>
       <o-switch size="small">Small</o-switch>
     </o-field>
@@ -72,7 +106,7 @@ const passive = ref(null);
     </o-field>
   </section>
 
-  <section class="my-4">
+  <section class="py-3">
     <h3>Style variants</h3>
 
     <o-field grouped>
@@ -86,7 +120,9 @@ const passive = ref(null);
       <o-select v-model="variant" expanded placeholder="Variant">
         <option value="null">Default</option>
         <option value="primary">Primary</option>
+        <option value="secondary">Secondary</option>
         <option value="success">Success</option>
+        <option value="info">Info</option>
         <option value="warning">Warning</option>
         <option value="danger">Danger</option>
       </o-select>
@@ -95,7 +131,9 @@ const passive = ref(null);
       <o-select v-model="passive" expanded placeholder="Passive Variant">
         <option value="null">Default</option>
         <option value="primary">Primary</option>
+        <option value="secondary">Secondary</option>
         <option value="success">Success</option>
+        <option value="info">Info</option>
         <option value="warning">Warning</option>
         <option value="danger">Danger</option>
       </o-select>

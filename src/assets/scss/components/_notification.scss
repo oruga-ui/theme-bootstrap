@@ -45,10 +45,6 @@ $notification-notices-space: 1.5rem !default;
       padding-right: calc($notification-close-btn-position + $alert-padding-x);
     }
   }
-
-  .btn-close i {
-    display: none;
-  }
 }
 
 .alert {
@@ -60,10 +56,14 @@ $notification-notices-space: 1.5rem !default;
     right: $notification-close-btn-position;
   }
 
-  // Colors
+  // Colors variants
   @each $name, $pair in $theme-colors {
-    &.is-#{$name} {
+    &.variant-#{$name} {
       @extend .alert-#{$name};
+
+      > .btn-close {
+        filter: unset;
+      }
     }
   }
 }
@@ -75,15 +75,7 @@ $notification-notices-space: 1.5rem !default;
   padding: $alert-padding-x $alert-padding-y;
 
   // Colors
-  @each $name, $pair in $theme-colors {
-    &.is-#{$name} {
-      @extend .text-bg-#{$name};
-
-      .btn-close {
-        @extend .btn-close-white;
-      }
-    }
-  }
+  @include variant-text-bg();
 }
 
 .notifictations {
@@ -125,7 +117,7 @@ $notification-notices-space: 1.5rem !default;
   &.is-bottom {
     flex-direction: column-reverse;
 
-    .div:first-child {
+    > .div:first-child {
       margin-bottom: 0;
     }
   }

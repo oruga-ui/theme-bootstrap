@@ -394,8 +394,9 @@ function getFilteredTags(text: string) {
     <hr />
   </section>
 
-  <section class="py-4">
+  <section class="py-3">
     <h3>Base</h3>
+
     <o-switch v-model="allowNew"> Allow new items </o-switch>
     <o-switch v-model="openOnFocus"> Open on focus </o-switch>
 
@@ -416,9 +417,24 @@ function getFilteredTags(text: string) {
     </o-field>
 
     <p><b>Items:</b> {{ tags }}</p>
+
+    <o-field label="Disabled">
+      <o-inputitems
+        variant="primary"
+        disabled
+        :model-value="['One']"
+        :data="['One', 'Two', 'Three', 'Four']"
+        autocomplete
+        :allow-new="allowNew"
+        :open-on-focus="openOnFocus"
+        icon="tag"
+        placeholder="Add an item"
+        keep-first
+        expanded />
+    </o-field>
   </section>
 
-  <section class="py-4">
+  <section class="py-3">
     <h3>Limits</h3>
 
     <o-field label="Limited to 10 characters">
@@ -437,7 +453,7 @@ function getFilteredTags(text: string) {
     </o-field>
   </section>
 
-  <section class="py-4">
+  <section class="py-3">
     <h3>Variant</h3>
 
     <o-field label="Primary">
@@ -446,6 +462,14 @@ function getFilteredTags(text: string) {
         :data="['One', 'Two', 'Three', 'Four']"
         :allow-new="false"
         variant="primary" />
+    </o-field>
+
+    <o-field label="Secondary">
+      <o-inputitems
+        :model-value="['One']"
+        :data="['One', 'Two', 'Three', 'Four']"
+        :allow-new="false"
+        variant="secondary" />
     </o-field>
 
     <o-field label="Success">

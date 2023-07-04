@@ -1,6 +1,5 @@
 /* @docs */
 $pagination-items-margin: 0.5rem !default;
-$pagination-rounded-border-radius: $base-rounded-border-radius !default;
 /* @docs */
 
 /* @bootstrap docs */
@@ -56,7 +55,6 @@ $pagination-rounded-border-radius: $base-rounded-border-radius !default;
     }
   }
 }
-
 @mixin vertical-centered {
   display: flex;
   align-items: center;
@@ -111,7 +109,7 @@ $pagination-rounded-border-radius: $base-rounded-border-radius !default;
     margin-right: $pagination-items-margin;
   }
 
-  &:not(.is-simple) {
+  &:not(.simple) {
     &.order-left {
       @include roundEdge;
       justify-content: space-between;
@@ -152,7 +150,7 @@ $pagination-rounded-border-radius: $base-rounded-border-radius !default;
     }
   }
 
-  &.is-simple {
+  &.simple {
     &.order-centered {
       justify-content: center;
     }
@@ -162,10 +160,9 @@ $pagination-rounded-border-radius: $base-rounded-border-radius !default;
     }
   }
 
-  &.is-rounded {
+  &.rounded {
     .pagination-ellipsis,
     .page-link {
-      border-radius: $pagination-rounded-border-radius;
       margin-right: $pagination-items-margin;
     }
   }

@@ -5,28 +5,18 @@
         class="image__oruga"
         src="https://raw.githubusercontent.com/oruga-ui/theme-bootstrap/master/public/logo.svg"
         alt="Logo Oruga Theme Bootstrap" />
-      <h1>Bootstrap Demo</h1>
+      <h1 class="mt-2">Oruga Bootstrap Theme Demo</h1>
     </div>
   </div>
 </template>
 
-<script lang="ts">
-import { defineComponent } from "vue";
-
-export default defineComponent({
-  name: "Home",
-});
-</script>
-
-<style scoped>
+<style scoped lang="scss">
 .content {
   width: auto;
   margin: 0 auto;
   transform: translateY(70%);
 }
-.content h1 {
-  margin-top: 0.5em;
-}
+
 .image__oruga {
   height: 128px;
   display: flex;

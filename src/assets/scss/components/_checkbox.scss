@@ -1,3 +1,5 @@
+@use "sass:map";
+
 /* @bootstrap docs */
 // $form-check-input-width:                  1em;
 // $form-check-min-height:                   $font-size-base * $line-height-base;
@@ -34,21 +36,98 @@
 // $form-check-inline-margin-end:    1rem;
 /* @bootstrap docs */
 
+@function checkmarkSVG($color) {
+  @return escape-svg(
+    str-replace(
+      $form-check-input-checked-bg-image,
+      "#{$form-check-input-checked-color}",
+      $color
+    )
+  );
+}
+@function checkcircleSVG($color) {
+  @return escape-svg(
+    str-replace(
+      $form-check-radio-checked-bg-image,
+      "#{$form-check-input-checked-color}",
+      $color
+    )
+  );
+}
+@function indeterminateSVG($color) {
+  @return escape-svg(
+    str-replace(
+      $form-check-input-indeterminate-bg-image,
+      "#{$form-check-input-indeterminate-color}",
+      $color
+    )
+  );
+}
+
 .form-check {
-  // Colors
-  @each $name, $pair in $theme-colors {
-    &.is-#{$name} {
+  // Color variants
+  @each $name, $variant in $theme-colors {
+    &.variant-#{$name} {
       input[type="radio"],
       input[type="checkbox"] {
-        background-color: $pair;
-        border-color: $pair;
+        background-color: $variant;
+        border-color: $variant;
+      }
+    }
+  }
+
+  // Color variant inverted
+  @each $name, $color in $theme-colors {
+    &.variant-#{$name}-inverted {
+      input[type="radio"],
+      input[type="checkbox"] {
+        background-color: transparent;
+        border-color: var(--#{$prefix}#{$name});
+
+        &[type="checkbox"] {
+          &:checked {
+            --#{$prefix}form-check-bg-image: #{checkmarkSVG($color)};
+          }
+
+          &:indeterminate {
+            --#{$prefix}form-check-bg-image: #{indeterminateSVG($color)};
+          }
+        }
+
+        &[type="radio"]:checked {
+          --#{$prefix}form-check-bg-image: #{checkcircleSVG($color)};
+        }
+      }
+    }
+
+    &.variant-#{$name}-subtle {
+      $color: map.get($theme-colors-bg-subtle, #{$name});
+
+      input[type="radio"],
+      input[type="checkbox"] {
+        background-color: transparent;
+        border-color: var(--#{$prefix}#{$name}-border-subtle);
+
+        &[type="checkbox"] {
+          &:checked {
+            --#{$prefix}form-check-bg-image: #{checkmarkSVG($color)};
+          }
+
+          &:indeterminate {
+            --#{$prefix}form-check-bg-image: #{indeterminateSVG($color)};
+          }
+        }
+
+        &[type="radio"]:checked {
+          --#{$prefix}form-check-bg-image: #{checkcircleSVG($color)};
+        }
       }
     }
   }
 
   // Sizes
   @each $name, $size in $sizes {
-    &.is-#{$name} {
+    &.size-#{$name} {
       font-size: $size;
 
       // input size should not defined for switch style
@@ -63,8 +142,8 @@
     }
   }
 
-  &.is-disabled {
-    opacity: $form-check-input-disabled-opacity;
+  &.disabled,
+  &.disabled .form-check-label {
     cursor: not-allowed;
   }
 }
