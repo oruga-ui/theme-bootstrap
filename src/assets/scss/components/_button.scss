@@ -73,7 +73,7 @@ $btn-hover-box-shadow: $box-shadow-sm !default;
   }
 
   &:hover {
-    box-shadow: var(-#{$prefix}btn-hover-box-shadow);
+    box-shadow: var(--#{$prefix}btn-hover-box-shadow);
   }
 
   &.expanded {
