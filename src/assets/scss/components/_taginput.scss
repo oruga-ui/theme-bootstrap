@@ -17,36 +17,50 @@ $taginput-counter-font-size: 0.75rem !default;
 // $badge-border-radius:               var(--#{$prefix}border-radius);
 /* @bootstrap docs */
 
-.taginput {
+.taginput-wrapper {
   .btn-close {
     font-size: 0.8em;
   }
 
-  .taginput-wrapper {
-    border: $input-border-width solid $input-border-color;
-    border-radius: $input-border-radius;
+  .taginput {
+    --#{$prefix}taginput-border-width: #{$input-border-width};
+    --#{$prefix}taginput-border-color: #{$input-border-color};
+    --#{$prefix}taginput-border-radius: #{$input-border-radius};
+
     display: flex;
     flex-wrap: wrap;
+    border: var(--#{$prefix}taginput-border-width) solid
+      var(--#{$prefix}taginput-border-color);
+    border-radius: var(--#{$prefix}taginput-border-radius);
 
     &:hover {
-      box-shadow: var(--bs-focus-ring-x, 0) var(--bs-focus-ring-y, 0)
-        var(--bs-focus-ring-blur, 0) var(--bs-focus-ring-width)
-        var(--bs-focus-ring-color);
+      box-shadow: var(--#{$prefix}focus-ring-x, 0)
+        var(--#{$prefix}focus-ring-y, 0) var(--#{$prefix}focus-ring-blur, 0)
+        var(--#{$prefix}focus-ring-width) var(--#{$prefix}focus-ring-color);
     }
 
     .badge {
-      --bs-badge-color: #{$taginput-badge-color};
-      --bs-badge-font-size: #{$taginput-badge-font-size};
-      background-color: $taginput-badge-bg;
-      margin: $taginput-badge-margin;
+      --#{$prefix}badge-color: #{$taginput-badge-color};
+      --#{$prefix}badge-font-size: #{$taginput-badge-font-size};
+      --#{$prefix}badge-margin: #{$taginput-badge-margin};
+      --#{$prefix}badge-bg: #{$taginput-badge-bg};
+      --#{$prefix}badge-icon-space: #{$taginput-badge-icon-space};
+
       display: inline-flex;
       align-items: center;
+      background: var(--#{$prefix}badge-bg);
+      margin: var(--#{$prefix}badge-margin);
 
-      // Colors
-      @include variant-text-bg();
+      // Color variants
+      @each $name, $color in $theme-colors {
+        &.variant-#{$name} {
+          --#{$prefix}badge-color: var(--#{$prefix}#{$name}-contrast);
+          --#{$prefix}badge-bg: var(--#{$prefix}#{$name});
+        }
+      }
 
       .icon {
-        margin-left: $taginput-badge-icon-space;
+        margin-left: var(--#{$prefix}badge-icon-space);
         margin-bottom: 0;
         cursor: pointer;
       }
@@ -63,11 +77,14 @@ $taginput-counter-font-size: 0.75rem !default;
   }
 
   .counter {
+    --#{$prefix}taginput-counter-margin: #{$taginput-counter-margin};
+    --#{$prefix}taginput-counter-font-size: #{$taginput-counter-font-size};
+
     position: relative;
     display: block;
     float: right;
-    font-size: $taginput-counter-font-size;
-    margin: $taginput-counter-margin;
+    font-size: var(--#{$prefix}taginput-counter-font-size);
+    margin: var(--#{$prefix}taginput-counter-margin);
   }
 
   &.expanded {
@@ -75,10 +92,15 @@ $taginput-counter-font-size: 0.75rem !default;
   }
 
   &.disabled {
-    .taginput-wrapper {
-      border-color: $input-disabled-border-color;
-      color: $input-disabled-color;
-      background-color: $input-disabled-bg;
+    .taginput {
+      --#{$prefix}taginput-disabled-bg: #{$input-disabled-bg};
+      --#{$prefix}taginput-disabled-color: #{$input-disabled-color};
+      --#{$prefix}taginput-disabled-border-color: #{$input-disabled-border-color};
+
+      color: var(--#{$prefix}taginput-disabled-color);
+      background: var(--#{$prefix}taginput-disabled-bg);
+      border-color: var(--#{$prefix}taginput-disabled-border-color)
+        var(--#{$prefix}border-color);
       cursor: not-allowed;
 
       input {

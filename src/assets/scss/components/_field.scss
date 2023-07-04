@@ -1,6 +1,6 @@
 /* @docs */
-$input-field-grouped-margin-right: 0.5rem !default;
-$input-field-margin-bottom: 0.75rem !default;
+$input-field-grouped-spacer: 0.5rem !default;
+$input-field-margin-bottom: $spacer !default;
 $input-field-btn-border-color: $input-border-color !default;
 /* @docs */
 
@@ -37,20 +37,24 @@ $input-field-btn-border-color: $input-border-color !default;
   // The input in middle shouldn't be rounded
   &:not(:first-child):not(:last-child) {
     #{$selector} {
-      --bs-border-radius: 0;
+      --#{$prefix}border-radius: 0;
     }
   }
 
   // The input is first and the last
   &:first-child:last-child {
     .form-control {
-      --bs-border-radius: #{$border-radius};
+      --#{$prefix}border-radius: #{$border-radius};
     }
   }
 }
 
 .input-field {
-  margin-bottom: $input-field-margin-bottom;
+  --#{$prefix}input-field-grouped-spacer: #{$input-field-grouped-spacer};
+  --#{$prefix}input-field-margin-bottom: #{$input-field-margin-bottom};
+  --#{$prefix}input-field-btn-border-color: #{$input-border-color};
+
+  margin-bottom: var(--#{$prefix}input-field-margin-bottom);
 
   &.row > div {
     @extend .col;
@@ -105,8 +109,8 @@ $input-field-btn-border-color: $input-border-color !default;
     .btn:not(.btn-primary):not(.btn-secondary):not(.btn-info):not(
         .btn-danger
       ):not(.btn-success):not(.btn-warning):not(.btn-dark):not(.btn-light) {
-      --bs-btn-border-color: #{$input-field-btn-border-color};
-      --bs-btn-bg: #{$input-field-btn-border-color};
+      --#{$prefix}btn-border-color: #{$input-field-btn-border-color};
+      --#{$prefix}btn-bg: #{$input-field-btn-border-color};
     }
 
     .input {
@@ -135,7 +139,7 @@ $input-field-btn-border-color: $input-border-color !default;
     & > .btn:not(:last-child),
     & > button:not(:last-child),
     & > .input-field:not(:last-child) {
-      margin-right: $input-field-grouped-margin-right;
+      margin-right: var(--#{$prefix}input-field-grouped-spacer);
     }
   }
 }

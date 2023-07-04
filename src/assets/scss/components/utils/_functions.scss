@@ -1,62 +1,4 @@
 @use "sass:math";
-@use "sass:string";
-
-// Helper function to replace characters in a string
-@function str-replace($string, $search, $replace: "") {
-  $index: string.index($string, $search);
-
-  @return if(
-    $index,
-    string.slice($string, 1, $index - 1) + $replace +
-      str-replace(
-        string.slice($string, $index + string.length($search)),
-        $search,
-        $replace
-      ),
-    $string
-  );
-}
-
-/// Assigns a specific variable to an attribute
-///
-/// @param {string} $attribute
-///   The attribute we want to include
-/// @param {string} $name
-///   Variable name
-/// @param {string} $value
-///   Variable value
-@mixin avariable($attribute, $name, $value) {
-  $variable: variable($name, $value);
-
-  @if $variable {
-    #{$attribute}: $variable;
-  }
-}
-
-/// Returns a variable.
-///
-/// @param {string} $name
-///   Variable name
-/// @param {string} $value
-///   Variable value
-/// @param {string} $forceval
-///   By default is `false`, if `true` it allows to bypass whitelist and set the value
-/// @return {string} the variable or null if not in whitelist when $css-vars == false.
-@function variable($name, $value, $forceval: false) {
-  @if $css-vars == true {
-    @if is-empty-whitelist() or is-in-whitelist($name) {
-      @return var(#{$variable-prefix}#{$name}, #{$value});
-    }
-  } @else if $sass-vars == true {
-    @if is-empty-whitelist() or is-in-whitelist($name) {
-      @return #{$value};
-    }
-  } @else if $forceval == true {
-    @return #{$value};
-  }
-
-  @return null;
-}
 
 /// Remove the unit of a length
 /// @param {Number} $number - Number to remove unit from
@@ -67,36 +9,4 @@
   }
 
   @return $number;
-}
-
-/// Generates variant-{color} and set background and contrast text color.
-/// This Color and background helper combines the power of our .text-* utilities and .bg-* utilities in one class.
-/// Using the Sass color-contrast() function, a contrasting color is automatically determined for a particular background-color.
-@mixin variant-text-bg($map: $theme-colors) {
-  @each $name, $color in $map {
-    &.variant-#{$name} {
-      color: color-contrast($color);
-      background-color: $color;
-    }
-  }
-}
-
-/// Generates variant-{color} and set background color.
-/// This helper creates one background-color utility class for each color theme.
-@mixin variant-bg($map: $theme-colors) {
-  @each $name, $color in $map {
-    &.variant-#{$name} {
-      background-color: $color;
-    }
-  }
-}
-
-/// Generates is-{color} and set text color.
-/// This helper creates one text color utility class for each color theme.
-@mixin variant-text($map: $theme-colors) {
-  @each $name, $color in $map {
-    &.variant-#{$name} {
-      color: $color;
-    }
-  }
 }

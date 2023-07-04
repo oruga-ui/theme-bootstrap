@@ -1,13 +1,20 @@
 /* @docs */
 $input-icon-color: $input-color !default;
+$input-icon-spacer: 0.75rem !default;
+
 $input-icon-left-padding-sm: $input-btn-padding-y-sm $input-btn-padding-x-sm
   $input-btn-padding-y-sm 2rem !default;
 $input-icon-left-padding: $input-btn-padding-y $input-btn-padding-x
   $input-btn-padding-y 2.5rem !default;
 $input-icon-left-padding-lg: $input-btn-padding-y-lg $input-btn-padding-x-lg
   $input-btn-padding-y-lg 3rem !default;
-$input-icon-left-position: 0.75rem !default;
-$input-icon-right-position: 0.75rem !default;
+
+$input-icon-right-padding-sm: $input-btn-padding-y-sm 2rem
+  $input-btn-padding-y-sm $input-btn-padding-x-sm !default;
+$input-icon-right-padding: $input-btn-padding-y 2.5rem $input-btn-padding-y
+  $input-btn-padding-x !default;
+$input-icon-right-padding-lg: $input-btn-padding-y-lg 3rem
+  $input-btn-padding-y-lg $input-btn-padding-x-lg !default;
 /* @docs */
 
 /* @bootstrap docs */
@@ -145,33 +152,50 @@ $input-icon-right-position: 0.75rem !default;
   .form-control {
     // if the icon is in left then set that padding
     &.icon-left {
-      padding: $input-icon-left-padding;
+      --#{$prefix}input-icon-left-padding: #{$input-icon-left-padding};
+      padding: var(--#{$prefix}input-icon-left-padding);
+      // if icon and the input are large, we give more space to icon
+      &.form-control-sm {
+        --#{$prefix}input-icon-left-padding: #{$input-icon-left-padding-sm};
+      }
+      // if icon and the input are large, we give more space to icon
+      &.form-control-lg {
+        --#{$prefix}input-icon-left-padding: #{$input-icon-left-padding-lg};
+      }
     }
 
-    // if icon and the input are large, we give more space to icon
-    &.icon-left.form-control-lg {
-      padding: $input-icon-left-padding-lg;
-    }
-    // if icon and the input are large, we give more space to icon
-    &.icon-left.form-control-sm {
-      padding: $input-icon-left-padding-sm;
+    // if the icon is in right then set that padding
+    &.icon-right {
+      --#{$prefix}input-icon-right-padding: #{$input-icon-right-padding};
+      padding: var(--#{$prefix}input-icon-right-padding);
+      // if icon and the input are large, we give more space to icon
+      &.form-control-sm {
+        --#{$prefix}input-icon-right-padding: #{$input-icon-right-padding-sm};
+      }
+      // if icon and the input are large, we give more space to icon
+      &.form-control-lg {
+        --#{$prefix}input-icon-right-padding: #{$input-icon-right-padding-lg};
+      }
     }
   }
 
   // the Position of the icon
   .icon {
+    --#{$prefix}input-icon-color: #{$input-icon-color};
+    --#{$prefix}input-icon-spacer: #{$input-icon-spacer};
+
     position: absolute;
-    color: $input-icon-color;
     margin: 0;
+    color: var(--#{$prefix}input-icon-color);
 
     &.icon-left {
       top: 12px;
-      left: $input-icon-left-position;
+      left: var(--#{$prefix}input-icon-spacer);
     }
 
     &.icon-right {
       top: 12px;
-      right: $input-icon-right-position;
+      right: var(--#{$prefix}input-icon-spacer);
     }
 
     &.size-small {

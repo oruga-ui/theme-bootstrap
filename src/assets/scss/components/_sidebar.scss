@@ -22,12 +22,12 @@ $sidebar-reduced-height: 10vh !default;
 @mixin size($height, $width) {
   &.offcanvas-start,
   &.offcanvas-end {
-    --bs-offcanvas-width: #{$width};
+    --#{$prefix}offcanvas-width: #{$width};
   }
 
   &.offcanvas-top,
   &.offcanvas-bottom {
-    --bs-offcanvas-height: #{$height};
+    --#{$prefix}offcanvas-height: #{$height};
   }
 }
 
@@ -45,15 +45,20 @@ $sidebar-reduced-height: 10vh !default;
       top: 0.5rem;
     }
 
-    // Colors
-    @include variant-text-bg();
+    // Color variants
+    @each $name, $color in $theme-colors {
+      &.variant-#{$name} {
+        --#{$prefix}offcanvas-color: var(--#{$prefix}#{$name}-contrast);
+        --#{$prefix}offcanvas-bg: var(--#{$prefix}#{$name});
+      }
+    }
 
     &.fullwidth {
-      --bs-offcanvas-width: 100%;
+      --#{$prefix}offcanvas-width: 100%;
     }
 
     &.fullheight {
-      --bs-offcanvas-height: 100%;
+      --#{$prefix}offcanvas-height: 100%;
     }
 
     &.reduced {

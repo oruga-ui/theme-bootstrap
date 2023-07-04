@@ -69,8 +69,8 @@ const active = ref(true);
       <o-button label="Dark" />
     </o-tooltip>
 
-    <o-tooltip label="Body" variant="body">
-      <o-button label="Body" />
+    <o-tooltip label="Light" variant="light">
+      <o-button label="Light" />
     </o-tooltip>
   </section>
 

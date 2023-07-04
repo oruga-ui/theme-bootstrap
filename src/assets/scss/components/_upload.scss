@@ -3,15 +3,17 @@
 /* @docs */
 $upload-draggable-bg: transparent !default;
 $upload-draggable-bg-hover: transparent !default;
-$upload-draggable-border-color: var(--bs-border-color) !default;
+$upload-draggable-border-color: var(--#{$prefix}border-color) !default;
 $upload-draggable-border-color-hover: var(--#{$prefix}dark-bg-subtle) !default;
-$upload-draggable-border-width: var(--bs-border-width) !default;
-$upload-draggable-border-radius: var(--bs-border-radius) !default;
-$upload-draggable-disabled-opacity: 0.5 !default;
+$upload-draggable-border-width: var(--#{$prefix}border-width) !default;
+$upload-draggable-border-radius: var(--#{$prefix}border-radius) !default;
 $upload-draggable-padding: 2em !default;
+$upload-disabled-opacity: 0.5 !default;
 /* @docs */
 
 .upload {
+  --#{$prefix}upload-disabled-opacity: #{$upload-disabled-opacity};
+
   input {
     display: none;
   }
@@ -22,17 +24,27 @@ $upload-draggable-padding: 2em !default;
 
   &.disabled {
     cursor: not-allowed;
-    opacity: $upload-draggable-disabled-opacity;
+    opacity: var(--#{$prefix}upload-disabled-opacity);
   }
 
   .upload-draggable {
-    background-color: $upload-draggable-bg;
-    border: $upload-draggable-border-width dashed $upload-draggable-border-color;
-    padding: $upload-draggable-padding;
+    --#{$prefix}upload-draggable-bg: #{$upload-draggable-bg};
+    --#{$prefix}upload-draggable-bg-hover: #{$upload-draggable-bg-hover};
+    --#{$prefix}upload-draggable-border-color: #{$upload-draggable-border-color};
+    --#{$prefix}upload-draggable-border-color-hover: #{$upload-draggable-border-color-hover};
+    --#{$prefix}upload-draggable-border-width: #{$upload-draggable-border-width};
+    --#{$prefix}upload-draggable-border-radius: #{$upload-draggable-border-radius};
+    --#{$prefix}upload-draggable-padding: #{$upload-draggable-padding};
+
+    background: var(--#{$prefix}upload-draggable-bg);
+    border: var(--#{$prefix}upload-draggable-border-width) dashed
+      var(--#{$prefix}upload-draggable-border-color);
+    border-radius: var(--#{$prefix}upload-draggable-border-radius);
+    padding: var(--#{$prefix}upload-draggable-padding);
 
     &.hovered {
-      background-color: $upload-draggable-bg-hover;
-      border-color: $upload-draggable-border-color-hover;
+      background-color: var(--#{$prefix}upload-draggable-bg-hover);
+      border-color: var(--#{$prefix}upload-draggable-border-color-hover);
     }
 
     // Color variant

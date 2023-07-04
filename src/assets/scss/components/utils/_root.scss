@@ -1,0 +1,6 @@
+:root {
+  // generate contrast variables
+  @each $name, $color in $theme-colors {
+    --#{$prefix}#{$name}-contrast: #{color-contrast($color)};
+  }
+}

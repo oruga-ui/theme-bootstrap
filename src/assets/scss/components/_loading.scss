@@ -1,10 +1,13 @@
 /* @docs */
 $loading-zindex: $zindex-sticky !default;
-$loading-fullpage-zindex: $zindex-fixed !default;
+$loading-zindex-fullpage: $zindex-fixed !default;
 $loading-overlay: rgba(255, 255, 255, 0.5) !default;
 /* @docs */
 
 .loading {
+  --#{$prefix}loading-zindex: #{$loading-zindex};
+  --#{$prefix}loading-overlay: #{$loading-overlay};
+
   position: absolute;
   bottom: 0;
   left: 0;
@@ -14,11 +17,12 @@ $loading-overlay: rgba(255, 255, 255, 0.5) !default;
   align-items: center;
   justify-content: center;
   overflow: hidden;
-  z-index: $loading-zindex;
+  z-index: var(--#{$prefix}loading-zindex);
 
   &.fullpage {
+    --#{$prefix}loading-zindex: #{$loading-zindex-fullpage};
+
     position: fixed;
-    z-index: $loading-fullpage-zindex;
   }
 
   .loading-overlay {
@@ -27,6 +31,6 @@ $loading-overlay: rgba(255, 255, 255, 0.5) !default;
     left: 0;
     right: 0;
     top: 0;
-    background-color: $loading-overlay;
+    background-color: var(--#{$prefix}loading-overlay);
   }
 }

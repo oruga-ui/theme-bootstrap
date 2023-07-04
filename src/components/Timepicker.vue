@@ -1,9 +1,15 @@
 <template>
   <section>
+    <h2>Timepicker Demo</h2>
+    <hr />
+  </section>
+
+  <section class="py-3">
+    <h3>Base</h3>
     <o-field grouped group-multiline>
-      <div class="control">
+      <o-field>
         <o-switch v-model="enableSeconds">Enable seconds</o-switch>
-      </div>
+      </o-field>
       <o-field label="Locale">
         <o-select v-model="locale">
           <option :value="undefined"></option>
@@ -30,6 +36,7 @@
         </o-select>
       </o-field>
     </o-field>
+
     <o-field label="Select time">
       <o-timepicker
         rounded
@@ -40,6 +47,7 @@
         :locale="locale">
       </o-timepicker>
     </o-field>
+
     <o-field label="Select time">
       <o-timepicker
         v-model="time"
