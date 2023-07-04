@@ -2,7 +2,33 @@
 *   Root variables extensions
 ********************************/
 
+// generate global color classes
+@each $name, $color in $colors {
+  .bg-#{$name} {
+    background-color: rgba(
+      var(--#{$prefix}#{$name}-rgb),
+      var(--#{$prefix}bg-opacity, 1)
+    );
+  }
+
+  .bg-#{$name}-subtle {
+    background-color: rgba(
+      to-rgb(tint-color($color, 80%)),
+      var(--#{$prefix}bg-opacity, 1)
+    );
+  }
+
+  .text-#{$name} {
+    color: var(--#{$prefix}#{$name});
+  }
+}
+
 :root {
+  // generate color rgb variables
+  @each $name, $color in $colors {
+    --#{$prefix}#{$name}-rgb: #{to-rgb($color)};
+  }
+
   // generate contrast variables
   @each $name, $color in $theme-colors {
     --#{$prefix}#{$name}-contrast: #{color-contrast($color)};
