@@ -21,12 +21,16 @@ export const bootstrapConfig: any = {
     override: true,
     rootClass: "input",
     inputClass: (_: string, { props }: any) => {
-      if (props.icon) return "form-control icon-left";
-      return `form-control`;
+      const classes = ["form-control"];
+      if (props.icon) classes.push("icon-left");
+      if (props.iconRight) classes.push("icon-right");
+      return classes.join(" ");
     },
     textareaClass: (_: string, { props }: any) => {
-      if (props.icon) return "form-control icon-left";
-      return `form-control`;
+      const classes = ["form-control"];
+      if (props.icon) classes.push("icon-left");
+      if (props.iconRight) classes.push("icon-right");
+      return classes.join(" ");
     },
     sizeClass: (_: string, { props }: any) => {
       if (props.size == "small") return "form-control-sm";
@@ -46,8 +50,10 @@ export const bootstrapConfig: any = {
     override: true,
     rootClass: "select",
     selectClass: (_: string, { props }: any) => {
-      if (props.icon) return "form-select icon-left";
-      return `form-select`;
+      const classes = ["form-select"];
+      if (props.icon) classes.push("icon-left");
+      if (props.iconRight) classes.push("icon-right");
+      return classes.join(" ");
     },
     sizeClass: (_: string, { props }: any) => {
       if (props.size == "small") return "form-select-sm";

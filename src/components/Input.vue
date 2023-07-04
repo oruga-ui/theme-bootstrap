@@ -109,6 +109,15 @@
 
     <o-field>
       <o-input
+        placeholder="Search..."
+        type="search"
+        icon-right="search"
+        icon-right-clickable>
+      </o-input>
+    </o-field>
+
+    <o-field>
+      <o-input
         placeholder="Email"
         type="email"
         icon="envelope"

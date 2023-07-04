@@ -198,21 +198,21 @@ $input-icon-right-padding-lg: $input-btn-padding-y-lg 3rem
       right: var(--#{$prefix}input-icon-spacer);
     }
 
-    &.is-small {
+    &.size-small {
       &.icon-left,
       &.icon-right {
         top: 15px;
       }
     }
 
-    &.is-medium {
+    &.size-medium {
       &.icon-left,
       &.icon-right {
         top: 17px;
       }
     }
 
-    &.is-large {
+    &.size-large {
       &.icon-left,
       &.icon-right {
         top: 8px;
