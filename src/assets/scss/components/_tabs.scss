@@ -1,7 +1,7 @@
 @use "sass:math";
 
 /* @docs */
-$nav-tabs-color: var(--bs-body-color) !default;
+$nav-tabs-color: var(--#{$prefix}body-color) !default;
 $nav-tabs-spacer: $spacer !default;
 $nav-tabs-disabled-opacity: 0.5 !default;
 /* @docs */
@@ -57,7 +57,7 @@ $nav-tabs-disabled-opacity: 0.5 !default;
     }
 
     &:not(.nav-default) .nav-link {
-      --bs-nav-link-color: #{$nav-tabs-color};
+      --#{$prefix}nav-link-color: #{$nav-tabs-color};
     }
 
     // style toggle / underline

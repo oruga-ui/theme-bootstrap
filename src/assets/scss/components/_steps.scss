@@ -1,5 +1,5 @@
 /* @docs */
-$steps-marker-bg: var(--bs-gray-light) !default;
+$steps-marker-bg: var(--#{$prefix}gray-light) !default;
 $steps-marker-border: $white !default;
 $steps-marker-color: $white;
 $steps-color-active: $primary;

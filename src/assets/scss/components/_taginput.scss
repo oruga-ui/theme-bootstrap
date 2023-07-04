@@ -100,7 +100,7 @@ $taginput-counter-font-size: 0.75rem !default;
       color: var(--#{$prefix}taginput-disabled-color);
       background: var(--#{$prefix}taginput-disabled-bg);
       border-color: var(--#{$prefix}taginput-disabled-border-color)
-        var(--bs-border-color);
+        var(--#{$prefix}border-color);
       cursor: not-allowed;
 
       input {

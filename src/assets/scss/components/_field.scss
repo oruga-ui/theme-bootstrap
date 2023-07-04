@@ -37,14 +37,14 @@ $input-field-btn-border-color: $input-border-color !default;
   // The input in middle shouldn't be rounded
   &:not(:first-child):not(:last-child) {
     #{$selector} {
-      --bs-border-radius: 0;
+      --#{$prefix}border-radius: 0;
     }
   }
 
   // The input is first and the last
   &:first-child:last-child {
     .form-control {
-      --bs-border-radius: #{$border-radius};
+      --#{$prefix}border-radius: #{$border-radius};
     }
   }
 }
