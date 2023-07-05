@@ -7,6 +7,7 @@ const columns = ref([
     label: "ID",
     width: "40",
     numeric: true,
+    sticky: "true",
   },
   {
     field: "first_name",
