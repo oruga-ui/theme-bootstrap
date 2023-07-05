@@ -1,10 +1,13 @@
 /* @docs */
+$table-head-bg: var(--#{$prefix}body-bg) !default;
+$table-head-color: initial !default;
+$table-head-border-width: var(--#{$prefix}border-width) !default;
 $table-sticky-zindex: 1 !default;
 $table-detail-padding: 0.5rem 0.75rem !default;
-$table-detail-bg: var(--#{prefix}gray-light) !default;
-$table-sortable-hover-border-color: var(--#{prefix}secondary) !default;
-$table-current-sort-bg: var(--#{prefix}gray-light) !default;
-$table-focus-color: var(--#{prefix}-info-rgb) !default;
+$table-detail-bg: var(--#{$prefix}gray-light) !default;
+$table-sortable-hover-border-color: var(--#{$prefix}secondary) !default;
+$table-current-sort-bg: var(--#{$prefix}gray-light) !default;
+$table-focus-color: var(--#{$prefix}-info-rgb) !default;
 $table-card-spacer: $spacer;
 /* @docs */
 
@@ -68,29 +71,38 @@ $table-card-spacer: $spacer;
         }
       }
 
-      th {
-        position: relative;
+      thead {
+        --#{$prefix}table-head-bg: #{$table-head-bg};
+        --#{$prefix}table-head-color: #{$table-head-color};
+        --#{$prefix}table-head-border-width: #{$table-head-border-width};
 
-        &.sortable {
-          cursor: pointer;
+        th {
+          position: relative;
+          color: var(--#{$prefix}table-head-color);
+          background-color: var(--#{$prefix}table-head-bg);
+          border-bottom-width: var(--#{$prefix}table-head-border-width);
 
-          > span {
-            display: block;
-            position: relative;
+          &.sortable {
+            cursor: pointer;
+
+            > span {
+              display: block;
+              position: relative;
+            }
+
+            &:hover {
+              border-color: var(--#{$prefix}table-sortable-hover-border-color);
+            }
           }
 
-          &:hover {
-            border-color: var(--#{$prefix}table-sortable-hover-border-color);
+          &.current-sort {
+            --#{$prefix}table-bg: var(--#{$prefix}table-current-sort-bg);
           }
-        }
 
-        &.current-sort {
-          --#{$prefix}table-bg: var(--#{$prefix}table-current-sort-bg);
-        }
-
-        .sort-icon {
-          position: absolute;
-          right: 0;
+          .sort-icon {
+            position: absolute;
+            right: 0;
+          }
         }
       }
 
