@@ -249,6 +249,7 @@ export const bootstrapConfig: any = {
     paginationWrapperClass: "table-pagination",
     scrollableClass: "scrollable",
     trSelectedClass: "table-active",
+    trCheckedClass: "table-checked",
     thClass: "table-th",
     thSortableClass: "sortable",
     thCurrentSortClass: "current-sort",
