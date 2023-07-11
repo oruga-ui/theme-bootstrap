@@ -24,4 +24,11 @@ $icon-spin-animation-duration: 1.5s !default;
     animation-timing-function: linear;
     animation-duration: var(--#{$prefix}icon-spin-duration);
   }
+
+  // Sizes
+  @each $name, $size in $sizes {
+    &.size-#{$name} {
+      font-size: $size;
+    }
+  }
 }
