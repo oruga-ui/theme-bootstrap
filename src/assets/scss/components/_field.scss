@@ -20,14 +20,14 @@ $input-field-btn-border-color: $input-border-color !default;
 
 @mixin radii($selector) {
   // the first and the last inputs should be rounded
-  &:first-child {
+  &:first-child:not(:last-child) {
     #{$selector} {
       border-bottom-right-radius: 0;
       border-top-right-radius: 0;
     }
   }
 
-  &:last-child {
+  &:last-child:not(:first-child) {
     #{$selector} {
       border-bottom-left-radius: 0;
       border-top-left-radius: 0;
