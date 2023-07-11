@@ -1,18 +1,20 @@
 {
   "name": "@oruga-ui/theme-bootstrap",
-  "version": "0.3.3",
+  "version": "0.3.4",
   "description": "Bootstrap theme for Oruga",
   "license": "MIT",
   "main": "dist/bootstrap.js",
   "module": "dist/bootstrap.js",
   "unpkg": "dist/bootstrap.min.js",
+  "typings": "types/index.d.ts",
   "sideEffects": [
     "*.css",
     "*.scss"
   ],
   "files": [
     "dist",
-    "src"
+    "src",
+    "types/*.d.ts"
   ],
   "repository": {
     "type": "git",
