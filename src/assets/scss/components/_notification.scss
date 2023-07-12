@@ -4,6 +4,7 @@ $notification-notices-padding: 2em !default;
 $notification-notices-zindex: $zindex-toast !default;
 $notification-notices-max-width: 600px !default;
 $notification-notices-space: 1.5rem !default;
+$notification-icon-margin-right: 0.5rem !default;
 /* @docs */
 
 /* @bootstrap docs */
@@ -40,6 +41,10 @@ $notification-notices-space: 1.5rem !default;
 .notifictation {
   .notifictation-wrapper {
     display: flex;
+
+    .icon {
+      margin-right: $notification-icon-margin-right;
+    }
 
     .notifictation-content {
       padding-right: calc($notification-close-btn-position + $alert-padding-x);
