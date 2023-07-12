@@ -1,9 +1,9 @@
 <p align="center">
-    <img width="150" src="https://raw.githubusercontent.com/oruga-ui/theme-bootstrap/master/public/logo.svg" />
+    <img width="150" src="https://raw.githubusercontent.com/oruga-ui/theme-bootstrap/main/public/logo.svg" />
 </p>
 
 <p align="center">
-  <i><a href="https://getbootstrap.com/" target="_blank">Bootstrap</a> theme for <a href="https://oruga.io" target="_blank">Oruga</a></i>
+  ⚓ <i><a href="https://getbootstrap.com/" target="_blank">Bootstrap</a> theme for <a href="https://oruga.io" target="_blank">Oruga</a></i>
 </p>
 
 <p align="center">
@@ -45,6 +45,7 @@ import App from './App.vue'
 
 // import Oruga
 import Oruga from '@oruga-ui/oruga-next'
+
 // import Oruga Bootstrap theme config
 import { bootstrapConfig } from '@oruga-ui/theme-bootstrap'
 
@@ -68,7 +69,7 @@ You have two options for including the theme: include all the styling at once (i
 // ...
 
 // Include the Oruga Bootstrap theme with Bootstrap included
-@import "/node_modules/@oruga-ui/theme-bootstrap/dist/bootstrap.css";
+@import "/node_modules/@oruga-ui/theme-bootstrap/dist/scss/bootstrap-build";
 
 // Then add additional custom code here
 // ...
@@ -141,4 +142,4 @@ Thank you to everyone involved for improving this project, day by day 💚
 
 ## License
 
-Code released under [MIT](https://github.com/oruga-ui/theme-bootstrap/blob/master/LICENSE) license.
+Code released under [MIT](https://github.com/oruga-ui/theme-bootstrap/blob/main/LICENSE) license.
