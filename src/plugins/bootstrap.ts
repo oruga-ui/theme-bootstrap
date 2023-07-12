@@ -249,21 +249,25 @@ export const bootstrapConfig: any = {
     paginationWrapperClass: "table-pagination",
     scrollableClass: "scrollable",
     trSelectedClass: "table-active",
+    trCheckedClass: "table-checked",
+    thClass: "table-th",
     thSortableClass: "sortable",
     thCurrentSortClass: "current-sort",
     thSortIconClass: "sort-icon",
     thUnselectableClass: "unselectable",
-    thCheckboxClass: "th-checkbox",
-    thDetailedClass: "th-chevron-cell",
+    thDetailedClass: "chevron",
     thStickyClass: "sticky",
+    thCheckboxClass: "checkbox",
     thPositionClass: (position: string) => {
       if (position === "left") return "text-left";
       else if (position === "centered") return "text-centered";
       else if (position === "right") return "text-right";
       return;
     },
-    tdDetailedChevronClass: "chevron-cell",
+    tdClass: "table-td",
+    tdDetailedChevronClass: "chevron",
     tdStickyClass: "sticky",
+    tdCheckboxClass: "checkbox",
     tdPositionClass: (position: string) => {
       if (position === "left") return "text-left";
       else if (position === "centered") return "text-centered";
