@@ -128,12 +128,18 @@ $pagination-items-spacer: 0.5rem !default;
         order: 1;
         flex-grow: 1;
         justify-content: flex-start;
+        margin-right: var(--#{$prefix}pagination-items-spacer);
       }
     }
 
     &.order-centered {
       @include roundEdge;
       justify-content: space-between;
+
+      .pagination {
+        margin-left: var(--#{$prefix}pagination-items-spacer);
+        margin-right: var(--#{$prefix}pagination-items-spacer);
+      }
     }
 
     &.order-right {
@@ -148,6 +154,7 @@ $pagination-items-spacer: 0.5rem !default;
         order: 3;
         flex-grow: 1;
         justify-content: flex-end;
+        margin-left: var(--#{$prefix}pagination-items-spacer);
       }
     }
   }
