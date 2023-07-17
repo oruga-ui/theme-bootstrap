@@ -57,7 +57,7 @@ $btn-hover-box-shadow: $box-shadow-sm !default;
 .btn {
   --#{$prefix}btn-spacer: #{$btn-spacer};
   --#{$prefix}btn-border-color: #{$btn-border-color};
-  --#{$prefix}btn-hover-border-color: #{btn-hover-border-color};
+  --#{$prefix}btn-hover-border-color: #{$btn-hover-border-color};
   --#{$prefix}btn-hover-box-shadow: #{$btn-hover-box-shadow};
 
   .icon {
