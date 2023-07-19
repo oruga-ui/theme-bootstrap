@@ -388,7 +388,11 @@ export const bootstrapConfig: any = {
     menuPositionClass: "is-",
     menuActiveClass: "show",
     itemTag: "a",
-    itemClass: "dropdown-item",
+    itemClass: (_: string, { props }: any) => {
+      const classes = ["dropdown-item"];
+      if (props.clickable) classes.push("clickable");
+      return classes.join(" ");
+    },
     itemActiveClass: "active",
     itemDisabledClass: "disabled",
     mobileClass: "dropdown-modal",
