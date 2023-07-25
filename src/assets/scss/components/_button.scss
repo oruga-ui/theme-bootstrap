@@ -60,6 +60,11 @@ $btn-hover-box-shadow: $box-shadow-sm !default;
   --#{$prefix}btn-hover-border-color: #{$btn-hover-border-color};
   --#{$prefix}btn-hover-box-shadow: #{$btn-hover-box-shadow};
 
+  .button-wrapper {
+    display: inline-flex;
+    align-items: center;
+  }
+
   .icon {
     margin: 0 4px;
 
