@@ -62,6 +62,10 @@ $input-field-btn-border-color: $input-border-color !default;
 
   &.grouped-multiline {
     flex-wrap: wrap;
+
+    &:last-child {
+      margin-bottom: calc(-1 * var(--#{$prefix}input-field-margin-bottom));
+    }
   }
 
   &.field-horizontal {
@@ -90,6 +94,10 @@ $input-field-btn-border-color: $input-border-color !default;
       flex-grow: 1;
       flex-shrink: 1;
       width: auto;
+
+      &.btn {
+        width: 100%;
+      }
     }
   }
 

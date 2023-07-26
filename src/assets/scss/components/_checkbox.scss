@@ -70,8 +70,8 @@
     &.variant-#{$name} {
       input[type="radio"],
       input[type="checkbox"] {
-        background-color: ar(--#{$prefix}#{$name});
-        border-color: ar(--#{$prefix}#{$name});
+        background-color: var(--#{$prefix}#{$name});
+        border-color: var(--#{$prefix}#{$name});
       }
     }
   }

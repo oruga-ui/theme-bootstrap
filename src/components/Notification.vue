@@ -47,9 +47,18 @@ function danger() {
     <hr />
   </section>
 
-  <section class="py-3">
+  <section>
     <h3>Base</h3>
 
+    <o-notification closable aria-close-label="Close notification">
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce id
+      fermentum quam. Proin sagittis, nibh id hendrerit imperdiet, elit sapien
+      laoreet elit
+    </o-notification>
+  </section>
+
+  <section>
+    <h3>Variants</h3>
     <o-notification
       closable
       variant="primary"
@@ -100,7 +109,28 @@ function danger() {
       fermentum quam. Proin sagittis, nibh id hendrerit imperdiet, elit sapien
       laoreet elit
     </o-notification>
+    <o-notification
+      closable
+      variant="light"
+      aria-close-label="Close notification"
+      role="alert">
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce id
+      fermentum quam. Proin sagittis, nibh id hendrerit imperdiet, elit sapien
+      laoreet elit
+    </o-notification>
+    <o-notification
+      closable
+      variant="dark"
+      aria-close-label="Close notification"
+      role="alert">
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce id
+      fermentum quam. Proin sagittis, nibh id hendrerit imperdiet, elit sapien
+      laoreet elit
+    </o-notification>
+  </section>
 
+  <section>
+    <h3>Use types</h3>
     <o-notification
       closable
       type="info"
@@ -112,7 +142,28 @@ function danger() {
     </o-notification>
   </section>
 
-  <section class="py-3">
+  <section>
+    <h3>Add custom buttons</h3>
+
+    <o-notification
+      v-slot="{ closeNotification }"
+      aria-close-label="Close notification">
+      <div class="d-inline-flex">
+        <span>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce id
+          fermentum quam. Proin sagittis, nibh id hendrerit imperdiet, elit
+          sapien laoreet elit
+        </span>
+        <o-button
+          label="Cancel"
+          variant="primary"
+          size="small"
+          @click="closeNotification" />
+      </div>
+    </o-notification>
+  </section>
+
+  <section>
     <h3>Programmatically opening</h3>
 
     <div class="buttons">

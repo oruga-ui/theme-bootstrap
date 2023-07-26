@@ -16,11 +16,11 @@ const passive = ref(null);
     <hr />
   </section>
 
-  <section class="py-3">
+  <section>
     <h3>Base</h3>
 
     <o-field>
-      <o-switch>Default </o-switch>
+      <o-switch>Default</o-switch>
     </o-field>
     <o-field>
       <o-switch v-model="isSwitched">
@@ -37,7 +37,7 @@ const passive = ref(null);
     </o-field>
   </section>
 
-  <section class="py-3">
+  <section>
     <h3>Variant</h3>
 
     <o-field>
@@ -56,14 +56,14 @@ const passive = ref(null);
       <o-switch :value="true" variant="success"> Success </o-switch>
     </o-field>
     <o-field>
-      <o-switch :value="true" variant="danger"> Danger </o-switch>
+      <o-switch :value="true" variant="warning"> Warning </o-switch>
     </o-field>
     <o-field>
-      <o-switch :value="true" variant="warning"> Warning </o-switch>
+      <o-switch :value="true" variant="danger"> Danger </o-switch>
     </o-field>
   </section>
 
-  <section class="py-3">
+  <section>
     <h3>Variant Subtle</h3>
 
     <o-field>
@@ -89,7 +89,7 @@ const passive = ref(null);
     </o-field>
   </section>
 
-  <section class="py-3">
+  <section>
     <h3>Size</h3>
 
     <o-field>
@@ -106,7 +106,7 @@ const passive = ref(null);
     </o-field>
   </section>
 
-  <section class="py-3">
+  <section>
     <h3>Style variants</h3>
 
     <o-field grouped>

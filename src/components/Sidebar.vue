@@ -20,7 +20,7 @@ const toggleSidebar = () => {
     <hr />
   </section>
 
-  <section class="py-3">
+  <section>
     <h3>Base</h3>
 
     <o-sidebar

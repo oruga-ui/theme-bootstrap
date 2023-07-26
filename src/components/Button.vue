@@ -4,32 +4,32 @@
     <hr />
   </section>
 
-  <section class="py-3">
+  <section>
     <h3>Base</h3>
 
     <div class="buttons">
-      <o-button variant="primary">Primary</o-button>
-      <o-button variant="secondary">Secondary</o-button>
-      <o-button variant="success">Success</o-button>
-      <o-button variant="danger">Danger</o-button>
-      <o-button variant="warning">Warning</o-button>
-      <o-button variant="info">Info</o-button>
-      <o-button variant="dark">Dark</o-button>
-      <o-button variant="light">Light</o-button>
+      <o-button label="Primary" variant="primary" />
+      <o-button label="Secondary" variant="secondary" />
+      <o-button label="Success" variant="success" />
+      <o-button label="Info" variant="info" />
+      <o-button label="Warning" variant="warning" />
+      <o-button label="Danger" variant="danger" />
+      <o-button label="Dark" variant="dark" />
+      <o-button label="Light" variant="light" />
     </div>
   </section>
 
-  <section class="py-3">
+  <section>
     <h3>States</h3>
 
     <div class="buttons">
-      <o-button>Normal</o-button>
-      <o-button disabled>Disabled</o-button>
-      <o-button rounded variant="light">Rounded</o-button>
+      <o-button label="Normal" />
+      <o-button label="Disabled" disabled />
+      <o-button label="Rounded" rounded />
     </div>
   </section>
 
-  <section class="py-3">
+  <section>
     <h3>Outlined</h3>
 
     <div class="buttons">
@@ -44,7 +44,7 @@
     </div>
   </section>
 
-  <section class="py-3">
+  <section>
     <h3>Inverted</h3>
 
     <div class="buttons">
@@ -59,7 +59,7 @@
     </div>
   </section>
 
-  <section class="py-3">
+  <section>
     <h3>Variant Subtle</h3>
 
     <div class="buttons">
@@ -74,7 +74,7 @@
     </div>
   </section>
 
-  <section class="py-3">
+  <section>
     <h3>Icons</h3>
 
     <div class="buttons">
@@ -91,11 +91,11 @@
     </div>
   </section>
 
-  <section class="py-3">
+  <section>
     <h3>Expanded</h3>
 
     <div class="buttons">
-      <o-button variant="primary" expanded>Expanded</o-button>
+      <o-button label="Expanded" variant="primary" expanded />
     </div>
   </section>
 </template>

@@ -1,6 +1,21 @@
+<script setup lang="ts">
+const paths = import.meta.glob("./components/*.vue") as any;
+const components = Object.keys(paths)
+  .map((c: string) => c.replace(".vue", ""))
+  .map((c: string) => c.replace("./components/", ""))
+  .map((c: string) => `/${c}`)
+  .map((c: string) => {
+    const name = c.split("/")[1];
+    return {
+      name,
+      link: c,
+    };
+  });
+</script>
+
 <template>
-  <div id="main">
-    <div id="nav">
+  <div id="app">
+    <nav id="nav">
       <router-link to="/" class="py-4 ps-0 text-center">
         <img
           class="image__oruga"
@@ -8,48 +23,40 @@
           alt="Logo Oruga Theme Bootstrap" />
         <b class="fs-5 text-white">Oruga Bootstrap Theme</b>
       </router-link>
-      <router-link to="/autocomplete">Autocomplete</router-link>
-      <router-link to="/button">Button</router-link>
-      <router-link to="/carousel">Carousel</router-link>
-      <router-link to="/checkbox">Checkbox</router-link>
-      <router-link to="/collapse">Collapse</router-link>
-      <router-link to="/datepicker">Datepicker</router-link>
-      <router-link to="/dropdown">Dropdown</router-link>
-      <router-link to="/field">Field</router-link>
-      <router-link to="/icon">Icon</router-link>
-      <router-link to="/input">Input</router-link>
-      <router-link to="/loading">Loading</router-link>
-      <router-link to="/modal">Modal</router-link>
-      <router-link to="/notification">Notification</router-link>
-      <router-link to="/pagination">Pagination</router-link>
-      <router-link to="/radio">Radio</router-link>
-      <router-link to="/select">Select</router-link>
-      <router-link to="/sidebar">Sidebar</router-link>
-      <router-link to="/skeleton">Skeleton</router-link>
-      <router-link to="/slider">Slider</router-link>
-      <router-link to="/steps">Steps</router-link>
-      <router-link to="/switch">Switch</router-link>
-      <router-link to="/table">Table</router-link>
-      <router-link to="/tabs">Tabs</router-link>
-      <router-link to="/taginput">Taginput</router-link>
-      <router-link to="/timepicker">Timepicker</router-link>
-      <router-link to="/tooltip">Tooltip</router-link>
-      <router-link to="/upload">Upload</router-link>
-    </div>
+      <hr />
+      <router-link v-for="item in components" :key="item.name" :to="item.link">
+        {{ item.name }}
+      </router-link>
+    </nav>
 
-    <section class="section">
+    <main>
       <router-view />
-    </section>
+    </main>
   </div>
 </template>
 
 <style lang="scss">
-#main {
+#app {
   display: flex;
-  .section {
+  width: 100%;
+  main {
     flex-grow: 1;
     margin: 25px;
   }
+
+  section {
+    padding: 1rem 0;
+
+    h3 {
+      font-size: 1.75rem;
+    }
+
+    .buttons > * {
+      margin-right: 0.5rem;
+      margin-bottom: 0.5rem;
+    }
+  }
+
   #nav {
     display: flex;
     flex-direction: column;

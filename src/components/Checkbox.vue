@@ -12,7 +12,7 @@ const checkboxGroup = ref(["Flint"]);
     <hr />
   </section>
 
-  <section class="py-3">
+  <section>
     <h3>Base</h3>
 
     <o-field>
@@ -33,7 +33,7 @@ const checkboxGroup = ref(["Flint"]);
     </o-field>
   </section>
 
-  <section class="py-3">
+  <section>
     <h3>Variant</h3>
 
     <o-field>
@@ -59,7 +59,7 @@ const checkboxGroup = ref(["Flint"]);
     </o-field>
   </section>
 
-  <section class="py-3">
+  <section>
     <h3>Indeterminate</h3>
 
     <o-field>
@@ -95,7 +95,7 @@ const checkboxGroup = ref(["Flint"]);
     </o-field>
   </section>
 
-  <section class="py-3">
+  <section>
     <h3>Variant Inverted</h3>
 
     <o-field>
@@ -129,7 +129,7 @@ const checkboxGroup = ref(["Flint"]);
     </o-field>
   </section>
 
-  <section class="py-3">
+  <section>
     <h3>Variant Subtle</h3>
 
     <o-field>
@@ -157,7 +157,7 @@ const checkboxGroup = ref(["Flint"]);
     </o-field>
   </section>
 
-  <section class="py-3">
+  <section>
     <h3>Size</h3>
 
     <o-field>
@@ -174,7 +174,7 @@ const checkboxGroup = ref(["Flint"]);
     </o-field>
   </section>
 
-  <section class="py-3">
+  <section>
     <h3>Array</h3>
 
     <o-field>

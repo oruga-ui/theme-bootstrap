@@ -117,6 +117,7 @@ const isBordered = ref(false);
 const isStriped = ref(false);
 const isNarrowed = ref(false);
 const isHoverable = ref(false);
+const isCheckbale = ref(false);
 const isFocusable = ref(false);
 const isLoading = ref(false);
 const hasMobileCards = ref(true);
@@ -125,6 +126,9 @@ const currentPage = ref(1);
 const isPaginated = ref(true);
 const isPaginationSimple = ref(false);
 const paginationPosition = ref("bottom");
+const sortIcon = ref("arrow-up");
+const sortIconSize = ref("small");
+const defaultSortDirection = ref("asc");
 const perPage = ref(3);
 
 const checkedRows = ref([]);
@@ -137,7 +141,7 @@ const selected = ref(null);
     <hr />
   </section>
 
-  <section class="py-3">
+  <section>
     <h3>Sandbox</h3>
 
     <o-field grouped group-multiline>
@@ -145,6 +149,7 @@ const selected = ref(null);
       <o-switch v-model="isStriped" :rounded="true">Striped</o-switch>
       <o-switch v-model="isNarrowed" :rounded="true">Narrowed</o-switch>
       <o-switch v-model="isHoverable" :rounded="true">Hoverable</o-switch>
+      <o-switch v-model="isCheckbale" :rounded="true">Checkable</o-switch>
       <o-switch v-model="isFocusable" :rounded="true">Focusable</o-switch>
       <o-switch v-model="isLoading" :rounded="true">Loading state</o-switch>
       <o-switch v-model="isEmpty" :rounded="true">Empty</o-switch>
@@ -164,7 +169,7 @@ const selected = ref(null);
       :loading="isLoading"
       :focusable="isFocusable"
       :mobile-cards="hasMobileCards"
-      checkable
+      :checkable="isCheckbale"
       detailed>
       <o-table-column
         v-for="(column, idx) in columns"
@@ -199,26 +204,55 @@ const selected = ref(null);
     </o-table>
   </section>
 
-  <section class="py-3">
+  <section>
     <h3>Paginated</h3>
 
     <o-field grouped group-multiline>
-      <o-switch v-model="isPaginated" :rounded="true"> Paginated </o-switch>
-      <o-switch v-model="isPaginationSimple" :rounded="true">
-        Simple Paginated
-      </o-switch>
-      <o-select v-model="perPage" :disabled="!isPaginated">
-        <option value="3">3 per page</option>
-        <option value="5">5 per page</option>
-        <option value="10">10 per page</option>
-        <option value="15">15 per page</option>
-        <option value="20">20 per page</option>
-      </o-select>
-      <o-select v-model="paginationPosition" :disabled="!isPaginated">
-        <option value="bottom">bottom pagination</option>
-        <option value="top">top pagination</option>
-        <option value="both">both</option>
-      </o-select>
+      <o-field>
+        <o-switch v-model="isPaginated" :rounded="true"> Paginated </o-switch>
+      </o-field>
+      <o-field>
+        <o-switch v-model="isPaginationSimple" :rounded="true">
+          Simple Paginated
+        </o-switch>
+      </o-field>
+      <o-field>
+        <o-select v-model="defaultSortDirection">
+          <option value="asc">Default sort direction: ASC</option>
+          <option value="desc">Default sort direction: DESC</option>
+        </o-select>
+      </o-field>
+      <o-field>
+        <o-select v-model="perPage" :disabled="!isPaginated">
+          <option value="3">3 per page</option>
+          <option value="5">5 per page</option>
+          <option value="10">10 per page</option>
+          <option value="15">15 per page</option>
+          <option value="20">20 per page</option>
+        </o-select>
+      </o-field>
+      <o-field>
+        <o-select v-model="paginationPosition" :disabled="!isPaginated">
+          <option value="bottom">bottom pagination</option>
+          <option value="top">top pagination</option>
+          <option value="both">both</option>
+        </o-select>
+      </o-field>
+      <o-field>
+        <o-select v-model="sortIcon">
+          <option value="arrow-up">Arrow sort icon</option>
+          <option value="caret-up">Caret sort icon</option>
+          <option value="chevron-up">Chevron sort icon</option>
+        </o-select>
+      </o-field>
+      <o-field>
+        <o-select v-model="sortIconSize">
+          <option value="small">Small sort icon</option>
+          <option value="">Regular sort icon</option>
+          <option value="medium">Medium sort icon</option>
+          <option value="large">Large sort icon</option>
+        </o-select>
+      </o-field>
     </o-field>
     <p><b>Page:</b> {{ currentPage }}</p>
 
@@ -228,7 +262,10 @@ const selected = ref(null);
       :paginated="isPaginated"
       :per-page="perPage"
       :pagination-simple="isPaginationSimple"
-      :pagination-position="paginationPosition">
+      :pagination-position="paginationPosition"
+      :default-sort-direction="defaultSortDirection"
+      :sort-icon="sortIcon"
+      :sort-icon-size="sortIconSize">
       <o-table-column
         v-for="(column, idx) in columns"
         :key="idx"
@@ -249,7 +286,7 @@ const selected = ref(null);
     </o-table>
   </section>
 
-  <section class="py-3">
+  <section>
     <h3>Selection</h3>
 
     <o-button

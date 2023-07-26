@@ -5,7 +5,8 @@
 // btn-close overrides
 
 .btn-close > .icon,
-.btn-close.icon i {
+.btn-close.icon > i,
+.btn-close.icon > svg {
   visibility: hidden;
 }
 
