@@ -71,6 +71,11 @@ $notification-icon-margin-right: 0.5rem !default;
       }
     }
   }
+
+  // default color variant light
+  &:not([class*="variant-"]) {
+    @extend .alert-light;
+  }
 }
 
 .toast {
