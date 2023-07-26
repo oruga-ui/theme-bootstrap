@@ -53,7 +53,7 @@ $notification-icon-margin-right: 0.5rem !default;
 }
 
 .alert {
-  button {
+  & > button {
     background-color: transparent;
     border: 0;
     position: absolute;
