@@ -15,7 +15,7 @@ function deleteDropFile(index: number) {
     <hr />
   </section>
 
-  <section class="py-3">
+  <section>
     <h3>Base</h3>
 
     <o-field class="file">
@@ -30,7 +30,7 @@ function deleteDropFile(index: number) {
     <p><b>Selected File:</b> {{ file?.name }}</p>
   </section>
 
-  <section class="py-3">
+  <section>
     <h3>Drag&Drop</h3>
 
     <o-field>

@@ -27,7 +27,7 @@ const size = ref(null);
     <hr />
   </section>
 
-  <section class="py-3">
+  <section>
     <h3>Base</h3>
 
     <o-field grouped group-multiline>
@@ -46,8 +46,6 @@ const size = ref(null);
       <o-field>
         <o-switch v-model="isStepsClickable"> Clickable Marker </o-switch>
       </o-field>
-    </o-field>
-    <o-field grouped group-multiline>
       <o-field>
         <o-switch v-model="hasNavigation"> Navigation Buttons </o-switch>
       </o-field>
@@ -60,7 +58,7 @@ const size = ref(null);
         </o-switch>
       </o-field>
     </o-field>
-    <o-field v-if="hasNavigation" grouped group-multiline>
+    <o-field v-if="hasNavigation" grouped>
       <o-field label="Prev icon">
         <o-select v-model="prevIcon">
           <option value="chevron-left">Chevron</option>
@@ -80,7 +78,7 @@ const size = ref(null);
           <option value="left">Left</option>
         </o-select>
       </o-field>
-      <o-field label="steps position">
+      <o-field label="Steps position">
         <o-select v-model="stepsPosition">
           <option value="right">Right</option>
           <option value="left">Left</option>
@@ -133,60 +131,70 @@ const size = ref(null);
       <template v-if="customNavigation" #navigation="{ previous, next }">
         <o-button
           outlined
+          label="Previous"
           variant="danger"
           icon-pack="fas"
           icon-left="backward"
           :disabled="previous.disabled"
-          @click.prevent="previous.action">
-          Previous
-        </o-button>
+          @click.prevent="previous.action" />
+
         <o-button
           outlined
+          label="Next"
           variant="success"
           icon-pack="fas"
           icon-right="forward"
           :disabled="next.disabled"
-          @click.prevent="next.action">
-          Next
-        </o-button>
+          @click.prevent="next.action" />
       </template>
     </o-steps>
   </section>
 
-  <section class="py-3">
+  <section>
     <h3>Variants</h3>
 
-    Warning
-    <o-steps variant="warning">
-      <o-step-item label="Account" icon="user-lock">empty</o-step-item>
-      <o-step-item label="Profile" icon="user">empty</o-step-item>
-      <o-step-item label="Social" icon="user-plus">empty</o-step-item>
-    </o-steps>
+    <o-field label="Success">
+      <o-steps variant="success">
+        <o-step-item label="Account" icon="user-lock" />
+        <o-step-item label="Profile" icon="user" />
+        <o-step-item label="Social" icon="user-plus" />
+      </o-steps>
+    </o-field>
+    <o-field label="Info">
+      <o-steps variant="info">
+        <o-step-item label="Account" icon="user-lock" />
+        <o-step-item label="Profile" icon="user" />
+        <o-step-item label="Social" icon="user-plus" />
+      </o-steps>
+    </o-field>
 
-    Info
-    <o-steps variant="info">
-      <o-step-item label="Account" icon="user-lock">empty</o-step-item>
-      <o-step-item label="Profile" icon="user">empty</o-step-item>
-      <o-step-item label="Social" icon="user-plus">empty</o-step-item>
-    </o-steps>
+    <o-field label="Warning">
+      <o-steps variant="warning">
+        <o-step-item label="Account" icon="user-lock" />
+        <o-step-item label="Profile" icon="user" />
+        <o-step-item label="Social" icon="user-plus" />
+      </o-steps>
+    </o-field>
 
-    Success
-    <o-steps variant="success">
-      <o-step-item label="Account" icon="user-lock">empty</o-step-item>
-      <o-step-item label="Profile" icon="user">empty</o-step-item>
-      <o-step-item label="Social" icon="user-plus">empty</o-step-item>
-    </o-steps>
+    <o-field label="Danger">
+      <o-steps variant="danger">
+        <o-step-item label="Account" icon="user-lock" />
+        <o-step-item label="Profile" icon="user" />
+        <o-step-item label="Social" icon="user-plus" />
+      </o-steps>
+    </o-field>
   </section>
 
-  <section class="py-3">
+  <section>
     <h3>Vertical</h3>
 
-    <o-field grouped group-multiline>
+    <o-field grouped>
       <o-field>
         <o-switch v-model="position" true-value="right">
-          Right position</o-switch
-        >
+          Right position
+        </o-switch>
       </o-field>
+
       <o-field label="Size">
         <o-select v-model="size" placeholder="Size">
           <option :value="null">Default</option>
@@ -195,6 +203,7 @@ const size = ref(null);
           <option value="large">Large</option>
         </o-select>
       </o-field>
+
       <o-field label="Label position" label-position="on-border">
         <o-select v-model="labelPosition">
           <option value="bottom">Bottom</option>

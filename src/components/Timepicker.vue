@@ -1,11 +1,21 @@
+<script setup lang="ts">
+import { ref } from "vue";
+
+const time = ref<Date | null>(null);
+const hourFormat = ref(undefined); // Browser locale
+const enableSeconds = ref(false);
+const locale = ref(undefined); // Browser locale
+</script>
+
 <template>
   <section>
     <h2>Timepicker Demo</h2>
     <hr />
   </section>
 
-  <section class="py-3">
+  <section>
     <h3>Base</h3>
+
     <o-field grouped group-multiline>
       <o-field>
         <o-switch v-model="enableSeconds">Enable seconds</o-switch>
@@ -70,16 +80,3 @@
     </o-field>
   </section>
 </template>
-
-<script lang="ts">
-export default {
-  data() {
-    return {
-      time: null as Date | null,
-      hourFormat: undefined, // Browser locale
-      enableSeconds: false,
-      locale: undefined, // Browser locale
-    };
-  },
-};
-</script>

@@ -13,7 +13,7 @@ const isCustomFullPage = ref(true);
     <hr />
   </section>
 
-  <section class="py-3">
+  <section>
     <h3>Base</h3>
 
     <o-field>
@@ -40,7 +40,7 @@ const isCustomFullPage = ref(true);
     </p>
   </section>
 
-  <section class="py-3">
+  <section>
     <h3>Base Custom Slot</h3>
 
     <o-field>

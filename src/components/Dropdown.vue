@@ -22,7 +22,7 @@ const selectedOptions = ref([]);
     <hr />
   </section>
 
-  <section class="py-3">
+  <section>
     <h3>Base</h3>
 
     <div class="dropdown-example">
@@ -94,7 +94,7 @@ const selectedOptions = ref([]);
     </div>
   </section>
 
-  <section class="py-3">
+  <section>
     <h3>Inline</h3>
 
     <div class="dropdown-example">
@@ -116,7 +116,7 @@ const selectedOptions = ref([]);
     </div>
   </section>
 
-  <section class="py-3">
+  <section>
     <h3>Scrollable</h3>
 
     <div>
@@ -152,7 +152,7 @@ const selectedOptions = ref([]);
     </o-dropdown>
   </section>
 
-  <section class="py-3">
+  <section>
     <h3>Multiple</h3>
 
     <p><b>selected</b>: {{ selectedOptions }}</p>
@@ -177,7 +177,7 @@ const selectedOptions = ref([]);
     </o-dropdown>
   </section>
 
-  <section class="py-3">
+  <section>
     <h3>Positioning & Expanded</h3>
 
     <div class="dropdown-example expanded">
@@ -228,7 +228,7 @@ const selectedOptions = ref([]);
       </o-dropdown>
     </div>
 
-    <div class="dropdown-example expanded">
+    <o-field class="dropdown-example expanded">
       <o-dropdown position="bottom-right" aria-role="list" expanded>
         <template #trigger>
           <o-button
@@ -242,7 +242,7 @@ const selectedOptions = ref([]);
         <o-dropdown-item aria-role="listitem">Another action</o-dropdown-item>
         <o-dropdown-item aria-role="listitem">Something else</o-dropdown-item>
       </o-dropdown>
-    </div>
+    </o-field>
   </section>
 </template>
 

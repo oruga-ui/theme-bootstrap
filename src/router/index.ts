@@ -5,147 +5,30 @@ import {
 } from "vue-router";
 import Home from "../views/Home.vue";
 
+const paths = import.meta.glob("../components/*.vue") as any;
+const components = Object.keys(paths)
+  .map((c: string) => c.replace(".vue", ""))
+  .map((c: string) => c.replace("../components/", ""))
+  .map((c: string) => `/${c}`)
+  .map((c: string) => {
+    const name = c.split("/")[1];
+    return {
+      name,
+      link: c,
+    };
+  });
+
 const routes: Array<RouteRecordRaw> = [
   {
     path: "/",
     name: "Home",
     component: Home,
   },
-  {
-    path: "/autocomplete",
-    name: "Autocomplete",
-    component: () => import("../components/Autocomplete.vue"),
-  },
-  {
-    path: "/button",
-    name: "Button",
-    component: () => import("../components/Button.vue"),
-  },
-  {
-    path: "/carousel",
-    name: "Carousel",
-    component: () => import("../components/Carousel.vue"),
-  },
-  {
-    path: "/checkbox",
-    name: "Checkbox",
-    component: () => import("../components/Checkbox.vue"),
-  },
-  {
-    path: "/collapse",
-    name: "Collapse",
-    component: () => import("../components/Collapse.vue"),
-  },
-  {
-    path: "/datepicker",
-    name: "Datepicker",
-    component: () => import("../components/Datepicker.vue"),
-  },
-  {
-    path: "/dropdown",
-    name: "Dropdown",
-    component: () => import("../components/Dropdown.vue"),
-  },
-  {
-    path: "/field",
-    name: "Field",
-    component: () => import("../components/Field.vue"),
-  },
-  {
-    path: "/icon",
-    name: "Icon",
-    component: () => import("../components/Icon.vue"),
-  },
-  {
-    path: "/input",
-    name: "Input",
-    component: () => import("../components/Input.vue"),
-  },
-  {
-    path: "/loading",
-    name: "Loading",
-    component: () => import("../components/Loading.vue"),
-  },
-  {
-    path: "/modal",
-    name: "Modal",
-    component: () => import("../components/Modal.vue"),
-  },
-  {
-    path: "/notification",
-    name: "Notification",
-    component: () => import("../components/Notification.vue"),
-  },
-  {
-    path: "/pagination",
-    name: "Pagination",
-    component: () => import("../components/Pagination.vue"),
-  },
-  {
-    path: "/select",
-    name: "Select",
-    component: () => import("../components/Select.vue"),
-  },
-  {
-    path: "/radio",
-    name: "Radio",
-    component: () => import("../components/Radio.vue"),
-  },
-  {
-    path: "/skeleton",
-    name: "Skeleton",
-    component: () => import("../components/Skeleton.vue"),
-  },
-  {
-    path: "/slider",
-    name: "Slider",
-    component: () => import("../components/Slider.vue"),
-  },
-  {
-    path: "/steps",
-    name: "Steps",
-    component: () => import("../components/Steps.vue"),
-  },
-  {
-    path: "/switch",
-    name: "Switch",
-    component: () => import("../components/Switch.vue"),
-  },
-  {
-    path: "/taginput",
-    name: "Taginput",
-    component: () => import("../components/Taginput.vue"),
-  },
-  {
-    path: "/tabs",
-    name: "Tabs",
-    component: () => import("../components/Tabs.vue"),
-  },
-  {
-    path: "/tooltip",
-    name: "Tooltip",
-    component: () => import("../components/Tooltip.vue"),
-  },
-  {
-    path: "/table",
-    name: "Table",
-    component: () => import("../components/Table.vue"),
-  },
-  {
-    path: "/timepicker",
-    name: "Timepicker",
-    component: () => import("../components/Timepicker.vue"),
-  },
-  {
-    path: "/sidebar",
-    name: "Sidebar",
-    component: () => import("../components/Sidebar.vue"),
-  },
-  {
-    path: "/upload",
-    name: "Upload",
-    component: () => import("../components/Upload.vue"),
-  },
+  ...components.map(({ name, link }: any) => ({
+    path: link,
+    name: name,
+    component: () => import("../components" + link + ".vue"),
+  })),
 ];
 
 const router = createRouter({

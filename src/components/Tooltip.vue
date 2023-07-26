@@ -10,7 +10,7 @@ const active = ref(true);
     <hr />
   </section>
 
-  <section class="py-3">
+  <section>
     <h3>Base</h3>
 
     <o-tooltip label="Tooltip right" position="right">
@@ -34,8 +34,8 @@ const active = ref(true);
     </o-tooltip>
   </section>
 
-  <section class="py-3">
-    <h3>Colors</h3>
+  <section>
+    <h3>Variants</h3>
 
     <o-tooltip label="Default">
       <o-button label="Default" />
@@ -74,7 +74,7 @@ const active = ref(true);
     </o-tooltip>
   </section>
 
-  <section class="py-3">
+  <section>
     <h3>Multiline</h3>
 
     <o-tooltip
@@ -100,11 +100,11 @@ const active = ref(true);
     </o-tooltip>
   </section>
 
-  <section class="py-3">
+  <section>
     <h3>Slot</h3>
 
     <o-tooltip variant="light" position="bottom" multiline>
-      <o-button>Html Content</o-button>
+      <o-button label="Html Content" />
       <template #content>
         <b>Lorem ipsum dolor sit amet</b>, consectetur warning elit.
         <i>Fusce id fermentum quam</i>.
@@ -125,12 +125,13 @@ const active = ref(true);
     </o-tooltip>
   </section>
 
-  <section class="py-3">
+  <section>
     <h3>Toggle</h3>
 
     <o-field>
       <o-switch v-model="active"> Toggle Always </o-switch>
     </o-field>
+
     <o-tooltip
       variant="danger"
       label="I'm never closing"

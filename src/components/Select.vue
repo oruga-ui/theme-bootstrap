@@ -10,7 +10,7 @@ const selectedOptions = ref([]);
     <hr />
   </section>
 
-  <section class="py-3">
+  <section>
     <h3>Base</h3>
 
     <o-field label="Simple">

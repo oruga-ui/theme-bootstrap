@@ -487,7 +487,7 @@ function getMoreAsyncData() {
     <hr />
   </section>
 
-  <section class="py-3">
+  <section>
     <h2>Base</h2>
 
     <o-field label="Find a JS framework">
@@ -506,10 +506,10 @@ function getMoreAsyncData() {
     <p><b>Selected:</b> {{ selectedBase }}</p>
   </section>
 
-  <section class="py-3">
+  <section>
     <h2>Objects array</h2>
 
-    <o-field grouped group-multiline>
+    <o-field grouped>
       <o-switch v-model="openOnFocus">Open dropdown on focus</o-switch>
       <o-switch v-model="keepFirst">Keep-first</o-switch>
     </o-field>
@@ -527,7 +527,7 @@ function getMoreAsyncData() {
     <p><b>Selected:</b> {{ selectedObjects }}</p>
   </section>
 
-  <section class="py-3">
+  <section>
     <h2>Groups</h2>
 
     <o-field label="Find a food">
@@ -543,7 +543,7 @@ function getMoreAsyncData() {
     <p><b>Selected:</b> {{ selectedGroups }}</p>
   </section>
 
-  <section class="py-3">
+  <section>
     <h2>Infinite Scroll</h2>
 
     <o-field label="Find a movie">

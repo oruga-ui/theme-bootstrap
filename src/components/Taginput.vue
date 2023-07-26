@@ -394,7 +394,7 @@ function getFilteredTags(text: string) {
     <hr />
   </section>
 
-  <section class="py-3">
+  <section>
     <h3>Base</h3>
 
     <o-switch v-model="allowNew"> Allow new items </o-switch>
@@ -434,7 +434,7 @@ function getFilteredTags(text: string) {
     </o-field>
   </section>
 
-  <section class="py-3">
+  <section>
     <h3>Limits</h3>
 
     <o-field label="Limited to 10 characters">
@@ -453,7 +453,7 @@ function getFilteredTags(text: string) {
     </o-field>
   </section>
 
-  <section class="py-3">
+  <section>
     <h3>Variant</h3>
 
     <o-field label="Primary">

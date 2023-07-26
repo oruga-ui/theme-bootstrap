@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { computed, reactive, ref } from "vue";
 
-const value = ref(5);
+const value = ref(15);
 const sliderValue = ref(4);
 const numbers = ref([2, 5]);
 const numbers2 = ref([2, 6]);
@@ -26,7 +26,7 @@ const sliderType = computed(() => {
     <hr />
   </section>
 
-  <section class="py-3">
+  <section>
     <h3>Base</h3>
 
     <o-field label="Simple">
@@ -37,20 +37,24 @@ const sliderType = computed(() => {
       <o-slider :model-value="30" disabled />
     </o-field>
 
-    <o-field label="Rounded thumb & No Tooltip">
-      <o-slider :model-value="8" rounded :tooltip="false" />
-    </o-field>
-
-    <o-field label="Custom tooltip label">
-      <o-slider :rounded="true" :custom-formatter="(val: any) => val + '%'" />
-    </o-field>
-
     <o-field label="Tooltip type">
       <o-slider v-model="sliderValue" :tooltip-variant="sliderType" />
     </o-field>
+
+    <o-field label="Hide tooltip">
+      <o-slider :model-value="20" :tooltip="false" />
+    </o-field>
+
+    <o-field label="Custom tooltip label">
+      <o-slider :model-value="30" :custom-formatter="(val: any) => val + '%'" />
+    </o-field>
+
+    <o-field label="Rounded thumb">
+      <o-slider :model-value="8" rounded />
+    </o-field>
   </section>
 
-  <section class="py-3">
+  <section>
     <h3>Sizes</h3>
 
     <o-field label="Small">
@@ -70,7 +74,7 @@ const sliderType = computed(() => {
     </o-field>
   </section>
 
-  <section class="py-3">
+  <section>
     <h3>Variant</h3>
 
     <o-field label="Default">
@@ -127,9 +131,9 @@ const sliderType = computed(() => {
     </o-field>
   </section>
 
-  <section class="py-3">
+  <section>
     <h3>Customize</h3>
-    <o-field>
+    <o-field grouped>
       <o-field>
         <o-switch v-model="settings.rounded">Rounded</o-switch>
       </o-field>
@@ -165,7 +169,7 @@ const sliderType = computed(() => {
     </o-field>
   </section>
 
-  <section class="py-3">
+  <section>
     <h3>Tick and label</h3>
 
     <o-field label="Show ticks">
@@ -195,10 +199,10 @@ const sliderType = computed(() => {
     </o-field>
   </section>
 
-  <section class="py-3">
+  <section>
     <h3>Range</h3>
 
-    <o-field label="Range">
+    <o-field>
       <o-slider
         v-model="numbers"
         :rounded="true"

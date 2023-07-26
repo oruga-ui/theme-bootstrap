@@ -4,7 +4,7 @@
     <hr />
   </section>
 
-  <section class="py-3">
+  <section>
     <h3>Base</h3>
 
     <o-field label="Name">
@@ -44,7 +44,7 @@
     </o-field>
   </section>
 
-  <section class="py-3">
+  <section>
     <h3>Variants</h3>
 
     <o-field label="Primary" variant="primary">
@@ -75,7 +75,7 @@
     </o-field>
   </section>
 
-  <section class="py-3">
+  <section>
     <h3>Sizes</h3>
 
     <o-field>
@@ -95,7 +95,7 @@
     </o-field>
   </section>
 
-  <section class="py-3">
+  <section>
     <h3>With Icons</h3>
 
     <o-field>
@@ -103,8 +103,7 @@
         placeholder="Search..."
         type="search"
         icon="search"
-        icon-clickable>
-      </o-input>
+        icon-clickable />
     </o-field>
 
     <o-field>
@@ -112,8 +111,7 @@
         placeholder="Search..."
         type="search"
         icon-right="search"
-        icon-right-clickable>
-      </o-input>
+        icon-right-clickable />
     </o-field>
 
     <o-field>
@@ -122,8 +120,7 @@
         type="email"
         icon="envelope"
         icon-right="times-circle"
-        icon-right-clickable>
-      </o-input>
+        icon-right-clickable />
     </o-field>
   </section>
 </template>

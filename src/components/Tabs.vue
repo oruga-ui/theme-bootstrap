@@ -46,7 +46,7 @@ const type = ref("default");
     <hr />
   </section>
 
-  <section class="py-3">
+  <section>
     <h3>Base</h3>
 
     <o-tabs>
@@ -61,44 +61,46 @@ const type = ref("default");
     </o-tabs>
   </section>
 
-  <section class="py-3">
+  <section>
     <h3>Styles</h3>
 
-    Toggle / Underline
-    <o-tabs type="toggle">
-      <o-tab-item
-        v-for="(tab, i) in tabs"
-        :key="i"
-        :value="i"
-        :label="tab.label"
-        :icon="tab.icon"
-        :disabled="tab.disabled" />
-    </o-tabs>
+    <o-field label="Toggle / Underline">
+      <o-tabs type="toggle">
+        <o-tab-item
+          v-for="(tab, i) in tabs"
+          :key="i"
+          :value="i"
+          :label="tab.label"
+          :icon="tab.icon"
+          :disabled="tab.disabled" />
+      </o-tabs>
+    </o-field>
 
-    Boxed / Tabs
-    <o-tabs type="boxed">
-      <o-tab-item
-        v-for="(tab, i) in tabs"
-        :key="i"
-        :value="i"
-        :label="tab.label"
-        :icon="tab.icon"
-        :disabled="tab.disabled" />
-    </o-tabs>
-
-    Pills
-    <o-tabs type="pills">
-      <o-tab-item
-        v-for="(tab, i) in tabs"
-        :key="i"
-        :value="i"
-        :label="tab.label"
-        :icon="tab.icon"
-        :disabled="tab.disabled" />
-    </o-tabs>
+    <o-field label="Boxed / Tabs">
+      <o-tabs type="boxed">
+        <o-tab-item
+          v-for="(tab, i) in tabs"
+          :key="i"
+          :value="i"
+          :label="tab.label"
+          :icon="tab.icon"
+          :disabled="tab.disabled" />
+      </o-tabs>
+    </o-field>
+    <o-field label="Pills">
+      <o-tabs type="pills">
+        <o-tab-item
+          v-for="(tab, i) in tabs"
+          :key="i"
+          :value="i"
+          :label="tab.label"
+          :icon="tab.icon"
+          :disabled="tab.disabled" />
+      </o-tabs>
+    </o-field>
   </section>
 
-  <section class="py-3">
+  <section>
     <h3>Position</h3>
 
     <o-tabs position="left" type="boxed">
@@ -130,8 +132,9 @@ const type = ref("default");
     </o-tabs>
   </section>
 
-  <section class="py-3">
+  <section>
     <h3>Expanded</h3>
+
     <o-tabs type="boxed" expanded>
       <o-tab-item
         v-for="(tab, i) in tabs"
@@ -143,8 +146,9 @@ const type = ref("default");
     </o-tabs>
   </section>
 
-  <section class="py-3">
+  <section>
     <h3>Sizes</h3>
+
     <o-tabs size="small" type="boxed">
       <o-tab-item
         v-for="(tab, i) in tabs"
@@ -174,8 +178,9 @@ const type = ref("default");
     </o-tabs>
   </section>
 
-  <section class="py-3">
+  <section>
     <h3>Vertical</h3>
+
     <o-field grouped group-multiline>
       <o-field>
         <o-switch v-model="atRight"> Right position </o-switch>
@@ -200,6 +205,7 @@ const type = ref("default");
         </o-select>
       </o-field>
     </o-field>
+
     <o-tabs
       vertical
       :position="atRight ? 'right' : ''"

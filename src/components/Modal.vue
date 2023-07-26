@@ -1,5 +1,8 @@
 <script setup lang="ts">
 import { ref } from "vue";
+import { useProgrammatic } from "@oruga-ui/oruga-next";
+
+const { oruga } = useProgrammatic();
 
 const isImageModalActive = ref(false);
 const isCardModalActive = ref(false);
@@ -7,6 +10,25 @@ const isFullScreenModalActive = ref(false);
 
 const tags = ref([]);
 const value = ref(20);
+
+const promptModal = async () => {
+  const instance = oruga.modal.open({
+    content: "Do you really want me to ship the selected sprockets?",
+    trapFocus: true,
+  });
+  // Note utilizing the promise requires Promise be supported by the browser
+  // If you are running Vue 2 on IE 11 this will not be the case unless you
+  // add a polyfill in your build.
+  const result = await instance.promise;
+
+  oruga.notification.open({
+    duration: 5000,
+    message: "Modal dialog returned " + JSON.stringify(result),
+    variant: "info",
+    position: "top",
+    closable: true,
+  });
+};
 </script>
 
 <template>
@@ -15,7 +37,7 @@ const value = ref(20);
     <hr />
   </section>
 
-  <section class="py-3">
+  <section>
     <h3>Base</h3>
 
     <div class="buttons">
@@ -36,6 +58,12 @@ const value = ref(20);
         variant="primary"
         label="Open FullScreen Modal"
         @click="isFullScreenModalActive = true" />
+
+      <o-button
+        label="Open prompt"
+        size="medium"
+        variant="primary"
+        @click="promptModal()" />
     </div>
 
     <!-- image modal -->
