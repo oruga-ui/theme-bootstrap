@@ -14,7 +14,7 @@ const size = ref("small");
     <hr />
   </section>
 
-  <section class="py-3">
+  <section>
     <h3>Base</h3>
 
     <o-field>
@@ -32,7 +32,7 @@ const size = ref("small");
     <p><b>Selection:</b> {{ radio }}</p>
   </section>
 
-  <section class="py-3">
+  <section>
     <h3>Variant</h3>
 
     <o-field>
@@ -71,7 +71,7 @@ const size = ref("small");
     <p><b>Selection:</b> {{ variant }}</p>
   </section>
 
-  <section class="py-3">
+  <section>
     <h3>Variant Inverted</h3>
 
     <o-field>
@@ -130,7 +130,7 @@ const size = ref("small");
     <p><b>Selection:</b> {{ variantInvert }}</p>
   </section>
 
-  <section class="py-3">
+  <section>
     <h3>Variant Subtle</h3>
 
     <o-field>
@@ -189,7 +189,7 @@ const size = ref("small");
     <p><b>Selection:</b> {{ variantSubtle }}</p>
   </section>
 
-  <section class="py-3">
+  <section>
     <h3>Size</h3>
 
     <o-field>

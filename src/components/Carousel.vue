@@ -89,59 +89,59 @@ const customSettings = reactive({
     <h2>Carousel Demo</h2>
     <hr />
   </section>
-  <section class="py-4 container">
+
+  <section class="container">
     <h3>Base</h3>
 
     <o-carousel>
       <o-carousel-item v-for="(carousel, i) in carousels" :key="i">
-        <section
+        <article
           class="ex-slide"
           :style="{ 'background-color': carousel.color }">
           <h1>{{ carousel.text }}</h1>
-        </section>
+        </article>
       </o-carousel-item>
     </o-carousel>
   </section>
 
-  <section class="py-4 container">
+  <section class="container">
     <h3>Carousel List</h3>
 
-    <div class="example-component">
-      <o-field grouped group-multiline>
-        <o-field>
-          <o-switch v-model="listSettings.arrow">Arrow</o-switch>
-        </o-field>
-        <o-field>
-          <o-switch
-            v-model="listSettings.arrowHover"
-            :disabled="!listSettings.arrow">
-            Arrow on hover
-          </o-switch>
-        </o-field>
-        <o-field>
-          <o-switch v-model="listSettings.hasDrag">Drag event</o-switch>
-        </o-field>
-        <o-field>
-          <o-switch v-model="listSettings.repeat">Repeat</o-switch>
-        </o-field>
+    <o-field grouped>
+      <o-field>
+        <o-switch v-model="listSettings.arrow">Arrow</o-switch>
       </o-field>
-      <o-field grouped group-multiline>
-        <o-field label="Items to Show">
-          <o-input
-            v-model.number="listSettings.itemsToShow"
-            type="number"
-            min="1"
-            :max="items.length" />
-        </o-field>
-        <o-field label="Items to List">
-          <o-input
-            v-model.number="listSettings.itemsToList"
-            type="number"
-            min="1"
-            :max="items.length - 1" />
-        </o-field>
+      <o-field>
+        <o-switch
+          v-model="listSettings.arrowHover"
+          :disabled="!listSettings.arrow">
+          Arrow on hover
+        </o-switch>
       </o-field>
-    </div>
+      <o-field>
+        <o-switch v-model="listSettings.hasDrag">Drag event</o-switch>
+      </o-field>
+      <o-field>
+        <o-switch v-model="listSettings.repeat">Repeat</o-switch>
+      </o-field>
+    </o-field>
+    <o-field grouped>
+      <o-field label="Items to Show">
+        <o-input
+          v-model.number="listSettings.itemsToShow"
+          type="number"
+          min="1"
+          :max="items.length" />
+      </o-field>
+      <o-field label="Items to List">
+        <o-input
+          v-model.number="listSettings.itemsToList"
+          type="number"
+          min="1"
+          :max="items.length - 1" />
+      </o-field>
+    </o-field>
+
     <o-carousel v-model="carousel" v-bind="listSettings">
       <o-carousel-item v-for="(item, i) in items" :key="i">
         <img :src="item.image" />
@@ -150,7 +150,7 @@ const customSettings = reactive({
     <p><b>Current Item:</b> {{ carousel }}</p>
   </section>
 
-  <section class="py-4 container">
+  <section class="container">
     <h3>Custom As indicators</h3>
 
     <o-carousel
@@ -158,9 +158,9 @@ const customSettings = reactive({
       :overlay="gallery"
       @click="switchGallery(true)">
       <o-carousel-item v-for="(item, i) in items" :key="i">
-        <a class="image">
+        <div class="image">
           <img :src="item.image" />
-        </a>
+        </div>
       </o-carousel-item>
       <template #indicators="{ active, switchTo }">
         <o-carousel
@@ -191,63 +191,61 @@ const customSettings = reactive({
     </o-carousel>
   </section>
 
-  <section class="py-4 container">
+  <section class="container">
     <h3>Custom</h3>
 
-    <div class="example-component">
-      <o-field grouped group-multiline>
-        <o-field>
-          <o-switch v-model="customSettings.autoplay">Autoplay</o-switch>
-        </o-field>
-        <o-field>
-          <o-switch
-            v-model="customSettings.pauseHover"
-            :disabled="!customSettings.autoplay">
-            Pause on hover
-          </o-switch>
-        </o-field>
-        <o-field>
-          <o-switch v-model="customSettings.hasDrag">Drag event</o-switch>
-        </o-field>
-        <o-field>
-          <o-switch
-            v-model="customSettings.repeat"
-            :disabled="!customSettings.autoplay">
-            Repeat
-          </o-switch>
-        </o-field>
+    <o-field grouped>
+      <o-field>
+        <o-switch v-model="customSettings.autoplay">Autoplay</o-switch>
       </o-field>
-      <o-field grouped group-multiline>
-        <o-field label="Value">
-          <o-input
-            v-model.number="carousel"
-            type="number"
-            min="0"
-            :max="carousels.length - 1" />
-        </o-field>
-        <o-field label="Interval">
-          <o-input
-            v-model.number="customSettings.interval"
-            type="number"
-            min="0"
-            step="1000"
-            :disabled="!customSettings.autoplay" />
-        </o-field>
-        <o-field label="Indicator Position">
-          <o-select v-model="customSettings.position">
-            <option value="top">top</option>
-            <option value="bottom">bottom</option>
-          </o-select>
-        </o-field>
-        <o-field label="Indicator Style">
-          <o-select v-model="customSettings.style">
-            <option value="boxes ">boxes</option>
-            <option value="dots">dots</option>
-            <option value="lines ">lines</option>
-          </o-select>
-        </o-field>
+      <o-field>
+        <o-switch
+          v-model="customSettings.pauseHover"
+          :disabled="!customSettings.autoplay">
+          Pause on hover
+        </o-switch>
       </o-field>
-    </div>
+      <o-field>
+        <o-switch v-model="customSettings.hasDrag">Drag event</o-switch>
+      </o-field>
+      <o-field>
+        <o-switch
+          v-model="customSettings.repeat"
+          :disabled="!customSettings.autoplay">
+          Repeat
+        </o-switch>
+      </o-field>
+    </o-field>
+    <o-field grouped>
+      <o-field label="Value">
+        <o-input
+          v-model.number="carousel"
+          type="number"
+          min="0"
+          :max="carousels.length - 1" />
+      </o-field>
+      <o-field label="Interval">
+        <o-input
+          v-model.number="customSettings.interval"
+          type="number"
+          min="0"
+          step="1000"
+          :disabled="!customSettings.autoplay" />
+      </o-field>
+      <o-field label="Indicator Position">
+        <o-select v-model="customSettings.position">
+          <option value="top">top</option>
+          <option value="bottom">bottom</option>
+        </o-select>
+      </o-field>
+      <o-field label="Indicator Style">
+        <o-select v-model="customSettings.style">
+          <option value="boxes ">boxes</option>
+          <option value="dots">dots</option>
+          <option value="lines ">lines</option>
+        </o-select>
+      </o-field>
+    </o-field>
 
     <o-carousel
       v-model="carousel"

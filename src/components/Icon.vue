@@ -4,7 +4,7 @@
     <hr />
   </section>
 
-  <section class="py-3">
+  <section>
     <h3>Base</h3>
 
     <o-field>
@@ -37,7 +37,7 @@
     </o-field>
   </section>
 
-  <section class="py-3">
+  <section>
     <h3>Buttons</h3>
 
     <o-button variant="success">

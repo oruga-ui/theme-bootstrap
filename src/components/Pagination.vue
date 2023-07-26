@@ -20,7 +20,7 @@ const nextIcon = ref("chevron-right");
     <hr />
   </section>
 
-  <section class="py-3">
+  <section>
     <h3>Base</h3>
 
     <o-field grouped group-multiline>
@@ -71,11 +71,12 @@ const nextIcon = ref("chevron-right");
         </o-select>
       </o-field>
     </o-field>
-    <o-field grouped group-multiline>
+    <o-field grouped>
       <o-switch v-model="isSimple">Simple</o-switch>
       <o-switch v-model="isRounded">Rounded</o-switch>
     </o-field>
-    <br />
+
+    <hr />
     <o-pagination
       v-model:current="current"
       :total="total"

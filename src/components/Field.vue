@@ -4,7 +4,7 @@
     <hr />
   </section>
 
-  <section class="py-3">
+  <section>
     <h3>Base</h3>
 
     <o-field label="Name">
@@ -48,17 +48,17 @@
     </o-field>
   </section>
 
-  <section class="py-3">
+  <section>
     <h3>Addons</h3>
 
     <o-field variant="danger">
       <o-input placeholder="Search..." type="search" icon="search" />
-      <o-button variant="primary">Search</o-button>
+      <o-button variant="primary" label="Search" />
     </o-field>
 
     <o-field>
       <o-input placeholder="This is expanded" expanded />
-      <o-button>@gmail.com</o-button>
+      <o-button label="@gmail.com" />
     </o-field>
 
     <o-field>
@@ -73,40 +73,21 @@
     </o-field>
 
     <o-field>
-      <o-button>
-        <o-icon icon="bold" />
-      </o-button>
-
-      <o-button>
-        <o-icon icon="italic" />
-      </o-button>
-
-      <o-button>
-        <o-icon icon="underline" />
-      </o-button>
-
-      <o-button>
-        <o-icon icon="align-left" />
-      </o-button>
-
-      <o-button>
-        <o-icon icon="align-center" />
-      </o-button>
-
-      <o-button>
-        <o-icon icon="align-right" />
-      </o-button>
+      <o-button icon-left="bold" />
+      <o-button icon-left="italic" />
+      <o-button icon-left="underline" />
+      <o-button icon-left="align-left" />
+      <o-button icon-left="align-center" />
+      <o-button icon-left="align-right" />
 
       <o-input placeholder="Search..." type="search" icon="search" />
     </o-field>
 
     <o-field>
-      <o-button variant="primary"> Button </o-button>
+      <o-button variant="primary" label="Button" />
       <o-dropdown>
         <template #trigger>
-          <o-button variant="primary">
-            <o-icon icon="caret-down" />
-          </o-button>
+          <o-button variant="primary" icon-right="caret-down" />
         </template>
 
         <o-dropdown-item>Action</o-dropdown-item>
@@ -116,19 +97,17 @@
     </o-field>
 
     <o-field>
-      <o-button variant="primary"> Button </o-button>
+      <o-button variant="primary" label="Button" />
       <o-dropdown>
         <template #trigger>
-          <o-button variant="primary">
-            <o-icon icon="caret-down" />
-          </o-button>
+          <o-button variant="primary" icon-right="caret-down" />
         </template>
 
         <o-dropdown-item>Action</o-dropdown-item>
         <o-dropdown-item>Another action</o-dropdown-item>
         <o-dropdown-item>Something else</o-dropdown-item>
       </o-dropdown>
-      <o-button variant="primary"> Button </o-button>
+      <o-button variant="primary" label="Button" />
     </o-field>
 
     <o-field>
@@ -152,7 +131,7 @@
     </o-field>
   </section>
 
-  <section class="py-3">
+  <section>
     <h3>Grouped</h3>
 
     <o-field grouped variant="danger" message="What do you want to search?">
@@ -212,14 +191,15 @@
     </o-field>
 
     <o-field horizontal>
-      <!-- Label left empty for spacing -->
-      <o-button variant="primary" icon-left="envelope" outlined>
-        Send message
-      </o-button>
+      <o-button
+        variant="primary"
+        icon-left="envelope"
+        label="Send message"
+        outlined />
     </o-field>
   </section>
 
-  <section class="py-3">
+  <section>
     <h3>Slot</h3>
 
     <o-field horizontal>
