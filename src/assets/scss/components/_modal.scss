@@ -47,6 +47,7 @@ html.modal-open {
 }
 
 .modal {
+  @extend .show;
   display: flex;
 
   .modal-backdrop {
