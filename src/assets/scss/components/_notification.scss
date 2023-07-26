@@ -53,7 +53,7 @@ $notification-icon-margin-right: 0.5rem !default;
 }
 
 .alert {
-  button {
+  & > button {
     background-color: transparent;
     border: 0;
     position: absolute;
@@ -70,6 +70,11 @@ $notification-icon-margin-right: 0.5rem !default;
         filter: unset;
       }
     }
+  }
+
+  // default color variant light
+  &:not([class*="variant-"]) {
+    @extend .alert-light;
   }
 }
 
