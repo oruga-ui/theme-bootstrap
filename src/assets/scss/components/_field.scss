@@ -62,7 +62,10 @@ $input-field-btn-border-color: $input-border-color !default;
 
   &.grouped-multiline {
     flex-wrap: wrap;
-    margin-bottom: calc(-1 * var(--#{$prefix}input-field-margin-bottom));
+
+    &:last-child {
+      margin-bottom: calc(-1 * var(--#{$prefix}input-field-margin-bottom));
+    }
   }
 
   &.field-horizontal {
