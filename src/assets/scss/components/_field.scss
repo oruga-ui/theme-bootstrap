@@ -121,6 +121,17 @@ $input-field-btn-border-color: $input-border-color !default;
       --#{$prefix}btn-bg: #{$input-field-btn-border-color};
     }
 
+    // set border radii
+    & > :first-child:not(:only-child) button,
+    & > :first-child:not(:only-child) input,
+    & > :first-child:not(:only-child) select,
+    & > button:first-child,
+    & > input:first-child,
+    & > select:first-child {
+      border-bottom-right-radius: 0;
+      border-top-right-radius: 0;
+    }
+
     .input {
       @include radii(".form-control");
     }
@@ -137,17 +148,25 @@ $input-field-btn-border-color: $input-border-color !default;
   // is grouped
   .input-grouped {
     display: flex;
+    margin-left: calc(-1 * var(--#{$prefix}input-field-grouped-spacer));
+    margin-right: calc(-1 * var(--#{$prefix}input-field-grouped-spacer));
 
-    // Margin right
-    & > input:not(:last-child),
-    & > .input:not(:last-child),
-    & > select:not(:last-child),
-    & > .select:not(:last-child),
-    & > .dropdown:not(:last-child),
-    & > .btn:not(:last-child),
-    & > button:not(:last-child),
-    & > .input-field:not(:last-child) {
+    // Margin
+    & > * {
+      margin-left: var(--#{$prefix}input-field-grouped-spacer);
       margin-right: var(--#{$prefix}input-field-grouped-spacer);
     }
+
+    //   & > input:not(:last-child),
+    //   & > .input:not(:last-child),
+    //   & > select:not(:last-child),
+    //   & > .select:not(:last-child),
+    //   & > .dropdown:not(:last-child),
+    //   & > .btn:not(:last-child),
+    //   & > button:not(:last-child),
+    //   & > .datepicker:not(:last-child),
+    //   & > .input-field:not(:last-child) {
+    //     margin-right: var(--#{$prefix}input-field-grouped-spacer);
+    //   }
   }
 }
