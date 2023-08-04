@@ -1,36 +1,42 @@
 /* @docs */
-$timepicker-select-margin: 0.2rem 0.2rem 0.2rem 0 !default;
 /* @docs */
 
 .timepicker {
-  --#{$prefix}timepicker-select-margin: #{$timepicker-select-margin};
-
   .dropdown {
     .dropdown-menu {
       --#{$prefix}dropdown-width: auto;
       --#{$prefix}dropdown-min-width: unset;
+      --#{$prefix}dropdown-padding-y: 0;
+      --#{$prefix}dropdown-link-active-bg: transparent;
+      --#{$prefix}dropdown-link-active-color: --#{$prefix}dropdown-link-color;
+    }
 
-      width: max-content;
+    &:focus-within {
+      box-shadow: var(--#{$prefix}focus-ring-x, 0)
+        var(--#{$prefix}focus-ring-y, 0) var(--#{$prefix}focus-ring-blur, 0)
+        var(--#{$prefix}focus-ring-width) var(--#{$prefix}focus-ring-color);
     }
 
     .dropdown-item {
       display: inline-flex;
+      border-radius: inherit;
 
       .separator {
         transform: translateY(15%);
         font-weight: bolder;
-        margin: var(--#{$prefix}timepicker-select-margin);
       }
 
       .select {
-        margin: var(--#{$prefix}timepicker-select-margin);
-      }
-    }
-  }
+        .form-select {
+          border: transparent;
+          background-color: transparent;
+          cursor: pointer;
 
-  .timepicker-footer {
-    .btn {
-      margin: var(--#{$prefix}timepicker-select-margin) !important;
+          &:focus {
+            box-shadow: none;
+          }
+        }
+      }
     }
   }
 }
