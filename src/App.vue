@@ -42,18 +42,18 @@ const components = Object.keys(paths)
   main {
     flex-grow: 1;
     margin: 25px;
-  }
 
-  section {
-    padding: 1rem 0;
+    > section {
+      padding: 1rem 0;
 
-    h3 {
-      font-size: 1.75rem;
-    }
+      h3 {
+        font-size: 1.75rem;
+      }
 
-    .buttons > * {
-      margin-right: 0.5rem;
-      margin-bottom: 0.5rem;
+      .buttons > * {
+        margin-right: 0.5rem;
+        margin-bottom: 0.5rem;
+      }
     }
   }
 

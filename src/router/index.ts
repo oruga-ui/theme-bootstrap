@@ -27,7 +27,7 @@ const routes: Array<RouteRecordRaw> = [
   ...components.map(({ name, link }: any) => ({
     path: link,
     name: name,
-    component: () => import("../components" + link + ".vue"),
+    component: () => import(/* @vite-ignore */ "../components" + link + ".vue"),
   })),
 ];
 
