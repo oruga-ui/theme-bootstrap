@@ -17,10 +17,11 @@ const maxDatetime = ref(null);
     <h2>Datetimepicker Demo</h2>
     <hr />
   </section>
+
   <section>
     <h2>Base</h2>
 
-    <o-field grouped group-multiline>
+    <o-field grouped>
       <o-field>
         <o-switch v-model="showWeekNumber">Show week number</o-switch>
       </o-field>
@@ -53,6 +54,7 @@ const maxDatetime = ref(null);
         </o-select>
       </o-field>
     </o-field>
+
     <o-field label="Select datetime">
       <o-datetimepicker
         rounded
@@ -94,7 +96,7 @@ const maxDatetime = ref(null);
   <section>
     <h3>Min/Max Datetime</h3>
 
-    <o-field grouped group-multiline>
+    <o-field grouped>
       <o-field label="Min Datetime">
         <o-datetimepicker
           v-model="minDatetime"
@@ -112,6 +114,7 @@ const maxDatetime = ref(null);
           editable />
       </o-field>
     </o-field>
+
     <o-field label="Select datetime">
       <o-datetimepicker
         rounded
