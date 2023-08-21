@@ -29,7 +29,7 @@ const hoursGranularity = ref(2);
   <section>
     <h3>Base</h3>
 
-    <o-field grouped group-multiline>
+    <o-field grouped>
       <o-field>
         <o-switch v-model="enableSeconds">Enable seconds</o-switch>
       </o-field>
@@ -90,7 +90,7 @@ const hoursGranularity = ref(2);
   </section>
 
   <section>
-    <h3>Footer</h3>
+    <h3>Slot</h3>
 
     <o-field label="Select time">
       <o-timepicker v-model="time" placeholder="Click to select...">

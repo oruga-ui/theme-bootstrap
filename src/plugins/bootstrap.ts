@@ -456,6 +456,23 @@ export const bootstrapConfig: any = {
     tableEventClass: "event",
     mobileClass: "mobile",
   },
+  timepicker: {
+    override: true,
+    rootClass: "timepicker",
+    boxClass: "dropdown-item",
+    selectClasses: {
+      rootClass: "select",
+      selectClass: "form-select",
+    },
+    separatorClass: "separator",
+    footerClass: "timepicker-footer",
+    sizeClass: "size-",
+  },
+  datetimepicker: {
+    override: true,
+    datepickerWrapperClass: "datepicker-wrapper",
+    timepickerWrapperClass: "timepicker-wrapper d-flex justify-content-center",
+  },
   menu: {
     override: true,
     rootClass: "menu-wrapper",
@@ -520,18 +537,6 @@ export const bootstrapConfig: any = {
     fullPageClass: "fullpage",
     overlayClass: "loading-overlay",
     iconClass: "icon",
-  },
-  timepicker: {
-    override: true,
-    rootClass: "timepicker",
-    boxClass: "dropdown-item",
-    selectClasses: {
-      rootClass: "select",
-      selectClass: "form-select",
-    },
-    separatorClass: "separator",
-    footerClass: "timepicker-footer",
-    sizeClass: "size-",
   },
   upload: {
     override: true,
