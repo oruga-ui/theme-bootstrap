@@ -519,7 +519,7 @@ export const bootstrapConfig: any = {
     },
     separatorClass: "separator",
     footerClass: "timepicker-footer",
-    sizeClass: "is-",
+    sizeClass: "size-",
   },
   upload: {
     override: true,
