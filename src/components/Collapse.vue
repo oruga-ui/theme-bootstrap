@@ -29,7 +29,7 @@ const collapses = ref([
   </section>
 
   <section>
-    <h2>Base</h2>
+    <h3>Base</h3>
 
     <o-collapse :open="false" aria-id="contentIdForA11y1">
       <template #trigger>
@@ -51,7 +51,7 @@ const collapses = ref([
   </section>
 
   <section>
-    <h2>Accordion I</h2>
+    <h3>Accordion I</h3>
 
     <o-collapse
       v-for="(collapse, index) of collapses"
@@ -77,7 +77,7 @@ const collapses = ref([
   </section>
 
   <section>
-    <h2>Accordion II</h2>
+    <h3>Accordion II</h3>
 
     <article v-for="(collapse, index) of collapses" :key="index">
       <o-collapse
