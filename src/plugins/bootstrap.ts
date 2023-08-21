@@ -458,6 +458,18 @@ export const bootstrapConfig: any = {
     tableEventsClass: "events",
     tableEventClass: "event",
   },
+  menu: {
+    override: true,
+    rootClass: "menu-wrapper",
+    listClass: "menu-list",
+    listLabelClass: "menu-label",
+    itemWrapperClass: "menu-item-wrapper",
+    itemClass: "menu-item",
+    itemActiveClass: "active",
+    itemDisabledClass: "disabled",
+    itemIconTextClass: "menu-icon",
+    itemSubmenuClass: "menu-submenu",
+  },
   modal: {
     override: true,
     rootClass: (_: string, { props }: any) => {
