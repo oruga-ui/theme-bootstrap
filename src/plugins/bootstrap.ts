@@ -473,6 +473,18 @@ export const bootstrapConfig: any = {
     datepickerWrapperClass: "datepicker-wrapper",
     timepickerWrapperClass: "timepicker-wrapper d-flex justify-content-center",
   },
+  menu: {
+    override: true,
+    rootClass: "menu-wrapper",
+    listClass: "menu-list",
+    listLabelClass: "menu-label",
+    itemWrapperClass: "menu-item-wrapper",
+    itemClass: "menu-item",
+    itemActiveClass: "active",
+    itemDisabledClass: "disabled",
+    itemIconTextClass: "menu-icon",
+    itemSubmenuClass: "menu-submenu",
+  },
   modal: {
     override: true,
     rootClass: (_: string, { props }: any) => {
