@@ -34,14 +34,8 @@ $datepicker-dropdown-max-width: 460px !default;
     // override dropdown-item effects
     .dropdown-item:hover,
     .dropdown-item:active {
-      background-color: transparent;
+      --#{$prefix}dropdown-link-hover-bg: transparent;
     }
-  }
-
-  .datepicker-footer {
-    padding-top: var(--#{$prefix}datepicker-section-spacer);
-    margin-top: var(--#{$prefix}datepicker-section-spacer);
-    border-top: var(--#{$prefix}datepicker-section-border);
   }
 
   .datepicker-header {
@@ -61,6 +55,7 @@ $datepicker-dropdown-max-width: 460px !default;
       .pagination-previous,
       .pagination-next {
         margin: 0;
+        color: var(--#{$prefix}btn-color);
       }
 
       .pagination-previous {
@@ -79,6 +74,12 @@ $datepicker-dropdown-max-width: 460px !default;
         order: 3;
       }
     }
+  }
+
+  .datepicker-footer {
+    padding-top: var(--#{$prefix}datepicker-section-spacer);
+    margin-top: var(--#{$prefix}datepicker-section-spacer);
+    border-top: var(--#{$prefix}datepicker-section-border);
   }
 
   .datepicker-cell {

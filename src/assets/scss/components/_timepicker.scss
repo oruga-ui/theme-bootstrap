@@ -20,6 +20,7 @@
     .dropdown-item {
       display: inline-flex;
       border-radius: inherit;
+      width: max-content;
 
       .separator {
         transform: translateY(15%);

@@ -59,6 +59,7 @@ $btn-hover-box-shadow: $box-shadow-sm !default;
   --#{$prefix}btn-border-color: #{$btn-border-color};
   --#{$prefix}btn-hover-border-color: #{$btn-hover-border-color};
   --#{$prefix}btn-hover-box-shadow: #{$btn-hover-box-shadow};
+  --#{$prefix}btn-disabled-border-color: var(--#{$prefix}btn-border-color);
 
   .button-wrapper {
     display: inline-flex;
@@ -88,7 +89,7 @@ $btn-hover-box-shadow: $box-shadow-sm !default;
   &.disabled,
   &.btn-disabled {
     pointer-events: auto;
-    cursor: not-allowed;
+    cursor: auto;
   }
 
   // inverted color
