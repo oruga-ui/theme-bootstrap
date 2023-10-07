@@ -6,10 +6,8 @@ export const bootstrapConfig: any = {
     rootClass: "input-field",
     bodyClass: "field-wrapper",
     labelClass: "form-label",
-    messageClass: (_: string, { props }: any) => {
-      return `help text-${props.variant}`;
-    },
-    // variantMessageClass: '',
+    messageClass: "help",
+    variantMessageClass: "text-",
     addonsClass: "input-group",
     groupedClass: "input-grouped",
     groupMultilineClass: "grouped-multiline",

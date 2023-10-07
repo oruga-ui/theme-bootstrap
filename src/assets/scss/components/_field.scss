@@ -43,7 +43,7 @@ $input-field-btn-border-color: $input-border-color !default;
 
   // The input is first and the last
   &:first-child:last-child {
-    .form-control {
+    #{$selector} {
       --#{$prefix}border-radius: #{$border-radius};
     }
   }
@@ -122,15 +122,14 @@ $input-field-btn-border-color: $input-border-color !default;
     }
 
     // set border radii
-    & > :first-child:not(:only-child) button,
-    & > :first-child:not(:only-child) input,
-    & > :first-child:not(:only-child) select,
-    & > button:first-child,
-    & > input:first-child,
-    & > select:first-child {
+    & > button:first-child:not(:only-child),
+    & > input:first-child:not(:only-child):not(.form-check-input),
+    & > select:first-child:not(:only-child) {
       border-bottom-right-radius: 0;
       border-top-right-radius: 0;
     }
+
+    @include radii("button, select, input:not(.form-check-input)");
 
     .input {
       @include radii(".form-control");

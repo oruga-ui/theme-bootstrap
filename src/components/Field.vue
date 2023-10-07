@@ -7,6 +7,10 @@
   <section>
     <h3>Base</h3>
 
+    <o-field label="Label">
+      <o-button label="Click me" />
+    </o-field>
+
     <o-field label="Name">
       <o-input value="Kevin Garvey" />
     </o-field>
@@ -54,6 +58,11 @@
     <o-field variant="danger">
       <o-input placeholder="Search..." type="search" icon="search" />
       <o-button variant="primary" label="Search" />
+    </o-field>
+
+    <o-field variant="danger">
+      <o-button variant="primary" label="Search" />
+      <o-input placeholder="Search..." type="search" icon="search" />
     </o-field>
 
     <o-field>
