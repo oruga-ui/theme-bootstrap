@@ -161,7 +161,9 @@ $table-card-spacer: $spacer;
     }
 
     .icon {
-      transition: transform $speed-slow $easing, opacity 86ms $easing;
+      transition:
+        transform $speed-slow $easing,
+        opacity 86ms $easing;
 
       &.is-desc {
         transform: rotate(180deg);
