@@ -30,6 +30,10 @@
   width: fit-content;
 }
 
+.max-content {
+  width: max-content;
+}
+
 .max-width,
 .fullwidth {
   width: 100%;
@@ -60,18 +64,6 @@
 
 .text-center {
   text-align: center;
-}
-
-.text-uppercase {
-  text-transform: uppercase;
-}
-
-.text-lowercase {
-  text-transform: lowercase;
-}
-
-.text-break {
-  white-space: break-spaces;
 }
 
 // Utitlity classes for z-index sass variables (see https://getbootstrap.com/docs/5.3/layout/z-index/)
