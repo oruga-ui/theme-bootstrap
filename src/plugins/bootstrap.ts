@@ -1,6 +1,7 @@
+import type { OrugaOptions, ComponentContext } from "@oruga-ui/oruga-next";
 import "../assets/scss/bootstrap-build.scss";
 
-export const bootstrapConfig: any = {
+export const bootstrapConfig: OrugaOptions = {
   field: {
     override: true,
     rootClass: "input-field",
@@ -18,19 +19,19 @@ export const bootstrapConfig: any = {
   input: {
     override: true,
     rootClass: "input",
-    inputClass: (_: string, { props }: any) => {
+    inputClass: (_: string, { props }: ComponentContext) => {
       const classes = ["form-control"];
       if (props.icon) classes.push("icon-left");
       if (props.iconRight) classes.push("icon-right");
       return classes.join(" ");
     },
-    textareaClass: (_: string, { props }: any) => {
+    textareaClass: (_: string, { props }: ComponentContext) => {
       const classes = ["form-control"];
       if (props.icon) classes.push("icon-left");
       if (props.iconRight) classes.push("icon-right");
       return classes.join(" ");
     },
-    sizeClass: (_: string, { props }: any) => {
+    sizeClass: (_: string, { props }: ComponentContext) => {
       if (props.size == "small") return "form-control-sm";
       else if (props.size == "medium") return "form-control-md";
       else if (props.size == "large") return "form-control-lg";
@@ -47,13 +48,13 @@ export const bootstrapConfig: any = {
   select: {
     override: true,
     rootClass: "select",
-    selectClass: (_: string, { props }: any) => {
+    selectClass: (_: string, { props }: ComponentContext) => {
       const classes = ["form-select"];
       if (props.icon) classes.push("icon-left");
       if (props.iconRight) classes.push("icon-right");
       return classes.join(" ");
     },
-    sizeClass: (_: string, { props }: any) => {
+    sizeClass: (_: string, { props }: ComponentContext) => {
       if (props.size == "small") return "form-select-sm";
       else if (props.size == "medium") return "form-select-md";
       else if (props.size == "large") return "form-select-lg";
@@ -81,7 +82,7 @@ export const bootstrapConfig: any = {
     override: true,
     rootClass: "form-check",
     disabledClass: "disabled",
-    checkClass: "form-check-input",
+    inputClass: "form-check-input",
     labelClass: "form-check-label",
     variantClass: "variant-",
     sizeClass: "size-",
@@ -90,7 +91,7 @@ export const bootstrapConfig: any = {
     override: true,
     rootClass: "form-check",
     disabledClass: "disabled",
-    checkClass: "form-check-input",
+    inputClass: "form-check-input",
     labelClass: "form-check-label",
     variantClass: "variant-",
     sizeClass: "size-",
@@ -101,7 +102,7 @@ export const bootstrapConfig: any = {
     positionClass: (position: string) => {
       if (position == "left") return "reversed";
     },
-    inputClass: (_: string, { props }: any) => {
+    inputClass: (_: string, { props }: ComponentContext) => {
       const classes = ["form-check-input"];
       if (props.rounded) classes.push("rounded-pill");
       return classes.join(" ");
@@ -117,23 +118,16 @@ export const bootstrapConfig: any = {
   autocomplete: {
     override: true,
     rootClass: "autocomplete-wrapper",
-    expendedClass: "expanded",
-    menuClass: "dropdown-menu",
-    menuPositionClass: "opened-", // top  bottom
     itemClass: "dropdown-item",
     itemHoverClass: "active",
     itemEmptyClass: "disabled",
     itemGroupTitleClass: "fw-bold",
   },
-  inputitems: {
+  taginput: {
     override: true,
-    rootClass: (_: string, { props }: any) => {
-      const classes = ["taginput-wrapper"];
+    rootClass: (_: string, { props }: ComponentContext) => {
+      const classes = ["taginput-wrapper", "taginput", "focus-ring"];
       if (props.disabled) classes.push("disabled");
-      return classes.join(" ");
-    },
-    containerClass: (_: string, { props }: any) => {
-      const classes = ["taginput", "focus-ring"];
       if (props.variant) classes.push(`focus-ring-${props.variant}`);
       return classes.join(" ");
     },
@@ -145,12 +139,12 @@ export const bootstrapConfig: any = {
   },
   pagination: {
     override: true,
-    rootClass: (_: string, { props }: any) => {
+    rootClass: (_: string, { props }: ComponentContext) => {
       const classes = ["pagination-wrapper pagination"];
       if (props.rounded) classes.push("rounded");
       return classes.join(" ");
     },
-    sizeClass: (_: string, { props }: any) => {
+    sizeClass: (_: string, { props }: ComponentContext) => {
       if (props.size == "small") return "pagination-sm";
       else if (props.size == "medium") return "pagination-md";
       else if (props.size == "large") return "pagination-lg";
@@ -159,7 +153,7 @@ export const bootstrapConfig: any = {
     orderClass: (order: string) => {
       return "order-" + order;
     },
-    listClass: (_: string, { props }: any) => {
+    listClass: (_: string, { props }: ComponentContext) => {
       const classes = ["pagination"];
       if (props.size == "small") classes.push("pagination-sm");
       else if (props.size == "medium") classes.push("pagination-md");
@@ -167,7 +161,7 @@ export const bootstrapConfig: any = {
       return classes.join(" ");
     },
     listItemClass: "page-item", // not implementend in oruga yet
-    linkClass: (_: string, { props }: any) => {
+    linkClass: (_: string, { props }: ComponentContext) => {
       const classes = ["page-link"];
       if (props.rounded) classes.push("rounded-pill");
       return classes.join(" ");
@@ -175,13 +169,13 @@ export const bootstrapConfig: any = {
     linkCurrentClass: "active",
     linkDisabledClass: "disabled",
     ellipsisClass: "pagination-ellipsis",
-    nextBtnClass: "pagination-next page-item",
-    prevBtnClass: "pagination-prev page-item",
+    nextButtonClass: "pagination-next page-item",
+    prevButtonClass: "pagination-prev page-item",
     infoClass: "pagination-info",
   },
   slider: {
     override: true,
-    rootClass: (_: string, { props }: any) => {
+    rootClass: (_: string, { props }: ComponentContext) => {
       const classes = ["slider"];
       if (props.variant) classes.push(`variant-${props.variant}`);
       if (props.rounded) classes.push("rounded-pill");
@@ -191,13 +185,13 @@ export const bootstrapConfig: any = {
     variantClass: "variant-",
     trackClass: "slider-track",
     fillClass: "slider-fill",
-    thumbWrapperClass: (_: string, { props }: any) => {
+    thumbWrapperClass: (_: string, { props }: ComponentContext) => {
       const classes = ["slider-thumb-wrapper"];
       if (props.dragging) classes.push(`is-dragging`);
       return classes.join(" ");
     },
     sizeClass: "size-",
-    thumbClass: (_: string, { props }: any) => {
+    thumbClass: (_: string, { props }: ComponentContext) => {
       const classes = ["slider-thumb", "focus-ring"];
       if (props.variant) classes.push(`variant-${props.variant}`);
       if (props.variant) classes.push(`focus-ring-${props.variant}`);
@@ -219,12 +213,12 @@ export const bootstrapConfig: any = {
     navTabsClass: "nav",
     navTypeClass: "nav-",
     navSizeClass: "size-",
-    navPositionClass: (position: string, { props }: any) => {
+    navPositionClass: (position: string, { props }: ComponentContext) => {
       if (props.position === "left") return "justify-content-start";
       else if (props.position === "centered") return "justify-content-center";
       else if (props.position === "right") return "justify-content-end";
     },
-    tabItemWrapperClass: "nav-item",
+    itemWrapperClass: "nav-item",
     itemTag: "a",
     itemHeaderClass: "nav-link",
     itemHeaderActiveClass: () => "active",
@@ -267,14 +261,14 @@ export const bootstrapConfig: any = {
   },
   steps: {
     override: true,
-    rootClass: (_: string, { props }: any) => {
+    rootClass: (_: string, { props }: ComponentContext) => {
       const classes = ["steps-wrapper"];
       if (props.variant) classes.push(`variant-${props.variant}`);
       if (props.disables) classes.push("disabled");
       return classes.join(" ");
     },
     verticalClass: "vertical",
-    stepsClass: (_: string, { props }: any) => {
+    stepsClass: (_: string, { props }: ComponentContext) => {
       const classes = ["steps"];
       if (props.animated) classes.push("animated");
       if (props.labelPosition === "left") classes.push("label-left");
@@ -296,7 +290,6 @@ export const bootstrapConfig: any = {
     itemClass: "step-item",
     positionClass: "is-",
     sizeClass: "size-",
-    variantClass: "variant-",
     stepContentTransitioningClass: "transition",
   },
   button: {
@@ -307,18 +300,18 @@ export const bootstrapConfig: any = {
       else if (size == "medium") return "btn-md";
       else if (size == "large") return "btn-lg";
     },
-    variantClass: (_: string, { props }: any) => {
+    variantClass: (_: string, { props }: ComponentContext) => {
       if (props.outlined) return "";
       return `btn-${props.variant}`;
     },
     roundedClass: "rounded-pill",
     expandedClass: "expanded",
-    outlinedClass: (_: string, { props }: any) => {
+    outlinedClass: (_: string, { props }: ComponentContext) => {
       return `btn-outline-${props.variant}`;
     },
     disabledClass: "btn-disabled",
     invertedClass: "btn-inverted-",
-    elementsWrapperClass: "button-wrapper",
+    wrapperClass: "button-wrapper",
   },
   skeleton: {
     override: true,
@@ -347,7 +340,7 @@ export const bootstrapConfig: any = {
   },
   dropdown: {
     override: true,
-    rootClass: (_: string, { props }: any) => {
+    rootClass: (_: string, { props }: ComponentContext) => {
       const classes = ["dropdown", "btn-group"];
       if (props.position) classes.push(`is-${props.position}`);
       return classes.join(" ");
@@ -357,7 +350,7 @@ export const bootstrapConfig: any = {
     expandedClass: "expanded",
     inlineClass: "inline",
     menuMobileOverlayClass: "dropdown-backdrop",
-    menuClass: (_: string, { props, data, computed }: any) => {
+    menuClass: (_: string, { computed }: ComponentContext) => {
       const classes = ["dropdown-menu"];
       if (computed.hoverable) classes.push("show");
       return classes.join(" ");
@@ -365,7 +358,7 @@ export const bootstrapConfig: any = {
     menuPositionClass: "is-",
     menuActiveClass: "show",
     itemTag: "a",
-    itemClass: (_: string, { props }: any) => {
+    itemClass: (_: string, { props }: ComponentContext) => {
       const classes = ["dropdown-item"];
       if (props.clickable) classes.push("clickable");
       return classes.join(" ");
@@ -388,8 +381,8 @@ export const bootstrapConfig: any = {
     footerClass: "datepicker-footer",
     headerButtonsClass: "pagination",
     listsClass: "pagination-list",
-    prevBtnClass: "pagination-previous btn",
-    nextBtnClass: "pagination-next btn",
+    prevButtonClass: "pagination-previous btn",
+    nextButtonClass: "pagination-next btn",
     tableClass: "datepicker-table",
     tableBodyClass: "datepicker-body",
     tableHeadClass: "datepicker-header",
@@ -409,7 +402,6 @@ export const bootstrapConfig: any = {
     monthClass: "datepicker-month",
     monthBodyClass: "datepicker-body",
     monthTableClass: "datepicker-table",
-    monthRowClass: "datepicker-row",
     monthCellClass: "datepicker-cell",
     monthCellSelectableClass: "selectable",
     monthCellUnselectableClass: "unselectable",
@@ -423,7 +415,7 @@ export const bootstrapConfig: any = {
     monthCellWithinSelectedClass: "selected-within",
     tableCellInvisibleClass: "",
     tableCellNearbyClass: "nearby",
-    tableCellEventsClass: (_: string, { props }: any) => {
+    tableCellEventsClass: (_: string, { props }: ComponentContext) => {
       const classes = ["has-event"];
       if (props.indicators) classes.push(`${props.indicators}`);
       return classes.join(" ");
@@ -464,13 +456,13 @@ export const bootstrapConfig: any = {
   },
   modal: {
     override: true,
-    rootClass: (_: string, { props }: any) => {
+    rootClass: (_: string, { props }: ComponentContext) => {
       const classes = ["modal", "fade"];
       if (props.active) classes.push("show");
       return classes.join(" ");
     },
     overlayClass: "modal-backdrop",
-    contentClass: (_: string, { props }: any) => {
+    contentClass: (_: string, { props }: ComponentContext) => {
       const classes = ["modal-dialog"];
       if (!props.fullScreen) classes.push("modal-dialog-centered");
       return classes.join(" ");
@@ -486,7 +478,7 @@ export const bootstrapConfig: any = {
     override: true,
     rootClass: "sidebar",
     overlayClass: "offcanvas-backdrop",
-    contentClass: (_: string, { props }: any) => {
+    contentClass: (_: string, { props }: ComponentContext) => {
       const classes = ["offcanvas"];
       if (props.position === "left") classes.push("offcanvas-start");
       else if (props.position === "right") classes.push("offcanvas-end");
@@ -497,13 +489,8 @@ export const bootstrapConfig: any = {
       return classes.join(" ");
     },
     variantClass: "variant-",
-    staticClass: "position-static",
-    absoluteClass: "position-absolute",
-    fixedClass: "position-fixed",
-    rightClass: "right",
     reduceClass: "reduced",
     expandOnHoverClass: "reduced-expand",
-    expandOnHoverFixedClass: "reduced-expand-fixed",
     fullheightClass: "fullheight",
     fullwidthClass: "fullwidth",
     mobileClass: "mobile",
@@ -519,7 +506,7 @@ export const bootstrapConfig: any = {
     override: true,
     rootClass: "carousel-wrapper",
     overlayClass: "carousel-overlay",
-    sceneClass: "carousel-scene",
+    wrapperClass: "carousel-scene",
     itemsClass: "carousel-items carousel-inner",
     itemsDraggingClass: "is-dragging",
     itemClass: "carousel-item",
@@ -545,7 +532,7 @@ export const bootstrapConfig: any = {
     multilineClass: "multiline",
     variantClass: "variant-",
     positionClass: "position-",
-    teleport: "teleported",
+    teleportClass: "teleported",
   },
   upload: {
     override: true,
