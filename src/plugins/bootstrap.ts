@@ -526,15 +526,6 @@ export const bootstrapConfig: any = {
     overlayClass: "loading-overlay",
     iconClass: "icon",
   },
-  upload: {
-    override: true,
-    rootClass: "upload",
-    variantClass: "variant-",
-    draggableClass: "upload-draggable",
-    expandedClass: "expanded",
-    disabledClass: "disabled",
-    hoveredClass: "hovered",
-  },
   carousel: {
     override: true,
     rootClass: "carousel-wrapper",
@@ -555,5 +546,14 @@ export const bootstrapConfig: any = {
     indicatorItemClass: "carousel-indicator-item",
     indicatorItemStyleClass: "indicator-",
     indicatorItemActiveClass: "active",
+  },
+  upload: {
+    override: true,
+    rootClass: "upload",
+    variantClass: "variant-",
+    draggableClass: "upload-draggable",
+    expandedClass: "expanded",
+    disabledClass: "disabled",
+    hoveredClass: "hovered",
   },
 };

@@ -27,6 +27,7 @@ function deleteDropFile(index: number) {
           label="Click to upload" />
       </o-upload>
     </o-field>
+
     <p><b>Selected File:</b> {{ file?.name }}</p>
   </section>
 
