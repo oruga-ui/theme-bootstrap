@@ -265,17 +265,6 @@ export const bootstrapConfig: any = {
     mobileClass: "mobile-cards",
     mobileSortClass: "table-mobile-sort",
   },
-  tooltip: {
-    override: true,
-    rootClass: "tooltip-wrapper",
-    contentClass: "tooltip-content",
-    triggerClass: "tooltip-trigger",
-    alwaysClass: "always",
-    multilineClass: "multiline",
-    orderClass: "is-",
-    variantClass: "variant-",
-    positionClass: "is-",
-  },
   steps: {
     override: true,
     rootClass: (_: string, { props }: any) => {
@@ -546,6 +535,17 @@ export const bootstrapConfig: any = {
     indicatorItemClass: "carousel-indicator-item",
     indicatorItemStyleClass: "indicator-",
     indicatorItemActiveClass: "active",
+  },
+  tooltip: {
+    override: true,
+    rootClass: "tooltip-wrapper",
+    contentClass: "tooltip-content",
+    triggerClass: "tooltip-trigger",
+    alwaysClass: "always",
+    multilineClass: "multiline",
+    variantClass: "variant-",
+    positionClass: "position-",
+    teleport: "teleported",
   },
   upload: {
     override: true,

@@ -79,9 +79,18 @@ $tooltip-zindex: $zindex-tooltip;
       white-space: normal;
       width: var(--#{$prefix}tooltip-content-multiline-width);
     }
+  }
+  // Color variants
+  @each $name, $color in $theme-colors {
+    &.variant-#{$name} {
+      --#{$prefix}tooltip-color: var(--#{$prefix}#{$name}-contrast);
+      --#{$prefix}tooltip-bg: var(--#{$prefix}#{$name});
+    }
+  }
 
-    // Positioning
-    &.is-top {
+  // Positioning
+  .position {
+    &-top {
       top: auto;
       right: auto;
       bottom: calc(
@@ -102,15 +111,7 @@ $tooltip-zindex: $zindex-tooltip;
       }
     }
 
-    // Color variants
-    @each $name, $color in $theme-colors {
-      &.variant-#{$name} {
-        --#{$prefix}tooltip-color: var(--#{$prefix}#{$name}-contrast);
-        --#{$prefix}tooltip-bg: var(--#{$prefix}#{$name});
-      }
-    }
-
-    &.is-bottom {
+    &-bottom {
       top: calc(
         100% + $tooltip-arrow-size + var(--#{$prefix}tooltip-arrow-spacer)
       );
@@ -131,7 +132,7 @@ $tooltip-zindex: $zindex-tooltip;
       }
     }
 
-    &.is-right {
+    &-right {
       top: 50%;
       right: auto;
       bottom: auto;
@@ -152,7 +153,7 @@ $tooltip-zindex: $zindex-tooltip;
       }
     }
 
-    &.is-left {
+    &-left {
       top: 50%;
       right: calc(
         100% + $tooltip-arrow-size + var(--#{$prefix}tooltip-arrow-spacer)
@@ -170,6 +171,123 @@ $tooltip-zindex: $zindex-tooltip;
         border-top: $tooltip-arrow-size solid transparent;
         border-bottom: $tooltip-arrow-size solid transparent;
         border-left: $tooltip-arrow-size solid var(--#{$prefix}tooltip-bg);
+      }
+    }
+
+    &-top-right {
+      top: auto;
+      right: 0;
+      bottom: calc(
+        100% + $tooltip-arrow-size + var(--#{$prefix}tooltip-arrow-spacer)
+      );
+      left: auto;
+      transform: translateX(50%);
+
+      &::before {
+        top: 100%;
+        right: auto;
+        bottom: auto;
+        left: 50%;
+        transform: translateX(-50%);
+        border-top: $tooltip-arrow-size solid var(--#{$prefix}tooltip-bg);
+        border-right: calc($tooltip-arrow-size * 2) solid transparent;
+        border-left: 0 solid transparent;
+      }
+    }
+
+    &-top-left {
+      top: auto;
+      right: auto;
+      bottom: calc(
+        100% + $tooltip-arrow-size + var(--#{$prefix}tooltip-arrow-spacer)
+      );
+      left: 0;
+      transform: translateX(-50%);
+
+      &::before {
+        top: 100%;
+        right: auto;
+        bottom: auto;
+        left: 50%;
+        transform: translateX(-50%);
+        border-top: $tooltip-arrow-size solid var(--#{$prefix}tooltip-bg);
+        border-right: 0 solid transparent;
+        border-left: calc($tooltip-arrow-size * 2) solid transparent;
+      }
+    }
+
+    &-bottom-right {
+      top: calc(
+        100% + $tooltip-arrow-size + var(--#{$prefix}tooltip-arrow-spacer)
+      );
+      right: 0;
+      bottom: auto;
+      left: auto;
+      transform: translateX(50%);
+
+      &::before {
+        top: auto;
+        right: auto;
+        bottom: 100%;
+        left: 50%;
+        transform: translateX(-50%);
+        border-right: calc($tooltip-arrow-size * 2) solid transparent;
+        border-bottom: $tooltip-arrow-size solid var(--#{$prefix}tooltip-bg);
+        border-left: 0 solid transparent;
+      }
+    }
+
+    &-bottom-left {
+      top: calc(
+        100% + $tooltip-arrow-size + var(--#{$prefix}tooltip-arrow-spacer)
+      );
+      right: auto;
+      bottom: auto;
+      left: 0;
+      transform: translateX(-50%);
+
+      &::before {
+        top: auto;
+        right: auto;
+        bottom: 100%;
+        left: 50%;
+        transform: translateX(-50%);
+        border-right: 0 solid transparent;
+        border-left: calc($tooltip-arrow-size * 2) solid transparent;
+        border-bottom: $tooltip-arrow-size solid var(--#{$prefix}tooltip-bg);
+      }
+    }
+  }
+
+  &.teleported {
+    // position
+    .position {
+      &-top,
+      &-top-left,
+      &-top-right {
+        margin-top: calc(
+          -1 * ($tooltip-arrow-size + var(--#{$prefix}tooltip-arrow-spacer))
+        );
+      }
+
+      &-bottom,
+      &-bottom-left,
+      &-bottom-right {
+        margin-top: calc(
+          $tooltip-arrow-size + var(--#{$prefix}tooltip-arrow-spacer)
+        );
+      }
+
+      &-right {
+        margin-left: calc(
+          $tooltip-arrow-size + var(--#{$prefix}tooltip-arrow-spacer)
+        );
+      }
+
+      &-left {
+        margin-left: calc(
+          -1 * ($tooltip-arrow-size + var(--#{$prefix}tooltip-arrow-spacer))
+        );
       }
     }
   }
