@@ -35,6 +35,9 @@ const passive = ref(null);
     <o-field>
       <o-switch disabled>Disabled</o-switch>
     </o-field>
+    <o-field>
+      <o-switch position="left">Position left</o-switch>
+    </o-field>
   </section>
 
   <section>

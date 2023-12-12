@@ -29,10 +29,6 @@ $switch-spacer: 0.5rem !default;
 
   position: relative;
 
-  .switch {
-    display: none;
-  }
-
   &:not(:last-child) {
     margin-right: var(--#{$prefix}switch-spacer);
   }

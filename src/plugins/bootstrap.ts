@@ -245,25 +245,6 @@ export const bootstrapConfig: OrugaOptions = {
     variantClass: "variant-",
     sizeClass: "size-",
   },
-  switch: {
-    override: true,
-    rootClass: "form-check form-switch",
-    positionClass: (position: string) => {
-      if (position == "left") return "reversed";
-    },
-    inputClass: (_: string, { props }: ComponentContext) => {
-      const classes = ["form-check-input"];
-      if (props.rounded) classes.push("rounded-pill");
-      return classes.join(" ");
-    },
-    labelClass: "form-check-label",
-    disabledClass: "disabled",
-    sizeClass: "size-",
-    variantClass: "variant-",
-    passiveVariantClass: "variant-",
-    // roundedClass: "rounded",
-    // checkClass: "switch",
-  },
   pagination: {
     override: true,
     rootClass: (_: string, { props }: ComponentContext) => {
@@ -447,6 +428,24 @@ export const bootstrapConfig: OrugaOptions = {
     fullPageClass: "fullpage",
     overlayClass: "loading-overlay",
     iconClass: "icon",
+  },
+  switch: {
+    override: true,
+    rootClass: "form-check form-switch",
+    positionClass: (position: string) => {
+      if (position == "left") return "reversed";
+    },
+    inputClass: (_: string, { props }: ComponentContext) => {
+      const classes = ["form-check-input"];
+      if (props.rounded) classes.push("rounded-pill");
+      return classes.join(" ");
+    },
+    labelClass: "form-check-label",
+    disabledClass: "disabled",
+    sizeClass: "size-",
+    variantClass: "variant-",
+    passiveVariantClass: "variant-",
+    switchClass: "d-none",
   },
   table: {
     override: true,
