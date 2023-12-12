@@ -53,186 +53,179 @@ $table-card-spacer: $spacer;
 // $table-bg-scale:              -80%;
 /* @bootstrap docs */
 
-.table-component {
+.table-wrapper {
   position: relative;
 
-  .table-wrapper {
+  .table-inner {
     --#{$prefix}table-sortable-hover-border-color: #{$table-sortable-hover-border-color};
     --#{$prefix}table-current-sort-bg: #{$table-current-sort-bg};
     --#{$prefix}table-focus-color: #{$table-focus-color};
+  }
 
-    .table {
-      --#{$prefix}table-head-bg: #{$table-head-bg};
-      --#{$prefix}table-head-color: #{$table-head-color};
-      --#{$prefix}table-head-border-width: #{$table-head-border-width};
-      --#{$prefix}table-sticky-zindex: #{$table-sticky-zindex};
-      --#{$prefix}table-sticky-bg: #{$table-sticky-bg};
-      --#{$prefix}table-sticky-color: #{$table-sticky-color};
+  .table {
+    --#{$prefix}table-head-bg: #{$table-head-bg};
+    --#{$prefix}table-head-color: #{$table-head-color};
+    --#{$prefix}table-head-border-width: #{$table-head-border-width};
+    --#{$prefix}table-sticky-zindex: #{$table-sticky-zindex};
+    --#{$prefix}table-sticky-bg: #{$table-sticky-bg};
+    --#{$prefix}table-sticky-color: #{$table-sticky-color};
 
-      th,
+    th,
+    td {
+      vertical-align: middle;
+
+      &.sticky {
+        position: -webkit-sticky;
+        position: sticky;
+        left: 0;
+        z-index: var(--#{$prefix}table-sticky-zindex);
+        --#{$prefix}table-accent-color: var(--#{$prefix}table-sticky-color);
+        --#{$prefix}table-accent-bg: var(--#{$prefix}table-sticky-bg);
+      }
+    }
+
+    // override sticky hover values
+    &.table-hover > tbody > tr:hover > .sticky {
+      --#{$prefix}table-color-state: var(
+        --#{$prefix}table-sticky-color,
+        var(--#{$prefix}table-hover-color)
+      );
+      --#{$prefix}table-bg-state: var(
+        --#{$prefix}table-sticky-bg,
+        var(--#{$prefix}table-hover-bg)
+      );
+    }
+
+    // override sticky striped values
+    &.table-striped > tbody > tr:nth-of-type(odd) > .sticky {
+      --#{$prefix}table-color-type: var(
+        --#{$prefix}table-sticky-color,
+        var(--#{$prefix}table-striped-color)
+      );
+      --#{$prefix}table-bg-type: var(
+        --#{$prefix}table-sticky-bg,
+        var(--#{$prefix}table-striped-bg)
+      );
+    }
+
+    thead {
+      th {
+        --#{$prefix}table-color-state: var(--#{$prefix}table-head-color);
+        --#{$prefix}table-bg-state: var(--#{$prefix}table-head-bg);
+
+        position: relative;
+        border-bottom-width: var(--#{$prefix}table-head-border-width);
+
+        &.sortable {
+          cursor: pointer;
+
+          > span {
+            display: block;
+            position: relative;
+          }
+
+          &:hover {
+            border-color: var(--#{$prefix}table-sortable-hover-border-color);
+          }
+        }
+
+        &.current-sort {
+          --#{$prefix}table-bg-type: var(--#{$prefix}table-current-sort-bg);
+        }
+
+        .sort-icon {
+          position: absolute;
+          right: 0;
+        }
+      }
+    }
+
+    tbody {
+      tr {
+        &.table-detail {
+          --#{$prefix}table-detail-bg: #{$table-detail-bg};
+          --#{$prefix}table-detail-padding: #{$table-detail-padding};
+
+          td {
+            background-color: var(--#{$prefix}table-detail-bg);
+            padding: var(--#{$prefix}table-detail-padding);
+            box-shadow: unset;
+          }
+        }
+      }
+    }
+
+    &:focus {
+      box-shadow: 0 0 0.5rem 0.5rem
+        rgba(var(--#{$prefix}table-focus-color), 0.25);
+    }
+  }
+
+  .icon {
+    transition:
+      transform $speed-slow $easing,
+      opacity 86ms $easing;
+  }
+
+  // mobile version
+  &.mobile-cards {
+    --#{$prefix}table-card-spacer: #{$table-card-spacer};
+
+    thead {
+      display: none;
+    }
+
+    tbody > tr {
+      @extend .card;
+      overflow: hidden;
+    }
+
+    tfoot th {
+      border: 0;
+      display: inherit;
+    }
+
+    tr {
+      width: 100%;
+
       td {
-        vertical-align: middle;
-
-        &.sticky {
-          position: -webkit-sticky;
-          position: sticky;
-          left: 0;
-          z-index: var(--#{$prefix}table-sticky-zindex);
-          --#{$prefix}table-accent-color: var(--#{$prefix}table-sticky-color);
-          --#{$prefix}table-accent-bg: var(--#{$prefix}table-sticky-bg);
-        }
-      }
-
-      // override sticky hover values
-      &.table-hover > tbody > tr:hover > .sticky {
-        --#{$prefix}table-color-state: var(
-          --#{$prefix}table-sticky-color,
-          var(--#{$prefix}table-hover-color)
-        );
-        --#{$prefix}table-bg-state: var(
-          --#{$prefix}table-sticky-bg,
-          var(--#{$prefix}table-hover-bg)
-        );
-      }
-
-      // override sticky striped values
-      &.table-striped > tbody > tr:nth-of-type(odd) > .sticky {
-        --#{$prefix}table-color-type: var(
-          --#{$prefix}table-sticky-color,
-          var(--#{$prefix}table-striped-color)
-        );
-        --#{$prefix}table-bg-type: var(
-          --#{$prefix}table-sticky-bg,
-          var(--#{$prefix}table-striped-bg)
-        );
-      }
-
-      thead {
-        th {
-          --#{$prefix}table-color-state: var(--#{$prefix}table-head-color);
-          --#{$prefix}table-bg-state: var(--#{$prefix}table-head-bg);
-
-          position: relative;
-          border-bottom-width: var(--#{$prefix}table-head-border-width);
-
-          &.sortable {
-            cursor: pointer;
-
-            > span {
-              display: block;
-              position: relative;
-            }
-
-            &:hover {
-              border-color: var(--#{$prefix}table-sortable-hover-border-color);
-            }
-          }
-
-          &.current-sort {
-            --#{$prefix}table-bg-type: var(--#{$prefix}table-current-sort-bg);
-          }
-
-          .sort-icon {
-            position: absolute;
-            right: 0;
-          }
-        }
-      }
-
-      tbody {
-        tr {
-          &.table-detail {
-            --#{$prefix}table-detail-bg: #{$table-detail-bg};
-            --#{$prefix}table-detail-padding: #{$table-detail-padding};
-
-            td {
-              background-color: var(--#{$prefix}table-detail-bg);
-              padding: var(--#{$prefix}table-detail-padding);
-              box-shadow: unset;
-            }
-          }
-        }
-      }
-
-      &:focus {
-        box-shadow: 0 0 0.5rem 0.5rem
-          rgba(var(--#{$prefix}table-focus-color), 0.25);
-      }
-    }
-
-    .icon {
-      transition:
-        transform $speed-slow $easing,
-        opacity 86ms $easing;
-
-      &.is-desc {
-        transform: rotate(180deg);
-      }
-
-      &.expanded {
-        transform: rotate(90deg);
-      }
-    }
-
-    &.mobile-cards {
-      --#{$prefix}table-card-spacer: #{$table-card-spacer};
-
-      thead {
-        display: none;
-      }
-
-      tbody > tr {
-        @extend .card;
-        overflow: hidden;
-      }
-
-      tfoot th {
         border: 0;
         display: inherit;
-      }
 
-      tr {
-        width: 100%;
-
-        td {
-          border: 0;
-          display: inherit;
-
-          &:last-child {
-            border-bottom: 0 !important;
-          }
-        }
-
-        &:not(:last-child) {
-          margin-bottom: var(--#{$prefix}table-card-spacer);
-        }
-
-        &:has(+ .table-detail) {
-          border-bottom-left-radius: 0;
-          border-bottom-right-radius: 0;
-          margin-bottom: 0;
-        }
-
-        &.table-detail {
-          border-top-left-radius: 0;
-          border-top-right-radius: 0;
+        &:last-child {
+          border-bottom: 0 !important;
         }
       }
 
-      tr:not(.table-detail):not(.table-empty):not(.table-footer) {
-        td {
-          display: flex;
-          justify-content: space-between;
-          align-items: end;
-          border-bottom: var(--#{$prefix}border-width) solid
-            var(--#{$prefix}table-border-color);
+      &:not(:last-child) {
+        margin-bottom: var(--#{$prefix}table-card-spacer);
+      }
 
-          &:before {
-            content: attr(data-label);
-            font-weight: bold;
-            padding-right: 0.5em;
-            text-align: left;
-          }
+      &:has(+ .table-detail) {
+        border-bottom-left-radius: 0;
+        border-bottom-right-radius: 0;
+        margin-bottom: 0;
+      }
+
+      &.table-detail {
+        border-top-left-radius: 0;
+        border-top-right-radius: 0;
+      }
+    }
+
+    tr:not(.table-detail):not(.table-empty):not(.table-footer) {
+      td {
+        display: flex;
+        justify-content: space-between;
+        align-items: end;
+        border-bottom: var(--#{$prefix}border-width) solid
+          var(--#{$prefix}table-border-color);
+
+        &:before {
+          content: attr(data-label);
+          font-weight: bold;
+          padding-right: 0.5em;
+          text-align: left;
         }
       }
     }

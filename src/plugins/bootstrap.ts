@@ -450,8 +450,8 @@ export const bootstrapConfig: OrugaOptions = {
   },
   table: {
     override: true,
-    rootClass: "table-component",
-    wrapperClass: "table-wrapper",
+    rootClass: "table-wrapper",
+    wrapperClass: "table-inner",
     tableClass: "table",
     borderedClass: "table-bordered",
     stripedClass: "table-striped",
