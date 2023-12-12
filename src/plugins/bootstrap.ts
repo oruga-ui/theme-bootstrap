@@ -41,6 +41,12 @@ export const bootstrapConfig: OrugaOptions = {
     variantClass: "variant-",
     sizeClass: "size-",
   },
+  collapse: {
+    override: true,
+    rootClass: "collapse",
+    triggerClass: "collapse-trigger",
+    contentClass: "collapse-content",
+  },
   field: {
     override: true,
     rootClass: "input-field",
@@ -368,12 +374,6 @@ export const bootstrapConfig: OrugaOptions = {
     itemDisabledClass: "disabled",
     mobileClass: "dropdown-modal",
     teleportClass: "teleported",
-  },
-  collapse: {
-    override: true,
-    rootClass: "collapse",
-    triggerClass: "collapse-trigger",
-    contentClass: "collapse-content",
   },
   datepicker: {
     override: true,
