@@ -23,10 +23,10 @@ const maxDatetime = ref(null);
 
     <o-field grouped>
       <o-field>
-        <o-switch v-model="showWeekNumber">Show week number</o-switch>
+        <o-switch v-model="showWeekNumber" label="Show week number" />
       </o-field>
       <o-field>
-        <o-switch v-model="enableSeconds">Enable seconds</o-switch>
+        <o-switch v-model="enableSeconds" label="Enable seconds" />
       </o-field>
       <o-field label="Locale">
         <o-select v-model="locale">
@@ -80,11 +80,11 @@ const maxDatetime = ref(null);
         <template #footer>
           <div class="d-flex justify-content-center mt-3">
             <o-button variant="primary" @click="datetime = new Date()">
-              <o-icon icon="calendar"></o-icon>
+              <o-icon icon="calendar" />
               <span>Today</span>
             </o-button>
             <o-button variant="danger" @click="datetime = null">
-              <o-icon icon="times"></o-icon>
+              <o-icon icon="times" />
               <span>Clear</span>
             </o-button>
           </div>

@@ -10,6 +10,27 @@ export const bootstrapConfig: OrugaOptions = {
     itemEmptyClass: "disabled",
     itemGroupTitleClass: "fw-bold",
   },
+  button: {
+    override: true,
+    rootClass: "btn",
+    sizeClass: (size: string) => {
+      if (size == "small") return "btn-sm";
+      else if (size == "medium") return "btn-md";
+      else if (size == "large") return "btn-lg";
+    },
+    variantClass: (_: string, { props }: ComponentContext) => {
+      if (props.outlined) return "";
+      return `btn-${props.variant}`;
+    },
+    roundedClass: "rounded-pill",
+    expandedClass: "expanded",
+    outlinedClass: (_: string, { props }: ComponentContext) => {
+      return `btn-outline-${props.variant}`;
+    },
+    disabledClass: "btn-disabled",
+    invertedClass: "btn-inverted-",
+    wrapperClass: "button-wrapper",
+  },
   carousel: {
     override: true,
     rootClass: "carousel-wrapper",
@@ -46,6 +67,98 @@ export const bootstrapConfig: OrugaOptions = {
     rootClass: "collapse",
     triggerClass: "collapse-trigger",
     contentClass: "collapse-content",
+  },
+  dropdown: {
+    override: true,
+    rootClass: "dropdown btn-group",
+    triggerClass: "dropdown-trigger",
+    disabledClass: "disabled",
+    expandedClass: "expanded",
+    inlineClass: "inline",
+    menuMobileOverlayClass: "dropdown-backdrop",
+    menuClass: (_: string, { computed }: ComponentContext) => {
+      const classes = ["dropdown-menu"];
+      if (computed.hoverable) classes.push("show");
+      return classes.join(" ");
+    },
+    menuPositionClass: "position-",
+    menuActiveClass: "show",
+    itemTag: "a",
+    itemClass: "dropdown-item",
+    itemActiveClass: "active",
+    itemClickableClass: "clickable",
+    itemDisabledClass: "disabled",
+    mobileClass: "dropdown-modal",
+    teleportClass: "teleported",
+  },
+  datepicker: {
+    override: true,
+    rootClass: "datepicker",
+    boxClass: "dropdown-item",
+    headerClass: "datepicker-header",
+    footerClass: "datepicker-footer",
+    headerButtonsClass: "pagination",
+    listsClass: "pagination-list",
+    prevButtonClass: "pagination-previous btn",
+    nextButtonClass: "pagination-next btn",
+    tableClass: "datepicker-table",
+    tableBodyClass: "datepicker-body",
+    tableHeadClass: "datepicker-header",
+    tableHeadCellClass: "datepicker-cell",
+    tableRowClass: "datepicker-row",
+    tableCellClass: "datepicker-cell",
+    tableCellSelectableClass: "selectable",
+    tableCellUnselectableClass: "unselectable",
+    tableCellTodayClass: "today",
+    tableCellSelectedClass: "selected",
+    tableCellWithinHoveredClass: "hovered-within",
+    tableCellFirstHoveredClass: "hovered-first",
+    tableCellLastHoveredClass: "hovered-last",
+    tableCellFirstSelectedClass: "selected-first",
+    tableCellLastSelectedClass: "selected-last",
+    tableCellWithinSelectedClass: "selected-within",
+    monthClass: "datepicker-month",
+    monthBodyClass: "datepicker-body",
+    monthTableClass: "datepicker-table",
+    monthCellClass: "datepicker-cell",
+    monthCellSelectableClass: "selectable",
+    monthCellUnselectableClass: "unselectable",
+    monthCellTodayClass: "today",
+    monthCellSelectedClass: "selected",
+    monthCellWithinHoveredClass: "hovered-within",
+    monthCellFirstHoveredClass: "hovered-first",
+    monthCellLastHoveredClass: "hovered-last",
+    monthCellFirstSelectedClass: "selected-first",
+    monthCellLastSelectedClass: "selected-last",
+    monthCellWithinSelectedClass: "selected-within",
+    tableCellInvisibleClass: "",
+    tableCellNearbyClass: "nearby",
+    tableCellEventsClass: (_: string, { props }: ComponentContext) => {
+      const classes = ["has-event"];
+      if (props.indicators) classes.push(`${props.indicators}`);
+      return classes.join(" ");
+    },
+    tableEventVariantClass: "variant-",
+    tableEventsClass: "events",
+    tableEventClass: "event",
+    mobileClass: "mobile",
+  },
+  timepicker: {
+    override: true,
+    rootClass: "timepicker",
+    boxClass: "dropdown-item",
+    selectClasses: {
+      rootClass: "select",
+      selectClass: "form-select",
+    },
+    separatorClass: "separator",
+    footerClass: "timepicker-footer",
+    sizeClass: "size-",
+  },
+  datetimepicker: {
+    override: true,
+    datepickerWrapperClass: "datepicker-wrapper",
+    timepickerWrapperClass: "timepicker-wrapper d-flex justify-content-center",
   },
   field: {
     override: true,
@@ -306,27 +419,6 @@ export const bootstrapConfig: OrugaOptions = {
     sizeClass: "size-",
     stepContentTransitioningClass: "transition",
   },
-  button: {
-    override: true,
-    rootClass: "btn",
-    sizeClass: (size: string) => {
-      if (size == "small") return "btn-sm";
-      else if (size == "medium") return "btn-md";
-      else if (size == "large") return "btn-lg";
-    },
-    variantClass: (_: string, { props }: ComponentContext) => {
-      if (props.outlined) return "";
-      return `btn-${props.variant}`;
-    },
-    roundedClass: "rounded-pill",
-    expandedClass: "expanded",
-    outlinedClass: (_: string, { props }: ComponentContext) => {
-      return `btn-outline-${props.variant}`;
-    },
-    disabledClass: "btn-disabled",
-    invertedClass: "btn-inverted-",
-    wrapperClass: "button-wrapper",
-  },
   skeleton: {
     override: true,
     rootClass: "skeleton",
@@ -351,98 +443,6 @@ export const bootstrapConfig: OrugaOptions = {
     closeClass: "btn-close",
     noticeClass: "notifictations",
     noticePositionClass: "position-",
-  },
-  dropdown: {
-    override: true,
-    rootClass: "dropdown btn-group",
-    triggerClass: "dropdown-trigger",
-    disabledClass: "disabled",
-    expandedClass: "expanded",
-    inlineClass: "inline",
-    menuMobileOverlayClass: "dropdown-backdrop",
-    menuClass: (_: string, { computed }: ComponentContext) => {
-      const classes = ["dropdown-menu"];
-      if (computed.hoverable) classes.push("show");
-      return classes.join(" ");
-    },
-    menuPositionClass: "position-",
-    menuActiveClass: "show",
-    itemTag: "a",
-    itemClass: "dropdown-item",
-    itemActiveClass: "active",
-    itemClickableClass: "clickable",
-    itemDisabledClass: "disabled",
-    mobileClass: "dropdown-modal",
-    teleportClass: "teleported",
-  },
-  datepicker: {
-    override: true,
-    rootClass: "datepicker",
-    boxClass: "dropdown-item",
-    headerClass: "datepicker-header",
-    footerClass: "datepicker-footer",
-    headerButtonsClass: "pagination",
-    listsClass: "pagination-list",
-    prevButtonClass: "pagination-previous btn",
-    nextButtonClass: "pagination-next btn",
-    tableClass: "datepicker-table",
-    tableBodyClass: "datepicker-body",
-    tableHeadClass: "datepicker-header",
-    tableHeadCellClass: "datepicker-cell",
-    tableRowClass: "datepicker-row",
-    tableCellClass: "datepicker-cell",
-    tableCellSelectableClass: "selectable",
-    tableCellUnselectableClass: "unselectable",
-    tableCellTodayClass: "today",
-    tableCellSelectedClass: "selected",
-    tableCellWithinHoveredClass: "hovered-within",
-    tableCellFirstHoveredClass: "hovered-first",
-    tableCellLastHoveredClass: "hovered-last",
-    tableCellFirstSelectedClass: "selected-first",
-    tableCellLastSelectedClass: "selected-last",
-    tableCellWithinSelectedClass: "selected-within",
-    monthClass: "datepicker-month",
-    monthBodyClass: "datepicker-body",
-    monthTableClass: "datepicker-table",
-    monthCellClass: "datepicker-cell",
-    monthCellSelectableClass: "selectable",
-    monthCellUnselectableClass: "unselectable",
-    monthCellTodayClass: "today",
-    monthCellSelectedClass: "selected",
-    monthCellWithinHoveredClass: "hovered-within",
-    monthCellFirstHoveredClass: "hovered-first",
-    monthCellLastHoveredClass: "hovered-last",
-    monthCellFirstSelectedClass: "selected-first",
-    monthCellLastSelectedClass: "selected-last",
-    monthCellWithinSelectedClass: "selected-within",
-    tableCellInvisibleClass: "",
-    tableCellNearbyClass: "nearby",
-    tableCellEventsClass: (_: string, { props }: ComponentContext) => {
-      const classes = ["has-event"];
-      if (props.indicators) classes.push(`${props.indicators}`);
-      return classes.join(" ");
-    },
-    tableEventVariantClass: "variant-",
-    tableEventsClass: "events",
-    tableEventClass: "event",
-    mobileClass: "mobile",
-  },
-  timepicker: {
-    override: true,
-    rootClass: "timepicker",
-    boxClass: "dropdown-item",
-    selectClasses: {
-      rootClass: "select",
-      selectClass: "form-select",
-    },
-    separatorClass: "separator",
-    footerClass: "timepicker-footer",
-    sizeClass: "size-",
-  },
-  datetimepicker: {
-    override: true,
-    datepickerWrapperClass: "datepicker-wrapper",
-    timepickerWrapperClass: "timepicker-wrapper d-flex justify-content-center",
   },
   menu: {
     override: true,

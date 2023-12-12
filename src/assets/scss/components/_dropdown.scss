@@ -54,6 +54,15 @@ $dropdown-menu-zindex: $zindex-modal !default;
   }
 
   .dropdown-menu {
+    // disable dropdown-item effects when not clickable
+    .dropdown-item:not(.clickable) {
+      &:hover,
+      &:active {
+        --#{$prefix}dropdown-link-active-bg: transparent;
+        --#{$prefix}dropdown-link-hover-bg: transparent;
+      }
+    }
+
     // position classes
     &.position {
       &-top {
