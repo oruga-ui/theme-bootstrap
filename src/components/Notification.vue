@@ -1,12 +1,12 @@
 <script setup lang="ts">
-import { useProgrammatic } from "@oruga-ui/oruga-next";
+import { useOruga } from "@oruga-ui/oruga-next";
 
 function simple() {
-  const { oruga } = useProgrammatic();
+  const oruga = useOruga();
   oruga.notification.open("Something happened");
 }
 function success() {
-  const { oruga } = useProgrammatic();
+  const oruga = useOruga();
   oruga.notification.open({
     message: "Something happened correctly!",
     variant: "success",
@@ -14,7 +14,7 @@ function success() {
   });
 }
 function toast() {
-  const { oruga } = useProgrammatic();
+  const oruga = useOruga();
   oruga.notification.open({
     message: "Something happened correctly!",
     rootClass: "toast",
@@ -22,19 +22,17 @@ function toast() {
   });
 }
 function danger() {
-  const { oruga } = useProgrammatic();
+  const oruga = useOruga();
 
   oruga.notification.open({
     message: `Something's not good, also I'm on <b>bottom</b>`,
     position: "bottom-right",
     variant: "danger",
     closable: true,
-    indefinite: true,
-    ariaLive: "assertive",
-    ariaAtomic: true,
+    infinite: true,
     ariaCloseLabel: "Close",
     onClose: () => {
-      const { oruga } = useProgrammatic();
+      const oruga = useOruga();
       oruga.notification.open("Custom notification closed!");
     },
   });

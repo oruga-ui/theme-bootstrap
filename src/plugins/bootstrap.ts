@@ -346,11 +346,11 @@ export const bootstrapConfig: OrugaOptions = {
     variantClass: "variant-",
     wrapperClass: "notifictation-wrapper",
     contentClass: "notifictation-content",
-    positionClass: "is-",
+    positionClass: "position-",
     iconClass: "media",
     closeClass: "btn-close",
     noticeClass: "notifictations",
-    noticePositionClass: "is-",
+    noticePositionClass: "position-",
   },
   dropdown: {
     override: true,
