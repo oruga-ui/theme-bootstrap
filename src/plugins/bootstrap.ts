@@ -123,20 +123,6 @@ export const bootstrapConfig: OrugaOptions = {
     itemEmptyClass: "disabled",
     itemGroupTitleClass: "fw-bold",
   },
-  taginput: {
-    override: true,
-    rootClass: (_: string, { props }: ComponentContext) => {
-      const classes = ["taginput-wrapper", "taginput", "focus-ring"];
-      if (props.disabled) classes.push("disabled");
-      if (props.variant) classes.push(`focus-ring-${props.variant}`);
-      return classes.join(" ");
-    },
-    itemClass: "badge",
-    closeClass: "btn-close",
-    variantClass: "variant-",
-    expandedClass: "expanded",
-    counterClass: "counter",
-  },
   pagination: {
     override: true,
     rootClass: (_: string, { props }: ComponentContext) => {
@@ -340,11 +326,7 @@ export const bootstrapConfig: OrugaOptions = {
   },
   dropdown: {
     override: true,
-    rootClass: (_: string, { props }: ComponentContext) => {
-      const classes = ["dropdown", "btn-group"];
-      if (props.position) classes.push(`is-${props.position}`);
-      return classes.join(" ");
-    },
+    rootClass: "dropdown btn-group",
     triggerClass: "dropdown-trigger",
     disabledClass: "disabled",
     expandedClass: "expanded",
@@ -355,17 +337,15 @@ export const bootstrapConfig: OrugaOptions = {
       if (computed.hoverable) classes.push("show");
       return classes.join(" ");
     },
-    menuPositionClass: "is-",
+    menuPositionClass: "position-",
     menuActiveClass: "show",
     itemTag: "a",
-    itemClass: (_: string, { props }: ComponentContext) => {
-      const classes = ["dropdown-item"];
-      if (props.clickable) classes.push("clickable");
-      return classes.join(" ");
-    },
+    itemClass: "dropdown-item",
     itemActiveClass: "active",
+    itemClickableClass: "clickable",
     itemDisabledClass: "disabled",
     mobileClass: "dropdown-modal",
+    teleportClass: "teleported",
   },
   collapse: {
     override: true,
@@ -522,6 +502,20 @@ export const bootstrapConfig: OrugaOptions = {
     indicatorItemClass: "carousel-indicator-item",
     indicatorItemStyleClass: "indicator-",
     indicatorItemActiveClass: "active",
+  },
+  taginput: {
+    override: true,
+    rootClass: (_: string, { props }: ComponentContext) => {
+      const classes = ["taginput-wrapper", "taginput", "focus-ring"];
+      if (props.disabled) classes.push("disabled");
+      if (props.variant) classes.push(`focus-ring-${props.variant}`);
+      return classes.join(" ");
+    },
+    itemClass: "badge",
+    closeClass: "btn-close",
+    variantClass: "variant-",
+    expandedClass: "expanded",
+    counterClass: "counter",
   },
   tooltip: {
     override: true,
