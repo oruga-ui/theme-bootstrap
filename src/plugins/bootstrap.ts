@@ -32,6 +32,15 @@ export const bootstrapConfig: OrugaOptions = {
     indicatorItemStyleClass: "indicator-",
     indicatorItemActiveClass: "active",
   },
+  checkbox: {
+    override: true,
+    rootClass: "form-check",
+    disabledClass: "disabled",
+    inputClass: "form-check-input",
+    labelClass: "form-check-label",
+    variantClass: "variant-",
+    sizeClass: "size-",
+  },
   field: {
     override: true,
     rootClass: "input-field",
@@ -107,15 +116,6 @@ export const bootstrapConfig: OrugaOptions = {
     sizeClass: "size-",
     clickableClass: "clickable",
     spinClass: "spin",
-  },
-  checkbox: {
-    override: true,
-    rootClass: "form-check",
-    disabledClass: "disabled",
-    inputClass: "form-check-input",
-    labelClass: "form-check-label",
-    variantClass: "variant-",
-    sizeClass: "size-",
   },
   radio: {
     override: true,
