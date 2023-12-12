@@ -109,20 +109,19 @@ const customSettings = reactive({
 
     <o-field grouped>
       <o-field>
-        <o-switch v-model="listSettings.arrow">Arrow</o-switch>
+        <o-switch v-model="listSettings.arrow" label="Arrow" />
       </o-field>
       <o-field>
         <o-switch
           v-model="listSettings.arrowHover"
-          :disabled="!listSettings.arrow">
-          Arrow on hover
-        </o-switch>
+          :disabled="!listSettings.arrow"
+          label="Arrow on hover" />
       </o-field>
       <o-field>
-        <o-switch v-model="listSettings.hasDrag">Drag event</o-switch>
+        <o-switch v-model="listSettings.hasDrag" label="Drag event" />
       </o-field>
       <o-field>
-        <o-switch v-model="listSettings.repeat">Repeat</o-switch>
+        <o-switch v-model="listSettings.repeat" label="Repeat" />
       </o-field>
     </o-field>
     <o-field grouped>
@@ -147,6 +146,7 @@ const customSettings = reactive({
         <img :src="item.image" />
       </o-carousel-item>
     </o-carousel>
+
     <p><b>Current Item:</b> {{ carousel }}</p>
   </section>
 
@@ -196,24 +196,22 @@ const customSettings = reactive({
 
     <o-field grouped>
       <o-field>
-        <o-switch v-model="customSettings.autoplay">Autoplay</o-switch>
+        <o-switch v-model="customSettings.autoplay" label="Autoplay" />
       </o-field>
       <o-field>
         <o-switch
           v-model="customSettings.pauseHover"
-          :disabled="!customSettings.autoplay">
-          Pause on hover
-        </o-switch>
+          :disabled="!customSettings.autoplay"
+          label="Pause on hover" />
       </o-field>
       <o-field>
-        <o-switch v-model="customSettings.hasDrag">Drag event</o-switch>
+        <o-switch v-model="customSettings.hasDrag" label="Drag event" />
       </o-field>
       <o-field>
         <o-switch
           v-model="customSettings.repeat"
-          :disabled="!customSettings.autoplay">
-          Repeat
-        </o-switch>
+          :disabled="!customSettings.autoplay"
+          label="Repeat" />
       </o-field>
     </o-field>
     <o-field grouped>
