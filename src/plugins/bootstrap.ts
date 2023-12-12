@@ -281,82 +281,6 @@ export const bootstrapConfig: OrugaOptions = {
     prevButtonClass: "pagination-prev page-item",
     infoClass: "pagination-info",
   },
-  slider: {
-    override: true,
-    rootClass: (_: string, { props }: ComponentContext) => {
-      const classes = ["slider"];
-      if (props.variant) classes.push(`variant-${props.variant}`);
-      if (props.rounded) classes.push("rounded-pill");
-      return classes.join(" ");
-    },
-    disabledClass: "disabled",
-    variantClass: "variant-",
-    trackClass: "slider-track",
-    fillClass: "slider-fill",
-    thumbWrapperClass: (_: string, { props }: ComponentContext) => {
-      const classes = ["slider-thumb-wrapper"];
-      if (props.dragging) classes.push(`is-dragging`);
-      return classes.join(" ");
-    },
-    sizeClass: "size-",
-    thumbClass: (_: string, { props }: ComponentContext) => {
-      const classes = ["slider-thumb", "focus-ring"];
-      if (props.variant) classes.push(`variant-${props.variant}`);
-      if (props.variant) classes.push(`focus-ring-${props.variant}`);
-      return classes.join(" ");
-    },
-    tickLabelClass: "slider-tick-label",
-    tickHiddenClass: "tick-hidden",
-    tickClass: "slider-tick",
-    thumbRoundedClass: "rounded-pill",
-    thumbDraggingClass: "is-dragging",
-  },
-  steps: {
-    override: true,
-    rootClass: (_: string, { props }: ComponentContext) => {
-      const classes = ["steps-wrapper"];
-      if (props.variant) classes.push(`variant-${props.variant}`);
-      if (props.disables) classes.push("disabled");
-      return classes.join(" ");
-    },
-    verticalClass: "vertical",
-    stepsClass: (_: string, { props }: ComponentContext) => {
-      const classes = ["steps"];
-      if (props.animated) classes.push("animated");
-      if (props.labelPosition === "left") classes.push("label-left");
-      if (props.labelPosition === "right") classes.push("label-right");
-      return classes.join(" ");
-    },
-    itemHeaderClass: "step-item",
-    itemHeaderVariantClass: "variant-",
-    itemHeaderActiveClass: "active",
-    itemHeaderPreviousClass: "previous",
-    stepLinkClass: "step-link",
-    stepLinkLabelClass: "step-title",
-    stepLinkClickableClass: "clickable",
-    // stepLinkLabelPositionClass: 'is-',
-    stepMarkerClass: "step-marker",
-    stepMarkerRoundedClass: "rounded-pill",
-    stepNavigationClass: "step-navigation",
-    stepContentClass: "step-content",
-    itemClass: "step-item",
-    positionClass: "is-",
-    sizeClass: "size-",
-    stepContentTransitioningClass: "transition",
-  },
-  skeleton: {
-    override: true,
-    rootClass: "skeleton",
-    itemClass: "skeleton-item",
-    itemRoundedClass: "rounded-pill",
-    animationClass: "animated",
-    sizeClass: "size-",
-    positionClass: (position: string) => {
-      if (position == "left") return "align-items-start";
-      else if (position == "centered") return "align-items-center";
-      else if (position == "right") return "align-items-end";
-    },
-  },
   notification: {
     override: true,
     rootClass: "notifictation alert",
@@ -401,6 +325,13 @@ export const bootstrapConfig: OrugaOptions = {
     scrollClipClass: "modal-open",
     noScrollClass: "noScroll",
   },
+  loading: {
+    override: true,
+    rootClass: "loading",
+    fullPageClass: "fullpage",
+    overlayClass: "loading-overlay",
+    iconClass: "icon",
+  },
   sidebar: {
     override: true,
     rootClass: "sidebar",
@@ -422,12 +353,80 @@ export const bootstrapConfig: OrugaOptions = {
     fullwidthClass: "fullwidth",
     mobileClass: "mobile",
   },
-  loading: {
+  skeleton: {
     override: true,
-    rootClass: "loading",
-    fullPageClass: "fullpage",
-    overlayClass: "loading-overlay",
-    iconClass: "icon",
+    rootClass: "skeleton",
+    itemClass: "skeleton-item",
+    itemRoundedClass: "rounded-pill",
+    animationClass: "animated",
+    sizeClass: "size-",
+    positionClass: (position: string) => {
+      if (position == "left") return "align-items-start";
+      else if (position == "centered") return "align-items-center";
+      else if (position == "right") return "align-items-end";
+    },
+  },
+  slider: {
+    override: true,
+    rootClass: (_: string, { props }: ComponentContext) => {
+      const classes = ["slider"];
+      if (props.variant) classes.push(`variant-${props.variant}`);
+      if (props.rounded) classes.push("rounded-pill");
+      return classes.join(" ");
+    },
+    disabledClass: "disabled",
+    variantClass: "variant-",
+    trackClass: "slider-track",
+    fillClass: "slider-fill",
+    thumbWrapperClass: (_: string, { props }: ComponentContext) => {
+      const classes = ["slider-thumb-wrapper"];
+      if (props.dragging) classes.push(`is-dragging`);
+      return classes.join(" ");
+    },
+    sizeClass: "size-",
+    thumbClass: (_: string, { props }: ComponentContext) => {
+      const classes = ["slider-thumb", "focus-ring"];
+      if (props.variant) classes.push(`variant-${props.variant}`);
+      if (props.variant) classes.push(`focus-ring-${props.variant}`);
+      return classes.join(" ");
+    },
+    tickLabelClass: "slider-tick-label",
+    tickHiddenClass: "tick-hidden",
+    tickClass: "slider-tick",
+    thumbRoundedClass: "rounded-pill",
+    thumbDraggingClass: "is-dragging",
+  },
+  steps: {
+    override: true,
+    rootClass: (_: string, { props }: ComponentContext) => {
+      const classes = ["steps-wrapper"];
+      if (props.variant) classes.push(`variant-${props.variant}`);
+      if (props.disabled) classes.push("disabled");
+      return classes.join(" ");
+    },
+    sizeClass: "size-",
+    positionClass: "position-",
+    verticalClass: "vertical",
+    stepsClass: "steps",
+    animatedClass: "animated",
+    itemHeaderClass: (_: string, { props }: ComponentContext) => {
+      const classes = ["step-item"];
+      if (props.labelPosition === "left") classes.push("label-left");
+      if (props.labelPosition === "right") classes.push("label-right");
+      return classes.join(" ");
+    },
+    itemHeaderVariantClass: "variant-",
+    itemHeaderActiveClass: "active",
+    itemHeaderPreviousClass: "previous",
+    stepLinkClass: "step-link",
+    stepLinkLabelClass: "step-title",
+    stepLinkClickableClass: "clickable",
+    stepMarkerClass: "step-marker",
+    stepMarkerRoundedClass: "rounded-pill",
+    stepNavigationClass: "step-navigation",
+    itemClass: "step-item",
+    stepContentClass: "step-content",
+    stepContentTransitioningClass: "transition",
   },
   switch: {
     override: true,

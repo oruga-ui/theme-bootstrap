@@ -57,6 +57,16 @@ $steps-vertical-padding: 1em 0 !default;
 }
 
 .steps-wrapper {
+  // Default size
+  @include steps-size(1em);
+
+  // Sizes
+  @each $name, $size in $sizes {
+    &.size-#{$name} {
+      @include steps-size($size);
+    }
+  }
+
   .steps {
     --#{$prefix}steps-divider-height: #{$steps-divider-height};
     --#{$prefix}steps-title-bg: #{$steps-title-bg};
@@ -164,22 +174,9 @@ $steps-vertical-padding: 1em 0 !default;
           @include steps-color($color);
         }
       }
-    }
 
-    &.animated {
-      .step-item {
-        &:not(:first-child),
-        &:only-child {
-          &::before {
-            transition: background $speed-slow $easing;
-          }
-        }
-      }
-    }
-
-    &.label-right,
-    &.label-left {
-      .step-item {
+      &.label-right,
+      &.label-left {
         &:not(:first-child),
         &:only-child {
           &::before {
@@ -187,37 +184,23 @@ $steps-vertical-padding: 1em 0 !default;
           }
         }
 
-        .step-link {
-          flex-direction: row;
-
-          > .step-title {
-            background: var(--#{$prefix}steps-title-bg);
-            padding: 0.2em;
-          }
-        }
-
         .step-marker {
           margin: 0;
         }
-      }
-    }
 
-    &.label-left {
-      .step-item {
-        .step-link {
-          flex-direction: row-reverse;
+        .step-title {
+          background: var(--#{$prefix}steps-title-bg);
+          padding: 0.2em;
         }
       }
-    }
-  }
 
-  // Default size
-  @include steps-size(1em);
+      &.label-right .step-link {
+        flex-direction: row;
+      }
 
-  // Sizes
-  @each $name, $size in $sizes {
-    &.size-#{$name} {
-      @include steps-size($size);
+      &.label-left .step-link {
+        flex-direction: row-reverse;
+      }
     }
   }
 
@@ -239,6 +222,17 @@ $steps-vertical-padding: 1em 0 !default;
 
     &.transition {
       overflow: hidden;
+    }
+  }
+
+  &.animated {
+    .step-item {
+      &:not(:first-child),
+      &:only-child {
+        &::before {
+          transition: background $speed-slow $easing;
+        }
+      }
     }
   }
 
@@ -285,16 +279,12 @@ $steps-vertical-padding: 1em 0 !default;
             height: 100%;
           }
         }
-      }
 
-      &.label-right {
-        .step-item {
+        &.label-right {
           justify-content: flex-start;
         }
-      }
 
-      &.label-left {
-        .step-item {
+        &.label-left {
           justify-content: flex-end;
         }
       }
@@ -308,7 +298,7 @@ $steps-vertical-padding: 1em 0 !default;
       flex-basis: 100%;
     }
 
-    &.is-right {
+    &.position-right {
       flex-direction: row-reverse;
     }
   }
