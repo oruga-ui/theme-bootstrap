@@ -397,11 +397,11 @@ function getFilteredTags(text: string) {
   <section>
     <h3>Base</h3>
 
-    <o-switch v-model="allowNew"> Allow new items </o-switch>
-    <o-switch v-model="openOnFocus"> Open on focus </o-switch>
+    <o-switch v-model="allowNew" label="Allow new items" />
+    <o-switch v-model="openOnFocus" label="Open on focus" />
 
     <o-field label="Enter some items">
-      <o-inputitems
+      <o-taginput
         v-model="tags"
         variant="primary"
         :data="filteredTags"
@@ -419,7 +419,7 @@ function getFilteredTags(text: string) {
     <p><b>Items:</b> {{ tags }}</p>
 
     <o-field label="Disabled">
-      <o-inputitems
+      <o-taginput
         variant="primary"
         disabled
         :model-value="['One']"
@@ -438,18 +438,18 @@ function getFilteredTags(text: string) {
     <h3>Limits</h3>
 
     <o-field label="Limited to 10 characters">
-      <o-inputitems maxlength="10" :value="['Oruga', 'Vue', 'CSS']" />
+      <o-taginput maxlength="10" :model-value="['Oruga', 'Vue', 'CSS']" />
     </o-field>
 
     <o-field label="Limited to 5 tags">
-      <o-inputitems maxitems="5" :value="['One', 'Two', 'Three', 'Four']" />
+      <o-taginput maxitems="5" :model-value="['One', 'Two', 'Three', 'Four']" />
     </o-field>
 
     <o-field label="Limited to 10 characters and 5 tags">
-      <o-inputitems
+      <o-taginput
         maxlength="10"
         maxitems="5"
-        :value="['Red', 'Green', 'Blue', 'White']" />
+        :model-value="['Red', 'Green', 'Blue', 'White']" />
     </o-field>
   </section>
 
@@ -457,7 +457,7 @@ function getFilteredTags(text: string) {
     <h3>Variant</h3>
 
     <o-field label="Primary">
-      <o-inputitems
+      <o-taginput
         :model-value="['One']"
         :data="['One', 'Two', 'Three', 'Four']"
         :allow-new="false"
@@ -465,7 +465,7 @@ function getFilteredTags(text: string) {
     </o-field>
 
     <o-field label="Secondary">
-      <o-inputitems
+      <o-taginput
         :model-value="['One']"
         :data="['One', 'Two', 'Three', 'Four']"
         :allow-new="false"
@@ -473,7 +473,7 @@ function getFilteredTags(text: string) {
     </o-field>
 
     <o-field label="Success">
-      <o-inputitems
+      <o-taginput
         :model-value="['One']"
         :data="['One', 'Two', 'Three', 'Four']"
         :allow-new="false"
@@ -481,7 +481,7 @@ function getFilteredTags(text: string) {
     </o-field>
 
     <o-field label="Info">
-      <o-inputitems
+      <o-taginput
         :model-value="['One']"
         :data="['One', 'Two', 'Three', 'Four']"
         :allow-new="false"
@@ -489,7 +489,7 @@ function getFilteredTags(text: string) {
     </o-field>
 
     <o-field label="Warning">
-      <o-inputitems
+      <o-taginput
         :model-value="['One']"
         :data="['One', 'Two', 'Three', 'Four']"
         :allow-new="false"
@@ -497,7 +497,7 @@ function getFilteredTags(text: string) {
     </o-field>
 
     <o-field label="Danger">
-      <o-inputitems
+      <o-taginput
         :model-value="['One']"
         :data="['One', 'Two', 'Three', 'Four']"
         :allow-new="false"

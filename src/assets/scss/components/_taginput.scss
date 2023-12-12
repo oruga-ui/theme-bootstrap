@@ -71,6 +71,7 @@ $taginput-counter-font-size: 0.75rem !default;
     border: 0;
     box-shadow: none;
 
+    // disable input focus shadow
     &:focus {
       box-shadow: none !important;
     }
