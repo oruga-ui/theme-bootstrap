@@ -155,7 +155,7 @@ const checkboxGroup = ref(["Flint"]);
   <section>
     <h3>Size</h3>
 
-    <o-field> <o-checkbox size="small" label="Small" />> </o-field>
+    <o-field> <o-checkbox size="small" label="Small" /> </o-field>
     <o-field>
       <o-checkbox label="Default" />
     </o-field>
