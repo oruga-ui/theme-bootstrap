@@ -368,21 +368,12 @@ export const bootstrapConfig: OrugaOptions = {
   },
   slider: {
     override: true,
-    rootClass: (_: string, { props }: ComponentContext) => {
-      const classes = ["slider"];
-      if (props.variant) classes.push(`variant-${props.variant}`);
-      if (props.rounded) classes.push("rounded-pill");
-      return classes.join(" ");
-    },
+    rootClass: "slider",
     disabledClass: "disabled",
     variantClass: "variant-",
     trackClass: "slider-track",
     fillClass: "slider-fill",
-    thumbWrapperClass: (_: string, { props }: ComponentContext) => {
-      const classes = ["slider-thumb-wrapper"];
-      if (props.dragging) classes.push(`is-dragging`);
-      return classes.join(" ");
-    },
+    thumbWrapperClass: "slider-thumb-wrapper",
     sizeClass: "size-",
     thumbClass: (_: string, { props }: ComponentContext) => {
       const classes = ["slider-thumb", "focus-ring"];
@@ -390,11 +381,11 @@ export const bootstrapConfig: OrugaOptions = {
       if (props.variant) classes.push(`focus-ring-${props.variant}`);
       return classes.join(" ");
     },
-    tickLabelClass: "slider-tick-label",
-    tickHiddenClass: "tick-hidden",
     tickClass: "slider-tick",
+    tickLabelClass: "slider-tick-label",
+    tickHiddenClass: "slider-tick-hidden",
     thumbRoundedClass: "rounded-pill",
-    thumbDraggingClass: "is-dragging",
+    thumbDraggingClass: "dragging",
   },
   steps: {
     override: true,

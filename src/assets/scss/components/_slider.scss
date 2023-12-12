@@ -40,7 +40,6 @@ $slider-tick-bg: var(--#{$prefix}gray) !default;
   height: var(--#{$prefix}slider-height);
   border-radius: var(--#{$prefix}slider-border-radius);
   background: var(--#{$prefix}slider-bg);
-  cursor: var(--#{$prefix}slider-cursor);
   box-shadow: var(--#{$prefix}slider-box-shadow);
 
   .slider-track {
@@ -109,7 +108,6 @@ $slider-tick-bg: var(--#{$prefix}gray) !default;
 
         &:active {
           transform: scale(1.2);
-          // background-color: $form-range-thumb-active-bg;
         }
 
         &:not(.focus-ring) {
@@ -124,14 +122,6 @@ $slider-tick-bg: var(--#{$prefix}gray) !default;
           &:not(.focus-ring) {
             box-shadow: var(--#{$prefix}slider-thumb-focus-box-shadow);
           }
-        }
-      }
-
-      &.is-dragging {
-        cursor: grabbing;
-
-        .slider-thumb {
-          transform: scale(1.5);
         }
       }
     }
@@ -150,11 +140,11 @@ $slider-tick-bg: var(--#{$prefix}gray) !default;
       background: var(--#{$prefix}slider-tick-bg);
       border-radius: var(--#{$prefix}slider-tick-radius);
 
-      &.tick-hidden {
+      &-hidden {
         background: transparent;
       }
 
-      .slider-tick-label {
+      &-label {
         position: relative;
         bottom: calc(-1 * $form-range-thumb-height);
       }
@@ -188,7 +178,7 @@ $slider-tick-bg: var(--#{$prefix}gray) !default;
         height: calc($size * 0.5);
         width: calc($size * 0.5);
 
-        .slider-tick-label {
+        &-label {
           bottom: calc(-1 * $size);
         }
       }
