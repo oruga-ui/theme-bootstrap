@@ -4,7 +4,6 @@
 $nav-tabs-color: var(--#{$prefix}body-color) !default;
 $nav-tabs-spacer: $spacer !default;
 $nav-tabs-disabled-opacity: 0.5 !default;
-
 $nav-underline-link-active-bg: $nav-tabs-link-active-bg !default;
 $nav-underline-link-active-border-color: currentcolor !default;
 /* @docs */
@@ -37,14 +36,14 @@ $nav-underline-link-active-border-color: currentcolor !default;
 // $nav-underline-link-active-color:   var(--#{$prefix}emphasis-color);
 /* @bootstrap docs */
 
-.nav-tab-wrapper {
+.tabs-wrapper {
   --#{$prefix}nav-tabs-spacer: #{$nav-tabs-spacer};
   --#{$prefix}nav-tabs-disabled-opacity: #{$nav-tabs-disabled-opacity};
 
   .nav {
     margin-bottom: var(--#{$prefix}nav-tabs-spacer);
 
-    .nav-link {
+    &-link {
       .icon {
         margin-right: 0.5em;
       }
@@ -64,13 +63,12 @@ $nav-underline-link-active-border-color: currentcolor !default;
     }
 
     // style toggle / underline
-
-    &.nav-toggle {
+    &-toggle {
       @extend .nav-underline;
     }
 
-    &.nav-underline,
-    &.nav-toggle {
+    &-underline,
+    &-toggle {
       --#{$prefix}nav-underline-link-active-bg: #{$nav-underline-link-active-bg};
       --#{$prefix}nav-underline-link-active-border-color: #{$nav-underline-link-active-border-color};
 
@@ -83,30 +81,26 @@ $nav-underline-link-active-border-color: currentcolor !default;
     }
 
     // style boxed / tabs
-    &.nav-boxed {
+    &-boxed {
       @extend .nav-tabs;
     }
 
-    // Sizes
-    @each $name, $size in $sizes {
-      &.size-#{$name} {
-        --#{$prefix}nav-link-font-size: #{$size};
-        --#{$prefix}nav-link-padding-x: #{calc(
-            $nav-link-padding-x * strip-unit($size)
-          )};
-        --#{$prefix}nav-link-padding-y: #{calc(
-            $nav-link-padding-y * strip-unit($size)
-          )};
-      }
+    &-content {
+      position: relative;
     }
   }
 
-  .nav-content {
-    position: relative;
-  }
-
-  &.expanded:not(.vertical) .nav {
-    @extend .nav-fill;
+  // Sizes
+  @each $name, $size in $sizes {
+    .size-#{$name} {
+      --#{$prefix}nav-link-font-size: #{$size};
+      --#{$prefix}nav-link-padding-x: #{calc(
+          $nav-link-padding-x * strip-unit($size)
+        )};
+      --#{$prefix}nav-link-padding-y: #{calc(
+          $nav-link-padding-y * strip-unit($size)
+        )};
+    }
   }
 
   // position vetical
@@ -120,17 +114,21 @@ $nav-underline-link-active-border-color: currentcolor !default;
     .nav {
       display: block;
 
-      &.nav-default .nav-link {
+      &-default .nav-link {
         border-bottom: var(--#{$prefix}nav-underline-border-width) solid
           var(--#{$prefix}nav-underline-border-color);
         text-align: left;
       }
 
-      &.nav-tabs {
+      &-tabs {
         .nav-item:not(:has(+ [aria-selected="true"])) .nav-link {
           border-bottom: var(--#{$prefix}nav-underline-border-width) solid
             var(--#{$prefix}nav-underline-border-color);
         }
+      }
+
+      &-content {
+        flex-grow: 1;
       }
     }
 
@@ -140,16 +138,16 @@ $nav-underline-link-active-border-color: currentcolor !default;
       }
     }
 
-    &.is-right {
+    &.position-right {
       flex-direction: row-reverse;
 
       .nav {
         margin-left: var(--#{$prefix}nav-tabs-spacer);
       }
     }
+  }
 
-    .nav-content {
-      flex-grow: 1;
-    }
+  &.expanded:not(.vertical) .nav {
+    @extend .nav-fill;
   }
 }

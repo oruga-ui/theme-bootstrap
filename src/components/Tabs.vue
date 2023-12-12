@@ -34,7 +34,7 @@ const tabs = [
   },
 ];
 
-const atRight = ref(false);
+const position = ref("left");
 const expanded = ref(false);
 const size = ref();
 const type = ref("default");
@@ -183,10 +183,13 @@ const type = ref("default");
 
     <o-field grouped group-multiline>
       <o-field>
-        <o-switch v-model="atRight"> Right position </o-switch>
-      </o-field>
-      <o-field>
-        <o-switch v-model="expanded"> Expanded </o-switch>
+        <o-field label="position">
+          <o-select v-model="position">
+            <option value="left">Left</option>
+            <option value="centered">Centerd</option>
+            <option value="right">Right</option>
+          </o-select>
+        </o-field>
       </o-field>
       <o-field label="Size">
         <o-select v-model="size">
@@ -204,11 +207,14 @@ const type = ref("default");
           <option value="pills">Pills</option>
         </o-select>
       </o-field>
+      <o-field>
+        <o-switch v-model="expanded" label="Expanded" />
+      </o-field>
     </o-field>
 
     <o-tabs
       vertical
-      :position="atRight ? 'right' : ''"
+      :position="position"
       :size="size"
       :type="type"
       :expanded="expanded">
