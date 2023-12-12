@@ -31,7 +31,7 @@ const hoursGranularity = ref(2);
 
     <o-field grouped>
       <o-field>
-        <o-switch v-model="enableSeconds">Enable seconds</o-switch>
+        <o-switch v-model="enableSeconds" label="Enable seconds" />
       </o-field>
       <o-field label="Locale">
         <o-select v-model="locale">
@@ -67,15 +67,14 @@ const hoursGranularity = ref(2);
         icon="clock"
         :enable-seconds="enableSeconds"
         :hour-format="hourFormat"
-        :locale="locale">
-      </o-timepicker>
+        :locale="locale" />
     </o-field>
   </section>
 
   <section>
     <h3>Inline</h3>
 
-    <o-timepicker v-model="time" inline></o-timepicker>
+    <o-timepicker v-model="time" inline />
   </section>
 
   <section>
@@ -117,8 +116,7 @@ const hoursGranularity = ref(2);
         placeholder="Click to select"
         icon="clock"
         :increment-minutes="minutesGranularity"
-        :increment-hours="hoursGranularity">
-      </o-timepicker>
+        :increment-hours="hoursGranularity" />
     </o-field>
   </section>
 </template>

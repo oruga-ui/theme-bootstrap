@@ -11,12 +11,6 @@
       --#{$prefix}dropdown-link-active-color: --#{$prefix}dropdown-link-color;
     }
 
-    &:focus-within {
-      box-shadow: var(--#{$prefix}focus-ring-x, 0)
-        var(--#{$prefix}focus-ring-y, 0) var(--#{$prefix}focus-ring-blur, 0)
-        var(--#{$prefix}focus-ring-width) var(--#{$prefix}focus-ring-color);
-    }
-
     .dropdown-item {
       display: inline-flex;
       border-radius: inherit;
