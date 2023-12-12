@@ -2,6 +2,14 @@ import type { OrugaOptions, ComponentContext } from "@oruga-ui/oruga-next";
 import "../assets/scss/bootstrap-build.scss";
 
 export const bootstrapConfig: OrugaOptions = {
+  autocomplete: {
+    override: true,
+    rootClass: "autocomplete-wrapper",
+    itemClass: "dropdown-item",
+    itemHoverClass: "active",
+    itemEmptyClass: "disabled",
+    itemGroupTitleClass: "fw-bold",
+  },
   field: {
     override: true,
     rootClass: "input-field",
@@ -114,14 +122,6 @@ export const bootstrapConfig: OrugaOptions = {
     passiveVariantClass: "variant-",
     // roundedClass: "rounded",
     // checkClass: "switch",
-  },
-  autocomplete: {
-    override: true,
-    rootClass: "autocomplete-wrapper",
-    itemClass: "dropdown-item",
-    itemHoverClass: "active",
-    itemEmptyClass: "disabled",
-    itemGroupTitleClass: "fw-bold",
   },
   pagination: {
     override: true,

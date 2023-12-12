@@ -4,16 +4,10 @@ $autocomplete-menu-max-height: 200px !default;
 
 .autocomplete-wrapper {
   --#{$prefix}autocomplete-menu-max-height: #{$autocomplete-menu-max-height};
-  position: relative;
 
   .dropdown-menu {
-    @extend .show;
     max-height: var(--#{$prefix}autocomplete-menu-max-height);
     overflow: auto;
-
-    &.opened-top {
-      top: auto;
-      bottom: 100%;
-    }
+    width: 100%;
   }
 }
