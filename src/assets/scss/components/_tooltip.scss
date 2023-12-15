@@ -80,6 +80,7 @@ $tooltip-zindex: $zindex-tooltip;
       width: var(--#{$prefix}tooltip-content-multiline-width);
     }
   }
+
   // Color variants
   @each $name, $color in $theme-colors {
     &.variant-#{$name} {
