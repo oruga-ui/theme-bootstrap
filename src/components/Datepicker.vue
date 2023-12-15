@@ -238,7 +238,7 @@ const datepicker = ref<any>(null);
               field="name"
               expanded
               @select="selectMonth" />
-            <o-button disabled :label="date?.getFullYear()" />
+            <o-button disabled :label="date?.getFullYear().toString()" />
           </o-field>
         </template>
         <template #footer>
