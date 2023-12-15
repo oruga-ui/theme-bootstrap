@@ -256,22 +256,12 @@ export const bootstrapConfig: any = {
     thDetailedClass: "chevron",
     thStickyClass: "sticky",
     thCheckboxClass: "checkbox",
-    thPositionClass: (position: string) => {
-      if (position === "left") return "text-left";
-      else if (position === "centered") return "text-centered";
-      else if (position === "right") return "text-right";
-      return;
-    },
+    thPositionClass: "text-",
     tdClass: "table-td",
     tdDetailedChevronClass: "chevron",
     tdStickyClass: "sticky",
     tdCheckboxClass: "checkbox",
-    tdPositionClass: (position: string) => {
-      if (position === "left") return "text-left";
-      else if (position === "centered") return "text-centered";
-      else if (position === "right") return "text-right";
-      return;
-    },
+    tdPositionClass: "text-",
     mobileClass: "mobile-cards",
     mobileSortClass: "table-mobile-sort",
   },
