@@ -2,9 +2,7 @@
 $menu-label-bg: transparent !default;
 $menu-label-color: var(--#{$prefix}body-color) !default;
 $menu-label-font-size: 0.75em !default;
-
 $menu-list-line-height: 1.25em !default;
-
 $menu-item-padding: 0.5em 0.75em !default;
 $menu-item-bg: transparent !default;
 $menu-item-color: var(--#{$prefix}body-color) !default;
@@ -12,9 +10,7 @@ $menu-item-active-bg: var(--#{$prefix}primary) !default;
 $menu-item-active-color: var(--#{$prefix}white) !default;
 $menu-item-disabled-bg: transparent !default;
 $menu-item-disabled-color: var(--#{$prefix}secondary) !default;
-
 $menu-icon-spacer: 0.5rem !default;
-
 $menu-submenu-border-left: 1px solid #445e00 !default;
 $menu-submenu-padding-left: 0.75em !default;
 $menu-submenu-margin: 0.75em !default;
