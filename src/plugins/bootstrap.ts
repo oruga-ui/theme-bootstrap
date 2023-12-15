@@ -196,37 +196,13 @@ export const bootstrapConfig: OrugaOptions = {
     },
     variantClass: "border-",
     expandedClass: "expanded",
+    disabledClass: "disabled",
     roundedClass: "rounded-pill",
     iconLeftClass: "icon-left",
     iconRightClass: "icon-right",
     // iconLeftSpaceClass: 'input-group-text',
     // iconRightSpaceClass: 'input-group-text',
     counterClass: "help counter",
-  },
-  select: {
-    override: true,
-    rootClass: "select",
-    selectClass: (_: string, { props }: ComponentContext) => {
-      const classes = ["form-select"];
-      if (props.icon) classes.push("icon-left");
-      if (props.iconRight) classes.push("icon-right");
-      return classes.join(" ");
-    },
-    sizeClass: (_: string, { props }: ComponentContext) => {
-      if (props.size == "small") return "form-select-sm";
-      else if (props.size == "medium") return "form-select-md";
-      else if (props.size == "large") return "form-select-lg";
-    },
-    variantClass: "border-",
-    expandedClass: "expanded",
-    roundedClass: "rounded-pill",
-    iconLeftClass: "icon-left",
-    iconRightClass: "icon-right",
-    // iconLeftSpaceClass: 'input-group-text',
-    // iconRightSpaceClass: 'input-group-text',
-    // arrowClass: '',
-    multipleClass: "multiple",
-    placeholderClass: "empty",
   },
   icon: {
     override: true,
@@ -332,6 +308,29 @@ export const bootstrapConfig: OrugaOptions = {
     overlayClass: "loading-overlay",
     iconClass: "icon",
   },
+  select: {
+    override: true,
+    rootClass: "select",
+    selectClass: (_: string, { props }: ComponentContext) => {
+      const classes = ["form-select"];
+      if (props.icon) classes.push("icon-left");
+      if (props.iconRight) classes.push("icon-right");
+      return classes.join(" ");
+    },
+    sizeClass: (_: string, { props }: ComponentContext) => {
+      if (props.size == "small") return "form-select-sm";
+      else if (props.size == "medium") return "form-select-md";
+      else if (props.size == "large") return "form-select-lg";
+    },
+    variantClass: "border-",
+    expandedClass: "expanded",
+    disabledClass: "disabled",
+    roundedClass: "rounded-pill",
+    iconLeftClass: "icon-left",
+    iconRightClass: "icon-right",
+    multipleClass: "multiple",
+    placeholderClass: "empty",
+  },
   sidebar: {
     override: true,
     rootClass: "sidebar",
@@ -351,6 +350,7 @@ export const bootstrapConfig: OrugaOptions = {
     fullheightClass: "fullheight",
     fullwidthClass: "fullwidth",
     mobileClass: "mobile",
+    inlineClass: "inline",
     teleportClass: "teleported",
   },
   skeleton: {
