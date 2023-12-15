@@ -20,14 +20,11 @@ const isCustomFullPage = ref(true);
       <o-button
         size="medium"
         variant="primary"
-        @click="() => (isLoading = true)">
-        Launch loading
-      </o-button>
+        label="Launch loading"
+        @click="() => (isLoading = true)" />
     </o-field>
     <o-field>
-      <o-switch v-model="isFullPage" disabled>
-        Display loader over full page
-      </o-switch>
+      <o-switch v-model="isFullPage" label="Display loader over full page" />
     </o-field>
     <p style="position: relative">
       Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce id
@@ -36,7 +33,8 @@ const isCustomFullPage = ref(true);
       <o-loading
         v-model:active="isLoading"
         :full-page="isFullPage"
-        :can-cancel="true" />
+        :cancelable="true"
+        label="Loading..." />
     </p>
   </section>
 
@@ -47,14 +45,13 @@ const isCustomFullPage = ref(true);
       <o-button
         size="medium"
         variant="primary"
-        @click="() => (isCustomLoading = true)">
-        Launch loading
-      </o-button>
+        label="Launch loading"
+        @click="() => (isCustomLoading = true)" />
     </o-field>
     <o-field>
-      <o-switch v-model="isCustomFullPage">
-        Display loader over full page
-      </o-switch>
+      <o-switch
+        v-model="isCustomFullPage"
+        label="Display loader over full page" />
     </o-field>
     <p style="position: relative">
       Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce id
@@ -63,7 +60,7 @@ const isCustomFullPage = ref(true);
       <o-loading
         v-model:active="isCustomLoading"
         :full-page="isCustomFullPage"
-        :can-cancel="true">
+        :cancelable="true">
         <o-icon pack="fas" icon="sync-alt" size="large" spin />
       </o-loading>
     </p>

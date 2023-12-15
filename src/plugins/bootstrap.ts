@@ -174,6 +174,14 @@ export const bootstrapConfig: OrugaOptions = {
     labelHorizontalClass: "col-form-label",
     bodyHorizontalClass: "col-form-field",
   },
+  icon: {
+    override: true,
+    rootClass: "icon",
+    variantClass: "text-",
+    sizeClass: "size-",
+    clickableClass: "clickable",
+    spinClass: "spin",
+  },
   input: {
     override: true,
     rootClass: "input",
@@ -204,13 +212,13 @@ export const bootstrapConfig: OrugaOptions = {
     // iconRightSpaceClass: 'input-group-text',
     counterClass: "help counter",
   },
-  icon: {
+  loading: {
     override: true,
-    rootClass: "icon",
-    variantClass: "text-",
-    sizeClass: "size-",
-    clickableClass: "clickable",
-    spinClass: "spin",
+    rootClass: "loading",
+    fullPageClass: "fullpage",
+    overlayClass: "loading-overlay",
+    labelClass: "loading-label",
+    iconClass: "icon",
   },
   menu: {
     override: true,
@@ -283,13 +291,6 @@ export const bootstrapConfig: OrugaOptions = {
     nextButtonClass: "pagination-next page-item",
     prevButtonClass: "pagination-prev page-item",
     infoClass: "pagination-info",
-  },
-  loading: {
-    override: true,
-    rootClass: "loading",
-    fullPageClass: "fullpage",
-    overlayClass: "loading-overlay",
-    iconClass: "icon",
   },
   radio: {
     override: true,
