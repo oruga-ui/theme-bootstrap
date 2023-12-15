@@ -47,14 +47,13 @@ html.modal-open {
 }
 
 .modal {
-  @extend .show;
   display: flex;
 
-  .modal-backdrop {
+  &-backdrop {
     opacity: var(--#{$prefix}backdrop-opacity);
   }
 
-  .modal-dialog {
+  &-dialog {
     z-index: var(--#{$prefix}modal-zindex);
     pointer-events: all;
 

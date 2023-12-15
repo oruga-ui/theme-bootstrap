@@ -212,18 +212,6 @@ export const bootstrapConfig: OrugaOptions = {
     clickableClass: "clickable",
     spinClass: "spin",
   },
-  notification: {
-    override: true,
-    rootClass: "notifictation alert",
-    variantClass: "variant-",
-    wrapperClass: "notifictation-wrapper",
-    contentClass: "notifictation-content",
-    positionClass: "position-",
-    iconClass: "media",
-    closeClass: "btn-close",
-    noticeClass: "notifictations",
-    noticePositionClass: "position-",
-  },
   menu: {
     override: true,
     rootClass: "menu-wrapper",
@@ -238,11 +226,8 @@ export const bootstrapConfig: OrugaOptions = {
   },
   modal: {
     override: true,
-    rootClass: (_: string, { props }: ComponentContext) => {
-      const classes = ["modal", "fade"];
-      if (props.active) classes.push("show");
-      return classes.join(" ");
-    },
+    rootClass: "modal fade",
+    activeClass: "show",
     overlayClass: "modal-backdrop",
     contentClass: (_: string, { props }: ComponentContext) => {
       const classes = ["modal-dialog"];
@@ -255,6 +240,18 @@ export const bootstrapConfig: OrugaOptions = {
     mobileClass: "mobile",
     scrollClipClass: "modal-open",
     noScrollClass: "noScroll",
+  },
+  notification: {
+    override: true,
+    rootClass: "notifictation alert",
+    variantClass: "variant-",
+    wrapperClass: "notifictation-wrapper",
+    contentClass: "notifictation-content",
+    positionClass: "position-",
+    iconClass: "media",
+    closeClass: "btn-close",
+    noticeClass: "notifictations",
+    noticePositionClass: "position-",
   },
   pagination: {
     override: true,

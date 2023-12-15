@@ -1,8 +1,8 @@
 <script setup lang="ts">
 import { ref } from "vue";
-import { useProgrammatic } from "@oruga-ui/oruga-next";
+import { useOruga } from "@oruga-ui/oruga-next";
 
-const { oruga } = useProgrammatic();
+const oruga = useOruga();
 
 const isImageModalActive = ref(false);
 const isCardModalActive = ref(false);
@@ -67,7 +67,7 @@ const promptModal = async () => {
     </div>
 
     <!-- image modal -->
-    <o-modal v-model:active="isImageModalActive">
+    <o-modal v-model:active="isImageModalActive" :teleport="true">
       <p style="text-align: center">
         <img
           style="background-color: white"
@@ -102,7 +102,7 @@ const promptModal = async () => {
               placeholder="Enter Your Password" />
           </o-field>
           <o-field label="Enter some items">
-            <o-inputitems
+            <o-taginput
               v-model="tags"
               variant="primary"
               field="user.first_name"
@@ -119,7 +119,7 @@ const promptModal = async () => {
               tooltip-variant="dark" />
           </o-field>
           <o-field>
-            <o-checkbox variant="info"> Remember me </o-checkbox>
+            <o-checkbox variant="info" label="Remember me" />
           </o-field>
         </div>
         <div class="modal-footer">
@@ -138,7 +138,7 @@ const promptModal = async () => {
       v-model:active="isFullScreenModalActive"
       :width="720"
       scroll="clip"
-      :can-cancel="['escape', 'button']"
+      :cancelable="['escape', 'button']"
       full-screen>
       <div class="modal-content h-100">
         <div class="modal-header">
@@ -165,7 +165,7 @@ const promptModal = async () => {
               placeholder="Enter Your Password" />
           </o-field>
           <o-field label="Enter some items">
-            <o-inputitems
+            <o-taginput
               v-model="tags"
               variant="primary"
               field="user.first_name"
@@ -182,7 +182,7 @@ const promptModal = async () => {
               tooltip-variant="dark" />
           </o-field>
           <o-field>
-            <o-checkbox variant="info"> Remember me </o-checkbox>
+            <o-checkbox variant="info" label="Remember me" />
           </o-field>
         </div>
         <div class="modal-footer">
