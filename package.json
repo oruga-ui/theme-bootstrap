@@ -24,7 +24,7 @@
     "url": "https://github.com/oruga-ui/theme-bootstrap/issues"
   },
   "scripts": {
-    "dev": "vite --force",  
+    "dev": "vite --force",
     "serve": "vite preview",
     "build": "vue-tsc --noEmit && vite build",
     "build:lib": "rimraf dist && rollup -c",
@@ -37,7 +37,7 @@
   },
   "devDependencies": {
     "@fortawesome/fontawesome-free": "6.4.2",
-    "@oruga-ui/oruga-next": "0.6.0",
+    "@oruga-ui/oruga-next": "^0.8.1",
     "@rollup/plugin-commonjs": "25.0.4",
     "@rollup/plugin-typescript": "11.1.2",
     "@vitejs/plugin-vue": "4.3.1",
