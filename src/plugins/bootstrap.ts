@@ -336,22 +336,22 @@ export const bootstrapConfig: OrugaOptions = {
     override: true,
     rootClass: "sidebar",
     overlayClass: "offcanvas-backdrop",
-    contentClass: (_: string, { props }: ComponentContext) => {
-      const classes = ["offcanvas"];
-      if (props.position === "left") classes.push("offcanvas-start");
-      else if (props.position === "right") classes.push("offcanvas-end");
-      else if (props.position === "top") classes.push("offcanvas-top");
-      else if (props.position === "bottom") classes.push("offcanvas-bottom");
-      else if (props.right) classes.push("offcanvas-end");
-      else classes.push("offcanvas-start");
-      return classes.join(" ");
+    activeClass: "show",
+    positionClass: (_: string, { props }: ComponentContext) => {
+      if (props.position === "left") return "offcanvas-start";
+      else if (props.position === "right") return "offcanvas-end";
+      else if (props.position === "top") return "offcanvas-top";
+      else if (props.position === "bottom") return "offcanvas-bottom";
+      else return "offcanvas-start";
     },
+    contentClass: "offcanvas",
     variantClass: "variant-",
     reduceClass: "reduced",
     expandOnHoverClass: "reduced-expand",
     fullheightClass: "fullheight",
     fullwidthClass: "fullwidth",
     mobileClass: "mobile",
+    teleportClass: "teleported",
   },
   skeleton: {
     override: true,
