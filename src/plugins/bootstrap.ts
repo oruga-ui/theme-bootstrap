@@ -212,15 +212,6 @@ export const bootstrapConfig: OrugaOptions = {
     clickableClass: "clickable",
     spinClass: "spin",
   },
-  radio: {
-    override: true,
-    rootClass: "form-check",
-    disabledClass: "disabled",
-    inputClass: "form-check-input",
-    labelClass: "form-check-label",
-    variantClass: "variant-",
-    sizeClass: "size-",
-  },
   pagination: {
     override: true,
     rootClass: (_: string, { props }: ComponentContext) => {
@@ -307,6 +298,15 @@ export const bootstrapConfig: OrugaOptions = {
     fullPageClass: "fullpage",
     overlayClass: "loading-overlay",
     iconClass: "icon",
+  },
+  radio: {
+    override: true,
+    rootClass: "form-check",
+    disabledClass: "disabled",
+    inputClass: "form-check-input",
+    labelClass: "form-check-label",
+    variantClass: "variant-",
+    sizeClass: "size-",
   },
   select: {
     override: true,
