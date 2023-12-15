@@ -212,42 +212,6 @@ export const bootstrapConfig: OrugaOptions = {
     clickableClass: "clickable",
     spinClass: "spin",
   },
-  pagination: {
-    override: true,
-    rootClass: (_: string, { props }: ComponentContext) => {
-      const classes = ["pagination-wrapper pagination"];
-      if (props.rounded) classes.push("rounded");
-      return classes.join(" ");
-    },
-    sizeClass: (_: string, { props }: ComponentContext) => {
-      if (props.size == "small") return "pagination-sm";
-      else if (props.size == "medium") return "pagination-md";
-      else if (props.size == "large") return "pagination-lg";
-    },
-    simpleClass: "simple",
-    orderClass: (order: string) => {
-      return "order-" + order;
-    },
-    listClass: (_: string, { props }: ComponentContext) => {
-      const classes = ["pagination"];
-      if (props.size == "small") classes.push("pagination-sm");
-      else if (props.size == "medium") classes.push("pagination-md");
-      else if (props.size == "large") classes.push("pagination-lg");
-      return classes.join(" ");
-    },
-    listItemClass: "page-item", // not implementend in oruga yet
-    linkClass: (_: string, { props }: ComponentContext) => {
-      const classes = ["page-link"];
-      if (props.rounded) classes.push("rounded-pill");
-      return classes.join(" ");
-    },
-    linkCurrentClass: "active",
-    linkDisabledClass: "disabled",
-    ellipsisClass: "pagination-ellipsis",
-    nextButtonClass: "pagination-next page-item",
-    prevButtonClass: "pagination-prev page-item",
-    infoClass: "pagination-info",
-  },
   notification: {
     override: true,
     rootClass: "notifictation alert",
@@ -291,6 +255,37 @@ export const bootstrapConfig: OrugaOptions = {
     mobileClass: "mobile",
     scrollClipClass: "modal-open",
     noScrollClass: "noScroll",
+  },
+  pagination: {
+    override: true,
+    rootClass: "pagination-wrapper",
+    sizeClass: (_: string, { props }: ComponentContext) => {
+      if (props.size == "small") return "pagination-sm";
+      else if (props.size == "medium") return "pagination-md";
+      else if (props.size == "large") return "pagination-lg";
+    },
+    roundedClass: "rounded-pill",
+    simpleClass: "simple",
+    orderClass: "order-",
+    listClass: (_: string, { props }: ComponentContext) => {
+      const classes = ["pagination"];
+      if (props.size == "small") classes.push("pagination-sm");
+      else if (props.size == "medium") classes.push("pagination-md");
+      else if (props.size == "large") classes.push("pagination-lg");
+      return classes.join(" ");
+    },
+    listItemClass: "page-item",
+    linkClass: "page-link",
+    linkCurrentClass: "active",
+    linkDisabledClass: "disabled",
+    ellipsisClass: (_: string, { props }: ComponentContext) => {
+      const classes = ["pagination-ellipsis"];
+      if (props.rounded) classes.push("rounded-pill");
+      return classes.join(" ");
+    },
+    nextButtonClass: "pagination-next page-item",
+    prevButtonClass: "pagination-prev page-item",
+    infoClass: "pagination-info",
   },
   loading: {
     override: true,

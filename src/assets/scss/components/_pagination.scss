@@ -61,118 +61,123 @@ $pagination-items-spacer: 0.5rem !default;
 }
 
 .pagination-wrapper {
+  @extend .pagination;
+
   --#{$prefix}pagination-items-spacer: #{$pagination-items-spacer};
 
   position: relative;
   display: flex;
   flex-direction: row;
 
-  .pagination-prev,
-  .pagination-next {
-    @include vertical-centered;
-
-    .icon {
-      margin: unset;
-    }
-  }
-
-  .pagination-prev {
-    order: 1;
-    margin: 0;
-    border-top-left-radius: $pagination-border-radius;
-    border-bottom-left-radius: $pagination-border-radius;
-  }
-
-  .pagination-next {
-    order: 3;
-    margin: 0;
-    border-top-right-radius: $pagination-border-radius;
-    border-bottom-right-radius: $pagination-border-radius;
-  }
-
   .pagination {
     order: 2;
     margin: 0;
+
+    &-prev,
+    &-next {
+      @include vertical-centered;
+
+      .icon {
+        margin: unset;
+      }
+    }
+
+    &-prev {
+      order: 1;
+      margin: 0;
+      border-top-left-radius: $pagination-border-radius;
+      border-bottom-left-radius: $pagination-border-radius;
+    }
+
+    &-next {
+      order: 3;
+      margin: 0;
+      border-top-right-radius: $pagination-border-radius;
+      border-bottom-right-radius: $pagination-border-radius;
+    }
+
+    &-ellipsis {
+      @include vertical-centered;
+      height: 100%;
+      margin-right: var(--#{$prefix}pagination-items-spacer);
+      margin-left: var(--#{$prefix}pagination-items-spacer);
+    }
+
+    &-info {
+      @include vertical-centered;
+      margin-right: var(--#{$prefix}pagination-items-spacer);
+    }
 
     .page-link {
       height: 100%;
     }
   }
 
-  .pagination-ellipsis {
-    @include vertical-centered;
-    height: 100%;
-    margin-right: var(--#{$prefix}pagination-items-spacer);
-    margin-left: var(--#{$prefix}pagination-items-spacer);
-  }
-
-  .pagination-info {
-    @include vertical-centered;
-    margin-right: var(--#{$prefix}pagination-items-spacer);
-  }
-
   &:not(.simple) {
-    &.order-left {
-      @include roundEdge;
-      justify-content: space-between;
+    &.order {
+      &-left {
+        @include roundEdge;
+        justify-content: space-between;
 
-      .pagination-prev {
-        order: 2;
+        .pagination-prev {
+          order: 2;
+        }
+
+        .pagination-next {
+          order: 3;
+        }
+
+        .pagination {
+          order: 1;
+          flex-grow: 1;
+          justify-content: flex-start;
+          margin-right: var(--#{$prefix}pagination-items-spacer);
+        }
       }
 
-      .pagination-next {
-        order: 3;
+      &-centered {
+        @include roundEdge;
+        justify-content: space-between;
+
+        .pagination {
+          margin-left: var(--#{$prefix}pagination-items-spacer);
+          margin-right: var(--#{$prefix}pagination-items-spacer);
+        }
       }
 
-      .pagination {
-        order: 1;
-        flex-grow: 1;
-        justify-content: flex-start;
-        margin-right: var(--#{$prefix}pagination-items-spacer);
-      }
-    }
+      &-right {
+        @include roundEdge;
+        justify-content: space-between;
 
-    &.order-centered {
-      @include roundEdge;
-      justify-content: space-between;
+        .pagination-next {
+          order: 2;
+        }
 
-      .pagination {
-        margin-left: var(--#{$prefix}pagination-items-spacer);
-        margin-right: var(--#{$prefix}pagination-items-spacer);
-      }
-    }
-
-    &.order-right {
-      @include roundEdge;
-      justify-content: space-between;
-
-      .pagination-next {
-        order: 2;
-      }
-
-      .pagination {
-        order: 3;
-        flex-grow: 1;
-        justify-content: flex-end;
-        margin-left: var(--#{$prefix}pagination-items-spacer);
+        .pagination {
+          order: 3;
+          flex-grow: 1;
+          justify-content: flex-end;
+          margin-left: var(--#{$prefix}pagination-items-spacer);
+        }
       }
     }
   }
 
   &.simple {
-    &.order-centered {
-      justify-content: center;
-    }
+    &.order {
+      &-centered {
+        justify-content: center;
+      }
 
-    &.order-right {
-      justify-content: flex-end;
+      &-right {
+        justify-content: flex-end;
+      }
     }
   }
 
-  &.rounded {
-    .pagination-ellipsis,
-    .page-link {
-      margin-right: var(--#{$prefix}pagination-items-spacer);
-    }
+  .rounded,
+  .rounded-pill {
+    margin-right: calc(var(--#{$prefix}pagination-items-spacer) / 2) !important;
+    margin-left: calc(var(--#{$prefix}pagination-items-spacer) / 2) !important;
   }
 }
