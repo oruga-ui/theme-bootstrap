@@ -503,6 +503,7 @@ function getMoreAsyncData() {
         <template #empty>No results found</template>
       </o-autocomplete>
     </o-field>
+
     <p><b>Selected:</b> {{ selectedBase }}</p>
   </section>
 
@@ -510,8 +511,8 @@ function getMoreAsyncData() {
     <h2>Objects array</h2>
 
     <o-field grouped>
-      <o-switch v-model="openOnFocus">Open dropdown on focus</o-switch>
-      <o-switch v-model="keepFirst">Keep-first</o-switch>
+      <o-switch v-model="openOnFocus" label="Open dropdown on focus" />
+      <o-switch v-model="keepFirst" label="Keep-first" />
     </o-field>
 
     <o-field label="Find a name">
@@ -524,6 +525,7 @@ function getMoreAsyncData() {
         field="user.first_name"
         @select="(option: any) => (selectedObjects = option)" />
     </o-field>
+
     <p><b>Selected:</b> {{ selectedObjects }}</p>
   </section>
 
@@ -538,8 +540,9 @@ function getMoreAsyncData() {
         open-on-focus
         :data="filteredDataGroups"
         field="user.first_name"
-        @select="(option:any) => (selectedGroups = option)" />
+        @select="(option: any) => (selectedGroups = option)" />
     </o-field>
+
     <p><b>Selected:</b> {{ selectedGroups }}</p>
   </section>
 
@@ -579,6 +582,7 @@ function getMoreAsyncData() {
         </template>
       </o-autocomplete>
     </o-field>
+
     <p><b>Selected:</b> {{ selectedInfinite }}</p>
   </section>
 </template>

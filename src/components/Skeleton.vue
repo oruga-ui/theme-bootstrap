@@ -14,7 +14,7 @@ const animated = ref(true);
     <h3>Base</h3>
 
     <o-field grouped group-multiline>
-      <o-switch v-model="animated">Animated</o-switch>
+      <o-switch v-model="animated" label="Animated" />
     </o-field>
 
     <o-field label="20%" grouped>

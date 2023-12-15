@@ -2,6 +2,7 @@
 import { ref } from "vue";
 
 const active = ref(true);
+const teleport = ref(false);
 </script>
 
 <template>
@@ -13,27 +14,63 @@ const active = ref(true);
   <section>
     <h3>Base</h3>
 
-    <o-tooltip label="Tooltip right" position="right">
-      <o-button label="Right" />
+    <o-tooltip label="Tooltip">
+      <o-button label="Hover me! " />
     </o-tooltip>
 
-    <o-tooltip label="Tooltip top" variant="dark">
-      <o-button label="Top (default)" />
-    </o-tooltip>
-
-    <o-tooltip label="Tooltip bottom" variant="dark" position="bottom">
-      <o-button label="Bottom" />
-    </o-tooltip>
-
-    <o-tooltip label="Tooltip left" variant="dark" position="left">
-      <o-button label="Left" />
-    </o-tooltip>
-
-    <o-tooltip label="delayed by 1000ms" variant="dark" :delay="1000">
+    <o-tooltip label="delayed by 1000ms" :delay="1000">
       <o-button variant="warning" label="Delayed" />
+    </o-tooltip>
+
+    <o-tooltip label="I'm on body" teleport>
+      <o-button variant="info" label="Append on body" />
     </o-tooltip>
   </section>
 
+  <section>
+    <h3>Position</h3>
+
+    <o-field>
+      <o-switch v-model="teleport" label="teleport" />
+    </o-field>
+
+    <o-tooltip label="Tooltip right" :teleport="teleport" position="right">
+      <o-button label="Right" />
+    </o-tooltip>
+
+    <o-tooltip label="Tooltip top" :teleport="teleport" position="top">
+      <o-button label="Top" />
+    </o-tooltip>
+
+    <o-tooltip label="Tooltip bottom" :teleport="teleport" position="bottom">
+      <o-button label="Bottom" />
+    </o-tooltip>
+
+    <o-tooltip label="Tooltip left" :teleport="teleport" position="left">
+      <o-button label="Left" />
+    </o-tooltip>
+
+    <hr />
+
+    <o-tooltip label="Tooltip right" :teleport="teleport" position="top-right">
+      <o-button label="Top Right" />
+    </o-tooltip>
+
+    <o-tooltip label="Tooltip top" :teleport="teleport" position="top-left">
+      <o-button label="Top Left" />
+    </o-tooltip>
+
+    <o-tooltip
+      label="Tooltip bottom"
+      :teleport="teleport"
+      position="bottom-right">
+      <o-button label="Bottom Right" />
+    </o-tooltip>
+
+    <o-tooltip label="Tooltip left" :teleport="teleport" position="bottom-left">
+      <o-button label="Bottom Left" />
+    </o-tooltip>
+  </section>
   <section>
     <h3>Variants</h3>
 
@@ -42,35 +79,35 @@ const active = ref(true);
     </o-tooltip>
 
     <o-tooltip label="Primary" variant="primary">
-      <o-button label="Primary" />
+      <o-button label="Primary" variant="primary" />
     </o-tooltip>
 
     <o-tooltip label="Secondary" variant="secondary">
-      <o-button label="Secondary" />
+      <o-button label="Secondary" variant="secondary" />
     </o-tooltip>
 
     <o-tooltip label="Success" variant="success">
-      <o-button label="Success" />
+      <o-button label="Success" variant="success" />
     </o-tooltip>
 
     <o-tooltip label="Danger" variant="danger">
-      <o-button label="Danger" />
+      <o-button label="Danger" variant="danger" />
     </o-tooltip>
 
     <o-tooltip label="Warning" variant="warning">
-      <o-button label="Warning" />
+      <o-button label="Warning" variant="warning" />
     </o-tooltip>
 
     <o-tooltip label="Info" variant="info">
-      <o-button label="Info" />
+      <o-button label="Info" variant="info" />
     </o-tooltip>
 
     <o-tooltip label="Dark" variant="dark">
-      <o-button label="Dark" />
+      <o-button label="Dark" variant="dark" />
     </o-tooltip>
 
     <o-tooltip label="Light" variant="light">
-      <o-button label="Light" />
+      <o-button label="Light" variant="light" />
     </o-tooltip>
   </section>
 
@@ -129,7 +166,7 @@ const active = ref(true);
     <h3>Toggle</h3>
 
     <o-field>
-      <o-switch v-model="active"> Toggle Always </o-switch>
+      <o-switch v-model="active" label="Toggle Always" />
     </o-field>
 
     <o-tooltip

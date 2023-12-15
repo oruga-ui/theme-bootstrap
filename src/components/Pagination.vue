@@ -6,7 +6,7 @@ const current = ref(10);
 const perPage = ref(10);
 const rangeBefore = ref(3);
 const rangeAfter = ref(1);
-const order = ref("");
+const order = ref("right");
 const size = ref("");
 const isSimple = ref(false);
 const isRounded = ref(false);
@@ -25,26 +25,25 @@ const nextIcon = ref("chevron-right");
 
     <o-field grouped group-multiline>
       <o-field label="Total">
-        <o-input v-model="total" type="number"></o-input>
+        <o-input v-model="total" type="number" />
       </o-field>
       <o-field label="Items per page">
-        <o-input v-model="perPage" type="number"></o-input>
+        <o-input v-model="perPage" type="number" />
       </o-field>
     </o-field>
 
     <o-field grouped group-multiline>
       <o-field label="Show buttons before current">
-        <o-input v-model="rangeBefore" type="number" min="0"></o-input>
+        <o-input v-model="rangeBefore" type="number" min="0" />
       </o-field>
       <o-field label="Show buttons after current">
-        <o-input v-model="rangeAfter" type="number" min="0"></o-input>
+        <o-input v-model="rangeAfter" type="number" min="0" />
       </o-field>
     </o-field>
 
     <o-field grouped group-multiline>
       <o-field label="Order">
         <o-select v-model="order">
-          <option value="">default</option>
           <option value="left">left</option>
           <option value="centered">centered</option>
           <option value="right">right</option>
@@ -77,6 +76,7 @@ const nextIcon = ref("chevron-right");
     </o-field>
 
     <hr />
+
     <o-pagination
       v-model:current="current"
       :total="total"
@@ -92,7 +92,6 @@ const nextIcon = ref("chevron-right");
       aria-next-label="Next page"
       aria-previous-label="Previous page"
       aria-page-label="Page"
-      aria-current-label="Current page">
-    </o-pagination>
+      aria-current-label="Current page" />
   </section>
 </template>

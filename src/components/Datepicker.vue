@@ -132,7 +132,7 @@ const datepicker = ref<any>(null);
         </o-select>
       </o-field>
       <o-field>
-        <o-switch v-model="showWeekNumber">Show week number</o-switch>
+        <o-switch v-model="showWeekNumber" label="Show week number" />
       </o-field>
     </o-field>
 
@@ -145,9 +145,9 @@ const datepicker = ref<any>(null);
         icon="calendar"
         :events="events"
         :indicators="indicators"
-        trap-focus>
-      </o-datepicker>
+        trap-focus />
     </o-field>
+
     <p><b>Selected:</b> {{ selected }}</p>
   </section>
 
@@ -174,9 +174,9 @@ const datepicker = ref<any>(null);
         placeholder="Click to select..."
         icon="calendar"
         trap-focus
-        range>
-      </o-datepicker>
+        range />
     </o-field>
+
     <p><b>Selected:</b> {{ range }}</p>
   </section>
 
@@ -189,6 +189,7 @@ const datepicker = ref<any>(null);
         multiple
         placeholder="Click to select..." />
     </o-field>
+
     <p><b>Selected:</b> {{ multiple }}</p>
   </section>
 
@@ -237,18 +238,18 @@ const datepicker = ref<any>(null);
               field="name"
               expanded
               @select="selectMonth" />
-            <o-button disabled>{{ date?.getFullYear() }}</o-button>
+            <o-button disabled :label="date?.getFullYear().toString()" />
           </o-field>
         </template>
         <template #footer>
           <div class="d-flex justify-content-end mt-2">
             <o-button variant="primary" @click="date = new Date()">
-              <o-icon icon="calendar"></o-icon>
+              <o-icon icon="calendar" />
               <span>Today</span>
             </o-button>
 
             <o-button variant="danger" @click="date = null">
-              <o-icon icon="times"></o-icon>
+              <o-icon icon="times" />
               <span>Clear</span>
             </o-button>
           </div>
@@ -261,7 +262,7 @@ const datepicker = ref<any>(null);
     <h3>Events</h3>
 
     <o-field>
-      <o-switch v-model="bars">Bars</o-switch>
+      <o-switch v-model="bars" label="Bars" />
     </o-field>
 
     <o-datepicker
@@ -278,8 +279,7 @@ const datepicker = ref<any>(null);
       <o-datepicker
         placeholder="Click to select..."
         icon="calendar"
-        type="month">
-      </o-datepicker>
+        type="month" />
     </o-field>
   </section>
 </template>

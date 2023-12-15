@@ -2,12 +2,9 @@
 
 /* @docs */
 $datepicker-background-color: var(--#{$prefix}body-bg) !default;
-
 $datepicker-pagination-spacer: calc($spacer * 0.5) !default;
-
 $datepicker-section-spacer: calc($spacer * 0.75) !default;
 $datepicker-section-border: 1px solid var(--#{$prefix}border-color) !default;
-
 $datepicker-cell-padding: 0.5rem 0.75rem !default;
 $datepicker-cell-width: calc(#{100%} / 7) !default;
 $datepicker-cell-border-radius: var(--#{$prefix}border-radius) !default;
@@ -15,11 +12,9 @@ $datepicker-cell-font-weight: 400 !default;
 $datepicker-cell-color: var(--#{$prefix}black) !default;
 $datepicker-cell-hovered-color: var(--#{$prefix}secondary) !default;
 $datepicker-cell-selected-color: var(--#{$prefix}primary) !default;
-
 $datepicker-month-width: 20rem !default;
 $datepicker-month-cell-spacer: calc($spacer * 0.5) !default;
 $datepicker-month-cell-height: 2.5rem !default;
-
 $datepicker-dropdown-width: calc(100vw - 40px) !default;
 $datepicker-dropdown-max-width: 460px !default;
 /* @docs */
@@ -27,16 +22,6 @@ $datepicker-dropdown-max-width: 460px !default;
 .datepicker {
   --#{$prefix}datepicker-section-spacer: #{$datepicker-section-spacer};
   --#{$prefix}datepicker-section-border: #{$datepicker-section-border};
-
-  .dropdown-menu {
-    --#{$prefix}dropdown-bg: #{$datepicker-background-color};
-
-    // override dropdown-item effects
-    .dropdown-item:hover,
-    .dropdown-item:active {
-      --#{$prefix}dropdown-link-hover-bg: transparent;
-    }
-  }
 
   .datepicker-header {
     padding-bottom: var(--#{$prefix}datepicker-section-spacer);
@@ -206,7 +191,7 @@ $datepicker-dropdown-max-width: 460px !default;
             // Currently datepicker only uses primary coloring
             // Ensure indicator is visible when selected
 
-            &.is-primary {
+            &.variant-primary {
               background-color: color.adjust($primary, $lightness: 15%);
             }
           }

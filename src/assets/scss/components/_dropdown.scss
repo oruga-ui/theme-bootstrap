@@ -1,5 +1,6 @@
 /* @docs */
-$dropdown-menu-zindex: $zindex-modal !default;
+$dropdown-modal-menu-zindex: $zindex-modal !default;
+$dropdown-modal-backdrop-zindex: $zindex-modal-backdrop !default;
 /* @docs */
 
 /* @bootstrap docs */
@@ -43,10 +44,6 @@ $dropdown-menu-zindex: $zindex-modal !default;
     display: inline-block;
   }
 
-  &:not(.dropdown-modal) .dropdown-menu {
-    top: 100%;
-  }
-
   &.expanded,
   &.expanded .dropdown-trigger {
     width: 100%;
@@ -57,18 +54,114 @@ $dropdown-menu-zindex: $zindex-modal !default;
     cursor: not-allowed;
   }
 
-  &.inline .dropdown-menu {
-    --#{$prefix}dropdown-zindex: 10;
-    position: relative;
-    top: 0;
+  .dropdown-menu {
+    // disable dropdown-item effects when not clickable
+    .dropdown-item:not(.clickable) {
+      &:hover,
+      &:active {
+        --#{$prefix}dropdown-link-active-bg: transparent;
+        --#{$prefix}dropdown-link-hover-bg: transparent;
+      }
+    }
+
+    // position classes
+    &.position {
+      &-top {
+        top: auto;
+        right: auto;
+        bottom: calc(100% + var(--#{$prefix}dropdown-spacer));
+        left: 50%;
+        transform: translateX(-50%);
+      }
+
+      &-left {
+        top: 50%;
+        right: calc(100% + var(--#{$prefix}dropdown-spacer));
+        bottom: auto;
+        left: auto;
+        transform: translateY(-50%);
+      }
+
+      &-bottom {
+        top: calc(100% + var(--#{$prefix}dropdown-spacer));
+        left: 50%;
+        bottom: auto;
+        right: auto;
+        transform: translateX(-50%);
+      }
+
+      &-right {
+        top: 50%;
+        right: auto;
+        bottom: auto;
+        left: calc(100% + var(--#{$prefix}dropdown-spacer));
+        transform: translateY(-50%);
+      }
+
+      &-top-right {
+        top: auto;
+        right: 0;
+        bottom: calc(100% + var(--#{$prefix}dropdown-spacer));
+        left: auto;
+      }
+
+      &-top-left {
+        top: auto;
+        right: auto;
+        bottom: calc(100% + var(--#{$prefix}dropdown-spacer));
+        left: 0;
+      }
+
+      &-bottom-right {
+        top: calc(100% + var(--#{$prefix}dropdown-spacer));
+        right: 0;
+        bottom: auto;
+        left: auto;
+      }
+
+      &-bottom-left {
+        top: calc(100% + var(--#{$prefix}dropdown-spacer));
+        right: auto;
+        bottom: auto;
+        left: 0;
+      }
+    }
   }
 
+  &.teleported {
+    .dropdown-menu {
+      // position
+      &.position {
+        &-top,
+        &-top-left,
+        &-top-right {
+          margin-top: calc(-2 * var(--#{$prefix}dropdown-spacer));
+        }
+
+        &-bottom,
+        &-bottom-left,
+        &-bottom-right {
+          margin-top: var(--#{$prefix}dropdown-spacer);
+        }
+
+        &-right {
+          margin-left: var(--#{$prefix}dropdown-spacer);
+        }
+
+        &-left {
+          margin-left: calc(-2 * var(--#{$prefix}dropdown-spacer));
+        }
+      }
+    }
+  }
+
+  // mobile class
   &.dropdown-modal {
     .dropdown-menu {
       --#{$prefix}dropdown-width: 75%;
       --#{$prefix}dropdown-min-width: 50%;
       --#{$prefix}dropdown-max-width: 90%;
-      --#{$prefix}dropdown-zindex: #{$dropdown-menu-zindex};
+      --#{$prefix}dropdown-zindex: #{$dropdown-modal-menu-zindex};
 
       position: fixed;
       top: 25%;
@@ -82,7 +175,7 @@ $dropdown-menu-zindex: $zindex-modal !default;
 
     .dropdown-backdrop {
       --#{$prefix}backdrop-bg: #{$modal-backdrop-bg};
-      --#{$prefix}backdrop-zindex: #{$zindex-modal-backdrop};
+      --#{$prefix}backdrop-zindex: #{$dropdown-modal-backdrop-zindex};
       --#{$prefix}backdrop-opacity: #{$modal-backdrop-opacity};
 
       position: fixed;
@@ -96,25 +189,9 @@ $dropdown-menu-zindex: $zindex-modal !default;
     }
   }
 
-  &.is-top-right:not(.dropdown-modal) {
-    .dropdown-menu {
-      top: auto;
-      bottom: 100%;
-      right: 0;
-    }
-  }
-
-  &.is-top-left:not(.dropdown-modal) {
-    .dropdown-menu {
-      top: auto;
-      bottom: 100%;
-    }
-  }
-
-  &.is-bottom-right:not(.dropdown-modal) {
-    .dropdown-menu {
-      top: 100%;
-      right: 0;
-    }
+  &.inline .dropdown-menu {
+    --#{$prefix}dropdown-zindex: 10;
+    position: relative;
+    top: 0;
   }
 }

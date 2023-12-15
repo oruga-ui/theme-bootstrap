@@ -32,17 +32,12 @@ $sidebar-reduced-height: 10vh !default;
 }
 
 .sidebar {
-  .offcanvas-backdrop {
-    @extend .show;
-  }
-
   .offcanvas {
-    @extend .show;
-
     .btn-close {
       position: absolute;
       right: 0.5rem;
       top: 0.5rem;
+      cursor: pointer;
     }
 
     // Color variants
@@ -62,7 +57,9 @@ $sidebar-reduced-height: 10vh !default;
     }
 
     &.reduced {
-      transition: width $speed-slow $easing, height $speed-slow $easing;
+      transition:
+        width $speed-slow $easing,
+        height $speed-slow $easing;
 
       @include size($sidebar-reduced-height, $sidebar-reduced-width);
 
@@ -82,6 +79,32 @@ $sidebar-reduced-height: 10vh !default;
           }
         }
       }
+    }
+  }
+
+  &.inline,
+  &.show {
+    .offcanvas,
+    .offcanvas-backdrop {
+      @extend .show;
+
+      @extend .show;
+    }
+  }
+
+  &.inline {
+    position: relative;
+
+    .offcanvas {
+      --#{$prefix}offcanvas-zindex: 0;
+
+      position: relative;
+    }
+
+    .offcanvas-backdrop {
+      position: absolute;
+      height: auto;
+      margin: auto;
     }
   }
 }

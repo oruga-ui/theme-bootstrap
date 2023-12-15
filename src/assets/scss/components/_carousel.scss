@@ -81,7 +81,7 @@ $carousel-indicator-spacer: $spacer !default;
       display: flex;
       overflow: visible;
 
-      &:not(.is-dragging) {
+      &:not(.dragging) {
         transition: all $speed-slower ease-out 0s;
       }
 
@@ -177,13 +177,13 @@ $carousel-indicator-spacer: $spacer !default;
     &.inside {
       position: absolute;
 
-      &.is-bottom {
+      &.position-bottom {
         bottom: 0;
         top: unset;
         margin-bottom: var(--#{$prefix}carousel-indicator-spacer);
       }
 
-      &.is-top {
+      &.position-top {
         top: 0;
         bottom: unset;
         margin-top: var(--#{$prefix}carousel-indicator-spacer);

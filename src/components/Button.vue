@@ -33,14 +33,14 @@
     <h3>Outlined</h3>
 
     <div class="buttons">
-      <o-button variant="primary" outlined>Outlined</o-button>
-      <o-button variant="secondary" outlined>Outlined</o-button>
-      <o-button variant="success" outlined>Outlined</o-button>
-      <o-button variant="danger" outlined>Outlined</o-button>
-      <o-button variant="warning" outlined>Outlined</o-button>
-      <o-button variant="info" outlined>Outlined</o-button>
-      <o-button variant="dark" outlined>Outlined</o-button>
-      <o-button variant="light" outlined>Outlined</o-button>
+      <o-button variant="primary" outlined label="Outlined" />
+      <o-button variant="secondary" outlined label="Outlined" />
+      <o-button variant="success" outlined label="Outlined" />
+      <o-button variant="danger" outlined label="Outlined" />
+      <o-button variant="warning" outlined label="Outlined" />
+      <o-button variant="info" outlined label="Outlined" />
+      <o-button variant="dark" outlined label="Outlined" />
+      <o-button variant="light" outlined label="Outlined" />
     </div>
   </section>
 
@@ -48,14 +48,14 @@
     <h3>Inverted</h3>
 
     <div class="buttons">
-      <o-button variant="primary" inverted>Inverted</o-button>
-      <o-button variant="secondary" inverted>Inverted</o-button>
-      <o-button variant="success" inverted>Inverted</o-button>
-      <o-button variant="danger" inverted>Inverted</o-button>
-      <o-button variant="warning" inverted>Inverted</o-button>
-      <o-button variant="info" inverted>Inverted</o-button>
-      <o-button variant="dark" inverted>Inverted</o-button>
-      <o-button variant="light" outlined>Inverted</o-button>
+      <o-button variant="primary" inverted label="Inverted" />
+      <o-button variant="secondary" inverted label="Inverted" />
+      <o-button variant="success" inverted label="Inverted" />
+      <o-button variant="danger" inverted label="Inverted" />
+      <o-button variant="warning" inverted label="Inverted" />
+      <o-button variant="info" inverted label="Inverted" />
+      <o-button variant="dark" inverted label="Inverted" />
+      <o-button variant="light" outlined label="Inverted" />
     </div>
   </section>
 
@@ -63,14 +63,14 @@
     <h3>Variant Subtle</h3>
 
     <div class="buttons">
-      <o-button variant="primary-subtle">Subtle</o-button>
-      <o-button variant="secondary-subtle">Subtle</o-button>
-      <o-button variant="success-subtle">Subtle</o-button>
-      <o-button variant="danger-subtle">Subtle</o-button>
-      <o-button variant="warning-subtle">Subtle</o-button>
-      <o-button variant="info-subtle">Subtle</o-button>
-      <o-button variant="dark-subtle">Subtle</o-button>
-      <o-button variant="light-subtle">Subtle</o-button>
+      <o-button variant="primary-subtle" label="Subtle" />
+      <o-button variant="secondary-subtle" label="Subtle" />
+      <o-button variant="success-subtle" label="Subtle" />
+      <o-button variant="danger-subtle" label="Subtle" />
+      <o-button variant="warning-subtle" label="Subtle" />
+      <o-button variant="info-subtle" label="Subtle" />
+      <o-button variant="dark-subtle" label="Subtle" />
+      <o-button variant="light-subtle" label="Subtle" />
     </div>
   </section>
 
@@ -78,15 +78,15 @@
     <h3>Icons</h3>
 
     <div class="buttons">
-      <o-button variant="primary" size="small" icon-left="plus">Add</o-button>
-      <o-button variant="primary" icon-left="plus">Add</o-button>
-      <o-button variant="primary" size="medium" icon-left="plus">Add</o-button>
-      <o-button variant="primary" size="large" icon-left="plus">Add</o-button>
+      <o-button variant="primary" size="small" icon-left="plus" label="Add" />
+      <o-button variant="primary" icon-left="plus" label="Add" />
+      <o-button variant="primary" size="medium" icon-left="plus" label="Add" />
+      <o-button variant="primary" size="large" icon-left="plus" label="Add" />
     </div>
 
     <div class="buttons">
-      <o-button variant="danger" icon-left="trash">Delete</o-button>
-      <o-button variant="danger" icon-right="trash">Delete</o-button>
+      <o-button variant="danger" icon-left="trash" label="Delete" />
+      <o-button variant="danger" icon-right="trash" label="Delete" />
       <o-button variant="danger" icon-right="trash" />
     </div>
   </section>

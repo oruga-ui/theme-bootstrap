@@ -33,9 +33,10 @@ const collapses = ref([
 
     <o-collapse :open="false" aria-id="contentIdForA11y1">
       <template #trigger>
-        <o-button variant="primary" aria-controls="contentIdForA11y1">
-          Click me!
-        </o-button>
+        <o-button
+          variant="primary"
+          aria-controls="contentIdForA11y1"
+          label="Click me!" />"
       </template>
       <div class="card card-body">
         <h3>Subtitle</h3>

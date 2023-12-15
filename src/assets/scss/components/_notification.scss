@@ -112,31 +112,35 @@ $notification-icon-margin-right: 0.5rem !default;
     pointer-events: auto;
     max-width: var(--#{$prefix}notification-notices-max-width);
 
-    &.is-top,
-    &.is-bottom {
-      align-self: center;
-    }
+    &.position {
+      &-top,
+      &-bottom {
+        align-self: center;
+      }
 
-    &.is-top-right,
-    &.is-bottom-right {
-      align-self: flex-end;
-    }
+      &-top-right,
+      &-bottom-right {
+        align-self: flex-end;
+      }
 
-    &.is-top-left,
-    &.is-bottom-left {
-      align-self: flex-start;
+      &-top-left,
+      &-bottom-left {
+        align-self: flex-start;
+      }
     }
   }
 
-  &.is-top {
-    flex-direction: column;
-  }
+  &.position {
+    &-top {
+      flex-direction: column;
+    }
 
-  &.is-bottom {
-    flex-direction: column-reverse;
+    &-bottom {
+      flex-direction: column-reverse;
 
-    > .div:first-child {
-      margin-bottom: 0;
+      > .div:first-child {
+        margin-bottom: 0;
+      }
     }
   }
 }

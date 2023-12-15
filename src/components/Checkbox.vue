@@ -26,10 +26,10 @@ const checkboxGroup = ref(["Flint"]);
       </o-checkbox>
     </o-field>
     <o-field>
-      <o-checkbox :indeterminate="true"> Indeterminate </o-checkbox>
+      <o-checkbox :indeterminate="true" label="Indeterminate" />
     </o-field>
     <o-field>
-      <o-checkbox disabled>Disabled</o-checkbox>
+      <o-checkbox disabled label="Disabled" />
     </o-field>
   </section>
 
@@ -37,25 +37,25 @@ const checkboxGroup = ref(["Flint"]);
     <h3>Variant</h3>
 
     <o-field>
-      <o-checkbox :value="true"> Default </o-checkbox>
+      <o-checkbox :value="true" label="Default" />
     </o-field>
     <o-field>
-      <o-checkbox :value="true" variant="primary"> Primary </o-checkbox>
+      <o-checkbox :value="true" variant="primary" label="Primary" />
     </o-field>
     <o-field>
-      <o-checkbox :value="true" variant="secondary"> Secondary </o-checkbox>
+      <o-checkbox :value="true" variant="secondary" label="Secondary" />
     </o-field>
     <o-field>
-      <o-checkbox :value="true" variant="info"> Info </o-checkbox>
+      <o-checkbox :value="true" variant="info" label="Info" />
     </o-field>
     <o-field>
-      <o-checkbox :value="true" variant="success"> Success </o-checkbox>
+      <o-checkbox :value="true" variant="success" label="Success" />
     </o-field>
     <o-field>
-      <o-checkbox :value="true" variant="warning"> Warning </o-checkbox>
+      <o-checkbox :value="true" variant="warning" label="Warning" />
     </o-field>
     <o-field>
-      <o-checkbox :value="true" variant="danger"> Danger </o-checkbox>
+      <o-checkbox :value="true" variant="danger" label="Danger" />
     </o-field>
   </section>
 
@@ -63,35 +63,37 @@ const checkboxGroup = ref(["Flint"]);
     <h3>Indeterminate</h3>
 
     <o-field>
-      <o-checkbox indeterminate> Default Indeterminate </o-checkbox>
+      <o-checkbox indeterminate label="Default Indeterminate" />
     </o-field>
     <o-field>
-      <o-checkbox variant="primary" indeterminate>
-        Primary Indeterminate
-      </o-checkbox>
+      <o-checkbox
+        variant="primary"
+        indeterminate
+        label="Primary Indeterminate" />
     </o-field>
     <o-field>
-      <o-checkbox variant="secondary" indeterminate>
-        Secondary Indeterminate
-      </o-checkbox>
+      <o-checkbox
+        variant="secondary"
+        indeterminate
+        label="Secondary Indeterminate" />
     </o-field>
     <o-field>
-      <o-checkbox variant="info" indeterminate> Info Indeterminate </o-checkbox>
+      <o-checkbox variant="info" indeterminate label="Info Indeterminate" />
     </o-field>
     <o-field>
-      <o-checkbox variant="success" indeterminate>
-        Success Indeterminate
-      </o-checkbox>
+      <o-checkbox
+        variant="success"
+        indeterminate
+        label="Success Indeterminate" />
     </o-field>
     <o-field>
-      <o-checkbox variant="warning" indeterminate>
-        Warning Indeterminate
-      </o-checkbox>
+      <o-checkbox
+        variant="warning"
+        indeterminate
+        label="Warning Indeterminate" />
     </o-field>
     <o-field>
-      <o-checkbox variant="danger" indeterminate>
-        Danger Indeterminate
-      </o-checkbox>
+      <o-checkbox variant="danger" indeterminate label="Danger Indeterminate" />
     </o-field>
   </section>
 
@@ -99,33 +101,28 @@ const checkboxGroup = ref(["Flint"]);
     <h3>Variant Inverted</h3>
 
     <o-field>
-      <o-checkbox indeterminate> Default </o-checkbox>
+      <o-checkbox indeterminate label="Default" />
     </o-field>
     <o-field>
-      <o-checkbox variant="primary-inverted" indeterminate>
-        Primary
-      </o-checkbox>
+      <o-checkbox variant="primary-inverted" indeterminate label="Primary" />
     </o-field>
     <o-field>
-      <o-checkbox variant="secondary-inverted" indeterminate>
-        Secondary
-      </o-checkbox>
+      <o-checkbox
+        variant="secondary-inverted"
+        indeterminate
+        label="Secondary" />
     </o-field>
     <o-field>
-      <o-checkbox variant="info-inverted" indeterminate> Info </o-checkbox>
+      <o-checkbox variant="info-inverted" indeterminate label="Info" />
     </o-field>
     <o-field>
-      <o-checkbox variant="success-inverted" indeterminate>
-        Success
-      </o-checkbox>
+      <o-checkbox variant="success-inverted" indeterminate label="Success" />
     </o-field>
     <o-field>
-      <o-checkbox variant="warning-inverted" indeterminate>
-        Warning
-      </o-checkbox>
+      <o-checkbox variant="warning-inverted" indeterminate label="Warning" />
     </o-field>
     <o-field>
-      <o-checkbox variant="danger-inverted" indeterminate> Danger </o-checkbox>
+      <o-checkbox variant="danger-inverted" indeterminate label="Danger" />
     </o-field>
   </section>
 
@@ -133,44 +130,40 @@ const checkboxGroup = ref(["Flint"]);
     <h3>Variant Subtle</h3>
 
     <o-field>
-      <o-checkbox indeterminate> Default </o-checkbox>
+      <o-checkbox indeterminate label="Default" />
     </o-field>
     <o-field>
-      <o-checkbox variant="primary-subtle" indeterminate> Primary </o-checkbox>
+      <o-checkbox variant="primary-subtle" indeterminate label="Primary" />
     </o-field>
     <o-field>
-      <o-checkbox variant="secondary-subtle" indeterminate>
-        Secondary
-      </o-checkbox>
+      <o-checkbox variant="secondary-subtle" indeterminate label="Secondary" />
     </o-field>
     <o-field>
-      <o-checkbox variant="info-subtle" indeterminate> Info </o-checkbox>
+      <o-checkbox variant="info-subtle" indeterminate label="Info" />
     </o-field>
     <o-field>
-      <o-checkbox variant="success-subtle" indeterminate> Success </o-checkbox>
+      <o-checkbox variant="success-subtle" indeterminate label="Success" />
     </o-field>
     <o-field>
-      <o-checkbox variant="warning-subtle" indeterminate> Warning </o-checkbox>
+      <o-checkbox variant="warning-subtle" indeterminate label="Warning" />
     </o-field>
     <o-field>
-      <o-checkbox variant="danger-subtle" indeterminate> Danger </o-checkbox>
+      <o-checkbox variant="danger-subtle" indeterminate label="Danger" />
     </o-field>
   </section>
 
   <section>
     <h3>Size</h3>
 
+    <o-field> <o-checkbox size="small" label="Small" /> </o-field>
     <o-field>
-      <o-checkbox size="small"> Small </o-checkbox>
+      <o-checkbox label="Default" />
     </o-field>
     <o-field>
-      <o-checkbox> Default </o-checkbox>
+      <o-checkbox size="medium" label="Medium" />
     </o-field>
     <o-field>
-      <o-checkbox size="medium"> Medium </o-checkbox>
-    </o-field>
-    <o-field>
-      <o-checkbox size="large"> Large </o-checkbox>
+      <o-checkbox size="large" label="Large" />
     </o-field>
   </section>
 
@@ -178,19 +171,19 @@ const checkboxGroup = ref(["Flint"]);
     <h3>Array</h3>
 
     <o-field>
-      <o-checkbox v-model="checkboxGroup" native-value="Silver">
-        Silver
-      </o-checkbox>
-      <o-checkbox v-model="checkboxGroup" native-value="Flint">
-        Flint
-      </o-checkbox>
-      <o-checkbox v-model="checkboxGroup" native-value="Vane">
-        Vane
-      </o-checkbox>
-      <o-checkbox v-model="checkboxGroup" native-value="Billy" disabled>
-        Billy
-      </o-checkbox>
+      <o-checkbox
+        v-model="checkboxGroup"
+        native-value="Silver"
+        label="Silver" />
+      <o-checkbox v-model="checkboxGroup" native-value="Flint" label="Flint " />
+      <o-checkbox v-model="checkboxGroup" native-value="Vane" label="Vane" />
+      <o-checkbox
+        v-model="checkboxGroup"
+        native-value="Billy"
+        disabled
+        label="Billy" />
     </o-field>
+
     <p><b>Selection:</b> {{ checkboxGroup }}</p>
   </section>
 </template>

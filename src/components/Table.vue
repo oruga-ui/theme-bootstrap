@@ -145,14 +145,14 @@ const selected = ref(null);
     <h3>Sandbox</h3>
 
     <o-field grouped group-multiline>
-      <o-switch v-model="isBordered" :rounded="true">Bordered</o-switch>
-      <o-switch v-model="isStriped" :rounded="true">Striped</o-switch>
-      <o-switch v-model="isNarrowed" :rounded="true">Narrowed</o-switch>
-      <o-switch v-model="isHoverable" :rounded="true">Hoverable</o-switch>
-      <o-switch v-model="isCheckbale" :rounded="true">Checkable</o-switch>
-      <o-switch v-model="isFocusable" :rounded="true">Focusable</o-switch>
-      <o-switch v-model="isLoading" :rounded="true">Loading state</o-switch>
-      <o-switch v-model="isEmpty" :rounded="true">Empty</o-switch>
+      <o-switch v-model="isBordered" :rounded="true" label="Bordered" />
+      <o-switch v-model="isStriped" :rounded="true" label="Striped" />
+      <o-switch v-model="isNarrowed" :rounded="true" label="Narrowed" />
+      <o-switch v-model="isHoverable" :rounded="true" label="Hoverable" />
+      <o-switch v-model="isCheckbale" :rounded="true" label="Checkable" />
+      <o-switch v-model="isFocusable" :rounded="true" label="Focusable" />
+      <o-switch v-model="isLoading" :rounded="true" label="Loading state" />
+      <o-switch v-model="isEmpty" :rounded="true" label="Empty" />
       <o-switch v-model="hasMobileCards" :rounded="true">
         Mobile cards <small>(collapsed rows)</small>
       </o-switch>
@@ -176,17 +176,13 @@ const selected = ref(null);
         :key="idx"
         v-slot="{ row }"
         v-bind="column">
-        <span>
-          <component
-            :is="column.component(row[column.field]).is"
-            v-if="column.component"
-            v-bind="column.component(row[column.field])" />
-          {{
-            column.display
-              ? column.display(row[column.field])
-              : row[column.field]
-          }}
-        </span>
+        <component
+          :is="column.component(row[column.field]).is"
+          v-if="column.component"
+          v-bind="column.component(row[column.field])" />
+        {{
+          column.display ? column.display(row[column.field]) : row[column.field]
+        }}
       </o-table-column>
 
       <template #detail="props">
@@ -209,12 +205,13 @@ const selected = ref(null);
 
     <o-field grouped group-multiline>
       <o-field>
-        <o-switch v-model="isPaginated" :rounded="true"> Paginated </o-switch>
+        <o-switch v-model="isPaginated" :rounded="true" label="Paginated " />
       </o-field>
       <o-field>
-        <o-switch v-model="isPaginationSimple" :rounded="true">
-          Simple Paginated
-        </o-switch>
+        <o-switch
+          v-model="isPaginationSimple"
+          :rounded="true"
+          label="Simple Paginated" />
       </o-field>
       <o-field>
         <o-select v-model="defaultSortDirection">
@@ -271,17 +268,13 @@ const selected = ref(null);
         :key="idx"
         v-slot="{ row }"
         v-bind="column">
-        <span>
-          <component
-            :is="column.component(row[column.field]).is"
-            v-if="column.component"
-            v-bind="column.component(row[column.field])" />
-          {{
-            column.display
-              ? column.display(row[column.field])
-              : row[column.field]
-          }}
-        </span>
+        <component
+          :is="column.component(row[column.field]).is"
+          v-if="column.component"
+          v-bind="column.component(row[column.field])" />
+        {{
+          column.display ? column.display(row[column.field]) : row[column.field]
+        }}
       </o-table-column>
     </o-table>
   </section>
@@ -305,17 +298,13 @@ const selected = ref(null);
         :key="idx"
         v-slot="{ row }"
         v-bind="column">
-        <span>
-          <component
-            :is="column.component(row[column.field]).is"
-            v-if="column.component"
-            v-bind="column.component(row[column.field])" />
-          {{
-            column.display
-              ? column.display(row[column.field])
-              : row[column.field]
-          }}
-        </span>
+        <component
+          :is="column.component(row[column.field]).is"
+          v-if="column.component"
+          v-bind="column.component(row[column.field])" />
+        {{
+          column.display ? column.display(row[column.field]) : row[column.field]
+        }}
       </o-table-column>
     </o-table>
   </section>
