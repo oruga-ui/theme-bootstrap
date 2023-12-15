@@ -1,5 +1,6 @@
 /* @docs */
-$dropdown-menu-zindex: $zindex-modal !default;
+$dropdown-modal-menu-zindex: $zindex-modal !default;
+$dropdown-modal-backdrop-zindex: $zindex-modal-backdrop !default;
 /* @docs */
 
 /* @bootstrap docs */
@@ -156,12 +157,12 @@ $dropdown-menu-zindex: $zindex-modal !default;
 
   // mobile class
   &.dropdown-modal {
-    --#{$prefix}dropdown-width: 75%;
-    --#{$prefix}dropdown-min-width: 50%;
-    --#{$prefix}dropdown-max-width: 90%;
-    --#{$prefix}dropdown-zindex: #{$dropdown-menu-zindex};
-
     .dropdown-menu {
+      --#{$prefix}dropdown-width: 75%;
+      --#{$prefix}dropdown-min-width: 50%;
+      --#{$prefix}dropdown-max-width: 90%;
+      --#{$prefix}dropdown-zindex: #{$dropdown-modal-menu-zindex};
+
       position: fixed;
       top: 25%;
       left: 50%;
@@ -174,7 +175,7 @@ $dropdown-menu-zindex: $zindex-modal !default;
 
     .dropdown-backdrop {
       --#{$prefix}backdrop-bg: #{$modal-backdrop-bg};
-      --#{$prefix}backdrop-zindex: #{$zindex-modal-backdrop};
+      --#{$prefix}backdrop-zindex: #{$dropdown-modal-backdrop-zindex};
       --#{$prefix}backdrop-opacity: #{$modal-backdrop-opacity};
 
       position: fixed;
