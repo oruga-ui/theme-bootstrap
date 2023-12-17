@@ -1,4 +1,6 @@
 import type { OrugaOptions, ComponentContext } from "@oruga-ui/oruga-next";
+
+// import theme style
 import "../assets/scss/bootstrap-build.scss";
 
 export const bootstrapConfig: OrugaOptions = {
