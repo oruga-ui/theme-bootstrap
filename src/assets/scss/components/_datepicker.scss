@@ -227,15 +227,24 @@ $datepicker-dropdown-max-width: 460px !default;
 
   // on mobile modal
   &.mobile {
-    .dropdown.dropdown-modal .dropdown-menu {
+    .dropdown-modal > .dropdown-menu {
       --#{$prefix}dropdown-width: #{$datepicker-dropdown-width};
       --#{$prefix}dropdown-max-width: #{$datepicker-dropdown-max-width};
     }
 
-    .pagination .pagination-list {
+    .pagination > .pagination-list {
       flex-grow: 1;
       flex-shrink: 1;
       justify-content: center;
+    }
+  }
+
+  // datetimepicker overrides
+  .timepicker {
+    .dropdown-menu {
+      --#{$prefix}dropdown-border-color: transparent;
+
+      display: contents;
     }
   }
 }
