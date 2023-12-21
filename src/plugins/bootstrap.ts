@@ -490,12 +490,12 @@ export const bootstrapConfig: OrugaOptions = {
   },
   taginput: {
     override: true,
-    rootClass: (_: string, { props }: any) => {
+    rootClass: (_: string, { props }: ComponentContext) => {
       const classes = ["taginput-wrapper"];
       if (props.disabled) classes.push("disabled");
       return classes.join(" ");
     },
-    containerClass: (_: string, { props }: any) => {
+    containerClass: (_: string, { props }: ComponentContext) => {
       const classes = ["taginput", "focus-ring"];
       if (props.variant) classes.push(`focus-ring-${props.variant}`);
       return classes.join(" ");
