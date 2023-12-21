@@ -2,14 +2,14 @@ import cjs from "@rollup/plugin-commonjs";
 import copy from "rollup-plugin-copy";
 import sass from "rollup-plugin-sass";
 import typescript from "@rollup/plugin-typescript";
-import { terser } from "rollup-plugin-terser";
+import terser from "@rollup/plugin-terser";
 
 import autoprefixer from "autoprefixer";
 import fs from "fs";
 import path from "path";
 import postcss from "postcss";
 
-import pkg from "./package.json";
+import pkg from "./package.json" with { type: "json" };
 
 const entries = {
   index: "src/plugins/bootstrap.ts",
