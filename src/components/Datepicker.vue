@@ -101,7 +101,8 @@ onMounted(() => {
     (item) => item.value == date.value?.getMonth(),
   )[0].name;
 });
-const datepicker = ref<any>(null);
+
+const datepickerRef = ref();
 </script>
 
 <template>
@@ -210,12 +211,12 @@ const datepicker = ref<any>(null);
     <h3>Programmatically</h3>
 
     <o-field>
-      <o-datepicker ref="datepicker" expanded placeholder="Select a date" />
+      <o-datepicker ref="datepickerRef" expanded placeholder="Select a date" />
 
       <o-button
         icon-left="calendar"
         type="primary"
-        @click="datepicker?.toggle()" />
+        @click="datepickerRef?.toggle()" />
     </o-field>
   </section>
 
