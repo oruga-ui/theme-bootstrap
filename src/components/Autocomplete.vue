@@ -24,7 +24,7 @@ const dataBase = ref([
 ]);
 
 const filteredDataBase = computed((): string[] => {
-  return dataBase.value.filter((option: any) => {
+  return dataBase.value.filter((option) => {
     return (
       option.toString().toLowerCase().indexOf(nameBase.value.toLowerCase()) >= 0
     );
