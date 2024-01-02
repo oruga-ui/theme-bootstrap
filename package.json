@@ -13,7 +13,7 @@
   ],
   "files": [
     "dist",
-    "src"
+    "src/assets"
   ],
   "repository": {
     "type": "git",
