@@ -26,9 +26,10 @@
     "dev": "vite --force",
     "serve": "vite preview",
     "build": "vue-tsc --noEmit && vite build",
-    "build:lib": "rimraf dist && rollup -c",
+    "build:lib": "rimraf dist && npm run timeout && rollup -c",
     "lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs,.ts,.tsx,.cts,.mts --fix --ignore-path .gitignore",
     "lint:style": "stylelint **/*.{css,scss} --fix --ignore-path .gitignore",
+    "timeout": "node -e \"require('node:timers/promises').setTimeout(3_000)\"",
     "update": "ncu -u"
   },
   "dependencies": {
