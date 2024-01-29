@@ -1,4 +1,3 @@
-import cjs from "@rollup/plugin-commonjs";
 import copy from "rollup-plugin-copy";
 import sass from "rollup-plugin-sass";
 import typescript from "@rollup/plugin-typescript";
@@ -91,6 +90,7 @@ export default function () {
           format: "umd",
           name: "OrugaThemeBootstrap",
           file: `${exits.umd}`,
+          
         },
         {
           format: "umd",
@@ -103,7 +103,6 @@ export default function () {
         copy({
           targets: [{ src: `${entries.scss}`, dest: `${exits.directory}` }],
         }),
-        cjs(),
         sass({
           ...commonSassPluginOptions,
           output(styles) {

@@ -5,7 +5,7 @@
   "license": "MIT",
   "type": "module",
   "main": "dist/bootstrap.js",
-  "module": "dist/bootstrap.js",
+  "module": "dist/bootstrap.mjs",
   "unpkg": "dist/bootstrap.min.js",
   "sideEffects": [
     "*.css",
