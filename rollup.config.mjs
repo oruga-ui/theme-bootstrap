@@ -90,7 +90,6 @@ export default function () {
           format: "umd",
           name: "OrugaThemeBootstrap",
           file: `${exits.umd}`,
-          
         },
         {
           format: "umd",
