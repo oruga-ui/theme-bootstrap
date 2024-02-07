@@ -60,6 +60,10 @@ $input-field-btn-border-color: $input-border-color !default;
     @extend .col;
   }
 
+  .form-label {  
+    display: block;
+  }
+
   &.grouped-multiline {
     flex-wrap: wrap;
 
@@ -105,8 +109,8 @@ $input-field-btn-border-color: $input-border-color !default;
   .input-group {
     flex-shrink: 0;
 
-    // prevent nested componentss
-    *:not(.dropdown-menu) {
+    // prevent nested components
+    > *:not(.dropdown-menu) {
       // remove margin
       .input,
       .select,

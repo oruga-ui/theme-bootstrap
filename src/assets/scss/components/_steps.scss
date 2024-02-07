@@ -83,16 +83,23 @@ $steps-vertical-padding: 1em 0 !default;
       position: relative;
       flex-grow: 1;
       flex-basis: 1em;
+      list-style: none;
+      display: flex;
+      justify-content: center;
 
       .step-link {
         display: flex;
         align-items: center;
         justify-content: center;
         flex-direction: column;
-        text-decoration: none;
+        background: transparent;
+        border: transparent;
 
         &.clickable .step-marker {
           cursor: pointer;
+        }
+        &:not(.clickable) {
+          cursor: auto;
         }
       }
 

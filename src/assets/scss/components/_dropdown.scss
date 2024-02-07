@@ -189,9 +189,13 @@ $dropdown-modal-backdrop-zindex: $zindex-modal-backdrop !default;
     }
   }
 
-  &.inline .dropdown-menu {
-    --#{$prefix}dropdown-zindex: 10;
-    position: relative;
-    top: 0;
+  &.inline {
+    display: inline-block;
+
+    .dropdown-menu {
+      --#{$prefix}dropdown-zindex: 10;
+      position: relative;
+      top: 0;
+    }
   }
 }

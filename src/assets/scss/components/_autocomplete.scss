@@ -4,6 +4,7 @@ $autocomplete-menu-max-height: 200px !default;
 
 .autocomplete-wrapper {
   --#{$prefix}autocomplete-menu-max-height: #{$autocomplete-menu-max-height};
+  display: inline-block;
 
   .dropdown-menu {
     max-height: var(--#{$prefix}autocomplete-menu-max-height);
