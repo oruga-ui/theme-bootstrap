@@ -1,4 +1,3 @@
-import cjs from "@rollup/plugin-commonjs";
 import copy from "rollup-plugin-copy";
 import sass from "rollup-plugin-sass";
 import typescript from "@rollup/plugin-typescript";
@@ -37,6 +36,14 @@ const commonSassPluginOptions = {
 
 const typescriptPluginOptions = {
   sourceMap: false,
+  // skip type checking of declaration files
+  skipLibCheck:true,
+  // enabling declaration (.d.ts) emit
+  declaration: true,
+  //  decouple declaration files from actual transpiled JavaScript files
+  declarationDir: "dist/types",
+  // define included files
+  include: "src/plugins/**",
 };
 
 function createDirectoryIfDoesNotExist(filePath) {
@@ -95,7 +102,6 @@ export default function () {
         copy({
           targets: [{ src: `${entries.scss}`, dest: `${exits.directory}` }],
         }),
-        cjs(),
         sass({
           ...commonSassPluginOptions,
           output(styles) {
