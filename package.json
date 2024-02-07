@@ -7,6 +7,7 @@
   "main": "dist/bootstrap.js",
   "module": "dist/bootstrap.mjs",
   "unpkg": "dist/bootstrap.min.js",
+  "types": "dist/types/bootstrap.d.ts",
   "sideEffects": [
     "*.css",
     "*.scss"
