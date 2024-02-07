@@ -33,12 +33,13 @@ $taginput-counter-font-size: 0.75rem !default;
       var(--#{$prefix}taginput-border-color);
     border-radius: var(--#{$prefix}taginput-border-radius);
 
-    &:hover {
+    &:hover,
+    &:focus-within {
       box-shadow: var(--#{$prefix}focus-ring-x, 0)
         var(--#{$prefix}focus-ring-y, 0) var(--#{$prefix}focus-ring-blur, 0)
         var(--#{$prefix}focus-ring-width) var(--#{$prefix}focus-ring-color);
     }
-
+    
     .badge {
       --#{$prefix}badge-color: #{$taginput-badge-color};
       --#{$prefix}badge-font-size: #{$taginput-badge-font-size};
