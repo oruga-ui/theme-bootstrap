@@ -500,7 +500,9 @@ export const bootstrapConfig: OrugaOptions = {
     variantClass: "variant-",
     expandedClass: "expanded",
     counterClass: "counter",
-    autocompleteClasses: { rootClass: "expanded" },
+    autocompleteClasses: {
+      rootClass: "expanded",
+    },
   },
   tooltip: {
     override: true,
