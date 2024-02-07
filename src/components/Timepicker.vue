@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { ref } from "vue";
 
-const time = ref<Date | null>(null);
+const time = ref<Date>();
 const hourFormat = ref(undefined); // Browser locale
 const enableSeconds = ref(false);
 const locale = ref(undefined); // Browser locale
@@ -103,7 +103,7 @@ const hoursGranularity = ref(2);
           variant="danger"
           icon-left="times"
           outlined
-          @click="time = null" />
+          @click="time = undefined" />
       </o-timepicker>
     </o-field>
   </section>

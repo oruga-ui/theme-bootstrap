@@ -8,7 +8,7 @@ const isFullwidth = ref(false);
 const isReduced = ref(false);
 const expandOnHover = ref(false);
 const teleport = ref(false);
-const position = ref("left");
+const position = ref<"bottom" | "top" | "right" | "left" | undefined>("left");
 const inline = ref(false);
 
 const toggleSidebar = () => {

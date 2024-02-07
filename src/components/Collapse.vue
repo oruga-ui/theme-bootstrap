@@ -36,7 +36,7 @@ const collapses = ref([
         <o-button
           variant="primary"
           aria-controls="contentIdForA11y1"
-          label="Click me!" />"
+          label="Click me!" />
       </template>
       <div class="card card-body">
         <h3>Subtitle</h3>

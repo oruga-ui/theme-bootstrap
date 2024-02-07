@@ -143,9 +143,7 @@ function danger() {
   <section>
     <h3>Add custom buttons</h3>
 
-    <o-notification
-      v-slot="{ closeNotification }"
-      aria-close-label="Close notification">
+    <o-notification v-slot="{ close }" aria-close-label="Close notification">
       <div class="d-inline-flex">
         <span>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce id
@@ -156,7 +154,7 @@ function danger() {
           label="Cancel"
           variant="primary"
           size="small"
-          @click="closeNotification" />
+          @click="close" />
       </div>
     </o-notification>
   </section>

@@ -17,8 +17,8 @@ const prevIcon = ref("chevron-left");
 const nextIcon = ref("chevron-right");
 const labelPosition = ref("bottom");
 const stepsPosition = ref("left");
-const position = ref(null);
-const size = ref(null);
+const position = ref();
+const size = ref();
 </script>
 
 <template>

@@ -499,7 +499,7 @@ function getMoreAsyncData() {
         icon="search"
         clearable
         :data="filteredDataBase"
-        @select="(option: string) => (selectedBase = option)">
+        @select="(option: string | number) => (selectedBase = option)">
         <template #empty>No results found</template>
       </o-autocomplete>
     </o-field>

@@ -6,8 +6,8 @@ const isSwitchedCustom = ref("Yes");
 const isRounded = ref(false);
 const position = ref("right");
 const size = ref("");
-const variant = ref(null);
-const passive = ref(null);
+const variant = ref();
+const passive = ref();
 </script>
 
 <template>
