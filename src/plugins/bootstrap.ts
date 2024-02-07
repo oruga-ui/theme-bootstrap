@@ -1,4 +1,4 @@
-import type { OrugaOptions, ComponentContext } from "@oruga-ui/oruga-next";
+import type { OrugaOptions, ComponentProps } from "@oruga-ui/oruga-next";
 
 // import theme style
 import "../assets/scss/bootstrap-build.scss";
@@ -20,13 +20,13 @@ export const bootstrapConfig: OrugaOptions = {
       else if (size == "medium") return "btn-md";
       else if (size == "large") return "btn-lg";
     },
-    variantClass: (_: string, { props }: ComponentContext) => {
+    variantClass: (_: string, { props }: ComponentProps) => {
       if (props.outlined) return "";
       return `btn-${props.variant}`;
     },
     roundedClass: "rounded-pill",
     expandedClass: "expanded",
-    outlinedClass: (_: string, { props }: ComponentContext) => {
+    outlinedClass: (_: string, { props }: ComponentProps) => {
       return `btn-outline-${props.variant}`;
     },
     disabledClass: "btn-disabled",
@@ -78,11 +78,7 @@ export const bootstrapConfig: OrugaOptions = {
     expandedClass: "expanded",
     inlineClass: "inline",
     menuMobileOverlayClass: "dropdown-backdrop",
-    menuClass: (_: string, { computed }: ComponentContext) => {
-      const classes = ["dropdown-menu"];
-      if (computed.hoverable) classes.push("show");
-      return classes.join(" ");
-    },
+    menuClass: "dropdown-menu",
     menuPositionClass: "position-",
     menuActiveClass: "show",
     itemTag: "a",
@@ -135,7 +131,7 @@ export const bootstrapConfig: OrugaOptions = {
     monthCellWithinSelectedClass: "selected-within",
     tableCellInvisibleClass: "",
     tableCellNearbyClass: "nearby",
-    tableCellEventsClass: (_: string, { props }: ComponentContext) => {
+    tableCellEventsClass: (_: string, { props }: ComponentProps) => {
       const classes = ["has-event"];
       if (props.indicators) classes.push(`${props.indicators}`);
       return classes.join(" ");
@@ -187,19 +183,19 @@ export const bootstrapConfig: OrugaOptions = {
   input: {
     override: true,
     rootClass: "input",
-    inputClass: (_: string, { props }: ComponentContext) => {
+    inputClass: (_: string, { props }: ComponentProps) => {
       const classes = ["form-control"];
       if (props.icon) classes.push("icon-left");
       if (props.iconRight) classes.push("icon-right");
       return classes.join(" ");
     },
-    textareaClass: (_: string, { props }: ComponentContext) => {
+    textareaClass: (_: string, { props }: ComponentProps) => {
       const classes = ["form-control"];
       if (props.icon) classes.push("icon-left");
       if (props.iconRight) classes.push("icon-right");
       return classes.join(" ");
     },
-    sizeClass: (_: string, { props }: ComponentContext) => {
+    sizeClass: (_: string, { props }: ComponentProps) => {
       if (props.size == "small") return "form-control-sm";
       else if (props.size == "medium") return "form-control-md";
       else if (props.size == "large") return "form-control-lg";
@@ -239,7 +235,7 @@ export const bootstrapConfig: OrugaOptions = {
     rootClass: "modal fade",
     activeClass: "show",
     overlayClass: "modal-backdrop",
-    contentClass: (_: string, { props }: ComponentContext) => {
+    contentClass: (_: string, { props }: ComponentProps) => {
       const classes = ["modal-dialog"];
       if (!props.fullScreen) classes.push("modal-dialog-centered");
       return classes.join(" ");
@@ -266,7 +262,7 @@ export const bootstrapConfig: OrugaOptions = {
   pagination: {
     override: true,
     rootClass: "pagination-wrapper",
-    sizeClass: (_: string, { props }: ComponentContext) => {
+    sizeClass: (_: string, { props }: ComponentProps) => {
       if (props.size == "small") return "pagination-sm";
       else if (props.size == "medium") return "pagination-md";
       else if (props.size == "large") return "pagination-lg";
@@ -274,7 +270,7 @@ export const bootstrapConfig: OrugaOptions = {
     roundedClass: "rounded-pill",
     simpleClass: "simple",
     orderClass: "order-",
-    listClass: (_: string, { props }: ComponentContext) => {
+    listClass: (_: string, { props }: ComponentProps) => {
       const classes = ["pagination"];
       if (props.size == "small") classes.push("pagination-sm");
       else if (props.size == "medium") classes.push("pagination-md");
@@ -285,7 +281,7 @@ export const bootstrapConfig: OrugaOptions = {
     linkClass: "page-link",
     linkCurrentClass: "active",
     linkDisabledClass: "disabled",
-    ellipsisClass: (_: string, { props }: ComponentContext) => {
+    ellipsisClass: (_: string, { props }: ComponentProps) => {
       const classes = ["pagination-ellipsis"];
       if (props.rounded) classes.push("rounded-pill");
       return classes.join(" ");
@@ -306,13 +302,13 @@ export const bootstrapConfig: OrugaOptions = {
   select: {
     override: true,
     rootClass: "select",
-    selectClass: (_: string, { props }: ComponentContext) => {
+    selectClass: (_: string, { props }: ComponentProps) => {
       const classes = ["form-select"];
       if (props.icon) classes.push("icon-left");
       if (props.iconRight) classes.push("icon-right");
       return classes.join(" ");
     },
-    sizeClass: (_: string, { props }: ComponentContext) => {
+    sizeClass: (_: string, { props }: ComponentProps) => {
       if (props.size == "small") return "form-select-sm";
       else if (props.size == "medium") return "form-select-md";
       else if (props.size == "large") return "form-select-lg";
@@ -331,7 +327,7 @@ export const bootstrapConfig: OrugaOptions = {
     rootClass: "sidebar",
     overlayClass: "offcanvas-backdrop",
     activeClass: "show",
-    positionClass: (_: string, { props }: ComponentContext) => {
+    positionClass: (_: string, { props }: ComponentProps) => {
       if (props.position === "left") return "offcanvas-start";
       else if (props.position === "right") return "offcanvas-end";
       else if (props.position === "top") return "offcanvas-top";
@@ -370,7 +366,7 @@ export const bootstrapConfig: OrugaOptions = {
     fillClass: "slider-fill",
     thumbWrapperClass: "slider-thumb-wrapper",
     sizeClass: "size-",
-    thumbClass: (_: string, { props }: ComponentContext) => {
+    thumbClass: (_: string, { props }: ComponentProps) => {
       const classes = ["slider-thumb", "focus-ring"];
       if (props.variant) classes.push(`variant-${props.variant}`);
       if (props.variant) classes.push(`focus-ring-${props.variant}`);
@@ -384,7 +380,7 @@ export const bootstrapConfig: OrugaOptions = {
   },
   steps: {
     override: true,
-    rootClass: (_: string, { props }: ComponentContext) => {
+    rootClass: (_: string, { props }: ComponentProps) => {
       const classes = ["steps-wrapper"];
       if (props.variant) classes.push(`variant-${props.variant}`);
       if (props.disabled) classes.push("disabled");
@@ -395,7 +391,7 @@ export const bootstrapConfig: OrugaOptions = {
     verticalClass: "vertical",
     stepsClass: "steps",
     animatedClass: "animated",
-    itemHeaderClass: (_: string, { props }: ComponentContext) => {
+    itemHeaderClass: (_: string, { props }: ComponentProps) => {
       const classes = ["step-item"];
       if (props.labelPosition === "left") classes.push("label-left");
       if (props.labelPosition === "right") classes.push("label-right");
@@ -420,7 +416,7 @@ export const bootstrapConfig: OrugaOptions = {
     positionClass: (position: string) => {
       if (position == "left") return "reversed";
     },
-    inputClass: (_: string, { props }: ComponentContext) => {
+    inputClass: (_: string, { props }: ComponentProps) => {
       const classes = ["form-check-input"];
       if (props.rounded) classes.push("rounded-pill");
       return classes.join(" ");
@@ -490,12 +486,12 @@ export const bootstrapConfig: OrugaOptions = {
   },
   taginput: {
     override: true,
-    rootClass: (_: string, { props }: ComponentContext) => {
+    rootClass: (_: string, { props }: ComponentProps) => {
       const classes = ["taginput-wrapper"];
       if (props.disabled) classes.push("disabled");
       return classes.join(" ");
     },
-    containerClass: (_: string, { props }: ComponentContext) => {
+    containerClass: (_: string, { props }: ComponentProps) => {
       const classes = ["taginput", "focus-ring"];
       if (props.variant) classes.push(`focus-ring-${props.variant}`);
       return classes.join(" ");
