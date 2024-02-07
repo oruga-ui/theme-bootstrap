@@ -124,6 +124,6 @@ $btn-hover-box-shadow: $box-shadow-sm !default;
   }
 }
 
-.btn:not(:last-child):not(.btn-expanded) {
+.btn:not(:last-child):not(.btn-expanded):has(+.btn) {
   margin-right: var(--#{$prefix}btn-spacer);
 }

@@ -7,7 +7,6 @@ export const bootstrapConfig: OrugaOptions = {
   autocomplete: {
     override: true,
     rootClass: "autocomplete-wrapper",
-    itemClass: "dropdown-item",
     itemHoverClass: "active",
     itemEmptyClass: "disabled",
     itemGroupTitleClass: "fw-bold",
@@ -72,7 +71,7 @@ export const bootstrapConfig: OrugaOptions = {
   },
   dropdown: {
     override: true,
-    rootClass: "dropdown btn-group",
+    rootClass: "dropdown",
     triggerClass: "dropdown-trigger",
     disabledClass: "disabled",
     expandedClass: "expanded",
@@ -81,7 +80,7 @@ export const bootstrapConfig: OrugaOptions = {
     menuClass: "dropdown-menu",
     menuPositionClass: "position-",
     menuActiveClass: "show",
-    itemTag: "a",
+    itemTag: "button",
     itemClass: "dropdown-item",
     itemActiveClass: "active",
     itemClickableClass: "clickable",
@@ -104,7 +103,7 @@ export const bootstrapConfig: OrugaOptions = {
     tableHeadClass: "datepicker-header",
     tableHeadCellClass: "datepicker-cell",
     tableRowClass: "datepicker-row",
-    tableCellClass: "datepicker-cell",
+    tableCellClass: "datepicker-cell focus-ring",
     tableCellSelectableClass: "selectable",
     tableCellUnselectableClass: "unselectable",
     tableCellTodayClass: "today",
@@ -477,7 +476,7 @@ export const bootstrapConfig: OrugaOptions = {
       else if (position === "right") return "justify-content-end";
     },
     itemWrapperClass: "nav-item",
-    itemTag: "a",
+    itemTag: "button",
     itemHeaderClass: "nav-link",
     itemHeaderActiveClass: () => "active",
     itemHeaderDisabledClass: () => "disabled",
