@@ -40,7 +40,7 @@ $dropdown-modal-backdrop-zindex: $zindex-modal-backdrop !default;
 /* @bootstrap docs */
 
 .dropdown {
-  display: inline-flex;
+  display: inline-block;
   vertical-align: middle;
 
   .dropdown-trigger {
