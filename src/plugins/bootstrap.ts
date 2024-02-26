@@ -80,7 +80,7 @@ const bootstrapConfig: OrugaOptions = {
     menuClass: "dropdown-menu",
     menuPositionClass: "position-",
     menuActiveClass: "show",
-    itemTag: "button",
+    itemTag: "div",
     itemClass: "dropdown-item",
     itemActiveClass: "active",
     itemClickableClass: "clickable",
