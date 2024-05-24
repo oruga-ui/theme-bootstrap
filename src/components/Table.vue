@@ -155,6 +155,10 @@ const stickyHeaders = ref(true);
       <o-switch v-model="isFocusable" :rounded="true" label="Focusable" />
       <o-switch v-model="isLoading" :rounded="true" label="Loading state" />
       <o-switch v-model="isEmpty" :rounded="true" label="Empty" />
+      <o-switch
+        v-model="stickyHeaders"
+        :rounded="true"
+        label="Sticky Headers" />
       <o-switch v-model="hasMobileCards" :rounded="true">
         Mobile cards <small>(collapsed rows)</small>
       </o-switch>
@@ -172,6 +176,7 @@ const stickyHeaders = ref(true);
       :focusable="isFocusable"
       :mobile-cards="hasMobileCards"
       :checkable="isCheckbale"
+      :sticky-header="stickyHeaders"
       detailed>
       <o-table-column
         v-for="(column, idx) in columns"
@@ -316,35 +321,4 @@ const stickyHeaders = ref(true);
       </o-table-column>
     </o-table>
   </section>
-
-  <section>
-    <h3>Sticky</h3>
-    <o-field grouped>
-      <o-switch v-model="stickyHeaders" label="Sticky Headers" />
-    </o-field>
-
-    <o-table :data="dataTable" :sticky-header="stickyHeaders">
-      <o-table-column
-        v-for="(column, idx) in columns"
-        :key="idx"
-        v-slot="{ row }"
-        v-bind="column">
-        {{ row[column.field] }}
-      </o-table-column>
-    </o-table>
-  </section>
 </template>
-
-<style lang="scss">
-.is-sticky-column-one {
-  background: #006724 !important;
-  color: white !important;
-}
-.is-sticky-column-two {
-  background: #167df0 !important;
-  color: white !important;
-}
-.overflow {
-  overflow-x: scroll;
-}
-</style>
