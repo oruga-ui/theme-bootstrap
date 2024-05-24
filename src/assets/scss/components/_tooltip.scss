@@ -83,7 +83,7 @@ $tooltip-zindex: $zindex-tooltip;
 
   // Color variants
   @each $name, $color in $theme-colors {
-    &.variant-#{$name} {
+    .variant-#{$name} {
       --#{$prefix}tooltip-color: var(--#{$prefix}#{$name}-contrast);
       --#{$prefix}tooltip-bg: var(--#{$prefix}#{$name});
     }

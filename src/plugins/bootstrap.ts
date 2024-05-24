@@ -3,7 +3,7 @@ import type { OrugaOptions, ComponentProps } from "@oruga-ui/oruga-next";
 // import theme style
 import "../assets/scss/bootstrap-build.scss";
 
-export const bootstrapConfig: OrugaOptions = {
+const bootstrapConfig: OrugaOptions = {
   autocomplete: {
     override: true,
     rootClass: "autocomplete-wrapper",
@@ -80,7 +80,7 @@ export const bootstrapConfig: OrugaOptions = {
     menuClass: "dropdown-menu",
     menuPositionClass: "position-",
     menuActiveClass: "show",
-    itemTag: "button",
+    itemTag: "div",
     itemClass: "dropdown-item",
     itemActiveClass: "active",
     itemClickableClass: "clickable",
@@ -500,7 +500,9 @@ export const bootstrapConfig: OrugaOptions = {
     variantClass: "variant-",
     expandedClass: "expanded",
     counterClass: "counter",
-    autocompleteClasses: { rootClass: "expanded" },
+    autocompleteClasses: {
+      rootClass: "expanded",
+    },
   },
   tooltip: {
     override: true,
@@ -523,3 +525,5 @@ export const bootstrapConfig: OrugaOptions = {
     hoveredClass: "hovered",
   },
 };
+
+export { bootstrapConfig, bootstrapConfig as config };
