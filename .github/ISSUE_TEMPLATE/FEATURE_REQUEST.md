@@ -1,6 +1,6 @@
 ---
 name: Feature request
-about: Suggest an idea to improve Oruga
+about: Suggest an idea to improve Bootstrap theme for Oruga
 labels: feature request
 ---
 
