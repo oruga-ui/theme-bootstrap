@@ -5,6 +5,7 @@ $table-head-border-width: var(--#{$prefix}border-width) !default;
 $table-sticky-zindex: 1 !default;
 $table-sticky-bg: initial !default;
 $table-sticky-color: initial !default;
+$table-sticky-header-height: 350px !default;
 $table-detail-padding: 0.5rem 0.75rem !default;
 $table-detail-bg: var(--#{$prefix}gray-light) !default;
 $table-sortable-hover-border-color: var(--#{$prefix}secondary) !default;
@@ -60,6 +61,20 @@ $table-card-spacer: $spacer;
     --#{$prefix}table-sortable-hover-border-color: #{$table-sortable-hover-border-color};
     --#{$prefix}table-current-sort-bg: #{$table-current-sort-bg};
     --#{$prefix}table-focus-color: #{$table-focus-color};
+  }
+
+  .table-sticky {
+    --#{$prefix}table-sticky-header-height: #{$table-sticky-header-height};
+    height: var(--#{$prefix}table-sticky-header-height);
+    overflow-y: auto;
+
+    th {
+      position: -webkit-sticky !important;
+      position: sticky !important;
+      left: 0;
+      top: 0;
+      z-index: $zindex-dropdown - 100;
+    }
   }
 
   .table {
