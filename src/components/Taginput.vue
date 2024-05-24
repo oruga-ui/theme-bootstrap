@@ -405,7 +405,6 @@ function getFilteredTags(text: string) {
         v-model="tags"
         variant="primary"
         :data="filteredTags"
-        autocomplete
         :allow-new="allowNew"
         :open-on-focus="openOnFocus"
         field="user.first_name"
@@ -424,7 +423,6 @@ function getFilteredTags(text: string) {
         disabled
         :model-value="['One']"
         :data="['One', 'Two', 'Three', 'Four']"
-        autocomplete
         :allow-new="allowNew"
         :open-on-focus="openOnFocus"
         icon="tag"
@@ -438,17 +436,19 @@ function getFilteredTags(text: string) {
     <h3>Limits</h3>
 
     <o-field label="Limited to 10 characters">
-      <o-taginput maxlength="10" :model-value="['Oruga', 'Vue', 'CSS']" />
+      <o-taginput :maxlength="10" :model-value="['Oruga', 'Vue', 'CSS']" />
     </o-field>
 
     <o-field label="Limited to 5 tags">
-      <o-taginput maxitems="5" :model-value="['One', 'Two', 'Three', 'Four']" />
+      <o-taginput
+        :maxitems="5"
+        :model-value="['One', 'Two', 'Three', 'Four']" />
     </o-field>
 
     <o-field label="Limited to 10 characters and 5 tags">
       <o-taginput
-        maxlength="10"
-        maxitems="5"
+        :maxlength="10"
+        :maxitems="5"
         :model-value="['Red', 'Green', 'Blue', 'White']" />
     </o-field>
   </section>

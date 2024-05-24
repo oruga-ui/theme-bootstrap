@@ -6,10 +6,10 @@ const enableSeconds = ref(false);
 const hourFormat = ref(); // Browser locale
 const locale = ref(); // Browser locale
 
-const datetime = ref<Date | null>(new Date());
+const datetime = ref<Date | undefined>(new Date());
 
-const minDatetime = ref(null);
-const maxDatetime = ref(null);
+const minDatetime = ref();
+const maxDatetime = ref();
 </script>
 
 <template>
@@ -83,7 +83,7 @@ const maxDatetime = ref(null);
               <o-icon icon="calendar" />
               <span>Today</span>
             </o-button>
-            <o-button variant="danger" @click="datetime = null">
+            <o-button variant="danger" @click="datetime = undefined">
               <o-icon icon="times" />
               <span>Clear</span>
             </o-button>

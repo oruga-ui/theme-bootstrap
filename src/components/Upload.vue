@@ -2,7 +2,7 @@
 import { ref } from "vue";
 
 const dropFiles = ref<File[]>([]);
-const file = ref<File | null>(null);
+const file = ref<File>();
 
 function deleteDropFile(index: number) {
   dropFiles.value.splice(index, 1);

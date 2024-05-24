@@ -5,8 +5,12 @@ const today = new Date();
 const thisMonth = today.getMonth();
 const thisYear = today.getFullYear();
 const events = [
-  new Date(thisYear, thisMonth, 2),
-  new Date(thisYear, thisMonth, 6),
+  {
+    date: new Date(thisYear, thisMonth, 2),
+  },
+  {
+    date: new Date(thisYear, thisMonth, 6),
+  },
   {
     date: new Date(thisYear, thisMonth, 6),
     type: "info",
@@ -23,7 +27,9 @@ const events = [
     date: new Date(thisYear, thisMonth, 10),
     type: "link",
   },
-  new Date(thisYear, thisMonth, 12),
+  {
+    date: new Date(thisYear, thisMonth, 12),
+  },
   {
     date: new Date(thisYear, thisMonth, 12),
     type: "warning",
@@ -32,7 +38,9 @@ const events = [
     date: new Date(thisYear, thisMonth, 16),
     type: "danger",
   },
-  new Date(thisYear, thisMonth, 20),
+  {
+    date: new Date(thisYear, thisMonth, 20),
+  },
   {
     date: new Date(thisYear, thisMonth, 29),
     type: "success",
@@ -73,7 +81,7 @@ const selectedString = computed(() =>
   selected.value ? selected.value.toDateString() : "",
 );
 
-const date = ref<Date | null>(new Date());
+const date = ref<Date | undefined>(new Date());
 const multiple = ref([]);
 const range = ref([]);
 
@@ -90,8 +98,11 @@ const maxDate = new Date(
 
 const month = ref();
 
-function selectMonth(option: { name: string; value: number }) {
-  if (!option || !date.value) return;
+function selectMonth(name: string) {
+  if (!name || !date.value) return;
+
+  const option = months.find((m) => m.name === name);
+  if (!option) return;
 
   date.value.setMonth(option.value);
 }
@@ -238,7 +249,7 @@ const datepickerRef = ref();
               :data="months"
               field="name"
               expanded
-              @select="selectMonth" />
+              @select="(v) => selectMonth(v as string)" />
             <o-button disabled :label="date?.getFullYear().toString()" />
           </o-field>
         </template>
@@ -249,7 +260,7 @@ const datepickerRef = ref();
               <span>Today</span>
             </o-button>
 
-            <o-button variant="danger" @click="date = null">
+            <o-button variant="danger" @click="date = undefined">
               <o-icon icon="times" />
               <span>Clear</span>
             </o-button>

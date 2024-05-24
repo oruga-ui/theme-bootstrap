@@ -132,7 +132,7 @@ const defaultSortDirection = ref("asc");
 const perPage = ref(3);
 
 const checkedRows = ref([]);
-const selected = ref(null);
+const selected = ref();
 </script>
 
 <template>
