@@ -1,13 +1,14 @@
 <script setup lang="ts">
 import { ref } from "vue";
+import type { Column } from "@oruga-ui/oruga-next";
 
-const columns = ref([
+const columns = ref<Column[]>([
   {
     field: "id",
     label: "ID",
     width: "40",
     numeric: true,
-    sticky: "true",
+    sticky: true,
   },
   {
     field: "first_name",
@@ -178,20 +179,22 @@ const stickyHeaders = ref(true);
         v-slot="{ row }"
         v-bind="column">
         <component
-          :is="column.component(row[column.field]).is"
+          :is="column.component(row[column.field!]).is"
           v-if="column.component"
-          v-bind="column.component(row[column.field])" />
+          v-bind="column.component(row[column.field!])" />
         {{
-          column.display ? column.display(row[column.field]) : row[column.field]
+          column.display
+            ? column.display(row[column.field!])
+            : row[column.field!]
         }}
       </o-table-column>
 
-      <template #detail="props">
+      <template #detail="{ row }">
         <tr>
-          <td>{{ props.row.id }}</td>
-          <td>{{ props.row.first_name }}</td>
-          <td>{{ props.row.last_name }}</td>
-          <td>{{ props.row.gender }}</td>
+          <td>{{ (row as any).id }}</td>
+          <td>{{ (row as any).first_name }}</td>
+          <td>{{ (row as any).last_name }}</td>
+          <td>{{ (row as any).gender }}</td>
         </tr>
       </template>
 
@@ -270,11 +273,13 @@ const stickyHeaders = ref(true);
         v-slot="{ row }"
         v-bind="column">
         <component
-          :is="column.component(row[column.field]).is"
+          :is="column.component(row[column.field!]).is"
           v-if="column.component"
-          v-bind="column.component(row[column.field])" />
+          v-bind="column.component(row[column.field!])" />
         {{
-          column.display ? column.display(row[column.field]) : row[column.field]
+          column.display
+            ? column.display(row[column.field!])
+            : row[column.field!]
         }}
       </o-table-column>
     </o-table>
@@ -300,11 +305,13 @@ const stickyHeaders = ref(true);
         v-slot="{ row }"
         v-bind="column">
         <component
-          :is="column.component(row[column.field]).is"
+          :is="column.component(row[column.field!]).is"
           v-if="column.component"
-          v-bind="column.component(row[column.field])" />
+          v-bind="column.component(row[column.field!])" />
         {{
-          column.display ? column.display(row[column.field]) : row[column.field]
+          column.display
+            ? column.display(row[column.field!])
+            : row[column.field!]
         }}
       </o-table-column>
     </o-table>
