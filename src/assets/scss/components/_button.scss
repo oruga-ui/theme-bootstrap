@@ -2,6 +2,7 @@
 
 /* @docs */
 $btn-spacer: 0.5rem !default;
+$btn-height: 2.35em !default;
 $btn-border-color: var(--#{$prefix}border-color);
 $btn-hover-border-color: var(--#{$prefix}border-color);
 $btn-hover-box-shadow: $box-shadow-sm !default;
@@ -56,10 +57,16 @@ $btn-hover-box-shadow: $box-shadow-sm !default;
 
 .btn {
   --#{$prefix}btn-spacer: #{$btn-spacer};
+  --#{$prefix}btn-height: #{$btn-height};
   --#{$prefix}btn-border-color: #{$btn-border-color};
   --#{$prefix}btn-hover-border-color: #{$btn-hover-border-color};
   --#{$prefix}btn-hover-box-shadow: #{$btn-hover-box-shadow};
   --#{$prefix}btn-disabled-border-color: var(--#{$prefix}btn-border-color);
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: var(--#{$prefix}btn-height);
 
   .button-wrapper {
     display: inline-flex;
