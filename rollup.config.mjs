@@ -2,6 +2,7 @@ import copy from "rollup-plugin-copy";
 import sass from "rollup-plugin-sass";
 import typescript from "@rollup/plugin-typescript";
 import terser from "@rollup/plugin-terser";
+import commonjs from '@rollup/plugin-commonjs';
 
 import autoprefixer from "autoprefixer";
 import fs from "fs";
@@ -19,7 +20,7 @@ const exits = {
   directory: "dist",
   css: "dist/bootstrap.css",
   esm: `${pkg.module}`,
-  umd: `${pkg.main}`,
+  cjs: `${pkg.main}`,
 };
 
 const commonSassPluginOptions = {
@@ -87,14 +88,14 @@ export default function () {
           plugins: [terser()],
         },
         {
-          format: "umd",
+          format: "cjs",
           name: "OrugaThemeBootstrap",
-          file: `${exits.umd}`,
+          file: `${exits.cjs}`,
         },
         {
-          format: "umd",
+          format: "cjs",
           name: "OrugaThemeBootstrap",
-          file: `${createMinifiedFileName(exits.umd)}`,
+          file: `${createMinifiedFileName(exits.cjs)}`,
           plugins: [terser()],
         },
       ],
@@ -102,6 +103,7 @@ export default function () {
         copy({
           targets: [{ src: `${entries.scss}`, dest: `${exits.directory}` }],
         }),
+        commonjs(),
         sass({
           ...commonSassPluginOptions,
           output(styles) {
