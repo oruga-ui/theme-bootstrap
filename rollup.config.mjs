@@ -20,7 +20,7 @@ const exits = {
   directory: "dist",
   css: "dist/bootstrap.css",
   esm: `${pkg.module}`,
-  umd: `${pkg.main}`,
+  cjs: `${pkg.main}`,
 };
 
 const commonSassPluginOptions = {
@@ -88,14 +88,14 @@ export default function () {
           plugins: [terser()],
         },
         {
-          format: "umd",
+          format: "cjs",
           name: "OrugaThemeBootstrap",
-          file: `${exits.umd}`,
+          file: `${exits.cjs}`,
         },
         {
-          format: "umd",
+          format: "cjs",
           name: "OrugaThemeBootstrap",
-          file: `${createMinifiedFileName(exits.umd)}`,
+          file: `${createMinifiedFileName(exits.cjs)}`,
           plugins: [terser()],
         },
       ],

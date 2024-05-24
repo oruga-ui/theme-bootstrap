@@ -4,9 +4,9 @@
   "description": "Bootstrap theme for Oruga",
   "license": "MIT",
   "type": "module",
-  "main": "dist/bootstrap.js",
+  "main": "dist/bootstrap.cjs",
   "module": "dist/bootstrap.mjs",
-  "unpkg": "dist/bootstrap.min.js",
+  "unpkg": "dist/bootstrap.min.cjs",
   "types": "dist/types/bootstrap.d.ts",
   "sideEffects": [
     "*.css",
