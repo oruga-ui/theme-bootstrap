@@ -13,7 +13,9 @@ $icon-spin-animation-duration: 1.5s !default;
   align-items: center;
   display: inline-flex;
   justify-content: center;
-  transition: transform 150ms ease-out, opacity 0.3s ease-out;
+  transition:
+    transform 150ms ease-out,
+    opacity 0.3s ease-out;
 
   &.spin {
     --#{$prefix}icon-spin-duration: #{$icon-spin-animation-duration};

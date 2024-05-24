@@ -39,7 +39,7 @@ $taginput-counter-font-size: 0.75rem !default;
         var(--#{$prefix}focus-ring-y, 0) var(--#{$prefix}focus-ring-blur, 0)
         var(--#{$prefix}focus-ring-width) var(--#{$prefix}focus-ring-color);
     }
-    
+
     .badge {
       --#{$prefix}badge-color: #{$taginput-badge-color};
       --#{$prefix}badge-font-size: #{$taginput-badge-font-size};
