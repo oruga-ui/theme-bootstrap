@@ -134,6 +134,7 @@ const perPage = ref(3);
 
 const checkedRows = ref([]);
 const selected = ref();
+const stickyHeaders = ref(true);
 </script>
 
 <template>
@@ -154,6 +155,10 @@ const selected = ref();
       <o-switch v-model="isFocusable" :rounded="true" label="Focusable" />
       <o-switch v-model="isLoading" :rounded="true" label="Loading state" />
       <o-switch v-model="isEmpty" :rounded="true" label="Empty" />
+      <o-switch
+        v-model="stickyHeaders"
+        :rounded="true"
+        label="Sticky Headers" />
       <o-switch v-model="hasMobileCards" :rounded="true">
         Mobile cards <small>(collapsed rows)</small>
       </o-switch>
@@ -171,6 +176,7 @@ const selected = ref();
       :focusable="isFocusable"
       :mobile-cards="hasMobileCards"
       :checkable="isCheckbale"
+      :sticky-header="stickyHeaders"
       detailed>
       <o-table-column
         v-for="(column, idx) in columns"

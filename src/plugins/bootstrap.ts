@@ -432,6 +432,7 @@ const bootstrapConfig: OrugaOptions = {
     rootClass: "table-wrapper",
     wrapperClass: "table-inner",
     tableClass: "table",
+    stickyHeaderClass: "table-sticky",
     borderedClass: "table-bordered",
     stripedClass: "table-striped",
     narrowedClass: "table-sm",
