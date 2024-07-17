@@ -5,4 +5,13 @@
 
 .collapse {
   @extend .show;
+
+  &-trigger {
+    cursor: pointer;
+    display: inline-block;
+  }
+
+  &-content {
+    display: inherit;
+  }
 }
