@@ -87,6 +87,8 @@ const bootstrapConfig: OrugaOptions = {
     itemDisabledClass: "disabled",
     mobileClass: "dropdown-modal",
     teleportClass: "teleported",
+    // scrollClipClass: "scroll-clipped",
+    // noScrollClass: "scroll-hidden",
   },
   datepicker: {
     override: true,
@@ -243,8 +245,8 @@ const bootstrapConfig: OrugaOptions = {
     closeClass: "btn-close",
     fullScreenClass: "fullscreen",
     mobileClass: "mobile",
-    scrollClipClass: "modal-open",
-    noScrollClass: "noScroll",
+    scrollClipClass: "scroll-clipped",
+    noScrollClass: "scroll-hidden",
   },
   notification: {
     override: true,
