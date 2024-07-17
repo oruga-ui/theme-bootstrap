@@ -5,11 +5,11 @@ $table-head-border-width: var(--#{$prefix}border-width) !default;
 $table-sticky-zindex: 1 !default;
 $table-sticky-bg: initial !default;
 $table-sticky-color: initial !default;
+$table-sticky-header-height: 350px !default;
 $table-detail-padding: 0.5rem 0.75rem !default;
 $table-detail-bg: var(--#{$prefix}gray-light) !default;
 $table-sortable-hover-border-color: var(--#{$prefix}secondary) !default;
 $table-current-sort-bg: var(--#{$prefix}gray-light) !default;
-$table-focus-color: var(--#{$prefix}-info-rgb) !default;
 $table-card-spacer: $spacer;
 /* @docs */
 
@@ -54,35 +54,26 @@ $table-card-spacer: $spacer;
 /* @bootstrap docs */
 
 .table-wrapper {
+  --#{$prefix}table-sticky-zindex: #{$table-sticky-zindex};
+  --#{$prefix}table-sticky-bg: #{$table-sticky-bg};
+  --#{$prefix}table-sticky-color: #{$table-sticky-color};
+  --#{$prefix}table-sticky-header-height: #{$table-sticky-header-height};
+  --#{$prefix}table-sortable-hover-border-color: #{$table-sortable-hover-border-color};
+  --#{$prefix}table-current-sort-bg: #{$table-current-sort-bg};
+
   position: relative;
 
-  .table-inner {
-    --#{$prefix}table-sortable-hover-border-color: #{$table-sortable-hover-border-color};
-    --#{$prefix}table-current-sort-bg: #{$table-current-sort-bg};
-    --#{$prefix}table-focus-color: #{$table-focus-color};
+  .table-inner:focus {
+    border-radius: var(--#{$prefix}border-radius);
+    box-shadow: var(--#{$prefix}focus-ring-x, 0)
+      var(--#{$prefix}focus-ring-y, 0) var(--#{$prefix}focus-ring-blur, 0)
+      var(--#{$prefix}focus-ring-width) var(--#{$prefix}focus-ring-color);
   }
 
   .table {
     --#{$prefix}table-head-bg: #{$table-head-bg};
     --#{$prefix}table-head-color: #{$table-head-color};
     --#{$prefix}table-head-border-width: #{$table-head-border-width};
-    --#{$prefix}table-sticky-zindex: #{$table-sticky-zindex};
-    --#{$prefix}table-sticky-bg: #{$table-sticky-bg};
-    --#{$prefix}table-sticky-color: #{$table-sticky-color};
-
-    th,
-    td {
-      vertical-align: middle;
-
-      &.sticky {
-        position: -webkit-sticky;
-        position: sticky;
-        left: 0;
-        z-index: var(--#{$prefix}table-sticky-zindex);
-        --#{$prefix}table-accent-color: var(--#{$prefix}table-sticky-color);
-        --#{$prefix}table-accent-bg: var(--#{$prefix}table-sticky-bg);
-      }
-    }
 
     // override sticky hover values
     &.table-hover > tbody > tr:hover > .sticky {
@@ -108,56 +99,74 @@ $table-card-spacer: $spacer;
       );
     }
 
-    thead {
-      th {
-        --#{$prefix}table-color-state: var(--#{$prefix}table-head-color);
-        --#{$prefix}table-bg-state: var(--#{$prefix}table-head-bg);
+    th,
+    td {
+      vertical-align: middle;
 
-        position: relative;
-        border-bottom-width: var(--#{$prefix}table-head-border-width);
-
-        &.sortable {
-          cursor: pointer;
-
-          > span {
-            display: block;
-            position: relative;
-          }
-
-          &:hover {
-            border-color: var(--#{$prefix}table-sortable-hover-border-color);
-          }
-        }
-
-        &.current-sort {
-          --#{$prefix}table-bg-type: var(--#{$prefix}table-current-sort-bg);
-        }
-
-        .sort-icon {
-          position: absolute;
-          right: 0;
-        }
+      &.sticky {
+        position: -webkit-sticky;
+        position: sticky;
+        left: 0;
+        z-index: var(--#{$prefix}table-sticky-zindex);
+        --#{$prefix}table-accent-color: var(--#{$prefix}table-sticky-color);
+        --#{$prefix}table-accent-bg: var(--#{$prefix}table-sticky-bg);
       }
     }
 
-    tbody {
-      tr {
-        &.table-detail {
-          --#{$prefix}table-detail-bg: #{$table-detail-bg};
-          --#{$prefix}table-detail-padding: #{$table-detail-padding};
+    thead th {
+      --#{$prefix}table-color-state: var(--#{$prefix}table-head-color);
+      --#{$prefix}table-bg-state: var(--#{$prefix}table-head-bg);
 
-          td {
-            background-color: var(--#{$prefix}table-detail-bg);
-            padding: var(--#{$prefix}table-detail-padding);
-            box-shadow: unset;
-          }
+      position: relative;
+      border-bottom-width: var(--#{$prefix}table-head-border-width);
+
+      &.sortable {
+        cursor: pointer;
+
+        > span {
+          display: block;
+          position: relative;
         }
+
+        &:hover {
+          border-color: var(--#{$prefix}table-sortable-hover-border-color);
+        }
+      }
+
+      &.current-sort {
+        --#{$prefix}table-bg-type: var(--#{$prefix}table-current-sort-bg);
+      }
+
+      .sort-icon {
+        position: absolute;
+        right: 0;
       }
     }
 
-    &:focus {
-      box-shadow: 0 0 0.5rem 0.5rem
-        rgba(var(--#{$prefix}table-focus-color), 0.25);
+    tbody tr {
+      &.table-detail {
+        --#{$prefix}table-detail-bg: #{$table-detail-bg};
+        --#{$prefix}table-detail-padding: #{$table-detail-padding};
+
+        td {
+          background-color: var(--#{$prefix}table-detail-bg);
+          padding: var(--#{$prefix}table-detail-padding);
+          box-shadow: unset;
+        }
+      }
+    }
+  }
+
+  .table-sticky {
+    height: var(--#{$prefix}table-sticky-header-height);
+    overflow-y: auto;
+
+    .table thead th {
+      position: -webkit-sticky;
+      position: sticky;
+      left: 0;
+      top: 0;
+      z-index: calc(var(--#{$prefix}table-sticky-zindex) + 10);
     }
   }
 

@@ -4,26 +4,29 @@ import App from "./App.vue";
 import router from "./router";
 
 import Oruga from "@oruga-ui/oruga-next";
-import { bootstrapConfig } from "./plugins/bootstrap";
+import Examples from "@oruga-ui/examples";
 
-import "@fortawesome/fontawesome-free/scss/fontawesome.scss";
-import "@fortawesome/fontawesome-free/scss/regular.scss";
-import "@fortawesome/fontawesome-free/scss/solid.scss";
+// add examples styles
+import "@oruga-ui/examples/dist/style.css";
+
+// add theme config
+import { bootstrapConfig } from "./plugins/bootstrap";
 
 createApp(App)
   .use(router)
   .use(Oruga, {
+    iconPack: "fas",
     customIconPacks: {
       fas: {
         sizes: {
           default: "",
           small: "fa-sm",
           medium: "fa-lg",
-          large: "fa-2x",
+          large: "fa-xl",
         },
       },
     },
-    iconPack: "fas",
     ...bootstrapConfig,
   })
+  .use(Examples)
   .mount("#app");

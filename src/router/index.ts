@@ -3,20 +3,10 @@ import {
   createWebHistory,
   type RouteRecordRaw,
 } from "vue-router";
-import Home from "../views/Home.vue";
+import Home from "@/views/Home.vue";
+import Component from "@/views/Component.vue";
 
-const paths = import.meta.glob("../components/*.vue") as any;
-const components = Object.keys(paths)
-  .map((c: string) => c.replace(".vue", ""))
-  .map((c: string) => c.replace("../components/", ""))
-  .map((c: string) => `/${c}`)
-  .map((c: string) => {
-    const name = c.split("/")[1];
-    return {
-      name,
-      link: c,
-    };
-  });
+import components from "@/components";
 
 const routes: Array<RouteRecordRaw> = [
   {
@@ -24,10 +14,11 @@ const routes: Array<RouteRecordRaw> = [
     name: "Home",
     component: Home,
   },
-  ...components.map(({ name, link }: any) => ({
-    path: link,
-    name: name,
-    component: () => import(/* @vite-ignore */ "../components" + link + ".vue"),
+  ...components.map((component) => ({
+    path: "/components/" + component.toLocaleLowerCase(),
+    name: component,
+    props: { component },
+    component: Component,
   })),
 ];
 
