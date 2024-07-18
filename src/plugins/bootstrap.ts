@@ -245,7 +245,7 @@ const bootstrapConfig: OrugaOptions = {
     closeClass: "btn-close",
     fullScreenClass: "fullscreen",
     mobileClass: "mobile",
-    scrollClipClass: "scroll-clipped",
+    scrollClipClass: ["scroll-clipped", "modal-open"],
     noScrollClass: "scroll-hidden",
   },
   notification: {
@@ -503,9 +503,6 @@ const bootstrapConfig: OrugaOptions = {
     variantClass: "variant-",
     expandedClass: "expanded",
     counterClass: "counter",
-    autocompleteClasses: {
-      rootClass: "expanded",
-    },
   },
   tooltip: {
     override: true,
