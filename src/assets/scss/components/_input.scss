@@ -131,6 +131,7 @@ $input-icon-padding-lg: 3rem !default;
 
 .select,
 .input {
+  display: inline-block;
   position: relative;
 
   &.expanded {
