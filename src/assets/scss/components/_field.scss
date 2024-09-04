@@ -109,6 +109,10 @@ $input-field-btn-border-color: $input-border-color !default;
   .input-group {
     flex-shrink: 0;
 
+    > .btn {
+      --#{$prefix}btn-spacer: 0;
+    }
+
     // prevent nested components
     > *:not(.dropdown-menu) {
       // remove margin
@@ -129,8 +133,8 @@ $input-field-btn-border-color: $input-border-color !default;
 
       // set border radii
       & > button:first-child:not(:only-child),
-      & > input:first-child:not(:only-child):not(.form-check-input),
-      & > select:first-child:not(:only-child) {
+      & > .input:first-child:not(:only-child):not(.form-check-input),
+      & > .select:first-child:not(:only-child) {
         border-bottom-right-radius: 0;
         border-top-right-radius: 0;
       }
