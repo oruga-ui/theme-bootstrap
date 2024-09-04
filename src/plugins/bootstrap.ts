@@ -141,6 +141,9 @@ const bootstrapConfig: OrugaOptions = {
     tableEventsClass: "events",
     tableEventClass: "event",
     mobileClass: "mobile",
+    dropdownClasses: {
+      teleportClass: "datepicker",
+    },
   },
   timepicker: {
     override: true,
