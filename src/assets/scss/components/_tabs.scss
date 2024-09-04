@@ -63,6 +63,7 @@ $nav-underline-link-active-border-color: currentcolor !default;
     }
 
     // style toggle / underline
+    &-default,
     &-toggle {
       @extend .nav-underline;
     }
