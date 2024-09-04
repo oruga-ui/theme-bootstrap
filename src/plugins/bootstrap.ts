@@ -26,6 +26,7 @@ const bootstrapConfig: OrugaOptions = {
     roundedClass: "rounded-pill",
     expandedClass: "expanded",
     outlinedClass: (_: string, props: ComponentProps) => {
+      if (!props.variant) return "btn-outline";
       return `btn-outline-${props.variant}`;
     },
     disabledClass: "btn-disabled",
