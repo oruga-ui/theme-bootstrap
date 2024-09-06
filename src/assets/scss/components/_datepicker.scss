@@ -16,7 +16,8 @@ $datepicker-month-width: 20rem !default;
 $datepicker-month-cell-spacer: calc($spacer * 0.5) !default;
 $datepicker-month-cell-height: 2.5rem !default;
 $datepicker-dropdown-width: calc(100vw - 40px) !default;
-$datepicker-dropdown-max-width: 460px !default;
+$datepicker-dropdown-min-width: 380px !default;
+$datepicker-dropdown-max-width: 420px !default;
 /* @docs */
 
 .datepicker {
@@ -227,16 +228,18 @@ $datepicker-dropdown-max-width: 460px !default;
 
   // on mobile modal
   &.mobile {
-    .dropdown-modal > .dropdown-menu {
-      --#{$prefix}dropdown-width: #{$datepicker-dropdown-width};
-      --#{$prefix}dropdown-max-width: #{$datepicker-dropdown-max-width};
-    }
-
     .pagination > .pagination-list {
       flex-grow: 1;
       flex-shrink: 1;
       justify-content: center;
     }
+  }
+
+  // modal size adjustments
+  &.dropdown.dropdown-modal > .dropdown-menu {
+    --#{$prefix}dropdown-width: #{$datepicker-dropdown-width};
+    --#{$prefix}dropdown-min-width: #{$datepicker-dropdown-min-width};
+    --#{$prefix}dropdown-max-width: #{$datepicker-dropdown-max-width};
   }
 
   // datetimepicker overrides
