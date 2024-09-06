@@ -56,7 +56,7 @@ createApp(App)
     .use(Oruga, bootstrapConfig)
     .mount('#app')
 ```
-Please note, the package also works for `@oruga-ui/oruga` (Vue 2) and can be used without importing any other Oruga styling or the full Oruga bundle.
+Please note, this package can be used without importing any other Oruga styling or theme.
 
 ### Customization (SASS/SCSS)
 
