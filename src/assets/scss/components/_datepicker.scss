@@ -6,12 +6,17 @@ $datepicker-pagination-spacer: calc($spacer * 0.5) !default;
 $datepicker-section-spacer: calc($spacer * 0.75) !default;
 $datepicker-section-border: 1px solid var(--#{$prefix}border-color) !default;
 $datepicker-cell-padding: 0.5rem 0.75rem !default;
-$datepicker-cell-width: calc(#{100%} / 7) !default;
-$datepicker-cell-border-radius: var(--#{$prefix}border-radius) !default;
 $datepicker-cell-font-weight: 400 !default;
+$datepicker-cell-width: calc(#{100%} / 7) !default;
+$datepicker-cell-border-width: 1px !default;
+$datepicker-cell-border-color: transparent !default;
+$datepicker-cell-border-radius: var(--#{$prefix}border-radius) !default;
 $datepicker-cell-color: var(--#{$prefix}black) !default;
-$datepicker-cell-hovered-color: var(--#{$prefix}secondary) !default;
-$datepicker-cell-selected-color: var(--#{$prefix}primary) !default;
+$datepicker-cell-bg: transparent !default;
+$datepicker-cell-hovered-color: var(--#{$prefix}secondary-contrast) !default;
+$datepicker-cell-hovered-bg: var(--#{$prefix}secondary) !default;
+$datepicker-cell-selected-color: var(--#{$prefix}primary-contrast) !default;
+$datepicker-cell-selected-bg: var(--#{$prefix}primary) !default;
 $datepicker-month-width: 20rem !default;
 $datepicker-month-cell-spacer: calc($spacer * 0.5) !default;
 $datepicker-month-cell-height: 2.5rem !default;
@@ -71,39 +76,58 @@ $datepicker-dropdown-max-width: 420px !default;
   .datepicker-cell {
     --#{$prefix}datepicker-cell-padding: #{$datepicker-cell-padding};
     --#{$prefix}datepicker-cell-width: #{$datepicker-cell-width};
+    --#{$prefix}datepicker-cell-border-width: #{$datepicker-cell-border-width};
+    --#{$prefix}datepicker-cell-border-color: #{$datepicker-cell-border-color};
     --#{$prefix}datepicker-cell-border-radius: #{$datepicker-cell-border-radius};
     --#{$prefix}datepicker-cell-font-weight: #{$datepicker-cell-font-weight};
     --#{$prefix}datepicker-cell-color: #{$datepicker-cell-color};
+    --#{$prefix}datepicker-cell-bg: #{$datepicker-cell-bg};
     --#{$prefix}datepicker-cell-hovered-color: #{$datepicker-cell-hovered-color};
+    --#{$prefix}datepicker-cell-hovered-bg: #{$datepicker-cell-hovered-bg};
     --#{$prefix}datepicker-cell-selected-color: #{$datepicker-cell-selected-color};
+    --#{$prefix}datepicker-cell-selected-bg: #{$datepicker-cell-selected-bg};
 
     display: table-cell;
     padding: var(--#{$prefix}datepicker-cell-padding);
     width: var(--#{$prefix}datepicker-cell-width);
     color: var(--#{$prefix}datepicker-cell-color);
+    background-color: var(--#{$prefix}datepicker-cell-bg);
     font-weight: var(--#{$prefix}datepicker-cell-font-weight);
     text-decoration: none;
     text-align: center;
+    border: var(--#{$prefix}datepicker-cell-border-width) solid
+      var(--#{$prefix}datepicker-cell-border-color);
     border-radius: var(--#{$prefix}datepicker-cell-border-radius);
 
     &.selectable {
-      text-decoration: none;
       font-weight: var(--#{$prefix}datepicker-cell-font-weight);
     }
 
     &.today {
-      color: var(--#{$prefix}datepicker-cell-selected-color);
-      border: 1px solid var(--#{$prefix}datepicker-cell-selected-color);
+      --#{$prefix}datepicker-cell-color: var(
+        --#{$prefix}datepicker-cell-selected-bg
+      );
+      --#{$prefix}datepicker-cell-border-color: var(
+        --#{$prefix}datepicker-cell-selected-bg
+      );
     }
 
     &.selected {
-      color: white;
-      background-color: var(--#{$prefix}datepicker-cell-selected-color);
+      --#{$prefix}datepicker-cell-color: var(
+        --#{$prefix}datepicker-cell-selected-color
+      );
+      --#{$prefix}datepicker-cell-bg: var(
+        --#{$prefix}datepicker-cell-selected-bg
+      );
     }
 
     &[class*="hovered-"] {
-      color: white;
-      background-color: var(--#{$prefix}datepicker-cell-hovered-color);
+      --#{$prefix}datepicker-cell-color: var(
+        --#{$prefix}datepicker-cell-hovered-color
+      );
+      --#{$prefix}datepicker-cell-bg: var(
+        --#{$prefix}datepicker-cell-hovered-bg
+      );
     }
 
     &.hovered-first,
@@ -114,18 +138,18 @@ $datepicker-dropdown-max-width: 420px !default;
       border-bottom-right-radius: 0;
     }
 
-    &.hovered-within,
-    &.selected-within {
-      opacity: 0.5;
-      border-radius: 0;
-    }
-
     &.hovered-last,
     &.selected-last {
       opacity: 1;
       border-radius: var(--#{$prefix}datepicker-cell-border-radius);
       border-top-left-radius: 0;
       border-bottom-left-radius: 0;
+    }
+
+    &.hovered-within,
+    &.selected-within:not([class*="hovered-"]) {
+      opacity: 0.5;
+      border-radius: 0;
     }
   }
 
