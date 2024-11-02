@@ -77,7 +77,7 @@ const bootstrapConfig: OrugaOptions = {
     disabledClass: "disabled",
     expandedClass: "expanded",
     inlineClass: "inline",
-    menuMobileOverlayClass: "dropdown-backdrop",
+    overlayClass: "dropdown-backdrop",
     menuClass: "dropdown-menu",
     menuPositionClass: "position-",
     menuActiveClass: "show",
@@ -88,8 +88,8 @@ const bootstrapConfig: OrugaOptions = {
     itemDisabledClass: "disabled",
     mobileClass: "dropdown-modal",
     teleportClass: "teleported",
-    // scrollClipClass: "scroll-clipped",
-    // noScrollClass: "scroll-hidden",
+    scrollClipClass: "scroll-clipped",
+    noScrollClass: "scroll-hidden",
   },
   datepicker: {
     override: true,
@@ -166,13 +166,13 @@ const bootstrapConfig: OrugaOptions = {
     bodyClass: "field-wrapper",
     labelClass: "form-label",
     messageClass: "help",
-    variantMessageClass: "text-",
+    messageVariantClass: "text-",
     addonsClass: "input-group",
     groupedClass: "input-grouped",
     groupMultilineClass: "grouped-multiline",
     horizontalClass: "field-horizontal row",
-    labelHorizontalClass: "col-form-label",
-    bodyHorizontalClass: "col-form-field",
+    horizontalLabelClass: "col-form-label",
+    horizontalBodyClass: "col-form-field",
   },
   icon: {
     override: true,
@@ -219,6 +219,8 @@ const bootstrapConfig: OrugaOptions = {
     overlayClass: "loading-overlay",
     labelClass: "loading-label",
     iconClass: "icon",
+    scrollClipClass: "scroll-clipped",
+    noScrollClass: "scroll-hidden",
   },
   menu: {
     override: true,
@@ -280,16 +282,16 @@ const bootstrapConfig: OrugaOptions = {
       return classes.join(" ");
     },
     listItemClass: "page-item",
-    linkClass: "page-link",
-    linkCurrentClass: "active",
-    linkDisabledClass: "disabled",
+    buttonClass: "page-link",
+    buttonCurrentClass: "active",
+    buttonDisabledClass: "disabled",
     ellipsisClass: (_: string, props: ComponentProps) => {
       const classes = ["pagination-ellipsis"];
       if (props.rounded) classes.push("rounded-pill");
       return classes.join(" ");
     },
-    nextButtonClass: "pagination-next page-item",
-    prevButtonClass: "pagination-prev page-item",
+    buttonNextClass: "pagination-next page-item",
+    buttonPrevClass: "pagination-prev page-item",
     infoClass: "pagination-info",
   },
   radio: {
@@ -337,7 +339,6 @@ const bootstrapConfig: OrugaOptions = {
       else return "offcanvas-start";
     },
     contentClass: "offcanvas",
-    variantClass: "variant-",
     reduceClass: "reduced",
     expandOnHoverClass: "reduced-expand",
     fullheightClass: "fullheight",
@@ -391,26 +392,27 @@ const bootstrapConfig: OrugaOptions = {
     sizeClass: "size-",
     positionClass: "position-",
     verticalClass: "vertical",
-    stepsClass: "steps",
     animatedClass: "animated",
-    itemHeaderClass: (_: string, props: ComponentProps) => {
+    navClass: "steps",
+    navItemClass: (_: string, props: ComponentProps) => {
       const classes = ["step-item"];
       if (props.labelPosition === "left") classes.push("label-left");
       if (props.labelPosition === "right") classes.push("label-right");
       return classes.join(" ");
     },
-    itemHeaderVariantClass: "variant-",
-    itemHeaderActiveClass: "active",
-    itemHeaderPreviousClass: "previous",
-    stepLinkClass: "step-link",
-    stepLinkLabelClass: "step-title",
-    stepLinkClickableClass: "clickable",
-    stepMarkerClass: "step-marker",
-    stepMarkerRoundedClass: "rounded-pill",
-    stepNavigationClass: "step-navigation",
-    itemClass: "step-item",
-    stepContentClass: "step-content",
-    stepContentTransitioningClass: "transition",
+    navItemVariantClass: "variant-",
+    navItemActiveClass: "active",
+    navItemPreviousClass: "previous",
+    navItemNextClass: "next",
+    stepClass: "step-link",
+    stepLabelClass: "step-title",
+    stepClickableClass: "clickable",
+    markerClass: "step-marker",
+    markerRoundedClass: "rounded-pill",
+    navigationClass: "step-navigation",
+    stepPanelClass: "step-item",
+    contentClass: "step-content",
+    transitioningClass: "transition",
   },
   switch: {
     override: true,
@@ -471,7 +473,7 @@ const bootstrapConfig: OrugaOptions = {
     expandedClass: "expanded",
     verticalClass: "vertical",
     multilineClass: "multiline",
-    navTabsClass: "nav",
+    navClass: "nav",
     navTypeClass: "nav-",
     navSizeClass: "size-",
     navPositionClass: (position: string) => {
@@ -479,11 +481,11 @@ const bootstrapConfig: OrugaOptions = {
       else if (position === "centered") return "justify-content-center";
       else if (position === "right") return "justify-content-end";
     },
-    itemWrapperClass: "nav-item",
+    navItemClass: "nav-item",
     itemTag: "button",
-    itemHeaderClass: "nav-link",
-    itemHeaderActiveClass: () => "active",
-    itemHeaderDisabledClass: () => "disabled",
+    tabClass: "nav-link",
+    tabActiveClass: () => "active",
+    tabDisabledClass: () => "disabled",
     contentClass: "nav-content",
     transitioningClass: "transition",
   },
