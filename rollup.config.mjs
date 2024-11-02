@@ -2,7 +2,7 @@ import copy from "rollup-plugin-copy";
 import sass from "rollup-plugin-sass";
 import typescript from "@rollup/plugin-typescript";
 import terser from "@rollup/plugin-terser";
-import commonjs from '@rollup/plugin-commonjs';
+import commonjs from "@rollup/plugin-commonjs";
 
 import autoprefixer from "autoprefixer";
 import fs from "fs";
@@ -38,7 +38,7 @@ const commonSassPluginOptions = {
 const typescriptPluginOptions = {
   sourceMap: false,
   // skip type checking of declaration files
-  skipLibCheck:true,
+  skipLibCheck: true,
   // enabling declaration (.d.ts) emit
   declaration: true,
   //  decouple declaration files from actual transpiled JavaScript files
