@@ -12,7 +12,7 @@ $steps-vertical-padding: 1em 0 !default;
 /* @docs */
 
 @mixin steps-size($size) {
-  .steps {
+  .steps-list {
     min-height: $size * 2;
 
     .step-item {
@@ -56,7 +56,7 @@ $steps-vertical-padding: 1em 0 !default;
   }
 }
 
-.steps-wrapper {
+.steps {
   // Default size
   @include steps-size(1em);
 
@@ -67,7 +67,7 @@ $steps-vertical-padding: 1em 0 !default;
     }
   }
 
-  .steps {
+  .steps-list {
     --#{$prefix}steps-divider-height: #{$steps-divider-height};
     --#{$prefix}steps-title-bg: #{$steps-title-bg};
     --#{$prefix}steps-title-color: #{$steps-title-color};
@@ -251,7 +251,7 @@ $steps-vertical-padding: 1em 0 !default;
     flex-direction: row;
     flex-wrap: wrap;
 
-    > .steps {
+    > .steps-list {
       flex-direction: column;
 
       .step-item {

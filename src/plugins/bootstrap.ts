@@ -6,7 +6,7 @@ import "../assets/scss/bootstrap-build.scss";
 const bootstrapConfig: OrugaOptions = {
   autocomplete: {
     override: true,
-    rootClass: "autocomplete-wrapper",
+    rootClass: "autocomplete",
     itemHoverClass: "active",
     itemEmptyClass: "disabled",
     itemGroupTitleClass: "fw-bold",
@@ -14,10 +14,12 @@ const bootstrapConfig: OrugaOptions = {
   button: {
     override: true,
     rootClass: "btn",
+    wrapperClass: "button-wrapper",
     sizeClass: (size: string) => {
       if (size == "small") return "btn-sm";
       else if (size == "medium") return "btn-md";
       else if (size == "large") return "btn-lg";
+      else return `btn-${size}`;
     },
     variantClass: (_: string, props: ComponentProps) => {
       if (props.outlined) return "";
@@ -25,17 +27,19 @@ const bootstrapConfig: OrugaOptions = {
     },
     roundedClass: "rounded-pill",
     expandedClass: "expanded",
+    disabledClass: "btn-disabled",
     outlinedClass: (_: string, props: ComponentProps) => {
       if (!props.variant) return "btn-outline";
       return `btn-outline-${props.variant}`;
     },
-    disabledClass: "btn-disabled",
-    invertedClass: "btn-inverted-",
-    wrapperClass: "button-wrapper",
+    invertedClass: (variant) => {
+      if (!variant) return "btn-inverted";
+      return `btn-inverted-${variant}`;
+    },
   },
   carousel: {
     override: true,
-    rootClass: "carousel-wrapper",
+    rootClass: "carousel",
     overlayClass: "carousel-overlay",
     wrapperClass: "carousel-scene",
     itemsClass: "carousel-items carousel-inner",
@@ -224,11 +228,11 @@ const bootstrapConfig: OrugaOptions = {
   },
   menu: {
     override: true,
-    rootClass: "menu-wrapper",
+    rootClass: "menu",
     listClass: "menu-list",
     listLabelClass: "menu-label",
-    itemWrapperClass: "menu-item-wrapper",
-    itemClass: "menu-item",
+    itemWrapperClass: "menu-item",
+    itemClass: "menu-link",
     itemActiveClass: "active",
     itemDisabledClass: "disabled",
     itemIconTextClass: "menu-icon",
@@ -384,7 +388,7 @@ const bootstrapConfig: OrugaOptions = {
   steps: {
     override: true,
     rootClass: (_: string, props: ComponentProps) => {
-      const classes = ["steps-wrapper"];
+      const classes = ["steps"];
       if (props.variant) classes.push(`variant-${props.variant}`);
       if (props.disabled) classes.push("disabled");
       return classes.join(" ");
@@ -393,7 +397,7 @@ const bootstrapConfig: OrugaOptions = {
     positionClass: "position-",
     verticalClass: "vertical",
     animatedClass: "animated",
-    navClass: "steps",
+    navClass: "steps-list",
     navItemClass: (_: string, props: ComponentProps) => {
       const classes = ["step-item"];
       if (props.labelPosition === "left") classes.push("label-left");
@@ -468,7 +472,7 @@ const bootstrapConfig: OrugaOptions = {
   },
   tabs: {
     override: true,
-    rootClass: "tabs-wrapper",
+    rootClass: "tabs",
     positionClass: "position-",
     expandedClass: "expanded",
     verticalClass: "vertical",
@@ -492,12 +496,12 @@ const bootstrapConfig: OrugaOptions = {
   taginput: {
     override: true,
     rootClass: (_: string, props: ComponentProps) => {
-      const classes = ["taginput-wrapper"];
+      const classes = ["taginput"];
       if (props.disabled) classes.push("disabled");
       return classes.join(" ");
     },
     containerClass: (_: string, props: ComponentProps) => {
-      const classes = ["taginput", "focus-ring"];
+      const classes = ["taginput-wrapper", "focus-ring"];
       if (props.variant) classes.push(`focus-ring-${props.variant}`);
       return classes.join(" ");
     },
