@@ -9,6 +9,7 @@
   },
   "include": [
     "eslint.config.*",
+    "stylelint.config.*",
     "vite.config.*",
     "src/**/*.ts", 
     "src/**/*.d.ts", 
