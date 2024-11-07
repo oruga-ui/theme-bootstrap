@@ -27,7 +27,7 @@
     "dev": "vite --force",
     "serve": "vite preview",
     "build": "vue-tsc --noEmit && vite build",
-    "build:lib": "rimraf dist && npm run timeout && rollup -c",
+    "build:lib": "rimraf dist && rollup -c",
     "lint": "eslint . --fix --quiet",
     "lint:style": "stylelint **/*.{css,scss} --fix --ignore-path .gitignore",
     "update": "ncu -u"
