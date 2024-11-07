@@ -25,7 +25,7 @@ export default defineConfig(({ mode }) => {
         copyPublicDir: false,
         minify: "terser",
         lib: {
-          entry: resolve(__dirname, "src/plugins/bootstrap.ts"),
+          entry: resolve(__dirname, "src/plugins/theme.ts"),
           name: "OrugaThemeBootstrap",
           fileName: "bootstrap",
           formats: ["es", "cjs", "umd"],
@@ -60,7 +60,7 @@ export default defineConfig(({ mode }) => {
         // build types in dist/types
         dts({
           outDir: "./dist/types",
-          include: ["src/plugins/bootstrap.ts"],
+          include: ["src/plugins/theme.ts"],
         }),
         // copy assets into dist
         copy({
