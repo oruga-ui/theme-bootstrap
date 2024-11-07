@@ -10,7 +10,7 @@ import Examples from "@oruga-ui/examples";
 import "@oruga-ui/examples/dist/style.css";
 
 // add theme config
-import { bootstrapConfig } from "./plugins/bootstrap";
+import { bootstrapConfig } from "./plugins/theme";
 
 createApp(App)
   .use(router)
