@@ -97,7 +97,7 @@ import components from "@/components";
 }
 
 @media (max-width: 576px) {
-  #main {
+  #app {
     #nav {
       display: none;
     }
