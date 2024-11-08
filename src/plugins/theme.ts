@@ -25,9 +25,6 @@ const bootstrapConfig: OrugaOptions = {
       if (props.outlined) return "";
       return `btn-${props.variant}`;
     },
-    roundedClass: "rounded-pill",
-    expandedClass: "expanded",
-    disabledClass: "btn-disabled",
     outlinedClass: (_: string, props: ComponentProps) => {
       if (!props.variant) return "btn-outline";
       return `btn-outline-${props.variant}`;
@@ -36,6 +33,10 @@ const bootstrapConfig: OrugaOptions = {
       if (!variant) return "btn-inverted";
       return `btn-inverted-${variant}`;
     },
+    roundedClass: "rounded-pill",
+    expandedClass: "expanded",
+    disabledClass: "btn-disabled",
+    loadingClass: "loading",
   },
   carousel: {
     override: true,
@@ -231,11 +232,11 @@ const bootstrapConfig: OrugaOptions = {
     rootClass: "menu",
     listClass: "menu-list",
     listLabelClass: "menu-label",
-    itemWrapperClass: "menu-item",
-    itemClass: "menu-link",
-    itemActiveClass: "active",
-    itemDisabledClass: "disabled",
-    itemIconTextClass: "menu-icon",
+    itemClass: "menu-item",
+    itemButtonClass: "menu-button",
+    itemButtonActiveClass: "active",
+    itemButtonDisabledClass: "disabled",
+    itemButtonIconClass: "menu-icon",
     itemSubmenuClass: "menu-submenu",
   },
   modal: {
@@ -350,6 +351,8 @@ const bootstrapConfig: OrugaOptions = {
     mobileClass: "mobile",
     inlineClass: "inline",
     teleportClass: "teleported",
+    scrollClipClass: "scroll-clipped",
+    noScrollClass: "scroll-hidden",
   },
   skeleton: {
     override: true,
@@ -398,12 +401,7 @@ const bootstrapConfig: OrugaOptions = {
     verticalClass: "vertical",
     animatedClass: "animated",
     navClass: "steps-list",
-    navItemClass: (_: string, props: ComponentProps) => {
-      const classes = ["step-item"];
-      if (props.labelPosition === "left") classes.push("label-left");
-      if (props.labelPosition === "right") classes.push("label-right");
-      return classes.join(" ");
-    },
+    navItemClass: "step-item",
     navItemVariantClass: "variant-",
     navItemActiveClass: "active",
     navItemPreviousClass: "previous",
@@ -411,12 +409,14 @@ const bootstrapConfig: OrugaOptions = {
     stepClass: "step-link",
     stepLabelClass: "step-title",
     stepClickableClass: "clickable",
+    stepLabelPositionClass: "label-",
     markerClass: "step-marker",
     markerRoundedClass: "rounded-pill",
-    navigationClass: "step-navigation",
+    dividerClass: "divider",
     stepPanelClass: "step-item",
     contentClass: "step-content",
     transitioningClass: "transition",
+    navigationClass: "step-navigation",
   },
   switch: {
     override: true,
