@@ -10,13 +10,14 @@ $menu-item-active-bg: var(--#{$prefix}primary) !default;
 $menu-item-active-color: var(--#{$prefix}white) !default;
 $menu-item-disabled-bg: transparent !default;
 $menu-item-disabled-color: var(--#{$prefix}secondary) !default;
+$menu-item-border-radius: var(--#{$prefix}border-radius) !default;
 $menu-icon-spacer: 0.5rem !default;
 $menu-submenu-border-left: 1px solid #445e00 !default;
 $menu-submenu-padding-left: 0.75em !default;
 $menu-submenu-margin: 0.75em !default;
 /* @docs */
 
-.menu-wrapper {
+.menu {
   .menu-label {
     --#{$prefix}menu-label-bg: #{$menu-label-bg};
     --#{$prefix}menu-label-color: #{$menu-label-color};
@@ -33,7 +34,7 @@ $menu-submenu-margin: 0.75em !default;
 
     line-height: var(--#{$prefix}menu-list-line-height);
 
-    .menu-item-wrapper {
+    .menu-item {
       --#{$prefix}menu-item-padding: #{$menu-item-padding};
       --#{$prefix}menu-item-bg: #{$menu-item-bg};
       --#{$prefix}menu-item-color: #{$menu-item-color};
@@ -41,15 +42,17 @@ $menu-submenu-margin: 0.75em !default;
       --#{$prefix}menu-item-active-color: #{$menu-item-active-color};
       --#{$prefix}menu-item-disabled-bg: #{$menu-item-disabled-bg};
       --#{$prefix}menu-item-disabled-color: #{$menu-item-disabled-color};
+      --#{$prefix}menu-item-border-radius: #{$menu-item-border-radius};
 
       list-style: none;
 
-      .menu-item {
+      .menu-button {
         display: block;
         list-style: none;
         background: var(--#{$prefix}menu-item-bg);
         color: var(--#{$prefix}menu-item-color);
         padding: var(--#{$prefix}menu-item-padding);
+        border-radius: var(--#{$prefix}menu-item-border-radius);
 
         &.active {
           --#{$prefix}menu-item-bg: var(--#{$prefix}menu-item-active-bg);

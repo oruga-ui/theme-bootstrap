@@ -2,7 +2,7 @@
 $autocomplete-menu-max-height: 200px !default;
 /* @docs */
 
-.autocomplete-wrapper {
+.autocomplete {
   --#{$prefix}autocomplete-menu-max-height: #{$autocomplete-menu-max-height};
   display: inline-block;
 

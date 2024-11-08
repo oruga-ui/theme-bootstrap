@@ -5,6 +5,7 @@ $steps-marker-color: var(--#{$prefix}white);
 $steps-color-active: var(--#{$prefix}primary);
 $steps-title-color: var(--#{$prefix}dark);
 $steps-title-bg: var(--#{$prefix}white) !default;
+$steps-title-font-weight: 500 !default;
 $steps-divider-height: 0.2em !default;
 $steps-content-spacer: 1rem !default;
 $steps-content-padding: 1rem !default;
@@ -12,7 +13,7 @@ $steps-vertical-padding: 1em 0 !default;
 /* @docs */
 
 @mixin steps-size($size) {
-  .steps {
+  .steps-list {
     min-height: $size * 2;
 
     .step-item {
@@ -30,6 +31,7 @@ $steps-vertical-padding: 1em 0 !default;
 }
 @mixin steps-color($color) {
   &.previous {
+    .divider,
     &::before,
     &::after {
       background-color: $color;
@@ -43,6 +45,7 @@ $steps-vertical-padding: 1em 0 !default;
   }
 
   &.active {
+    .divider,
     &::before,
     &::after {
       background-color: $color;
@@ -56,7 +59,7 @@ $steps-vertical-padding: 1em 0 !default;
   }
 }
 
-.steps-wrapper {
+.steps {
   // Default size
   @include steps-size(1em);
 
@@ -67,10 +70,11 @@ $steps-vertical-padding: 1em 0 !default;
     }
   }
 
-  .steps {
+  .steps-list {
     --#{$prefix}steps-divider-height: #{$steps-divider-height};
     --#{$prefix}steps-title-bg: #{$steps-title-bg};
     --#{$prefix}steps-title-color: #{$steps-title-color};
+    --#{$prefix}steps-title-font-weight: #{$steps-title-font-weight};
     --#{$prefix}steps-marker-bg: #{$steps-marker-bg};
     --#{$prefix}steps-marker-border: #{$steps-marker-border};
     --#{$prefix}steps-marker-color: #{$steps-marker-color};
@@ -78,14 +82,29 @@ $steps-vertical-padding: 1em 0 !default;
     position: relative;
     display: flex;
     flex-wrap: wrap;
+    padding: 0;
+    margin: 0;
 
     .step-item {
       position: relative;
+      display: flex;
       flex-grow: 1;
       flex-basis: 1em;
       list-style: none;
-      display: flex;
       justify-content: center;
+
+      .divider {
+        background: var(--#{$prefix}steps-marker-bg);
+        background-size: 200% 100%;
+        background-position: right bottom;
+        height: var(--#{$prefix}steps-divider-height);
+        display: block;
+        position: absolute;
+        top: $font-size-base;
+        left: -50%;
+        width: 100%;
+        z-index: -1;
+      }
 
       .step-link {
         display: flex;
@@ -101,6 +120,14 @@ $steps-vertical-padding: 1em 0 !default;
 
         &:not(.clickable) {
           cursor: auto;
+        }
+
+        &.label-right {
+          flex-direction: row;
+        }
+
+        &.label-left {
+          flex-direction: row-reverse;
         }
       }
 
@@ -123,53 +150,35 @@ $steps-vertical-padding: 1em 0 !default;
 
       .step-title {
         color: var(--#{$prefix}steps-title-color);
+        font-weight: var(--#{$prefix}steps-title-font-weight);
         text-align: center;
-      }
-
-      &::before,
-      &::after {
-        // This will contain the divider
-        background: var(--#{$prefix}steps-marker-bg);
-        background-size: 200% 100%;
-        background-position: right bottom;
-        height: var(--#{$prefix}steps-divider-height);
-      }
-
-      &:not(:first-child),
-      &:only-child {
-        flex-shrink: 1;
-
-        &::before {
-          // This will contain the divider
-          content: " ";
-          display: block;
-          position: absolute;
-          width: 100%;
-          top: 25%;
-          left: -50%;
-          z-index: -1;
-        }
+        z-index: 1;
+        background: var(--#{$prefix}steps-title-bg);
+        padding: 0.2em;
       }
 
       &:only-child {
         &::before,
         &::after {
-          width: 25%;
-          left: 50%;
-        }
-
-        &::after {
           // This will contain the divider
           content: " ";
+          background: var(--#{$prefix}steps-marker-bg);
+          background-size: 200% 100%;
+          background-position: right bottom;
+          height: var(--#{$prefix}steps-divider-height);
           display: block;
           position: absolute;
-          bottom: 0;
-          height: 3px;
+          top: $font-size-base;
+          width: 25%;
+          z-index: -1;
         }
 
         &::before {
           right: 50%;
-          left: auto;
+        }
+
+        &::after {
+          left: 50%;
         }
       }
 
@@ -182,32 +191,13 @@ $steps-vertical-padding: 1em 0 !default;
           @include steps-color($color);
         }
       }
+    }
 
-      &.label-right,
-      &.label-left {
-        &:not(:first-child),
-        &:only-child {
-          &::before {
-            top: 45%;
-          }
+    &.animated {
+      .step-item {
+        .divider {
+          transition: background $speed-slow $easing;
         }
-
-        .step-marker {
-          margin: 0;
-        }
-
-        .step-title {
-          background: var(--#{$prefix}steps-title-bg);
-          padding: 0.2em;
-        }
-      }
-
-      &.label-right .step-link {
-        flex-direction: row;
-      }
-
-      &.label-left .step-link {
-        flex-direction: row-reverse;
       }
     }
   }
@@ -221,26 +211,13 @@ $steps-vertical-padding: 1em 0 !default;
     flex-direction: column;
     overflow: visible;
     margin-top: var(--#{$prefix}steps-content-spacer);
-    padding: var(--#{$prefix}steps-content-padding);
-
-    .step-item {
-      flex-shrink: 0;
-      flex-basis: auto;
-    }
 
     &.transition {
       overflow: hidden;
     }
-  }
 
-  &.animated {
-    .step-item {
-      &:not(:first-child),
-      &:only-child {
-        &::before {
-          transition: background $speed-slow $easing;
-        }
-      }
+    &:not(:has(.step-item:empty)) {
+      padding: var(--#{$prefix}steps-content-padding);
     }
   }
 
@@ -251,8 +228,9 @@ $steps-vertical-padding: 1em 0 !default;
     flex-direction: row;
     flex-wrap: wrap;
 
-    > .steps {
+    > .steps-list {
       flex-direction: column;
+      overflow: hidden;
 
       .step-item {
         display: flex;
@@ -265,35 +243,28 @@ $steps-vertical-padding: 1em 0 !default;
           background: var(--#{$prefix}steps-title-bg);
         }
 
+        .divider,
         &::before,
         &::after {
           height: 100%;
+          width: var(--#{$prefix}steps-divider-height);
         }
 
-        &:not(:first-child),
-        &:only-child {
-          flex-shrink: 1;
+        .divider {
+          top: -50%;
+          left: 48%;
+        }
 
+        &:only-child {
           &::before {
-            width: 3px;
-            top: -50%;
-            left: 48%;
+            right: unset;
+            top: -25%;
           }
-        }
 
-        &:only-child {
           &::after {
-            // This contains the divider
-            height: 100%;
+            left: unset;
+            top: 25%;
           }
-        }
-
-        &.label-right {
-          justify-content: flex-start;
-        }
-
-        &.label-left {
-          justify-content: flex-end;
         }
       }
     }

@@ -36,7 +36,7 @@ $nav-underline-link-active-border-color: currentcolor !default;
 // $nav-underline-link-active-color:   var(--#{$prefix}emphasis-color);
 /* @bootstrap docs */
 
-.tabs-wrapper {
+.tabs {
   --#{$prefix}nav-tabs-spacer: #{$nav-tabs-spacer};
   --#{$prefix}nav-tabs-disabled-opacity: #{$nav-tabs-disabled-opacity};
 
@@ -115,6 +115,10 @@ $nav-underline-link-active-border-color: currentcolor !default;
     .nav {
       display: block;
 
+      .nav-link {
+        width: 100%;
+      }
+
       &-default .nav-link {
         border-bottom: var(--#{$prefix}nav-underline-border-width) solid
           var(--#{$prefix}nav-underline-border-color);
@@ -126,6 +130,10 @@ $nav-underline-link-active-border-color: currentcolor !default;
           border-bottom: var(--#{$prefix}nav-underline-border-width) solid
             var(--#{$prefix}nav-underline-border-color);
         }
+      }
+
+      &-boxed {
+        border-bottom: 0;
       }
 
       &-content {

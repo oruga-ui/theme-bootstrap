@@ -37,7 +37,7 @@ $carousel-indicator-spacer: $spacer !default;
 // $carousel-transition:                transform $carousel-transition-duration ease-in-out; // Define transform transition first if using multiple transitions (e.g., `transform 2s ease, opacity .5s ease-out`)
 /* @bootstrap docs */
 
-.carousel-wrapper {
+.carousel {
   --#{$prefix}carousel-control-top: #{$carousel-control-top};
   --#{$prefix}carousel-overlay-background: #{$carousel-overlay-background};
   --#{$prefix}carousel-overlay-zindex: #{$carousel-overlay-zindex};

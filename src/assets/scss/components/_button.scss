@@ -99,6 +99,11 @@ $btn-hover-box-shadow: $box-shadow-sm !default;
     cursor: auto;
   }
 
+  &.btn-inverted {
+    --#{$prefix}btn-bg: transparent;
+    --#{$prefix}btn-border-color: transparent;
+  }
+
   // inverted color
   @each $name, $color in $theme-colors {
     &.variant-#{$name}-inverted,
