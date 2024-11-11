@@ -97,7 +97,6 @@ $input-field-btn-border-color: $input-border-color !default;
     &.expanded {
       flex-grow: 1;
       flex-shrink: 1;
-      width: auto;
 
       &.btn {
         width: 100%;

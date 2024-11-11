@@ -17,12 +17,12 @@ $taginput-counter-font-size: 0.75rem !default;
 // $badge-border-radius:               var(--#{$prefix}border-radius);
 /* @bootstrap docs */
 
-.taginput-wrapper {
+.taginput {
   .btn-close {
     font-size: 0.8em;
   }
 
-  .taginput {
+  .taginput-wrapper {
     --#{$prefix}taginput-border-width: #{$input-border-width};
     --#{$prefix}taginput-border-color: #{$input-border-color};
     --#{$prefix}taginput-border-radius: #{$input-border-radius};
@@ -65,6 +65,10 @@ $taginput-counter-font-size: 0.75rem !default;
         margin-bottom: 0;
         cursor: pointer;
       }
+    }
+
+    .dropdown.expanded {
+      width: auto;
     }
   }
 

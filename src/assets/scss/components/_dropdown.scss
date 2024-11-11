@@ -159,7 +159,7 @@ $dropdown-modal-backdrop-zindex: $zindex-modal-backdrop !default;
   }
 
   // mobile class
-  &.dropdown-modal {
+  &.dropdown-modal:not(&.inline) {
     .dropdown-menu {
       --#{$prefix}dropdown-width: 75%;
       --#{$prefix}dropdown-min-width: 25%;
@@ -200,7 +200,6 @@ $dropdown-modal-backdrop-zindex: $zindex-modal-backdrop !default;
     .dropdown-menu {
       --#{$prefix}dropdown-zindex: 10;
       position: relative;
-      top: 0;
     }
   }
 }
