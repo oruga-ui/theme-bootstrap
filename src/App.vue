@@ -39,7 +39,7 @@ import components from "@/components";
     height: 100vh;
     padding: 2rem;
     padding-bottom: 6rem;
-    overflow-y: scroll;
+    padding-left: calc(var(--vp-sidebar-width) + 2rem);
 
     > section {
       padding: 1rem 0;
@@ -56,6 +56,8 @@ import components from "@/components";
   }
 
   #nav {
+    position: fixed;
+    left: 0;
     display: flex;
     flex-direction: column;
     height: 100vh;

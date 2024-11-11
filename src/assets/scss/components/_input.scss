@@ -162,6 +162,11 @@ $input-icon-padding-lg: 3rem !default;
     }
   }
 
+  // remove arrow if not arrowed
+  .form-select:not(.arrowed) {
+    --#{$prefix}form-select-bg-img: unset;
+  }
+
   // the Position of the icon
   .icon {
     --#{$prefix}input-icon-color: #{$input-icon-color};

@@ -330,6 +330,7 @@ const bootstrapConfig: OrugaOptions = {
     iconRightClass: "icon-right",
     multipleClass: "multiple",
     placeholderClass: "empty",
+    arrowClass: "arrowed",
   },
   sidebar: {
     override: true,
