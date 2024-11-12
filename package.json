@@ -7,7 +7,7 @@
   "main": "dist/bootstrap.cjs",
   "module": "dist/bootstrap.js",
   "unpkg": "dist/bootstrap.cjs",
-  "types": "dist/types/bootstrap.d.ts",
+  "types": "dist/types/theme.d.ts",
   "sideEffects": [
     "*.css",
     "*.scss"
