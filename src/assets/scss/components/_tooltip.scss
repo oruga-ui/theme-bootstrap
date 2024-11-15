@@ -49,6 +49,11 @@ $tooltip-zindex: $zindex-tooltip;
       --#{$prefix}tooltip-color: var(--#{$prefix}#{$name}-contrast);
       --#{$prefix}tooltip-bg: var(--#{$prefix}#{$name});
     }
+
+    .variant-#{$name}-subtle {
+      --#{$prefix}tooltip-color: var(--#{$prefix}body-color);
+      --#{$prefix}tooltip-bg: var(--#{$prefix}#{$name}-border-subtle);
+    }
   }
 
   .tooltip-trigger {
