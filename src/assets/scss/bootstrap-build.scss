@@ -3,17 +3,17 @@
 **************************************/
 
 // import bootstrap functions first (so you can manipulate colors, SVGs, calc, etc)
-@import "../node_modules/bootstrap/scss/functions";
+@import "bootstrap/scss/functions";
 
 // import bootstrap variables
-@import "../node_modules/bootstrap/scss/variables";
-@import "../node_modules/bootstrap/scss/variables-dark";
+@import "bootstrap/scss/variables";
+@import "bootstrap/scss/variables-dark";
 
 // import custom theme variables and maps
 @import "./utils/variables";
 
 // import bootstrap styles
-@import "../node_modules/bootstrap/scss/bootstrap";
+@import "bootstrap/scss/bootstrap";
 
 // import oruga theme styles
 @import "./bootstrap";
