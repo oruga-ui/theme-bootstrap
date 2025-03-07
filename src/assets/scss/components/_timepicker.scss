@@ -1,4 +1,5 @@
 /* @docs */
+$timepicker-select-width: 4em;
 /* @docs */
 
 .timepicker {
@@ -22,10 +23,15 @@
       }
 
       .select {
+        --#{$prefix}timepicker-select-width: #{$timepicker-select-width};
+
         .form-select {
           border: transparent;
           background-color: transparent;
           cursor: pointer;
+          padding-right: $input-btn-padding-x;
+          width: var(--#{$prefix}timepicker-select-width);
+          text-align: center;
 
           &:focus {
             box-shadow: none;

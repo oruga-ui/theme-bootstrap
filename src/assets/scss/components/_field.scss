@@ -1,7 +1,6 @@
 /* @docs */
-$input-field-grouped-spacer: 0.5rem !default;
 $input-field-margin-bottom: $spacer !default;
-$input-field-btn-border-color: $input-border-color !default;
+$input-field-grouped-spacer: $spacer / 2 !default;
 /* @docs */
 
 /* @bootstrap docs */
@@ -64,14 +63,6 @@ $input-field-btn-border-color: $input-border-color !default;
     display: block;
   }
 
-  &.grouped-multiline {
-    flex-wrap: wrap;
-
-    &:last-child {
-      margin-bottom: calc(-1 * var(--#{$prefix}input-field-margin-bottom));
-    }
-  }
-
   &.field-horizontal {
     .col-form-label {
       flex-basis: 0;
@@ -107,13 +98,15 @@ $input-field-btn-border-color: $input-border-color !default;
   // has group
   .input-group {
     flex-shrink: 0;
+    flex-wrap: unset;
 
     > .btn {
       --#{$prefix}btn-spacer: 0;
     }
 
     // prevent nested components
-    > *:not(.dropdown-menu) {
+    > *:not(.dropdown),
+    > .dropdown .dropdown-trigger {
       // remove margin
       .input,
       .select,
@@ -122,14 +115,20 @@ $input-field-btn-border-color: $input-border-color !default;
         margin: 0;
       }
 
-      // Btn with border if it transparent <outlined>
-      .btn:not(.btn-primary):not(.btn-secondary):not(.btn-info):not(
-          .btn-danger
-        ):not(.btn-success):not(.btn-warning):not(.btn-dark):not(.btn-light) {
-        --#{$prefix}btn-border-color: #{$input-field-btn-border-color};
-        --#{$prefix}btn-bg: #{$input-field-btn-border-color};
+      .input {
+        @include radii(".form-control");
       }
 
+      .select {
+        @include radii(".form-select");
+      }
+    }
+
+    > .dropdown {
+      @include radii(".dropdown-trigger > *");
+    }
+
+    > *:not(.dropdown) {
       // set border radii
       & > button:first-child:not(:only-child),
       & > .input:first-child:not(:only-child):not(.form-check-input),
@@ -139,43 +138,14 @@ $input-field-btn-border-color: $input-border-color !default;
       }
 
       @include radii("button, select, input:not(.form-check-input)");
-
-      .input {
-        @include radii(".form-control");
-      }
-
-      .dropdown {
-        @include radii(".dropdown-trigger .btn");
-      }
-
-      .select {
-        @include radii(".form-select");
-      }
     }
   }
 
   // is grouped
   .input-grouped {
     display: flex;
-    margin-left: calc(-1 * var(--#{$prefix}input-field-grouped-spacer));
-    margin-right: calc(-1 * var(--#{$prefix}input-field-grouped-spacer));
-
-    // Margin
-    & > * {
-      margin-left: var(--#{$prefix}input-field-grouped-spacer);
-      margin-right: var(--#{$prefix}input-field-grouped-spacer);
-    }
-
-    //   & > input:not(:last-child),
-    //   & > .input:not(:last-child),
-    //   & > select:not(:last-child),
-    //   & > .select:not(:last-child),
-    //   & > .dropdown:not(:last-child),
-    //   & > .btn:not(:last-child),
-    //   & > button:not(:last-child),
-    //   & > .datepicker:not(:last-child),
-    //   & > .input-field:not(:last-child) {
-    //     margin-right: var(--#{$prefix}input-field-grouped-spacer);
-    //   }
+    flex-wrap: wrap;
+    gap: var(--#{$prefix}input-field-grouped-spacer)
+      var(--#{$prefix}input-field-grouped-spacer);
   }
 }

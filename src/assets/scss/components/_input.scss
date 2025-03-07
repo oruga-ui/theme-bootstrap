@@ -186,4 +186,18 @@ $input-icon-padding-lg: 3rem !default;
       right: var(--#{$prefix}input-icon-spacer);
     }
   }
+
+  // color variants
+  @each $name, $color in $theme-colors {
+    &.variant-#{$name} {
+      input,
+      textarea,
+      select {
+        @extend .border;
+        @extend .border-#{$name};
+
+        --#{$prefix}focus-ring-color: var(--#{$prefix}#{$name}-bg-subtle);
+      }
+    }
+  }
 }

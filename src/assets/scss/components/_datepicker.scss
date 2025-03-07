@@ -20,7 +20,6 @@ $datepicker-cell-selected-bg: var(--#{$prefix}primary) !default;
 $datepicker-month-width: 20rem !default;
 $datepicker-month-cell-spacer: calc($spacer * 0.5) !default;
 $datepicker-month-cell-height: 2.5rem !default;
-$datepicker-dropdown-width: calc(100vw - 40px) !default;
 $datepicker-dropdown-min-width: 380px !default;
 $datepicker-dropdown-max-width: 420px !default;
 /* @docs */
@@ -28,42 +27,59 @@ $datepicker-dropdown-max-width: 420px !default;
 .datepicker {
   --#{$prefix}datepicker-section-spacer: #{$datepicker-section-spacer};
   --#{$prefix}datepicker-section-border: #{$datepicker-section-border};
+  --#{$prefix}datepicker-min-width: #{calc(
+      295px + 4 * #{$datepicker-pagination-spacer}
+    )};
+
+  // modal size adjustments
+  .dropdown.dropdown-modal > .dropdown-menu {
+    --#{$prefix}dropdown-width: calc(
+      var(--#{$prefix}datepicker-min-width) +
+        var(--#{$prefix}dropdown-item-padding-x) * 2
+    );
+    --#{$prefix}dropdown-min-width: #{$datepicker-dropdown-min-width};
+    --#{$prefix}dropdown-max-width: #{$datepicker-dropdown-max-width};
+  }
 
   .datepicker-header {
+    --#{$prefix}datepicker-pagination-spacer: #{$datepicker-pagination-spacer};
+
     padding-bottom: var(--#{$prefix}datepicker-section-spacer);
     margin-bottom: var(--#{$prefix}datepicker-section-spacer);
     border-bottom: var(--#{$prefix}datepicker-section-border);
-    justify-content: center;
+    min-width: var(--#{$prefix}datepicker-min-width);
 
-    .pagination {
-      --#{$prefix}datepicker-pagination-spacer: #{$datepicker-pagination-spacer};
-
-      justify-content: center;
+    &:has(.pagination-list) {
+      display: flex;
+      justify-content: space-between;
       text-align: center;
       gap: var(--#{$prefix}datepicker-pagination-spacer);
-      min-width: calc(295px + 4 * $datepicker-pagination-spacer);
+    }
 
-      .pagination-previous,
-      .pagination-next {
-        margin: 0;
-        color: var(--#{$prefix}btn-color);
-      }
+    .pagination-previous,
+    .pagination-next {
+      margin: 0 !important;
+      color: var(--#{$prefix}btn-color);
+    }
 
-      .pagination-previous {
-        order: 1;
-      }
+    .pagination-previous {
+      order: 1;
+    }
 
-      .pagination-list {
-        order: 2;
-        display: flex;
-        flex-wrap: wrap;
-        gap: inherit;
-        justify-content: center;
-      }
+    .pagination-list {
+      order: 2;
+      display: flex;
+      flex-wrap: wrap;
+      gap: inherit;
+      justify-content: center;
 
-      .pagination-next {
-        order: 3;
+      > * {
+        flex-grow: 1;
       }
+    }
+
+    .pagination-next {
+      order: 3;
     }
   }
 
@@ -233,37 +249,19 @@ $datepicker-dropdown-max-width: 420px !default;
     display: table;
     margin: 0 auto 0 auto;
 
-    .datepicker-body {
-      .datepicker-table {
-        display: inline-flex;
-        flex-wrap: wrap;
-        flex-direction: row;
-        width: var(--#{$prefix}datepicker-month-width);
-        gap: var(--#{$prefix}datepicker-month-cell-spacer);
-        margin-right: calc(var(--#{$prefix}datepicker-month-cell-spacer) * -1);
+    .datepicker-table {
+      display: inline-flex;
+      flex-wrap: wrap;
+      flex-direction: row;
+      width: var(--#{$prefix}datepicker-month-width);
+      gap: var(--#{$prefix}datepicker-month-cell-spacer);
+      margin-right: calc(var(--#{$prefix}datepicker-month-cell-spacer) * -1);
 
-        .datepicker-cell {
-          width: calc(33.33% - var(--#{$prefix}datepicker-month-cell-spacer));
-          height: var(--#{$prefix}datepicker-month-cell-height);
-        }
+      .datepicker-cell {
+        width: calc(33.33% - var(--#{$prefix}datepicker-month-cell-spacer));
+        height: var(--#{$prefix}datepicker-month-cell-height);
       }
     }
-  }
-
-  // on mobile modal
-  &.mobile {
-    .pagination > .pagination-list {
-      flex-grow: 1;
-      flex-shrink: 1;
-      justify-content: center;
-    }
-  }
-
-  // modal size adjustments
-  &.dropdown.dropdown-modal > .dropdown-menu {
-    --#{$prefix}dropdown-width: #{$datepicker-dropdown-width};
-    --#{$prefix}dropdown-min-width: #{$datepicker-dropdown-min-width};
-    --#{$prefix}dropdown-max-width: #{$datepicker-dropdown-max-width};
   }
 
   // datetimepicker overrides

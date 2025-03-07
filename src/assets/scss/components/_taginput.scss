@@ -72,6 +72,12 @@ $taginput-counter-font-size: 0.75rem !default;
     }
   }
 
+  .dropdown-trigger,
+  .input,
+  input {
+    height: 100%;
+  }
+
   input {
     border: 0;
     box-shadow: none;
@@ -98,7 +104,7 @@ $taginput-counter-font-size: 0.75rem !default;
   }
 
   &.disabled {
-    .taginput {
+    .taginput-wrapper {
       --#{$prefix}taginput-disabled-bg: #{$input-disabled-bg};
       --#{$prefix}taginput-disabled-color: #{$input-disabled-color};
       --#{$prefix}taginput-disabled-border-color: #{$input-disabled-border-color};
@@ -107,7 +113,6 @@ $taginput-counter-font-size: 0.75rem !default;
       background: var(--#{$prefix}taginput-disabled-bg);
       border-color: var(--#{$prefix}taginput-disabled-border-color)
         var(--#{$prefix}border-color);
-      cursor: not-allowed;
 
       input {
         cursor: not-allowed;

@@ -1,7 +1,9 @@
 @use "sass:map";
 
 /* @docs */
-$switch-spacer: 0.5rem !default;
+$switch-spacer: 0.5em !default;
+$switch-width: 2.75em !default;
+$switch-height: 1.5em !default;
 /* @docs */
 
 /* @bootstrap docs */
@@ -26,14 +28,24 @@ $switch-spacer: 0.5rem !default;
 
 .form-switch {
   --#{$prefix}switch-spacer: #{$switch-spacer};
+  --#{$prefix}switch-height: #{$switch-height};
+  --#{$prefix}switch-width: #{$switch-width};
 
   position: relative;
+  padding-left: 0;
 
-  &:not(:last-child) {
-    margin-right: var(--#{$prefix}switch-spacer);
+  .form-check-input {
+    height: var(--#{$prefix}switch-height);
+    width: var(--#{$prefix}switch-width);
+    margin: 0;
+    cursor: pointer;
+
+    &:not(:last-child) {
+      margin-right: var(--#{$prefix}switch-spacer);
+    }
   }
 
-  // Variant
+  // color variant
   @each $name, $color in $theme-colors {
     &.variant-#{$name} input[type="checkbox"] {
       background-color: transparent;
@@ -54,16 +66,24 @@ $switch-spacer: 0.5rem !default;
           )};
       }
     }
+  }
 
-    // possive colors variant
-    &.variant-#{$name}-passive {
-      input[type="checkbox"]:checked {
-        background-color: var(--#{$prefix}#{$name});
-        border-color: var(--#{$prefix}#{$name});
-      }
+  // possive colors variant
+  @each $name, $color in $theme-colors {
+    &.variant-#{$name}-passive input[type="checkbox"] {
+      background-color: var(--#{$prefix}#{$name});
+      border-color: var(--#{$prefix}#{$name});
+
+      --#{$prefix}form-switch-bg: #{switchSVG(
+          $white,
+          $form-switch-bg-image,
+          $form-switch-color
+        )};
     }
+  }
 
-    // subtle color variant
+  // subtle color variant
+  @each $name, $color in $theme-colors {
     &.variant-#{$name}-subtle input[type="checkbox"] {
       $color: map.get($theme-colors-bg-subtle, #{$name});
 
@@ -89,11 +109,10 @@ $switch-spacer: 0.5rem !default;
 
   &.reversed {
     display: flex;
-    padding-left: unset;
 
     .form-check-input {
       order: 2;
-      margin-left: 0.5em;
+      margin-left: var(--#{$prefix}switch-spacer);
     }
 
     .form-check-label {
