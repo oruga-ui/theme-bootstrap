@@ -6,8 +6,9 @@ $table-sticky-zindex: 1 !default;
 $table-sticky-bg: initial !default;
 $table-sticky-color: initial !default;
 $table-sticky-header-height: 350px !default;
-$table-detail-padding: 0.5rem 0.75rem !default;
+$table-detail-padding: 0.5em 0.75em !default;
 $table-detail-bg: var(--#{$prefix}gray-light) !default;
+$table-empty-padding: 1.5em 0 !default;
 $table-sortable-hover-border-color: var(--#{$prefix}secondary) !default;
 $table-current-sort-bg: var(--#{$prefix}gray-light) !default;
 $table-card-spacer: $spacer;
@@ -152,6 +153,15 @@ $table-card-spacer: $spacer;
           background-color: var(--#{$prefix}table-detail-bg);
           padding: var(--#{$prefix}table-detail-padding);
           box-shadow: unset;
+        }
+      }
+
+      &.table-empty {
+        --#{$prefix}table-detail-padding: #{$table-empty-padding};
+
+        td {
+          text-align: center;
+          padding: var(--#{$prefix}table-detail-padding);
         }
       }
     }

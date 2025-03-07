@@ -90,8 +90,12 @@ $steps-vertical-padding: 1em 0 !default;
       display: flex;
       flex-grow: 1;
       flex-basis: 1em;
-      list-style: none;
+      align-items: center;
       justify-content: center;
+      flex-direction: column;
+      background: transparent;
+      border: transparent;
+      list-style: none;
 
       .divider {
         background: var(--#{$prefix}steps-marker-bg);
@@ -106,29 +110,20 @@ $steps-vertical-padding: 1em 0 !default;
         z-index: -1;
       }
 
-      .step-link {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        flex-direction: column;
-        background: transparent;
-        border: transparent;
+      &.clickable .step-marker {
+        cursor: pointer;
+      }
 
-        &.clickable .step-marker {
-          cursor: pointer;
-        }
+      &:not(.clickable) {
+        cursor: default;
+      }
 
-        &:not(.clickable) {
-          cursor: auto;
-        }
+      &.label-right {
+        flex-direction: row;
+      }
 
-        &.label-right {
-          flex-direction: row;
-        }
-
-        &.label-left {
-          flex-direction: row-reverse;
-        }
+      &.label-left {
+        flex-direction: row-reverse;
       }
 
       .step-marker {
@@ -139,7 +134,6 @@ $steps-vertical-padding: 1em 0 !default;
         background: var(--#{$prefix}steps-marker-bg);
         border: 1px solid var(--#{$prefix}steps-marker-border);
         color: var(--#{$prefix}steps-marker-color);
-        margin: 0 auto;
         font-weight: 700;
         overflow: hidden;
 
@@ -154,7 +148,7 @@ $steps-vertical-padding: 1em 0 !default;
         text-align: center;
         z-index: 1;
         background: var(--#{$prefix}steps-title-bg);
-        padding: 0.2em;
+        padding: 0.25em;
       }
 
       &:only-child {

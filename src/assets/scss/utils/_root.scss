@@ -23,7 +23,11 @@
   }
 }
 
-:root {
+$host-selector: if($enable-host, ":root, :host", ":root");
+
+#{$host-selector} {
+  @extend :root;
+
   // generate color rgb variables
   @each $name, $color in $colors {
     --#{$prefix}#{$name}-rgb: #{to-rgb($color)};

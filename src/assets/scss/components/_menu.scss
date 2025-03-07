@@ -11,6 +11,8 @@ $menu-item-active-color: var(--#{$prefix}white) !default;
 $menu-item-disabled-bg: transparent !default;
 $menu-item-disabled-color: var(--#{$prefix}secondary) !default;
 $menu-item-border-radius: var(--#{$prefix}border-radius) !default;
+$menu-item-hover-bg: var(--#{$prefix}tertiary-bg) !default;
+$menu-item-hover-color: var(--#{$prefix}body-color) !default;
 $menu-icon-spacer: 0.5rem !default;
 $menu-submenu-border-left: 1px solid #445e00 !default;
 $menu-submenu-padding-left: 0.75em !default;
@@ -31,8 +33,10 @@ $menu-submenu-margin: 0.75em !default;
 
   .menu-list {
     --#{$prefix}menu-list-line-height: #{$menu-list-line-height};
+    --#{$prefix}menu-submenu-padding-left: #{$menu-submenu-padding-left};
 
     line-height: var(--#{$prefix}menu-list-line-height);
+    padding-left: var(--#{$prefix}menu-submenu-padding-left);
 
     .menu-item {
       --#{$prefix}menu-item-padding: #{$menu-item-padding};
@@ -40,6 +44,8 @@ $menu-submenu-margin: 0.75em !default;
       --#{$prefix}menu-item-color: #{$menu-item-color};
       --#{$prefix}menu-item-active-bg: #{$menu-item-active-bg};
       --#{$prefix}menu-item-active-color: #{$menu-item-active-color};
+      --#{$prefix}menu-item-hover-bg: #{$menu-item-hover-bg};
+      --#{$prefix}menu-item-hover-color: #{$menu-item-hover-color};
       --#{$prefix}menu-item-disabled-bg: #{$menu-item-disabled-bg};
       --#{$prefix}menu-item-disabled-color: #{$menu-item-disabled-color};
       --#{$prefix}menu-item-border-radius: #{$menu-item-border-radius};
@@ -53,6 +59,12 @@ $menu-submenu-margin: 0.75em !default;
         color: var(--#{$prefix}menu-item-color);
         padding: var(--#{$prefix}menu-item-padding);
         border-radius: var(--#{$prefix}menu-item-border-radius);
+        border: 0;
+
+        &.focused:not(.active) {
+          color: var(--#{$prefix}menu-item-hover-color);
+          background-color: var(--#{$prefix}menu-item-hover-bg);
+        }
 
         &.active {
           --#{$prefix}menu-item-bg: var(--#{$prefix}menu-item-active-bg);
