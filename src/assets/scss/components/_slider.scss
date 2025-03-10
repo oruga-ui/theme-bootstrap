@@ -27,161 +27,165 @@ $slider-tick-bg: var(--#{$prefix}gray) !default;
 /* @bootstrap docs */
 
 .slider {
-  --#{$prefix}slider-width: #{$form-range-track-width};
-  --#{$prefix}slider-height: #{$form-range-track-height};
-  --#{$prefix}slider-border-radius: #{$form-range-track-border-radius};
-  --#{$prefix}slider-bg: #{$form-range-track-bg};
-  --#{$prefix}slider-cursor: #{$form-range-track-cursor};
-  --#{$prefix}slider-box-shadow: #{$form-range-track-box-shadow};
-  --#{$prefix}slider-disabled-bg: #{$form-range-thumb-disabled-bg};
+    --#{$prefix}slider-width: #{$form-range-track-width};
+    --#{$prefix}slider-height: #{$form-range-track-height};
+    --#{$prefix}slider-border-radius: #{$form-range-track-border-radius};
+    --#{$prefix}slider-bg: #{$form-range-track-bg};
+    --#{$prefix}slider-cursor: #{$form-range-track-cursor};
+    --#{$prefix}slider-box-shadow: #{$form-range-track-box-shadow};
+    --#{$prefix}slider-disabled-bg: #{$form-range-thumb-disabled-bg};
 
-  position: relative;
-  width: var(--#{$prefix}slider-width);
-  height: var(--#{$prefix}slider-height);
-  border-radius: var(--#{$prefix}slider-border-radius);
-  background: var(--#{$prefix}slider-bg);
-  box-shadow: var(--#{$prefix}slider-box-shadow);
+    position: relative;
+    width: var(--#{$prefix}slider-width);
+    height: var(--#{$prefix}slider-height);
+    border-radius: var(--#{$prefix}slider-border-radius);
+    background: var(--#{$prefix}slider-bg);
+    box-shadow: var(--#{$prefix}slider-box-shadow);
 
-  .slider-track {
-    display: flex;
-    align-items: center;
-    box-shadow: var(--#{$prefix}slider-shadow);
+    .slider-track {
+        display: flex;
+        align-items: center;
+        box-shadow: var(--#{$prefix}slider-shadow);
 
-    .slider-fill {
-      --#{$prefix}slider-track-border-radius: #{$form-range-track-border-radius};
-      --#{$prefix}slider-bg: transparent;
+        .slider-fill {
+            --#{$prefix}slider-track-border-radius: #{$form-range-track-border-radius};
+            --#{$prefix}slider-bg: transparent;
 
-      position: absolute;
-      left: 0%;
-      top: 50%;
-      transform: translateY(-50%);
-      height: 100%;
-      border-radius: var(--#{$prefix}slider-track-border-radius);
-      background: var(--#{$prefix}slider-bg);
+            position: absolute;
+            left: 0%;
+            top: 50%;
+            transform: translateY(-50%);
+            height: 100%;
+            border-radius: var(--#{$prefix}slider-track-border-radius);
+            background: var(--#{$prefix}slider-bg);
 
-      // Color variants
-      @each $name, $color in $theme-colors {
-        &.variant-#{$name} {
-          --#{$prefix}slider-bg: var(--#{$prefix}#{$name});
+            // Color variants
+            @each $name, $color in $theme-colors {
+                &.variant-#{$name} {
+                    --#{$prefix}slider-bg: var(--#{$prefix}#{$name});
+                }
+            }
         }
-      }
+
+        .slider-thumb-wrapper {
+            display: inline-flex;
+            flex-direction: column;
+            align-items: center;
+            position: absolute;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            cursor: grab;
+
+            .slider-thumb {
+                --#{$prefix}slider-thumb-width: #{$form-range-thumb-width};
+                --#{$prefix}slider-thumb-height: #{$form-range-thumb-height};
+                --#{$prefix}slider-thumb-border: #{$form-range-thumb-border};
+                --#{$prefix}slider-thumb-border-radius: #{$form-range-thumb-border-radius};
+                --#{$prefix}slider-thumb-bg: #{$form-range-thumb-bg};
+                --#{$prefix}slider-thumb-transition: #{$form-range-thumb-transition};
+                --#{$prefix}slider-thumb-box-shadow: #{$form-range-thumb-box-shadow};
+
+                width: var(--#{$prefix}slider-thumb-width);
+                height: var(--#{$prefix}slider-thumb-height);
+                background: var(--#{$prefix}slider-thumb-bg);
+                border: var(--#{$prefix}slider-thumb-border);
+                border-radius: var(--#{$prefix}slider-thumb-border-radius);
+                transition: var(--#{$prefix}slider-thumb-transition);
+
+                // Color variants
+                @each $name, $color in $theme-colors {
+                    &.variant-#{$name} {
+                        --#{$prefix}slider-thumb-bg: var(--#{$prefix}#{$name});
+                    }
+                }
+
+                &:active,
+                &:hover {
+                    box-shadow: var(--#{$prefix}focus-ring-x, 0)
+                        var(--#{$prefix}focus-ring-y, 0)
+                        var(--#{$prefix}focus-ring-blur, 0)
+                        var(--#{$prefix}focus-ring-width)
+                        var(--#{$prefix}focus-ring-color);
+                }
+
+                &:active {
+                    transform: scale(1.2);
+                }
+
+                &:not(.focus-ring) {
+                    box-shadow: var(--#{$prefix}slider-thumb-box-shadow);
+                }
+
+                &:focus {
+                    --#{$prefix}slider-thumb-focus-box-shadow: #{$form-range-thumb-focus-box-shadow};
+
+                    transform: scale(1.2);
+
+                    &:not(.focus-ring) {
+                        box-shadow: var(
+                            --#{$prefix}slider-thumb-focus-box-shadow
+                        );
+                    }
+                }
+            }
+        }
+
+        .slider-tick {
+            --#{$prefix}slider-tick-width: #{$slider-tick-width};
+            --#{$prefix}slider-tick-height: #{$slider-tick-height};
+            --#{$prefix}slider-tick-bg: #{$slider-tick-bg};
+            --#{$prefix}slider-tick-radius: #{$slider-tick-radius};
+
+            position: absolute;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            width: var(--#{$prefix}slider-tick-width);
+            height: var(--#{$prefix}slider-tick-height);
+            background: var(--#{$prefix}slider-tick-bg);
+            border-radius: var(--#{$prefix}slider-tick-radius);
+
+            &-hidden {
+                background: transparent;
+            }
+
+            &-label {
+                position: relative;
+                bottom: calc(-1 * $form-range-thumb-height);
+            }
+        }
     }
 
-    .slider-thumb-wrapper {
-      display: inline-flex;
-      flex-direction: column;
-      align-items: center;
-      position: absolute;
-      top: 50%;
-      transform: translate(-50%, -50%);
-      cursor: grab;
-
-      .slider-thumb {
-        --#{$prefix}slider-thumb-width: #{$form-range-thumb-width};
-        --#{$prefix}slider-thumb-height: #{$form-range-thumb-height};
-        --#{$prefix}slider-thumb-border: #{$form-range-thumb-border};
-        --#{$prefix}slider-thumb-border-radius: #{$form-range-thumb-border-radius};
-        --#{$prefix}slider-thumb-bg: #{$form-range-thumb-bg};
-        --#{$prefix}slider-thumb-transition: #{$form-range-thumb-transition};
-        --#{$prefix}slider-thumb-box-shadow: #{$form-range-thumb-box-shadow};
-
-        width: var(--#{$prefix}slider-thumb-width);
-        height: var(--#{$prefix}slider-thumb-height);
-        background: var(--#{$prefix}slider-thumb-bg);
-        border: var(--#{$prefix}slider-thumb-border);
-        border-radius: var(--#{$prefix}slider-thumb-border-radius);
-        transition: var(--#{$prefix}slider-thumb-transition);
-
-        // Color variants
-        @each $name, $color in $theme-colors {
-          &.variant-#{$name} {
-            --#{$prefix}slider-thumb-bg: var(--#{$prefix}#{$name});
-          }
-        }
-
-        &:active,
-        &:hover {
-          box-shadow: var(--#{$prefix}focus-ring-x, 0)
-            var(--#{$prefix}focus-ring-y, 0) var(--#{$prefix}focus-ring-blur, 0)
-            var(--#{$prefix}focus-ring-width) var(--#{$prefix}focus-ring-color);
-        }
-
-        &:active {
-          transform: scale(1.2);
-        }
-
-        &:not(.focus-ring) {
-          box-shadow: var(--#{$prefix}slider-thumb-box-shadow);
-        }
-
-        &:focus {
-          --#{$prefix}slider-thumb-focus-box-shadow: #{$form-range-thumb-focus-box-shadow};
-
-          transform: scale(1.2);
-
-          &:not(.focus-ring) {
-            box-shadow: var(--#{$prefix}slider-thumb-focus-box-shadow);
-          }
-        }
-      }
+    &.disabled {
+        cursor: not-allowed;
+        opacity: 0.5;
+        background: var(--#{$prefix}slider-disabled-bg);
     }
 
-    .slider-tick {
-      --#{$prefix}slider-tick-width: #{$slider-tick-width};
-      --#{$prefix}slider-tick-height: #{$slider-tick-height};
-      --#{$prefix}slider-tick-bg: #{$slider-tick-bg};
-      --#{$prefix}slider-tick-radius: #{$slider-tick-radius};
+    // Sizes
+    @each $name, $size in $sizes {
+        &.size-#{$name} {
+            height: $size;
 
-      position: absolute;
-      top: 50%;
-      transform: translate(-50%, -50%);
-      width: var(--#{$prefix}slider-tick-width);
-      height: var(--#{$prefix}slider-tick-height);
-      background: var(--#{$prefix}slider-tick-bg);
-      border-radius: var(--#{$prefix}slider-tick-radius);
+            @if ($name == "small") {
+                $size: 0.5rem;
+                height: $size * 0.5;
+            }
 
-      &-hidden {
-        background: transparent;
-      }
+            .slider-track {
+                .slider-thumb {
+                    height: calc($size * 1.35);
+                    width: calc($size * 1.35);
+                }
+            }
 
-      &-label {
-        position: relative;
-        bottom: calc(-1 * $form-range-thumb-height);
-      }
-    }
-  }
+            .slider-tick {
+                height: calc($size * 0.5);
+                width: calc($size * 0.5);
 
-  &.disabled {
-    cursor: not-allowed;
-    opacity: 0.5;
-    background: var(--#{$prefix}slider-disabled-bg);
-  }
-
-  // Sizes
-  @each $name, $size in $sizes {
-    &.size-#{$name} {
-      height: $size;
-
-      @if ($name == "small") {
-        $size: 0.5rem;
-        height: $size * 0.5;
-      }
-
-      .slider-track {
-        .slider-thumb {
-          height: calc($size * 1.35);
-          width: calc($size * 1.35);
+                &-label {
+                    bottom: calc(-1 * $size);
+                }
+            }
         }
-      }
-
-      .slider-tick {
-        height: calc($size * 0.5);
-        width: calc($size * 0.5);
-
-        &-label {
-          bottom: calc(-1 * $size);
-        }
-      }
     }
-  }
 }

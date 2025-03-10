@@ -3,34 +3,34 @@ $icon-spin-animation-duration: 1.5s !default;
 /* @docs */
 
 @keyframes icon-spin {
-  to {
-    -webkit-transform: rotate(360deg);
-    transform: rotate(360deg);
-  }
+    to {
+        -webkit-transform: rotate(360deg);
+        transform: rotate(360deg);
+    }
 }
 
 .icon {
-  align-items: center;
-  display: inline-flex;
-  justify-content: center;
-  transition:
-    transform 150ms ease-out,
-    opacity 0.3s ease-out;
+    align-items: center;
+    display: inline-flex;
+    justify-content: center;
+    transition:
+        transform 150ms ease-out,
+        opacity 0.3s ease-out;
 
-  &.spin {
-    --#{$prefix}icon-spin-duration: #{$icon-spin-animation-duration};
+    &.spin {
+        --#{$prefix}icon-spin-duration: #{$icon-spin-animation-duration};
 
-    display: inline-block;
-    animation-name: icon-spin;
-    animation-iteration-count: infinite;
-    animation-timing-function: linear;
-    animation-duration: var(--#{$prefix}icon-spin-duration);
-  }
-
-  // Sizes
-  @each $name, $size in $sizes {
-    &.size-#{$name} {
-      font-size: $size;
+        display: inline-block;
+        animation-name: icon-spin;
+        animation-iteration-count: infinite;
+        animation-timing-function: linear;
+        animation-duration: var(--#{$prefix}icon-spin-duration);
     }
-  }
+
+    // Sizes
+    @each $name, $size in $sizes {
+        &.size-#{$name} {
+            font-size: $size;
+        }
+    }
 }

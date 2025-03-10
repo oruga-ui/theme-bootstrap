@@ -21,83 +21,83 @@ $switch-spacer: 0.5rem !default;
 /* @bootstrap docs */
 
 @function switchSVG($color, $svg, $replacement) {
-  @return escape-svg(str-replace($svg, "#{$form-switch-color}", $color));
+    @return escape-svg(str-replace($svg, "#{$form-switch-color}", $color));
 }
 
 .form-switch {
-  --#{$prefix}switch-spacer: #{$switch-spacer};
+    --#{$prefix}switch-spacer: #{$switch-spacer};
 
-  position: relative;
+    position: relative;
 
-  &:not(:last-child) {
-    margin-right: var(--#{$prefix}switch-spacer);
-  }
-
-  // Variant
-  @each $name, $color in $theme-colors {
-    &.variant-#{$name} input[type="checkbox"] {
-      background-color: transparent;
-      border-color: var(--#{$prefix}#{$name});
-
-      --#{$prefix}form-switch-bg: #{switchSVG(
-          $color,
-          $form-switch-bg-image,
-          $form-switch-color
-        )};
-
-      &:checked {
-        background-color: var(--#{$prefix}#{$name});
-        --#{$prefix}form-switch-bg: #{switchSVG(
-            $white,
-            $form-switch-checked-bg-image,
-            $form-switch-checked-color
-          )};
-      }
+    &:not(:last-child) {
+        margin-right: var(--#{$prefix}switch-spacer);
     }
 
-    // possive colors variant
-    &.variant-#{$name}-passive {
-      input[type="checkbox"]:checked {
-        background-color: var(--#{$prefix}#{$name});
-        border-color: var(--#{$prefix}#{$name});
-      }
+    // Variant
+    @each $name, $color in $theme-colors {
+        &.variant-#{$name} input[type="checkbox"] {
+            background-color: transparent;
+            border-color: var(--#{$prefix}#{$name});
+
+            --#{$prefix}form-switch-bg: #{switchSVG(
+                    $color,
+                    $form-switch-bg-image,
+                    $form-switch-color
+                )};
+
+            &:checked {
+                background-color: var(--#{$prefix}#{$name});
+                --#{$prefix}form-switch-bg: #{switchSVG(
+                        $white,
+                        $form-switch-checked-bg-image,
+                        $form-switch-checked-color
+                    )};
+            }
+        }
+
+        // possive colors variant
+        &.variant-#{$name}-passive {
+            input[type="checkbox"]:checked {
+                background-color: var(--#{$prefix}#{$name});
+                border-color: var(--#{$prefix}#{$name});
+            }
+        }
+
+        // subtle color variant
+        &.variant-#{$name}-subtle input[type="checkbox"] {
+            $color: map.get($theme-colors-bg-subtle, #{$name});
+
+            background-color: transparent;
+            border-color: var(--#{$prefix}#{$name}-border-subtle);
+
+            --#{$prefix}form-switch-bg: #{switchSVG(
+                    $color,
+                    $form-switch-bg-image,
+                    $form-switch-color
+                )};
+
+            &:checked {
+                background-color: var(--#{$prefix}#{$name}-bg-subtle);
+                --#{$prefix}form-switch-bg: #{switchSVG(
+                        $white,
+                        $form-switch-checked-bg-image,
+                        $form-switch-checked-color
+                    )};
+            }
+        }
     }
 
-    // subtle color variant
-    &.variant-#{$name}-subtle input[type="checkbox"] {
-      $color: map.get($theme-colors-bg-subtle, #{$name});
+    &.reversed {
+        display: flex;
+        padding-left: unset;
 
-      background-color: transparent;
-      border-color: var(--#{$prefix}#{$name}-border-subtle);
+        .form-check-input {
+            order: 2;
+            margin-left: 0.5em;
+        }
 
-      --#{$prefix}form-switch-bg: #{switchSVG(
-          $color,
-          $form-switch-bg-image,
-          $form-switch-color
-        )};
-
-      &:checked {
-        background-color: var(--#{$prefix}#{$name}-bg-subtle);
-        --#{$prefix}form-switch-bg: #{switchSVG(
-            $white,
-            $form-switch-checked-bg-image,
-            $form-switch-checked-color
-          )};
-      }
+        .form-check-label {
+            order: 1;
+        }
     }
-  }
-
-  &.reversed {
-    display: flex;
-    padding-left: unset;
-
-    .form-check-input {
-      order: 2;
-      margin-left: 0.5em;
-    }
-
-    .form-check-label {
-      order: 1;
-    }
-  }
 }

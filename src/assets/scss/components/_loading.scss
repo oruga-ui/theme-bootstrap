@@ -5,36 +5,36 @@ $loading-overlay: rgba(255, 255, 255, 0.5) !default;
 /* @docs */
 
 .loading {
-  --#{$prefix}loading-zindex: #{$loading-zindex};
-  --#{$prefix}loading-overlay: #{$loading-overlay};
+    --#{$prefix}loading-zindex: #{$loading-zindex};
+    --#{$prefix}loading-overlay: #{$loading-overlay};
 
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  top: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  overflow: hidden;
-  z-index: var(--#{$prefix}loading-zindex);
-
-  &.fullpage {
-    --#{$prefix}loading-zindex: #{$loading-zindex-fullpage};
-
-    position: fixed;
-  }
-
-  &-overlay {
     position: absolute;
     bottom: 0;
     left: 0;
     right: 0;
     top: 0;
-    background-color: var(--#{$prefix}loading-overlay);
-  }
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    z-index: var(--#{$prefix}loading-zindex);
 
-  &-label {
-    margin-left: 1rem;
-  }
+    &.fullpage {
+        --#{$prefix}loading-zindex: #{$loading-zindex-fullpage};
+
+        position: fixed;
+    }
+
+    &-overlay {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        top: 0;
+        background-color: var(--#{$prefix}loading-overlay);
+    }
+
+    &-label {
+        margin-left: 1rem;
+    }
 }
