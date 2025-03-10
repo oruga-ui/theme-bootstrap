@@ -20,26 +20,11 @@ $datepicker-cell-selected-bg: var(--#{$prefix}primary) !default;
 $datepicker-month-width: 20rem !default;
 $datepicker-month-cell-spacer: calc($spacer * 0.5) !default;
 $datepicker-month-cell-height: 2.5rem !default;
-$datepicker-dropdown-min-width: 380px !default;
-$datepicker-dropdown-max-width: 420px !default;
 /* @docs */
 
 .datepicker {
   --#{$prefix}datepicker-section-spacer: #{$datepicker-section-spacer};
   --#{$prefix}datepicker-section-border: #{$datepicker-section-border};
-  --#{$prefix}datepicker-min-width: #{calc(
-      295px + 4 * #{$datepicker-pagination-spacer}
-    )};
-
-  // modal size adjustments
-  .dropdown.dropdown-modal > .dropdown-menu {
-    --#{$prefix}dropdown-width: calc(
-      var(--#{$prefix}datepicker-min-width) +
-        var(--#{$prefix}dropdown-item-padding-x) * 2
-    );
-    --#{$prefix}dropdown-min-width: #{$datepicker-dropdown-min-width};
-    --#{$prefix}dropdown-max-width: #{$datepicker-dropdown-max-width};
-  }
 
   .datepicker-header {
     --#{$prefix}datepicker-pagination-spacer: #{$datepicker-pagination-spacer};
@@ -47,14 +32,11 @@ $datepicker-dropdown-max-width: 420px !default;
     padding-bottom: var(--#{$prefix}datepicker-section-spacer);
     margin-bottom: var(--#{$prefix}datepicker-section-spacer);
     border-bottom: var(--#{$prefix}datepicker-section-border);
-    min-width: var(--#{$prefix}datepicker-min-width);
-
-    &:has(.pagination-list) {
-      display: flex;
-      justify-content: space-between;
-      text-align: center;
-      gap: var(--#{$prefix}datepicker-pagination-spacer);
-    }
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--#{$prefix}datepicker-pagination-spacer);
+    min-width: max-content;
 
     .pagination-previous,
     .pagination-next {
@@ -68,10 +50,8 @@ $datepicker-dropdown-max-width: 420px !default;
 
     .pagination-list {
       order: 2;
-      display: flex;
-      flex-wrap: wrap;
+      display: inline-flex;
       gap: inherit;
-      justify-content: center;
 
       > * {
         flex-grow: 1;
@@ -175,7 +155,6 @@ $datepicker-dropdown-max-width: 420px !default;
 
     .datepicker-header {
       display: table-header-group;
-      margin-bottom: 0;
 
       .datepicker-cell {
         font-weight: 600;

@@ -1,6 +1,9 @@
 /* @docs */
 $dropdown-modal-menu-zindex: $zindex-modal !default;
 $dropdown-modal-backdrop-zindex: $zindex-modal-backdrop !default;
+$dropdown-modal-width: 75%;
+$dropdown-modal-min-width: 25%;
+$dropdown-modal-max-width: calc(100vw - 40px);
 /* @docs */
 
 /* @bootstrap docs */
@@ -167,18 +170,18 @@ $dropdown-modal-backdrop-zindex: $zindex-modal-backdrop !default;
   // mobile class
   &.dropdown-modal {
     .dropdown-menu {
-      --#{$prefix}dropdown-width: 75%;
-      --#{$prefix}dropdown-min-width: 25%;
-      --#{$prefix}dropdown-max-width: 90%;
+      --#{$prefix}dropdown-modal-width: #{$dropdown-modal-width};
+      --#{$prefix}dropdown-modal-min-width: #{$dropdown-modal-min-width};
+      --#{$prefix}dropdown-modal-max-width: #{$dropdown-modal-max-width};
       --#{$prefix}dropdown-zindex: #{$dropdown-modal-menu-zindex};
 
       position: fixed;
       top: 25%;
       left: 50%;
       width: clamp(
-        var(--#{$prefix}dropdown-min-width),
-        var(--#{$prefix}dropdown-width),
-        var(--#{$prefix}dropdown-max-width)
+        var(--#{$prefix}dropdown-modal-min-width),
+        var(--#{$prefix}dropdown-modal-width),
+        var(--#{$prefix}dropdown-modal-max-width)
       );
       transform: translate3d(-50%, -25%, 0);
       z-index: var(--#{$prefix}dropdown-zindex);
