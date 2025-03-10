@@ -1,8 +1,5 @@
 import type { OrugaOptions, ComponentProps } from "@oruga-ui/oruga-next";
 
-// import theme style
-import "../assets/scss/bootstrap-build.scss";
-
 const bootstrapConfig: OrugaOptions = {
   autocomplete: {
     override: true,
