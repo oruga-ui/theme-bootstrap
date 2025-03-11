@@ -42,51 +42,51 @@
 /* @bootstrap docs */
 
 .modal {
-  display: flex;
+    display: flex;
 
-  &-backdrop {
-    opacity: var(--#{$prefix}backdrop-opacity);
-  }
-
-  &-dialog {
-    z-index: var(--#{$prefix}modal-zindex);
-    pointer-events: all;
-
-    &.fullscreen {
-      --#{$prefix}modal-width: 100%;
-      width: 100%;
+    &-backdrop {
+        opacity: var(--#{$prefix}backdrop-opacity);
     }
 
-    &:not(.fullscreen) {
-      margin-right: auto;
-      margin-left: auto;
-    }
+    &-dialog {
+        z-index: var(--#{$prefix}modal-zindex);
+        pointer-events: all;
 
-    .modal-content {
-      overflow: hidden;
-
-      .modal-header {
-        > .icon {
-          position: absolute;
-          top: 1.5rem;
-          right: 1.2rem;
+        &.fullscreen {
+            --#{$prefix}modal-width: 100%;
+            width: 100%;
         }
 
-        &:has(> .icon.clickable) {
-          padding-right: 3rem;
+        &:not(.fullscreen) {
+            margin-right: auto;
+            margin-left: auto;
         }
-      }
 
-      &:has(> .icon.clickable) + .icon.clickable {
-        display: none;
-      }
-    }
+        .modal-content {
+            overflow: hidden;
 
-    > .btn-close {
-      --#{$prefix}btn-close-opacity: 1;
-      position: fixed;
-      top: 1.5rem;
-      right: 1.5rem;
+            .modal-header {
+                > .icon {
+                    position: absolute;
+                    top: 1.5rem;
+                    right: 1.2rem;
+                }
+
+                &:has(> .icon.clickable) {
+                    padding-right: 3rem;
+                }
+            }
+
+            &:has(> .icon.clickable) + .icon.clickable {
+                display: none;
+            }
+        }
+
+        > .btn-close {
+            --#{$prefix}btn-close-opacity: 1;
+            position: fixed;
+            top: 1.5rem;
+            right: 1.5rem;
+        }
     }
-  }
 }

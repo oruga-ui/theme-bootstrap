@@ -38,170 +38,170 @@ $carousel-indicator-spacer: $spacer !default;
 /* @bootstrap docs */
 
 .carousel {
-  --#{$prefix}carousel-control-top: #{$carousel-control-top};
-  --#{$prefix}carousel-overlay-background: #{$carousel-overlay-background};
-  --#{$prefix}carousel-overlay-zindex: #{$carousel-overlay-zindex};
-  --#{$prefix}carousel-indicator-bg: #{$carousel-indicator-bg};
-  --#{$prefix}carousel-indicator-size: #{$carousel-indicator-size};
-  --#{$prefix}carousel-indicator-spacer: #{$carousel-indicator-spacer};
+    --#{$prefix}carousel-control-top: #{$carousel-control-top};
+    --#{$prefix}carousel-overlay-background: #{$carousel-overlay-background};
+    --#{$prefix}carousel-overlay-zindex: #{$carousel-overlay-zindex};
+    --#{$prefix}carousel-indicator-bg: #{$carousel-indicator-bg};
+    --#{$prefix}carousel-indicator-size: #{$carousel-indicator-size};
+    --#{$prefix}carousel-indicator-spacer: #{$carousel-indicator-spacer};
 
-  -webkit-touch-callout: none;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-  position: relative;
-  overflow: hidden;
-  width: 100%;
-
-  &.carousel-overlay {
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    top: 0;
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    justify-content: center;
-    max-height: 100vh;
-    background-color: var(--#{$prefix}carousel-overlay-background);
-    z-index: var(--#{$prefix}carousel-overlay-zindex);
-
-    .carousel-indicator.has-background {
-      background: transparent;
-    }
-  }
-
-  .carousel-scene {
-    width: 100%;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
     position: relative;
+    overflow: hidden;
+    width: 100%;
 
-    .carousel-items {
-      display: flex;
-      overflow: visible;
-
-      &:not(.dragging) {
-        transition: all $speed-slower ease-out 0s;
-      }
-
-      .carousel-item {
-        flex-shrink: 0;
-        border: 2px solid transparent;
-        display: block;
-        margin: unset;
-      }
-    }
-  }
-
-  .carousel-indicators {
-    .carousel-indicator {
-      flex: 0 1 auto;
-      padding: 0;
-      box-sizing: content-box;
-      margin-right: var(
-        --#{$prefix}carousel-indicator-spacer,
-        $carousel-indicator-spacer
-      );
-      margin-left: var(
-        --#{$prefix}carousel-indicator-spacer,
-        $carousel-indicator-spacer
-      );
-      cursor: pointer;
-      border: 0;
-      border-top: var(
-          --#{$prefix}carousel-indicator-hit-area-height,
-          $carousel-indicator-hit-area-height
-        )
-        solid transparent;
-      border-bottom: var(
-          --#{$prefix}carousel-indicator-hit-area-height,
-          $carousel-indicator-hit-area-height
-        )
-        solid transparent;
-
-      & > .carousel-indicator-item {
-        display: block;
-        background-color: var(
-          --#{$prefix}carousel-indicator-active-bg,
-          $carousel-indicator-active-bg
-        );
-        background-clip: padding-box;
-        opacity: var(
-          --#{$prefix}carousel-indicator-opacity,
-          $carousel-indicator-opacity
-        );
-        transition: var(
-          --#{$prefix}carousel-indicator-transition,
-          $carousel-indicator-transition
-        );
-        width: var(
-          --#{$prefix}carousel-indicator-width,
-          $carousel-indicator-width
-        );
-        height: var(
-          --#{$prefix}carousel-indicator-height,
-          $carousel-indicator-height
-        );
-
-        &.active {
-          opacity: var(
-            --#{$prefix}carousel-indicator-active-opacity,
-            $carousel-indicator-active-opacity
-          );
-        }
-
-        &.indicator-dots,
-        &.indicator-boxes {
-          height: var(--#{$prefix}carousel-indicator-size);
-          width: var(--#{$prefix}carousel-indicator-size);
-        }
-
-        &.indicator-dots {
-          border-radius: 50%;
-        }
-      }
-    }
-
-    &:not(.inside) {
-      position: relative;
-
-      .carousel-indicator > .carousel-indicator-item {
-        background-color: var(
-          --#{$prefix}carousel-indicator-bg,
-          $carousel-indicator-bg
-        );
-      }
-    }
-
-    &.inside {
-      position: absolute;
-
-      &.position-bottom {
+    &.carousel-overlay {
+        position: fixed;
         bottom: 0;
-        top: unset;
-        margin-bottom: var(--#{$prefix}carousel-indicator-spacer);
-      }
-
-      &.position-top {
+        left: 0;
+        right: 0;
         top: 0;
-        bottom: unset;
-        margin-top: var(--#{$prefix}carousel-indicator-spacer);
-      }
-    }
-  }
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        justify-content: center;
+        max-height: 100vh;
+        background-color: var(--#{$prefix}carousel-overlay-background);
+        z-index: var(--#{$prefix}carousel-overlay-zindex);
 
-  .carousel-control-next-icon,
-  .carousel-control-prev-icon {
-    cursor: pointer;
-    -webkit-transform: translateY(-50%);
-    -ms-transform: translateY(-50%);
-    transform: translateY(-50%);
-    top: var(--#{$prefix}carousel-control-top);
-    width: var(--#{$prefix}carousel-control-width, $carousel-control-width);
-
-    i {
-      visibility: hidden;
+        .carousel-indicator.has-background {
+            background: transparent;
+        }
     }
-  }
+
+    .carousel-scene {
+        width: 100%;
+        position: relative;
+
+        .carousel-items {
+            display: flex;
+            overflow: visible;
+
+            &:not(.dragging) {
+                transition: all $speed-slower ease-out 0s;
+            }
+
+            .carousel-item {
+                flex-shrink: 0;
+                border: 2px solid transparent;
+                display: block;
+                margin: unset;
+            }
+        }
+    }
+
+    .carousel-indicators {
+        .carousel-indicator {
+            flex: 0 1 auto;
+            padding: 0;
+            box-sizing: content-box;
+            margin-right: var(
+                --#{$prefix}carousel-indicator-spacer,
+                $carousel-indicator-spacer
+            );
+            margin-left: var(
+                --#{$prefix}carousel-indicator-spacer,
+                $carousel-indicator-spacer
+            );
+            cursor: pointer;
+            border: 0;
+            border-top: var(
+                    --#{$prefix}carousel-indicator-hit-area-height,
+                    $carousel-indicator-hit-area-height
+                )
+                solid transparent;
+            border-bottom: var(
+                    --#{$prefix}carousel-indicator-hit-area-height,
+                    $carousel-indicator-hit-area-height
+                )
+                solid transparent;
+
+            & > .carousel-indicator-item {
+                display: block;
+                background-color: var(
+                    --#{$prefix}carousel-indicator-active-bg,
+                    $carousel-indicator-active-bg
+                );
+                background-clip: padding-box;
+                opacity: var(
+                    --#{$prefix}carousel-indicator-opacity,
+                    $carousel-indicator-opacity
+                );
+                transition: var(
+                    --#{$prefix}carousel-indicator-transition,
+                    $carousel-indicator-transition
+                );
+                width: var(
+                    --#{$prefix}carousel-indicator-width,
+                    $carousel-indicator-width
+                );
+                height: var(
+                    --#{$prefix}carousel-indicator-height,
+                    $carousel-indicator-height
+                );
+
+                &.active {
+                    opacity: var(
+                        --#{$prefix}carousel-indicator-active-opacity,
+                        $carousel-indicator-active-opacity
+                    );
+                }
+
+                &.indicator-dots,
+                &.indicator-boxes {
+                    height: var(--#{$prefix}carousel-indicator-size);
+                    width: var(--#{$prefix}carousel-indicator-size);
+                }
+
+                &.indicator-dots {
+                    border-radius: 50%;
+                }
+            }
+        }
+
+        &:not(.inside) {
+            position: relative;
+
+            .carousel-indicator > .carousel-indicator-item {
+                background-color: var(
+                    --#{$prefix}carousel-indicator-bg,
+                    $carousel-indicator-bg
+                );
+            }
+        }
+
+        &.inside {
+            position: absolute;
+
+            &.position-bottom {
+                bottom: 0;
+                top: unset;
+                margin-bottom: var(--#{$prefix}carousel-indicator-spacer);
+            }
+
+            &.position-top {
+                top: 0;
+                bottom: unset;
+                margin-top: var(--#{$prefix}carousel-indicator-spacer);
+            }
+        }
+    }
+
+    .carousel-control-next-icon,
+    .carousel-control-prev-icon {
+        cursor: pointer;
+        -webkit-transform: translateY(-50%);
+        -ms-transform: translateY(-50%);
+        transform: translateY(-50%);
+        top: var(--#{$prefix}carousel-control-top);
+        width: var(--#{$prefix}carousel-control-width, $carousel-control-width);
+
+        i {
+            visibility: hidden;
+        }
+    }
 }

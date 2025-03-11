@@ -19,163 +19,167 @@ $input-field-btn-border-color: $input-border-color !default;
 */
 
 @mixin radii($selector) {
-  // the first and the last inputs should be rounded
-  &:first-child:not(:last-child) {
-    #{$selector} {
-      border-bottom-right-radius: 0;
-      border-top-right-radius: 0;
+    // the first and the last inputs should be rounded
+    &:first-child:not(:last-child) {
+        #{$selector} {
+            border-bottom-right-radius: 0;
+            border-top-right-radius: 0;
+        }
     }
-  }
 
-  &:last-child:not(:first-child) {
-    #{$selector} {
-      border-bottom-left-radius: 0;
-      border-top-left-radius: 0;
+    &:last-child:not(:first-child) {
+        #{$selector} {
+            border-bottom-left-radius: 0;
+            border-top-left-radius: 0;
+        }
     }
-  }
 
-  // The input in middle shouldn't be rounded
-  &:not(:first-child):not(:last-child) {
-    #{$selector} {
-      --#{$prefix}border-radius: 0;
+    // The input in middle shouldn't be rounded
+    &:not(:first-child):not(:last-child) {
+        #{$selector} {
+            --#{$prefix}border-radius: 0;
+        }
     }
-  }
 
-  // The input is first and the last
-  &:first-child:last-child {
-    #{$selector} {
-      --#{$prefix}border-radius: #{$border-radius};
+    // The input is first and the last
+    &:first-child:last-child {
+        #{$selector} {
+            --#{$prefix}border-radius: #{$border-radius};
+        }
     }
-  }
 }
 
 .input-field {
-  --#{$prefix}input-field-grouped-spacer: #{$input-field-grouped-spacer};
-  --#{$prefix}input-field-margin-bottom: #{$input-field-margin-bottom};
-  --#{$prefix}input-field-btn-border-color: #{$input-border-color};
+    --#{$prefix}input-field-grouped-spacer: #{$input-field-grouped-spacer};
+    --#{$prefix}input-field-margin-bottom: #{$input-field-margin-bottom};
+    --#{$prefix}input-field-btn-border-color: #{$input-border-color};
 
-  margin-bottom: var(--#{$prefix}input-field-margin-bottom);
+    margin-bottom: var(--#{$prefix}input-field-margin-bottom);
 
-  &.row > div {
-    @extend .col;
-  }
-
-  .form-label {
-    display: block;
-  }
-
-  &.grouped-multiline {
-    flex-wrap: wrap;
-
-    &:last-child {
-      margin-bottom: calc(-1 * var(--#{$prefix}input-field-margin-bottom));
-    }
-  }
-
-  &.field-horizontal {
-    .col-form-label {
-      flex-basis: 0;
-      flex-grow: 1;
-      flex-shrink: 0;
-      text-align: right;
+    &.row > div {
+        @extend .col;
     }
 
-    .col-form-field {
-      flex-basis: 0;
-      flex-grow: 5;
-      flex-shrink: 1;
-    }
-  }
-
-  // input expanded
-  .input,
-  .select,
-  .dropdown,
-  .btn {
-    flex-shrink: 0;
-
-    &.expanded {
-      flex-grow: 1;
-      flex-shrink: 1;
-
-      &.btn {
-        width: 100%;
-      }
-    }
-  }
-
-  // has group
-  .input-group {
-    flex-shrink: 0;
-
-    > .btn {
-      --#{$prefix}btn-spacer: 0;
+    .form-label {
+        display: block;
     }
 
-    // prevent nested components
-    > *:not(.dropdown-menu) {
-      // remove margin
-      .input,
-      .select,
-      .dropdown,
-      .btn {
-        margin: 0;
-      }
+    &.grouped-multiline {
+        flex-wrap: wrap;
 
-      // Btn with border if it transparent <outlined>
-      .btn:not(.btn-primary):not(.btn-secondary):not(.btn-info):not(
-          .btn-danger
-        ):not(.btn-success):not(.btn-warning):not(.btn-dark):not(.btn-light) {
-        --#{$prefix}btn-border-color: #{$input-field-btn-border-color};
-        --#{$prefix}btn-bg: #{$input-field-btn-border-color};
-      }
-
-      // set border radii
-      & > button:first-child:not(:only-child),
-      & > .input:first-child:not(:only-child):not(.form-check-input),
-      & > .select:first-child:not(:only-child) {
-        border-bottom-right-radius: 0;
-        border-top-right-radius: 0;
-      }
-
-      @include radii("button, select, input:not(.form-check-input)");
-
-      .input {
-        @include radii(".form-control");
-      }
-
-      .dropdown {
-        @include radii(".dropdown-trigger .btn");
-      }
-
-      .select {
-        @include radii(".form-select");
-      }
-    }
-  }
-
-  // is grouped
-  .input-grouped {
-    display: flex;
-    margin-left: calc(-1 * var(--#{$prefix}input-field-grouped-spacer));
-    margin-right: calc(-1 * var(--#{$prefix}input-field-grouped-spacer));
-
-    // Margin
-    & > * {
-      margin-left: var(--#{$prefix}input-field-grouped-spacer);
-      margin-right: var(--#{$prefix}input-field-grouped-spacer);
+        &:last-child {
+            margin-bottom: calc(
+                -1 * var(--#{$prefix}input-field-margin-bottom)
+            );
+        }
     }
 
-    //   & > input:not(:last-child),
-    //   & > .input:not(:last-child),
-    //   & > select:not(:last-child),
-    //   & > .select:not(:last-child),
-    //   & > .dropdown:not(:last-child),
-    //   & > .btn:not(:last-child),
-    //   & > button:not(:last-child),
-    //   & > .datepicker:not(:last-child),
-    //   & > .input-field:not(:last-child) {
-    //     margin-right: var(--#{$prefix}input-field-grouped-spacer);
-    //   }
-  }
+    &.field-horizontal {
+        .col-form-label {
+            flex-basis: 0;
+            flex-grow: 1;
+            flex-shrink: 0;
+            text-align: right;
+        }
+
+        .col-form-field {
+            flex-basis: 0;
+            flex-grow: 5;
+            flex-shrink: 1;
+        }
+    }
+
+    // input expanded
+    .input,
+    .select,
+    .dropdown,
+    .btn {
+        flex-shrink: 0;
+
+        &.expanded {
+            flex-grow: 1;
+            flex-shrink: 1;
+
+            &.btn {
+                width: 100%;
+            }
+        }
+    }
+
+    // has group
+    .input-group {
+        flex-shrink: 0;
+
+        > .btn {
+            --#{$prefix}btn-spacer: 0;
+        }
+
+        // prevent nested components
+        > *:not(.dropdown-menu) {
+            // remove margin
+            .input,
+            .select,
+            .dropdown,
+            .btn {
+                margin: 0;
+            }
+
+            // Btn with border if it transparent <outlined>
+            .btn:not(.btn-primary):not(.btn-secondary):not(.btn-info):not(
+                    .btn-danger
+                ):not(.btn-success):not(.btn-warning):not(.btn-dark):not(
+                    .btn-light
+                ) {
+                --#{$prefix}btn-border-color: #{$input-field-btn-border-color};
+                --#{$prefix}btn-bg: #{$input-field-btn-border-color};
+            }
+
+            // set border radii
+            & > button:first-child:not(:only-child),
+            & > .input:first-child:not(:only-child):not(.form-check-input),
+            & > .select:first-child:not(:only-child) {
+                border-bottom-right-radius: 0;
+                border-top-right-radius: 0;
+            }
+
+            @include radii("button, select, input:not(.form-check-input)");
+
+            .input {
+                @include radii(".form-control");
+            }
+
+            .dropdown {
+                @include radii(".dropdown-trigger .btn");
+            }
+
+            .select {
+                @include radii(".form-select");
+            }
+        }
+    }
+
+    // is grouped
+    .input-grouped {
+        display: flex;
+        margin-left: calc(-1 * var(--#{$prefix}input-field-grouped-spacer));
+        margin-right: calc(-1 * var(--#{$prefix}input-field-grouped-spacer));
+
+        // Margin
+        & > * {
+            margin-left: var(--#{$prefix}input-field-grouped-spacer);
+            margin-right: var(--#{$prefix}input-field-grouped-spacer);
+        }
+
+        //   & > input:not(:last-child),
+        //   & > .input:not(:last-child),
+        //   & > select:not(:last-child),
+        //   & > .select:not(:last-child),
+        //   & > .dropdown:not(:last-child),
+        //   & > .btn:not(:last-child),
+        //   & > button:not(:last-child),
+        //   & > .datepicker:not(:last-child),
+        //   & > .input-field:not(:last-child) {
+        //     margin-right: var(--#{$prefix}input-field-grouped-spacer);
+        //   }
+    }
 }

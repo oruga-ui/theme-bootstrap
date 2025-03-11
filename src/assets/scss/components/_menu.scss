@@ -18,70 +18,76 @@ $menu-submenu-margin: 0.75em !default;
 /* @docs */
 
 .menu {
-  .menu-label {
-    --#{$prefix}menu-label-bg: #{$menu-label-bg};
-    --#{$prefix}menu-label-color: #{$menu-label-color};
-    --#{$prefix}menu-label-font-size: #{$menu-label-font-size};
+    .menu-label {
+        --#{$prefix}menu-label-bg: #{$menu-label-bg};
+        --#{$prefix}menu-label-color: #{$menu-label-color};
+        --#{$prefix}menu-label-font-size: #{$menu-label-font-size};
 
-    background: var(--#{$prefix}menu-label-bg);
-    color: var(--#{$prefix}menu-label-color);
-    font-size: var(--#{$prefix}menu-label-font-size);
-    text-transform: uppercase;
-  }
-
-  .menu-list {
-    --#{$prefix}menu-list-line-height: #{$menu-list-line-height};
-
-    line-height: var(--#{$prefix}menu-list-line-height);
-
-    .menu-item {
-      --#{$prefix}menu-item-padding: #{$menu-item-padding};
-      --#{$prefix}menu-item-bg: #{$menu-item-bg};
-      --#{$prefix}menu-item-color: #{$menu-item-color};
-      --#{$prefix}menu-item-active-bg: #{$menu-item-active-bg};
-      --#{$prefix}menu-item-active-color: #{$menu-item-active-color};
-      --#{$prefix}menu-item-disabled-bg: #{$menu-item-disabled-bg};
-      --#{$prefix}menu-item-disabled-color: #{$menu-item-disabled-color};
-      --#{$prefix}menu-item-border-radius: #{$menu-item-border-radius};
-
-      list-style: none;
-
-      .menu-button {
-        display: block;
-        list-style: none;
-        background: var(--#{$prefix}menu-item-bg);
-        color: var(--#{$prefix}menu-item-color);
-        padding: var(--#{$prefix}menu-item-padding);
-        border-radius: var(--#{$prefix}menu-item-border-radius);
-
-        &.active {
-          --#{$prefix}menu-item-bg: var(--#{$prefix}menu-item-active-bg);
-          --#{$prefix}menu-item-color: var(--#{$prefix}menu-item-active-color);
-        }
-
-        &.disabled {
-          --#{$prefix}menu-item-bg: var(--#{$prefix}menu-item-disabled-bg);
-          --#{$prefix}menu-item-color: var(
-            --#{$prefix}menu-item-disabled-color
-          );
-        }
-
-        &.menu-icon .icon {
-          --#{$prefix}menu-icon-spacer: #{$menu-icon-spacer};
-
-          margin-right: var(--#{$prefix}menu-icon-spacer);
-        }
-      }
-
-      .menu-submenu {
-        --#{$prefix}menu-submenu-border-left: #{$menu-submenu-border-left};
-        --#{$prefix}menu-submenu-padding-left: #{$menu-submenu-padding-left};
-        --#{$prefix}menu-submenu-margin: #{$menu-submenu-margin};
-
-        border-left: var(--#{$prefix}menu-submenu-border-left);
-        padding-left: var(--#{$prefix}menu-submenu-padding-left);
-        margin: var(--#{$prefix}menu-submenu-margin);
-      }
+        background: var(--#{$prefix}menu-label-bg);
+        color: var(--#{$prefix}menu-label-color);
+        font-size: var(--#{$prefix}menu-label-font-size);
+        text-transform: uppercase;
     }
-  }
+
+    .menu-list {
+        --#{$prefix}menu-list-line-height: #{$menu-list-line-height};
+
+        line-height: var(--#{$prefix}menu-list-line-height);
+
+        .menu-item {
+            --#{$prefix}menu-item-padding: #{$menu-item-padding};
+            --#{$prefix}menu-item-bg: #{$menu-item-bg};
+            --#{$prefix}menu-item-color: #{$menu-item-color};
+            --#{$prefix}menu-item-active-bg: #{$menu-item-active-bg};
+            --#{$prefix}menu-item-active-color: #{$menu-item-active-color};
+            --#{$prefix}menu-item-disabled-bg: #{$menu-item-disabled-bg};
+            --#{$prefix}menu-item-disabled-color: #{$menu-item-disabled-color};
+            --#{$prefix}menu-item-border-radius: #{$menu-item-border-radius};
+
+            list-style: none;
+
+            .menu-button {
+                display: block;
+                list-style: none;
+                background: var(--#{$prefix}menu-item-bg);
+                color: var(--#{$prefix}menu-item-color);
+                padding: var(--#{$prefix}menu-item-padding);
+                border-radius: var(--#{$prefix}menu-item-border-radius);
+
+                &.active {
+                    --#{$prefix}menu-item-bg: var(
+                        --#{$prefix}menu-item-active-bg
+                    );
+                    --#{$prefix}menu-item-color: var(
+                        --#{$prefix}menu-item-active-color
+                    );
+                }
+
+                &.disabled {
+                    --#{$prefix}menu-item-bg: var(
+                        --#{$prefix}menu-item-disabled-bg
+                    );
+                    --#{$prefix}menu-item-color: var(
+                        --#{$prefix}menu-item-disabled-color
+                    );
+                }
+
+                &.menu-icon .icon {
+                    --#{$prefix}menu-icon-spacer: #{$menu-icon-spacer};
+
+                    margin-right: var(--#{$prefix}menu-icon-spacer);
+                }
+            }
+
+            .menu-submenu {
+                --#{$prefix}menu-submenu-border-left: #{$menu-submenu-border-left};
+                --#{$prefix}menu-submenu-padding-left: #{$menu-submenu-padding-left};
+                --#{$prefix}menu-submenu-margin: #{$menu-submenu-margin};
+
+                border-left: var(--#{$prefix}menu-submenu-border-left);
+                padding-left: var(--#{$prefix}menu-submenu-padding-left);
+                margin: var(--#{$prefix}menu-submenu-margin);
+            }
+        }
+    }
 }

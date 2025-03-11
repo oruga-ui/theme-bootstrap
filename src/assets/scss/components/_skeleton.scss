@@ -1,57 +1,57 @@
 /* @docs */
 $skeleton-bg-color: $dark-bg-subtle !default;
 $skeleton-bg: linear-gradient(
-  90deg,
-  $skeleton-bg-color 25%,
-  rgba($skeleton-bg-color, 0.5) 50%,
-  $skeleton-bg-color 75%
+    90deg,
+    $skeleton-bg-color 25%,
+    rgba($skeleton-bg-color, 0.5) 50%,
+    $skeleton-bg-color 75%
 ) !default;
 $skeleton-duration: 1.5s !default;
 $skeleton-margin: 0.5rem 0 0 0 !default;
 /* @docs */
 
 @keyframes skeleton-loading {
-  0% {
-    background-position: 100% 50%;
-  }
+    0% {
+        background-position: 100% 50%;
+    }
 
-  100% {
-    background-position: 0 50%;
-  }
+    100% {
+        background-position: 0 50%;
+    }
 }
 
 .skeleton {
-  --#{$prefix}skeleton-bg: #{$skeleton-bg};
-  --#{$prefix}skeleton-duration: #{$skeleton-duration};
-  --#{$prefix}skeleton-margin: #{$skeleton-margin};
+    --#{$prefix}skeleton-bg: #{$skeleton-bg};
+    --#{$prefix}skeleton-duration: #{$skeleton-duration};
+    --#{$prefix}skeleton-margin: #{$skeleton-margin};
 
-  display: inline-flex;
-  flex-direction: column;
-  vertical-align: middle;
-  width: 100%;
-
-  .skeleton-item {
+    display: inline-flex;
+    flex-direction: column;
+    vertical-align: middle;
     width: 100%;
-    background-image: var(--#{$prefix}skeleton-bg);
-    margin: var(--#{$prefix}skeleton-margin);
-    line-height: 1em;
 
-    &.animated {
-      background-size: 400% 100%;
-      animation-name: skeleton-loading;
-      animation-iteration-count: infinite;
-      animation-duration: var(--#{$prefix}skeleton-duration);
-    }
+    .skeleton-item {
+        width: 100%;
+        background-image: var(--#{$prefix}skeleton-bg);
+        margin: var(--#{$prefix}skeleton-margin);
+        line-height: 1em;
 
-    &::after {
-      content: "\00a0";
-    }
+        &.animated {
+            background-size: 400% 100%;
+            animation-name: skeleton-loading;
+            animation-iteration-count: infinite;
+            animation-duration: var(--#{$prefix}skeleton-duration);
+        }
 
-    // Sizes
-    @each $name, $value in $sizes {
-      &.size-#{$name} {
-        line-height: $value;
-      }
+        &::after {
+            content: "\00a0";
+        }
+
+        // Sizes
+        @each $name, $value in $sizes {
+            &.size-#{$name} {
+                line-height: $value;
+            }
+        }
     }
-  }
 }

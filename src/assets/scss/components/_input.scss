@@ -131,59 +131,59 @@ $input-icon-padding-lg: 3rem !default;
 
 .select,
 .input {
-  display: inline-block;
-  position: relative;
+    display: inline-block;
+    position: relative;
 
-  &.expanded {
-    width: 100%;
-  }
-
-  // Space for the icon
-  .form-select,
-  .form-control {
-    --#{$prefix}input-icon-padding: #{$input-icon-padding};
-
-    &.form-control-sm {
-      --#{$prefix}input-icon-padding: #{$input-icon-padding-sm};
-    }
-    // if icon and the input are large, we give more space to icon
-    &.form-control-lg {
-      --#{$prefix}input-icon-padding: #{$input-icon-padding-lg};
+    &.expanded {
+        width: 100%;
     }
 
-    // if the icon is in left then set that padding
-    &.icon-left {
-      padding-left: var(--#{$prefix}input-icon-padding);
+    // Space for the icon
+    .form-select,
+    .form-control {
+        --#{$prefix}input-icon-padding: #{$input-icon-padding};
+
+        &.form-control-sm {
+            --#{$prefix}input-icon-padding: #{$input-icon-padding-sm};
+        }
+        // if icon and the input are large, we give more space to icon
+        &.form-control-lg {
+            --#{$prefix}input-icon-padding: #{$input-icon-padding-lg};
+        }
+
+        // if the icon is in left then set that padding
+        &.icon-left {
+            padding-left: var(--#{$prefix}input-icon-padding);
+        }
+
+        // if the icon is in right then set that padding
+        &.icon-right {
+            padding-right: var(--#{$prefix}input-icon-padding);
+        }
     }
 
-    // if the icon is in right then set that padding
-    &.icon-right {
-      padding-right: var(--#{$prefix}input-icon-padding);
-    }
-  }
-
-  // remove arrow if not arrowed
-  .form-select:not(.arrowed) {
-    --#{$prefix}form-select-bg-img: unset;
-  }
-
-  // the Position of the icon
-  .icon {
-    --#{$prefix}input-icon-color: #{$input-icon-color};
-    --#{$prefix}input-icon-spacer: #{$input-icon-spacer};
-
-    position: absolute;
-    margin: 0;
-    top: 0;
-    height: 100%;
-    color: var(--#{$prefix}input-icon-color);
-
-    &.icon-left {
-      left: var(--#{$prefix}input-icon-spacer);
+    // remove arrow if not arrowed
+    .form-select:not(.arrowed) {
+        --#{$prefix}form-select-bg-img: unset;
     }
 
-    &.icon-right {
-      right: var(--#{$prefix}input-icon-spacer);
+    // the Position of the icon
+    .icon {
+        --#{$prefix}input-icon-color: #{$input-icon-color};
+        --#{$prefix}input-icon-spacer: #{$input-icon-spacer};
+
+        position: absolute;
+        margin: 0;
+        top: 0;
+        height: 100%;
+        color: var(--#{$prefix}input-icon-color);
+
+        &.icon-left {
+            left: var(--#{$prefix}input-icon-spacer);
+        }
+
+        &.icon-right {
+            right: var(--#{$prefix}input-icon-spacer);
+        }
     }
-  }
 }
