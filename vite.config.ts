@@ -38,7 +38,7 @@ export default defineConfig(({ mode }) => {
                 copyPublicDir: false,
                 minify: "terser",
                 lib: {
-                    entry: resolve(__dirname, "src/plugins/theme.ts"),
+                    entry: resolve(__dirname, "src/build.ts"),
                     name: "OrugaThemeBootstrap",
                     fileName: "bootstrap",
                     formats: ["es", "cjs", "umd"],
@@ -49,6 +49,11 @@ export default defineConfig(({ mode }) => {
                     external: ["vue", /oruga\/.*/],
                     output: {
                         assetFileNames: "bootstrap.[ext]",
+                        // Provide global variables to use in the UMD build
+                        // for externalized deps
+                        globals: {
+                            vue: "Vue",
+                        },
                     },
                 },
             },
