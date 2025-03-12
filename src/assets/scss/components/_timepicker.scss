@@ -2,36 +2,36 @@
 /* @docs */
 
 .timepicker {
-  .dropdown {
-    .dropdown-menu {
-      --#{$prefix}dropdown-width: auto;
-      --#{$prefix}dropdown-min-width: unset;
-      --#{$prefix}dropdown-padding-y: 0;
-      --#{$prefix}dropdown-link-active-bg: transparent;
-      --#{$prefix}dropdown-link-active-color: --#{$prefix}dropdown-link-color;
-    }
-
-    .dropdown-item {
-      display: inline-flex;
-      border-radius: inherit;
-      width: max-content;
-
-      .separator {
-        transform: translateY(15%);
-        font-weight: bolder;
-      }
-
-      .select {
-        .form-select {
-          border: transparent;
-          background-color: transparent;
-          cursor: pointer;
-
-          &:focus {
-            box-shadow: none;
-          }
+    .dropdown {
+        .dropdown-menu {
+            --#{$prefix}dropdown-width: auto;
+            --#{$prefix}dropdown-min-width: unset;
+            --#{$prefix}dropdown-padding-y: 0;
+            --#{$prefix}dropdown-link-active-bg: transparent;
+            --#{$prefix}dropdown-link-active-color: --#{$prefix}dropdown-link-color;
         }
-      }
+
+        .dropdown-item {
+            display: inline-flex;
+            border-radius: inherit;
+            width: max-content;
+
+            .separator {
+                transform: translateY(15%);
+                font-weight: bolder;
+            }
+
+            .select {
+                .form-select {
+                    border: transparent;
+                    background-color: transparent;
+                    cursor: pointer;
+
+                    &:focus {
+                        box-shadow: none;
+                    }
+                }
+            }
+        }
     }
-  }
 }

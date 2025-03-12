@@ -56,86 +56,88 @@ $btn-hover-box-shadow: $box-shadow-sm !default;
 /* @bootstrap docs */
 
 .btn {
-  --#{$prefix}btn-spacer: #{$btn-spacer};
-  --#{$prefix}btn-height: #{$btn-height};
-  --#{$prefix}btn-border-color: #{$btn-border-color};
-  --#{$prefix}btn-hover-border-color: #{$btn-hover-border-color};
-  --#{$prefix}btn-hover-box-shadow: #{$btn-hover-box-shadow};
-  --#{$prefix}btn-disabled-border-color: var(--#{$prefix}btn-border-color);
+    --#{$prefix}btn-spacer: #{$btn-spacer};
+    --#{$prefix}btn-height: #{$btn-height};
+    --#{$prefix}btn-border-color: #{$btn-border-color};
+    --#{$prefix}btn-hover-border-color: #{$btn-hover-border-color};
+    --#{$prefix}btn-hover-box-shadow: #{$btn-hover-box-shadow};
+    --#{$prefix}btn-disabled-border-color: var(--#{$prefix}btn-border-color);
 
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  min-height: var(--#{$prefix}btn-height);
-
-  .button-wrapper {
     display: inline-flex;
     align-items: center;
-  }
+    justify-content: center;
+    min-height: var(--#{$prefix}btn-height);
 
-  .icon {
-    margin: 0 4px;
-
-    &:not(:last-child) {
-      margin-right: var(--#{$prefix}btn-spacer);
+    .button-wrapper {
+        display: inline-flex;
+        align-items: center;
     }
 
-    &:not(:first-child) {
-      margin-left: var(--#{$prefix}btn-spacer);
-    }
-  }
+    .icon {
+        margin: 0 4px;
 
-  &:hover {
-    box-shadow: var(--#{$prefix}btn-hover-box-shadow);
-  }
+        &:not(:last-child) {
+            margin-right: var(--#{$prefix}btn-spacer);
+        }
 
-  &.expanded {
-    width: 100%;
-  }
-
-  &.disabled,
-  &.btn-disabled {
-    pointer-events: auto;
-    cursor: auto;
-  }
-
-  &.btn-inverted {
-    --#{$prefix}btn-bg: transparent;
-    --#{$prefix}btn-border-color: transparent;
-  }
-
-  // inverted color
-  @each $name, $color in $theme-colors {
-    &.variant-#{$name}-inverted,
-    &.btn-inverted-#{$name} {
-      // default style
-      --#{$prefix}btn-color: var(--#{$prefix}#{$name});
-      --#{$prefix}btn-bg: transparent;
-      --#{$prefix}btn-border-color: transparent;
-
-      // hover style
-      --#{$prefix}btn-hover-color: var(--#{$prefix}#{$name});
-      --#{$prefix}btn-hover-bg: var(--#{$prefix}#{$name}-bg-subtle);
-      --#{$prefix}btn-hover-border-color: var(
-        --#{$prefix}#{$name}-border-subtle
-      );
+        &:not(:first-child) {
+            margin-left: var(--#{$prefix}btn-spacer);
+        }
     }
 
-    &.variant-#{$name}-subtle,
-    &.btn-#{$name}-subtle {
-      // default style
-      --#{$prefix}btn-color: var(--#{$prefix}#{$name});
-      --#{$prefix}btn-bg: var(--#{$prefix}#{$name}-bg-subtle);
-      --#{$prefix}btn-border-color: var(--#{$prefix}#{$name}-border-subtle);
-
-      // hover style
-      --#{$prefix}btn-hover-color: var(--#{$prefix}#{$name}-contrast);
-      --#{$prefix}btn-hover-bg: var(--#{$prefix}#{$name});
-      --#{$prefix}btn-hover-border-color: var(--#{$prefix}#{$name});
+    &:hover {
+        box-shadow: var(--#{$prefix}btn-hover-box-shadow);
     }
-  }
+
+    &.expanded {
+        width: 100%;
+    }
+
+    &.disabled,
+    &.btn-disabled {
+        pointer-events: auto;
+        cursor: auto;
+    }
+
+    &.btn-inverted {
+        --#{$prefix}btn-bg: transparent;
+        --#{$prefix}btn-border-color: transparent;
+    }
+
+    // inverted color
+    @each $name, $color in $theme-colors {
+        &.variant-#{$name}-inverted,
+        &.btn-inverted-#{$name} {
+            // default style
+            --#{$prefix}btn-color: var(--#{$prefix}#{$name});
+            --#{$prefix}btn-bg: transparent;
+            --#{$prefix}btn-border-color: transparent;
+
+            // hover style
+            --#{$prefix}btn-hover-color: var(--#{$prefix}#{$name});
+            --#{$prefix}btn-hover-bg: var(--#{$prefix}#{$name}-bg-subtle);
+            --#{$prefix}btn-hover-border-color: var(
+                --#{$prefix}#{$name}-border-subtle
+            );
+        }
+
+        &.variant-#{$name}-subtle,
+        &.btn-#{$name}-subtle {
+            // default style
+            --#{$prefix}btn-color: var(--#{$prefix}#{$name});
+            --#{$prefix}btn-bg: var(--#{$prefix}#{$name}-bg-subtle);
+            --#{$prefix}btn-border-color: var(
+                --#{$prefix}#{$name}-border-subtle
+            );
+
+            // hover style
+            --#{$prefix}btn-hover-color: var(--#{$prefix}#{$name}-contrast);
+            --#{$prefix}btn-hover-bg: var(--#{$prefix}#{$name});
+            --#{$prefix}btn-hover-border-color: var(--#{$prefix}#{$name});
+        }
+    }
 }
 
 .btn:not(:last-child):not(.btn-expanded):has(+ .btn) {
-  margin-right: var(--#{$prefix}btn-spacer);
+    margin-right: var(--#{$prefix}btn-spacer);
 }
