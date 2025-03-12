@@ -202,7 +202,8 @@ $carousel-indicator-spacer: $spacer !default;
         top: var(--#{$prefix}carousel-control-top);
         width: var(--#{$prefix}carousel-control-width, $carousel-control-width);
 
-        i {
+        i,
+        path {
             visibility: hidden;
         }
     }

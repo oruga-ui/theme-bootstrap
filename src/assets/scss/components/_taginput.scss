@@ -75,8 +75,7 @@ $taginput-counter-font-size: 0.75rem !default;
     }
 
     .dropdown-trigger,
-    .input,
-    input {
+    .input {
         height: 100%;
     }
 
@@ -99,6 +98,13 @@ $taginput-counter-font-size: 0.75rem !default;
         float: right;
         font-size: var(--#{$prefix}taginput-counter-font-size);
         margin: var(--#{$prefix}taginput-counter-margin);
+    }
+
+    // size variants
+    @each $name, $size in $sizes {
+        &.size-#{$name} {
+            font-size: $size;
+        }
     }
 
     &.expanded {

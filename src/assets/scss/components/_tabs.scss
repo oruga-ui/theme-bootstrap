@@ -91,7 +91,7 @@ $nav-underline-link-active-border-color: currentcolor !default;
         position: relative;
     }
 
-    // Sizes
+    // size variants
     @each $name, $size in $sizes {
         &.size-#{$name} {
             --#{$prefix}nav-link-font-size: #{$size};

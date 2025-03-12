@@ -144,8 +144,12 @@ $input-field-grouped-spacer: $spacer / 2 !default;
     // is grouped
     .input-grouped {
         display: flex;
+        gap: var(--#{$prefix}input-field-grouped-spacer);
+    }
+
+    .multiline {
+        display: flex;
         flex-wrap: wrap;
-        gap: var(--#{$prefix}input-field-grouped-spacer)
-            var(--#{$prefix}input-field-grouped-spacer);
+        gap: var(--#{$prefix}input-field-grouped-spacer);
     }
 }

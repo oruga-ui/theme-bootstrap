@@ -63,7 +63,7 @@ $steps-vertical-padding: 1em 0 !default;
     // Default size
     @include steps-size(1em);
 
-    // Sizes
+    // size variants
     @each $name, $size in $sizes {
         &.size-#{$name} {
             @include steps-size($size);

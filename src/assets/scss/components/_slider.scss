@@ -161,7 +161,7 @@ $slider-tick-bg: var(--#{$prefix}gray) !default;
         background: var(--#{$prefix}slider-disabled-bg);
     }
 
-    // Sizes
+    // size variants
     @each $name, $size in $sizes {
         &.size-#{$name} {
             height: $size;

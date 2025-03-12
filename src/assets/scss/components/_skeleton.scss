@@ -47,7 +47,7 @@ $skeleton-margin: 0.5rem 0 0 0 !default;
       content: "\00a0";
     }
 
-    // Sizes
+    // size variants
     @each $name, $value in $sizes {
       &.size-#{$name} {
         line-height: $value;
