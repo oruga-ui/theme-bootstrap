@@ -37,6 +37,7 @@
     "bootstrap": "^5.3.3"
   },
   "devDependencies": {
+    "@eslint/compat": "^1.2.7",
     "@oruga-ui/examples": "0.10.0-pre.2",
     "@oruga-ui/oruga-next": "0.10.0-pre.2",
     "@types/node": "^22.13.9",

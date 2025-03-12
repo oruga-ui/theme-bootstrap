@@ -12,47 +12,47 @@ $upload-disabled-opacity: 0.5 !default;
 /* @docs */
 
 .upload {
-  --#{$prefix}upload-disabled-opacity: #{$upload-disabled-opacity};
+    --#{$prefix}upload-disabled-opacity: #{$upload-disabled-opacity};
 
-  input {
-    display: none;
-  }
-
-  &.expanded {
-    width: 100%;
-  }
-
-  &.disabled {
-    cursor: not-allowed;
-    opacity: var(--#{$prefix}upload-disabled-opacity);
-  }
-
-  .upload-draggable {
-    --#{$prefix}upload-draggable-bg: #{$upload-draggable-bg};
-    --#{$prefix}upload-draggable-bg-hover: #{$upload-draggable-bg-hover};
-    --#{$prefix}upload-draggable-border-color: #{$upload-draggable-border-color};
-    --#{$prefix}upload-draggable-border-color-hover: #{$upload-draggable-border-color-hover};
-    --#{$prefix}upload-draggable-border-width: #{$upload-draggable-border-width};
-    --#{$prefix}upload-draggable-border-radius: #{$upload-draggable-border-radius};
-    --#{$prefix}upload-draggable-padding: #{$upload-draggable-padding};
-
-    background: var(--#{$prefix}upload-draggable-bg);
-    border: var(--#{$prefix}upload-draggable-border-width) dashed
-      var(--#{$prefix}upload-draggable-border-color);
-    border-radius: var(--#{$prefix}upload-draggable-border-radius);
-    padding: var(--#{$prefix}upload-draggable-padding);
-
-    &.hovered {
-      background-color: var(--#{$prefix}upload-draggable-bg-hover);
-      border-color: var(--#{$prefix}upload-draggable-border-color-hover);
+    input {
+        display: none;
     }
 
-    // Color variant
-    @each $name, $color-light in $theme-colors {
-      &.variant-#{$name} {
-        background-color: var(--#{$prefix}#{$name}-bg-subtle);
-        border-color: var(--#{$prefix}#{$name});
-      }
+    &.expanded {
+        width: 100%;
     }
-  }
+
+    &.disabled {
+        cursor: not-allowed;
+        opacity: var(--#{$prefix}upload-disabled-opacity);
+    }
+
+    .upload-draggable {
+        --#{$prefix}upload-draggable-bg: #{$upload-draggable-bg};
+        --#{$prefix}upload-draggable-bg-hover: #{$upload-draggable-bg-hover};
+        --#{$prefix}upload-draggable-border-color: #{$upload-draggable-border-color};
+        --#{$prefix}upload-draggable-border-color-hover: #{$upload-draggable-border-color-hover};
+        --#{$prefix}upload-draggable-border-width: #{$upload-draggable-border-width};
+        --#{$prefix}upload-draggable-border-radius: #{$upload-draggable-border-radius};
+        --#{$prefix}upload-draggable-padding: #{$upload-draggable-padding};
+
+        background: var(--#{$prefix}upload-draggable-bg);
+        border: var(--#{$prefix}upload-draggable-border-width) dashed
+            var(--#{$prefix}upload-draggable-border-color);
+        border-radius: var(--#{$prefix}upload-draggable-border-radius);
+        padding: var(--#{$prefix}upload-draggable-padding);
+
+        &.hovered {
+            background-color: var(--#{$prefix}upload-draggable-bg-hover);
+            border-color: var(--#{$prefix}upload-draggable-border-color-hover);
+        }
+
+        // Color variant
+        @each $name, $color-light in $theme-colors {
+            &.variant-#{$name} {
+                background-color: var(--#{$prefix}#{$name}-bg-subtle);
+                border-color: var(--#{$prefix}#{$name});
+            }
+        }
+    }
 }

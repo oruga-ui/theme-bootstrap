@@ -55,198 +55,204 @@ $table-card-spacer: $spacer;
 /* @bootstrap docs */
 
 .table-wrapper {
-  --#{$prefix}table-sticky-zindex: #{$table-sticky-zindex};
-  --#{$prefix}table-sticky-bg: #{$table-sticky-bg};
-  --#{$prefix}table-sticky-color: #{$table-sticky-color};
-  --#{$prefix}table-sticky-header-height: #{$table-sticky-header-height};
-  --#{$prefix}table-sortable-hover-border-color: #{$table-sortable-hover-border-color};
-  --#{$prefix}table-current-sort-bg: #{$table-current-sort-bg};
+    --#{$prefix}table-sticky-zindex: #{$table-sticky-zindex};
+    --#{$prefix}table-sticky-bg: #{$table-sticky-bg};
+    --#{$prefix}table-sticky-color: #{$table-sticky-color};
+    --#{$prefix}table-sticky-header-height: #{$table-sticky-header-height};
+    --#{$prefix}table-sortable-hover-border-color: #{$table-sortable-hover-border-color};
+    --#{$prefix}table-current-sort-bg: #{$table-current-sort-bg};
 
-  position: relative;
+    position: relative;
 
-  .table-inner:focus {
-    border-radius: var(--#{$prefix}border-radius);
-    box-shadow: var(--#{$prefix}focus-ring-x, 0)
-      var(--#{$prefix}focus-ring-y, 0) var(--#{$prefix}focus-ring-blur, 0)
-      var(--#{$prefix}focus-ring-width) var(--#{$prefix}focus-ring-color);
-  }
-
-  .table {
-    --#{$prefix}table-head-bg: #{$table-head-bg};
-    --#{$prefix}table-head-color: #{$table-head-color};
-    --#{$prefix}table-head-border-width: #{$table-head-border-width};
-
-    // override sticky hover values
-    &.table-hover > tbody > tr:hover > .sticky {
-      --#{$prefix}table-color-state: var(
-        --#{$prefix}table-sticky-color,
-        var(--#{$prefix}table-hover-color)
-      );
-      --#{$prefix}table-bg-state: var(
-        --#{$prefix}table-sticky-bg,
-        var(--#{$prefix}table-hover-bg)
-      );
+    .table-inner:focus {
+        border-radius: var(--#{$prefix}border-radius);
+        box-shadow: var(--#{$prefix}focus-ring-x, 0)
+            var(--#{$prefix}focus-ring-y, 0) var(--#{$prefix}focus-ring-blur, 0)
+            var(--#{$prefix}focus-ring-width) var(--#{$prefix}focus-ring-color);
     }
 
-    // override sticky striped values
-    &.table-striped > tbody > tr:nth-of-type(odd) > .sticky {
-      --#{$prefix}table-color-type: var(
-        --#{$prefix}table-sticky-color,
-        var(--#{$prefix}table-striped-color)
-      );
-      --#{$prefix}table-bg-type: var(
-        --#{$prefix}table-sticky-bg,
-        var(--#{$prefix}table-striped-bg)
-      );
-    }
+    .table {
+        --#{$prefix}table-head-bg: #{$table-head-bg};
+        --#{$prefix}table-head-color: #{$table-head-color};
+        --#{$prefix}table-head-border-width: #{$table-head-border-width};
 
-    th,
-    td {
-      vertical-align: middle;
-
-      &.sticky {
-        position: -webkit-sticky;
-        position: sticky;
-        left: 0;
-        z-index: var(--#{$prefix}table-sticky-zindex);
-        --#{$prefix}table-accent-color: var(--#{$prefix}table-sticky-color);
-        --#{$prefix}table-accent-bg: var(--#{$prefix}table-sticky-bg);
-      }
-    }
-
-    thead th {
-      --#{$prefix}table-color-state: var(--#{$prefix}table-head-color);
-      --#{$prefix}table-bg-state: var(--#{$prefix}table-head-bg);
-
-      position: relative;
-      border-bottom-width: var(--#{$prefix}table-head-border-width);
-
-      &.sortable {
-        cursor: pointer;
-
-        > span {
-          display: block;
-          position: relative;
+        // override sticky hover values
+        &.table-hover > tbody > tr:hover > .sticky {
+            --#{$prefix}table-color-state: var(
+                --#{$prefix}table-sticky-color,
+                var(--#{$prefix}table-hover-color)
+            );
+            --#{$prefix}table-bg-state: var(
+                --#{$prefix}table-sticky-bg,
+                var(--#{$prefix}table-hover-bg)
+            );
         }
 
-        &:hover {
-          border-color: var(--#{$prefix}table-sortable-hover-border-color);
+        // override sticky striped values
+        &.table-striped > tbody > tr:nth-of-type(odd) > .sticky {
+            --#{$prefix}table-color-type: var(
+                --#{$prefix}table-sticky-color,
+                var(--#{$prefix}table-striped-color)
+            );
+            --#{$prefix}table-bg-type: var(
+                --#{$prefix}table-sticky-bg,
+                var(--#{$prefix}table-striped-bg)
+            );
         }
-      }
 
-      &.current-sort {
-        --#{$prefix}table-bg-type: var(--#{$prefix}table-current-sort-bg);
-      }
-
-      .sort-icon {
-        position: absolute;
-        right: 0;
-      }
-    }
-
-    tbody tr {
-      &.table-detail {
-        --#{$prefix}table-detail-bg: #{$table-detail-bg};
-        --#{$prefix}table-detail-padding: #{$table-detail-padding};
-
+        th,
         td {
-          background-color: var(--#{$prefix}table-detail-bg);
-          padding: var(--#{$prefix}table-detail-padding);
-          box-shadow: unset;
+            vertical-align: middle;
+
+            &.sticky {
+                position: -webkit-sticky;
+                position: sticky;
+                left: 0;
+                z-index: var(--#{$prefix}table-sticky-zindex);
+                --#{$prefix}table-accent-color: var(
+                    --#{$prefix}table-sticky-color
+                );
+                --#{$prefix}table-accent-bg: var(--#{$prefix}table-sticky-bg);
+            }
         }
-      }
 
-      &.table-empty {
-        --#{$prefix}table-detail-padding: #{$table-empty-padding};
+        thead th {
+            --#{$prefix}table-color-state: var(--#{$prefix}table-head-color);
+            --#{$prefix}table-bg-state: var(--#{$prefix}table-head-bg);
 
-        td {
-          text-align: center;
-          padding: var(--#{$prefix}table-detail-padding);
+            position: relative;
+            border-bottom-width: var(--#{$prefix}table-head-border-width);
+
+            &.sortable {
+                cursor: pointer;
+
+                > span {
+                    display: block;
+                    position: relative;
+                }
+
+                &:hover {
+                    border-color: var(
+                        --#{$prefix}table-sortable-hover-border-color
+                    );
+                }
+            }
+
+            &.current-sort {
+                --#{$prefix}table-bg-type: var(
+                    --#{$prefix}table-current-sort-bg
+                );
+            }
+
+            .sort-icon {
+                position: absolute;
+                right: 0;
+            }
         }
-      }
-    }
-  }
 
-  .table-sticky {
-    height: var(--#{$prefix}table-sticky-header-height);
-    overflow-y: auto;
+        tbody tr {
+            &.table-detail {
+                --#{$prefix}table-detail-bg: #{$table-detail-bg};
+                --#{$prefix}table-detail-padding: #{$table-detail-padding};
 
-    .table thead th {
-      position: -webkit-sticky;
-      position: sticky;
-      left: 0;
-      top: 0;
-      z-index: calc(var(--#{$prefix}table-sticky-zindex) + 10);
-    }
-  }
+                td {
+                    background-color: var(--#{$prefix}table-detail-bg);
+                    padding: var(--#{$prefix}table-detail-padding);
+                    box-shadow: unset;
+                }
+            }
 
-  .icon {
-    transition:
-      transform $speed-slow $easing,
-      opacity 86ms $easing;
-  }
+            &.table-empty {
+                --#{$prefix}table-detail-padding: #{$table-empty-padding};
 
-  // mobile version
-  &.mobile-cards {
-    --#{$prefix}table-card-spacer: #{$table-card-spacer};
-
-    thead {
-      display: none;
-    }
-
-    tbody > tr {
-      @extend .card;
-      overflow: hidden;
-    }
-
-    tfoot th {
-      border: 0;
-      display: inherit;
-    }
-
-    tr {
-      width: 100%;
-
-      td {
-        border: 0;
-        display: inherit;
-
-        &:last-child {
-          border-bottom: 0 !important;
+                td {
+                    text-align: center;
+                    padding: var(--#{$prefix}table-detail-padding);
+                }
+            }
         }
-      }
-
-      &:not(:last-child) {
-        margin-bottom: var(--#{$prefix}table-card-spacer);
-      }
-
-      &:has(+ .table-detail) {
-        border-bottom-left-radius: 0;
-        border-bottom-right-radius: 0;
-        margin-bottom: 0;
-      }
-
-      &.table-detail {
-        border-top-left-radius: 0;
-        border-top-right-radius: 0;
-      }
     }
 
-    tr:not(.table-detail):not(.table-empty):not(.table-footer) {
-      td {
-        display: flex;
-        justify-content: space-between;
-        align-items: end;
-        border-bottom: var(--#{$prefix}border-width) solid
-          var(--#{$prefix}table-border-color);
+    .table-sticky {
+        height: var(--#{$prefix}table-sticky-header-height);
+        overflow-y: auto;
 
-        &:before {
-          content: attr(data-label);
-          font-weight: bold;
-          padding-right: 0.5em;
-          text-align: left;
+        .table thead th {
+            position: -webkit-sticky;
+            position: sticky;
+            left: 0;
+            top: 0;
+            z-index: calc(var(--#{$prefix}table-sticky-zindex) + 10);
         }
-      }
     }
-  }
+
+    .icon {
+        transition:
+            transform $speed-slow $easing,
+            opacity 86ms $easing;
+    }
+
+    // mobile version
+    &.mobile-cards {
+        --#{$prefix}table-card-spacer: #{$table-card-spacer};
+
+        thead {
+            display: none;
+        }
+
+        tbody > tr {
+            @extend .card;
+            overflow: hidden;
+        }
+
+        tfoot th {
+            border: 0;
+            display: inherit;
+        }
+
+        tr {
+            width: 100%;
+
+            td {
+                border: 0;
+                display: inherit;
+
+                &:last-child {
+                    border-bottom: 0 !important;
+                }
+            }
+
+            &:not(:last-child) {
+                margin-bottom: var(--#{$prefix}table-card-spacer);
+            }
+
+            &:has(+ .table-detail) {
+                border-bottom-left-radius: 0;
+                border-bottom-right-radius: 0;
+                margin-bottom: 0;
+            }
+
+            &.table-detail {
+                border-top-left-radius: 0;
+                border-top-right-radius: 0;
+            }
+        }
+
+        tr:not(.table-detail):not(.table-empty):not(.table-footer) {
+            td {
+                display: flex;
+                justify-content: space-between;
+                align-items: end;
+                border-bottom: var(--#{$prefix}border-width) solid
+                    var(--#{$prefix}table-border-color);
+
+                &:before {
+                    content: attr(data-label);
+                    font-weight: bold;
+                    padding-right: 0.5em;
+                    text-align: left;
+                }
+            }
+        }
+    }
 }

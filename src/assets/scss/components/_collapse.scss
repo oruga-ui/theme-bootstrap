@@ -4,14 +4,14 @@
 /* @bootstrap docs */
 
 .collapse {
-  @extend .show;
+    @extend .show;
 
-  &-trigger {
-    cursor: pointer;
-    display: inline-block;
-  }
+    &-trigger {
+        cursor: pointer;
+        display: inline-block;
+    }
 
-  &-content {
-    display: inherit;
-  }
+    &-content {
+        display: inherit;
+    }
 }

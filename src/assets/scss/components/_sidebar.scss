@@ -20,86 +20,89 @@ $sidebar-reduced-height: 10vh !default;
 /* @bootstrap docs */
 
 @mixin size($height, $width) {
-  &.offcanvas-start,
-  &.offcanvas-end {
-    --#{$prefix}offcanvas-width: #{$width};
-  }
+    &.offcanvas-start,
+    &.offcanvas-end {
+        --#{$prefix}offcanvas-width: #{$width};
+    }
 
-  &.offcanvas-top,
-  &.offcanvas-bottom {
-    --#{$prefix}offcanvas-height: #{$height};
-  }
+    &.offcanvas-top,
+    &.offcanvas-bottom {
+        --#{$prefix}offcanvas-height: #{$height};
+    }
 }
 
 .sidebar {
-  .offcanvas {
-    .btn-close {
-      position: absolute;
-      right: 0.5rem;
-      top: 0.5rem;
-      cursor: pointer;
-    }
-
-    // Color variants
-    @each $name, $color in $theme-colors {
-      &.variant-#{$name} {
-        --#{$prefix}offcanvas-color: var(--#{$prefix}#{$name}-contrast);
-        --#{$prefix}offcanvas-bg: var(--#{$prefix}#{$name});
-      }
-    }
-
-    &.fullwidth {
-      --#{$prefix}offcanvas-width: 100%;
-    }
-
-    &.fullheight {
-      --#{$prefix}offcanvas-height: 100%;
-    }
-
-    &.reduced {
-      transition:
-        width $speed-slow $easing,
-        height $speed-slow $easing;
-
-      @include size($sidebar-reduced-height, $sidebar-reduced-width);
-    }
-
-    &.hover-expanded:hover {
-      &.fullwidth {
-        @include size(100%, 100%);
-      }
-
-      &:not(.fullwidth) {
-        @include size($offcanvas-vertical-height, $offcanvas-horizontal-width);
-
-        &.reduced-expand-fixed {
-          position: fixed;
-        }
-      }
-    }
-  }
-
-  &.inline,
-  &.show {
-    .offcanvas,
-    .offcanvas-backdrop {
-      @extend .show;
-    }
-  }
-
-  &.inline {
-    position: relative;
-
     .offcanvas {
-      --#{$prefix}offcanvas-zindex: 0;
+        .btn-close {
+            position: absolute;
+            right: 0.5rem;
+            top: 0.5rem;
+            cursor: pointer;
+        }
 
-      position: relative;
+        // Color variants
+        @each $name, $color in $theme-colors {
+            &.variant-#{$name} {
+                --#{$prefix}offcanvas-color: var(--#{$prefix}#{$name}-contrast);
+                --#{$prefix}offcanvas-bg: var(--#{$prefix}#{$name});
+            }
+        }
+
+        &.fullwidth {
+            --#{$prefix}offcanvas-width: 100%;
+        }
+
+        &.fullheight {
+            --#{$prefix}offcanvas-height: 100%;
+        }
+
+        &.reduced {
+            transition:
+                width $speed-slow $easing,
+                height $speed-slow $easing;
+
+            @include size($sidebar-reduced-height, $sidebar-reduced-width);
+        }
+
+        &.hover-expanded:hover {
+            &.fullwidth {
+                @include size(100%, 100%);
+            }
+
+            &:not(.fullwidth) {
+                @include size(
+                    $offcanvas-vertical-height,
+                    $offcanvas-horizontal-width
+                );
+
+                &.reduced-expand-fixed {
+                    position: fixed;
+                }
+            }
+        }
     }
 
-    .offcanvas-backdrop {
-      position: absolute;
-      height: auto;
-      margin: auto;
+    &.inline,
+    &.show {
+        .offcanvas,
+        .offcanvas-backdrop {
+            @extend .show;
+        }
     }
-  }
+
+    &.inline {
+        position: relative;
+
+        .offcanvas {
+            --#{$prefix}offcanvas-zindex: 0;
+
+            position: relative;
+        }
+
+        .offcanvas-backdrop {
+            position: absolute;
+            height: auto;
+            margin: auto;
+        }
+    }
 }

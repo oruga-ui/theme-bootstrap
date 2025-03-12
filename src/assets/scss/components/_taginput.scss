@@ -18,109 +18,111 @@ $taginput-counter-font-size: 0.75rem !default;
 /* @bootstrap docs */
 
 .taginput {
-  .btn-close {
-    font-size: 0.8em;
-  }
-
-  .taginput-wrapper {
-    --#{$prefix}taginput-border-width: #{$input-border-width};
-    --#{$prefix}taginput-border-color: #{$input-border-color};
-    --#{$prefix}taginput-border-radius: #{$input-border-radius};
-
-    display: flex;
-    flex-wrap: wrap;
-    border: var(--#{$prefix}taginput-border-width) solid
-      var(--#{$prefix}taginput-border-color);
-    border-radius: var(--#{$prefix}taginput-border-radius);
-
-    &:hover,
-    &:focus-within {
-      box-shadow: var(--#{$prefix}focus-ring-x, 0)
-        var(--#{$prefix}focus-ring-y, 0) var(--#{$prefix}focus-ring-blur, 0)
-        var(--#{$prefix}focus-ring-width) var(--#{$prefix}focus-ring-color);
+    .btn-close {
+        font-size: 0.8em;
     }
 
-    .badge {
-      --#{$prefix}badge-color: #{$taginput-badge-color};
-      --#{$prefix}badge-font-size: #{$taginput-badge-font-size};
-      --#{$prefix}badge-margin: #{$taginput-badge-margin};
-      --#{$prefix}badge-bg: #{$taginput-badge-bg};
-      --#{$prefix}badge-icon-space: #{$taginput-badge-icon-space};
-
-      display: inline-flex;
-      align-items: center;
-      background: var(--#{$prefix}badge-bg);
-      margin: var(--#{$prefix}badge-margin);
-
-      // Color variants
-      @each $name, $color in $theme-colors {
-        &.variant-#{$name} {
-          --#{$prefix}badge-color: var(--#{$prefix}#{$name}-contrast);
-          --#{$prefix}badge-bg: var(--#{$prefix}#{$name});
-        }
-      }
-
-      .icon {
-        margin-left: var(--#{$prefix}badge-icon-space);
-        margin-bottom: 0;
-        cursor: pointer;
-      }
-    }
-
-    .dropdown.expanded {
-      width: auto;
-    }
-  }
-
-  .dropdown-trigger,
-  .input,
-  input {
-    height: 100%;
-  }
-
-  input {
-    border: 0;
-    box-shadow: none;
-
-    // disable input focus shadow
-    &:focus {
-      box-shadow: none !important;
-    }
-  }
-
-  .counter {
-    --#{$prefix}taginput-counter-margin: #{$taginput-counter-margin};
-    --#{$prefix}taginput-counter-font-size: #{$taginput-counter-font-size};
-
-    position: relative;
-    display: block;
-    float: right;
-    font-size: var(--#{$prefix}taginput-counter-font-size);
-    margin: var(--#{$prefix}taginput-counter-margin);
-  }
-
-  &.expanded {
-    width: 100%;
-  }
-
-  &.disabled {
     .taginput-wrapper {
-      --#{$prefix}taginput-disabled-bg: #{$input-disabled-bg};
-      --#{$prefix}taginput-disabled-color: #{$input-disabled-color};
-      --#{$prefix}taginput-disabled-border-color: #{$input-disabled-border-color};
+        --#{$prefix}taginput-border-width: #{$input-border-width};
+        --#{$prefix}taginput-border-color: #{$input-border-color};
+        --#{$prefix}taginput-border-radius: #{$input-border-radius};
 
-      color: var(--#{$prefix}taginput-disabled-color);
-      background: var(--#{$prefix}taginput-disabled-bg);
-      border-color: var(--#{$prefix}taginput-disabled-border-color)
-        var(--#{$prefix}border-color);
+        display: flex;
+        flex-wrap: wrap;
+        border: var(--#{$prefix}taginput-border-width) solid
+            var(--#{$prefix}taginput-border-color);
+        border-radius: var(--#{$prefix}taginput-border-radius);
 
-      input {
-        cursor: not-allowed;
-      }
+        &:hover,
+        &:focus-within {
+            box-shadow: var(--#{$prefix}focus-ring-x, 0)
+                var(--#{$prefix}focus-ring-y, 0)
+                var(--#{$prefix}focus-ring-blur, 0)
+                var(--#{$prefix}focus-ring-width)
+                var(--#{$prefix}focus-ring-color);
+        }
 
-      .btn-close {
-        display: none;
-      }
+        .badge {
+            --#{$prefix}badge-color: #{$taginput-badge-color};
+            --#{$prefix}badge-font-size: #{$taginput-badge-font-size};
+            --#{$prefix}badge-margin: #{$taginput-badge-margin};
+            --#{$prefix}badge-bg: #{$taginput-badge-bg};
+            --#{$prefix}badge-icon-space: #{$taginput-badge-icon-space};
+
+            display: inline-flex;
+            align-items: center;
+            background: var(--#{$prefix}badge-bg);
+            margin: var(--#{$prefix}badge-margin);
+
+            // Color variants
+            @each $name, $color in $theme-colors {
+                &.variant-#{$name} {
+                    --#{$prefix}badge-color: var(--#{$prefix}#{$name}-contrast);
+                    --#{$prefix}badge-bg: var(--#{$prefix}#{$name});
+                }
+            }
+
+            .icon {
+                margin-left: var(--#{$prefix}badge-icon-space);
+                margin-bottom: 0;
+                cursor: pointer;
+            }
+        }
+
+        .dropdown.expanded {
+            width: auto;
+        }
     }
-  }
+
+    .dropdown-trigger,
+    .input,
+    input {
+        height: 100%;
+    }
+
+    input {
+        border: 0;
+        box-shadow: none;
+
+        // disable input focus shadow
+        &:focus {
+            box-shadow: none !important;
+        }
+    }
+
+    .counter {
+        --#{$prefix}taginput-counter-margin: #{$taginput-counter-margin};
+        --#{$prefix}taginput-counter-font-size: #{$taginput-counter-font-size};
+
+        position: relative;
+        display: block;
+        float: right;
+        font-size: var(--#{$prefix}taginput-counter-font-size);
+        margin: var(--#{$prefix}taginput-counter-margin);
+    }
+
+    &.expanded {
+        width: 100%;
+    }
+
+    &.disabled {
+        .taginput-wrapper {
+            --#{$prefix}taginput-disabled-bg: #{$input-disabled-bg};
+            --#{$prefix}taginput-disabled-color: #{$input-disabled-color};
+            --#{$prefix}taginput-disabled-border-color: #{$input-disabled-border-color};
+
+            color: var(--#{$prefix}taginput-disabled-color);
+            background: var(--#{$prefix}taginput-disabled-bg);
+            border-color: var(--#{$prefix}taginput-disabled-border-color)
+                var(--#{$prefix}border-color);
+
+            input {
+                cursor: not-allowed;
+            }
+
+            .btn-close {
+                display: none;
+            }
+        }
+    }
 }

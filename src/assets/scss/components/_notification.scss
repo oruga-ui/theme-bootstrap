@@ -39,108 +39,110 @@ $notification-icon-margin-right: 0.5rem !default;
 /* @bootstrap docs */
 
 .notifictation {
-  .notifictation-wrapper {
-    display: flex;
+    .notifictation-wrapper {
+        display: flex;
 
-    .icon {
-      margin-right: $notification-icon-margin-right;
-    }
+        .icon {
+            margin-right: $notification-icon-margin-right;
+        }
 
-    .notifictation-content {
-      padding-right: calc($notification-close-btn-position + $alert-padding-x);
+        .notifictation-content {
+            padding-right: calc(
+                $notification-close-btn-position + $alert-padding-x
+            );
+        }
     }
-  }
 }
 
 .alert {
-  & > button {
-    background-color: transparent;
-    border: 0;
-    position: absolute;
-    top: $notification-close-btn-position;
-    right: $notification-close-btn-position;
-  }
-
-  // Colors variants
-  @each $name, $color in $theme-colors {
-    &.variant-#{$name} {
-      @extend .alert-#{$name};
-
-      > .btn-close {
-        filter: unset;
-      }
+    & > button {
+        background-color: transparent;
+        border: 0;
+        position: absolute;
+        top: $notification-close-btn-position;
+        right: $notification-close-btn-position;
     }
-  }
 
-  // default color variant light
-  &:not([class*="variant-"]) {
-    @extend .alert-light;
-  }
+    // Colors variants
+    @each $name, $color in $theme-colors {
+        &.variant-#{$name} {
+            @extend .alert-#{$name};
+
+            > .btn-close {
+                filter: unset;
+            }
+        }
+    }
+
+    // default color variant light
+    &:not([class*="variant-"]) {
+        @extend .alert-light;
+    }
 }
 
 .toast {
-  @extend .show;
-  padding: var(--#{$prefix}toast-padding-x) var(--#{$prefix}toast-padding-y);
-  margin-bottom: var(--#{$prefix}alert-margin-bottom);
+    @extend .show;
+    padding: var(--#{$prefix}toast-padding-x) var(--#{$prefix}toast-padding-y);
+    margin-bottom: var(--#{$prefix}alert-margin-bottom);
 
-  // Color variants
-  @each $name, $color in $theme-colors {
-    &.variant-#{$name} {
-      --#{$prefix}toast-color: var(--#{$prefix}#{$name}-contrast);
-      --#{$prefix}toast-bg: var(--#{$prefix}#{$name});
+    // Color variants
+    @each $name, $color in $theme-colors {
+        &.variant-#{$name} {
+            --#{$prefix}toast-color: var(--#{$prefix}#{$name}-contrast);
+            --#{$prefix}toast-bg: var(--#{$prefix}#{$name});
+        }
     }
-  }
 }
 
 .notifictations {
-  --#{$prefix}notification-notices-padding: #{$notification-notices-padding};
-  --#{$prefix}notification-notices-zindex: #{$notification-notices-zindex};
-  --#{$prefix}notification-notices-max-width: #{$notification-notices-max-width};
+    --#{$prefix}notification-notices-padding: #{$notification-notices-padding};
+    --#{$prefix}notification-notices-zindex: #{$notification-notices-zindex};
+    --#{$prefix}notification-notices-max-width: #{$notification-notices-max-width};
 
-  display: flex;
-  position: fixed;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  overflow: hidden;
-  pointer-events: none;
-  padding: var(--#{$prefix}notification-notices-padding);
-  z-index: var(--#{$prefix}notification-notices-zindex);
+    display: flex;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    overflow: hidden;
+    pointer-events: none;
+    padding: var(--#{$prefix}notification-notices-padding);
+    z-index: var(--#{$prefix}notification-notices-zindex);
 
-  .alert {
-    pointer-events: auto;
-    max-width: var(--#{$prefix}notification-notices-max-width);
+    .alert {
+        pointer-events: auto;
+        max-width: var(--#{$prefix}notification-notices-max-width);
+
+        &.position {
+            &-top,
+            &-bottom {
+                align-self: center;
+            }
+
+            &-top-right,
+            &-bottom-right {
+                align-self: flex-end;
+            }
+
+            &-top-left,
+            &-bottom-left {
+                align-self: flex-start;
+            }
+        }
+    }
 
     &.position {
-      &-top,
-      &-bottom {
-        align-self: center;
-      }
+        &-top {
+            flex-direction: column;
+        }
 
-      &-top-right,
-      &-bottom-right {
-        align-self: flex-end;
-      }
+        &-bottom {
+            flex-direction: column-reverse;
 
-      &-top-left,
-      &-bottom-left {
-        align-self: flex-start;
-      }
+            > .div:first-child {
+                margin-bottom: 0;
+            }
+        }
     }
-  }
-
-  &.position {
-    &-top {
-      flex-direction: column;
-    }
-
-    &-bottom {
-      flex-direction: column-reverse;
-
-      > .div:first-child {
-        margin-bottom: 0;
-      }
-    }
-  }
 }

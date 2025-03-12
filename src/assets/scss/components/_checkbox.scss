@@ -37,123 +37,131 @@
 /* @bootstrap docs */
 
 @function checkmarkSVG($color) {
-  @return escape-svg(
-    str-replace(
-      $form-check-input-checked-bg-image,
-      "#{$form-check-input-checked-color}",
-      $color
-    )
-  );
+    @return escape-svg(
+        str-replace(
+            $form-check-input-checked-bg-image,
+            "#{$form-check-input-checked-color}",
+            $color
+        )
+    );
 }
 @function checkcircleSVG($color) {
-  @return escape-svg(
-    str-replace(
-      $form-check-radio-checked-bg-image,
-      "#{$form-check-input-checked-color}",
-      $color
-    )
-  );
+    @return escape-svg(
+        str-replace(
+            $form-check-radio-checked-bg-image,
+            "#{$form-check-input-checked-color}",
+            $color
+        )
+    );
 }
 @function indeterminateSVG($color) {
-  @return escape-svg(
-    str-replace(
-      $form-check-input-indeterminate-bg-image,
-      "#{$form-check-input-indeterminate-color}",
-      $color
-    )
-  );
+    @return escape-svg(
+        str-replace(
+            $form-check-input-indeterminate-bg-image,
+            "#{$form-check-input-indeterminate-color}",
+            $color
+        )
+    );
 }
 
 .form-check {
-  // color variants
-  @each $name, $color in $theme-colors {
-    &.variant-#{$name} {
-      input[type="radio"],
-      input[type="checkbox"] {
-        background-color: var(--#{$prefix}#{$name});
-        border-color: var(--#{$prefix}#{$name});
-      }
-    }
-  }
-
-  // color variant inverted
-  @each $name, $color in $theme-colors {
-    &.variant-#{$name}-inverted {
-      input[type="radio"],
-      input[type="checkbox"] {
-        background-color: transparent;
-        border-color: var(--#{$prefix}#{$name});
-
-        &[type="checkbox"] {
-          &:checked {
-            --#{$prefix}form-check-bg-image: #{checkmarkSVG($color)};
-          }
-
-          &:indeterminate {
-            --#{$prefix}form-check-bg-image: #{indeterminateSVG($color)};
-          }
+    // color variants
+    @each $name, $color in $theme-colors {
+        &.variant-#{$name} {
+            input[type="radio"],
+            input[type="checkbox"] {
+                background-color: var(--#{$prefix}#{$name});
+                border-color: var(--#{$prefix}#{$name});
+            }
         }
-
-        &[type="radio"]:checked {
-          --#{$prefix}form-check-bg-image: #{checkcircleSVG($color)};
-        }
-      }
     }
 
-    &.variant-#{$name}-subtle {
-      $color: map.get($theme-colors-bg-subtle, #{$name});
+    // color variant inverted
+    @each $name, $color in $theme-colors {
+        &.variant-#{$name}-inverted {
+            input[type="radio"],
+            input[type="checkbox"] {
+                background-color: transparent;
+                border-color: var(--#{$prefix}#{$name});
 
-      input[type="radio"],
-      input[type="checkbox"] {
-        background-color: transparent;
-        border-color: var(--#{$prefix}#{$name}-border-subtle);
+                &[type="checkbox"] {
+                    &:checked {
+                        --#{$prefix}form-check-bg-image: #{checkmarkSVG(
+                                $color
+                            )};
+                    }
 
-        &[type="checkbox"] {
-          &:checked {
-            --#{$prefix}form-check-bg-image: #{checkmarkSVG($color)};
-          }
+                    &:indeterminate {
+                        --#{$prefix}form-check-bg-image: #{indeterminateSVG(
+                                $color
+                            )};
+                    }
+                }
 
-          &:indeterminate {
-            --#{$prefix}form-check-bg-image: #{indeterminateSVG($color)};
-          }
+                &[type="radio"]:checked {
+                    --#{$prefix}form-check-bg-image: #{checkcircleSVG($color)};
+                }
+            }
         }
 
-        &[type="radio"]:checked {
-          --#{$prefix}form-check-bg-image: #{checkcircleSVG($color)};
+        &.variant-#{$name}-subtle {
+            $color: map.get($theme-colors-bg-subtle, #{$name});
+
+            input[type="radio"],
+            input[type="checkbox"] {
+                background-color: transparent;
+                border-color: var(--#{$prefix}#{$name}-border-subtle);
+
+                &[type="checkbox"] {
+                    &:checked {
+                        --#{$prefix}form-check-bg-image: #{checkmarkSVG(
+                                $color
+                            )};
+                    }
+
+                    &:indeterminate {
+                        --#{$prefix}form-check-bg-image: #{indeterminateSVG(
+                                $color
+                            )};
+                    }
+                }
+
+                &[type="radio"]:checked {
+                    --#{$prefix}form-check-bg-image: #{checkcircleSVG($color)};
+                }
+            }
         }
-      }
     }
-  }
 
-  // size variants
-  @each $name, $size in $sizes {
-    &.size-#{$name} {
-      font-size: $size;
+    // size variants
+    @each $name, $size in $sizes {
+        &.size-#{$name} {
+            font-size: $size;
 
-      // input size should not defined for switch style
-      &:not(.form-switch) {
-        input[type="radio"],
-        input[type="checkbox"] {
-          width: $size;
-          height: $size;
-          margin-right: calc(#{$size} / 2);
+            // input size should not defined for switch style
+            &:not(.form-switch) {
+                input[type="radio"],
+                input[type="checkbox"] {
+                    width: $size;
+                    height: $size;
+                    margin-right: calc(#{$size} / 2);
+                }
+            }
         }
-      }
     }
-  }
 
-  &.disabled,
-  &.disabled .form-check-label {
-    cursor: not-allowed;
-  }
+    &.disabled,
+    &.disabled .form-check-label {
+        cursor: not-allowed;
+    }
 
-  &:not(.rounded) input {
-    border-radius: var(--#{$prefix}border-radius);
-  }
+    &:not(.rounded) input {
+        border-radius: var(--#{$prefix}border-radius);
+    }
 }
 
 .input-field.input-group {
-  .form-check {
-    @extend .form-check-inline;
-  }
+    .form-check {
+        @extend .form-check-inline;
+    }
 }

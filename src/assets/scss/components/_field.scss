@@ -18,134 +18,134 @@ $input-field-grouped-spacer: $spacer / 2 !default;
 */
 
 @mixin radii($selector) {
-  // the first and the last inputs should be rounded
-  &:first-child:not(:last-child) {
-    #{$selector} {
-      border-bottom-right-radius: 0;
-      border-top-right-radius: 0;
+    // the first and the last inputs should be rounded
+    &:first-child:not(:last-child) {
+        #{$selector} {
+            border-bottom-right-radius: 0;
+            border-top-right-radius: 0;
+        }
     }
-  }
 
-  &:last-child:not(:first-child) {
-    #{$selector} {
-      border-bottom-left-radius: 0;
-      border-top-left-radius: 0;
+    &:last-child:not(:first-child) {
+        #{$selector} {
+            border-bottom-left-radius: 0;
+            border-top-left-radius: 0;
+        }
     }
-  }
 
-  // The input in middle shouldn't be rounded
-  &:not(:first-child):not(:last-child) {
-    #{$selector} {
-      --#{$prefix}border-radius: 0;
+    // The input in middle shouldn't be rounded
+    &:not(:first-child):not(:last-child) {
+        #{$selector} {
+            --#{$prefix}border-radius: 0;
+        }
     }
-  }
 
-  // The input is first and the last
-  &:first-child:last-child {
-    #{$selector} {
-      --#{$prefix}border-radius: #{$border-radius};
+    // The input is first and the last
+    &:first-child:last-child {
+        #{$selector} {
+            --#{$prefix}border-radius: #{$border-radius};
+        }
     }
-  }
 }
 
 .input-field {
-  --#{$prefix}input-field-grouped-spacer: #{$input-field-grouped-spacer};
-  --#{$prefix}input-field-margin-bottom: #{$input-field-margin-bottom};
-  --#{$prefix}input-field-btn-border-color: #{$input-border-color};
+    --#{$prefix}input-field-grouped-spacer: #{$input-field-grouped-spacer};
+    --#{$prefix}input-field-margin-bottom: #{$input-field-margin-bottom};
+    --#{$prefix}input-field-btn-border-color: #{$input-border-color};
 
-  margin-bottom: var(--#{$prefix}input-field-margin-bottom);
+    margin-bottom: var(--#{$prefix}input-field-margin-bottom);
 
-  &.row > div {
-    @extend .col;
-  }
-
-  .form-label {
-    display: block;
-  }
-
-  &.field-horizontal {
-    .col-form-label {
-      flex-basis: 0;
-      flex-grow: 1;
-      flex-shrink: 0;
-      text-align: right;
+    &.row > div {
+        @extend .col;
     }
 
-    .col-form-field {
-      flex-basis: 0;
-      flex-grow: 5;
-      flex-shrink: 1;
-    }
-  }
-
-  // input expanded
-  .input,
-  .select,
-  .dropdown,
-  .btn {
-    flex-shrink: 0;
-
-    &.expanded {
-      flex-grow: 1;
-      flex-shrink: 1;
-
-      &.btn {
-        width: 100%;
-      }
-    }
-  }
-
-  // has group
-  .input-group {
-    flex-shrink: 0;
-    flex-wrap: unset;
-
-    > .btn {
-      --#{$prefix}btn-spacer: 0;
+    .form-label {
+        display: block;
     }
 
-    // prevent nested components
-    > *:not(.dropdown),
-    > .dropdown .dropdown-trigger {
-      // remove margin
-      .input,
-      .select,
-      .dropdown,
-      .btn {
-        margin: 0;
-      }
+    &.field-horizontal {
+        .col-form-label {
+            flex-basis: 0;
+            flex-grow: 1;
+            flex-shrink: 0;
+            text-align: right;
+        }
 
-      .input {
-        @include radii(".form-control");
-      }
-
-      .select {
-        @include radii(".form-select");
-      }
+        .col-form-field {
+            flex-basis: 0;
+            flex-grow: 5;
+            flex-shrink: 1;
+        }
     }
 
-    > .dropdown {
-      @include radii(".dropdown-trigger > *");
+    // input expanded
+    .input,
+    .select,
+    .dropdown,
+    .btn {
+        flex-shrink: 0;
+
+        &.expanded {
+            flex-grow: 1;
+            flex-shrink: 1;
+
+            &.btn {
+                width: 100%;
+            }
+        }
     }
 
-    > *:not(.dropdown) {
-      // set border radii
-      & > button:first-child:not(:only-child),
-      & > .input:first-child:not(:only-child):not(.form-check-input),
-      & > .select:first-child:not(:only-child) {
-        border-bottom-right-radius: 0;
-        border-top-right-radius: 0;
-      }
+    // has group
+    .input-group {
+        flex-shrink: 0;
+        flex-wrap: unset;
 
-      @include radii("button, select, input:not(.form-check-input)");
+        > .btn {
+            --#{$prefix}btn-spacer: 0;
+        }
+
+        // prevent nested components
+        > *:not(.dropdown),
+        > .dropdown .dropdown-trigger {
+            // remove margin
+            .input,
+            .select,
+            .dropdown,
+            .btn {
+                margin: 0;
+            }
+
+            .input {
+                @include radii(".form-control");
+            }
+
+            .select {
+                @include radii(".form-select");
+            }
+        }
+
+        > .dropdown {
+            @include radii(".dropdown-trigger > *");
+        }
+
+        > *:not(.dropdown) {
+            // set border radii
+            & > button:first-child:not(:only-child),
+            & > .input:first-child:not(:only-child):not(.form-check-input),
+            & > .select:first-child:not(:only-child) {
+                border-bottom-right-radius: 0;
+                border-top-right-radius: 0;
+            }
+
+            @include radii("button, select, input:not(.form-check-input)");
+        }
     }
-  }
 
-  // is grouped
-  .input-grouped {
-    display: flex;
-    flex-wrap: wrap;
-    gap: var(--#{$prefix}input-field-grouped-spacer)
-      var(--#{$prefix}input-field-grouped-spacer);
-  }
+    // is grouped
+    .input-grouped {
+        display: flex;
+        flex-wrap: wrap;
+        gap: var(--#{$prefix}input-field-grouped-spacer)
+            var(--#{$prefix}input-field-grouped-spacer);
+    }
 }

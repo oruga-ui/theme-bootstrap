@@ -43,172 +43,172 @@ $dropdown-modal-max-width: calc(100vw - 40px);
 /* @bootstrap docs */
 
 .dropdown {
-  display: inline-block;
-  vertical-align: middle;
-
-  .dropdown-trigger {
-    display: inline-flex;
-  }
-
-  &.expanded,
-  &.expanded .dropdown-trigger {
-    width: 100%;
-  }
-
-  &.disabled {
-    cursor: not-allowed;
-  }
-
-  .dropdown-menu {
-    .dropdown-item {
-      // disable dropdown-item effects when not clickable
-      &:not(.clickable) {
-        &:hover,
-        &:active {
-          --#{$prefix}dropdown-link-active-bg: transparent;
-          --#{$prefix}dropdown-link-hover-bg: transparent;
-        }
-      }
-
-      &.focused:not(.active) {
-        color: var(--#{$prefix}dropdown-link-hover-color);
-        background-color: var(--#{$prefix}dropdown-link-hover-bg);
-      }
-    }
-
-    // position classes
-    &.position {
-      &-top {
-        top: auto;
-        right: auto;
-        bottom: calc(100% + var(--#{$prefix}dropdown-spacer));
-        left: 50%;
-        transform: translateX(-50%);
-      }
-
-      &-left {
-        top: 50%;
-        right: calc(100% + var(--#{$prefix}dropdown-spacer));
-        bottom: auto;
-        left: auto;
-        transform: translateY(-50%);
-      }
-
-      &-bottom {
-        top: calc(100% + var(--#{$prefix}dropdown-spacer));
-        left: 50%;
-        bottom: auto;
-        right: auto;
-        transform: translateX(-50%);
-      }
-
-      &-right {
-        top: 50%;
-        right: auto;
-        bottom: auto;
-        left: calc(100% + var(--#{$prefix}dropdown-spacer));
-        transform: translateY(-50%);
-      }
-
-      &-top-right {
-        top: auto;
-        right: 0;
-        bottom: calc(100% + var(--#{$prefix}dropdown-spacer));
-        left: auto;
-      }
-
-      &-top-left {
-        top: auto;
-        right: auto;
-        bottom: calc(100% + var(--#{$prefix}dropdown-spacer));
-        left: 0;
-      }
-
-      &-bottom-right {
-        top: calc(100% + var(--#{$prefix}dropdown-spacer));
-        right: 0;
-        bottom: auto;
-        left: auto;
-      }
-
-      &-bottom-left {
-        top: calc(100% + var(--#{$prefix}dropdown-spacer));
-        right: auto;
-        bottom: auto;
-        left: 0;
-      }
-    }
-  }
-
-  &.teleported {
-    .dropdown-menu {
-      // position
-      &.position {
-        &-top,
-        &-top-left,
-        &-top-right {
-          margin-top: calc(-2 * var(--#{$prefix}dropdown-spacer));
-        }
-
-        &-bottom,
-        &-bottom-left,
-        &-bottom-right {
-          margin-top: var(--#{$prefix}dropdown-spacer);
-        }
-
-        &-right {
-          margin-left: var(--#{$prefix}dropdown-spacer);
-        }
-
-        &-left {
-          margin-left: calc(-2 * var(--#{$prefix}dropdown-spacer));
-        }
-      }
-    }
-  }
-
-  // mobile class
-  &.dropdown-modal {
-    .dropdown-menu {
-      --#{$prefix}dropdown-modal-width: #{$dropdown-modal-width};
-      --#{$prefix}dropdown-modal-min-width: #{$dropdown-modal-min-width};
-      --#{$prefix}dropdown-modal-max-width: #{$dropdown-modal-max-width};
-      --#{$prefix}dropdown-zindex: #{$dropdown-modal-menu-zindex};
-
-      position: fixed;
-      top: 25%;
-      left: 50%;
-      width: clamp(
-        var(--#{$prefix}dropdown-modal-min-width),
-        var(--#{$prefix}dropdown-modal-width),
-        var(--#{$prefix}dropdown-modal-max-width)
-      );
-      transform: translate3d(-50%, -25%, 0);
-      z-index: var(--#{$prefix}dropdown-zindex);
-    }
-
-    .dropdown-backdrop {
-      --#{$prefix}backdrop-bg: #{$modal-backdrop-bg};
-      --#{$prefix}backdrop-zindex: #{$dropdown-modal-backdrop-zindex};
-      --#{$prefix}backdrop-opacity: #{$modal-backdrop-opacity};
-
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100vw;
-      height: 100vh;
-      z-index: var(--#{$prefix}backdrop-zindex);
-      background-color: var(--#{$prefix}backdrop-bg);
-      opacity: var(--#{$prefix}backdrop-opacity);
-    }
-  }
-
-  &.inline {
     display: inline-block;
+    vertical-align: middle;
+
+    .dropdown-trigger {
+        display: inline-flex;
+    }
+
+    &.expanded,
+    &.expanded .dropdown-trigger {
+        width: 100%;
+    }
+
+    &.disabled {
+        cursor: not-allowed;
+    }
 
     .dropdown-menu {
-      --#{$prefix}dropdown-zindex: 10;
-      position: relative;
+        .dropdown-item {
+            // disable dropdown-item effects when not clickable
+            &:not(.clickable) {
+                &:hover,
+                &:active {
+                    --#{$prefix}dropdown-link-active-bg: transparent;
+                    --#{$prefix}dropdown-link-hover-bg: transparent;
+                }
+            }
+
+            &.focused:not(.active) {
+                color: var(--#{$prefix}dropdown-link-hover-color);
+                background-color: var(--#{$prefix}dropdown-link-hover-bg);
+            }
+        }
+
+        // position classes
+        &.position {
+            &-top {
+                top: auto;
+                right: auto;
+                bottom: calc(100% + var(--#{$prefix}dropdown-spacer));
+                left: 50%;
+                transform: translateX(-50%);
+            }
+
+            &-left {
+                top: 50%;
+                right: calc(100% + var(--#{$prefix}dropdown-spacer));
+                bottom: auto;
+                left: auto;
+                transform: translateY(-50%);
+            }
+
+            &-bottom {
+                top: calc(100% + var(--#{$prefix}dropdown-spacer));
+                left: 50%;
+                bottom: auto;
+                right: auto;
+                transform: translateX(-50%);
+            }
+
+            &-right {
+                top: 50%;
+                right: auto;
+                bottom: auto;
+                left: calc(100% + var(--#{$prefix}dropdown-spacer));
+                transform: translateY(-50%);
+            }
+
+            &-top-right {
+                top: auto;
+                right: 0;
+                bottom: calc(100% + var(--#{$prefix}dropdown-spacer));
+                left: auto;
+            }
+
+            &-top-left {
+                top: auto;
+                right: auto;
+                bottom: calc(100% + var(--#{$prefix}dropdown-spacer));
+                left: 0;
+            }
+
+            &-bottom-right {
+                top: calc(100% + var(--#{$prefix}dropdown-spacer));
+                right: 0;
+                bottom: auto;
+                left: auto;
+            }
+
+            &-bottom-left {
+                top: calc(100% + var(--#{$prefix}dropdown-spacer));
+                right: auto;
+                bottom: auto;
+                left: 0;
+            }
+        }
     }
-  }
+
+    &.teleported {
+        .dropdown-menu {
+            // position
+            &.position {
+                &-top,
+                &-top-left,
+                &-top-right {
+                    margin-top: calc(-2 * var(--#{$prefix}dropdown-spacer));
+                }
+
+                &-bottom,
+                &-bottom-left,
+                &-bottom-right {
+                    margin-top: var(--#{$prefix}dropdown-spacer);
+                }
+
+                &-right {
+                    margin-left: var(--#{$prefix}dropdown-spacer);
+                }
+
+                &-left {
+                    margin-left: calc(-2 * var(--#{$prefix}dropdown-spacer));
+                }
+            }
+        }
+    }
+
+    // mobile class
+    &.dropdown-modal {
+        .dropdown-menu {
+            --#{$prefix}dropdown-modal-width: #{$dropdown-modal-width};
+            --#{$prefix}dropdown-modal-min-width: #{$dropdown-modal-min-width};
+            --#{$prefix}dropdown-modal-max-width: #{$dropdown-modal-max-width};
+            --#{$prefix}dropdown-zindex: #{$dropdown-modal-menu-zindex};
+
+            position: fixed;
+            top: 25%;
+            left: 50%;
+            width: clamp(
+                var(--#{$prefix}dropdown-modal-min-width),
+                var(--#{$prefix}dropdown-modal-width),
+                var(--#{$prefix}dropdown-modal-max-width)
+            );
+            transform: translate3d(-50%, -25%, 0);
+            z-index: var(--#{$prefix}dropdown-zindex);
+        }
+
+        .dropdown-backdrop {
+            --#{$prefix}backdrop-bg: #{$modal-backdrop-bg};
+            --#{$prefix}backdrop-zindex: #{$dropdown-modal-backdrop-zindex};
+            --#{$prefix}backdrop-opacity: #{$modal-backdrop-opacity};
+
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            z-index: var(--#{$prefix}backdrop-zindex);
+            background-color: var(--#{$prefix}backdrop-bg);
+            opacity: var(--#{$prefix}backdrop-opacity);
+        }
+    }
+
+    &.inline {
+        display: inline-block;
+
+        .dropdown-menu {
+            --#{$prefix}dropdown-zindex: 10;
+            position: relative;
+        }
+    }
 }

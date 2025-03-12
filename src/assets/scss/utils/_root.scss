@@ -4,37 +4,37 @@
 
 // generate global color classes
 @each $name, $color in $colors {
-  .bg-#{$name} {
-    background-color: rgba(
-      var(--#{$prefix}#{$name}-rgb),
-      var(--#{$prefix}bg-opacity, 1)
-    );
-  }
+    .bg-#{$name} {
+        background-color: rgba(
+            var(--#{$prefix}#{$name}-rgb),
+            var(--#{$prefix}bg-opacity, 1)
+        );
+    }
 
-  .bg-#{$name}-subtle {
-    background-color: rgba(
-      to-rgb(tint-color($color, 80%)),
-      var(--#{$prefix}bg-opacity, 1)
-    );
-  }
+    .bg-#{$name}-subtle {
+        background-color: rgba(
+            to-rgb(tint-color($color, 80%)),
+            var(--#{$prefix}bg-opacity, 1)
+        );
+    }
 
-  .text-#{$name} {
-    color: var(--#{$prefix}#{$name});
-  }
+    .text-#{$name} {
+        color: var(--#{$prefix}#{$name});
+    }
 }
 
 $host-selector: if($enable-host, ":root, :host", ":root");
 
 #{$host-selector} {
-  @extend :root;
+    @extend :root;
 
-  // generate color rgb variables
-  @each $name, $color in $colors {
-    --#{$prefix}#{$name}-rgb: #{to-rgb($color)};
-  }
+    // generate color rgb variables
+    @each $name, $color in $colors {
+        --#{$prefix}#{$name}-rgb: #{to-rgb($color)};
+    }
 
-  // generate contrast variables
-  @each $name, $color in $theme-colors {
-    --#{$prefix}#{$name}-contrast: #{color-contrast($color)};
-  }
+    // generate contrast variables
+    @each $name, $color in $theme-colors {
+        --#{$prefix}#{$name}-contrast: #{color-contrast($color)};
+    }
 }

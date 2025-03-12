@@ -37,126 +37,126 @@ $nav-underline-link-active-border-color: currentcolor !default;
 /* @bootstrap docs */
 
 .tabs {
-  --#{$prefix}nav-tabs-spacer: #{$nav-tabs-spacer};
-  --#{$prefix}nav-tabs-disabled-opacity: #{$nav-tabs-disabled-opacity};
-
-  .nav {
-    margin-bottom: var(--#{$prefix}nav-tabs-spacer);
-  }
-
-  .nav-item {
-    .icon {
-      margin-right: 0.5em;
-    }
-
-    &:not(.disabled) {
-      cursor: pointer;
-    }
-
-    &.disabled {
-      cursor: not-allowed;
-      opacity: var(--#{$prefix}nav-tabs-disabled-opacity);
-    }
-  }
-
-  &:not(.nav-default) .nav-link {
-    --#{$prefix}nav-link-color: #{$nav-tabs-color};
-  }
-
-  // style toggle / underline
-  .nav-default,
-  .nav-toggle {
-    @extend .nav-underline;
-  }
-
-  .nav-underline,
-  .nav-toggle {
-    --#{$prefix}nav-underline-link-active-bg: #{$nav-underline-link-active-bg};
-    --#{$prefix}nav-underline-link-active-border-color: #{$nav-underline-link-active-border-color};
-
-    .nav-link.active {
-      background-color: var(--#{$prefix}nav-underline-link-active-bg);
-      border-bottom-color: var(
-        --#{$prefix}nav-underline-link-active-border-color
-      );
-    }
-  }
-
-  // style boxed / tabs
-  .nav-boxed {
-    @extend .nav-tabs;
-  }
-
-  .tab-content {
-    position: relative;
-  }
-
-  // Sizes
-  @each $name, $size in $sizes {
-    &.size-#{$name} {
-      --#{$prefix}nav-link-font-size: #{$size};
-      --#{$prefix}nav-link-padding-x: #{calc(
-          $nav-link-padding-x * strip-unit($size)
-        )};
-      --#{$prefix}nav-link-padding-y: #{calc(
-          $nav-link-padding-y * strip-unit($size)
-        )};
-    }
-  }
-
-  // position vetical
-  &.vertical {
-    --#{$prefix}nav-underline-border-width: #{$nav-underline-border-width};
-    --#{$prefix}nav-underline-border-color: #{$nav-tabs-border-color};
-
-    display: flex;
-    flex-direction: row;
+    --#{$prefix}nav-tabs-spacer: #{$nav-tabs-spacer};
+    --#{$prefix}nav-tabs-disabled-opacity: #{$nav-tabs-disabled-opacity};
 
     .nav {
-      display: block;
+        margin-bottom: var(--#{$prefix}nav-tabs-spacer);
+    }
 
-      .nav-item {
-        width: 100%;
-      }
-
-      &-default .nav-item {
-        border-bottom: var(--#{$prefix}nav-underline-border-width) solid
-          var(--#{$prefix}nav-underline-border-color);
-        text-align: left;
-      }
-
-      &-tabs {
-        .nav-item:not(:has(+ [aria-selected="true"])) .nav-link {
-          border-bottom: var(--#{$prefix}nav-underline-border-width) solid
-            var(--#{$prefix}nav-underline-border-color);
+    .nav-item {
+        .icon {
+            margin-right: 0.5em;
         }
-      }
 
-      &-boxed {
-        border-bottom: 0;
-      }
+        &:not(.disabled) {
+            cursor: pointer;
+        }
 
-      &-content {
-        flex-grow: 1;
-      }
+        &.disabled {
+            cursor: not-allowed;
+            opacity: var(--#{$prefix}nav-tabs-disabled-opacity);
+        }
     }
 
-    &:not(.is-right) {
-      .nav {
-        margin-right: var(--#{$prefix}nav-tabs-spacer);
-      }
+    &:not(.nav-default) .nav-link {
+        --#{$prefix}nav-link-color: #{$nav-tabs-color};
     }
 
-    &.position-right {
-      flex-direction: row-reverse;
-
-      .nav {
-        margin-left: var(--#{$prefix}nav-tabs-spacer);
-      }
+    // style toggle / underline
+    .nav-default,
+    .nav-toggle {
+        @extend .nav-underline;
     }
-  }
 
-  &.expanded:not(.vertical) .nav {
-    @extend .nav-fill;
-  }
+    .nav-underline,
+    .nav-toggle {
+        --#{$prefix}nav-underline-link-active-bg: #{$nav-underline-link-active-bg};
+        --#{$prefix}nav-underline-link-active-border-color: #{$nav-underline-link-active-border-color};
+
+        .nav-link.active {
+            background-color: var(--#{$prefix}nav-underline-link-active-bg);
+            border-bottom-color: var(
+                --#{$prefix}nav-underline-link-active-border-color
+            );
+        }
+    }
+
+    // style boxed / tabs
+    .nav-boxed {
+        @extend .nav-tabs;
+    }
+
+    .tab-content {
+        position: relative;
+    }
+
+    // Sizes
+    @each $name, $size in $sizes {
+        &.size-#{$name} {
+            --#{$prefix}nav-link-font-size: #{$size};
+            --#{$prefix}nav-link-padding-x: #{calc(
+                    $nav-link-padding-x * strip-unit($size)
+                )};
+            --#{$prefix}nav-link-padding-y: #{calc(
+                    $nav-link-padding-y * strip-unit($size)
+                )};
+        }
+    }
+
+    // position vetical
+    &.vertical {
+        --#{$prefix}nav-underline-border-width: #{$nav-underline-border-width};
+        --#{$prefix}nav-underline-border-color: #{$nav-tabs-border-color};
+
+        display: flex;
+        flex-direction: row;
+
+        .nav {
+            margin-bottom: var(--#{$prefix}nav-tabs-spacer);
+
+            .nav-item {
+                width: 100%;
+            }
+
+            &-default .nav-item {
+                border-bottom: var(--#{$prefix}nav-underline-border-width) solid
+                    var(--#{$prefix}nav-underline-border-color);
+                text-align: left;
+            }
+
+            &-tabs {
+                .nav-item:not(:has(+ [aria-selected="true"])) .nav-link {
+                    border-bottom: var(--#{$prefix}nav-underline-border-width)
+                        solid var(--#{$prefix}nav-underline-border-color);
+                }
+            }
+
+            &-boxed {
+                border-bottom: 0;
+            }
+
+            &-content {
+                flex-grow: 1;
+            }
+        }
+
+        &:not(.is-right) {
+            .nav {
+                margin-right: var(--#{$prefix}nav-tabs-spacer);
+            }
+        }
+
+        &.position-right {
+            flex-direction: row-reverse;
+
+            .nav {
+                margin-left: var(--#{$prefix}nav-tabs-spacer);
+            }
+        }
+    }
+
+    &.expanded:not(.vertical) .nav {
+        @extend .nav-fill;
+    }
 }

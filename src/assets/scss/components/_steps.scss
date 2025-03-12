@@ -13,266 +13,266 @@ $steps-vertical-padding: 1em 0 !default;
 /* @docs */
 
 @mixin steps-size($size) {
-  .steps-list {
-    min-height: $size * 2;
+    .steps-list {
+        min-height: $size * 2;
 
-    .step-item {
-      .step-marker {
-        width: $size * 2;
-        height: $size * 2;
-        font-size: $size;
-      }
+        .step-item {
+            .step-marker {
+                width: $size * 2;
+                height: $size * 2;
+                font-size: $size;
+            }
 
-      .step-title {
-        font-size: $size;
-      }
+            .step-title {
+                font-size: $size;
+            }
+        }
     }
-  }
 }
 @mixin steps-color($color) {
-  &.previous {
-    .divider,
-    &::before,
-    &::after {
-      background-color: $color;
-    }
-
-    .step-marker {
-      --#{$prefix}steps-marker-bg: #{$color};
-      --#{$prefix}steps-marker-border: #{$color};
-      --#{$prefix}steps-marker-color: #{$white};
-    }
-  }
-
-  &.active {
-    .divider,
-    &::before,
-    &::after {
-      background-color: $color;
-    }
-
-    .step-marker {
-      --#{$prefix}steps-marker-bg: #{$white};
-      --#{$prefix}steps-marker-border: #{$color};
-      --#{$prefix}steps-marker-color: #{$color};
-    }
-  }
-}
-
-.steps {
-  // Default size
-  @include steps-size(1em);
-
-  // Sizes
-  @each $name, $size in $sizes {
-    &.size-#{$name} {
-      @include steps-size($size);
-    }
-  }
-
-  .steps-list {
-    --#{$prefix}steps-divider-height: #{$steps-divider-height};
-    --#{$prefix}steps-title-bg: #{$steps-title-bg};
-    --#{$prefix}steps-title-color: #{$steps-title-color};
-    --#{$prefix}steps-title-font-weight: #{$steps-title-font-weight};
-    --#{$prefix}steps-marker-bg: #{$steps-marker-bg};
-    --#{$prefix}steps-marker-border: #{$steps-marker-border};
-    --#{$prefix}steps-marker-color: #{$steps-marker-color};
-
-    position: relative;
-    display: flex;
-    flex-wrap: wrap;
-    padding: 0;
-    margin: 0;
-
-    .step-item {
-      position: relative;
-      display: flex;
-      flex-grow: 1;
-      flex-basis: 1em;
-      align-items: center;
-      justify-content: center;
-      flex-direction: column;
-      background: transparent;
-      border: transparent;
-      list-style: none;
-
-      .divider {
-        background: var(--#{$prefix}steps-marker-bg);
-        background-size: 200% 100%;
-        background-position: right bottom;
-        height: var(--#{$prefix}steps-divider-height);
-        display: block;
-        position: absolute;
-        top: $font-size-base;
-        left: -50%;
-        width: 100%;
-        z-index: -1;
-      }
-
-      &.clickable .step-marker {
-        cursor: pointer;
-      }
-
-      &:not(.clickable) {
-        cursor: default;
-      }
-
-      &.label-right {
-        flex-direction: row;
-      }
-
-      &.label-left {
-        flex-direction: row-reverse;
-      }
-
-      .step-marker {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        text-align: center;
-        background: var(--#{$prefix}steps-marker-bg);
-        border: 1px solid var(--#{$prefix}steps-marker-border);
-        color: var(--#{$prefix}steps-marker-color);
-        font-weight: 700;
-        overflow: hidden;
-
-        .icon {
-          margin: 0;
-        }
-      }
-
-      .step-title {
-        color: var(--#{$prefix}steps-title-color);
-        font-weight: var(--#{$prefix}steps-title-font-weight);
-        text-align: center;
-        z-index: 1;
-        background: var(--#{$prefix}steps-title-bg);
-        padding: 0.25em;
-      }
-
-      &:only-child {
-        &::before,
-        &::after {
-          // This will contain the divider
-          content: " ";
-          background: var(--#{$prefix}steps-marker-bg);
-          background-size: 200% 100%;
-          background-position: right bottom;
-          height: var(--#{$prefix}steps-divider-height);
-          display: block;
-          position: absolute;
-          top: $font-size-base;
-          width: 25%;
-          z-index: -1;
-        }
-
-        &::before {
-          right: 50%;
-        }
-
-        &::after {
-          left: 50%;
-        }
-      }
-
-      // Colors default variants
-      @include steps-color($steps-color-active);
-
-      // Colors variants
-      @each $name, $color in $theme-colors {
-        &.variant-#{$name} {
-          @include steps-color($color);
-        }
-      }
-    }
-
-    &.animated {
-      .step-item {
-        .divider {
-          transition: background $speed-slow $easing;
-        }
-      }
-    }
-  }
-
-  .step-content {
-    --#{$prefix}steps-content-spacer: #{$steps-content-spacer};
-    --#{$prefix}steps-content-padding: #{$steps-content-padding};
-
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    overflow: visible;
-    margin-top: var(--#{$prefix}steps-content-spacer);
-
-    &.transition {
-      overflow: hidden;
-    }
-
-    &:not(:has(.step-item:empty)) {
-      padding: var(--#{$prefix}steps-content-padding);
-    }
-  }
-
-  &.vertical {
-    --#{$prefix}steps-vertical-padding: #{$steps-vertical-padding};
-
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-
-    > .steps-list {
-      flex-direction: column;
-      overflow: hidden;
-
-      .step-item {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        width: 100%;
-        padding: var(--#{$prefix}steps-vertical-padding);
-
-        .step-title {
-          background: var(--#{$prefix}steps-title-bg);
-        }
-
+    &.previous {
         .divider,
         &::before,
         &::after {
-          height: 100%;
-          width: var(--#{$prefix}steps-divider-height);
+            background-color: $color;
         }
 
-        .divider {
-          top: -50%;
-          left: 48%;
+        .step-marker {
+            --#{$prefix}steps-marker-bg: #{$color};
+            --#{$prefix}steps-marker-border: #{$color};
+            --#{$prefix}steps-marker-color: #{$white};
+        }
+    }
+
+    &.active {
+        .divider,
+        &::before,
+        &::after {
+            background-color: $color;
         }
 
-        &:only-child {
-          &::before {
-            right: unset;
-            top: -25%;
-          }
-
-          &::after {
-            left: unset;
-            top: 25%;
-          }
+        .step-marker {
+            --#{$prefix}steps-marker-bg: #{$white};
+            --#{$prefix}steps-marker-border: #{$color};
+            --#{$prefix}steps-marker-color: #{$color};
         }
-      }
+    }
+}
+
+.steps {
+    // Default size
+    @include steps-size(1em);
+
+    // Sizes
+    @each $name, $size in $sizes {
+        &.size-#{$name} {
+            @include steps-size($size);
+        }
     }
 
-    > .step-content {
-      flex-grow: 1;
+    .steps-list {
+        --#{$prefix}steps-divider-height: #{$steps-divider-height};
+        --#{$prefix}steps-title-bg: #{$steps-title-bg};
+        --#{$prefix}steps-title-color: #{$steps-title-color};
+        --#{$prefix}steps-title-font-weight: #{$steps-title-font-weight};
+        --#{$prefix}steps-marker-bg: #{$steps-marker-bg};
+        --#{$prefix}steps-marker-border: #{$steps-marker-border};
+        --#{$prefix}steps-marker-color: #{$steps-marker-color};
+
+        position: relative;
+        display: flex;
+        flex-wrap: wrap;
+        padding: 0;
+        margin: 0;
+
+        .step-item {
+            position: relative;
+            display: flex;
+            flex-grow: 1;
+            flex-basis: 1em;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            background: transparent;
+            border: transparent;
+            list-style: none;
+
+            .divider {
+                background: var(--#{$prefix}steps-marker-bg);
+                background-size: 200% 100%;
+                background-position: right bottom;
+                height: var(--#{$prefix}steps-divider-height);
+                display: block;
+                position: absolute;
+                top: $font-size-base;
+                left: -50%;
+                width: 100%;
+                z-index: -1;
+            }
+
+            &.clickable .step-marker {
+                cursor: pointer;
+            }
+
+            &:not(.clickable) {
+                cursor: default;
+            }
+
+            &.label-right {
+                flex-direction: row;
+            }
+
+            &.label-left {
+                flex-direction: row-reverse;
+            }
+
+            .step-marker {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                text-align: center;
+                background: var(--#{$prefix}steps-marker-bg);
+                border: 1px solid var(--#{$prefix}steps-marker-border);
+                color: var(--#{$prefix}steps-marker-color);
+                font-weight: 700;
+                overflow: hidden;
+
+                .icon {
+                    margin: 0;
+                }
+            }
+
+            .step-title {
+                color: var(--#{$prefix}steps-title-color);
+                font-weight: var(--#{$prefix}steps-title-font-weight);
+                text-align: center;
+                z-index: 1;
+                background: var(--#{$prefix}steps-title-bg);
+                padding: 0.25em;
+            }
+
+            &:only-child {
+                &::before,
+                &::after {
+                    // This will contain the divider
+                    content: " ";
+                    background: var(--#{$prefix}steps-marker-bg);
+                    background-size: 200% 100%;
+                    background-position: right bottom;
+                    height: var(--#{$prefix}steps-divider-height);
+                    display: block;
+                    position: absolute;
+                    top: $font-size-base;
+                    width: 25%;
+                    z-index: -1;
+                }
+
+                &::before {
+                    right: 50%;
+                }
+
+                &::after {
+                    left: 50%;
+                }
+            }
+
+            // Colors default variants
+            @include steps-color($steps-color-active);
+
+            // Colors variants
+            @each $name, $color in $theme-colors {
+                &.variant-#{$name} {
+                    @include steps-color($color);
+                }
+            }
+        }
+
+        &.animated {
+            .step-item {
+                .divider {
+                    transition: background $speed-slow $easing;
+                }
+            }
+        }
     }
 
-    > .step-navigation {
-      flex-basis: 100%;
+    .step-content {
+        --#{$prefix}steps-content-spacer: #{$steps-content-spacer};
+        --#{$prefix}steps-content-padding: #{$steps-content-padding};
+
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        overflow: visible;
+        margin-top: var(--#{$prefix}steps-content-spacer);
+
+        &.transition {
+            overflow: hidden;
+        }
+
+        &:not(:has(.step-item:empty)) {
+            padding: var(--#{$prefix}steps-content-padding);
+        }
     }
 
-    &.position-right {
-      flex-direction: row-reverse;
+    &.vertical {
+        --#{$prefix}steps-vertical-padding: #{$steps-vertical-padding};
+
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+
+        > .steps-list {
+            flex-direction: column;
+            overflow: hidden;
+
+            .step-item {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                width: 100%;
+                padding: var(--#{$prefix}steps-vertical-padding);
+
+                .step-title {
+                    background: var(--#{$prefix}steps-title-bg);
+                }
+
+                .divider,
+                &::before,
+                &::after {
+                    height: 100%;
+                    width: var(--#{$prefix}steps-divider-height);
+                }
+
+                .divider {
+                    top: -50%;
+                    left: 48%;
+                }
+
+                &:only-child {
+                    &::before {
+                        right: unset;
+                        top: -25%;
+                    }
+
+                    &::after {
+                        left: unset;
+                        top: 25%;
+                    }
+                }
+            }
+        }
+
+        > .step-content {
+            flex-grow: 1;
+        }
+
+        > .step-navigation {
+            flex-basis: 100%;
+        }
+
+        &.position-right {
+            flex-direction: row-reverse;
+        }
     }
-  }
 }
