@@ -431,7 +431,6 @@ const bootstrapConfig: OrugaOptions = {
         sizeClass: "size-",
         variantClass: "variant-",
         passiveVariantClass: "variant-",
-        trackClass: "d-none",
     },
     table: {
         override: true,
