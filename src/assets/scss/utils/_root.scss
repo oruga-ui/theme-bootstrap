@@ -23,11 +23,7 @@
     }
 }
 
-$host-selector: if($enable-host, ":root, :host", ":root");
-
-#{$host-selector} {
-    @extend :root;
-
+:root {
     // generate color rgb variables
     @each $name, $color in $colors {
         --#{$prefix}#{$name}-rgb: #{to-rgb($color)};
@@ -36,5 +32,11 @@ $host-selector: if($enable-host, ":root, :host", ":root");
     // generate contrast variables
     @each $name, $color in $theme-colors {
         --#{$prefix}#{$name}-contrast: #{color-contrast($color)};
+    }
+}
+
+@if $enable-host {
+    :host {
+        @extend :root;
     }
 }
