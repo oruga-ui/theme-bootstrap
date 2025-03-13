@@ -8,6 +8,7 @@ export default {
   ignoreFiles: ["**/.*", "**/dist"],
   rules: {
     "scss/at-extend-no-missing-placeholder": null,
+    "scss/operator-no-newline-after": null,
     "no-duplicate-selectors": [true, { severity: "warning" }],
     "no-descending-specificity": [true, { severity: "warning" }],
     "rule-empty-line-before": [

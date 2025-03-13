@@ -65,7 +65,7 @@
 }
 
 .form-check {
-    // Color variants
+    // color variants
     @each $name, $color in $theme-colors {
         &.variant-#{$name} {
             input[type="radio"],
@@ -76,7 +76,7 @@
         }
     }
 
-    // Color variant inverted
+    // color variant inverted
     @each $name, $color in $theme-colors {
         &.variant-#{$name}-inverted {
             input[type="radio"],
@@ -133,7 +133,7 @@
         }
     }
 
-    // Sizes
+    // size variants
     @each $name, $size in $sizes {
         &.size-#{$name} {
             font-size: $size;
@@ -153,6 +153,10 @@
     &.disabled,
     &.disabled .form-check-label {
         cursor: not-allowed;
+    }
+
+    &:not(.rounded) input {
+        border-radius: var(--#{$prefix}border-radius);
     }
 }
 

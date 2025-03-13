@@ -11,10 +11,12 @@ $menu-item-active-color: var(--#{$prefix}white) !default;
 $menu-item-disabled-bg: transparent !default;
 $menu-item-disabled-color: var(--#{$prefix}secondary) !default;
 $menu-item-border-radius: var(--#{$prefix}border-radius) !default;
+$menu-item-hover-bg: var(--#{$prefix}tertiary-bg) !default;
+$menu-item-hover-color: var(--#{$prefix}body-color) !default;
 $menu-icon-spacer: 0.5rem !default;
 $menu-submenu-border-left: 1px solid #445e00 !default;
-$menu-submenu-padding-left: 0.75em !default;
-$menu-submenu-margin: 0.75em !default;
+$menu-submenu-padding: 0 0.75em !default;
+$menu-submenu-margin: 0.75em 1.25em !default;
 /* @docs */
 
 .menu {
@@ -31,63 +33,69 @@ $menu-submenu-margin: 0.75em !default;
 
     .menu-list {
         --#{$prefix}menu-list-line-height: #{$menu-list-line-height};
+        --#{$prefix}menu-submenu-padding-left: #{$menu-submenu-padding};
 
         line-height: var(--#{$prefix}menu-list-line-height);
+        padding: var(--#{$prefix}menu-submenu-padding-left);
+    }
 
-        .menu-item {
-            --#{$prefix}menu-item-padding: #{$menu-item-padding};
-            --#{$prefix}menu-item-bg: #{$menu-item-bg};
-            --#{$prefix}menu-item-color: #{$menu-item-color};
-            --#{$prefix}menu-item-active-bg: #{$menu-item-active-bg};
-            --#{$prefix}menu-item-active-color: #{$menu-item-active-color};
-            --#{$prefix}menu-item-disabled-bg: #{$menu-item-disabled-bg};
-            --#{$prefix}menu-item-disabled-color: #{$menu-item-disabled-color};
-            --#{$prefix}menu-item-border-radius: #{$menu-item-border-radius};
+    .menu-item {
+        --#{$prefix}menu-item-padding: #{$menu-item-padding};
+        --#{$prefix}menu-item-bg: #{$menu-item-bg};
+        --#{$prefix}menu-item-color: #{$menu-item-color};
+        --#{$prefix}menu-item-active-bg: #{$menu-item-active-bg};
+        --#{$prefix}menu-item-active-color: #{$menu-item-active-color};
+        --#{$prefix}menu-item-hover-bg: #{$menu-item-hover-bg};
+        --#{$prefix}menu-item-hover-color: #{$menu-item-hover-color};
+        --#{$prefix}menu-item-disabled-bg: #{$menu-item-disabled-bg};
+        --#{$prefix}menu-item-disabled-color: #{$menu-item-disabled-color};
+        --#{$prefix}menu-item-border-radius: #{$menu-item-border-radius};
 
-            list-style: none;
+        list-style: none;
+    }
 
-            .menu-button {
-                display: block;
-                list-style: none;
-                background: var(--#{$prefix}menu-item-bg);
-                color: var(--#{$prefix}menu-item-color);
-                padding: var(--#{$prefix}menu-item-padding);
-                border-radius: var(--#{$prefix}menu-item-border-radius);
+    .menu-button {
+        display: block;
+        list-style: none;
+        background: var(--#{$prefix}menu-item-bg);
+        color: var(--#{$prefix}menu-item-color);
+        padding: var(--#{$prefix}menu-item-padding);
+        border-radius: var(--#{$prefix}menu-item-border-radius);
+        border: 0;
 
-                &.active {
-                    --#{$prefix}menu-item-bg: var(
-                        --#{$prefix}menu-item-active-bg
-                    );
-                    --#{$prefix}menu-item-color: var(
-                        --#{$prefix}menu-item-active-color
-                    );
-                }
-
-                &.disabled {
-                    --#{$prefix}menu-item-bg: var(
-                        --#{$prefix}menu-item-disabled-bg
-                    );
-                    --#{$prefix}menu-item-color: var(
-                        --#{$prefix}menu-item-disabled-color
-                    );
-                }
-
-                &.menu-icon .icon {
-                    --#{$prefix}menu-icon-spacer: #{$menu-icon-spacer};
-
-                    margin-right: var(--#{$prefix}menu-icon-spacer);
-                }
-            }
-
-            .menu-submenu {
-                --#{$prefix}menu-submenu-border-left: #{$menu-submenu-border-left};
-                --#{$prefix}menu-submenu-padding-left: #{$menu-submenu-padding-left};
-                --#{$prefix}menu-submenu-margin: #{$menu-submenu-margin};
-
-                border-left: var(--#{$prefix}menu-submenu-border-left);
-                padding-left: var(--#{$prefix}menu-submenu-padding-left);
-                margin: var(--#{$prefix}menu-submenu-margin);
-            }
+        &.focused:not(.active) {
+            color: var(--#{$prefix}menu-item-hover-color);
+            background-color: var(--#{$prefix}menu-item-hover-bg);
         }
+
+        &.active {
+            --#{$prefix}menu-item-bg: var(--#{$prefix}menu-item-active-bg);
+            --#{$prefix}menu-item-color: var(
+                --#{$prefix}menu-item-active-color
+            );
+        }
+
+        &.disabled {
+            --#{$prefix}menu-item-bg: var(--#{$prefix}menu-item-disabled-bg);
+            --#{$prefix}menu-item-color: var(
+                --#{$prefix}menu-item-disabled-color
+            );
+        }
+
+        &.menu-icon .icon {
+            --#{$prefix}menu-icon-spacer: #{$menu-icon-spacer};
+
+            margin-right: var(--#{$prefix}menu-icon-spacer);
+        }
+    }
+
+    .menu-submenu {
+        --#{$prefix}menu-submenu-border-left: #{$menu-submenu-border-left};
+        --#{$prefix}menu-submenu-padding: #{$menu-submenu-padding};
+        --#{$prefix}menu-submenu-margin: #{$menu-submenu-margin};
+
+        border-left: var(--#{$prefix}menu-submenu-border-left);
+        padding: var(--#{$prefix}menu-submenu-padding);
+        margin: var(--#{$prefix}menu-submenu-margin);
     }
 }

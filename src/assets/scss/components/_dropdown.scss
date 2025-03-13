@@ -1,6 +1,9 @@
 /* @docs */
 $dropdown-modal-menu-zindex: $zindex-modal !default;
 $dropdown-modal-backdrop-zindex: $zindex-modal-backdrop !default;
+$dropdown-modal-width: 75%;
+$dropdown-modal-min-width: 25%;
+$dropdown-modal-max-width: calc(100vw - 40px);
 /* @docs */
 
 /* @bootstrap docs */
@@ -44,13 +47,12 @@ $dropdown-modal-backdrop-zindex: $zindex-modal-backdrop !default;
     vertical-align: middle;
 
     .dropdown-trigger {
-        display: inline-block;
+        display: inline-flex;
     }
 
     &.expanded,
     &.expanded .dropdown-trigger {
         width: 100%;
-        display: block;
     }
 
     &.disabled {
@@ -58,12 +60,19 @@ $dropdown-modal-backdrop-zindex: $zindex-modal-backdrop !default;
     }
 
     .dropdown-menu {
-        // disable dropdown-item effects when not clickable
-        .dropdown-item:not(.clickable) {
-            &:hover,
-            &:active {
-                --#{$prefix}dropdown-link-active-bg: transparent;
-                --#{$prefix}dropdown-link-hover-bg: transparent;
+        .dropdown-item {
+            // disable dropdown-item effects when not clickable
+            &:not(.clickable) {
+                &:hover,
+                &:active {
+                    --#{$prefix}dropdown-link-active-bg: transparent;
+                    --#{$prefix}dropdown-link-hover-bg: transparent;
+                }
+            }
+
+            &.focused:not(.active) {
+                color: var(--#{$prefix}dropdown-link-hover-color);
+                background-color: var(--#{$prefix}dropdown-link-hover-bg);
             }
         }
 
@@ -159,20 +168,20 @@ $dropdown-modal-backdrop-zindex: $zindex-modal-backdrop !default;
     }
 
     // mobile class
-    &.dropdown-modal:not(&.inline) {
+    &.dropdown-modal {
         .dropdown-menu {
-            --#{$prefix}dropdown-width: 75%;
-            --#{$prefix}dropdown-min-width: 25%;
-            --#{$prefix}dropdown-max-width: 90%;
+            --#{$prefix}dropdown-modal-width: #{$dropdown-modal-width};
+            --#{$prefix}dropdown-modal-min-width: #{$dropdown-modal-min-width};
+            --#{$prefix}dropdown-modal-max-width: #{$dropdown-modal-max-width};
             --#{$prefix}dropdown-zindex: #{$dropdown-modal-menu-zindex};
 
             position: fixed;
             top: 25%;
             left: 50%;
             width: clamp(
-                var(--#{$prefix}dropdown-min-width),
-                var(--#{$prefix}dropdown-width),
-                var(--#{$prefix}dropdown-max-width)
+                var(--#{$prefix}dropdown-modal-min-width),
+                var(--#{$prefix}dropdown-modal-width),
+                var(--#{$prefix}dropdown-modal-max-width)
             );
             transform: translate3d(-50%, -25%, 0);
             z-index: var(--#{$prefix}dropdown-zindex);

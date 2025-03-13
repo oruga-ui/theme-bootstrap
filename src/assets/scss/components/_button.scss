@@ -104,6 +104,10 @@ $btn-hover-box-shadow: $box-shadow-sm !default;
         --#{$prefix}btn-border-color: transparent;
     }
 
+    &:not([class*="btn-"]) {
+        @extend .focus-ring;
+    }
+
     // inverted color
     @each $name, $color in $theme-colors {
         &.variant-#{$name}-inverted,
@@ -136,8 +140,4 @@ $btn-hover-box-shadow: $box-shadow-sm !default;
             --#{$prefix}btn-hover-border-color: var(--#{$prefix}#{$name});
         }
     }
-}
-
-.btn:not(:last-child):not(.btn-expanded):has(+ .btn) {
-    margin-right: var(--#{$prefix}btn-spacer);
 }

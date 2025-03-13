@@ -1,5 +1,5 @@
 /* @docs */
-$sidebar-reduced-width: 5rem !default;
+$sidebar-reduced-width: 10rem !default;
 $sidebar-reduced-height: 10vh !default;
 /* @docs */
 
@@ -62,21 +62,21 @@ $sidebar-reduced-height: 10vh !default;
                 height $speed-slow $easing;
 
             @include size($sidebar-reduced-height, $sidebar-reduced-width);
+        }
 
-            &.reduced-expand:hover:not(.reduced-delayed) {
-                &.fullwidth {
-                    @include size(100%, 100%);
-                }
+        &.hover-expanded:hover {
+            &.fullwidth {
+                @include size(100%, 100%);
+            }
 
-                &:not(.fullwidth) {
-                    @include size(
-                        $offcanvas-vertical-height,
-                        $offcanvas-horizontal-width
-                    );
+            &:not(.fullwidth) {
+                @include size(
+                    $offcanvas-vertical-height,
+                    $offcanvas-horizontal-width
+                );
 
-                    &.reduced-expand-fixed {
-                        position: fixed;
-                    }
+                &.reduced-expand-fixed {
+                    position: fixed;
                 }
             }
         }

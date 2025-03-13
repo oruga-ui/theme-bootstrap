@@ -42,58 +42,58 @@ $nav-underline-link-active-border-color: currentcolor !default;
 
     .nav {
         margin-bottom: var(--#{$prefix}nav-tabs-spacer);
+    }
 
-        &-link {
-            .icon {
-                margin-right: 0.5em;
-            }
-
-            &:not(.disabled) {
-                cursor: pointer;
-            }
-
-            &.disabled {
-                cursor: not-allowed;
-                opacity: var(--#{$prefix}nav-tabs-disabled-opacity);
-            }
+    .nav-item {
+        .icon {
+            margin-right: 0.5em;
         }
 
-        &:not(.nav-default) .nav-link {
-            --#{$prefix}nav-link-color: #{$nav-tabs-color};
+        &:not(.disabled) {
+            cursor: pointer;
         }
 
-        // style toggle / underline
-        &-default,
-        &-toggle {
-            @extend .nav-underline;
-        }
-
-        &-underline,
-        &-toggle {
-            --#{$prefix}nav-underline-link-active-bg: #{$nav-underline-link-active-bg};
-            --#{$prefix}nav-underline-link-active-border-color: #{$nav-underline-link-active-border-color};
-
-            .nav-link.active {
-                background-color: var(--#{$prefix}nav-underline-link-active-bg);
-                border-bottom-color: var(
-                    --#{$prefix}nav-underline-link-active-border-color
-                );
-            }
-        }
-
-        // style boxed / tabs
-        &-boxed {
-            @extend .nav-tabs;
-        }
-
-        &-content {
-            position: relative;
+        &.disabled {
+            cursor: not-allowed;
+            opacity: var(--#{$prefix}nav-tabs-disabled-opacity);
         }
     }
 
-    // Sizes
+    &:not(.nav-default) .nav-link {
+        --#{$prefix}nav-link-color: #{$nav-tabs-color};
+    }
+
+    // style toggle / underline
+    .nav-default,
+    .nav-toggle {
+        @extend .nav-underline;
+    }
+
+    .nav-underline,
+    .nav-toggle {
+        --#{$prefix}nav-underline-link-active-bg: #{$nav-underline-link-active-bg};
+        --#{$prefix}nav-underline-link-active-border-color: #{$nav-underline-link-active-border-color};
+
+        .nav-link.active {
+            background-color: var(--#{$prefix}nav-underline-link-active-bg);
+            border-bottom-color: var(
+                --#{$prefix}nav-underline-link-active-border-color
+            );
+        }
+    }
+
+    // style boxed / tabs
+    .nav-boxed {
+        @extend .nav-tabs;
+    }
+
+    .tab-content {
+        position: relative;
+    }
+
+    // size variants
     @each $name, $size in $sizes {
-        .size-#{$name} {
+        &.size-#{$name} {
             --#{$prefix}nav-link-font-size: #{$size};
             --#{$prefix}nav-link-padding-x: #{calc(
                     $nav-link-padding-x * strip-unit($size)
@@ -113,13 +113,13 @@ $nav-underline-link-active-border-color: currentcolor !default;
         flex-direction: row;
 
         .nav {
-            display: block;
+            margin-bottom: var(--#{$prefix}nav-tabs-spacer);
 
-            .nav-link {
+            .nav-item {
                 width: 100%;
             }
 
-            &-default .nav-link {
+            &-default .nav-item {
                 border-bottom: var(--#{$prefix}nav-underline-border-width) solid
                     var(--#{$prefix}nav-underline-border-color);
                 text-align: left;
