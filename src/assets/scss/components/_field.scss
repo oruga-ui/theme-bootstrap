@@ -1,6 +1,6 @@
 /* @docs */
 $input-field-margin-bottom: $spacer !default;
-$input-field-grouped-spacer: $spacer / 2 !default;
+$input-field-grouped-spacer: calc($spacer / 2) !default;
 /* @docs */
 
 /* @bootstrap docs */
