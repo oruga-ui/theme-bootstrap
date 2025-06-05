@@ -1,9 +1,5 @@
 /* @docs */
-$taginput-badge-bg: $light;
-$taginput-badge-color: $dark;
-$taginput-badge-font-size: 0.9em !default;
 $taginput-badge-margin: 0.25em !default;
-$taginput-badge-icon-space: 0.25em !default;
 $taginput-counter-margin: 0.25rem 0 0 0.5rem !default;
 $taginput-counter-font-size: 0.75rem !default;
 /* @docs */
@@ -43,30 +39,9 @@ $taginput-counter-font-size: 0.75rem !default;
         }
 
         .badge {
-            --#{$prefix}badge-color: #{$taginput-badge-color};
-            --#{$prefix}badge-font-size: #{$taginput-badge-font-size};
             --#{$prefix}badge-margin: #{$taginput-badge-margin};
-            --#{$prefix}badge-bg: #{$taginput-badge-bg};
-            --#{$prefix}badge-icon-space: #{$taginput-badge-icon-space};
 
-            display: inline-flex;
-            align-items: center;
-            background: var(--#{$prefix}badge-bg);
             margin: var(--#{$prefix}badge-margin);
-
-            // Color variants
-            @each $name, $color in $theme-colors {
-                &.variant-#{$name} {
-                    --#{$prefix}badge-color: var(--#{$prefix}#{$name}-contrast);
-                    --#{$prefix}badge-bg: var(--#{$prefix}#{$name});
-                }
-            }
-
-            .icon {
-                margin-left: var(--#{$prefix}badge-icon-space);
-                margin-bottom: 0;
-                cursor: pointer;
-            }
         }
 
         .dropdown.expanded {
@@ -124,10 +99,6 @@ $taginput-counter-font-size: 0.75rem !default;
 
             input {
                 cursor: not-allowed;
-            }
-
-            .btn-close {
-                display: none;
             }
         }
     }
