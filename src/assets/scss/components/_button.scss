@@ -140,4 +140,8 @@ $btn-hover-box-shadow: $box-shadow-sm !default;
             --#{$prefix}btn-hover-border-color: var(--#{$prefix}#{$name});
         }
     }
+
+    &:has(.badge) {
+        position: relative;
+    }
 }

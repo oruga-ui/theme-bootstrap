@@ -492,6 +492,16 @@ const bootstrapConfig: OrugaOptions = {
         contentClass: "tab-content",
         transitioningClass: "transition",
     },
+    tag: {
+        rootClass: "badge",
+        closeClass: "btn-close",
+        variantClass: "variant-",
+        sizeClass: "size-",
+        roundedClass: "rounded-pill",
+        iconClass: "icon",
+        labelClass: "label",
+        badgeClass: "position-absolute top-0 start-100 translate-middle",
+    },
     taginput: {
         override: true,
         rootClass: (_: string, props: ComponentProps) => {
@@ -505,7 +515,6 @@ const bootstrapConfig: OrugaOptions = {
             return classes.join(" ");
         },
         itemClass: "badge",
-        closeClass: "btn-close",
         variantClass: "variant-",
         sizeClass: "size-",
         expandedClass: "expanded",
