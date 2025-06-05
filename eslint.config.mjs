@@ -1,8 +1,13 @@
 /* eslint-env node */
 
 import vuePlugin from "eslint-plugin-vue";
+import { globalIgnores } from "eslint/config";
 import prettierPlugin from "eslint-plugin-prettier/recommended";
-import typescriptConfig from "@vue/eslint-config-typescript";
+import {
+  defineConfigWithVueTs,
+  vueTsConfigs,
+} from "@vue/eslint-config-typescript";
+// import vueA11yPlugin from "eslint-plugin-vuejs-accessibility";
 import prettierConfig from "@vue/eslint-config-prettier";
 
 import { includeIgnoreFile } from "@eslint/compat";
@@ -14,17 +19,27 @@ const __dirname = path.dirname(__filename);
 const gitignorePath = path.resolve(__dirname, ".gitignore");
 
 export default [
-  // include ignore .gitignore patterns
-  includeIgnoreFile(gitignorePath),
   // add more generic rulesets here
-  ...vuePlugin.configs["flat/recommended"],
-  ...typescriptConfig(),
+
+  // include ignore .gitignore patterns
+  globalIgnores(["**/.*", "**/dist/**", "**/build/**"]),
+  includeIgnoreFile(gitignorePath),
+
+  // add vue with ts configs
+  ...defineConfigWithVueTs(
+    vuePlugin.configs["flat/recommended"],
+    vueTsConfigs.recommended,
+  ),
+
+  // add vue a11y configs
+  // ...vueA11yPlugin.configs["flat/recommended"],
+
+  // add prettier configs
   prettierPlugin,
   prettierConfig,
 
   // your modifications
   {
-    ignores: ["**/.*", "dist/"],
     rules: {
       "@typescript-eslint/no-explicit-any": ["warn"],
       "@typescript-eslint/ban-ts-comment": ["warn"],
