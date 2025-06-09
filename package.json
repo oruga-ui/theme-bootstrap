@@ -38,8 +38,8 @@
   },
   "devDependencies": {
     "@eslint/compat": "^1.2.9",
-    "@oruga-ui/examples": "0.10.6",
-    "@oruga-ui/oruga-next": "0.10.6",
+    "@oruga-ui/examples": "0.11.0-pre.1",
+    "@oruga-ui/oruga-next": "0.11.0-pre.1",
     "@tsconfig/node22": "^22.0.2",
     "@types/node": "^22.15.29",
     "@vitejs/plugin-vue": "5.2.4",
