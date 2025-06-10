@@ -1,0 +1,46 @@
+/* @docs */
+$badge-bg: $light;
+$badge-color: $dark;
+$badge-icon-space: 0.25em !default;
+$badge-border-color: transparent !default;
+/* @docs */
+
+.badge {
+    --#{$prefix}badge-color: #{$badge-color};
+    --#{$prefix}badge-bg: #{$badge-bg};
+    --#{$prefix}badge-icon-space: #{$badge-icon-space};
+    --#{$prefix}badge-border-color: #{$badge-border-color};
+
+    display: inline-flex;
+    align-items: center;
+    background: var(--#{$prefix}badge-bg);
+    border-color: var(--#{$prefix}badge-border-color);
+
+    .icon {
+        margin-right: var(--#{$prefix}badge-icon-space);
+    }
+
+    .btn-close {
+        margin-left: var(--#{$prefix}badge-icon-space);
+    }
+
+    &:not(:has(.label)) {
+        display: block;
+        --#{$prefix}badge-padding-y: var(--bs-badge-padding-x);
+    }
+
+    // Color variants
+    @each $name, $color in $theme-colors {
+        &.variant-#{$name} {
+            --#{$prefix}badge-color: var(--#{$prefix}#{$name}-contrast);
+            --#{$prefix}badge-bg: var(--#{$prefix}#{$name});
+        }
+    }
+
+    // size variants
+    @each $name, $size in $sizes {
+        &.size-#{$name} {
+            font-size: $size;
+        }
+    }
+}
