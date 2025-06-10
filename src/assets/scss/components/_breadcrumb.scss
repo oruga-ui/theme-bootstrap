@@ -1,0 +1,58 @@
+/* @docs */
+$breadcrumb-color: var(--#{$prefix}primary);
+/* @docs */
+
+/* @bootstrap docs */
+// $breadcrumb-font-size:              null;
+// $breadcrumb-padding-y:              0;
+// $breadcrumb-padding-x:              0;
+// $breadcrumb-item-padding-x:         .5rem;
+// $breadcrumb-margin-bottom:          1rem;
+// $breadcrumb-bg:                     null;
+// $breadcrumb-divider-color:          var(--#{$prefix}secondary-color);
+// $breadcrumb-active-color:           var(--#{$prefix}secondary-color);
+// $breadcrumb-divider:                quote("/");
+// $breadcrumb-divider-flipped:        $breadcrumb-divider;
+// $breadcrumb-border-radius:          null;
+/* @bootstrap docs */
+
+.breadcrumb {
+    &-wrapper {
+        --#{$prefix}breadcrumb-divider: var(--seperator, "/");
+        --#{$prefix}breadcrumb-color: #{$breadcrumb-color};
+
+        display: flex;
+
+        // size variants
+        @each $name, $size in $sizes {
+            &.size-#{$name} {
+                --#{$prefix}breadcrumb-font-size: #{$size};
+            }
+        }
+
+        // color variant
+        @each $name, $color in $theme-colors {
+            &.variant-#{$name} {
+                --#{$prefix}breadcrumb-color: #{$color};
+            }
+        }
+    }
+
+    .breadcrumb-item {
+        color: var(--#{$prefix}breadcrumb-color);
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        &.active {
+            color: var(--bs-breadcrumb-item-active-color);
+        }
+
+        &.disabled a {
+            pointer-events: none;
+            cursor: unset;
+        }
+    }
+}

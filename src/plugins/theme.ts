@@ -7,6 +7,22 @@ const bootstrapConfig: OrugaOptions = {
         itemEmptyClass: "disabled",
         itemGroupTitleClass: "fw-bold",
     },
+    breadcrumb: {
+        override: true,
+        rootClass: "breadcrumb-wrapper",
+        listClass: "breadcrumb",
+        itemClass: "breadcrumb-item",
+        activeClass: "active",
+        disabledClass: "disabled",
+        seperatorClass: "seperator",
+        sizeClass: "size-",
+        variantClass: "variant-",
+        positionClass: (position: string) => {
+            if (position == "left") return "justify-content-start";
+            else if (position == "centered") return "justify-content-center";
+            else if (position == "right") return "justify-content-end";
+        },
+    },
     button: {
         override: true,
         rootClass: "btn",
