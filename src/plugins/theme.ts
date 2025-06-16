@@ -509,6 +509,7 @@ const bootstrapConfig: OrugaOptions = {
         transitioningClass: "transition",
     },
     tag: {
+        override: true,
         rootClass: "badge",
         closeClass: "btn-close",
         variantClass: "variant-",
