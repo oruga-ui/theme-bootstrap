@@ -1,11 +1,10 @@
 ---
 name: Bug report
 about: Create a report to help us improve Bootstrap theme for Oruga
-labels: 
+labels:
 ---
 
 <!-- PLEASE READ THE FOLLOWING INSTRUCTIONS -->
-
 
 ### Overview of the problem
 

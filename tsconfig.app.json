@@ -3,17 +3,12 @@
   "compilerOptions": {
     "baseUrl": ".",
     "paths": {
-      "@/*": [
-        "./src/*"
-      ]
+      "@/*": ["./src/*"]
     },
-    "types": [
-      "vite/client",
-      "@oruga-ui/oruga-next/volar"
-    ]
+    "types": ["vite/client", "@oruga-ui/oruga-next/volar"]
   },
   "include": [
-    "src/**/*", 
+    "src/**/*",
     "src/**/*.ts",
     "src/**/*.d.ts",
     "src/**/*.tsx",
