@@ -24,7 +24,6 @@
     </a>
 </p>
 
-
 ### Install
 
 ```sh
@@ -40,22 +39,21 @@ yarn add @oruga-ui/theme-bootstrap
 ### Configure
 
 ```js
-import { createApp } from 'vue'
-import App from './App.vue'
+import { createApp } from "vue";
+import App from "./App.vue";
 
 // import Oruga
-import Oruga from '@oruga-ui/oruga-next'
+import Oruga from "@oruga-ui/oruga-next";
 
 // import Oruga Bootstrap theme config
-import { bootstrapConfig } from '@oruga-ui/theme-bootstrap'
+import { bootstrapConfig } from "@oruga-ui/theme-bootstrap";
 
 // import Bootstrap and Oruga styling
-import '@oruga-ui/theme-bootstrap/dist/bootstrap.css'
+import "@oruga-ui/theme-bootstrap/dist/bootstrap.css";
 
-createApp(App)
-    .use(Oruga, bootstrapConfig)
-    .mount('#app')
+createApp(App).use(Oruga, bootstrapConfig).mount("#app");
 ```
+
 Please note, this package can be used without importing any other Oruga styling or theme.
 
 ### Customization (SASS/SCSS)
@@ -106,30 +104,29 @@ You have two options for including the theme: include all the styling at once (i
 
 ### Override default config
 
-In case you want to replace the default style of a component you can override or add new classes changing ``bootstrapConfig``; more details about components customization on https://oruga.io/documentation/#customization
+In case you want to replace the default style of a component you can override or add new classes changing `bootstrapConfig`; more details about components customization on https://oruga.io/documentation/#customization
 
 ```js
-import { createApp } from 'vue'
+import { createApp } from "vue";
 
-import Oruga from '@oruga-ui/oruga-next'
-import { bootstrapConfig } from '@oruga-ui/theme-bootstrap'
+import Oruga from "@oruga-ui/oruga-next";
+import { bootstrapConfig } from "@oruga-ui/theme-bootstrap";
 
-import '@oruga-ui/theme-bootstrap/dist/bootstrap.css'
+import "@oruga-ui/theme-bootstrap/dist/bootstrap.css";
 
 const custombootstrapConfig = {
     ...bootstrapConfig,
     checkbox: {
         override: true,
-        rootClass: 'checkbox'
-    }
-}
+        rootClass: "checkbox",
+    },
+};
 
-createApp(App)
-    .use(Oruga, custombootstrapConfig)
-    .mount('#app')
+createApp(App).use(Oruga, custombootstrapConfig).mount("#app");
 ```
 
 ## Contributors
+
 Thank you to everyone involved for improving this project, day by day 💚
 
 <a href="https://github.com/oruga-ui/theme-bootstrap">
