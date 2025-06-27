@@ -55,7 +55,6 @@
     "conventional-changelog-conventionalcommits": "^9.0.0",
     "core-js": "3.43.0",
     "eslint": "^9.29.0",
-    "eslint-plugin-prettier": "^5.5.1",
     "eslint-plugin-vue": "^10.2.0",
     "npm-check-updates": "^18.0.1",
     "npm-run-all2": "^8.0.4",
