@@ -13,6 +13,7 @@
   "include": [
     "eslint.config.*",
     "stylelint.config.*",
+    "prettier.config.*",
     "vite.config.*",
     "vitest.config.*",
     "cypress.config.*",

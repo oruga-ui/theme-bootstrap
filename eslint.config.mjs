@@ -1,29 +1,29 @@
-/* eslint-env node */
-
-import vuePlugin from "eslint-plugin-vue";
+import eslint from "@eslint/js";
 import { globalIgnores } from "eslint/config";
-import prettierPlugin from "eslint-plugin-prettier/recommended";
+import { includeIgnoreFile } from "@eslint/compat";
+import vuePlugin from "eslint-plugin-vue";
 import {
   defineConfigWithVueTs,
   vueTsConfigs,
 } from "@vue/eslint-config-typescript";
-// import vueA11yPlugin from "eslint-plugin-vuejs-accessibility";
 import prettierConfig from "@vue/eslint-config-prettier";
 
-import { includeIgnoreFile } from "@eslint/compat";
-import path from "node:path";
 import { fileURLToPath } from "node:url";
+import path from "node:path";
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 const gitignorePath = path.resolve(__dirname, ".gitignore");
 
 export default [
-  // add more generic rulesets here
+  // define specific ignore patterns
+  globalIgnores(["*.d.ts"]),
 
-  // include ignore .gitignore patterns
-  globalIgnores(["**/.*", "**/dist/**", "**/build/**"]),
+  // include .gitignore ignore patterns
   includeIgnoreFile(gitignorePath),
+
+  // add js configs
+  eslint.configs.recommended,
 
   // add vue with ts configs
   ...defineConfigWithVueTs(
@@ -31,30 +31,30 @@ export default [
     vueTsConfigs.recommended,
   ),
 
-  // add vue a11y configs
-  // ...vueA11yPlugin.configs["flat/recommended"],
-
   // add prettier configs
-  prettierPlugin,
   prettierConfig,
 
   // your modifications
   {
     rules: {
+      // TypeScript
       "@typescript-eslint/no-explicit-any": ["warn"],
       "@typescript-eslint/ban-ts-comment": ["warn"],
       "@typescript-eslint/explicit-function-return-type": ["warn"],
+      // Vue
       "vue/padding-line-between-blocks": ["error", "always"],
       "vue/multi-word-component-names": ["off"],
       "vue/block-order": ["error", { order: ["script", "template", "style"] }],
       "vue/block-lang": ["error", { script: { lang: "ts" } }],
-      "comma-dangle": ["error", "always-multiline"],
-      "prettier/prettier": [
+      "vue/html-closing-bracket-newline": [
         "error",
         {
-          trailingComma: "all",
-          endOfLine: "auto",
-          bracketSameLine: true,
+          singleline: "never",
+          multiline: "never",
+          selfClosingTag: {
+            singleline: "never",
+            multiline: "never",
+          },
         },
       ],
     },
