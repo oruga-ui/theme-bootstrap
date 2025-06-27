@@ -8,6 +8,7 @@
     "types": ["node"]
   },
   "include": [
+    "commitlint.config.*",
     "eslint.config.*",
     "stylelint.config.*",
     "prettier.config.*",
