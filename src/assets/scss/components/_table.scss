@@ -129,6 +129,7 @@ $table-card-spacer: $spacer;
                 > span {
                     display: block;
                     position: relative;
+                    width: inherit;
                 }
 
                 &:hover {
