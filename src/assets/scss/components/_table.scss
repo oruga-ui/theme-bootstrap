@@ -174,6 +174,12 @@ $table-card-spacer: $spacer;
         }
     }
 
+    .scrollable {
+        -webkit-overflow-scrolling: touch;
+        overflow-x: auto;
+        max-width: 100%;
+    }
+
     .table-sticky {
         height: var(--#{$prefix}table-sticky-header-height);
         overflow-y: auto;
@@ -181,9 +187,12 @@ $table-card-spacer: $spacer;
         .table thead th {
             position: -webkit-sticky;
             position: sticky;
-            left: 0;
             top: 0;
             z-index: calc(var(--#{$prefix}table-sticky-zindex) + 10);
+
+            &.sticky {
+                z-index: calc(var(--#{$prefix}table-sticky-zindex) + 11);
+            }
         }
     }
 
