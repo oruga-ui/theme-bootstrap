@@ -464,6 +464,7 @@ const bootstrapConfig: OrugaOptions = {
         trSelectedClass: "table-active",
         trCheckedClass: "table-checked",
         thClass: "table-th",
+        thLabelClass: "column-label",
         thSortableClass: "sortable",
         thCurrentSortClass: "current-sort",
         thSortIconClass: "sort-icon",

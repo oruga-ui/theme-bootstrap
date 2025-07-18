@@ -125,12 +125,7 @@ $table-card-spacer: $spacer;
 
             &.sortable {
                 cursor: pointer;
-
-                > span {
-                    display: block;
-                    position: relative;
-                    width: inherit;
-                }
+                position: relative;
 
                 &:hover {
                     border-color: var(
@@ -147,7 +142,7 @@ $table-card-spacer: $spacer;
 
             .sort-icon {
                 position: absolute;
-                right: 0;
+                right: .5rem;
             }
         }
 
