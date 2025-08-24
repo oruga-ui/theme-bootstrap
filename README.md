@@ -137,6 +137,9 @@ Thank you to everyone involved for improving this project, day by day 💚
 
 [Complete list](CONTRIBUTORS.md).
 
+## Credits
+Logo designed by [mouadTaoussi](https://github.com/mouadTaoussi)
+
 ## License
 
 Code released under [MIT](https://github.com/oruga-ui/theme-bootstrap/blob/main/LICENSE) license.
