@@ -287,7 +287,7 @@ const bootstrapConfig: OrugaOptions = {
         },
         roundedClass: "rounded-pill",
         simpleClass: "simple",
-        orderClass: "order-",
+        positionClass: "position-",
         listClass: (_: string, props: Record<string, any>) => {
             const classes = ["pagination"];
             if (props.size == "small") classes.push("pagination-sm");
