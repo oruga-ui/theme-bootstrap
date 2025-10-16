@@ -8,7 +8,7 @@ import components from "@/components";
             <router-link to="/" class="py-4 ps-0 text-center">
                 <img
                     class="image__oruga"
-                    src="https://raw.githubusercontent.com/oruga-ui/theme-bootstrap/master/public/logo.svg"
+                    src="https://raw.githubusercontent.com/oruga-ui/theme-bootstrap/main/public/logo.svg"
                     alt="Logo Oruga Theme Bootstrap" />
                 <b>Oruga Bootstrap Theme</b>
             </router-link>
