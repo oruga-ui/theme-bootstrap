@@ -53,19 +53,17 @@ export default defineConfig(({ mode }) => {
             build: {
                 emptyOutDir: true,
                 copyPublicDir: false,
-                minify: "terser",
                 lib: {
                     entry: resolve(__dirname, "src/build.ts"),
                     name: "OrugaThemeBootstrap",
-                    fileName: "bootstrap",
-                    formats: ["es", "cjs", "umd"],
+                    fileName: "theme",
+                    cssFileName: "theme",
                 },
                 rollupOptions: {
                     // make sure to externalize deps that shouldn't be bundled
                     // into your library
                     external: ["vue", /oruga\/.*/],
                     output: {
-                        assetFileNames: "bootstrap.[ext]",
                         // Provide global variables to use in the UMD build
                         // for externalized deps
                         globals: {
@@ -75,14 +73,11 @@ export default defineConfig(({ mode }) => {
                 },
             },
             css: {
-                // rename default `style.css` to `bootstrap.css`
-                postcss: { to: "bootstrap.css" },
                 preprocessorOptions: {
                     includePaths: ["node_modules"],
                     scss: {
                         // this can be removed with bootstrap 5.4 (https://github.com/twbs/bootstrap/issues/40962)
                         silenceDeprecations: [
-                            "mixed-decls",
                             "color-functions",
                             "global-builtin",
                             "import",
