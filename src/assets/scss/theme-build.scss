@@ -1,6 +1,6 @@
-/*************************************
-*   Oruga Theme Boostrap Full Build
-**************************************/
+/**********************
+*   Theme Full Build
+***********************/
 
 // import bootstrap functions first (so you can manipulate colors, SVGs, calc, etc)
 @import "bootstrap/scss/functions";
@@ -15,5 +15,5 @@
 // import bootstrap styles
 @import "bootstrap/scss/bootstrap";
 
-// import oruga theme styles
+// import theme styles
 @import "./bootstrap";
