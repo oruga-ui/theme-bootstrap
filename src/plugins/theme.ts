@@ -1,11 +1,12 @@
-import type { OrugaOptions, ComponentProps } from "@oruga-ui/oruga-next";
+/* eslint-disable @typescript-eslint/no-explicit-any */
+import type { OrugaOptions } from "@oruga-ui/oruga-next";
 
 const bootstrapConfig: OrugaOptions = {
     autocomplete: {
         override: true,
         rootClass: "autocomplete",
         itemEmptyClass: "disabled",
-        itemGroupTitleClass: "fw-bold",
+        itemGroupClass: "fw-bold",
     },
     breadcrumb: {
         override: true,
@@ -33,11 +34,11 @@ const bootstrapConfig: OrugaOptions = {
             else if (size == "large") return "btn-lg";
             else return `btn-${size}`;
         },
-        variantClass: (_: string, props: ComponentProps) => {
+        variantClass: (_: string, props: Record<string, any>) => {
             if (props.outlined) return "";
             return `btn-${props.variant}`;
         },
-        outlinedClass: (_: string, props: ComponentProps) => {
+        outlinedClass: (_: string, props: Record<string, any>) => {
             if (!props.variant) return "btn-outline";
             return `btn-outline-${props.variant}`;
         },
@@ -138,7 +139,7 @@ const bootstrapConfig: OrugaOptions = {
         tableCellWithinSelectedClass: "selected-within",
         tableCellInvisibleClass: "",
         tableCellNearbyClass: "nearby",
-        tableCellEventsClass: (_: string, props: ComponentProps) => {
+        tableCellEventsClass: (_: string, props: Record<string, any>) => {
             const classes = ["has-event"];
             if (props.indicators) classes.push(`${props.indicators}`);
             return classes.join(" ");
@@ -211,7 +212,7 @@ const bootstrapConfig: OrugaOptions = {
         expandedClass: "expanded",
         disabledClass: "disabled",
         roundedClass: "rounded-pill",
-        inputClass: (_: string, props: ComponentProps) => {
+        inputClass: (_: string, props: Record<string, any>) => {
             const classes = ["form-control focus-ring"];
             if (props.icon) classes.push("icon-left");
             if (props.iconRight) classes.push("icon-right");
@@ -252,7 +253,7 @@ const bootstrapConfig: OrugaOptions = {
         rootClass: "modal fade",
         activeClass: "show",
         overlayClass: "modal-backdrop",
-        contentClass: (_: string, props: ComponentProps) => {
+        contentClass: (_: string, props: Record<string, any>) => {
             const classes = ["modal-dialog"];
             if (!props.fullScreen) classes.push("modal-dialog-centered");
             return classes.join(" ");
@@ -279,7 +280,7 @@ const bootstrapConfig: OrugaOptions = {
     pagination: {
         override: true,
         rootClass: "pagination-wrapper",
-        sizeClass: (_: string, props: ComponentProps) => {
+        sizeClass: (_: string, props: Record<string, any>) => {
             if (props.size == "small") return "pagination-sm";
             else if (props.size == "medium") return "pagination-md";
             else if (props.size == "large") return "pagination-lg";
@@ -287,7 +288,7 @@ const bootstrapConfig: OrugaOptions = {
         roundedClass: "rounded-pill",
         simpleClass: "simple",
         orderClass: "order-",
-        listClass: (_: string, props: ComponentProps) => {
+        listClass: (_: string, props: Record<string, any>) => {
             const classes = ["pagination"];
             if (props.size == "small") classes.push("pagination-sm");
             else if (props.size == "medium") classes.push("pagination-md");
@@ -298,7 +299,7 @@ const bootstrapConfig: OrugaOptions = {
         buttonClass: "page-link",
         buttonCurrentClass: "active",
         buttonDisabledClass: "disabled",
-        ellipsisClass: (_: string, props: ComponentProps) => {
+        ellipsisClass: (_: string, props: Record<string, any>) => {
             const classes = ["pagination-ellipsis"];
             if (props.rounded) classes.push("rounded-pill");
             return classes.join(" ");
@@ -327,7 +328,7 @@ const bootstrapConfig: OrugaOptions = {
         multipleClass: "multiple",
         placeholderClass: "empty",
         arrowedClass: "arrowed",
-        selectClass: (_: string, props: ComponentProps) => {
+        selectClass: (_: string, props: Record<string, any>) => {
             const classes = ["form-select focus-ring"];
             if (props.icon) classes.push("icon-left");
             if (props.iconRight) classes.push("icon-right");
@@ -344,7 +345,7 @@ const bootstrapConfig: OrugaOptions = {
         rootClass: "sidebar",
         overlayClass: "offcanvas-backdrop",
         activeClass: "show",
-        positionClass: (_: string, props: ComponentProps) => {
+        positionClass: (_: string, props: Record<string, any>) => {
             if (props.position === "left") return "offcanvas-start";
             else if (props.position === "right") return "offcanvas-end";
             else if (props.position === "top") return "offcanvas-top";
@@ -384,7 +385,7 @@ const bootstrapConfig: OrugaOptions = {
         fillClass: "slider-fill",
         thumbWrapperClass: "slider-thumb-wrapper",
         sizeClass: "size-",
-        thumbClass: (_: string, props: ComponentProps) => {
+        thumbClass: (_: string, props: Record<string, any>) => {
             const classes = ["slider-thumb", "focus-ring"];
             if (props.variant) classes.push(`variant-${props.variant}`);
             if (props.variant) classes.push(`focus-ring-${props.variant}`);
@@ -398,7 +399,7 @@ const bootstrapConfig: OrugaOptions = {
     },
     steps: {
         override: true,
-        rootClass: (_: string, props: ComponentProps) => {
+        rootClass: (_: string, props: Record<string, any>) => {
             const classes = ["steps"];
             if (props.variant) classes.push(`variant-${props.variant}`);
             if (props.disabled) classes.push("disabled");
@@ -434,7 +435,7 @@ const bootstrapConfig: OrugaOptions = {
         positionClass: (position: string) => {
             if (position == "left") return "reversed";
         },
-        inputClass: (_: string, props: ComponentProps) => {
+        inputClass: (_: string, props: Record<string, any>) => {
             const classes = ["form-check-input"];
             if (props.rounded) classes.push("rounded-pill");
             return classes.join(" ");
@@ -492,7 +493,7 @@ const bootstrapConfig: OrugaOptions = {
         multilineClass: "multiline",
         typeClass: "type-",
         sizeClass: "size-",
-        listClass: (_: string, props: ComponentProps) => {
+        listClass: (_: string, props: Record<string, any>) => {
             const classes = ["nav"];
             if (props.type) classes.push(`nav-${props.type}`);
             if (props.position === "left")
@@ -522,12 +523,12 @@ const bootstrapConfig: OrugaOptions = {
     },
     taginput: {
         override: true,
-        rootClass: (_: string, props: ComponentProps) => {
+        rootClass: (_: string, props: Record<string, any>) => {
             const classes = ["taginput"];
             if (props.disabled) classes.push("disabled");
             return classes.join(" ");
         },
-        containerClass: (_: string, props: ComponentProps) => {
+        containerClass: (_: string, props: Record<string, any>) => {
             const classes = ["taginput-wrapper", "focus-ring"];
             if (props.variant) classes.push(`focus-ring-${props.variant}`);
             return classes.join(" ");
@@ -553,10 +554,10 @@ const bootstrapConfig: OrugaOptions = {
         override: true,
         rootClass: "upload",
         variantClass: "variant-",
-        draggableClass: "upload-draggable",
         expandedClass: "expanded",
         disabledClass: "disabled",
-        hoveredClass: "hovered",
+        draggableClass: "upload-draggable",
+        draggableHoveredClass: "hovered",
     },
 };
 
