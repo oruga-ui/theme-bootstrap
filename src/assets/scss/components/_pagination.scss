@@ -169,7 +169,11 @@ $pagination-items-spacer: 0.5rem !default;
 
     .rounded,
     .rounded-pill {
-        margin-right: calc(var(--#{$prefix}pagination-items-spacer) / 2) !important;
-        margin-left: calc(var(--#{$prefix}pagination-items-spacer) / 2) !important;
+        margin-right: calc(
+            var(--#{$prefix}pagination-items-spacer) / 2
+        ) !important;
+        margin-left: calc(
+            var(--#{$prefix}pagination-items-spacer) / 2
+        ) !important;
     }
 }
