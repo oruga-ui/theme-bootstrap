@@ -42,24 +42,6 @@ $pagination-items-spacer: 0.5rem !default;
 // $pagination-border-radius-lg:       var(--#{$prefix}border-radius-lg);
 /* @bootstrap docs */
 
-@mixin roundEdge {
-    .pagination {
-        li:first-child .page-link {
-            border-top-left-radius: $pagination-border-radius;
-            border-bottom-left-radius: $pagination-border-radius;
-        }
-
-        li:last-child .page-link {
-            border-top-right-radius: $pagination-border-radius;
-            border-bottom-right-radius: $pagination-border-radius;
-        }
-    }
-}
-@mixin vertical-centered {
-    display: flex;
-    align-items: center;
-}
-
 .pagination-wrapper {
     @extend .pagination;
 
@@ -69,13 +51,20 @@ $pagination-items-spacer: 0.5rem !default;
     display: flex;
     flex-direction: row;
 
+    .page-link {
+        border-radius: unset;
+    }
+
     .pagination {
         order: 2;
         margin: 0;
 
         &-prev,
-        &-next {
-            @include vertical-centered;
+        &-next,
+        &-ellipsis,
+        &-info {
+            display: flex;
+            align-items: center;
 
             .icon {
                 margin: unset;
@@ -97,28 +86,37 @@ $pagination-items-spacer: 0.5rem !default;
         }
 
         &-ellipsis {
-            @include vertical-centered;
             height: 100%;
             margin-right: var(--#{$prefix}pagination-items-spacer);
             margin-left: var(--#{$prefix}pagination-items-spacer);
         }
 
         &-info {
-            @include vertical-centered;
             margin-right: var(--#{$prefix}pagination-items-spacer);
-        }
-
-        .page-link {
-            height: 100%;
         }
     }
 
     &:not(.simple) {
-        &.order {
-            &-left {
-                @include roundEdge;
+        &.position {
+            &-left,
+            &-centered,
+            &-right {
                 justify-content: space-between;
 
+                .pagination {
+                    li:first-child .page-link {
+                        border-top-left-radius: $pagination-border-radius;
+                        border-bottom-left-radius: $pagination-border-radius;
+                    }
+
+                    li:last-child .page-link {
+                        border-top-right-radius: $pagination-border-radius;
+                        border-bottom-right-radius: $pagination-border-radius;
+                    }
+                }
+            }
+
+            &-left {
                 .pagination-prev {
                     order: 2;
                 }
@@ -136,9 +134,6 @@ $pagination-items-spacer: 0.5rem !default;
             }
 
             &-centered {
-                @include roundEdge;
-                justify-content: space-between;
-
                 .pagination {
                     margin-left: var(--#{$prefix}pagination-items-spacer);
                     margin-right: var(--#{$prefix}pagination-items-spacer);
@@ -146,9 +141,6 @@ $pagination-items-spacer: 0.5rem !default;
             }
 
             &-right {
-                @include roundEdge;
-                justify-content: space-between;
-
                 .pagination-next {
                     order: 2;
                 }
