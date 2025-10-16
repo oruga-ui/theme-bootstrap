@@ -10,6 +10,11 @@
     visibility: hidden;
 }
 
+.btn-close:not(:has(i, svg, .icon)) {
+    --bs-btn-close-bg: transparent;
+    width: auto;
+}
+
 @each $name, $pair in $theme-colors {
     .variant-#{$name} > .btn-close {
         @extend .btn-close-white;
