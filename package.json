@@ -69,7 +69,6 @@
     "sass": "1.93.2",
     "stylelint": "^16.25.0",
     "stylelint-config-recommended-scss": "^16.0.2",
-    "terser": "^5.44.0",
     "typescript": "5.9.3",
     "vite": "7.1.10",
     "vite-plugin-banner": "^0.8.1",
