@@ -37,22 +37,26 @@ $upload-disabled-opacity: 0.5 !default;
         --#{$prefix}upload-draggable-padding: #{$upload-draggable-padding};
 
         background: var(--#{$prefix}upload-draggable-bg);
-        border: var(--#{$prefix}upload-draggable-border-width) dashed
-            var(--#{$prefix}upload-draggable-border-color);
+        border-width: var(--#{$prefix}upload-draggable-border-width);
+        border-style: dashed;
+        border-color: var(--#{$prefix}upload-draggable-border-color);
         border-radius: var(--#{$prefix}upload-draggable-border-radius);
         padding: var(--#{$prefix}upload-draggable-padding);
 
+        &:hover,
         &.hovered {
             background-color: var(--#{$prefix}upload-draggable-bg-hover);
             border-color: var(--#{$prefix}upload-draggable-border-color-hover);
         }
 
-        // Color variant
-        @each $name, $color-light in $theme-colors {
-            &.variant-#{$name} {
-                background-color: var(--#{$prefix}#{$name}-bg-subtle);
-                border-color: var(--#{$prefix}#{$name});
-            }
+    }
+
+    // Color variant
+    @each $name, $color-light in $theme-colors {
+        &.variant-#{$name} .upload-draggable {
+            --#{$prefix}upload-draggable-bg-hover: var(--#{$prefix}#{$name}-bg-subtle);
+            --#{$prefix}upload-draggable-border-color-hover: var(--#{$prefix}#{$name});
+            --#{$prefix}upload-draggable-border-color: var(--#{$prefix}#{$name}-bg-subtle);
         }
     }
 }

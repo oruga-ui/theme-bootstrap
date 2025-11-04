@@ -35,7 +35,7 @@ const bootstrapConfig: OrugaOptions = {
             else return `btn-${size}`;
         },
         variantClass: (_: string, props: Record<string, any>) => {
-            if (props.outlined) return "";
+            if (props.outlined || props.inverted) return "";
             return `btn-${props.variant}`;
         },
         outlinedClass: (_: string, props: Record<string, any>) => {
