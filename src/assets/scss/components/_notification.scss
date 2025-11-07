@@ -45,12 +45,12 @@ $notification-icon-margin-right: 0.5rem !default;
         .icon {
             margin-right: $notification-icon-margin-right;
         }
+    }
 
-        .notifictation-content {
-            padding-right: calc(
-                $notification-close-btn-position + $alert-padding-x
-            );
-        }
+    .btn-close + .notifictation-wrapper {
+        padding-right: calc(
+            $notification-close-btn-position + $alert-padding-x
+        );
     }
 }
 

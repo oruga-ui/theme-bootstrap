@@ -113,6 +113,9 @@ $nav-underline-link-active-border-color: currentcolor !default;
         flex-direction: row;
 
         .nav {
+            flex-grow: 0;
+            flex-shrink: 0;
+            flex-direction: column;
             margin-bottom: var(--#{$prefix}nav-tabs-spacer);
 
             .nav-item {
@@ -153,6 +156,10 @@ $nav-underline-link-active-border-color: currentcolor !default;
             .nav {
                 margin-left: var(--#{$prefix}nav-tabs-spacer);
             }
+        }
+
+        .tab-content {
+            flex-grow: 1;
         }
     }
 
