@@ -63,23 +63,6 @@ $sidebar-reduced-height: 10vh !default;
 
             @include size($sidebar-reduced-height, $sidebar-reduced-width);
         }
-
-        &.hover-expanded:hover {
-            &.fullwidth {
-                @include size(100%, 100%);
-            }
-
-            &:not(.fullwidth) {
-                @include size(
-                    $offcanvas-vertical-height,
-                    $offcanvas-horizontal-width
-                );
-
-                &.reduced-expand-fixed {
-                    position: fixed;
-                }
-            }
-        }
     }
 
     &.inline,
