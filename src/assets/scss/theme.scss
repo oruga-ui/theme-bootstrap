@@ -1,15 +1,15 @@
-/**************************
-*   Oruga Theme Boostrap 
-***************************/
+/******************
+*   Theme Styles
+*******************/
 
-// Globals, utility and functions
+// import globals, utilities and functions
 @import "utils/animations";
 @import "utils/functions";
 @import "utils/utility";
 @import "utils/root";
 @import "utils/base";
 
-// Oruga components
+// import theme components
 @import "components/autocomplete";
 @import "components/breadcrumb";
 @import "components/button";
