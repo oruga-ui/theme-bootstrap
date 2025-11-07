@@ -353,8 +353,7 @@ const bootstrapConfig: OrugaOptions = {
             else return "offcanvas-start";
         },
         contentClass: "offcanvas",
-        reduceClass: "reduced",
-        expandOnHoverClass: "hover-expanded",
+        contentMobileClass: "",
         fullheightClass: "fullheight",
         fullwidthClass: "fullwidth",
         mobileClass: "mobile",
