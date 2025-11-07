@@ -48,15 +48,20 @@ $upload-disabled-opacity: 0.5 !default;
             background-color: var(--#{$prefix}upload-draggable-bg-hover);
             border-color: var(--#{$prefix}upload-draggable-border-color-hover);
         }
-
     }
 
     // Color variant
     @each $name, $color-light in $theme-colors {
         &.variant-#{$name} .upload-draggable {
-            --#{$prefix}upload-draggable-bg-hover: var(--#{$prefix}#{$name}-bg-subtle);
-            --#{$prefix}upload-draggable-border-color-hover: var(--#{$prefix}#{$name});
-            --#{$prefix}upload-draggable-border-color: var(--#{$prefix}#{$name}-bg-subtle);
+            --#{$prefix}upload-draggable-bg-hover: var(
+                --#{$prefix}#{$name}-bg-subtle
+            );
+            --#{$prefix}upload-draggable-border-color-hover: var(
+                --#{$prefix}#{$name}
+            );
+            --#{$prefix}upload-draggable-border-color: var(
+                --#{$prefix}#{$name}-bg-subtle
+            );
         }
     }
 }
