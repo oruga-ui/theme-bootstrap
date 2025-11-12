@@ -2,7 +2,7 @@
     <div class="content">
         <img
             class="image__oruga"
-            src="https://raw.githubusercontent.com/oruga-ui/theme-bootstrap/master/public/logo.svg"
+            src="https://raw.githubusercontent.com/oruga-ui/theme-bootstrap/main/public/logo.svg"
             alt="Logo Oruga Theme Bootstrap" />
         <h1 class="mt-2">Oruga Bootstrap Theme Demo</h1>
     </div>

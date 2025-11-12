@@ -7,7 +7,3 @@
   src="https://contrib.rocks/image?repo=oruga-ui/theme-bootstrap"
   />
 </a>
-
-<!-- ## Extra contributions
-
-- [name](link) -->
