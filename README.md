@@ -135,7 +135,7 @@ Thank you to everyone involved for improving this project, day by day 💚
   />
 </a>
 
-[Complete list](CONTRIBUTORS.md).
+[Complete list](.github/CONTRIBUTORS.md).
 
 ## Credits
 
