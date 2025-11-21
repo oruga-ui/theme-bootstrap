@@ -49,7 +49,7 @@ import Oruga from "@oruga-ui/oruga-next";
 import { bootstrapConfig } from "@oruga-ui/theme-bootstrap";
 
 // import Bootstrap and Oruga styling
-import "@oruga-ui/theme-bootstrap/dist/bootstrap.css";
+import "@oruga-ui/theme-bootstrap/style.css";
 
 createApp(App).use(Oruga, bootstrapConfig).mount("#app");
 ```
@@ -67,7 +67,7 @@ You have two options for including the theme: include all the styling at once (i
 // ...
 
 // Include the Oruga Bootstrap theme with Bootstrap included
-@import "/node_modules/@oruga-ui/theme-bootstrap/dist/scss/bootstrap-build";
+@import "/node_modules/@oruga-ui/theme-bootstrap/scss/theme-build";
 
 // Then add additional custom code here
 // ...
@@ -87,7 +87,7 @@ You have two options for including the theme: include all the styling at once (i
 @import "/node_modules/bootstrap/scss/variables-dark";
 
 // 4. Include the Oruga Bootstrap theme variables
-@import "/node_modules/@oruga-ui/theme-bootstrap/dist/scss/utils/variables";
+@import "/node_modules/@oruga-ui/theme-bootstrap/scss/utils/variables";
 
 // 5. Include any default map overrides here
 // ...
@@ -96,7 +96,7 @@ You have two options for including the theme: include all the styling at once (i
 @import "/node_modules/bootstrap/scss/bootstrap";
 
 // 7. Include the Oruga Bootstrap theme components styles
-@import "/node_modules/@oruga-ui/theme-bootstrap/dist/scss/bootstrap";
+@import "/node_modules/@oruga-ui/theme-bootstrap/scss/theme";
 
 // 8. Add additional custom code here
 // ...
@@ -112,7 +112,7 @@ import { createApp } from "vue";
 import Oruga from "@oruga-ui/oruga-next";
 import { bootstrapConfig } from "@oruga-ui/theme-bootstrap";
 
-import "@oruga-ui/theme-bootstrap/dist/bootstrap.css";
+import "@oruga-ui/theme-bootstrap/style.css";
 
 const custombootstrapConfig = {
     ...bootstrapConfig,
