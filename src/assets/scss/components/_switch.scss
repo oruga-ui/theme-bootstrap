@@ -1,9 +1,7 @@
 @use "sass:map";
 
 /* @docs */
-$switch-spacer: 0.5em !default;
-$switch-width: 2.75em !default;
-$switch-height: 1.5em !default;
+$switch-spacer: 0.5rem !default;
 /* @docs */
 
 /* @bootstrap docs */
@@ -22,101 +20,74 @@ $switch-height: 1.5em !default;
 // $form-switch-checked-bg-position: right center;
 /* @bootstrap docs */
 
-@function switchSVG($color, $svg, $replacement) {
-    @return escape-svg(str-replace($svg, "#{$form-switch-color}", $color));
+@function switchSVG($svg, $color) {
+  @return escape-svg(str-replace($svg, "#{$form-switch-color}", $color));
 }
 
 .form-switch {
-    --#{$prefix}switch-spacer: #{$switch-spacer};
-    --#{$prefix}switch-height: #{$switch-height};
-    --#{$prefix}switch-width: #{$switch-width};
+  --#{$prefix}switch-spacer: #{$switch-spacer};
 
-    position: relative;
-    padding-left: 0;
+  position: relative;
 
-    .form-check-input {
-        height: var(--#{$prefix}switch-height);
-        width: var(--#{$prefix}switch-width);
-        margin: 0;
-        cursor: pointer;
+  &:not(:last-child) {
+    margin-right: var(--#{$prefix}switch-spacer);
+  }
 
-        &:not(:last-child) {
-            margin-right: var(--#{$prefix}switch-spacer);
-        }
-    }
+  // color variant
+  @each $name, $color in $theme-colors {
+    &.variant-#{$name} input[type="checkbox"] {
+      background-color: transparent;
+      border-color: var(--#{$prefix}#{$name});
 
-    // color variant
-    @each $name, $color in $theme-colors {
-        &.variant-#{$name} input[type="checkbox"] {
-            background-color: transparent;
-            border-color: var(--#{$prefix}#{$name});
+      --#{$prefix}form-switch-bg: #{switchSVG($form-switch-bg-image, $color)};
 
-            --#{$prefix}form-switch-bg: #{switchSVG(
-                    $color,
-                    $form-switch-bg-image,
-                    $form-switch-color
-                )};
-
-            &:checked {
-                background-color: var(--#{$prefix}#{$name});
-                --#{$prefix}form-switch-bg: #{switchSVG(
-                        $white,
-                        $form-switch-checked-bg-image,
-                        $form-switch-checked-color
-                    )};
-            }
-        }
+      &:checked {
+        background-color: var(--#{$prefix}#{$name});
+        --#{$prefix}form-switch-bg: #{switchSVG(
+            $form-switch-checked-bg-image,
+            $white
+          )};
+      }
     }
 
     // possive colors variant
-    @each $name, $color in $theme-colors {
-        &.variant-#{$name}-passive input[type="checkbox"] {
-            background-color: var(--#{$prefix}#{$name});
-            border-color: var(--#{$prefix}#{$name});
-
-            --#{$prefix}form-switch-bg: #{switchSVG(
-                    $white,
-                    $form-switch-bg-image,
-                    $form-switch-color
-                )};
-        }
+    &.variant-#{$name}-passive {
+      input[type="checkbox"]:checked {
+        background-color: var(--#{$prefix}#{$name});
+        border-color: var(--#{$prefix}#{$name});
+      }
     }
 
     // subtle color variant
-    @each $name, $color in $theme-colors {
-        &.variant-#{$name}-subtle input[type="checkbox"] {
-            $color: map.get($theme-colors-bg-subtle, #{$name});
+    &.variant-#{$name}-subtle input[type="checkbox"] {
+      $color: map.get($theme-colors-bg-subtle, #{$name});
 
-            background-color: transparent;
-            border-color: var(--#{$prefix}#{$name}-border-subtle);
+      background-color: transparent;
+      border-color: var(--#{$prefix}#{$name}-border-subtle);
 
-            --#{$prefix}form-switch-bg: #{switchSVG(
-                    $color,
-                    $form-switch-bg-image,
-                    $form-switch-color
-                )};
+      --#{$prefix}form-switch-bg: #{switchSVG($form-switch-bg-image, $color)};
 
-            &:checked {
-                background-color: var(--#{$prefix}#{$name}-bg-subtle);
-                --#{$prefix}form-switch-bg: #{switchSVG(
-                        $white,
-                        $form-switch-checked-bg-image,
-                        $form-switch-checked-color
-                    )};
-            }
-        }
+      &:checked {
+        background-color: var(--#{$prefix}#{$name}-bg-subtle);
+        --#{$prefix}form-switch-bg: #{switchSVG(
+            $form-switch-checked-bg-image,
+            $white
+          )};
+      }
+    }
+  }
+
+  &.reversed {
+    display: flex;
+    padding-left: unset;
+
+    .form-check-input {
+      order: 2;
+      margin-left: var(--#{$prefix}switch-spacer);
     }
 
-    &.reversed {
-        display: flex;
-
-        .form-check-input {
-            order: 2;
-            margin-left: var(--#{$prefix}switch-spacer);
-        }
-
-        .form-check-label {
-            order: 1;
-        }
+    .form-check-label {
+      order: 1;
     }
+  }
 }
