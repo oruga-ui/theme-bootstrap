@@ -51,7 +51,7 @@
     // override browser default appearance
     background-color: transparent;
     border-width: 0;
-    
+
     &[open] {
         display: block;
     }
@@ -62,14 +62,14 @@
 
     // root class extension
     &.modal {
-        &-dialog{
+        &-dialog {
             position: fixed;
         }
-        
+
         &-fullscreen {
             // override browser default appearance
             padding: 0;
-            margin: 0;  
+            margin: 0;
         }
 
         &:not(&-fullscreen) {
@@ -78,16 +78,15 @@
             width: fit-content;
             height: fit-content;
         }
-
     }
 
     // inner classes
-    .modal{
+    .modal {
         &-header {
             flex-direction: column;
             align-items: inherit;
 
-             &:has(.btn-close) {
+            &:has(.btn-close) {
                 padding-right: 3rem;
             }
 
@@ -98,7 +97,7 @@
             }
         }
 
-        &-title, 
+        &-title,
         &-subtitle {
             margin: 0;
             padding: 0;
