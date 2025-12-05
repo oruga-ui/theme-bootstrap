@@ -32,16 +32,16 @@
 
 .listbox {
     position: relative;
-    border: var(--#{$prefix}list-group-border-width) solid var(--#{$prefix}list-group-border-color);
+    border: var(--#{$prefix}list-group-border-width) solid
+        var(--#{$prefix}list-group-border-color);
 
     .list-group-item {
         border-width: 0 0 var(--#{$prefix}list-group-border-width);
     }
 
     > .list-group-item:last-child {
-       border-bottom: unset;
+        border-bottom: unset;
     }
-
 
     .list-group-list {
         margin: 0;
@@ -53,36 +53,37 @@
         &:not(:first-child) {
             &,
             > .list-group-item:first-child {
-                border-top-left-radius: unset ;
-                border-top-right-radius:  unset ;
+                border-top-left-radius: unset;
+                border-top-right-radius: unset;
             }
         }
 
         &:not(:last-child) {
             &,
             > .list-group-item:last-child {
-                border-bottom-left-radius: unset ;
-                border-bottom-right-radius:  unset ;
+                border-bottom-left-radius: unset;
+                border-bottom-right-radius: unset;
             }
         }
 
         &:last-child {
-             > .list-group-item:last-child {
+            > .list-group-item:last-child {
                 border-bottom: unset;
-             }
+            }
         }
     }
-
 
     &.selectable {
         .list-group-list .list-group-item {
             cursor: pointer;
 
             &.focused,
-            &:hover{
-                &:not(.active){
+            &:hover {
+                &:not(.active) {
                     color: var(--#{$prefix}list-group-action-hover-color);
-                    background-color: var(--#{$prefix}list-group-action-hover-bg);
+                    background-color: var(
+                        --#{$prefix}list-group-action-hover-bg
+                    );
                 }
 
                 &.active {
