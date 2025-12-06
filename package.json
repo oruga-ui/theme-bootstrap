@@ -1,6 +1,6 @@
 {
   "name": "@oruga-ui/theme-bootstrap",
-  "version": "0.10.1",
+  "version": "0.10.2",
   "description": "Bootstrap theme for Oruga",
   "license": "MIT",
   "type": "module",
@@ -14,10 +14,13 @@
   ],
   "exports": {
     ".": {
-      "import": "./dist/theme.js"
+      "import": "./dist/theme.js",
+      "types": "./dist/types/theme.d.ts"
     },
     "./style.css": "./dist/theme.css",
-    "./style.scss": "./dist/scss/theme.scss"
+    "./style.scss": "./dist/scss/theme.scss",
+    "./scss/*.scss": "./dist/scss/*.scss",
+    "./dist/scss/*.scss": "./dist/scss/*.scss"
   },
   "files": [
     "dist"
@@ -50,33 +53,33 @@
     "bootstrap": "^5.3.8"
   },
   "devDependencies": {
-    "@eslint/compat": "^1.4.0",
+    "@eslint/compat": "^2.0.0",
     "@oruga-ui/examples": "^0.12.3",
     "@oruga-ui/oruga-next": "^0.12.3",
-    "@tsconfig/node22": "^22.0.2",
-    "@types/node": "^24.7.2",
-    "@vitejs/plugin-vue": "^6.0.1",
+    "@tsconfig/node22": "^22.0.5",
+    "@types/node": "^24.10.1",
+    "@vitejs/plugin-vue": "^6.0.2",
     "@vue/eslint-config-prettier": "^10.2.0",
     "@vue/eslint-config-typescript": "^14.6.0",
     "@vue/tsconfig": "^0.7.0",
     "conventional-changelog-conventionalcommits": "^9.1.0",
-    "core-js": "^3.46.0",
-    "eslint": "^9.37.0",
+    "core-js": "^3.47.0",
+    "eslint": "^9.39.1",
     "eslint-plugin-vue": "^10.5.1",
-    "npm-check-updates": "^19.1.1",
+    "npm-check-updates": "^19.1.2",
     "npm-run-all2": "^8.0.4",
     "prettier": "^3.6.2",
-    "sass": "^1.93.2",
+    "sass": "^1.94.2",
     "stylelint": "^16.25.0",
     "stylelint-config-recommended-scss": "^16.0.2",
     "typescript": "^5.9.3",
-    "vite": "^7.2.2",
+    "vite": "^7.2.4",
     "vite-plugin-banner": "^0.8.1",
     "vite-plugin-dts": "^4.5.4",
     "vite-plugin-static-copy": "^3.1.4",
     "vite-tsconfig-paths": "^5.1.4",
-    "vue": "^3.5.22",
+    "vue": "^3.5.24",
     "vue-router": "^4.6.3",
-    "vue-tsc": "^3.1.1"
+    "vue-tsc": "^3.1.4"
   }
 }

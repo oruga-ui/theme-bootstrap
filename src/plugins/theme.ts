@@ -90,6 +90,33 @@ const bootstrapConfig: OrugaOptions = {
         expandedClass: "w-100",
         contentClass: "collapse-content",
     },
+    dialog: {
+        override: true,
+        rootClass: ["dialog", "modal-dialog"],
+        mobileClass: undefined,
+        activeClass: "active",
+        teleportClass: "teleported",
+        fullScreenClass: "modal-fullscreen",
+        backdropClass: undefined,
+        wrapperClass: "modal-content",
+        textPositionClass: "text-",
+        headerClass: "modal-header",
+        titleClass: "modal-title",
+        subtitleClass: "modal-subtitle",
+        closeClass: "btn-close",
+        bodyClass: "modal-body",
+        contentClass: "content",
+        figureClass: undefined,
+        imageClass: undefined,
+        footerClass: "modal-footer",
+        footerPositionClass: (position: string) => {
+            if (position == "left") return "justify-content-start";
+            else if (position == "center") return "justify-content-center";
+            else if (position == "right") return "justify-content-end";
+        },
+        scrollClipClass: "scroll-clipped",
+        scrollKeepClass: "scroll-hidden",
+    },
     dropdown: {
         override: true,
         rootClass: "dropdown",

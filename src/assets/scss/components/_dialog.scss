@@ -1,3 +1,6 @@
+/* @docs */
+/* @docs */
+
 /* @bootstrap docs */
 // $modal-inner-padding:               $spacer;
 
@@ -41,34 +44,63 @@
 // $modal-scale-transform:             scale(1.02);
 /* @bootstrap docs */
 
-.modal {
-    &.show {
-        display: flex;
+.dialog {
+    // extend bootstrap modal class
+    @extend .modal;
+
+    // override browser default appearance
+    background-color: transparent;
+    border-width: 0;
+
+    &[open] {
+        display: block;
     }
 
-    &-backdrop {
-        opacity: var(--#{$prefix}backdrop-opacity);
+    &::backdrop {
+        @extend .modal-backdrop;
     }
 
-    &-dialog {
-        z-index: var(--#{$prefix}modal-zindex);
-        pointer-events: all;
-        margin: auto;
-
-        &.fullscreen {
-            --#{$prefix}modal-width: 100%;
-            width: 100%;
-        }
-
-        .modal-content {
-            overflow: hidden;
-        }
-
-        > .btn-close {
-            --#{$prefix}btn-close-opacity: 1;
+    // root class extension
+    &.modal {
+        &-dialog {
             position: fixed;
-            top: 1.5rem;
-            right: 1.5rem;
+        }
+
+        &-fullscreen {
+            // override browser default appearance
+            padding: 0;
+            margin: 0;
+        }
+
+        &:not(&-fullscreen) {
+            // restore browser default appearance
+            margin: auto;
+            width: fit-content;
+            height: fit-content;
+        }
+    }
+
+    // inner classes
+    .modal {
+        &-header {
+            flex-direction: column;
+            align-items: inherit;
+
+            &:has(.btn-close) {
+                padding-right: 3rem;
+            }
+
+            > .btn-close {
+                position: absolute;
+                top: 1.5rem;
+                right: 1.5rem;
+            }
+        }
+
+        &-title,
+        &-subtitle {
+            margin: 0;
+            padding: 0;
         }
     }
 }
