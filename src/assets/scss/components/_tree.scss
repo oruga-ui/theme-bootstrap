@@ -1,0 +1,106 @@
+/* @docs */
+$tree-list-line-height: 1.25em !default;
+$tree-item-padding: 0.5em 0.75em !default;
+$tree-item-margin: 0.2em 0 !default;
+$tree-item-bg: transparent !default;
+$tree-item-border-radius: var(--#{$prefix}border-radius) !default;
+$tree-item-color: var(--#{$prefix}body-color) !default;
+$tree-item-active-bg: var(--#{$prefix}primary) !default;
+$tree-item-active-color: var(--#{$prefix}white) !default;
+$tree-item-disabled-bg: transparent !default;
+$tree-item-disabled-color: var(--#{$prefix}secondary) !default;
+$tree-item-hover-bg: var(--#{$prefix}tertiary-bg) !default;
+$tree-item-hover-color: var(--#{$prefix}body-color) !default;
+$tree-icon-spacer: 0.5rem !default;
+$tree-subtree-border-left: 1px solid #445e00 !default;
+$tree-subtree-padding: 0 0.5em !default;
+$tree-subtree-margin: 0.5em 1.3em !default;
+/* @docs */
+
+.tree {
+    &-list {
+        --#{$prefix}tree-list-line-height: #{$tree-list-line-height};
+
+        padding: 0;
+        line-height: var(--#{$prefix}tree-list-line-height);
+    }
+
+    &-item {
+        --#{$prefix}tree-item-padding: #{$tree-item-padding};
+        --#{$prefix}tree-item-margin: #{$tree-item-margin};
+        --#{$prefix}tree-item-bg: #{$tree-item-bg};
+        --#{$prefix}tree-item-border-radius: #{$tree-item-border-radius};
+        --#{$prefix}tree-item-color: #{$tree-item-color};
+        --#{$prefix}tree-item-active-bg: #{$tree-item-active-bg};
+        --#{$prefix}tree-item-active-color: #{$tree-item-active-color};
+        --#{$prefix}tree-item-hover-bg: #{$tree-item-hover-bg};
+        --#{$prefix}tree-item-hover-color: #{$tree-item-hover-color};
+        --#{$prefix}tree-item-disabled-bg: #{$tree-item-disabled-bg};
+        --#{$prefix}tree-item-disabled-color: #{$tree-item-disabled-color};
+
+        list-style: none;
+        display: block;
+
+        &-label {
+            display: flex;
+            align-items: center;
+            cursor: pointer;
+            background: var(--#{$prefix}tree-item-bg);
+            color: var(--#{$prefix}tree-item-color);
+            padding: var(--#{$prefix}tree-item-padding);
+            margin: var(--#{$prefix}tree-item-margin);
+            border: 0;
+            border-radius: var(--#{$prefix}tree-item-border-radius);
+        }
+
+        &.active {
+            --#{$prefix}tree-item-bg: var(--#{$prefix}tree-item-active-bg);
+            --#{$prefix}tree-item-color: var(
+                --#{$prefix}tree-item-active-color
+            );
+        }
+
+
+        & >.tree-item-label:hover,
+        &:focus-visible,
+        &.focused {
+            outline: unset;
+
+            &:not(.active) {
+                --#{$prefix}tree-item-bg: var(--#{$prefix}tree-item-hover-bg);
+                --#{$prefix}tree-item-color:  var(--#{$prefix}tree-item-hover-color);
+            }
+
+            > .tree-item-label {
+                box-shadow: var(--#{$prefix}focus-ring-x, 0)
+                        var(--#{$prefix}focus-ring-y, 0)
+                        var(--#{$prefix}focus-ring-blur, 0)
+                        var(--#{$prefix}focus-ring-width)
+                        var(--#{$prefix}focus-ring-color);
+            }
+        }
+
+        &.disabled {
+            --#{$prefix}tree-item-bg: var(--#{$prefix}tree-item-disabled-bg);
+            --#{$prefix}tree-item-color: var(
+                --#{$prefix}tree-item-disabled-color
+            );
+        }
+
+        &-icon {
+            --#{$prefix}tree-icon-spacer: #{$tree-icon-spacer};
+
+            margin-right: var(--#{$prefix}tree-icon-spacer);
+        }
+    }
+
+    .tree-subtree {
+        --#{$prefix}tree-subtree-border-left: #{$tree-subtree-border-left};
+        --#{$prefix}tree-subtree-padding: #{$tree-subtree-padding};
+        --#{$prefix}tree-subtree-margin: #{$tree-subtree-margin};
+
+        border-left: var(--#{$prefix}tree-subtree-border-left);
+        padding: var(--#{$prefix}tree-subtree-padding);
+        margin: var(--#{$prefix}tree-subtree-margin);
+    }
+}
