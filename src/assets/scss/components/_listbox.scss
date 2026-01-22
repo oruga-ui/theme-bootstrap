@@ -37,6 +37,11 @@
 
     .list-group-item {
         border-width: 0 0 var(--#{$prefix}list-group-border-width);
+
+        &.disabled {
+            --bs-list-group-disabled-bg: var(--bs-secondary-bg-subtle);
+            --bs-list-group-border-color: var(--bs-secondary-border-subtle);
+        }
     }
 
     > .list-group-item:last-child {
@@ -44,11 +49,14 @@
     }
 
     .list-group-list {
-        margin: 0;
-        padding: 0;
         overflow: auto;
         position: relative;
         border-radius: inherit;
+
+        &, > ul {
+            margin: 0;
+            padding: 0;
+        }
 
         &:not(:first-child) {
             &,
