@@ -11,7 +11,7 @@ $tree-item-disabled-bg: transparent !default;
 $tree-item-disabled-color: var(--#{$prefix}secondary) !default;
 $tree-item-hover-bg: var(--#{$prefix}tertiary-bg) !default;
 $tree-item-hover-color: var(--#{$prefix}body-color) !default;
-$tree-icon-spacer: 0.5rem !default;
+$tree-icon-spacer: 0.25rem !default;
 $tree-subtree-border-left: 1px solid #445e00 !default;
 $tree-subtree-padding: 0 0.5em !default;
 $tree-subtree-margin: 0.5em 1.3em !default;
@@ -87,6 +87,7 @@ $tree-subtree-margin: 0.5em 1.3em !default;
             );
         }
 
+        &-toggle-icon,
         &-icon {
             --#{$prefix}tree-icon-spacer: #{$tree-icon-spacer};
 

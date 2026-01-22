@@ -599,6 +599,8 @@ const bootstrapConfig: OrugaOptions = {
         itemClass: "tree-item",
         itemLabelClass: "tree-item-label",
         itemIconClass: "tree-item-icon",
+        itemToggleIconClass: "tree-item-toggle-icon",
+        disabledClass: "disabled",
         itemSelectableClass: "selectable",
         itemFocusedClass: "focused",
         itemSelectedClass: "active",
