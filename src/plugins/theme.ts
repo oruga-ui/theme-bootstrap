@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import type { OrugaOptions } from "@oruga-ui/oruga-next";
+import type { OrugaConfig } from "@oruga-ui/oruga-next";
 
-const bootstrapConfig: OrugaOptions = {
+const bootstrapConfig: OrugaConfig = {
     autocomplete: {
         override: true,
         rootClass: "autocomplete",
@@ -258,6 +258,7 @@ const bootstrapConfig: OrugaOptions = {
         selectableClass: "selectable",
         filterableClass: "filterable",
         disabledClass: "disabled",
+        multipleClass: "multiple",
         headerClass: "list-group-header list-group-item",
         filterClass: "list-group-filter list-group-item",
         footerClass: "list-group-footer list-group-item",
@@ -509,15 +510,14 @@ const bootstrapConfig: OrugaOptions = {
         thClass: "table-th",
         thLabelClass: "column-label",
         thSortableClass: "sortable",
-        thCurrentSortClass: "current-sort",
+        thSortedClass: "current-sort",
         thSortIconClass: "sort-icon",
-        thUnselectableClass: "unselectable",
         thDetailedClass: "chevron",
         thStickyClass: "sticky",
         thCheckboxClass: "checkbox",
         thPositionClass: "text-",
         tdClass: "table-td",
-        tdDetailedChevronClass: "chevron",
+        tdDetailClass: "chevron",
         tdStickyClass: "sticky",
         tdCheckboxClass: "checkbox",
         tdPositionClass: "text-",
