@@ -7,7 +7,7 @@ import Oruga from "@oruga-ui/oruga-next";
 import Examples from "@oruga-ui/examples";
 
 // add examples styles
-import "@oruga-ui/examples/dist/examples.css";
+import "@oruga-ui/examples/index.css";
 
 // add theme config
 import { bootstrapConfig } from "./plugins/theme";
@@ -18,6 +18,7 @@ import "./assets/scss/theme-build.scss";
 createApp(App)
     .use(router)
     .use(Oruga, {
+        globalComponents: true,
         iconPack: "fas",
         iconComponent: "vue-fontawesome",
         customIconPacks: {
