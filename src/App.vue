@@ -41,19 +41,6 @@ import components from "@/components";
         padding: 2rem;
         padding-bottom: 6rem;
         padding-left: calc(var(--vp-sidebar-width) + 2rem);
-
-        > section {
-            padding: 1rem 0;
-
-            h3 {
-                font-size: 1.75rem;
-            }
-
-            .buttons > * {
-                margin-right: 0.5rem;
-                margin-bottom: 0.5rem;
-            }
-        }
     }
 
     #nav {
