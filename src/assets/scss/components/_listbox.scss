@@ -53,7 +53,8 @@
         position: relative;
         border-radius: inherit;
 
-        &, > ul {
+        &,
+        > ul {
             margin: 0;
             padding: 0;
         }
