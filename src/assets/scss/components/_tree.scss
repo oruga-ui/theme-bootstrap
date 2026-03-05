@@ -60,23 +60,24 @@ $tree-subtree-margin: 0.5em 1.3em !default;
             );
         }
 
-
-        & >.tree-item-label:hover,
+        & > .tree-item-label:hover,
         &:focus-visible,
         &.focused {
             outline: unset;
 
             &:not(.active) {
                 --#{$prefix}tree-item-bg: var(--#{$prefix}tree-item-hover-bg);
-                --#{$prefix}tree-item-color:  var(--#{$prefix}tree-item-hover-color);
+                --#{$prefix}tree-item-color: var(
+                    --#{$prefix}tree-item-hover-color
+                );
             }
 
             > .tree-item-label {
                 box-shadow: var(--#{$prefix}focus-ring-x, 0)
-                        var(--#{$prefix}focus-ring-y, 0)
-                        var(--#{$prefix}focus-ring-blur, 0)
-                        var(--#{$prefix}focus-ring-width)
-                        var(--#{$prefix}focus-ring-color);
+                    var(--#{$prefix}focus-ring-y, 0)
+                    var(--#{$prefix}focus-ring-blur, 0)
+                    var(--#{$prefix}focus-ring-width)
+                    var(--#{$prefix}focus-ring-color);
             }
         }
 
