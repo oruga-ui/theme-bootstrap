@@ -1,6 +1,6 @@
 {
   "name": "@oruga-ui/theme-bootstrap",
-  "version": "0.10.4",
+  "version": "0.11.0",
   "description": "Bootstrap theme for Oruga",
   "license": "MIT",
   "type": "module",
@@ -47,7 +47,7 @@
     "update": "ncu -u"
   },
   "peerDependencies": {
-    "@oruga-ui/oruga-next": "^0.13.0-pre.2"
+    "@oruga-ui/oruga-next": "^0.13.0"
   },
   "dependencies": {
     "bootstrap": "^5.3.8"
@@ -55,8 +55,8 @@
   "devDependencies": {
     "@eslint/compat": "^2.0.2",
     "@eslint/js": "^10.0.1",
-    "@oruga-ui/examples": "^0.13.0-pre.2",
-    "@oruga-ui/oruga-next": "^0.13.0-pre.2",
+    "@oruga-ui/examples": "^0.13.1",
+    "@oruga-ui/oruga-next": "^0.13.1",
     "@tsconfig/node24": "^24.0.4",
     "@types/node": "^25.3.3",
     "@vitejs/plugin-vue": "^6.0.4",
