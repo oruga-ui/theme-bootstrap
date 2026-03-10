@@ -55,8 +55,8 @@
   "devDependencies": {
     "@eslint/compat": "^2.0.2",
     "@eslint/js": "^10.0.1",
-    "@oruga-ui/examples": "^0.13.0",
-    "@oruga-ui/oruga-next": "^0.13.0",
+    "@oruga-ui/examples": "^0.13.1",
+    "@oruga-ui/oruga-next": "^0.13.1",
     "@tsconfig/node24": "^24.0.4",
     "@types/node": "^25.3.3",
     "@vitejs/plugin-vue": "^6.0.4",
