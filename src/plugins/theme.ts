@@ -2,14 +2,13 @@
 import type { OrugaConfig } from "@oruga-ui/oruga-next";
 
 const bootstrapConfig: OrugaConfig = {
+    override: true,
     autocomplete: {
-        override: true,
         rootClass: "autocomplete",
         itemEmptyClass: "disabled",
         itemGroupClass: "fw-bold",
     },
     breadcrumb: {
-        override: true,
         rootClass: "breadcrumb-wrapper",
         listClass: "breadcrumb",
         itemClass: "breadcrumb-item",
@@ -25,7 +24,6 @@ const bootstrapConfig: OrugaConfig = {
         },
     },
     button: {
-        override: true,
         rootClass: "btn",
         wrapperClass: "button-wrapper",
         sizeClass: (size: string) => {
@@ -52,7 +50,6 @@ const bootstrapConfig: OrugaConfig = {
         loadingClass: "loading",
     },
     carousel: {
-        override: true,
         rootClass: "carousel",
         overlayClass: "carousel-overlay",
         wrapperClass: "carousel-scene",
@@ -75,7 +72,6 @@ const bootstrapConfig: OrugaConfig = {
         indicatorItemActiveClass: "active",
     },
     checkbox: {
-        override: true,
         rootClass: "form-check",
         variantClass: "variant-",
         sizeClass: "size-",
@@ -84,14 +80,12 @@ const bootstrapConfig: OrugaConfig = {
         labelClass: "form-check-label",
     },
     collapse: {
-        override: true,
         rootClass: "collapse",
         triggerClass: "collapse-trigger",
         expandedClass: "w-100",
         contentClass: "collapse-content",
     },
     dialog: {
-        override: true,
         rootClass: ["dialog", "modal-dialog"],
         mobileClass: undefined,
         activeClass: "active",
@@ -118,7 +112,6 @@ const bootstrapConfig: OrugaConfig = {
         scrollKeepClass: "scroll-hidden",
     },
     dropdown: {
-        override: true,
         rootClass: "dropdown",
         modalClass: "dropdown-modal",
         teleportClass: "teleported",
@@ -139,7 +132,6 @@ const bootstrapConfig: OrugaConfig = {
         scrollKeepClass: "scroll-hidden",
     },
     datepicker: {
-        override: true,
         rootClass: "datepicker",
         mobileClass: "mobile",
         boxClass: "dropdown-item",
@@ -192,7 +184,6 @@ const bootstrapConfig: OrugaConfig = {
         monthEventVariantClass: "variant-",
     },
     timepicker: {
-        override: true,
         rootClass: "timepicker",
         boxClass: "dropdown-item",
         selectClasses: {
@@ -204,13 +195,11 @@ const bootstrapConfig: OrugaConfig = {
         sizeClass: "size-",
     },
     datetimepicker: {
-        override: true,
         datepickerWrapperClass: "datepicker-wrapper",
         timepickerWrapperClass:
             "timepicker-wrapper d-flex justify-content-center",
     },
     field: {
-        override: true,
         rootClass: "input-field",
         bodyClass: "field-wrapper",
         labelClass: "form-label",
@@ -224,7 +213,6 @@ const bootstrapConfig: OrugaConfig = {
         horizontalBodyClass: "col-form-field",
     },
     icon: {
-        override: true,
         rootClass: "icon",
         variantClass: "text-",
         sizeClass: "size-",
@@ -232,7 +220,6 @@ const bootstrapConfig: OrugaConfig = {
         spinClass: "spin",
     },
     input: {
-        override: true,
         rootClass: "input",
         sizeClass: "size-",
         variantClass: "variant-",
@@ -253,7 +240,6 @@ const bootstrapConfig: OrugaConfig = {
         counterClass: "help counter",
     },
     listbox: {
-        override: true,
         rootClass: "listbox list-group",
         selectableClass: "selectable",
         filterableClass: "filterable",
@@ -270,7 +256,6 @@ const bootstrapConfig: OrugaConfig = {
         itemDisabledClass: "disabled",
     },
     loading: {
-        override: true,
         rootClass: "loading",
         fullPageClass: "fullpage",
         overlayClass: "loading-overlay",
@@ -280,7 +265,6 @@ const bootstrapConfig: OrugaConfig = {
         scrollKeepClass: "scroll-hidden",
     },
     menu: {
-        override: true,
         rootClass: "menu",
         listClass: "menu-list",
         labelClass: "menu-label",
@@ -293,7 +277,6 @@ const bootstrapConfig: OrugaConfig = {
         itemSubmenuClass: "menu-submenu",
     },
     modal: {
-        override: true,
         rootClass: "modal fade",
         activeClass: "show",
         overlayClass: "modal-backdrop",
@@ -310,7 +293,6 @@ const bootstrapConfig: OrugaConfig = {
         scrollKeepClass: "scroll-hidden",
     },
     notification: {
-        override: true,
         rootClass: "notifictation alert",
         variantClass: "variant-",
         wrapperClass: "notifictation-wrapper",
@@ -322,7 +304,6 @@ const bootstrapConfig: OrugaConfig = {
         noticePositionClass: "position-",
     },
     pagination: {
-        override: true,
         rootClass: "pagination-wrapper",
         sizeClass: (_: string, props: Record<string, any>) => {
             if (props.size == "small") return "pagination-sm";
@@ -353,7 +334,6 @@ const bootstrapConfig: OrugaConfig = {
         infoClass: "pagination-info",
     },
     radio: {
-        override: true,
         rootClass: "form-check",
         disabledClass: "disabled",
         variantClass: "variant-",
@@ -362,7 +342,6 @@ const bootstrapConfig: OrugaConfig = {
         labelClass: "form-check-label",
     },
     select: {
-        override: true,
         rootClass: "select",
         sizeClass: "size-",
         variantClass: "variant-",
@@ -385,7 +364,6 @@ const bootstrapConfig: OrugaConfig = {
         iconRightClass: "icon-right",
     },
     sidebar: {
-        override: true,
         rootClass: "sidebar",
         overlayClass: "offcanvas-backdrop",
         activeClass: "show",
@@ -407,7 +385,6 @@ const bootstrapConfig: OrugaConfig = {
         scrollKeepClass: "scroll-hidden",
     },
     skeleton: {
-        override: true,
         rootClass: "skeleton",
         itemClass: "skeleton-item",
         roundedClass: "rounded-pill",
@@ -420,7 +397,6 @@ const bootstrapConfig: OrugaConfig = {
         },
     },
     slider: {
-        override: true,
         rootClass: "slider",
         disabledClass: "disabled",
         variantClass: "variant-",
@@ -441,7 +417,6 @@ const bootstrapConfig: OrugaConfig = {
         thumbDraggingClass: "dragging",
     },
     steps: {
-        override: true,
         rootClass: (_: string, props: Record<string, any>) => {
             const classes = ["steps"];
             if (props.variant) classes.push(`variant-${props.variant}`);
@@ -471,7 +446,6 @@ const bootstrapConfig: OrugaConfig = {
         navigationClass: "step-navigation",
     },
     switch: {
-        override: true,
         rounded: true,
         rootClass: "form-check form-switch",
         roundedClass: "rounded",
@@ -490,7 +464,6 @@ const bootstrapConfig: OrugaConfig = {
         passiveVariantClass: "variant-",
     },
     table: {
-        override: true,
         rootClass: "table-wrapper",
         wrapperClass: "table-inner",
         tableClass: "table",
@@ -525,7 +498,6 @@ const bootstrapConfig: OrugaConfig = {
         mobileSortClass: "table-mobile-sort",
     },
     tabs: {
-        override: true,
         tag: "ul",
         itemTag: "li",
         rootClass: "tabs",
@@ -553,7 +525,6 @@ const bootstrapConfig: OrugaConfig = {
         transitioningClass: "transition",
     },
     tag: {
-        override: true,
         rootClass: "badge",
         closeClass: "btn-close",
         variantClass: "variant-",
@@ -564,7 +535,6 @@ const bootstrapConfig: OrugaConfig = {
         badgeClass: "position-absolute top-0 start-100 translate-middle",
     },
     taginput: {
-        override: true,
         rootClass: (_: string, props: Record<string, any>) => {
             const classes = ["taginput"];
             if (props.disabled) classes.push("disabled");
@@ -582,7 +552,6 @@ const bootstrapConfig: OrugaConfig = {
         counterClass: "counter",
     },
     tooltip: {
-        override: true,
         rootClass: "tooltip-wrapper",
         alwaysClass: "always",
         multilineClass: "multiline",
@@ -593,7 +562,6 @@ const bootstrapConfig: OrugaConfig = {
         contentClass: "tooltip-content",
     },
     tree: {
-        override: true,
         rootClass: "tree",
         listClass: "tree-list",
         itemClass: "tree-item",
@@ -608,7 +576,6 @@ const bootstrapConfig: OrugaConfig = {
         subtreeClass: "tree-subtree",
     },
     upload: {
-        override: true,
         rootClass: "upload",
         variantClass: "variant-",
         expandedClass: "expanded",
