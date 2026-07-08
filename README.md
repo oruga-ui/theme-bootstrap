@@ -3,7 +3,7 @@
 </p>
 
 <p align="center">
-  ⚓ <i><a href="https://getbootstrap.com/" target="_blank">Bootstrap</a> theme for <a href="https://oruga.io" target="_blank">Oruga</a></i>
+  ⚓ <i><a href="https://getbootstrap.com/" target="_blank">Bootstrap</a> theme for <a href="https://oruga-ui.com" target="_blank">Oruga</a></i>
 </p>
 
 <p align="center">
@@ -104,7 +104,7 @@ You have two options for including the theme: include all the styling at once (i
 
 ### Override default config
 
-In case you want to replace the default style of a component you can override or add new classes changing `bootstrapConfig`; more details about components customization on https://oruga.io/documentation/#customization
+In case you want to replace the default style of a component you can override or add new classes changing `bootstrapConfig`; more details about components customization on https://oruga-ui.com/documentation/#customization
 
 ```js
 import { createApp } from "vue";
