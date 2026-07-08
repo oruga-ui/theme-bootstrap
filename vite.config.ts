@@ -2,7 +2,6 @@ import { defineConfig } from "vite";
 import vue from "@vitejs/plugin-vue";
 import dts from "vite-plugin-dts";
 import banner from "vite-plugin-banner";
-import tsconfigPaths from "vite-tsconfig-paths";
 import { viteStaticCopy as copy } from "vite-plugin-static-copy";
 
 import { fileURLToPath } from "url";
@@ -37,7 +36,7 @@ export default defineConfig(({ mode }) => {
             plugins: [
                 // build types in dist/types
                 dts({
-                    tsconfigPath: "./tsconfig.app.json",
+                    tsconfigPath: "./tsconfig.lib.json",
                     outDirs: "./dist/types",
                     entryRoot: "src/plugins",
                     include: ["src/plugins/theme.ts"],
