@@ -1,11 +1,14 @@
 /**
  * @see https://stylelint.io/user-guide/configure
- * @type {import('stylelint').Config}
  */
 export default {
   ignoreFiles: ["**/.*", "**/dist"],
-  extends: ["stylelint-config-recommended-scss"],
+  extends: [
+    "stylelint-config-recommended-scss",
+    "stylelint-config-recommended-vue/scss",
+  ],
   rules: {
+    // CSS
     "no-duplicate-selectors": [true, { severity: "warning" }],
     "no-descending-specificity": [true, { severity: "warning" }],
     "rule-empty-line-before": [
@@ -25,6 +28,6 @@ export default {
     ],
     // SCSS
     "scss/operator-no-newline-after": [true, { severity: "warning" }],
-    "scss/at-extend-no-missing-placeholder": [true, { severity: "warning" }],
+    "scss/at-extend-no-missing-placeholder": null,
   },
 };
