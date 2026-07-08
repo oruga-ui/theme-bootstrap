@@ -35,11 +35,10 @@ export default defineConfig(({ mode }) => {
     } else {
         return {
             plugins: [
-                tsconfigPaths(),
                 // build types in dist/types
                 dts({
                     tsconfigPath: "./tsconfig.app.json",
-                    outDir: "./dist/types",
+                    outDirs: "./dist/types",
                     entryRoot: "src/plugins",
                     include: ["src/plugins/theme.ts"],
                 }),
@@ -50,6 +49,9 @@ export default defineConfig(({ mode }) => {
                 // adds a banner to every generated dist file
                 banner(generate(pkg.version)),
             ],
+            resolve: {
+                tsconfigPaths: true,
+            },
             build: {
                 emptyOutDir: true,
                 copyPublicDir: false,
