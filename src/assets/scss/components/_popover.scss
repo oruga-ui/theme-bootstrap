@@ -1,0 +1,58 @@
+/* @docs */
+$popover-shadow: $box-shadow-sm !default;
+$popover-margin: 0.25rem !default;
+/* @docs */
+
+/* @bootstrap docs */
+// $tooltip-font-size:                 $font-size-sm;
+// $tooltip-max-width:                 200px;
+// $tooltip-color:                     var(--#{$prefix}body-bg);
+// $tooltip-bg:                        var(--#{$prefix}emphasis-color);
+// $tooltip-border-radius:             var(--#{$prefix}border-radius);
+// $tooltip-opacity:                   .9;
+// $tooltip-padding-y:                 $spacer * .25;
+// $tooltip-padding-x:                 $spacer * .5;
+// $tooltip-margin:                    null; // TODO: remove this in v6
+
+// $tooltip-arrow-width:               .8rem;
+// $tooltip-arrow-height:              .4rem;
+// $tooltip-bg:               null; // Deprecated in Bootstrap 5.2.0 for CSS variables
+/* @bootstrap docs */
+
+.popover-wrapper {
+    --#{$prefix}popover-border-radius: #{$tooltip-border-radius};
+    --#{$prefix}popover-font-size: #{$tooltip-font-size};
+    --#{$prefix}popover-shadow: #{$popover-shadow};
+    --#{$prefix}popover-bg: #{$tooltip-bg};
+    --#{$prefix}popover-color: #{$tooltip-padding-y} #{$tooltip-padding-x};
+    --#{$prefix}popover-margin: #{$popover-margin};
+    --#{$prefix}popover-padding: #{$tooltip-color};
+
+    position: relative;
+    display: inline-flex;
+
+    .popover-trigger {
+        width: 100%;
+    }
+
+    .popover-content {
+        white-space: nowrap;
+        border-width: 0;
+        line-height: 1.5;
+        padding: var(--#{$prefix}popover-padding);
+        margin: var(--#{$prefix}popover-margin);
+        font-size: var(--#{$prefix}popover-font-size);
+        color: var(--#{$prefix}popover-color);
+        border-radius: var(--#{$prefix}popover-border-radius);
+        background: var(--#{$prefix}popover-bg);
+        box-shadow: var(--#{$prefix}popover-shadow);
+    }
+
+    .popover-backdrop {
+        margin: auto;
+
+        &::backdrop {
+            background-color: var(--#{$prefix}backdrop-bg);
+        }
+    }
+}

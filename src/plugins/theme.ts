@@ -120,7 +120,6 @@ const bootstrapConfig: OrugaConfig = {
         triggerClass: "dropdown-trigger",
         overlayClass: "dropdown-backdrop",
         menuClass: "dropdown-menu",
-        menuActiveClass: "show",
         itemClass: "dropdown-item",
         itemSelectedClass: "active",
         itemFocusedClass: "focused",
@@ -328,6 +327,12 @@ const bootstrapConfig: OrugaConfig = {
         buttonNextClass: "pagination-next page-item",
         buttonPrevClass: "pagination-prev page-item",
         infoClass: "pagination-info",
+    },
+    popover: {
+        rootClass: "popover-wrapper",
+        triggerClass: "popover-trigger",
+        contentClass: "popover-content popover",
+        backdropClass: "popover-backdrop",
     },
     radio: {
         rootClass: "form-check",
