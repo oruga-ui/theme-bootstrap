@@ -117,11 +117,9 @@ const bootstrapConfig: OrugaConfig = {
         teleportClass: "teleported",
         disabledClass: "disabled",
         expandedClass: "expanded",
-        inlineClass: "inline",
         triggerClass: "dropdown-trigger",
         overlayClass: "dropdown-backdrop",
         menuClass: "dropdown-menu",
-        menuPositionClass: "position-",
         menuActiveClass: "show",
         itemClass: "dropdown-item",
         itemSelectedClass: "active",
@@ -134,7 +132,6 @@ const bootstrapConfig: OrugaConfig = {
     datepicker: {
         rootClass: "datepicker",
         mobileClass: "mobile",
-        boxClass: "dropdown-item",
         headerClass: "datepicker-header",
         footerClass: "datepicker-footer",
         listsClass: "pagination-list",
@@ -185,14 +182,13 @@ const bootstrapConfig: OrugaConfig = {
     },
     timepicker: {
         rootClass: "timepicker",
-        boxClass: "dropdown-item",
-        selectClasses: {
-            rootClass: "select",
-            selectClass: "form-select",
-        },
         separatorClass: "separator",
         footerClass: "timepicker-footer",
         sizeClass: "size-",
+        selectAttrs: {
+            rootClass: "select",
+            selectClass: "form-select",
+        },
     },
     datetimepicker: {
         datepickerWrapperClass: "datepicker-wrapper",
