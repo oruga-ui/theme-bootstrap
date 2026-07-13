@@ -67,24 +67,24 @@ $dropdown-modal-max-width: calc(100vw - 40px);
         position: fixed;
         margin: auto;
 
-        .dropdown-item {
-            // disable dropdown-item effects when not clickable
-            &:not(.clickable) {
-                &:hover,
-                &:active {
-                    --#{$prefix}dropdown-link-active-bg: transparent;
-                    --#{$prefix}dropdown-link-hover-bg: transparent;
-                }
-            }
+        &:popover-open {
+            display: block;
+        }
+    }
 
-            &.focused:not(.active) {
-                color: var(--#{$prefix}dropdown-link-hover-color);
-                background-color: var(--#{$prefix}dropdown-link-hover-bg);
+    &-item {
+        // disable dropdown-item effects when not clickable
+        &:not(.clickable) {
+            &:hover,
+            &:active {
+                --#{$prefix}dropdown-link-active-bg: transparent;
+                --#{$prefix}dropdown-link-hover-bg: transparent;
             }
         }
 
-        &:popover-open {
-            display: block;
+        &.focused:not(.active) {
+            color: var(--#{$prefix}dropdown-link-hover-color);
+            background-color: var(--#{$prefix}dropdown-link-hover-bg);
         }
     }
 
@@ -93,27 +93,22 @@ $dropdown-modal-max-width: calc(100vw - 40px);
         --#{$prefix}dropdown-modal-min-width: #{$dropdown-modal-min-width};
         --#{$prefix}dropdown-modal-max-width: #{$dropdown-modal-max-width};
 
-        .dropdown-menu {
-            width: clamp(
-                var(--#{$prefix}dropdown-modal-min-width),
-                var(--#{$prefix}dropdown-modal-width),
-                var(--#{$prefix}dropdown-modal-max-width)
-            );
-        }
+        width: clamp(
+            var(--#{$prefix}dropdown-modal-min-width),
+            var(--#{$prefix}dropdown-modal-width),
+            var(--#{$prefix}dropdown-modal-max-width)
+        );
     }
 
     &-backdrop {
         --#{$prefix}backdrop-bg: #{$modal-backdrop-bg};
         --#{$prefix}backdrop-zindex: #{$dropdown-modal-backdrop-zindex};
         --#{$prefix}backdrop-opacity: #{$modal-backdrop-opacity};
+        cursor: pointer;
 
-        .dropdown-menu {
-            cursor: pointer;
-
-            &::backdrop {
-                background-color: var(--#{$prefix}backdrop-bg);
-                opacity: var(--#{$prefix}backdrop-opacity);
-            }
+        &::backdrop {
+            background-color: var(--#{$prefix}backdrop-bg);
+            opacity: var(--#{$prefix}backdrop-opacity);
         }
     }
 }

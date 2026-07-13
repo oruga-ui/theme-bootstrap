@@ -118,7 +118,7 @@ const bootstrapConfig: OrugaConfig = {
         disabledClass: "disabled",
         expandedClass: "expanded",
         triggerClass: "dropdown-trigger",
-        overlayClass: "dropdown-backdrop",
+        contentBackdropClass: "dropdown-backdrop",
         menuClass: "dropdown-menu",
         itemClass: "dropdown-item",
         itemSelectedClass: "active",
@@ -331,8 +331,10 @@ const bootstrapConfig: OrugaConfig = {
     popover: {
         rootClass: "popover-wrapper",
         triggerClass: "popover-trigger",
-        contentClass: "popover-content popover",
-        backdropClass: "popover-backdrop",
+        contentClass: "popover",
+        contentBackdropClass: "popover-backdrop",
+        headerClass: "popover-header",
+        bodyClass: "popover-body",
     },
     radio: {
         rootClass: "form-check",
