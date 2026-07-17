@@ -110,7 +110,6 @@ $btn-hover-box-shadow: $box-shadow-sm !default;
 
     // inverted color
     @each $name, $color in $theme-colors {
-        &.variant-#{$name}-inverted,
         &.btn-inverted-#{$name} {
             // default style
             --#{$prefix}btn-color: var(--#{$prefix}#{$name});
@@ -125,7 +124,6 @@ $btn-hover-box-shadow: $box-shadow-sm !default;
             );
         }
 
-        &.variant-#{$name}-subtle,
         &.btn-#{$name}-subtle {
             // default style
             --#{$prefix}btn-color: var(--#{$prefix}#{$name});

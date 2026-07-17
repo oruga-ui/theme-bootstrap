@@ -40,9 +40,9 @@ const bootstrapConfig: OrugaConfig = {
             if (!props.variant) return "btn-outline";
             return `btn-outline-${props.variant}`;
         },
-        invertedClass: (variant) => {
-            if (!variant) return "btn-inverted";
-            return `btn-inverted-${variant}`;
+        invertedClass: (_, props) => {
+            if (!props.variant) return "btn-inverted";
+            return `btn-inverted-${props.variant}`;
         },
         roundedClass: "rounded-pill",
         expandedClass: "expanded",
