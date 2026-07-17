@@ -84,7 +84,7 @@ $carousel-indicator-spacer: $spacer !default;
             overflow: visible;
 
             &:not(.dragging) {
-                transition: all $speed-slower ease-out 0s;
+                transition: all $animation-speed ease-out 0s;
             }
 
             .carousel-item {

@@ -190,7 +190,7 @@ $steps-vertical-padding: 1em 0 !default;
         &.animated {
             .step-item {
                 .divider {
-                    transition: background $speed-slow $easing;
+                    transition: background $animation-speed-fast $easing;
                 }
             }
         }
