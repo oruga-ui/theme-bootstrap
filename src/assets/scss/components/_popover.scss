@@ -1,5 +1,4 @@
 /* @docs */
-$popover-shadow: $box-shadow-sm !default;
 $popover-margin: 0.25rem !default;
 /* @docs */
 
@@ -31,41 +30,44 @@ $popover-margin: 0.25rem !default;
     position: relative;
     display: inline-flex;
 
+    [popover]:not(:popover-open) {
+        display: none;
+    }
+
     .popover-trigger {
         width: 100%;
     }
 
-    .popover-content {
-        --#{$prefix}popover-border-radius: #{$tooltip-border-radius};
-        --#{$prefix}popover-font-size: #{$tooltip-font-size};
-        --#{$prefix}popover-shadow: #{$popover-shadow};
-        --#{$prefix}popover-bg: #{$tooltip-bg};
-        --#{$prefix}popover-color: #{$tooltip-color};
+    .popover {
         --#{$prefix}popover-margin: #{$popover-margin};
-        --#{$prefix}popover-padding: #{$tooltip-padding-y} #{$tooltip-padding-x};
 
-        white-space: nowrap;
-        border-width: 0;
-        line-height: 1.5;
-        padding: var(--#{$prefix}popover-padding);
+        position: relative;
+        padding: 0;
         margin: var(--#{$prefix}popover-margin);
-        font-size: var(--#{$prefix}popover-font-size);
-        color: var(--#{$prefix}popover-color);
-        border-radius: var(--#{$prefix}popover-border-radius);
-        background: var(--#{$prefix}popover-bg);
-        box-shadow: var(--#{$prefix}popover-shadow);
-        max-width: unset;
+        box-shadow: var(--#{$prefix}popover-box-shadow);
+    }
 
-        &[popover]:not(:popover-open) {
-            display: none;
-        }
+    .popover-modal {
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
     }
 
     .popover-backdrop {
-        margin: auto;
+        --#{$prefix}backdrop-bg: #{$modal-backdrop-bg};
+        --#{$prefix}backdrop-opacity: #{$modal-backdrop-opacity};
+        cursor: pointer;
 
         &::backdrop {
             background-color: var(--#{$prefix}backdrop-bg);
+            opacity: var(--#{$prefix}backdrop-opacity);
         }
+    }
+
+    .btn-close {
+        position: absolute;
+        right: calc(var(--bs-popover-body-padding-x) / 2);
+        top: calc(var(--bs-popover-body-padding-y) / 2);
     }
 }

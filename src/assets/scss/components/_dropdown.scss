@@ -1,5 +1,4 @@
 /* @docs */
-$dropdown-modal-backdrop-zindex: $zindex-modal-backdrop !default;
 $dropdown-modal-width: 75%;
 $dropdown-modal-min-width: 25%;
 $dropdown-modal-max-width: calc(100vw - 40px);
@@ -42,8 +41,12 @@ $dropdown-modal-max-width: calc(100vw - 40px);
 /* @bootstrap docs */
 
 .dropdown {
-    display: inline-block;
+    display: block;
     vertical-align: middle;
+
+    [popover]:popover-open {
+        display: block;
+    }
 
     &.expanded {
         .dropdown-trigger {
@@ -66,10 +69,6 @@ $dropdown-modal-max-width: calc(100vw - 40px);
     &-menu {
         position: fixed;
         margin: auto;
-
-        &:popover-open {
-            display: block;
-        }
     }
 
     &-item {
@@ -102,7 +101,6 @@ $dropdown-modal-max-width: calc(100vw - 40px);
 
     &-backdrop {
         --#{$prefix}backdrop-bg: #{$modal-backdrop-bg};
-        --#{$prefix}backdrop-zindex: #{$dropdown-modal-backdrop-zindex};
         --#{$prefix}backdrop-opacity: #{$modal-backdrop-opacity};
         cursor: pointer;
 

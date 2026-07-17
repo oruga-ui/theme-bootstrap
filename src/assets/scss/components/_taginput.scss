@@ -14,6 +14,8 @@ $taginput-counter-font-size: 0.75rem !default;
 /* @bootstrap docs */
 
 .taginput {
+    width: fit-content;
+
     .btn-close {
         font-size: 0.8em;
     }
@@ -44,7 +46,7 @@ $taginput-counter-font-size: 0.75rem !default;
             margin: var(--#{$prefix}badge-margin);
         }
 
-        .dropdown.expanded {
+        .autocomplete {
             width: auto;
         }
     }
@@ -84,6 +86,10 @@ $taginput-counter-font-size: 0.75rem !default;
 
     &.expanded {
         width: 100%;
+
+        .autocomplete {
+            flex-grow: 1;
+        }
     }
 
     &.disabled {

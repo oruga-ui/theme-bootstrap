@@ -144,12 +144,11 @@ $input-field-grouped-spacer: calc($spacer / 2) !default;
     // is grouped
     .input-grouped {
         display: flex;
+        flex-wrap: wrap;
         gap: var(--#{$prefix}input-field-grouped-spacer);
     }
 
-    .multiline {
-        display: flex;
-        flex-wrap: wrap;
-        gap: var(--#{$prefix}input-field-grouped-spacer);
+    .input-blocked {
+        display: block;
     }
 }
