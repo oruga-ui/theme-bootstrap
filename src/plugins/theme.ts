@@ -45,7 +45,7 @@ const bootstrapConfig: OrugaConfig = {
         roundedClass: "rounded-pill",
         expandedClass: "expanded",
         disabledClass: "btn-disabled",
-        loadingClass: "loading",
+        loadingClass: "btn-loading",
     },
     carousel: {
         rootClass: "carousel",

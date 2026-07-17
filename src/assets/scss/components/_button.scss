@@ -63,6 +63,7 @@ $btn-hover-box-shadow: $box-shadow-sm !default;
     --#{$prefix}btn-hover-box-shadow: #{$btn-hover-box-shadow};
     --#{$prefix}btn-disabled-border-color: var(--#{$prefix}btn-border-color);
 
+    position: relative;
     display: inline-flex;
     align-items: center;
     justify-content: center;
@@ -89,12 +90,40 @@ $btn-hover-box-shadow: $box-shadow-sm !default;
     }
 
     &.disabled,
-    &.btn-disabled {
+    &-disabled {
         pointer-events: auto;
         cursor: auto;
     }
 
-    &.btn-inverted {
+    &-loading {
+        color: transparent !important;
+        pointer-events: none;
+
+        &::after {
+            -webkit-animation: $animation-speed-slow;
+            animation-name: spinAround;
+            animation-iteration-count: infinite;
+            animation-timing-function: linear;
+            animation-duration: $animation-speed-slow;
+
+            position: absolute !important;
+            left: calc(50% - 0.5em);
+            top: calc(50% - 0.5em);
+
+            display: block;
+            height: 1em;
+            width: 1em;
+
+            content: "";
+
+            border: 2px solid var(--#{$prefix}btn-color);
+            border-radius: 9999px;
+            border-right-color: transparent;
+            border-top-color: transparent;
+        }
+    }
+
+    &-inverted {
         --#{$prefix}btn-bg: transparent;
         --#{$prefix}btn-border-color: transparent;
     }
