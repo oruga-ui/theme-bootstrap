@@ -1,5 +1,18 @@
 // Some of the animations are from animate.css (https://daneden.github.io/animate.css)
 
+// Spin around
+@keyframes spinAround {
+    from {
+        -webkit-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+
+    to {
+        -webkit-transform: rotate(359deg);
+        transform: rotate(359deg);
+    }
+}
+
 // Fade out
 @keyframes fadeOut {
     from {
@@ -99,7 +112,7 @@
 // Fade
 .fade-enter-active,
 .fade-leave-active {
-    transition: opacity $speed-slow $easing;
+    transition: opacity $animation-speed-fast $easing;
 }
 
 .fade-enter,
@@ -111,10 +124,10 @@
 // Zoom In
 .zoom-in-enter-active,
 .zoom-in-leave-active {
-    transition: opacity $speed-slow $easing;
+    transition: opacity $animation-speed-fast $easing;
 
     .animation-content {
-        transition: transform $speed-slow $easing;
+        transition: transform $animation-speed-fast $easing;
     }
 }
 
@@ -131,10 +144,10 @@
 // Zoom Out
 .zoom-out-enter-active,
 .zoom-out-leave-active {
-    transition: opacity $speed-slow $easing;
+    transition: opacity $animation-speed-fast $easing;
 
     .animation-content {
-        transition: transform $speed-slow $easing;
+        transition: transform $animation-speed-fast $easing;
     }
 }
 
@@ -153,7 +166,8 @@
 .slide-next-leave-active,
 .slide-prev-enter-active,
 .slide-prev-leave-active {
-    transition: transform $speed-slower cubic-bezier(0.785, 0.135, 0.15, 0.86);
+    transition: transform $animation-speed
+        cubic-bezier(0.785, 0.135, 0.15, 0.86);
 }
 
 .slide-prev-leave-to,
@@ -176,7 +190,8 @@
 .slide-down-leave-active,
 .slide-up-enter-active,
 .slide-up-leave-active {
-    transition: transform $speed-slower cubic-bezier(0.785, 0.135, 0.15, 0.86);
+    transition: transform $animation-speed
+        cubic-bezier(0.785, 0.135, 0.15, 0.86);
 }
 
 .slide-down-enter,
@@ -196,11 +211,11 @@
 }
 
 .slide-enter-active {
-    transition: $speed-slow $easing;
+    transition: $animation-speed-fast $easing;
 }
 
 .slide-leave-active {
-    transition: $speed-slow $easing;
+    transition: $animation-speed-fast $easing;
     transition-timing-function: cubic-bezier(0, 1, 0.5, 1);
 }
 

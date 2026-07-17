@@ -193,7 +193,7 @@ $table-card-spacer: $spacer;
 
     .icon {
         transition:
-            transform $speed-slow $easing,
+            transform $animation-speed-fast $easing,
             opacity 86ms $easing;
     }
 
