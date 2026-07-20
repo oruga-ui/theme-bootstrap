@@ -79,6 +79,7 @@ const bootstrapConfig: OrugaConfig = {
     },
     collapse: {
         rootClass: "collapse",
+        positionClass: "position-",
         triggerClass: "collapse-trigger",
         expandedClass: "w-100",
         contentClass: "collapse-content",
