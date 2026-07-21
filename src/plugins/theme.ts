@@ -207,7 +207,6 @@ const bootstrapConfig: OrugaConfig = {
         messageVariantClass: "text-",
         addonsClass: "input-group",
         groupedClass: "input-grouped",
-        blockClass: "input-blocked",
         horizontalClass: "field-horizontal row",
         horizontalLabelClass: "col-form-label",
         horizontalBodyClass: "col-form-field",

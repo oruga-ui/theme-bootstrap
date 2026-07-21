@@ -147,8 +147,4 @@ $input-field-grouped-spacer: calc($spacer / 2) !default;
         flex-wrap: wrap;
         gap: var(--#{$prefix}input-field-grouped-spacer);
     }
-
-    .input-blocked {
-        display: block;
-    }
 }
