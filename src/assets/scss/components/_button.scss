@@ -128,6 +128,11 @@ $btn-hover-box-shadow: $box-shadow-sm !default;
         --#{$prefix}btn-border-color: transparent;
     }
 
+    // outline fix when not outlined variants are applied too
+    &[class*="-outline-"] {
+        --bs-btn-bg: transparent;
+    }
+
     &:not([class*="btn-"]) {
         @extend .focus-ring;
     }
