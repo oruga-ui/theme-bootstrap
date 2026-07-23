@@ -155,7 +155,7 @@
         cursor: not-allowed;
     }
 
-    &:not(.rounded) input {
+    &:not(.rounded) input[type="checkbox"] {
         border-radius: var(--#{$prefix}border-radius);
     }
 }
