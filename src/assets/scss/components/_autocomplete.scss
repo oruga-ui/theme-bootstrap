@@ -6,9 +6,12 @@ $autocomplete-menu-max-height: 200px !default;
     --#{$prefix}autocomplete-menu-max-height: #{$autocomplete-menu-max-height};
     display: inline-block;
 
+    &:has(.dropdown.expanded) {
+        width: 100%;
+    }
+
     .dropdown-menu {
         max-height: var(--#{$prefix}autocomplete-menu-max-height);
         overflow: auto;
-        width: 100%;
     }
 }
