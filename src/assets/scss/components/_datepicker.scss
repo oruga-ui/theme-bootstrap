@@ -275,4 +275,10 @@ $datepicker-month-cell-height: 2.5rem !default;
             }
         }
     }
+
+    .timepicker.inline > .timepicker-overlay {
+        padding: 0;
+        box-shadow: unset;
+        outline: unset;
+    }
 }
