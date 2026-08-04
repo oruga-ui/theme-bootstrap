@@ -336,7 +336,6 @@ const bootstrapConfig: OrugaConfig = {
     },
     popover: {
         rootClass: "popover-wrapper",
-        triggerClass: "popover-trigger",
         contentClass: "popover",
         contentModalClass: "popover-modal",
         contentBackdropClass: "popover-backdrop",

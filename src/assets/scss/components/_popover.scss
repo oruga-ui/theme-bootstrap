@@ -34,10 +34,6 @@ $popover-margin: 0.25rem !default;
         display: none;
     }
 
-    .popover-trigger {
-        width: 100%;
-    }
-
     .popover {
         --#{$prefix}popover-margin: #{$popover-margin};
 
