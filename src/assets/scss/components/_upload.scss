@@ -1,13 +1,13 @@
 @use "sass:map";
 
 /* @docs */
-$upload-draggable-bg: transparent !default;
-$upload-draggable-bg-hover: transparent !default;
-$upload-draggable-border-color: var(--#{$prefix}border-color) !default;
-$upload-draggable-border-color-hover: var(--#{$prefix}dark-bg-subtle) !default;
-$upload-draggable-border-width: var(--#{$prefix}border-width) !default;
-$upload-draggable-border-radius: var(--#{$prefix}border-radius) !default;
-$upload-draggable-padding: 2em !default;
+$upload-dragzone-bg: transparent !default;
+$upload-dragzone-bg-hover: transparent !default;
+$upload-dragzone-border-color: var(--#{$prefix}border-color) !default;
+$upload-dragzone-border-color-hover: var(--#{$prefix}dark-bg-subtle) !default;
+$upload-dragzone-border-width: var(--#{$prefix}border-width) !default;
+$upload-dragzone-border-radius: var(--#{$prefix}border-radius) !default;
+$upload-dragzone-padding: 2em !default;
 $upload-disabled-opacity: 0.5 !default;
 /* @docs */
 
@@ -27,39 +27,39 @@ $upload-disabled-opacity: 0.5 !default;
         opacity: var(--#{$prefix}upload-disabled-opacity);
     }
 
-    .upload-draggable {
-        --#{$prefix}upload-draggable-bg: #{$upload-draggable-bg};
-        --#{$prefix}upload-draggable-bg-hover: #{$upload-draggable-bg-hover};
-        --#{$prefix}upload-draggable-border-color: #{$upload-draggable-border-color};
-        --#{$prefix}upload-draggable-border-color-hover: #{$upload-draggable-border-color-hover};
-        --#{$prefix}upload-draggable-border-width: #{$upload-draggable-border-width};
-        --#{$prefix}upload-draggable-border-radius: #{$upload-draggable-border-radius};
-        --#{$prefix}upload-draggable-padding: #{$upload-draggable-padding};
+    .dragzone {
+        --#{$prefix}upload-dragzone-bg: #{$upload-dragzone-bg};
+        --#{$prefix}upload-dragzone-bg-hover: #{$upload-dragzone-bg-hover};
+        --#{$prefix}upload-dragzone-border-color: #{$upload-dragzone-border-color};
+        --#{$prefix}upload-dragzone-border-color-hover: #{$upload-dragzone-border-color-hover};
+        --#{$prefix}upload-dragzone-border-width: #{$upload-dragzone-border-width};
+        --#{$prefix}upload-dragzone-border-radius: #{$upload-dragzone-border-radius};
+        --#{$prefix}upload-dragzone-padding: #{$upload-dragzone-padding};
 
-        background: var(--#{$prefix}upload-draggable-bg);
-        border-width: var(--#{$prefix}upload-draggable-border-width);
+        background: var(--#{$prefix}upload-dragzone-bg);
+        border-width: var(--#{$prefix}upload-dragzone-border-width);
         border-style: dashed;
-        border-color: var(--#{$prefix}upload-draggable-border-color);
-        border-radius: var(--#{$prefix}upload-draggable-border-radius);
-        padding: var(--#{$prefix}upload-draggable-padding);
+        border-color: var(--#{$prefix}upload-dragzone-border-color);
+        border-radius: var(--#{$prefix}upload-dragzone-border-radius);
+        padding: var(--#{$prefix}upload-dragzone-padding);
 
         &:hover,
         &.hovered {
-            background-color: var(--#{$prefix}upload-draggable-bg-hover);
-            border-color: var(--#{$prefix}upload-draggable-border-color-hover);
+            background-color: var(--#{$prefix}upload-dragzone-bg-hover);
+            border-color: var(--#{$prefix}upload-dragzone-border-color-hover);
         }
     }
 
     // Color variant
     @each $name, $color-light in $theme-colors {
-        &.variant-#{$name} .upload-draggable {
-            --#{$prefix}upload-draggable-bg-hover: var(
+        &.variant-#{$name} .dragzone {
+            --#{$prefix}upload-dragzone-bg-hover: var(
                 --#{$prefix}#{$name}-bg-subtle
             );
-            --#{$prefix}upload-draggable-border-color-hover: var(
+            --#{$prefix}upload-dragzone-border-color-hover: var(
                 --#{$prefix}#{$name}
             );
-            --#{$prefix}upload-draggable-border-color: var(
+            --#{$prefix}upload-dragzone-border-color: var(
                 --#{$prefix}#{$name}-bg-subtle
             );
         }

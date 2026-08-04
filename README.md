@@ -104,7 +104,7 @@ You have two options for including the theme: include all the styling at once (i
 
 ### Override default config
 
-In case you want to replace the default style of a component you can override or add new classes changing `bootstrapConfig`; more details about components customization on https://oruga-ui.com/documentation/#customization
+In case you want to replace the default style of a component you can override or add new classes changing `bootstrapConfig`; more details about components customization on https://oruga-ui.com/documentation/configuration
 
 ```js
 import { createApp } from "vue";

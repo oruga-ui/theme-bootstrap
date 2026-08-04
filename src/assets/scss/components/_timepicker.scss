@@ -1,42 +1,57 @@
 /* @docs */
 $timepicker-select-width: 4em;
+$timepicker-overlay-bg: var(--#{$prefix}body-bg) !default;
+$timepicker-overlay-radius: var(--#{$prefix}border-radius) !default;
+$timepicker-overlay-box-shadow: $box-shadow !default;
 /* @docs */
 
 .timepicker {
-    .dropdown {
-        .dropdown-menu {
-            --#{$prefix}dropdown-width: auto;
-            --#{$prefix}dropdown-min-width: unset;
-            --#{$prefix}dropdown-padding-y: 0;
-            --#{$prefix}dropdown-link-active-bg: transparent;
-            --#{$prefix}dropdown-link-active-color: --#{$prefix}dropdown-link-color;
+    [popover]:popover-open {
+        display: inline-flex;
+    }
+
+    &-overlay {
+        --#{$prefix}timepicker-overlay-bg: #{$timepicker-overlay-bg};
+        --#{$prefix}timepicker-overlay-radius: #{$timepicker-overlay-radius};
+        --#{$prefix}timepicker-overlay-box-shadow: #{$timepicker-overlay-box-shadow};
+
+        width: fit-content;
+        padding: 1rem;
+        background-color: var(--#{$prefix}timepicker-overlay-bg);
+        border-width: 0;
+        border-radius: var(--#{$prefix}timepicker-overlay-radius);
+        box-shadow: var(--#{$prefix}timepicker-overlay-box-shadow);
+    }
+
+    &-backdrop {
+        --#{$prefix}backdrop-bg: #{$modal-backdrop-bg};
+        --#{$prefix}backdrop-opacity: #{$modal-backdrop-opacity};
+        cursor: pointer;
+
+        &::backdrop {
+            background-color: var(--#{$prefix}backdrop-bg);
+            opacity: var(--#{$prefix}backdrop-opacity);
         }
+    }
 
-        .dropdown-item {
-            display: inline-flex;
-            border-radius: inherit;
-            width: max-content;
+    .separator {
+        transform: translateY(15%);
+        font-weight: bolder;
+    }
 
-            .separator {
-                transform: translateY(15%);
-                font-weight: bolder;
-            }
+    .select {
+        --#{$prefix}timepicker-select-width: #{$timepicker-select-width};
 
-            .select {
-                --#{$prefix}timepicker-select-width: #{$timepicker-select-width};
+        .form-select {
+            border: transparent;
+            background-color: transparent;
+            cursor: pointer;
+            padding-right: $input-btn-padding-x;
+            width: var(--#{$prefix}timepicker-select-width);
+            text-align: center;
 
-                .form-select {
-                    border: transparent;
-                    background-color: transparent;
-                    cursor: pointer;
-                    padding-right: $input-btn-padding-x;
-                    width: var(--#{$prefix}timepicker-select-width);
-                    text-align: center;
-
-                    &:focus {
-                        box-shadow: none;
-                    }
-                }
+            &:focus {
+                box-shadow: none;
             }
         }
     }

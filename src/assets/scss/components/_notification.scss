@@ -39,15 +39,13 @@ $notification-icon-margin-right: 0.5rem !default;
 /* @bootstrap docs */
 
 .notifictation {
-    .notifictation-wrapper {
-        display: flex;
+    display: flex;
 
-        .icon {
-            margin-right: $notification-icon-margin-right;
-        }
+    .icon {
+        margin-right: $notification-icon-margin-right;
     }
 
-    .btn-close + .notifictation-wrapper {
+    .notifictation-wrapper:has(+ .btn-close) {
         padding-right: calc(
             $notification-close-btn-position + $alert-padding-x
         );
