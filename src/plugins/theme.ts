@@ -95,7 +95,7 @@ const bootstrapConfig: OrugaConfig = {
         contentPositionClass: "text-",
         headerClass: "modal-header",
         titleClass: "modal-title",
-        subtitleClass: "modal-subtitle",
+        subtitleClass: "modal-subtitle h5 text-secondary",
         closeClass: "btn-close",
         bodyClass: "modal-body",
         figureClass: undefined,
